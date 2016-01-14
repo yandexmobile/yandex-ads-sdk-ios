@@ -1,0 +1,6 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, :deployment_target => '6.0'
+
+pod 'YandexMobileMetrica' 
+pod 'Google-Mobile-Ads-SDK', '~> 7.5.1'
+pod 'YandexMobileAds'

@@ -6,6 +6,9 @@ All notable changes to this project will be documented in this file.
 #### Added
 * Added flexible banner sizes
 
+#### Updated
+* Updated maximum compatible AppMetrica version to 2.3.0
+
 #### Deprecated
 * Deprecated `[YMAAdView initWithBlockID:size:delegate]` in favor of `[YMAAdView initWithBlockID:adSize:delegate]`
 * Deprecated `[YMALog enableLogging]` in favor of `[YMAMobileAds enableLogging]`
