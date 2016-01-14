@@ -27,6 +27,7 @@ EULA is available at [EULA website] [LICENSE]
 
 ## App Transport Security
 Add the NSAppTransportSecurity exception to plist. NSAllowsArbitraryLoads exception should be added to plist in order ads to work correctly on devices with iOS 9:
+
 ![][ATS]
 
 ```xml
