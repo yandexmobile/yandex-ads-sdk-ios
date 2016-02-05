@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "YandexMobileAds"
-  s.version = "2.0.0"
+  s.version = "2.0.1"
   s.summary = "The Yandex Mobile Ads SDK provides mobile interfaces for Yandex Advertising Network" 
 
   s.homepage = "https://tech.yandex.ru/mobile-ads/"

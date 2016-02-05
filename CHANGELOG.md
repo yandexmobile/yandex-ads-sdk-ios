@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 2.0.1
+
+#### Added
+* Added native assets highlighting
+
+#### Fixed
+* Fixed errors handling
+
 ## Version 2.0.0
 
 #### Added
