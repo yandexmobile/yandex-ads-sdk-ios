@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 2.0.2
+
+#### Updated
+* Updated maximum compatible AppMetrica version to 2.3.1
+
+#### Fixed
+* Fixed URL opening bug in native ads bound to reusable views
+
 ## Version 2.0.1
 
 #### Added

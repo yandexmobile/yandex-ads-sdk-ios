@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "YandexMobileAds"
-  s.version = "2.0.1"
+  s.version = "2.0.2"
   s.summary = "The Yandex Mobile Ads SDK provides mobile interfaces for Yandex Advertising Network" 
 
   s.homepage = "https://tech.yandex.ru/mobile-ads/"
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.vendored_library = 'SDK/libYandexMobileAds.a'
   s.libraries = 'xml2'
 
-  s.dependency 'YandexMobileMetrica', '>= 2.0.0', '<= 2.3.0'
+  s.dependency 'YandexMobileMetrica', '>= 2.0.0', '<= 2.3.1'
   s.frameworks = 'CoreTelephony', 'AdSupport'
   s.weak_frameworks = 'SafariServices'
 
