@@ -11,6 +11,7 @@
 
 #import <YandexMobileAds/YMANativeAdLoader.h>
 #import <YandexMobileAds/YMANativeAdDelegate.h>
+#import <YandexMobileAds/YMANativeGenericAd.h>
 #import <YandexMobileAds/YMANativeContentAd.h>
 #import <YandexMobileAds/YMANativeAppInstallAd.h>
 #import <YandexMobileAds/YMANativeContentAdView.h>
@@ -19,3 +20,7 @@
 #import <YandexMobileAds/YMANativeAdErrors.h>
 #import <YandexMobileAds/YMAErrors.h>
 #import <YandexMobileAds/YMAAdRequest.h>
+#import <YandexMobileAds/YMANativeAdTypes.h>
+#import <YandexMobileAds/YMANativeBannerView.h>
+#import <YandexMobileAds/YMANativeTemplateAppearance.h>
+#import <YandexMobileAds/YMANativeAssetsAppearance.h>

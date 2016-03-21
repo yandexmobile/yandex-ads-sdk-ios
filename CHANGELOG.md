@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 2.1.0
+
+#### Added
+* Added native ads template view
+
+#### Fixed
+* Fixed ad clicks on devices with force touch
+
 ## Version 2.0.2
 
 #### Updated

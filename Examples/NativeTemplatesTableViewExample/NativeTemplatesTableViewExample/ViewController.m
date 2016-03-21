@@ -1,0 +1,143 @@
+/*
+ *  ViewController.m
+ *
+ * This file is a part of the Yandex Advertising Network.
+ *
+ * Version for iOS © 2016 YANDEX
+ *
+ * You may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at https://legal.yandex.com/partner_ch/
+ */
+
+#import "ViewController.h"
+#import "NativeBannerTableViewCell.h"
+#import <YandexMobileAds/YandexMobileNativeAds.h>
+
+static NSInteger const kAdStride = 10;
+static CGFloat const kNativeBannerInsets = 20.f;
+static NSString *const kContentCellIdentifier = @"ContentCellIdentifier";
+static NSString *const kNativeBannerCellIdentifier = @"NativeBannerCellIdentifier";
+
+@interface ViewController () <UITableViewDelegate, UITableViewDataSource, YMANativeAdLoaderDelegate, YMANativeAdDelegate>
+
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) YMANativeAdLoader *adLoader;
+@property (nonatomic, strong) NSMutableArray *ads;
+
+@end
+
+@implementation ViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
+    self.ads = [NSMutableArray array];
+
+    // Replace R-M-XXXXXX-Y with actual Block ID
+    self.adLoader = [[YMANativeAdLoader alloc] initWithBlockID:@"R-M-XXXXXX-Y"];
+    self.adLoader.delegate = self;
+
+    [self.tableView registerClass:[NativeBannerTableViewCell class] forCellReuseIdentifier:kNativeBannerCellIdentifier];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kContentCellIdentifier];
+}
+
+- (IBAction)loadAd:(id)sender
+{
+    [self.adLoader loadAdWithRequest:nil];
+}
+
+- (void)didLoadAd:(id<YMANativeGenericAd>)ad
+{
+    ad.delegate = self;
+    [self.ads addObject:ad];
+    NSInteger adIndex = (self.ads.count - 1) * kAdStride;
+    NSMutableArray *indexPaths = [NSMutableArray array];
+    for (int i = 0; i < kAdStride; ++i) {
+        [indexPaths addObject:[NSIndexPath indexPathForItem:adIndex + i inSection:0]];
+    }
+    [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
+}
+
+#pragma mark - YMANativeAdLoaderDelegate
+
+- (void)nativeAdLoader:(YMANativeAdLoader *)loader didLoadAppInstallAd:(id<YMANativeAppInstallAd>)ad
+{
+    [self didLoadAd:ad];
+}
+
+- (void)nativeAdLoader:(YMANativeAdLoader *)loader didLoadContentAd:(id<YMANativeContentAd>)ad
+{
+    [self didLoadAd:ad];
+}
+
+- (void)nativeAdLoader:(null_unspecified YMANativeAdLoader *)loader didFailLoadingWithError:(NSError * __nonnull)error
+{
+    NSLog(@"Native ad loading error: %@", error);
+}
+
+#pragma mark - UITableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row % kAdStride == 0) {
+        id<YMANativeGenericAd> ad = self.ads[indexPath.row / kAdStride];
+        CGFloat nativeContentHeight =
+            [YMANativeBannerView heightWithAd:ad
+                                        width:CGRectGetWidth(tableView.frame) - kNativeBannerInsets
+                                   appearance:nil];
+        return nativeContentHeight + kNativeBannerInsets;
+    }
+    return 45.f;
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.ads.count * kAdStride;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = nil;
+    if (indexPath.row % kAdStride == 0) {
+        id<YMANativeGenericAd> ad = self.ads[indexPath.row / kAdStride];
+        NativeBannerTableViewCell *adCell =
+            [tableView dequeueReusableCellWithIdentifier:kNativeBannerCellIdentifier forIndexPath:indexPath];
+        adCell.ad = ad;
+        return adCell;
+    }
+    else {
+        cell = [tableView dequeueReusableCellWithIdentifier:kContentCellIdentifier forIndexPath:indexPath];
+        cell.textLabel.text = @"Content";
+    }
+
+    return cell;
+}
+
+#pragma  mark - YMANativeAdDelegate
+
+// Uncomment to open web links in in-app browser
+
+//- (UIViewController *)viewControllerForPresentingModalView
+//{
+//    return self;
+//}
+
+- (void)nativeAdWillLeaveApplication:(null_unspecified id)ad
+{
+    NSLog(@"Will leave application");
+}
+
+- (void)nativeAd:(null_unspecified id)ad willPresentScreen:(UIViewController *)viewController
+{
+    NSLog(@"Will present screen");
+}
+
+- (void)nativeAd:(null_unspecified id)ad didDismissScreen:(UIViewController *)viewController
+{
+    NSLog(@"Did dismiss screen");
+}
+
+@end

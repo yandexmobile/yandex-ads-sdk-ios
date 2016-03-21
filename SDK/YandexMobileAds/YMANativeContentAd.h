@@ -10,21 +10,21 @@
  */
 
 #import <Foundation/Foundation.h>
+#import <YandexMobileAds/YMANativeGenericAd.h>
 
 @class YMANativeContentAdView;
 @protocol YMANativeAdDelegate;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol YMANativeContentAd <NSObject>
-
-@property (nonatomic, weak, readonly) id<YMANativeAdDelegate> delegate;
+@protocol YMANativeContentAd <YMANativeGenericAd>
 
 /**
  * Sets values of all content ad assets to native content ad view, installs impression and click handlers.
  *
  * @param view Root ad view, superview for all asset views.
  * @param delegate Ad delegate, which provides view controller for presenting modal content and handles ad events.
+ * Passed delegate overwrites ad @p delegate property value. 
  * @param error Binding error. @see YMANativeAdErrors.h for error codes.
  *
  * @return YES if binding succeeded, otherwise NO.
