@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 2.1.2
+
+#### Updated
+* Updated compatible AppMetrica version to 2.4.1
+
+#### Fixed
+* Fixed links opening on OS versions lower than iOS 9
+
 ## Version 2.1.1
 
 #### Added

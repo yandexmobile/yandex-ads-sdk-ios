@@ -24,7 +24,7 @@
 {
     [super viewDidLoad];
     
-    // Replace XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX with Ad Unit ID generated at https://app.mopub.com".
+    // Replace XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX with Ad Unit ID generated at https://app.mopub.com.
     self.adView = [[MPAdView alloc] initWithAdUnitId:@"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" size:MOPUB_BANNER_SIZE];
     self.adView.delegate = self;
     self.adView.translatesAutoresizingMaskIntoConstraints = NO;

@@ -24,8 +24,11 @@
 {
     [super viewDidLoad];
 
-    // Replace R-M-XXXXXX-Y with actual Block ID
-    self.adLoader = [[YMANativeAdLoader alloc] initWithBlockID:@"R-M-XXXXXX-Y"];
+    // Replace demo R-M-DEMO-native-c with actual Block ID
+    // Following demo Block IDs may be used for testing:
+    // R-M-DEMO-native-c
+    // R-M-DEMO-native-i
+    self.adLoader = [[YMANativeAdLoader alloc] initWithBlockID:@"R-M-DEMO-native-c"];
     self.adLoader.delegate = self;
     [self.adLoader loadAdWithRequest:nil];
 }

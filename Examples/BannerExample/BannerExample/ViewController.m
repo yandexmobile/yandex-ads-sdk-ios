@@ -26,9 +26,12 @@
     [super viewDidLoad];
 
     // Replace demo R-M-DEMO-320x50 with actual Block ID
-    // Following demo Block IDs may be used for testing
+    // Following demo Block IDs may be used for testing:
+    // R-M-DEMO-320x50
+    // R-M-DEMO-320x50-app_install
     // R-M-DEMO-728x90
     // R-M-DEMO-320x100-context
+    // R-M-DEMO-300x250
     // R-M-DEMO-300x250-context
     // R-M-DEMO-300x300-context
     YMAAdSize *adSize = [YMAAdSize flexibleSizeWithContainerWidth:CGRectGetWidth(self.view.frame)];

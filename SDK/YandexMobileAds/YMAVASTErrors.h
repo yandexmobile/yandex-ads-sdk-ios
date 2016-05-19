@@ -11,10 +11,15 @@
 
 #import <Foundation/Foundation.h>
 
+/* Yandex Mobile Video Ads error domain. */
 extern NSString *const kYMAVASTErrorDomain;
 
+/* Yandex Mobile Video Ads error code. */
 typedef NS_ENUM(NSUInteger, YMAVASTErrorCode) {
+    /* Returned for empty VAST response. */
     YMAVASTErrorCodeNoAdsInVASTResponse,
+    /* Returned for invalid XML in VAST response. */
     YMAVASTErrorCodeInvalidXMLResponse,
+    /* Returned for invalid VAST request. */
     YMAVASTErrorCodeCannotBuildRequest
 };

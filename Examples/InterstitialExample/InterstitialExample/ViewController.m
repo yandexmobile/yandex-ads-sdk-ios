@@ -24,8 +24,13 @@
 {
     [super viewDidLoad];
 
-    // Replace R-M-XXXXXX-Y with actual Block ID
-    self.interstitialController = [[YMAInterstitialController alloc] initWithBlockID:@"R-M-XXXXXX-Y"];
+    // Replace demo R-M-DEMO-240x400-context with actual Block ID
+    // Following demo Block IDs may be used for testing:
+    // R-M-DEMO-240x400-context
+    // R-M-DEMO-400x240-context
+    // R-M-DEMO-320x480
+    // R-M-DEMO-480x320
+    self.interstitialController = [[YMAInterstitialController alloc] initWithBlockID:@"R-M-DEMO-240x400-context"];
     self.interstitialController.delegate = self;
 }
 
