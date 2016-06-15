@@ -34,11 +34,16 @@ static NSString *const kNativeBannerCellIdentifier = @"NativeBannerCellIdentifie
 
     self.ads = [NSMutableArray array];
 
-    // Replace demo R-M-DEMO-native-c with actual Block ID
+    // Replace demo R-M-DEMO-native-c with actual Block ID.
+    // Please, note, that configured image sizes don't affect demo ads.
     // Following demo Block IDs may be used for testing:
     // R-M-DEMO-native-c
     // R-M-DEMO-native-i
-    self.adLoader = [[YMANativeAdLoader alloc] initWithBlockID:@"R-M-DEMO-native-c"];
+    YMANativeAdLoaderConfiguration *configuration =
+        [[YMANativeAdLoaderConfiguration alloc] initWithBlockID:@"R-M-DEMO-native-c"
+                                                     imageSizes:@[ kYMANativeImageSizeLarge ]
+                                        loadImagesAutomatically:NO];
+    self.adLoader = [[YMANativeAdLoader alloc] initWithConfiguration:configuration];
     self.adLoader.delegate = self;
 
     [self.tableView registerClass:[NativeBannerTableViewCell class] forCellReuseIdentifier:kNativeBannerCellIdentifier];
@@ -109,6 +114,7 @@ static NSString *const kNativeBannerCellIdentifier = @"NativeBannerCellIdentifie
         NativeBannerTableViewCell *adCell =
             [tableView dequeueReusableCellWithIdentifier:kNativeBannerCellIdentifier forIndexPath:indexPath];
         adCell.ad = ad;
+        [ad loadImages];
         return adCell;
     }
     else {

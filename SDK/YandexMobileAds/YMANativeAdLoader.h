@@ -11,10 +11,11 @@
 
 #import <Foundation/Foundation.h>
 
-@class YMAAdRequest;
 @protocol YMANativeContentAd;
 @protocol YMANativeAppInstallAd;
 @protocol YMANativeAdLoaderDelegate;
+@class YMANativeAdLoaderConfiguration;
+@class YMAAdRequest;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -26,25 +27,39 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Unique ad placement ID created at partner interface.
  * Identifies ad placement for specific application.
- * Example: R-128282-4
+ * Format: R-M-XXXXXX-Y
  */
-@property (nonatomic, copy, readonly) NSString *blockID;
+@property (nonatomic, strong, readonly) NSString *blockID;
+
+/**
+ * Loader configuration.
+ */
+@property (nonatomic, strong, readonly) YMANativeAdLoaderConfiguration *configuration;
 
 /**
  * Delegates of YMANativeAdLoader receive ads or errors if loading fails.
  */
 @property (nonatomic, weak, nullable) id<YMANativeAdLoaderDelegate> delegate;
 
-- (instancetype)init __attribute__((unavailable("Use designated initializer")));
+- (instancetype)init __attribute__((unavailable("Use initWithConfiguration: instead")));
 
 /**
- * Returns native ad loader, whci can load ads for specific block ID.
+ * Returns native ad loader with specific block ID.
  *
  * @param blockID Unique ad placement ID created at partner interface (partner.yandex.ru).
  *
  * @return Native ad loader initialized with corresponding block ID.
  */
-- (instancetype)initWithBlockID:(NSString *)blockID;
+- (instancetype)initWithBlockID:(NSString *)blockID __attribute__((deprecated("Use initWithConfiguration: instead")));
+
+/**
+ * Returns native ad loader with specific configuration.
+ *
+ * @param configuration Loader configuration.
+ *
+ * @return Native ad loader initialized with corresponding configuration.
+ */
+- (instancetype)initWithConfiguration:(YMANativeAdLoaderConfiguration *)configuration;
 
 /**
  * Loads ad.

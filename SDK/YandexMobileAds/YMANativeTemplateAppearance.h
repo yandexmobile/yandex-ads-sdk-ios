@@ -29,6 +29,11 @@ typedef struct YMAHorizontalOffset {
 @interface YMANativeTemplateAppearance : NSObject <NSCopying, NSMutableCopying>
 
 /**
+ * Banner border width.
+ */
+@property (nonatomic, assign, readonly) CGFloat borderWidth;
+
+/**
  * Banner border color.
  */
 @property (nonatomic, strong, readonly) UIColor *borderColor;
@@ -46,6 +51,9 @@ typedef struct YMAHorizontalOffset {
 /**
  * Horizontal image margins: left margin determines image offset from left content padding, 
  * right margin determines offset between image and text block.
+ *
+ * @warning Image margins are ignored for big images which are located below text block
+ * and stretched to match banner width.
  */
 @property (nonatomic, assign, readonly) YMAHorizontalOffset imageMargins;
 
@@ -76,6 +84,9 @@ typedef struct YMAHorizontalOffset {
 
 /**
  * Image appearance.
+ *
+ * @warning Image appearance is ignored for big images which are located below text block 
+ * and stretched to match banner width.
  */
 @property (nonatomic, copy, readonly, nullable) YMAImageAppearance *imageAppearance;
 
@@ -93,6 +104,11 @@ typedef struct YMAHorizontalOffset {
  * Title label appearance.
  */
 @property (nonatomic, copy, readonly, nullable) YMALabelAppearance *titleAppearance;
+
+/**
+ * Review count label appearance.
+ */
+@property (nonatomic, copy, readonly, nullable) YMALabelAppearance *reviewCountAppearance;
 
 /**
  * Warning label appearance.
@@ -114,6 +130,11 @@ typedef struct YMAHorizontalOffset {
  * to modify appearance.
  */
 @interface YMAMutableNativeTemplateAppearance : YMANativeTemplateAppearance
+
+/**
+ * Banner border width.
+ */
+@property (nonatomic, assign) CGFloat borderWidth;
 
 /**
  * Banner border color.
@@ -180,6 +201,11 @@ typedef struct YMAHorizontalOffset {
  * Title label appearance.
  */
 @property (nonatomic, copy, nullable) YMALabelAppearance *titleAppearance;
+
+/**
+ * Votes number label appearance.
+ */
+@property (nonatomic, copy, nullable) YMALabelAppearance *reviewCountAppearance;
 
 /**
  * Warning label appearance.

@@ -49,9 +49,19 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) IBOutlet UIButton *callToActionButton;
 
 /**
+ * Label for advertiser domain.
+ */
+@property (nonatomic, weak, nullable) IBOutlet UILabel *domainLabel;
+
+/**
  * ImageView for app icon.
  */
 @property (nonatomic, weak) IBOutlet UIImageView *iconImageView;
+
+/**
+ * ImageView for app large image.
+ */
+@property (nonatomic, weak, nullable) IBOutlet UIImageView *imageView;
 
 /**
  * Label for app price.
@@ -72,6 +82,11 @@ NS_ASSUME_NONNULL_BEGIN
  * Label for ad title.
  */
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
+
+/**
+ * Label for number of app reviews.
+ */
+@property (nonatomic, weak, nullable) IBOutlet UILabel *reviewCountLabel;
 
 /**
  * Label for ad warning.

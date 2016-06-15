@@ -1,6 +1,19 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 2.2.0
+
+#### Added
+* Added ability to load native ad images manually
+* Added loaded image sizes configuration for native ads
+* Added ability to get native ad asset values
+
+#### Updated
+* Updated maximum compatible AppMetrica version to 2.5.0
+
+#### Fixed
+* Fixed imports in YMANativeAdDelegate
+
 ## Version 2.1.2
 
 #### Updated

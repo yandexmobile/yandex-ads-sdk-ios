@@ -21,6 +21,6 @@
  * Configures view depending on assets bound.
  * Should be called after binding but before displaying native ad.
  */
-- (void)prepeareForDisplay;
+- (void)prepareForDisplay;
 
 @end

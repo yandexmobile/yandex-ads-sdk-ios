@@ -40,7 +40,10 @@
     // Following demo Block IDs may be used for testing:
     // R-M-DEMO-native-c
     // R-M-DEMO-native-i
-    self.adLoader = [[YMANativeAdLoader alloc] initWithBlockID:@"R-M-DEMO-native-c"];
+    YMANativeAdLoaderConfiguration *configuration =
+        [[YMANativeAdLoaderConfiguration alloc] initWithBlockID:@"R-M-DEMO-native-c"
+                                        loadImagesAutomatically:YES];
+    self.adLoader = [[YMANativeAdLoader alloc] initWithConfiguration:configuration];
     self.adLoader.delegate = self;
     [self.adLoader loadAdWithRequest:nil];
 }
@@ -77,7 +80,7 @@
     [ad bindAppInstallAdToView:self.appInstallAdView delegate:self error:&error];
     NSLog(@"Binding finished with error: %@", error);
 
-    [self.appInstallAdView prepeareForDisplay];
+    [self.appInstallAdView prepareForDisplay];
 
     [self.view addSubview:self.appInstallAdView];
     [self addConstraintsToAdView:self.appInstallAdView];

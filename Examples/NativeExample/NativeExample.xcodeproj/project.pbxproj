@@ -17,6 +17,7 @@
 		F6805F511B8E096C00BD2111 /* NativeAppInstallAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6805F4C1B8E096C00BD2111 /* NativeAppInstallAdView.m */; };
 		F6805F521B8E096C00BD2111 /* NativeContentAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6805F4E1B8E096C00BD2111 /* NativeContentAdView.m */; };
 		F6805F531B8E096C00BD2111 /* StarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6805F501B8E096C00BD2111 /* StarRatingView.m */; };
+		F6B369D11CFB47A7005840F6 /* NativeAssetsComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = F6B369D01CFB47A7005840F6 /* NativeAssetsComposer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		F6805F4E1B8E096C00BD2111 /* NativeContentAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeContentAdView.m; sourceTree = "<group>"; };
 		F6805F4F1B8E096C00BD2111 /* StarRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarRatingView.h; sourceTree = "<group>"; };
 		F6805F501B8E096C00BD2111 /* StarRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarRatingView.m; sourceTree = "<group>"; };
+		F6B369CF1CFB47A7005840F6 /* NativeAssetsComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeAssetsComposer.h; sourceTree = "<group>"; };
+		F6B369D01CFB47A7005840F6 /* NativeAssetsComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeAssetsComposer.m; sourceTree = "<group>"; };
 		FC41E74DFB7706C58C3CD03E /* Pods-NativeExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-NativeExample/Pods-NativeExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,6 +102,8 @@
 				F6805F4C1B8E096C00BD2111 /* NativeAppInstallAdView.m */,
 				F6805F4D1B8E096C00BD2111 /* NativeContentAdView.h */,
 				F6805F4E1B8E096C00BD2111 /* NativeContentAdView.m */,
+				F6B369CF1CFB47A7005840F6 /* NativeAssetsComposer.h */,
+				F6B369D01CFB47A7005840F6 /* NativeAssetsComposer.m */,
 				F6805F4F1B8E096C00BD2111 /* StarRatingView.h */,
 				F6805F501B8E096C00BD2111 /* StarRatingView.m */,
 				F6805F2F1B8E078000BD2111 /* Main.storyboard */,
@@ -131,6 +136,7 @@
 				F6805F201B8E078000BD2111 /* Resources */,
 				958AAC85FF07D197626AD574 /* 📦 Embed Pods Frameworks */,
 				56B22372D819C3FD35629646 /* 📦 Copy Pods Resources */,
+				DE9258F00319E52A13636E58 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -232,6 +238,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		DE9258F00319E52A13636E58 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NativeExample/Pods-NativeExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -239,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6B369D11CFB47A7005840F6 /* NativeAssetsComposer.m in Sources */,
 				F6805F521B8E096C00BD2111 /* NativeContentAdView.m in Sources */,
 				F6805F2E1B8E078000BD2111 /* ViewController.m in Sources */,
 				F6805F2B1B8E078000BD2111 /* AppDelegate.m in Sources */,

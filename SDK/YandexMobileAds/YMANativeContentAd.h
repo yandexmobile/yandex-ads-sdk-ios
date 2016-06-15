@@ -17,6 +17,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ * YMANativeContentAd allows to bind content ad to view. 
+ * @see YMANativeGenericAd.h for generic ad methods.
+ */
 @protocol YMANativeContentAd <YMANativeGenericAd>
 
 /**

@@ -17,6 +17,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ * YMANativeAppInstallAd allows to bind app install ad to view.
+ * @see YMANativeGenericAd.h for generic ad methods.
+ */
 @protocol YMANativeAppInstallAd <YMANativeGenericAd>
 
 /**

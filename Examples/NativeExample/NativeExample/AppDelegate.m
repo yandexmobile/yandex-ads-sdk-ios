@@ -17,7 +17,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-
     // This is sample API key. Application API key can be requested at https://appmetrica.yandex.com".
     [YMMYandexMetrica activateWithApiKey:@"43614695-4bad-431c-9e14-fa588179b756"];
 

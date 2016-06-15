@@ -42,17 +42,26 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)init __attribute__((unavailable("Use designated initializer")));
 
 /**
- * Returns ad request containg user location, query input and context tags.
+ * Returns ad request containing user location, query input and context tags.
  * @param location User location.
  * @param contextQuery Query input from user.
  * @param contextTags Array of tag strings describing current user context.
  *
- * @return Ad request containg user location, query input and context tags.
+ * @return Ad request containing user location, query input and context tags.
  */
 - (instancetype)initWithLocation:(nullable CLLocation *)location
                     contextQuery:(nullable NSString *)contextQuery
                      contextTags:(nullable NSArray *)contextTags;
 
+/**
+ * Returns ad request containing user location, query input, context tags and additional parameters.
+ * @param location User location.
+ * @param contextQuery Query input from user.
+ * @param contextTags Array of tag strings describing current user context.
+ * @param parameters Additional parameters.
+ *
+ * @return Ad request containing user location, query input, context tags and additional parameters.
+ */
 - (instancetype)initWithLocation:(nullable CLLocation *)location
                     contextQuery:(nullable NSString *)contextQuery
                      contextTags:(nullable NSArray *)contextTags

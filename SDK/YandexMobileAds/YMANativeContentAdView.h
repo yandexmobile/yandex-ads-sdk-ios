@@ -42,6 +42,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) IBOutlet UILabel *bodyLabel;
 
 /**
+ * Button for call to action.
+ */
+@property (nonatomic, weak, nullable) IBOutlet UIButton *callToActionButton;
+
+/**
  * Label for advertiser domain.
  */
 @property (nonatomic, weak, nullable) IBOutlet UILabel *domainLabel;

@@ -84,6 +84,7 @@ static CGFloat const kStarRatingMargin = 2.f;
     UIImage *croppedImage = [UIImage imageWithCGImage:subImage
                                                 scale:self.starImage.scale
                                           orientation:self.starImage.imageOrientation];
+    CGImageRelease(subImage);
     return croppedImage;
 }
 

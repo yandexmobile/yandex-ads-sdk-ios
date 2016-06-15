@@ -10,6 +10,7 @@
  */
 
 #import <UIKit/UIKit.h>
+#import <YandexMobileAds/YMANativeImageLoadingObserver.h>
 
 @protocol YMANativeGenericAd;
 @class YMANativeTemplateAppearance;
@@ -18,11 +19,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * YMANativeBannerView provides template for displaying native ads.
- * Banner appearance such as asset offsets, fonts, colors, sizes, e.g. 
+ * Banner appearance such as asset offsets, fonts, colors, sizes, etc.
  * may be confugured with @p applyAppearance: method.
  * YMANativeBannerView is optimized to be displayed in @p UITableView.
  */
-@interface YMANativeBannerView : UIView
+@interface YMANativeBannerView : UIView <YMANativeAdImageLoadingObserver>
 
 /**
  * Native ad.
