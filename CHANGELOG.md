@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 2.2.1
+
+#### Fixed
+* Fixed misaligned views in native templates
+
 ## Version 2.2.0
 
 #### Added
