@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		19E3BE0A88C610D85A86D617 /* libPods-NativeTemplatesTableViewExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF4B7A09E2C617069288F289 /* libPods-NativeTemplatesTableViewExample.a */; };
+		C99DF281D0F5B5F963684F10 /* libPods-NativeTemplatesTableViewExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6447FA1859FA12E8AB416428 /* libPods-NativeTemplatesTableViewExample.a */; };
 		F61FE0F81C9DA278001BF8DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F61FE0F71C9DA278001BF8DE /* main.m */; };
 		F61FE0FB1C9DA278001BF8DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F61FE0FA1C9DA278001BF8DE /* AppDelegate.m */; };
 		F61FE0FE1C9DA278001BF8DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F61FE0FD1C9DA278001BF8DE /* ViewController.m */; };
@@ -18,8 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0D4F0E8EC53D639A3EF66EDB /* Pods-NativeTemplatesTableViewExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeTemplatesTableViewExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NativeTemplatesTableViewExample/Pods-NativeTemplatesTableViewExample.debug.xcconfig"; sourceTree = "<group>"; };
-		8FB3577AAB3CF2BD975C2341 /* Pods-NativeTemplatesTableViewExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeTemplatesTableViewExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-NativeTemplatesTableViewExample/Pods-NativeTemplatesTableViewExample.release.xcconfig"; sourceTree = "<group>"; };
+		4EBF424176D46D4233BE0FA9 /* Pods-NativeTemplatesTableViewExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeTemplatesTableViewExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NativeTemplatesTableViewExample/Pods-NativeTemplatesTableViewExample.debug.xcconfig"; sourceTree = "<group>"; };
+		6447FA1859FA12E8AB416428 /* libPods-NativeTemplatesTableViewExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NativeTemplatesTableViewExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6EE28F6B124D17790164217 /* Pods-NativeTemplatesTableViewExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeTemplatesTableViewExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-NativeTemplatesTableViewExample/Pods-NativeTemplatesTableViewExample.release.xcconfig"; sourceTree = "<group>"; };
 		F61FE0F31C9DA278001BF8DE /* NativeTemplatesTableViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NativeTemplatesTableViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F61FE0F71C9DA278001BF8DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F61FE0F91C9DA278001BF8DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -32,7 +33,6 @@
 		F61FE10D1C9DA2A0001BF8DE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F61FE10F1C9DA702001BF8DE /* NativeBannerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeBannerTableViewCell.h; sourceTree = "<group>"; };
 		F61FE1101C9DA702001BF8DE /* NativeBannerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeBannerTableViewCell.m; sourceTree = "<group>"; };
-		FF4B7A09E2C617069288F289 /* libPods-NativeTemplatesTableViewExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NativeTemplatesTableViewExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,28 +40,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19E3BE0A88C610D85A86D617 /* libPods-NativeTemplatesTableViewExample.a in Frameworks */,
+				C99DF281D0F5B5F963684F10 /* libPods-NativeTemplatesTableViewExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		51E6625B8772AE8B177DB7FC /* Pods */ = {
+		6069E08DFCA2AB75D3F4374C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0D4F0E8EC53D639A3EF66EDB /* Pods-NativeTemplatesTableViewExample.debug.xcconfig */,
-				8FB3577AAB3CF2BD975C2341 /* Pods-NativeTemplatesTableViewExample.release.xcconfig */,
+				4EBF424176D46D4233BE0FA9 /* Pods-NativeTemplatesTableViewExample.debug.xcconfig */,
+				A6EE28F6B124D17790164217 /* Pods-NativeTemplatesTableViewExample.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		AE1A3D8728B232E27EDC4BE3 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FF4B7A09E2C617069288F289 /* libPods-NativeTemplatesTableViewExample.a */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F61FE0EA1C9DA278001BF8DE = {
@@ -69,8 +61,8 @@
 			children = (
 				F61FE0F51C9DA278001BF8DE /* NativeTemplatesTableViewExample */,
 				F61FE0F41C9DA278001BF8DE /* Products */,
-				51E6625B8772AE8B177DB7FC /* Pods */,
-				AE1A3D8728B232E27EDC4BE3 /* Frameworks */,
+				6069E08DFCA2AB75D3F4374C /* Pods */,
+				F8ABD6FD59B8B671A65DB559 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +100,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F8ABD6FD59B8B671A65DB559 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6447FA1859FA12E8AB416428 /* libPods-NativeTemplatesTableViewExample.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,13 +115,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F61FE10A1C9DA278001BF8DE /* Build configuration list for PBXNativeTarget "NativeTemplatesTableViewExample" */;
 			buildPhases = (
-				8A63B8E086D5D1166A5A8619 /* 📦 Check Pods Manifest.lock */,
+				C5665BF9A0906BFD48FCCE96 /* [CP] Check Pods Manifest.lock */,
 				F61FE0EF1C9DA278001BF8DE /* Sources */,
 				F61FE0F01C9DA278001BF8DE /* Frameworks */,
 				F61FE0F11C9DA278001BF8DE /* Resources */,
-				0FFBDC9B56920E26682CB6B3 /* 📦 Embed Pods Frameworks */,
-				C453536E60C4E15F466A056D /* 📦 Copy Pods Resources */,
-				FAF6B64B84AEDEE698335137 /* Embed Pods Frameworks */,
+				0BB4DBB165B7E8E1F35B3801 /* [CP] Embed Pods Frameworks */,
+				017892C5EFFB0BD9823F0541 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -178,44 +177,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0FFBDC9B56920E26682CB6B3 /* 📦 Embed Pods Frameworks */ = {
+		017892C5EFFB0BD9823F0541 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NativeTemplatesTableViewExample/Pods-NativeTemplatesTableViewExample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8A63B8E086D5D1166A5A8619 /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		C453536E60C4E15F466A056D /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,19 +192,34 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NativeTemplatesTableViewExample/Pods-NativeTemplatesTableViewExample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FAF6B64B84AEDEE698335137 /* Embed Pods Frameworks */ = {
+		0BB4DBB165B7E8E1F35B3801 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NativeTemplatesTableViewExample/Pods-NativeTemplatesTableViewExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5665BF9A0906BFD48FCCE96 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -358,7 +342,7 @@
 		};
 		F61FE10B1C9DA278001BF8DE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0D4F0E8EC53D639A3EF66EDB /* Pods-NativeTemplatesTableViewExample.debug.xcconfig */;
+			baseConfigurationReference = 4EBF424176D46D4233BE0FA9 /* Pods-NativeTemplatesTableViewExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NativeTemplatesTableViewExample/Info.plist;
@@ -371,7 +355,7 @@
 		};
 		F61FE10C1C9DA278001BF8DE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8FB3577AAB3CF2BD975C2341 /* Pods-NativeTemplatesTableViewExample.release.xcconfig */;
+			baseConfigurationReference = A6EE28F6B124D17790164217 /* Pods-NativeTemplatesTableViewExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NativeTemplatesTableViewExample/Info.plist;
