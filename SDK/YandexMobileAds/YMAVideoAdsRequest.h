@@ -11,6 +11,11 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString *const kYMAVideoAdsCharsetUTF8;
+extern NSString *const kYMAVideoAdsCharsetCP1251;
+extern NSString *const kYMAVideoAdsCharsetKOI8R;
+extern NSString *const kYMAVideoAdsCharsetKOI8U;
+
 @class YMABlocksInfo;
 
 /**
@@ -85,7 +90,17 @@
 /**
  * Genre id retrieved from advertising space.
  */
-@property (nonatomic, copy, readonly) NSString *genreID;
+@property (nonatomic, copy, readonly) NSString *genreID __attribute__((deprecated("genreIDs should be used instead")));
+
+/**
+ * Genre ids retrieved from advertising space.
+ */
+@property (nonatomic, copy, readonly) NSArray *genreIDs;
+
+/**
+ * Genre names retrieved from advertising space.
+ */
+@property (nonatomic, copy, readonly) NSArray *genreNames;
 
 /**
  * Array of tag strings.
@@ -96,6 +111,21 @@
  * Bitrate in Kbps.
  */
 @property (nonatomic, assign, readonly) NSInteger bitrate;
+
+/**
+ * Charset. One of the following predefined charsets should be used:
+ * - kYMAVideoAdsCharsetUTF8
+ * - kYMAVideoAdsCharsetCP1251
+ * - kYMAVideoAdsCharsetKOI8R
+ * - kYMAVideoAdsCharsetKOI8U
+ * Default is UTF-8 charset defined by kYMAVideoAdsChasetUTF8 constant.
+ */
+@property (nonatomic, copy, readonly) NSString *charset;
+
+/**
+ * Custom additional parameters.
+ */
+@property (nonatomic, copy, readonly) NSString *extendedParameters;
 
 @end
 
@@ -137,7 +167,17 @@
 /**
  * Genre id retrieved from advertising space.
  */
-@property (nonatomic, copy) NSString *genreID;
+@property (nonatomic, copy) NSString *genreID __attribute__((deprecated("genreIDs should be used instead")));
+
+/**
+ * Genre ids retrieved from advertising space.
+ */
+@property (nonatomic, copy) NSArray *genreIDs;
+
+/**
+ * Genre names retrieved from advertising space.
+ */
+@property (nonatomic, copy) NSArray *genreNames;
 
 /**
  * Array of tag strings.
@@ -148,5 +188,20 @@
  * Bitrate in Kbps.
  */
 @property (nonatomic, assign) NSInteger bitrate;
+
+/**
+ * Charset. One of the following predefined charsets should be used:
+ * - kYMAVideoAdsCharsetUTF8
+ * - kYMAVideoAdsCharsetCP1251
+ * - kYMAVideoAdsCharsetKOI8R
+ * - kYMAVideoAdsCharsetKOI8U
+ * Default is UTF-8 charset defined by kYMAVideoAdsCharsetUTF8 constant.
+ */
+@property (nonatomic, copy) NSString *charset;
+
+/**
+ * Custom additional parameters.
+ */
+@property (nonatomic, copy) NSString *extendedParameters;
 
 @end

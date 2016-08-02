@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 2.3.0
+
+#### Updated
+* Updated compatible AppMetrica versions range
+
+#### Added
+* Added minor improvements 
+
 ## Version 2.2.2
 
 #### Added

@@ -85,6 +85,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Notifies delegate when app install ad is loaded.
  *
  * @param loader Loader sending the message.
+ * @param ad Native ad of app install type, which is ready to be bound to view.
  */
 - (void)nativeAdLoader:(null_unspecified YMANativeAdLoader *)loader didLoadAppInstallAd:(id<YMANativeAppInstallAd>)ad;
 

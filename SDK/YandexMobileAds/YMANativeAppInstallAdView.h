@@ -74,19 +74,19 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak, nullable) IBOutlet UIView<YMARating> *ratingView;
 
 /**
+ * Label for number of app reviews.
+ */
+@property (nonatomic, weak, nullable) IBOutlet UILabel *reviewCountLabel;
+
+/**
  * Label for sponsored by.
  */
-@property (nonatomic, weak) IBOutlet UILabel *sponsoredLabel;
+@property (nonatomic, weak, nullable) IBOutlet UILabel *sponsoredLabel;
 
 /**
  * Label for ad title.
  */
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
-
-/**
- * Label for number of app reviews.
- */
-@property (nonatomic, weak, nullable) IBOutlet UILabel *reviewCountLabel;
 
 /**
  * Label for ad warning.

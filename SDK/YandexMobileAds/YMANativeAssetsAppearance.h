@@ -167,13 +167,13 @@ typedef NS_ENUM(NSInteger, YMASizeConstraintType) {
 /**
  * Returns star rating appearance configured with star colors and preferred size.
  *
- * @param emptyStartColor Color for empty star.
+ * @param emptyStarColor Color for empty star.
  * @param filledStarColor Color for filled star.
  * @param starSize Preferred star size.
  *
  * @return Star rating appearance.
  */
-+ (instancetype)appearanceWithEmptyStarColor:(UIColor *)emptyStartColor
++ (instancetype)appearanceWithEmptyStarColor:(UIColor *)emptyStarColor
                              filledStarColor:(UIColor *)filledStarColor
                                     starSize:(CGFloat)starSize;
 

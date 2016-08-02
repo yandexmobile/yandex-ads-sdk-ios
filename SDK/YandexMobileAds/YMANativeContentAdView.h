@@ -64,7 +64,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Label for sponsored by.
  */
-@property (nonatomic, weak) IBOutlet UILabel *sponsoredLabel;
+@property (nonatomic, weak, nullable) IBOutlet UILabel *sponsoredLabel;
 
 /**
  * Label for ad title.
