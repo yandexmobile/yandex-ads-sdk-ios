@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 2.4.0
+
+#### Updated
+* Added minor improvements and fixes
+
 ## Version 2.3.1
 
 #### Updated
