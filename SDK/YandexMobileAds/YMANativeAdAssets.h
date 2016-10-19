@@ -39,7 +39,7 @@
 @property (nonatomic, strong, readonly, nullable) YMANativeAdImage *icon;
 
 /**
- * Main ad image. Available in content and app install ads.
+ * Main ad image. Available in content, app install and image ads.
  */
 @property (nonatomic, strong, readonly, nullable) YMANativeAdImage *image;
 

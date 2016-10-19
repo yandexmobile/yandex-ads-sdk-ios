@@ -20,3 +20,8 @@ extern NSString *const kYMANativeAdTypeContent;
  * App install ad type.
  */
 extern NSString *const kYMANativeAdTypeAppInstall;
+
+/**
+ * Image ad type
+ */
+extern NSString *const kYMANativeAdTypeImage;

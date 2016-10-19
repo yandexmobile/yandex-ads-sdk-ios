@@ -72,6 +72,11 @@ typedef NS_ENUM(NSInteger, YMASizeConstraintType) {
 @property (nonatomic, copy, readonly) YMALabelAppearance *textAppearance;
 
 /**
+ * Button text color for highlighted state.
+ */
+@property (nonatomic, strong, readonly) UIColor *highlightedTextColor;
+
+/**
  * Button background color for normal state.
  */
 @property (nonatomic, strong, readonly) UIColor *normalColor;
@@ -108,6 +113,25 @@ typedef NS_ENUM(NSInteger, YMASizeConstraintType) {
                                  borderColor:(UIColor *)borderColor
                                  borderWidth:(CGFloat)borderWidth;
 
+/**
+ * Returns button appearance configured with title appearance, highlighted text color, border and background colors.
+ *
+ * @param textAppearance Title label appearance.
+ * @param highlightedTextColor Text color for highlighted state.
+ * @param normalColor Background color for normal state.
+ * @param highlightedColor Background color for highlighted state.
+ * @param borderColor Button border color.
+ * @param borderWidth Button border width.
+ *
+ * @return Button appearance.
+ */
++ (instancetype)appearanceWithTextAppearance:(YMALabelAppearance *)textAppearance
+                        highlightedTextColor:(UIColor *)highlightedTextColor
+                                 normalColor:(UIColor *)normalColor
+                            highlightedColor:(UIColor *)highlightedColor
+                                 borderColor:(UIColor *)borderColor
+                                 borderWidth:(CGFloat)borderWidth;
+
 @end
 
 /**
@@ -119,6 +143,11 @@ typedef NS_ENUM(NSInteger, YMASizeConstraintType) {
  * Text label appearance.
  */
 @property (nonatomic, copy) YMALabelAppearance *textAppearance;
+
+/**
+ * Button text color for highlighted state.
+ */
+@property (nonatomic, strong) UIColor *highlightedTextColor;
 
 /**
  * Button background color for normal state.

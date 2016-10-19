@@ -56,6 +56,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (YMANativeAdAssets *)adAssets;
 
 /**
+ * Arbitrary string related to ad
+ */
+@property (nonatomic, copy, readonly) NSString *info;
+
+/**
  * Asynchronously loads ad's images. Every loaded image is set to corresponding UIImageView.
  * Images are not persisted in memory. It means that they should be loaded each time ad is being bound.
  * Typically every bind call should be followed by @p loadImages call 

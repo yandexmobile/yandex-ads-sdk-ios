@@ -115,7 +115,6 @@ typedef struct YMAHorizontalOffset {
  */
 @property (nonatomic, copy, readonly, nullable) YMALabelAppearance *warningAppearance;
 
-
 /**
  * Provides appearance, configured with default values.
  *

@@ -13,6 +13,7 @@
 
 @protocol YMANativeContentAd;
 @protocol YMANativeAppInstallAd;
+@protocol YMANativeImageAd;
 @protocol YMANativeAdLoaderDelegate;
 @class YMANativeAdLoaderConfiguration;
 @class YMAAdRequest;
@@ -88,6 +89,18 @@ NS_ASSUME_NONNULL_BEGIN
  * @param ad Native ad of app install type, which is ready to be bound to view.
  */
 - (void)nativeAdLoader:(null_unspecified YMANativeAdLoader *)loader didLoadAppInstallAd:(id<YMANativeAppInstallAd>)ad;
+
+/**
+ * Notifies delegate when image ad is loaded.
+ *
+ * @param loader Loader sending the message.
+ * @param ad Native ad of image type, which is ready to be bound to view.
+ *
+ * @discussion Typically, applications do not receive image ads until this option is explicitly configured.
+ * Implementation of this method can be ignored if image ads are not configured in partner interface.
+ * Image ads should be handled to support media formats, e.g. AdFox native media ads.
+ */
+- (void)nativeAdLoader:(null_unspecified YMANativeAdLoader *)loader didLoadImageAd:(id<YMANativeImageAd>)ad;
 
 /**
  * Notifies delegate when loader fails to load ad.

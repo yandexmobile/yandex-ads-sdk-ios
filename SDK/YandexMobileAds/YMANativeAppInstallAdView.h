@@ -16,7 +16,7 @@
 
 /**
  * YMANativeAppInstallAdView represents view for app install ad type. 
- * It contains view for all of app install ad assets.
+ * It contains views for all of app install ad assets.
  * Views for all of the required assets should be set,
  * although ad may not contain age restrictions, icon, warning or call to action.
  * If any of the required views is not provided for ad which contains corresponding assets, binding fails.

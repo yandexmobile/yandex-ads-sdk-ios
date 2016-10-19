@@ -14,7 +14,7 @@
 @protocol YMANativeContentAd;
 
 /**
- * YMANativeContentAdView represents view for content ad type. It contains view for all of content ad assets.
+ * YMANativeContentAdView represents view for content ad type. It contains views for all of content ad assets.
  * Views for all of the required assets should be set,
  * although ad may not contain age restrictions, image or warning.
  * If any of the required views is not provided for ad which contains corresponding assets, binding fails.
