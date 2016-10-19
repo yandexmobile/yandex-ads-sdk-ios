@@ -34,8 +34,14 @@
 
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
     parameters[@"adf_ownerid"] = @"168627";
-    parameters[@"adf_p1"] = @"bvsbh";
+    parameters[@"adf_p1"] = @"bvyhx";
     parameters[@"adf_p2"] = @"fksh";
+    parameters[@"adf_pfc"] = @"a";
+    parameters[@"adf_pfb"] = @"a";
+    parameters[@"adf_plp"] = @"a";
+    parameters[@"adf_pli"] = @"a";
+    parameters[@"adf_pop"] = @"a";
+    parameters[@"adf_pt"] = @"b";
 
     YMAAdRequest *adRequest = [[YMAAdRequest alloc] initWithLocation:nil
                                                         contextQuery:nil
