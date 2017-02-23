@@ -41,6 +41,12 @@
 
 - (void)requestInterstitialWithCustomEventInfo:(NSDictionary *)info
 {
+    if ([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] == NSOrderedAscending) {
+        MPLogError(@"Minimum supported OS version of Yandex Mobile Ads is iOS 7.0");
+        [self.delegate interstitialCustomEvent:self didFailToLoadAdWithError:nil];
+        return;
+    }
+
     MPLogInfo(@"Requesting Yandex AppMetrica Ads Interstitial");
     
     NSString *blockID = [info objectForKey:@"blockID"];

@@ -1,5 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, :deployment_target => '6.0'
+platform :ios, :deployment_target => '7.0'
 
 target 'BannerExample' do
   pod 'YandexMobileMetrica' 

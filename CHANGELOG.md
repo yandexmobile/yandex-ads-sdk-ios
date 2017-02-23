@@ -1,6 +1,19 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 2.6.0
+
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/205984/YandexMobileAds-2.6.0-ios-1c419d7d-9152-4f99-b907-aa3176718964.zip)
+
+#### Added
+* Added dynamic framework
+* Added ability to disable automatic location tracking
+
+#### Updated
+* Dropped iOS 6 support
+* Updated distribution: replaced static library on GitHub with zip archive containing static and dynamic frameworks
+* Updated minimum compatible AppMetrica version to 2.7.0
+
 ## Version 2.5.0
 
 #### Added

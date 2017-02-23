@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D46D1F0114568629C452D95C /* libPods-AdFoxNativeExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56A18445E3F009F1959AF50C /* libPods-AdFoxNativeExample.a */; };
+		B8194EF09A69E52024E61E7D /* libPods-AdFoxNativeExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7889CD48540745E6439CCC9B /* libPods-AdFoxNativeExample.a */; };
 		F66F1AC61DB6685900931545 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F66F1AC51DB6685900931545 /* main.m */; };
 		F66F1AC91DB6685900931545 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F66F1AC81DB6685900931545 /* AppDelegate.m */; };
 		F66F1ACC1DB6685900931545 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F66F1ACB1DB6685900931545 /* ViewController.m */; };
@@ -17,9 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		56A18445E3F009F1959AF50C /* libPods-AdFoxNativeExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AdFoxNativeExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D163133530BFD82039A78F2E /* Pods-AdFoxNativeExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdFoxNativeExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdFoxNativeExample/Pods-AdFoxNativeExample.debug.xcconfig"; sourceTree = "<group>"; };
-		F28965AEF6ECE163C84162F5 /* Pods-AdFoxNativeExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdFoxNativeExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdFoxNativeExample/Pods-AdFoxNativeExample.release.xcconfig"; sourceTree = "<group>"; };
+		7889CD48540745E6439CCC9B /* libPods-AdFoxNativeExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AdFoxNativeExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7963ADC7505766C8D89D8BC2 /* Pods-AdFoxNativeExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdFoxNativeExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdFoxNativeExample/Pods-AdFoxNativeExample.debug.xcconfig"; sourceTree = "<group>"; };
+		DC6D7C8B5C1DAE92A2A18930 /* Pods-AdFoxNativeExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdFoxNativeExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdFoxNativeExample/Pods-AdFoxNativeExample.release.xcconfig"; sourceTree = "<group>"; };
 		F66F1AC11DB6685900931545 /* AdFoxNativeExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdFoxNativeExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F66F1AC51DB6685900931545 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F66F1AC71DB6685900931545 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -37,28 +37,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D46D1F0114568629C452D95C /* libPods-AdFoxNativeExample.a in Frameworks */,
+				B8194EF09A69E52024E61E7D /* libPods-AdFoxNativeExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		18DCDD306BA3F253B58FF61F /* Pods */ = {
+		609C7F91C980A2F56284674B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D163133530BFD82039A78F2E /* Pods-AdFoxNativeExample.debug.xcconfig */,
-				F28965AEF6ECE163C84162F5 /* Pods-AdFoxNativeExample.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		E27ED28D5CCF27DCCD8AE5EE /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				56A18445E3F009F1959AF50C /* libPods-AdFoxNativeExample.a */,
+				7889CD48540745E6439CCC9B /* libPods-AdFoxNativeExample.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F322C389B37684086D1B9962 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7963ADC7505766C8D89D8BC2 /* Pods-AdFoxNativeExample.debug.xcconfig */,
+				DC6D7C8B5C1DAE92A2A18930 /* Pods-AdFoxNativeExample.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		F66F1AB81DB6685900931545 = {
@@ -66,8 +66,8 @@
 			children = (
 				F66F1AC31DB6685900931545 /* AdFoxNativeExample */,
 				F66F1AC21DB6685900931545 /* Products */,
-				18DCDD306BA3F253B58FF61F /* Pods */,
-				E27ED28D5CCF27DCCD8AE5EE /* Frameworks */,
+				F322C389B37684086D1B9962 /* Pods */,
+				609C7F91C980A2F56284674B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,12 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F66F1AD81DB6685900931545 /* Build configuration list for PBXNativeTarget "AdFoxNativeExample" */;
 			buildPhases = (
-				DE98CD340E4E811C0FB1D6E2 /* [CP] Check Pods Manifest.lock */,
+				601101718B4217BEAA34E155 /* [CP] Check Pods Manifest.lock */,
 				F66F1ABD1DB6685900931545 /* Sources */,
 				F66F1ABE1DB6685900931545 /* Frameworks */,
 				F66F1ABF1DB6685900931545 /* Resources */,
-				A9EA9D224CA4B305FB6AF88C /* [CP] Embed Pods Frameworks */,
-				38FE33CACB59FF5CCE6698DA /* [CP] Copy Pods Resources */,
+				7E71E0324119623A1A2F101E /* [CP] Embed Pods Frameworks */,
+				312D80FF7DBA18F50FD560A4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -172,7 +172,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		38FE33CACB59FF5CCE6698DA /* [CP] Copy Pods Resources */ = {
+		312D80FF7DBA18F50FD560A4 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -187,22 +187,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdFoxNativeExample/Pods-AdFoxNativeExample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A9EA9D224CA4B305FB6AF88C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdFoxNativeExample/Pods-AdFoxNativeExample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DE98CD340E4E811C0FB1D6E2 /* [CP] Check Pods Manifest.lock */ = {
+		601101718B4217BEAA34E155 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -215,6 +200,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7E71E0324119623A1A2F101E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdFoxNativeExample/Pods-AdFoxNativeExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -338,7 +338,7 @@
 		};
 		F66F1AD91DB6685900931545 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D163133530BFD82039A78F2E /* Pods-AdFoxNativeExample.debug.xcconfig */;
+			baseConfigurationReference = 7963ADC7505766C8D89D8BC2 /* Pods-AdFoxNativeExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AdFoxNativeExample/Info.plist;
@@ -350,7 +350,7 @@
 		};
 		F66F1ADA1DB6685900931545 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F28965AEF6ECE163C84162F5 /* Pods-AdFoxNativeExample.release.xcconfig */;
+			baseConfigurationReference = DC6D7C8B5C1DAE92A2A18930 /* Pods-AdFoxNativeExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AdFoxNativeExample/Info.plist;

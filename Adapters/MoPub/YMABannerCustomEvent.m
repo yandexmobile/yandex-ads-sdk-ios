@@ -50,6 +50,12 @@
 
 - (void)requestAdWithSize:(CGSize)size customEventInfo:(NSDictionary *)info
 {
+    if ([[[UIDevice currentDevice] systemVersion] compare:@"7.0" options:NSNumericSearch] == NSOrderedAscending) {
+        MPLogError(@"Minimum supported OS version of Yandex Mobile Ads is iOS 7.0");
+        [self.delegate bannerCustomEvent:self didFailToLoadAdWithError:nil];
+        return;
+    }
+
     MPLogInfo(@"Requesting Yandex AppMetrica Ads banner");
 
     NSString *blockID = info[@"blockID"];
