@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 2.6.1
+
+#### Fixed
+* Fixed incorrect behavior of media HTML banners and interstitials on iOS 10.3
+
 ## Version 2.6.0
 
 SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/205984/YandexMobileAds-2.6.0-ios-1c419d7d-9152-4f99-b907-aa3176718964.zip)
