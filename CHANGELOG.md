@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 2.7.1
+
+#### Added
+
+* Added HTML banners and interstitials mediation 
+
 ## Version 2.7.0
 
 SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/224062/YandexMobileAds-2.7.0-ios-9802b1ba-ef4b-4a5b-8ea3-ab5557810aa0.zip)
@@ -13,8 +19,6 @@ SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/22
 * Fixed crash after attempt to display `YMAAdView` in nil `UIView`
 
 ## Version 2.6.1
-
-SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/205984/YandexMobileAds-2.6.1-ios-5289620b-82e6-4306-aa52-cc43ea1ba6e3.zip)
 
 #### Fixed
 * Fixed incorrect behavior of media HTML banners and interstitials on iOS 10.3
