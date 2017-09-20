@@ -25,7 +25,7 @@
     [super viewDidLoad];
 
     // Replace demo R-M-206876-12 with actual Block ID.
-    self.interstitialController = [[YMAInterstitialController alloc] initWithBlockID:@"R-M-206876-12"];
+    self.interstitialController = [[YMAInterstitialController alloc] initWithBlockID:@"R-M-243655-1"];
     self.interstitialController.delegate = self;
 }
 
@@ -34,8 +34,9 @@
     // Replace demo parameters with actual parameters.
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
     parameters[@"adf_ownerid"] = @"168627";
-    parameters[@"adf_p1"] = @"bxvfr";
+    parameters[@"adf_p1"] = @"bxwsa";
     parameters[@"adf_p2"] = @"fhmf";
+    parameters[@"adf_pt"] = @"b";
 
     YMAAdRequest *adRequest = [[YMAAdRequest alloc] initWithLocation:nil
                                                         contextQuery:nil

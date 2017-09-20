@@ -27,14 +27,15 @@
     YMAAdSize *adSize = [YMAAdSize fixedSizeWithCGSize:YMAAdSizeBanner_300x300];
 
     // Replace demo R-M-206876-13 with actual Block ID.
-    self.adView = [[YMAAdView alloc] initWithBlockID:@"R-M-206876-13"
+    self.adView = [[YMAAdView alloc] initWithBlockID:@"R-M-243655-2"
                                               adSize:adSize
                                             delegate:self];
     // Replace demo parameters with actual parameters.
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
     parameters[@"adf_ownerid"] = @"168627";
-    parameters[@"adf_p1"] = @"bxvfs";
+    parameters[@"adf_p1"] = @"bxwrz";
     parameters[@"adf_p2"] = @"fkbd";
+    parameters[@"adf_pt"] = @"b";
 
     YMAAdRequest *adRequest = [[YMAAdRequest alloc] initWithLocation:nil
                                                         contextQuery:nil
