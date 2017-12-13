@@ -1,12 +1,8 @@
 /*
- *  ViewController.m
- *
- * This file is a part of the Yandex Advertising Network.
- *
- * Version for iOS © 2017 YANDEX
+ * Version for iOS © 2015–2017 YANDEX
  *
  * You may not use this file except in compliance with the License.
- * You may obtain a copy of the License at https://legal.yandex.com/partner_ch/
+ * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
  */
 
 #import "ViewController.h"
@@ -68,17 +64,37 @@
 
 - (void)addConstraintsToAdView:(UIView *)adView
 {
-    NSDictionary *views = NSDictionaryOfVariableBindings(adView);
-    NSArray *vertical = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[adView]|"
-                                                                options:0
-                                                                metrics:nil
-                                                                  views:views];
-    NSArray *horizontal = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[adView]|"
+    if (@available(iOS 11.0, *)) {
+        [self configureLayoutAtBottomOfSafeArea:adView];
+    } else {
+        [self configureLayoutAtBottom:adView];
+    }
+}
+
+- (void)configureLayoutAtBottom:(UIView *)bannerView
+{
+    NSDictionary *views = NSDictionaryOfVariableBindings(bannerView);
+    NSArray *horizontal = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[bannerView]|"
                                                                   options:0
                                                                   metrics:nil
                                                                     views:views];
-    NSArray *constraints = [vertical arrayByAddingObjectsFromArray:horizontal];
-    [self.view addConstraints:constraints];
+    NSArray *vertical = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[bannerView]|"
+                                                                options:0
+                                                                metrics:nil
+                                                                  views:views];
+    [self.view addConstraints:horizontal];
+    [self.view addConstraints:vertical];
+}
+
+- (void)configureLayoutAtBottomOfSafeArea:(UIView *)bannerView NS_AVAILABLE_IOS(11_0)
+{
+    UILayoutGuide *guide = self.view.safeAreaLayoutGuide;
+    NSArray *constraints = @[
+                             [bannerView.leadingAnchor constraintEqualToAnchor:guide.leadingAnchor],
+                             [bannerView.trailingAnchor constraintEqualToAnchor:guide.trailingAnchor],
+                             [bannerView.bottomAnchor constraintEqualToAnchor:guide.bottomAnchor]
+                             ];
+    [NSLayoutConstraint activateConstraints:constraints];
 }
 
 #pragma mark - YMANativeAdLoaderDelegate

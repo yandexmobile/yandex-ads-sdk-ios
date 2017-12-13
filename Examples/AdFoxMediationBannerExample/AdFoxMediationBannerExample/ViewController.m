@@ -1,12 +1,8 @@
 /*
- *  ViewController.m
- *
- * This file is a part of the Yandex Advertising Network.
- *
- * Version for iOS © 2017 YANDEX
+ * Version for iOS © 2015–2017 YANDEX
  *
  * You may not use this file except in compliance with the License.
- * You may obtain a copy of the License at https://legal.yandex.com/partner_ch/
+ * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
  */
 
 #import "ViewController.h"
@@ -48,7 +44,26 @@
 - (void)adViewDidLoad:(YMAAdView *)adView
 {
     NSLog(@"Ad loaded");
-    [self.adView displayAtBottomInView:self.view];
+    [self.adView removeFromSuperview];
+    if (@available(iOS 11.0, *)) {
+        [self displayAtBottomOfSafeArea];
+    } else {
+        [self.adView displayAtBottomInView:self.view];
+    }
+}
+
+// Ability to display ad in Safe Area will soon be added to `displayAtBottomOfSafeAreaInView:` method of SDK
+- (void)displayAtBottomOfSafeArea NS_AVAILABLE_IOS(11_0)
+{
+    UILayoutGuide *guide = self.view.safeAreaLayoutGuide;
+    self.adView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.view addSubview:self.adView];
+    NSArray *constraints = @[
+                             [self.adView.leadingAnchor constraintEqualToAnchor:guide.leadingAnchor],
+                             [self.adView.trailingAnchor constraintEqualToAnchor:guide.trailingAnchor],
+                             [self.adView.bottomAnchor constraintEqualToAnchor:guide.bottomAnchor]
+                             ];
+    [NSLayoutConstraint activateConstraints:constraints];
 }
 
 - (void)adViewDidFailLoading:(YMAAdView *)adView error:(NSError *)error

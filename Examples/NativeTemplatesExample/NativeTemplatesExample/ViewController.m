@@ -1,12 +1,8 @@
 /*
- *  ViewController.h
- *
- * This file is a part of the Yandex Advertising Network.
- *
- * Version for iOS © 2017 YANDEX
+ * Version for iOS © 2015–2017 YANDEX
  *
  * You may not use this file except in compliance with the License.
- * You may obtain a copy of the License at https://legal.yandex.com/partner_ch/
+ * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
  */
 
 #import "ViewController.h"
@@ -58,6 +54,15 @@
     [self.view addSubview:bannerView];
 
     bannerView.translatesAutoresizingMaskIntoConstraints = NO;
+    if (@available(iOS 11.0, *)) {
+        [self configureLayoutAtBottomOfSafeAreaForView:bannerView];
+    } else {
+        [self configureLayoutAtBottomForView:bannerView];
+    }
+}
+
+- (void)configureLayoutAtBottomForView:(UIView *)bannerView
+{
     NSDictionary *views = NSDictionaryOfVariableBindings(bannerView);
     NSArray *horizontal = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(10)-[bannerView]-(10)-|"
                                                                   options:0
@@ -69,6 +74,17 @@
                                                                   views:views];
     [self.view addConstraints:horizontal];
     [self.view addConstraints:vertical];
+}
+
+- (void)configureLayoutAtBottomOfSafeAreaForView:(UIView *)bannerView NS_AVAILABLE_IOS(11_0)
+{
+    UILayoutGuide *guide = self.view.safeAreaLayoutGuide;
+    NSArray *constraints = @[
+                             [bannerView.leadingAnchor constraintEqualToAnchor:guide.leadingAnchor constant:10.f],
+                             [bannerView.trailingAnchor constraintEqualToAnchor:guide.trailingAnchor constant:-10.f],
+                             [bannerView.bottomAnchor constraintEqualToAnchor:guide.bottomAnchor constant:-10.f]
+                             ];
+    [NSLayoutConstraint activateConstraints:constraints];
 }
 
 #pragma mark - YMANativeAdLoaderDelegate

@@ -1,24 +1,17 @@
 /*
- *  AppDelegate.m
- *
- * This file is a part of the Yandex Advertising Network.
- *
- * Version for iOS © 2017 YANDEX
+ * Version for iOS © 2015–2017 YANDEX
  *
  * You may not use this file except in compliance with the License.
- * You may obtain a copy of the License at https://legal.yandex.com/partner_ch/
+ * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
  */
 
 #import "AppDelegate.h"
-#import <YandexMobileMetrica/YandexMobileMetrica.h>
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // This is sample API key. Application API key can be requested at https://appmetrica.yandex.com".
-    [YMMYandexMetrica activateWithApiKey:@"43614695-4bad-431c-9e14-fa588179b756"];
     return YES;
 }
 

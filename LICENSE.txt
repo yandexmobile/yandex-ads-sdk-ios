@@ -1,2 +1,2 @@
 EULA could be found at:
-https://legal.yandex.com/partner_ch/
+https://yandex.com/legal/mobileads_sdk_agreement/

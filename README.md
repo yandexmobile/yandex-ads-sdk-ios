@@ -1,7 +1,7 @@
 # Yandex Advertising Network Mobile
 This package contains Yandex Advertising Network Mobile SDK and source code of samples of SDK usage.
 
-## [**Download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/332493/YandexMobileAds-2.7.2-ios-5fe88a8e-1236-4abe-8ea6-c20e48dce004.zip) latest SDK archive
+## [**Download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/212922/YandexMobileAds-2.8.0-ios-d916f1ab-36ce-4eba-9e76-de687ab43d76.zip) latest SDK archive
 
 ## Documentation
 Documentation could be found at the [official website] [DOCUMENTATION]
@@ -31,5 +31,5 @@ EULA is available at [EULA website] [LICENSE]
 5. Build and run.
 
 [DOCUMENTATION]: https://tech.yandex.ru/mobile-ads/
-[LICENSE]: https://legal.yandex.com/partner_ch/
+[LICENSE]: https://yandex.com/legal/mobileads_sdk_agreement/
 [CocoaPods]: http://cocoapods.org/

@@ -1,12 +1,8 @@
 /*
- *  ViewController.m
- *
- * This file is a part of the Yandex Advertising Network.
- *
- * Version for iOS © 2017 YANDEX
+ * Version for iOS © 2015–2017 YANDEX
  *
  * You may not use this file except in compliance with the License.
- * You may obtain a copy of the License at https://legal.yandex.com/partner_ch/
+ * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
  */
 
 #import "ViewController.h"
@@ -41,6 +37,15 @@
     NSLog(@"Ad loaded.");
     [self.adView removeFromSuperview];
     [self.view addSubview:view];
+    if (@available(iOS 11.0, *)) {
+        [self configureLayoutAtBottomOfSafeAreaForView:view];
+    } else {
+        [self configureLayoutAtBottomForView:view];
+    }
+}
+
+- (void)configureLayoutAtBottomForView:(MPAdView *)view
+{
     NSDictionary *views = NSDictionaryOfVariableBindings(view);
     NSArray *vertical =
         [NSLayoutConstraint constraintsWithVisualFormat:@"V:[view(50)]|" options:0 metrics:nil views:views];
@@ -56,6 +61,18 @@
     [self.view addConstraints:vertical];
     [self.view addConstraints:horizontal];
     [self.view addConstraint:center];
+}
+
+- (void)configureLayoutAtBottomOfSafeAreaForView:(MPAdView *)view NS_AVAILABLE_IOS(11_0)
+{
+    UILayoutGuide *guide = self.view.safeAreaLayoutGuide;
+    NSArray *constraints = @[
+                             [view.heightAnchor constraintEqualToConstant:MOPUB_BANNER_SIZE.height],
+                             [view.centerXAnchor constraintEqualToAnchor:guide.centerXAnchor],
+                             [view.widthAnchor constraintEqualToConstant:MOPUB_BANNER_SIZE.width],
+                             [view.bottomAnchor constraintEqualToAnchor:guide.bottomAnchor]
+                             ];
+    [NSLayoutConstraint activateConstraints:constraints];
 }
 
 - (void)adViewDidFailToLoadAd:(MPAdView *)view

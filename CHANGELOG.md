@@ -1,6 +1,24 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 2.8.0
+
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/212922/YandexMobileAds-2.8.0-ios-d916f1ab-36ce-4eba-9e76-de687ab43d76.zip)
+
+#### Added
+
+* Added view visibility error indicator which should help to detect SDK integration problems while testing the application
+
+#### Updated
+* Updated minimum compatible AppMetrica version to 2.9.4
+* Updated license
+
+#### Fixed
+
+* Fixed main thread checker warnings
+* Fixed rotation issues when interstitial was shown, specifically, crashes during attempts to use AppDelegate
+* Fixed Xcode 9 compilation warnings
+
 ## Version 2.7.2
 
 SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/332493/YandexMobileAds-2.7.2-ios-5fe88a8e-1236-4abe-8ea6-c20e48dce004.zip)
