@@ -1,6 +1,19 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 2.8.1
+
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/212922/YandexMobileAds-2.8.1-ios-09dc1dad-3c91-4046-8b89-0d8604638fd6.zip)
+
+#### Added
+
+* Added native ad mediation 
+
+#### Fixed
+
+* Fixed visibility error indicator main thread checker warnings and crashes when native ad is deallocated on background thread
+* Fixed memory usage in video interstitial
+
 ## Version 2.8.0
 
 SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/212922/YandexMobileAds-2.8.0-ios-d916f1ab-36ce-4eba-9e76-de687ab43d76.zip)

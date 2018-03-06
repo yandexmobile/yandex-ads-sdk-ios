@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3946C41204583290081899C /* NativeContentAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3946C3C204583280081899C /* NativeContentAdView.m */; };
+		B3946C42204583290081899C /* NativeAssetsComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = B3946C3D204583290081899C /* NativeAssetsComposer.m */; };
+		B3946C43204583290081899C /* NativeAppInstallAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3946C3E204583290081899C /* NativeAppInstallAdView.m */; };
 		B8C724323740EB8B9A675FF1 /* libPods-NativeExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9FF7F22B4BD9764CE69D3A1 /* libPods-NativeExample.a */; };
 		F6805F281B8E078000BD2111 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F6805F271B8E078000BD2111 /* main.m */; };
 		F6805F2B1B8E078000BD2111 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F6805F2A1B8E078000BD2111 /* AppDelegate.m */; };
@@ -14,16 +17,19 @@
 		F6805F311B8E078000BD2111 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6805F2F1B8E078000BD2111 /* Main.storyboard */; };
 		F6805F331B8E078000BD2111 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6805F321B8E078000BD2111 /* Images.xcassets */; };
 		F6805F361B8E078000BD2111 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6805F341B8E078000BD2111 /* LaunchScreen.xib */; };
-		F6805F511B8E096C00BD2111 /* NativeAppInstallAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6805F4C1B8E096C00BD2111 /* NativeAppInstallAdView.m */; };
-		F6805F521B8E096C00BD2111 /* NativeContentAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6805F4E1B8E096C00BD2111 /* NativeContentAdView.m */; };
 		F6A63CCA1ECE0BB4007B8940 /* StarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A63CC91ECE0BB4007B8940 /* StarRatingView.m */; };
 		F6A63CCC1ECE0C1A007B8940 /* Star.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6A63CCB1ECE0C1A007B8940 /* Star.xcassets */; };
-		F6B369D11CFB47A7005840F6 /* NativeAssetsComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = F6B369D01CFB47A7005840F6 /* NativeAssetsComposer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1CAAD34D46E7915EB9B081CB /* Pods-NativeExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-NativeExample/Pods-NativeExample.release.xcconfig"; sourceTree = "<group>"; };
 		9EC9550EB33B879BFFF14BD4 /* Pods-NativeExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NativeExample/Pods-NativeExample.debug.xcconfig"; sourceTree = "<group>"; };
+		B3946C3B204583280081899C /* NativeAppInstallAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NativeAppInstallAdView.h; path = ../../Common/NativeAppInstallAdView.h; sourceTree = "<group>"; };
+		B3946C3C204583280081899C /* NativeContentAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NativeContentAdView.m; path = ../../Common/NativeContentAdView.m; sourceTree = "<group>"; };
+		B3946C3D204583290081899C /* NativeAssetsComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NativeAssetsComposer.m; path = ../../Common/NativeAssetsComposer.m; sourceTree = "<group>"; };
+		B3946C3E204583290081899C /* NativeAppInstallAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NativeAppInstallAdView.m; path = ../../Common/NativeAppInstallAdView.m; sourceTree = "<group>"; };
+		B3946C3F204583290081899C /* NativeAssetsComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NativeAssetsComposer.h; path = ../../Common/NativeAssetsComposer.h; sourceTree = "<group>"; };
+		B3946C40204583290081899C /* NativeContentAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NativeContentAdView.h; path = ../../Common/NativeContentAdView.h; sourceTree = "<group>"; };
 		D9FF7F22B4BD9764CE69D3A1 /* libPods-NativeExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NativeExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6805F221B8E078000BD2111 /* NativeExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NativeExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6805F261B8E078000BD2111 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -35,15 +41,9 @@
 		F6805F301B8E078000BD2111 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F6805F321B8E078000BD2111 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F6805F351B8E078000BD2111 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		F6805F4B1B8E096C00BD2111 /* NativeAppInstallAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeAppInstallAdView.h; sourceTree = "<group>"; };
-		F6805F4C1B8E096C00BD2111 /* NativeAppInstallAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeAppInstallAdView.m; sourceTree = "<group>"; };
-		F6805F4D1B8E096C00BD2111 /* NativeContentAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeContentAdView.h; sourceTree = "<group>"; };
-		F6805F4E1B8E096C00BD2111 /* NativeContentAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeContentAdView.m; sourceTree = "<group>"; };
 		F6A63CC81ECE0BB4007B8940 /* StarRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StarRatingView.h; path = ../../Common/StarRatingView.h; sourceTree = "<group>"; };
 		F6A63CC91ECE0BB4007B8940 /* StarRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StarRatingView.m; path = ../../Common/StarRatingView.m; sourceTree = "<group>"; };
 		F6A63CCB1ECE0C1A007B8940 /* Star.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Star.xcassets; path = ../../Common/Star.xcassets; sourceTree = "<group>"; };
-		F6B369CF1CFB47A7005840F6 /* NativeAssetsComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeAssetsComposer.h; sourceTree = "<group>"; };
-		F6B369D01CFB47A7005840F6 /* NativeAssetsComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeAssetsComposer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,14 +93,14 @@
 				F6A63CC91ECE0BB4007B8940 /* StarRatingView.m */,
 				F6805F291B8E078000BD2111 /* AppDelegate.h */,
 				F6805F2A1B8E078000BD2111 /* AppDelegate.m */,
+				B3946C3B204583280081899C /* NativeAppInstallAdView.h */,
+				B3946C3E204583290081899C /* NativeAppInstallAdView.m */,
+				B3946C3F204583290081899C /* NativeAssetsComposer.h */,
+				B3946C3D204583290081899C /* NativeAssetsComposer.m */,
+				B3946C40204583290081899C /* NativeContentAdView.h */,
+				B3946C3C204583280081899C /* NativeContentAdView.m */,
 				F6805F2C1B8E078000BD2111 /* ViewController.h */,
 				F6805F2D1B8E078000BD2111 /* ViewController.m */,
-				F6805F4B1B8E096C00BD2111 /* NativeAppInstallAdView.h */,
-				F6805F4C1B8E096C00BD2111 /* NativeAppInstallAdView.m */,
-				F6805F4D1B8E096C00BD2111 /* NativeContentAdView.h */,
-				F6805F4E1B8E096C00BD2111 /* NativeContentAdView.m */,
-				F6B369CF1CFB47A7005840F6 /* NativeAssetsComposer.h */,
-				F6B369D01CFB47A7005840F6 /* NativeAssetsComposer.m */,
 				F6805F2F1B8E078000BD2111 /* Main.storyboard */,
 				F6805F321B8E078000BD2111 /* Images.xcassets */,
 				F6805F341B8E078000BD2111 /* LaunchScreen.xib */,
@@ -267,11 +267,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6B369D11CFB47A7005840F6 /* NativeAssetsComposer.m in Sources */,
-				F6805F521B8E096C00BD2111 /* NativeContentAdView.m in Sources */,
+				B3946C41204583290081899C /* NativeContentAdView.m in Sources */,
 				F6805F2E1B8E078000BD2111 /* ViewController.m in Sources */,
 				F6805F2B1B8E078000BD2111 /* AppDelegate.m in Sources */,
-				F6805F511B8E096C00BD2111 /* NativeAppInstallAdView.m in Sources */,
+				B3946C42204583290081899C /* NativeAssetsComposer.m in Sources */,
+				B3946C43204583290081899C /* NativeAppInstallAdView.m in Sources */,
 				F6805F281B8E078000BD2111 /* main.m in Sources */,
 				F6A63CCA1ECE0BB4007B8940 /* StarRatingView.m in Sources */,
 			);

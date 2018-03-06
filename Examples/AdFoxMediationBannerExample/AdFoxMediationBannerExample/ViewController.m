@@ -1,5 +1,5 @@
 /*
- * Version for iOS © 2015–2017 YANDEX
+ * Version for iOS © 2015–2018 YANDEX
  *
  * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
@@ -20,7 +20,7 @@
 {
     [super viewDidLoad];
 
-    YMAAdSize *adSize = [YMAAdSize fixedSizeWithCGSize:YMAAdSizeBanner_300x300];
+    YMAAdSize *adSize = [YMAAdSize fixedSizeWithCGSize:YMAAdSizeBanner_320x50];
 
     // Replace demo R-M-206876-13 with actual Block ID.
     self.adView = [[YMAAdView alloc] initWithBlockID:@"R-M-243655-2"
@@ -29,8 +29,8 @@
     // Replace demo parameters with actual parameters.
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
     parameters[@"adf_ownerid"] = @"168627";
-    parameters[@"adf_p1"] = @"bxwrz";
-    parameters[@"adf_p2"] = @"fkbd";
+    parameters[@"adf_p1"] = @"bzloo";
+    parameters[@"adf_p2"] = @"fhma";
     parameters[@"adf_pt"] = @"b";
 
     YMAAdRequest *adRequest = [[YMAAdRequest alloc] initWithLocation:nil

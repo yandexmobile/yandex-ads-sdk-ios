@@ -1,5 +1,5 @@
 /*
- * Version for iOS © 2015–2017 YANDEX
+ * Version for iOS © 2015–2018 YANDEX
  *
  * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
@@ -435,7 +435,12 @@ static CGFloat const kNativeViewOffset = 8.f;
     }
     else if (topViews.count == 1) {
         UIView *topView = topViews.firstObject;
-        constraints = [self topConstraintsForUpperView:topView lowerView:view relation:NSLayoutRelationEqual];
+        if (topView.superview != nil) {
+            constraints = [self topConstraintsForUpperView:topView lowerView:view relation:NSLayoutRelationEqual];
+        }
+        else {
+            constraints = [self topConstraintsForView:view];
+        }
     }
     else {
         NSMutableArray *topConstraints = [[NSMutableArray alloc] init];
