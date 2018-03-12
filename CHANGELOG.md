@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 2.8.2
+
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/223308/YandexMobileAds-2.8.2-ios-88890a59-302f-404c-8171-0c115dabb5aa.zip)
+
+#### Fixed
+
+* Fixed missing bitcode in dynamic framework
+
 ## Version 2.8.1
 
 SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/212922/YandexMobileAds-2.8.1-ios-09dc1dad-3c91-4046-8b89-0d8604638fd6.zip)
