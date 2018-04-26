@@ -1,7 +1,7 @@
 # Yandex Advertising Network Mobile
 This package contains Yandex Advertising Network Mobile SDK and source code of samples of SDK usage.
 
-## [**Download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/223308/YandexMobileAds-2.8.2-ios-88890a59-302f-404c-8171-0c115dabb5aa.zip) latest SDK archive
+## [**Download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/224062/YandexMobileAds-2.8.3-ios-4be41012-a86a-40df-a84a-a2bdf773c574.zip) latest SDK archive
 
 ## Documentation
 Documentation could be found at the [official website][DOCUMENTATION]
@@ -13,15 +13,24 @@ EULA is available at [EULA website][LICENSE]
 1. Install [CocoaPods] to manage project dependencies, if you haven't done it yet.
 
 2. Go to one of example projects:
-  * /Examples/BannerExample
-  * /Examples/InterstitialExample
-  * /Examples/NativeExample
-  * /Examples/NativeTemplatesExample
-  * /Examples/NativeTemplatesTableViewExample
-  * /Examples/VideoExample
-  * /Examples/AdMobAdaptersExample
-  * /Examples/MoPubAdaptersExample
-  * /Examples/AdFoxNativeExample
+#### Objective C
+  * /Examples/ObjectiveC/BannerExample
+  * /Examples/ObjectiveC/InterstitialExample
+  * /Examples/ObjectiveC/NativeExample
+  * /Examples/ObjectiveC/NativeTemplatesExample
+  * /Examples/ObjectiveC/NativeTemplatesTableViewExample
+  * /Examples/ObjectiveC/VideoExample
+  * /Examples/ObjectiveC/AdMobAdaptersExample
+  * /Examples/ObjectiveC/MoPubAdaptersExample
+  * /Examples/ObjectiveC/AdFoxNativeExample
+  * /Examples/ObjectiveC/AdFoxMediationBannerExample
+  * /Examples/ObjectiveC/AdFoxMediationInterstitialExample
+  * /Examples/ObjectiveC/AdFoxMediationNativeExample
+  
+#### Swift
+  * /Examples/Swift/BannerExample
+  * /Examples/Swift/InterstitialExample
+  * /Examples/Swift/NativeTemplatesExample
 
 3. Install dependencies:
 ```pod install```
