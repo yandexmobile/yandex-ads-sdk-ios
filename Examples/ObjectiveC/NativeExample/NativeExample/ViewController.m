@@ -148,14 +148,19 @@
     NSLog(@"Will leave application");
 }
 
-- (void)nativeAd:(null_unspecified id)ad willPresentScreen:(UIViewController *)viewController
+- (void)nativeAd:(null_unspecified id)ad willPresentScreen:(nullable UIViewController *)viewController
 {
     NSLog(@"Will present screen");
 }
 
-- (void)nativeAd:(null_unspecified id)ad didDismissScreen:(UIViewController *)viewController
+- (void)nativeAd:(null_unspecified id)ad didDismissScreen:(nullable UIViewController *)viewController
 {
     NSLog(@"Did dismiss screen");
+}
+
+- (void)closeNativeAd:(null_unspecified id)ad
+{
+    [self removeCurrentAdView];
 }
 
 @end

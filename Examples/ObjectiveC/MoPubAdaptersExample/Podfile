@@ -2,6 +2,6 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, :deployment_target => '7.0'
 
 target 'MoPubAdaptersExample' do
-  pod 'mopub-ios-sdk', '~> 4.0'
+  pod 'YandexMobileAdsMoPubAdapters'
   pod 'YandexMobileAds'
 end

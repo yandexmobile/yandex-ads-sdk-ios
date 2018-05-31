@@ -17,6 +17,7 @@
 @property (nonatomic, strong, readonly) UIButton *callToAction;
 @property (nonatomic, strong, readonly) UILabel *domain;
 @property (nonatomic, strong, readonly) UIImageView *favicon;
+@property (nonatomic, strong, readonly) UIButton *feedback;
 @property (nonatomic, strong, readonly) UIImageView *icon;
 @property (nonatomic, strong, readonly) UIImageView *image;
 @property (nonatomic, strong, readonly) UILabel *sponsored;

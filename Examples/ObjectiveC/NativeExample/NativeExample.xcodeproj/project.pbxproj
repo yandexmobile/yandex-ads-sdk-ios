@@ -18,7 +18,7 @@
 		F6805F331B8E078000BD2111 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6805F321B8E078000BD2111 /* Images.xcassets */; };
 		F6805F361B8E078000BD2111 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6805F341B8E078000BD2111 /* LaunchScreen.xib */; };
 		F6A63CCA1ECE0BB4007B8940 /* StarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A63CC91ECE0BB4007B8940 /* StarRatingView.m */; };
-		F6A63CCC1ECE0C1A007B8940 /* Star.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6A63CCB1ECE0C1A007B8940 /* Star.xcassets */; };
+		F6A63CCC1ECE0C1A007B8940 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6A63CCB1ECE0C1A007B8940 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +43,7 @@
 		F6805F351B8E078000BD2111 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F6A63CC81ECE0BB4007B8940 /* StarRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StarRatingView.h; path = ../../Common/StarRatingView.h; sourceTree = "<group>"; };
 		F6A63CC91ECE0BB4007B8940 /* StarRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StarRatingView.m; path = ../../Common/StarRatingView.m; sourceTree = "<group>"; };
-		F6A63CCB1ECE0C1A007B8940 /* Star.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Star.xcassets; path = ../../Common/Star.xcassets; sourceTree = "<group>"; };
+		F6A63CCB1ECE0C1A007B8940 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Common/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +88,7 @@
 		F6805F241B8E078000BD2111 /* NativeExample */ = {
 			isa = PBXGroup;
 			children = (
-				F6A63CCB1ECE0C1A007B8940 /* Star.xcassets */,
+				F6A63CCB1ECE0C1A007B8940 /* Assets.xcassets */,
 				F6A63CC81ECE0BB4007B8940 /* StarRatingView.h */,
 				F6A63CC91ECE0BB4007B8940 /* StarRatingView.m */,
 				F6805F291B8E078000BD2111 /* AppDelegate.h */,
@@ -190,7 +190,7 @@
 				F6805F311B8E078000BD2111 /* Main.storyboard in Resources */,
 				F6805F361B8E078000BD2111 /* LaunchScreen.xib in Resources */,
 				F6805F331B8E078000BD2111 /* Images.xcassets in Resources */,
-				F6A63CCC1ECE0C1A007B8940 /* Star.xcassets in Resources */,
+				F6A63CCC1ECE0C1A007B8940 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

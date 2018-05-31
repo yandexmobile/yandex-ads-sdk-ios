@@ -114,11 +114,11 @@ class ViewController: UIViewController, YMANativeAdDelegate, YMANativeAdLoaderDe
         print("Will leave application")
     }
     
-    func nativeAd(_ ad: Any!, willPresentScreen viewController: UIViewController) {
+    func nativeAd(_ ad: Any!, willPresentScreen viewController: UIViewController?) {
         print("Will present screen")
     }
     
-    func nativeAd(_ ad: Any!, didDismissScreen viewController: UIViewController) {
+    func nativeAd(_ ad: Any!, didDismissScreen viewController: UIViewController?) {
         print("Did dismiss screen")
     }
     

@@ -17,8 +17,8 @@
 		B3946C4B204583D00081899C /* NativeAssetsComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = B3946C46204583CF0081899C /* NativeAssetsComposer.m */; };
 		B3946C4C204583D00081899C /* NativeAppInstallAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3946C47204583CF0081899C /* NativeAppInstallAdView.m */; };
 		B3946C50204584540081899C /* StarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3946C4E204584530081899C /* StarRatingView.m */; };
-		B3946C51204584540081899C /* Star.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3946C4F204584540081899C /* Star.xcassets */; };
-		B3946C57204588940081899C /* AdMobYandexMobileAdsAdapters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3946C56204588940081899C /* AdMobYandexMobileAdsAdapters.framework */; };
+		B3946C51204584540081899C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3946C4F204584540081899C /* Assets.xcassets */; };
+		B3C6825A20A09CF300B3CA70 /* RequestParametersProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C6825920A09CF300B3CA70 /* RequestParametersProvider.m */; };
 		C93CADC7D9C1B03061C9202D /* libPods-AdFoxMediationNativeExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C88E1450DC1DCEF7F7A4DAC /* libPods-AdFoxMediationNativeExample.a */; };
 /* End PBXBuildFile section */
 
@@ -43,8 +43,9 @@
 		B3946C49204583CF0081899C /* NativeContentAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NativeContentAdView.h; path = ../../Common/NativeContentAdView.h; sourceTree = "<group>"; };
 		B3946C4D204584530081899C /* StarRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StarRatingView.h; path = ../../Common/StarRatingView.h; sourceTree = "<group>"; };
 		B3946C4E204584530081899C /* StarRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StarRatingView.m; path = ../../Common/StarRatingView.m; sourceTree = "<group>"; };
-		B3946C4F204584540081899C /* Star.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Star.xcassets; path = ../../Common/Star.xcassets; sourceTree = "<group>"; };
-		B3946C56204588940081899C /* AdMobYandexMobileAdsAdapters.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdMobYandexMobileAdsAdapters.framework; path = ../../Adapters/AdMobYandexMobileAdsAdapters/AdMobYandexMobileAdsAdapters.framework; sourceTree = "<group>"; };
+		B3946C4F204584540081899C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Common/Assets.xcassets; sourceTree = "<group>"; };
+		B3C6825820A09CF300B3CA70 /* RequestParametersProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestParametersProvider.h; sourceTree = "<group>"; };
+		B3C6825920A09CF300B3CA70 /* RequestParametersProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestParametersProvider.m; sourceTree = "<group>"; };
 		F0D97DDAB2FB67441581DB20 /* Pods-AdFoxMediationNativeExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdFoxMediationNativeExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdFoxMediationNativeExample/Pods-AdFoxMediationNativeExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -53,7 +54,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3946C57204588940081899C /* AdMobYandexMobileAdsAdapters.framework in Frameworks */,
 				C93CADC7D9C1B03061C9202D /* libPods-AdFoxMediationNativeExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,7 +64,6 @@
 		A07EFD2409337C68A1EEF27D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B3946C56204588940081899C /* AdMobYandexMobileAdsAdapters.framework */,
 				4C88E1450DC1DCEF7F7A4DAC /* libPods-AdFoxMediationNativeExample.a */,
 			);
 			name = Frameworks;
@@ -91,7 +90,7 @@
 		B3946C1F20456AF50081899C /* AdFoxMediationNativeExample */ = {
 			isa = PBXGroup;
 			children = (
-				B3946C4F204584540081899C /* Star.xcassets */,
+				B3946C4F204584540081899C /* Assets.xcassets */,
 				B3946C4D204584530081899C /* StarRatingView.h */,
 				B3946C4E204584530081899C /* StarRatingView.m */,
 				B3946C2020456AF50081899C /* AppDelegate.h */,
@@ -104,6 +103,8 @@
 				B3946C45204583CF0081899C /* NativeContentAdView.m */,
 				B3946C2320456AF50081899C /* ViewController.h */,
 				B3946C2420456AF50081899C /* ViewController.m */,
+				B3C6825820A09CF300B3CA70 /* RequestParametersProvider.h */,
+				B3C6825920A09CF300B3CA70 /* RequestParametersProvider.m */,
 				B3946C2620456AF50081899C /* Main.storyboard */,
 				B3946C2B20456AF50081899C /* LaunchScreen.storyboard */,
 				B3946C3920457DEE0081899C /* Images.xcassets */,
@@ -193,7 +194,7 @@
 				B3946C3A20457DEE0081899C /* Images.xcassets in Resources */,
 				B3946C2D20456AF50081899C /* LaunchScreen.storyboard in Resources */,
 				B3946C2820456AF50081899C /* Main.storyboard in Resources */,
-				B3946C51204584540081899C /* Star.xcassets in Resources */,
+				B3946C51204584540081899C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,9 +240,32 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AdFoxMediationNativeExample/Pods-AdFoxMediationNativeExample-resources.sh",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Internal/Common/MPAdBrowserController.xib",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseBtn.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseBtn@2x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseBtn@3x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseButtonX.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseButtonX@2x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseButtonX@3x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCountdownTimer.html",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPDAAIcon.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPDAAIcon@2x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPDAAIcon@3x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPMutedBtn.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPMutedBtn@2x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPMutedBtn@3x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPPlayBtn.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPPlayBtn@2x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPPlayBtn@3x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPUnmutedBtn.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPUnmutedBtn@2x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPUnmutedBtn@3x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MRAID.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -261,6 +285,7 @@
 				B3946C4B204583D00081899C /* NativeAssetsComposer.m in Sources */,
 				B3946C4A204583D00081899C /* NativeContentAdView.m in Sources */,
 				B3946C2220456AF50081899C /* AppDelegate.m in Sources */,
+				B3C6825A20A09CF300B3CA70 /* RequestParametersProvider.m in Sources */,
 				B3946C50204584540081899C /* StarRatingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,7 +427,6 @@
 					"\"${PODS_ROOT}/Google-Mobile-Ads-SDK/Frameworks/frameworks\"",
 					"\"${PODS_ROOT}/YandexMobileAds/static\"",
 					"\"${PODS_ROOT}/YandexMobileMetrica/static\"",
-					"\"${SRCROOT}/../../../Adapters/AdMobYandexMobileAdsAdapters/\"",
 				);
 				INFOPLIST_FILE = AdFoxMediationNativeExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -424,7 +448,6 @@
 					"\"${PODS_ROOT}/Google-Mobile-Ads-SDK/Frameworks/frameworks\"",
 					"\"${PODS_ROOT}/YandexMobileAds/static\"",
 					"\"${PODS_ROOT}/YandexMobileMetrica/static\"",
-					"\"${SRCROOT}/../../../Adapters/AdMobYandexMobileAdsAdapters/\"",
 				);
 				INFOPLIST_FILE = AdFoxMediationNativeExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

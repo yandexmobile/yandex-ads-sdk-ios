@@ -20,23 +20,18 @@
 {
     [super viewDidLoad];
 
-    // Replace demo R-M-187883-1 with actual Block ID.
+    // Replace demo R-M-243655-10 with actual Block ID.
     YMANativeAdLoaderConfiguration *configuration =
-        [[YMANativeAdLoaderConfiguration alloc] initWithBlockID:@"R-M-187883-1"
+        [[YMANativeAdLoaderConfiguration alloc] initWithBlockID:@"R-M-243655-10"
                                                      imageSizes:@[ kYMANativeImageSizeMedium ]
                                         loadImagesAutomatically:YES];
     self.adLoader = [[YMANativeAdLoader alloc] initWithConfiguration:configuration];
     self.adLoader.delegate = self;
 
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
-    parameters[@"adf_ownerid"] = @"168627";
-    parameters[@"adf_p1"] = @"bvyhx";
+    parameters[@"adf_ownerid"] = @"270901";
+    parameters[@"adf_p1"] = @"caboj";
     parameters[@"adf_p2"] = @"fksh";
-    parameters[@"adf_pfc"] = @"a";
-    parameters[@"adf_pfb"] = @"a";
-    parameters[@"adf_plp"] = @"a";
-    parameters[@"adf_pli"] = @"a";
-    parameters[@"adf_pop"] = @"a";
     parameters[@"adf_pt"] = @"b";
 
     YMAAdRequest *adRequest = [[YMAAdRequest alloc] initWithLocation:nil

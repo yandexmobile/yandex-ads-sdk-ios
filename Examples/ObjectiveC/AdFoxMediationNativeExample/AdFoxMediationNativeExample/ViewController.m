@@ -5,10 +5,11 @@
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
  */
 
+#import <YandexMobileAds/YandexMobileNativeAds.h>
 #import "ViewController.h"
 #import "NativeAppInstallAdView.h"
 #import "NativeContentAdView.h"
-#import <YandexMobileAds/YandexMobileNativeAds.h>
+#import "RequestParametersProvider.h"
 
 @interface ViewController () <YMANativeAdLoaderDelegate, YMANativeAdDelegate>
 
@@ -32,18 +33,19 @@
     self.appInstallAdView.translatesAutoresizingMaskIntoConstraints = NO;
     self.appInstallAdView.backgroundColor = [UIColor colorWithWhite:0.9f alpha:1.f];
     
-    // Replace demo R-M-263869-5 with actual Block ID.
+    // Replace demo R-M-243655-10 with actual Block ID.
     YMANativeAdLoaderConfiguration *configuration =
-        [[YMANativeAdLoaderConfiguration alloc] initWithBlockID:@"R-M-263869-5"
+        [[YMANativeAdLoaderConfiguration alloc] initWithBlockID:@"R-M-243655-10"
                                         loadImagesAutomatically:YES];
     
     // Replace demo parameters with actual parameters.
-    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
-    parameters[@"adf_ownerid"] = @"168627";
-    parameters[@"adf_p1"] = @"bzfbw";
-    parameters[@"adf_p2"] = @"fksh";
-    parameters[@"adf_pt"] = @"b";
-    
+    // Following demo parameters may be used for testing:
+    // Yandex: [RequestParametersProvider yandexParameters]
+    // AdMob mediation: [RequestParametersProvider adMobParameters]
+    // Facebook Audience mediation: [RequestParametersProvider facebookParameters]
+    // MoPub mediation: [RequestParametersProvider moPubParameters]
+    // MyTarget mediation: [RequestParametersProvider adMobParameters]
+    NSDictionary *parameters = [RequestParametersProvider adMobParameters];
     self.adLoader = [[YMANativeAdLoader alloc] initWithConfiguration:configuration];
     self.adLoader.delegate = self;
     
@@ -146,14 +148,19 @@
     NSLog(@"Will leave application");
 }
 
-- (void)nativeAd:(null_unspecified id)ad willPresentScreen:(UIViewController *)viewController
+- (void)nativeAd:(null_unspecified id)ad willPresentScreen:(nullable UIViewController *)viewController
 {
     NSLog(@"Will present screen");
 }
 
-- (void)nativeAd:(null_unspecified id)ad didDismissScreen:(UIViewController *)viewController
+- (void)nativeAd:(null_unspecified id)ad didDismissScreen:(nullable UIViewController *)viewController
 {
     NSLog(@"Did dismiss screen");
+}
+
+- (void)closeNativeAd:(null_unspecified id)ad
+{
+    [self removeCurrentAdView];
 }
 
 @end

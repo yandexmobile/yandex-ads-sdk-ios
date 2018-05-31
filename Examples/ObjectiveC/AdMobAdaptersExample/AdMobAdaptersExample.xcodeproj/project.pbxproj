@@ -8,30 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		4E4459F217DEF13C422E75D5 /* libPods-AdMobAdaptersExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 612BFD9DC38494F34E422B68 /* libPods-AdMobAdaptersExample.a */; };
+		B3C6825120A08B2600B3CA70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6599FDF1BC55EF500FDEF0A /* Main.storyboard */; };
 		F6599FD81BC55EF500FDEF0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F6599FD71BC55EF500FDEF0A /* main.m */; };
 		F6599FDB1BC55EF500FDEF0A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F6599FDA1BC55EF500FDEF0A /* AppDelegate.m */; };
 		F6599FDE1BC55EF500FDEF0A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6599FDD1BC55EF500FDEF0A /* ViewController.m */; };
-		F6599FE11BC55EF500FDEF0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6599FDF1BC55EF500FDEF0A /* Main.storyboard */; };
 		F6599FE61BC55EF500FDEF0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6599FE41BC55EF500FDEF0A /* LaunchScreen.storyboard */; };
 		F6599FEE1BC55F1A00FDEF0A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6599FED1BC55F1A00FDEF0A /* Images.xcassets */; };
-		F6D68D081E44CC9900963BDD /* YandexMobileAdsAdMobAdapters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D68D071E44CC9900963BDD /* YandexMobileAdsAdMobAdapters.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		421F4C26CB0083190B8ABBF8 /* Pods-AdMobAdaptersExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdMobAdaptersExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdMobAdaptersExample/Pods-AdMobAdaptersExample.release.xcconfig"; sourceTree = "<group>"; };
 		612BFD9DC38494F34E422B68 /* libPods-AdMobAdaptersExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AdMobAdaptersExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		727469CED2C476003743D341 /* Pods-AdMobAdaptersExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdMobAdaptersExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdMobAdaptersExample/Pods-AdMobAdaptersExample.debug.xcconfig"; sourceTree = "<group>"; };
+		B3C6825020A08A6600B3CA70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F6599FD31BC55EF500FDEF0A /* AdMobAdaptersExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdMobAdaptersExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6599FD71BC55EF500FDEF0A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F6599FD91BC55EF500FDEF0A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F6599FDA1BC55EF500FDEF0A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F6599FDC1BC55EF500FDEF0A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F6599FDD1BC55EF500FDEF0A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		F6599FE01BC55EF500FDEF0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F6599FE51BC55EF500FDEF0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F6599FE71BC55EF500FDEF0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6599FED1BC55F1A00FDEF0A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		F6D68D071E44CC9900963BDD /* YandexMobileAdsAdMobAdapters.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YandexMobileAdsAdMobAdapters.framework; path = ../../Adapters/AdMob/YandexMobileAdsAdMobAdapters.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,7 +37,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6D68D081E44CC9900963BDD /* YandexMobileAdsAdMobAdapters.framework in Frameworks */,
 				4E4459F217DEF13C422E75D5 /* libPods-AdMobAdaptersExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,7 +47,6 @@
 		0449430E8F7F39A7164AF560 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F6D68D071E44CC9900963BDD /* YandexMobileAdsAdMobAdapters.framework */,
 				612BFD9DC38494F34E422B68 /* libPods-AdMobAdaptersExample.a */,
 			);
 			name = Frameworks;
@@ -167,9 +163,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3C6825120A08B2600B3CA70 /* Main.storyboard in Resources */,
 				F6599FEE1BC55F1A00FDEF0A /* Images.xcassets in Resources */,
 				F6599FE61BC55EF500FDEF0A /* LaunchScreen.storyboard in Resources */,
-				F6599FE11BC55EF500FDEF0A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,7 +239,7 @@
 		F6599FDF1BC55EF500FDEF0A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F6599FE01BC55EF500FDEF0A /* Base */,
+				B3C6825020A08A6600B3CA70 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -368,7 +364,6 @@
 					"\"${PODS_ROOT}/Google-Mobile-Ads-SDK/Frameworks/frameworks\"",
 					"\"${PODS_ROOT}/YandexMobileAds/static\"",
 					"\"${PODS_ROOT}/YandexMobileMetrica/static\"",
-					"\"${SRCROOT}/../../../Adapters/YandexMobileAdsAdMobAdapters/\"",
 				);
 				INFOPLIST_FILE = AdMobAdaptersExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
@@ -391,7 +386,6 @@
 					"\"${PODS_ROOT}/Google-Mobile-Ads-SDK/Frameworks/frameworks\"",
 					"\"${PODS_ROOT}/YandexMobileAds/static\"",
 					"\"${PODS_ROOT}/YandexMobileMetrica/static\"",
-					"\"${SRCROOT}/../../../Adapters/YandexMobileAdsAdMobAdapters/\"",
 				);
 				INFOPLIST_FILE = AdMobAdaptersExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;

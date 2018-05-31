@@ -46,6 +46,11 @@
     return self.assetsComposer.domain;
 }
 
+- (UIButton *)feedbackButton
+{
+    return self.assetsComposer.feedback;
+}
+
 - (UIImageView *)iconImageView
 {
     return self.assetsComposer.icon;

@@ -1,6 +1,19 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 2.9.0
+
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/212922/YandexMobileAds-2.9.0-ios-0129a28d-75a4-45d8-b68f-67c781795283.zip)
+
+#### Added
+
+* Added ability to specify age and gender in `YMAAdRequest`
+* Added feedback asset
+
+#### Updated
+
+* Updated module map
+
 ## Version 2.8.4
 
 SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/212922/YandexMobileAds-2.8.4-ios-17d00d31-6812-4e33-9a15-7d8cced3da6f.zip)

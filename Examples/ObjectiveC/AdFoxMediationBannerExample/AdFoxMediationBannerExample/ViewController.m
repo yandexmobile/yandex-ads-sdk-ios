@@ -5,8 +5,9 @@
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
  */
 
-#import "ViewController.h"
 #import <YandexMobileAds/YandexMobileAds.h>
+#import "ViewController.h"
+#import "RequestParametersProvider.h"
 
 @interface ViewController () <YMAAdViewDelegate>
 
@@ -22,34 +23,25 @@
 
     YMAAdSize *adSize = [YMAAdSize fixedSizeWithCGSize:YMAAdSizeBanner_320x50];
 
-    // Replace demo R-M-206876-13 with actual Block ID.
-    self.adView = [[YMAAdView alloc] initWithBlockID:@"R-M-243655-2"
+    // Replace demo R-M-243655-8 with actual Block ID.
+    self.adView = [[YMAAdView alloc] initWithBlockID:@"R-M-243655-8"
                                               adSize:adSize
                                             delegate:self];
     // Replace demo parameters with actual parameters.
-    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
-    parameters[@"adf_ownerid"] = @"168627";
-    parameters[@"adf_p1"] = @"bzloo";
-    parameters[@"adf_p2"] = @"fhma";
-    parameters[@"adf_pt"] = @"b";
-
+    // Following demo parameters may be used for testing:
+    // Yandex: [RequestParametersProvider yandexParameters]
+    // AdMob mediation: [RequestParametersProvider adMobParameters]
+    // Facebook mediation: [RequestParametersProvider facebookParameters]
+    // MoPub mediation: [RequestParametersProvider moPubParameters]
+    // MyTarget mediation: [RequestParametersProvider myTargetParameters]
+    // StartApp mediation: [RequestParametersProvider startAppParameters]
+    NSDictionary *parameters = [RequestParametersProvider adMobParameters];
     YMAAdRequest *adRequest = [[YMAAdRequest alloc] initWithLocation:nil
                                                         contextQuery:nil
                                                          contextTags:nil
                                                           parameters:parameters];
 
     [self.adView loadAdWithRequest:adRequest];
-}
-
-- (void)adViewDidLoad:(YMAAdView *)adView
-{
-    NSLog(@"Ad loaded");
-    [self.adView removeFromSuperview];
-    if (@available(iOS 11.0, *)) {
-        [self displayAtBottomOfSafeArea];
-    } else {
-        [self.adView displayAtBottomInView:self.view];
-    }
 }
 
 // Ability to display ad in Safe Area will soon be added to `displayAtBottomOfSafeAreaInView:` method of SDK
@@ -64,6 +56,19 @@
                              [self.adView.bottomAnchor constraintEqualToAnchor:guide.bottomAnchor]
                              ];
     [NSLayoutConstraint activateConstraints:constraints];
+}
+
+#pragma mark - YMAAdViewDelegate
+
+- (void)adViewDidLoad:(YMAAdView *)adView
+{
+    NSLog(@"Ad loaded");
+    [self.adView removeFromSuperview];
+    if (@available(iOS 11.0, *)) {
+        [self displayAtBottomOfSafeArea];
+    } else {
+        [self.adView displayAtBottomInView:self.view];
+    }
 }
 
 - (void)adViewDidFailLoading:(YMAAdView *)adView error:(NSError *)error

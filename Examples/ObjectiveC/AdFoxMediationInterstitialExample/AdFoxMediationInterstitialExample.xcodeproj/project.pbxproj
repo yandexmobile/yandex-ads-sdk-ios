@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3C6825720A09C2C00B3CA70 /* RequestParametersProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C6825620A09C2C00B3CA70 /* RequestParametersProvider.m */; };
 		E3AB2166056B5A91DE21262C /* libPods-AdFoxMediationInterstitialExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF415719C847FFFE265ED62E /* libPods-AdFoxMediationInterstitialExample.a */; };
 		F654F8221F2B789500106F2C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F654F8211F2B789500106F2C /* main.m */; };
 		F654F8251F2B789500106F2C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F654F8241F2B789500106F2C /* AppDelegate.m */; };
@@ -14,10 +15,11 @@
 		F654F82B1F2B789500106F2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F654F8291F2B789500106F2C /* Main.storyboard */; };
 		F654F8301F2B789500106F2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F654F82E1F2B789500106F2C /* LaunchScreen.storyboard */; };
 		F654F8381F2B792900106F2C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F654F8371F2B792900106F2C /* Images.xcassets */; };
-		F654F83A1F2B7AA200106F2C /* AdMobYandexMobileAdsAdapters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F654F8391F2B7AA200106F2C /* AdMobYandexMobileAdsAdapters.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B3C6825520A09C2C00B3CA70 /* RequestParametersProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestParametersProvider.h; sourceTree = "<group>"; };
+		B3C6825620A09C2C00B3CA70 /* RequestParametersProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestParametersProvider.m; sourceTree = "<group>"; };
 		CD4CB19FF0812E6E70DFB94A /* Pods-AdFoxMediationInterstitialExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdFoxMediationInterstitialExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdFoxMediationInterstitialExample/Pods-AdFoxMediationInterstitialExample.release.xcconfig"; sourceTree = "<group>"; };
 		CF415719C847FFFE265ED62E /* libPods-AdFoxMediationInterstitialExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AdFoxMediationInterstitialExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D42F89FBFFDA22029A1EBD8C /* Pods-AdFoxMediationInterstitialExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdFoxMediationInterstitialExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdFoxMediationInterstitialExample/Pods-AdFoxMediationInterstitialExample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -31,7 +33,6 @@
 		F654F82F1F2B789500106F2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F654F8311F2B789500106F2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F654F8371F2B792900106F2C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		F654F8391F2B7AA200106F2C /* AdMobYandexMobileAdsAdapters.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdMobYandexMobileAdsAdapters.framework; path = ../../Adapters/AdMobYandexMobileAdsAdapters/AdMobYandexMobileAdsAdapters.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,7 +40,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F654F83A1F2B7AA200106F2C /* AdMobYandexMobileAdsAdapters.framework in Frameworks */,
 				E3AB2166056B5A91DE21262C /* libPods-AdFoxMediationInterstitialExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -59,7 +59,6 @@
 		C4325410594AA5E2881B0E52 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F654F8391F2B7AA200106F2C /* AdMobYandexMobileAdsAdapters.framework */,
 				CF415719C847FFFE265ED62E /* libPods-AdFoxMediationInterstitialExample.a */,
 			);
 			name = Frameworks;
@@ -90,6 +89,8 @@
 				F654F8241F2B789500106F2C /* AppDelegate.m */,
 				F654F8261F2B789500106F2C /* ViewController.h */,
 				F654F8271F2B789500106F2C /* ViewController.m */,
+				B3C6825520A09C2C00B3CA70 /* RequestParametersProvider.h */,
+				B3C6825620A09C2C00B3CA70 /* RequestParametersProvider.m */,
 				F654F8291F2B789500106F2C /* Main.storyboard */,
 				F654F8371F2B792900106F2C /* Images.xcassets */,
 				F654F82E1F2B789500106F2C /* LaunchScreen.storyboard */,
@@ -183,9 +184,33 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AdFoxMediationInterstitialExample/Pods-AdFoxMediationInterstitialExample-resources.sh",
+				"$PODS_CONFIGURATION_BUILD_DIR/StartAppSDK/StartAppSDK.bundle",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Internal/Common/MPAdBrowserController.xib",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseBtn.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseBtn@2x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseBtn@3x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseButtonX.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseButtonX@2x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseButtonX@3x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCountdownTimer.html",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPDAAIcon.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPDAAIcon@2x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPDAAIcon@3x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPMutedBtn.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPMutedBtn@2x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPMutedBtn@3x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPPlayBtn.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPPlayBtn@2x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPPlayBtn@3x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPUnmutedBtn.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPUnmutedBtn@2x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPUnmutedBtn@3x.png",
+				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MRAID.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -234,6 +259,7 @@
 			files = (
 				F654F8281F2B789500106F2C /* ViewController.m in Sources */,
 				F654F8251F2B789500106F2C /* AppDelegate.m in Sources */,
+				B3C6825720A09C2C00B3CA70 /* RequestParametersProvider.m in Sources */,
 				F654F8221F2B789500106F2C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,7 +400,6 @@
 					"\"${PODS_ROOT}/Google-Mobile-Ads-SDK/Frameworks/frameworks\"",
 					"\"${PODS_ROOT}/YandexMobileAds/static\"",
 					"\"${PODS_ROOT}/YandexMobileMetrica/static\"",
-					"\"${SRCROOT}/../../../Adapters/AdMobYandexMobileAdsAdapters/\"",
 				);
 				INFOPLIST_FILE = AdFoxMediationInterstitialExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -394,7 +419,6 @@
 					"\"${PODS_ROOT}/Google-Mobile-Ads-SDK/Frameworks/frameworks\"",
 					"\"${PODS_ROOT}/YandexMobileAds/static\"",
 					"\"${PODS_ROOT}/YandexMobileMetrica/static\"",
-					"\"${SRCROOT}/../../../Adapters/AdMobYandexMobileAdsAdapters/\"",
 				);
 				INFOPLIST_FILE = AdFoxMediationInterstitialExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

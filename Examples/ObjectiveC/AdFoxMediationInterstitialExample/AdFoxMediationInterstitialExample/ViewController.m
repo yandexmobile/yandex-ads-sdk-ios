@@ -5,8 +5,9 @@
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
  */
 
-#import "ViewController.h"
 #import <YandexMobileAds/YandexMobileAds.h>
+#import "ViewController.h"
+#import "RequestParametersProvider.h"
 
 @interface ViewController () <YMAInterstitialDelegate>
 
@@ -20,20 +21,22 @@
 {
     [super viewDidLoad];
 
-    // Replace demo R-M-206876-12 with actual Block ID.
-    self.interstitialController = [[YMAInterstitialController alloc] initWithBlockID:@"R-M-243655-1"];
+    // Replace demo R-M-243655-9 with actual Block ID.
+    self.interstitialController = [[YMAInterstitialController alloc] initWithBlockID:@"R-M-243655-9"];
     self.interstitialController.delegate = self;
 }
 
 - (IBAction)loadInterstitial
 {
     // Replace demo parameters with actual parameters.
-    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
-    parameters[@"adf_ownerid"] = @"168627";
-    parameters[@"adf_p1"] = @"bxwsa";
-    parameters[@"adf_p2"] = @"fhmf";
-    parameters[@"adf_pt"] = @"b";
-
+    // Following demo parameters may be used for testing:
+    // Yandex: [RequestParametersProvider yandexParameters]
+    // AdMob mediation: [RequestParametersProvider adMobParameters]
+    // Facebook mediation: [RequestParametersProvider facebookParameters]
+    // MoPub mediation: [RequestParametersProvider moPubParameters]
+    // MyTarget mediation: [RequestParametersProvider myTargetParameters]
+    // StartApp mediation: [RequestParametersProvider startAppParameters]
+    NSDictionary *parameters = [RequestParametersProvider adMobParameters];
     YMAAdRequest *adRequest = [[YMAAdRequest alloc] initWithLocation:nil
                                                         contextQuery:nil
                                                          contextTags:nil

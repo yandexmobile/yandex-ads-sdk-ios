@@ -44,6 +44,7 @@ static CGFloat const kNativeViewOffset = 8.f;
         _callToAction = [self button];
         _domain = [self label];
         _favicon = [self imageView];
+        _feedback = [self feedbackButton];
         _icon = [self imageView];
         _image = [self imageView];
         _price = [self label];
@@ -85,6 +86,15 @@ static CGFloat const kNativeViewOffset = 8.f;
     return button;
 }
 
+- (UIButton *)feedbackButton
+{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
+    button.backgroundColor = [UIColor clearColor];
+    button.translatesAutoresizingMaskIntoConstraints = NO;
+    return button;
+}
+
 - (StarRatingView *)starRatingView
 {
     UIImage *starImage = [UIImage imageNamed:@"star"];
@@ -107,6 +117,7 @@ static CGFloat const kNativeViewOffset = 8.f;
     UIImageView *icon = self.icon;
     UIImageView *image = self.image;
     UIImageView *favicon = self.favicon;
+    UIButton *feedback = self.feedback;
     UILabel *reviewCount = self.reviewCount;
     UILabel *price = self.price;
     StarRatingView *rating = self.rating;
@@ -120,13 +131,15 @@ static CGFloat const kNativeViewOffset = 8.f;
                                                          icon,
                                                          image,
                                                          favicon,
+                                                         feedback,
                                                          reviewCount,
                                                          price,
                                                          rating);
     [self configureSponsoredLabelWithViewBindings:views];
     [self configureAgeLabelWithViewBindings:views];
+    [self configureFeedbackButtonWithViewBindings:views];
     [self configureImageWithViewBindings:views];
-    [self configureFaviconWithViewBindings:views];
+    [self configureFaviconWithViewBindings:views];;
     [self configureIconWithViewBindings:views];
     [self configureLeftImageWithViewBindings:views];
     [self configureTitleLabelWithViewBindings:views];
@@ -171,6 +184,27 @@ static CGFloat const kNativeViewOffset = 8.f;
                                                                     views:views];
     [self.view addConstraints:vertical];
     [self.view addConstraints:horizontal];
+}
+
+- (void)configureFeedbackButtonWithViewBindings:(NSDictionary *)views
+{
+    if (self.ad.adAssets.feedbackAvailable == NO) {
+        [self.feedback removeFromSuperview];
+        return;
+    }
+    [self.view addSubview:self.feedback];
+    NSArray *vertical = [self topConstraintsForView:self.feedback];
+    NSArray *horizontal = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[feedback(30)]-|"
+                                                                  options:0
+                                                                  metrics:nil
+                                                                    views:views];
+    NSArray *height = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[feedback(30)]"
+                                                              options:0
+                                                              metrics:nil
+                                                                views:views];
+    [self.view addConstraints:vertical];
+    [self.view addConstraints:horizontal];
+    [self.view addConstraints:height];
 }
 
 - (void)configureFaviconWithViewBindings:(NSDictionary *)views
