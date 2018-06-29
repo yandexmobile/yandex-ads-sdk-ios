@@ -21,10 +21,17 @@
     [super viewDidLoad];
     
     // Replace XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX with Ad Unit ID generated at https://app.mopub.com.
-    self.adView = [[MPAdView alloc] initWithAdUnitId:@"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" size:MOPUB_BANNER_SIZE];
+    NSString *adUnit = @"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+    self.adView = [[MPAdView alloc] initWithAdUnitId:adUnit size:MOPUB_BANNER_SIZE];
     self.adView.delegate = self;
     self.adView.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.adView loadAd];
+    __typeof(self) __weak weakSelf = self;
+    MPMoPubConfiguration *configuration = [[MPMoPubConfiguration alloc] initWithAdUnitIdForAppInitialization:adUnit];
+    [[MoPub sharedInstance] initializeSdkWithConfiguration:configuration completion:^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf.adView loadAd];
+        });
+    }];
 }
 
 - (UIViewController *)viewControllerForPresentingModalView
