@@ -44,7 +44,7 @@
     // AdMob mediation: [RequestParametersProvider adMobParameters]
     // Facebook Audience mediation: [RequestParametersProvider facebookParameters]
     // MoPub mediation: [RequestParametersProvider moPubParameters]
-    // MyTarget mediation: [RequestParametersProvider adMobParameters]
+    // MyTarget mediation: [RequestParametersProvider myTargetParameters]
     NSDictionary *parameters = [RequestParametersProvider adMobParameters];
     self.adLoader = [[YMANativeAdLoader alloc] initWithConfiguration:configuration];
     self.adLoader.delegate = self;

@@ -1,6 +1,15 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 2.9.1
+
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/332493/YandexMobileAds-2.9.1-ios-c5e820ac-aa24-480e-bdb6-063c54c7ac74.zip)
+
+#### Updated
+
+* Dropped iOS 7 support
+* Updated minimum compatible AppMetrica version to 3.1.2
+
 ## Version 2.9.0
 
 SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/212922/YandexMobileAds-2.9.0-ios-0129a28d-75a4-45d8-b68f-67c781795283.zip)
