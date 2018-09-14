@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# Version 2.10.0
+
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/212922/YandexMobileAds-2.10.0-ios-10ea4e26-01a4-4e57-b87a-68ab28f757f2.zip)
+
+#### Added
+
+* Added `YMAVideoDelegate` delegate to notify app when ad video completed
+
 ## Version 2.9.1
 
 SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/332493/YandexMobileAds-2.9.1-ios-c5e820ac-aa24-480e-bdb6-063c54c7ac74.zip)
