@@ -1,6 +1,19 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# Version 2.11.0
+
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/212922/YandexMobileAds-2.11.0-ios-ea6f0b6f-f4b3-415c-bf58-22806e8c94b4.zip)
+
+#### Added
+
+* Added support for rewarded ad
+* Added support for GDPR to obtain and manage consent from users from GDPR region to serve personalized ads.
+* Added `YMANativeMediaView` and video support in native ad
+
+#### Deprecated
+* Deprecated `imageView` property on `YMANativeAppInstallAdView`, `YMANativeContentAdView` and `YMANativeImageAdView` in favor of `mediaView`
+
 # Version 2.10.0
 
 SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/212922/YandexMobileAds-2.10.0-ios-10ea4e26-01a4-4e57-b87a-68ab28f757f2.zip)

@@ -20,7 +20,7 @@ static CGFloat const kNativeViewOffset = 8.f;
 @property (nonatomic, strong) UILabel *domain;
 @property (nonatomic, strong) UIImageView *favicon;
 @property (nonatomic, strong) UIImageView *icon;
-@property (nonatomic, strong) UIImageView *image;
+@property (nonatomic, strong) YMANativeMediaView *media;
 @property (nonatomic, strong) UILabel *sponsored;
 @property (nonatomic, strong) UILabel *title;
 @property (nonatomic, strong) UILabel *warning;
@@ -28,7 +28,7 @@ static CGFloat const kNativeViewOffset = 8.f;
 @property (nonatomic, strong) StarRatingView *rating;
 @property (nonatomic, strong) UILabel *reviewCount;
 @property (nonatomic, weak) UIView *leftView;
-@property (nonatomic, weak) UIImageView *wideImage;
+@property (nonatomic, weak) YMANativeMediaView *wideMedia;
 
 @end
 
@@ -46,7 +46,7 @@ static CGFloat const kNativeViewOffset = 8.f;
         _favicon = [self imageView];
         _feedback = [self feedbackButton];
         _icon = [self imageView];
-        _image = [self imageView];
+        _media = [self mediaView];
         _price = [self label];
         _rating = [self starRatingView];
         _reviewCount = [self label];
@@ -73,6 +73,13 @@ static CGFloat const kNativeViewOffset = 8.f;
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     imageView.translatesAutoresizingMaskIntoConstraints = NO;
     return imageView;
+}
+
+- (YMANativeMediaView *)mediaView
+{
+    YMANativeMediaView *mediaView = [[YMANativeMediaView alloc] initWithFrame:CGRectZero];
+    mediaView.translatesAutoresizingMaskIntoConstraints = NO;
+    return mediaView;
 }
 
 - (UIButton *)button
@@ -115,7 +122,7 @@ static CGFloat const kNativeViewOffset = 8.f;
     UILabel *sponsored = self.sponsored;
     UIButton *callToAction = self.callToAction;
     UIImageView *icon = self.icon;
-    UIImageView *image = self.image;
+    YMANativeMediaView *media = self.media;
     UIImageView *favicon = self.favicon;
     UIButton *feedback = self.feedback;
     UILabel *reviewCount = self.reviewCount;
@@ -129,7 +136,7 @@ static CGFloat const kNativeViewOffset = 8.f;
                                                          sponsored,
                                                          callToAction,
                                                          icon,
-                                                         image,
+                                                         media,
                                                          favicon,
                                                          feedback,
                                                          reviewCount,
@@ -138,14 +145,14 @@ static CGFloat const kNativeViewOffset = 8.f;
     [self configureSponsoredLabelWithViewBindings:views];
     [self configureAgeLabelWithViewBindings:views];
     [self configureFeedbackButtonWithViewBindings:views];
-    [self configureImageWithViewBindings:views];
+    [self configureMediaWithViewBindings:views];
     [self configureFaviconWithViewBindings:views];;
     [self configureIconWithViewBindings:views];
     [self configureLeftImageWithViewBindings:views];
     [self configureTitleLabelWithViewBindings:views];
     [self configureBodyLabelWithViewBindings:views];
     [self configureDomainLabelWithViewBindings:views];
-    [self configureWideImageWithViewBindings:views];
+    [self configureWideMediaViewWithViewBindings:views];
     [self configureReviewCountLabelWithViewBindings:views];
     [self configureRatingWithViewBindings:views];
     [self configurePriceLabelWithViewBindings:views];
@@ -209,33 +216,33 @@ static CGFloat const kNativeViewOffset = 8.f;
 
 - (void)configureFaviconWithViewBindings:(NSDictionary *)views
 {
-    if (self.ad.adAssets.favicon == nil || (self.ad.adAssets.image != nil && [self hasWideImage] == NO)) {
+    if (self.ad.adAssets.favicon == nil || (self.ad.adAssets.image != nil && [self hasWideMedia] == NO)) {
         [self.favicon removeFromSuperview];
         return;
     }
     [self.view addSubview:self.favicon];
-    NSArray *constraints = [self imageConstraintsForImageView:self.favicon asset:self.ad.adAssets.favicon width:16.f];
+    NSArray *constraints = [self constraintsForView:self.favicon asset:self.ad.adAssets.favicon width:16.f];
     [self.view addConstraints:constraints];
     self.leftView = self.favicon;
 }
 
-- (void)configureImageWithViewBindings:(NSDictionary *)views
+- (void)configureMediaWithViewBindings:(NSDictionary *)views
 {
-    if ([self shouldShowImage]) {
-        [self.view addSubview:self.image];
+    if ([self shouldShowMedia]) {
+        [self.view addSubview:self.media];
     }
     else {
-        [self.image removeFromSuperview];
+        [self.media removeFromSuperview];
     }
 }
 
 - (void)configureLeftImageWithViewBindings:(NSDictionary *)views
 {
-    if ([self shouldShowImage] == NO || [self hasWideImage]) {
+    if ([self shouldShowMedia] == NO || [self hasWideMedia]) {
         return;
     }
-    [self.view addConstraints:[self imageConstraintsForImageView:self.image asset:self.ad.adAssets.image width:100.f]];
-    self.leftView = self.image;
+    [self.view addConstraints:[self constraintsForView:self.media asset:self.ad.adAssets.image width:100.f]];
+    self.leftView = self.media;
 }
 
 - (void)configureIconWithViewBindings:(NSDictionary *)views
@@ -245,7 +252,7 @@ static CGFloat const kNativeViewOffset = 8.f;
         return;
     }
     [self.view addSubview:self.icon];
-    [self.view addConstraints:[self imageConstraintsForImageView:self.icon asset:self.ad.adAssets.icon width:40.f]];
+    [self.view addConstraints:[self constraintsForView:self.icon asset:self.ad.adAssets.icon width:40.f]];
     self.leftView = self.icon;
 }
 
@@ -285,22 +292,23 @@ static CGFloat const kNativeViewOffset = 8.f;
     [self.view addConstraints:[self textBlockHorizontalConstraintsForView:self.domain]];
 }
 
-- (void)configureWideImageWithViewBindings:(NSDictionary *)views
+- (void)configureWideMediaViewWithViewBindings:(NSDictionary *)views
 {
-    if ([self shouldShowImage] == NO || [self hasWideImage] == NO) {
+    if ([self shouldShowMedia] == NO || [self hasWideMedia] == NO) {
         return;
     }
-    NSArray *horizontal = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[image]-|"
-                                                                  options:0
-                                                                  metrics:nil
-                                                                    views:views];
-    NSLayoutConstraint *aspectRatio = [self aspectRatioConstraintForImageView:self.image asset:self.ad.adAssets.image];
-    NSArray *topViews = [self imagesByAddingTopViews:@[ self.body, self.domain ]];
-    NSArray *imageVertical = [self verticalConstraintsForView:self.image topViews:topViews];
-    [self.view addConstraint:aspectRatio];
-    [self.view addConstraints:horizontal];
-    [self.view addConstraints:imageVertical];
-    self.wideImage = self.image;
+    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[media]-|"
+                                                                             options:0
+                                                                             metrics:nil
+                                                                               views:views];
+    CGFloat aspectRatio = [self mediaAspectRatio];
+    NSLayoutConstraint *ratioConstraint = [self aspectRatioConstraintForView:self.media aspectRatio:aspectRatio];
+    NSArray *topViews = [self viewByAddingTopViews:@[ self.body, self.domain ]];
+    NSArray *mediaVerticalConstraints = [self verticalConstraintsForView:self.media topViews:topViews];
+    [self.view addConstraint:ratioConstraint];
+    [self.view addConstraints:horizontalConstraints];
+    [self.view addConstraints:mediaVerticalConstraints];
+    self.wideMedia = self.media;
 }
 
 - (void)configureReviewCountLabelWithViewBindings:(NSDictionary *)views
@@ -310,7 +318,7 @@ static CGFloat const kNativeViewOffset = 8.f;
         return;
     }
     [self.view addSubview:self.reviewCount];
-    NSArray *topViews = [self imagesByAddingTopViews:@[ self.body, self.domain ]];
+    NSArray *topViews = [self viewByAddingTopViews:@[ self.body, self.domain ]];
     [self.view addConstraints:[self verticalConstraintsForView:self.reviewCount topViews:topViews]];
     NSArray *horizontal = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[reviewCount(<=150)]"
                                                                   options:0
@@ -326,7 +334,7 @@ static CGFloat const kNativeViewOffset = 8.f;
         return;
     }
     [self.view addSubview:self.rating];
-    NSArray *topViews = [self imagesByAddingTopViews:@[ self.body, self.domain ]];
+    NSArray *topViews = [self viewByAddingTopViews:@[ self.body, self.domain ]];
     [self.view addConstraints:[self verticalConstraintsForView:self.rating topViews:topViews]];
     NSArray *horizontal = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[rating]-|"
                                                                   options:0
@@ -342,7 +350,7 @@ static CGFloat const kNativeViewOffset = 8.f;
         return;
     }
     [self.view addSubview:self.price];
-    NSArray *topViews = [self imagesByAddingTopViews:@[ self.body, self.domain, self.rating, self.reviewCount ]];
+    NSArray *topViews = [self viewByAddingTopViews:@[ self.body, self.domain, self.rating, self.reviewCount ]];
     [self.view addConstraints:[self verticalConstraintsForView:self.price topViews:topViews]];
     NSArray *horizontal = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[price(<=150)]-|"
                                                                   options:0
@@ -363,7 +371,7 @@ static CGFloat const kNativeViewOffset = 8.f;
                                                                   metrics:nil
                                                                     views:views];
     NSArray *topViews = @[ self.body, self.domain, self.rating, self.reviewCount, self.price ];
-    topViews = [self imagesByAddingTopViews:topViews];
+    topViews = [self viewByAddingTopViews:topViews];
     [self.view addConstraints:[self verticalConstraintsForView:self.callToAction topViews:topViews]];
     [self.view addConstraints:horizontal];
 }
@@ -380,7 +388,7 @@ static CGFloat const kNativeViewOffset = 8.f;
                                                                   metrics:nil
                                                                     views:views];
     NSArray *topViews = @[ self.body, self.domain, self.rating, self.reviewCount, self.price, self.callToAction ];
-    topViews = [self imagesByAddingTopViews:topViews];
+    topViews = [self viewByAddingTopViews:topViews];
     [self.view addConstraints:[self verticalConstraintsForView:self.warning topViews:topViews]];
     [self.view addConstraints:horizontal];
 }
@@ -401,35 +409,52 @@ static CGFloat const kNativeViewOffset = 8.f;
 
 #pragma mark - Helpers
 
-- (NSLayoutConstraint *)aspectRatioConstraintForImageView:(UIImageView *)imageView asset:(YMANativeAdImage *)asset
+- (CGFloat)mediaAspectRatio
 {
-    CGFloat ratio = asset.size.width / asset.size.height;
-    return [NSLayoutConstraint constraintWithItem:imageView
+    return [self hasVideo]
+        ? self.ad.adAssets.media.aspectRatio
+        : [self aspectRatioWithImageAsset:self.ad.adAssets.image];
+}
+
+- (CGFloat)aspectRatioWithImageAsset:(YMANativeAdImage *)imageAsset
+{
+    return imageAsset.size.width / imageAsset.size.height;
+}
+
+- (NSLayoutConstraint *)aspectRatioConstraintForView:(UIView *)view asset:(YMANativeAdImage *)asset
+{
+    CGFloat aspectRatio = [self aspectRatioWithImageAsset:asset];
+    return [self aspectRatioConstraintForView:view aspectRatio:aspectRatio];
+}
+
+- (NSLayoutConstraint *)aspectRatioConstraintForView:(UIView *)view aspectRatio:(CGFloat)aspectRatio
+{
+    return [NSLayoutConstraint constraintWithItem:view
                                         attribute:NSLayoutAttributeWidth
                                         relatedBy:NSLayoutRelationEqual
-                                           toItem:imageView
+                                           toItem:view
                                         attribute:NSLayoutAttributeHeight
-                                       multiplier:ratio
+                                       multiplier:aspectRatio
                                          constant:0.f];
 }
 
-- (NSArray *)imageConstraintsForImageView:(UIImageView *)imageView asset:(YMANativeAdImage *)asset width:(CGFloat)width
+- (NSArray *)constraintsForView:(UIView *)view asset:(YMANativeAdImage *)asset width:(CGFloat)width
 {
-    NSDictionary *views = NSDictionaryOfVariableBindings(imageView);
+    NSDictionary *views = NSDictionaryOfVariableBindings(view);
     NSArray *topViews = @[ self.sponsored ];
-    NSArray *imageHorizontal = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[imageView]"
+    NSArray *imageHorizontal = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[view]"
                                                                        options:0
                                                                        metrics:nil
                                                                          views:views];
-    NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:imageView
+    NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:view
                                                                        attribute:NSLayoutAttributeWidth
                                                                        relatedBy:NSLayoutRelationEqual
                                                                           toItem:nil
                                                                        attribute:NSLayoutAttributeNotAnAttribute
                                                                       multiplier:1.f
                                                                         constant:width];
-    NSLayoutConstraint *aspectRatio = [self aspectRatioConstraintForImageView:imageView asset:asset];
-    NSArray *imageVertical = [self verticalConstraintsForView:imageView topViews:topViews];
+    NSLayoutConstraint *aspectRatio = [self aspectRatioConstraintForView:view asset:asset];
+    NSArray *imageVertical = [self verticalConstraintsForView:view topViews:topViews];
     NSMutableArray *constraints = [NSMutableArray array];
     [constraints addObjectsFromArray:imageVertical];
     [constraints addObjectsFromArray:imageHorizontal];
@@ -491,14 +516,14 @@ static CGFloat const kNativeViewOffset = 8.f;
     return constraints;
 }
 
-- (NSArray *)imagesByAddingTopViews:(NSArray *)topViews
+- (NSArray *)viewByAddingTopViews:(NSArray *)topViews
 {
     NSMutableArray *views = [topViews mutableCopy];
     if (self.leftView != nil) {
         [views addObject:self.leftView];
     }
-    if (self.wideImage != nil) {
-        [views addObject:self.wideImage];
+    if (self.wideMedia != nil) {
+        [views addObject:self.wideMedia];
     }
     return [views copy];
 }
@@ -524,13 +549,28 @@ static CGFloat const kNativeViewOffset = 8.f;
     return constraints;
 }
 
-- (BOOL)shouldShowImage
+- (BOOL)shouldShowMedia
 {
-    if (self.ad.adAssets.image == nil) {
+    if ([self hasImage] == NO && [self hasVideo] == NO) {
         return NO;
     }
-    BOOL hasSmallAppImage = [self.ad.adType isEqualToString:kYMANativeAdTypeAppInstall] && [self hasWideImage] == NO;
+    BOOL hasSmallAppImage = [self.ad.adType isEqualToString:kYMANativeAdTypeAppInstall] && [self hasWideMedia] == NO;
     return hasSmallAppImage == NO;
+}
+
+- (BOOL)hasWideMedia
+{
+    return [self hasVideo] || [self hasWideImage];
+}
+
+- (BOOL)hasImage
+{
+    return self.ad.adAssets.image != nil;
+}
+
+- (BOOL)hasVideo
+{
+    return self.ad.adAssets.media != nil;
 }
 
 - (BOOL)hasWideImage

@@ -8,6 +8,7 @@
 #import <UIKit/UIKit.h>
 
 @protocol YMANativeGenericAd;
+@class YMANativeMediaView;
 @class StarRatingView;
 
 @interface NativeAssetsComposer : NSObject
@@ -19,7 +20,7 @@
 @property (nonatomic, strong, readonly) UIImageView *favicon;
 @property (nonatomic, strong, readonly) UIButton *feedback;
 @property (nonatomic, strong, readonly) UIImageView *icon;
-@property (nonatomic, strong, readonly) UIImageView *image;
+@property (nonatomic, strong, readonly) YMANativeMediaView *media;
 @property (nonatomic, strong, readonly) UILabel *sponsored;
 @property (nonatomic, strong, readonly) UILabel *title;
 @property (nonatomic, strong, readonly) UILabel *warning;

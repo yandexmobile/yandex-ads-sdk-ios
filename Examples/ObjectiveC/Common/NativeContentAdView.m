@@ -56,9 +56,9 @@
     return self.assetsComposer.favicon;
 }
 
-- (UIImageView *)imageView
+- (YMANativeMediaView *)mediaView
 {
-    return self.assetsComposer.image;
+    return self.assetsComposer.media;
 }
 
 - (UILabel *)sponsoredLabel

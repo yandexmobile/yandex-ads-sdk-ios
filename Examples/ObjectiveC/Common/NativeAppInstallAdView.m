@@ -56,9 +56,9 @@
     return self.assetsComposer.icon;
 }
 
-- (UIImageView *)imageView
+- (YMANativeMediaView *)mediaView
 {
-    return self.assetsComposer.image;
+    return self.assetsComposer.media;
 }
 
 - (UILabel *)priceLabel
