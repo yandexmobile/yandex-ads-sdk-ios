@@ -1,0 +1,10 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, :deployment_target => '8.0'
+
+target 'AdFoxMediationRewardedExample' do
+  pod 'YandexMobileAds/Dynamic'
+  pod 'AdMobYandexMobileAdsAdapters/Dynamic'
+  pod 'FacebookYandexMobileAdsAdapters/Dynamic'
+  pod 'MoPubYandexMobileAdsAdapters/Dynamic'
+  pod 'MyTargetYandexMobileAdsAdapters/Dynamic'
+end

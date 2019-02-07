@@ -1,7 +1,0 @@
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, :deployment_target => '8.0'
-
-target 'AdMobAdaptersExample' do
-  pod 'YandexMobileAdsAdMobAdapters'
-  pod 'YandexMobileAds'
-end

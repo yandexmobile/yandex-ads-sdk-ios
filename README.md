@@ -20,18 +20,24 @@ EULA is available at [EULA website][LICENSE]
   * /Examples/ObjectiveC/NativeExample
   * /Examples/ObjectiveC/NativeTemplatesExample
   * /Examples/ObjectiveC/NativeTemplatesTableViewExample
+  * /Examples/ObjectiveC/RewardedExample
   * /Examples/ObjectiveC/VideoExample
-  * /Examples/ObjectiveC/AdMobAdaptersExample
-  * /Examples/ObjectiveC/MoPubAdaptersExample
+  * /Examples/ObjectiveC/AdMobBannerAdapterExample
+  * /Examples/ObjectiveC/AdMobRewardedAdapterExample
+  * /Examples/ObjectiveC/MoPubBannerAdapterExample
+  * /Examples/ObjectiveC/MoPubRewardedAdapterExample
   * /Examples/ObjectiveC/AdFoxNativeExample
   * /Examples/ObjectiveC/AdFoxMediationBannerExample
   * /Examples/ObjectiveC/AdFoxMediationInterstitialExample
   * /Examples/ObjectiveC/AdFoxMediationNativeExample
+  * /Examples/ObjectiveC/AdFoxMediationRewardedExample
   
 #### Swift
   * /Examples/Swift/BannerExample
   * /Examples/Swift/InterstitialExample
   * /Examples/Swift/NativeTemplatesExample
+  * /Examples/Swift/RewardedExample
+  * /Examples/Swift/AdFoxMediationRewardedExample
 
 3. Install dependencies:
 ```pod install```
