@@ -129,8 +129,6 @@
 				F6CC1F231B8DE2C100770F3A /* Sources */,
 				F6CC1F241B8DE2C100770F3A /* Frameworks */,
 				F6CC1F251B8DE2C100770F3A /* Resources */,
-				7E32595CBC75E59580062603 /* [CP] Embed Pods Frameworks */,
-				A8D290BA1D76E18DC0E4B8C2 /* [CP] Copy Pods Resources */,
 				986F9A39092E25D1B9B5AF0B /* Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -188,21 +186,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7E32595CBC75E59580062603 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VideoExample/Pods-VideoExample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		986F9A39092E25D1B9B5AF0B /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -216,21 +199,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VideoExample/Pods-VideoExample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A8D290BA1D76E18DC0E4B8C2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VideoExample/Pods-VideoExample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AD0683C330B57A2E9FD71A39 /* [CP] Check Pods Manifest.lock */ = {

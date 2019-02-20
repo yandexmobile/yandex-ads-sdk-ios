@@ -114,8 +114,6 @@
 				F6CC1EF11B8DD9B300770F3A /* Sources */,
 				F6CC1EF21B8DD9B300770F3A /* Frameworks */,
 				F6CC1EF31B8DD9B300770F3A /* Resources */,
-				16787C6944693C8DF45CE01B /* [CP] Embed Pods Frameworks */,
-				9751657B467CDFC724B351A4 /* [CP] Copy Pods Resources */,
 				4831E040FDC3FE9983150B7C /* Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -173,21 +171,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		16787C6944693C8DF45CE01B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InterstitialExample/Pods-InterstitialExample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		4831E040FDC3FE9983150B7C /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -201,21 +184,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InterstitialExample/Pods-InterstitialExample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9751657B467CDFC724B351A4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InterstitialExample/Pods-InterstitialExample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A62969C6034F9DF5B011D99C /* [CP] Check Pods Manifest.lock */ = {
