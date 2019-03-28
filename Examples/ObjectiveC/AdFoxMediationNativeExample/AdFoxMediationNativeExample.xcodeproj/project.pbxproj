@@ -18,7 +18,6 @@
 		B3946C4C204583D00081899C /* NativeAppInstallAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3946C47204583CF0081899C /* NativeAppInstallAdView.m */; };
 		B3946C50204584540081899C /* StarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3946C4E204584530081899C /* StarRatingView.m */; };
 		B3946C51204584540081899C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3946C4F204584540081899C /* Assets.xcassets */; };
-		B3C6825A20A09CF300B3CA70 /* RequestParametersProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C6825920A09CF300B3CA70 /* RequestParametersProvider.m */; };
 		C93CADC7D9C1B03061C9202D /* libPods-AdFoxMediationNativeExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C88E1450DC1DCEF7F7A4DAC /* libPods-AdFoxMediationNativeExample.a */; };
 /* End PBXBuildFile section */
 
@@ -44,8 +43,6 @@
 		B3946C4D204584530081899C /* StarRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StarRatingView.h; path = ../../Common/StarRatingView.h; sourceTree = "<group>"; };
 		B3946C4E204584530081899C /* StarRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StarRatingView.m; path = ../../Common/StarRatingView.m; sourceTree = "<group>"; };
 		B3946C4F204584540081899C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Common/Assets.xcassets; sourceTree = "<group>"; };
-		B3C6825820A09CF300B3CA70 /* RequestParametersProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestParametersProvider.h; sourceTree = "<group>"; };
-		B3C6825920A09CF300B3CA70 /* RequestParametersProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestParametersProvider.m; sourceTree = "<group>"; };
 		F0D97DDAB2FB67441581DB20 /* Pods-AdFoxMediationNativeExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdFoxMediationNativeExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdFoxMediationNativeExample/Pods-AdFoxMediationNativeExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,8 +100,6 @@
 				B3946C45204583CF0081899C /* NativeContentAdView.m */,
 				B3946C2320456AF50081899C /* ViewController.h */,
 				B3946C2420456AF50081899C /* ViewController.m */,
-				B3C6825820A09CF300B3CA70 /* RequestParametersProvider.h */,
-				B3C6825920A09CF300B3CA70 /* RequestParametersProvider.m */,
 				B3946C2620456AF50081899C /* Main.storyboard */,
 				B3946C2B20456AF50081899C /* LaunchScreen.storyboard */,
 				B3946C3920457DEE0081899C /* Images.xcassets */,
@@ -291,7 +286,6 @@
 				B3946C4B204583D00081899C /* NativeAssetsComposer.m in Sources */,
 				B3946C4A204583D00081899C /* NativeContentAdView.m in Sources */,
 				B3946C2220456AF50081899C /* AppDelegate.m in Sources */,
-				B3C6825A20A09CF300B3CA70 /* RequestParametersProvider.m in Sources */,
 				B3946C50204584540081899C /* StarRatingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

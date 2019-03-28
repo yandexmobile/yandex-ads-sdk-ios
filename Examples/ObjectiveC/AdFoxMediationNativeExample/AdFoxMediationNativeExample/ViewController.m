@@ -9,7 +9,12 @@
 #import "ViewController.h"
 #import "NativeAppInstallAdView.h"
 #import "NativeContentAdView.h"
-#import "RequestParametersProvider.h"
+
+static NSString *const kYandexBlockID = @"adf-279013/975878";
+static NSString *const kAdMobBlockID = @"adf-279013/975874";
+static NSString *const kFacebookBlockID = @"adf-279013/975877";
+static NSString *const kMoPubBlockID = @"adf-279013/975875";
+static NSString *const kMyTargetBlockID = @"adf-279013/975876";
 
 @interface ViewController () <YMANativeAdLoaderDelegate, YMANativeAdDelegate>
 
@@ -32,28 +37,22 @@
     self.appInstallAdView = [[NativeAppInstallAdView alloc] initWithFrame:CGRectZero];
     self.appInstallAdView.translatesAutoresizingMaskIntoConstraints = NO;
     self.appInstallAdView.backgroundColor = [UIColor colorWithWhite:0.9f alpha:1.f];
-    
-    // Replace demo R-M-243655-10 with actual Block ID.
+
+    /*
+     Replace demo kYandexBlockID with actual Block ID.
+     Following demo block ids may be used for testing:
+     Yandex: kYandexBlockID
+     AdMob mediation: kAdMobBlockID
+     Facebook mediation: kFacebookBlockID
+     MoPub mediation: kMoPubBlockID
+     MyTarget mediation: kMyTargetBlockID
+     */
     YMANativeAdLoaderConfiguration *configuration =
-        [[YMANativeAdLoaderConfiguration alloc] initWithBlockID:@"R-M-243655-10"
+        [[YMANativeAdLoaderConfiguration alloc] initWithBlockID:kYandexBlockID
                                         loadImagesAutomatically:YES];
-    
-    // Replace demo parameters with actual parameters.
-    // Following demo parameters may be used for testing:
-    // Yandex: [RequestParametersProvider yandexParameters]
-    // AdMob mediation: [RequestParametersProvider adMobParameters]
-    // Facebook Audience mediation: [RequestParametersProvider facebookParameters]
-    // MoPub mediation: [RequestParametersProvider moPubParameters]
-    // MyTarget mediation: [RequestParametersProvider myTargetParameters]
-    NSDictionary *parameters = [RequestParametersProvider adMobParameters];
     self.adLoader = [[YMANativeAdLoader alloc] initWithConfiguration:configuration];
     self.adLoader.delegate = self;
-    
-    YMAAdRequest *adRequest = [[YMAAdRequest alloc] initWithLocation:nil
-                                                        contextQuery:nil
-                                                         contextTags:nil
-                                                          parameters:parameters];
-    [self.adLoader loadAdWithRequest:adRequest];
+    [self.adLoader loadAdWithRequest:nil];
 }
 
 - (void)removeCurrentAdView

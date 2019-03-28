@@ -7,7 +7,12 @@
 
 #import <YandexMobileAds/YandexMobileAds.h>
 #import "ViewController.h"
-#import "RequestParametersProvider.h"
+
+static NSString *const kYandexBlockID = @"adf-279013/975838";
+static NSString *const kAdMobBlockID = @"adf-279013/975832";
+static NSString *const kFacebookBlockID = @"adf-279013/975836";
+static NSString *const kMoPubBlockID = @"adf-279013/975834";
+static NSString *const kMyTargetBlockID = @"adf-279013/975835";
 
 @interface ViewController () <YMAAdViewDelegate>
 
@@ -23,25 +28,19 @@
 
     YMAAdSize *adSize = [YMAAdSize fixedSizeWithCGSize:YMAAdSizeBanner_320x50];
 
-    // Replace demo R-M-243655-8 with actual Block ID.
-    self.adView = [[YMAAdView alloc] initWithBlockID:@"R-M-243655-8"
+    /*
+     Replace demo kAdMobBlockID with actual Block ID.
+     Following demo block ids may be used for testing:
+     Yandex: kYandexBlockID
+     AdMob mediation: kAdMobBlockID
+     Facebook mediation: kFacebookBlockID
+     MoPub mediation: kMoPubBlockID
+     MyTarget mediation: kMyTargetBlockID
+     */
+    self.adView = [[YMAAdView alloc] initWithBlockID:kAdMobBlockID
                                               adSize:adSize
                                             delegate:self];
-    // Replace demo parameters with actual parameters.
-    // Following demo parameters may be used for testing:
-    // Yandex: [RequestParametersProvider yandexParameters]
-    // AdMob mediation: [RequestParametersProvider adMobParameters]
-    // Facebook mediation: [RequestParametersProvider facebookParameters]
-    // MoPub mediation: [RequestParametersProvider moPubParameters]
-    // MyTarget mediation: [RequestParametersProvider myTargetParameters]
-    // StartApp mediation: [RequestParametersProvider startAppParameters]
-    NSDictionary *parameters = [RequestParametersProvider adMobParameters];
-    YMAAdRequest *adRequest = [[YMAAdRequest alloc] initWithLocation:nil
-                                                        contextQuery:nil
-                                                         contextTags:nil
-                                                          parameters:parameters];
-
-    [self.adView loadAdWithRequest:adRequest];
+    [self.adView loadAd];
 }
 
 // Ability to display ad in Safe Area will soon be added to `displayAtBottomOfSafeAreaInView:` method of SDK

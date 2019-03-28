@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B3C6825720A09C2C00B3CA70 /* RequestParametersProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C6825620A09C2C00B3CA70 /* RequestParametersProvider.m */; };
 		E3AB2166056B5A91DE21262C /* libPods-AdFoxMediationInterstitialExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF415719C847FFFE265ED62E /* libPods-AdFoxMediationInterstitialExample.a */; };
 		F654F8221F2B789500106F2C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F654F8211F2B789500106F2C /* main.m */; };
 		F654F8251F2B789500106F2C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F654F8241F2B789500106F2C /* AppDelegate.m */; };
@@ -18,8 +17,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B3C6825520A09C2C00B3CA70 /* RequestParametersProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestParametersProvider.h; sourceTree = "<group>"; };
-		B3C6825620A09C2C00B3CA70 /* RequestParametersProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestParametersProvider.m; sourceTree = "<group>"; };
 		CD4CB19FF0812E6E70DFB94A /* Pods-AdFoxMediationInterstitialExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdFoxMediationInterstitialExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdFoxMediationInterstitialExample/Pods-AdFoxMediationInterstitialExample.release.xcconfig"; sourceTree = "<group>"; };
 		CF415719C847FFFE265ED62E /* libPods-AdFoxMediationInterstitialExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AdFoxMediationInterstitialExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D42F89FBFFDA22029A1EBD8C /* Pods-AdFoxMediationInterstitialExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdFoxMediationInterstitialExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdFoxMediationInterstitialExample/Pods-AdFoxMediationInterstitialExample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -89,8 +86,6 @@
 				F654F8241F2B789500106F2C /* AppDelegate.m */,
 				F654F8261F2B789500106F2C /* ViewController.h */,
 				F654F8271F2B789500106F2C /* ViewController.m */,
-				B3C6825520A09C2C00B3CA70 /* RequestParametersProvider.h */,
-				B3C6825620A09C2C00B3CA70 /* RequestParametersProvider.m */,
 				F654F8291F2B789500106F2C /* Main.storyboard */,
 				F654F8371F2B792900106F2C /* Images.xcassets */,
 				F654F82E1F2B789500106F2C /* LaunchScreen.storyboard */,
@@ -184,7 +179,6 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AdFoxMediationInterstitialExample/Pods-AdFoxMediationInterstitialExample-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/StartAppSDK/StartAppSDK.bundle",
 				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Internal/Common/MPAdBrowserController.xib",
 				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseBtn.png",
 				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseBtn@2x.png",
@@ -210,7 +204,6 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/StartAppSDK.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPAdBrowserController.nib",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPCloseBtn.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPCloseBtn@2x.png",
@@ -266,7 +259,6 @@
 			files = (
 				F654F8281F2B789500106F2C /* ViewController.m in Sources */,
 				F654F8251F2B789500106F2C /* AppDelegate.m in Sources */,
-				B3C6825720A09C2C00B3CA70 /* RequestParametersProvider.m in Sources */,
 				F654F8221F2B789500106F2C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

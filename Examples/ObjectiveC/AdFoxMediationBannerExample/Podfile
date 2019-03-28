@@ -6,6 +6,5 @@ target 'AdFoxMediationBannerExample' do
   pod 'FacebookYandexMobileAdsAdapters'
   pod 'MoPubYandexMobileAdsAdapters'
   pod 'MyTargetYandexMobileAdsAdapters'
-  pod 'StartAppYandexMobileAdsAdapters'
   pod 'YandexMobileAds'
 end

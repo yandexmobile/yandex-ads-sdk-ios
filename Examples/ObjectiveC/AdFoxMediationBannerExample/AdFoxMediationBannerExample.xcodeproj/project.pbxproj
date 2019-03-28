@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		60CF822EEB73DFA92CF67F1F /* libPods-AdFoxMediationBannerExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C371E979A47ECC125B13951 /* libPods-AdFoxMediationBannerExample.a */; };
-		B3C6825420A09BB200B3CA70 /* RequestParametersProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C6825320A09BB200B3CA70 /* RequestParametersProvider.m */; };
 		F654F7FB1F2B495300106F2C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F654F7FA1F2B495300106F2C /* main.m */; };
 		F654F7FE1F2B495300106F2C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F654F7FD1F2B495300106F2C /* AppDelegate.m */; };
 		F654F8011F2B495300106F2C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F654F8001F2B495300106F2C /* ViewController.m */; };
@@ -21,8 +20,6 @@
 		3516024AD50D505ABE2751F5 /* Pods-AdFoxMediationBannerExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdFoxMediationBannerExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdFoxMediationBannerExample/Pods-AdFoxMediationBannerExample.debug.xcconfig"; sourceTree = "<group>"; };
 		4C371E979A47ECC125B13951 /* libPods-AdFoxMediationBannerExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AdFoxMediationBannerExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FA998A5AE2DF4E356AEFD41 /* Pods-AdFoxMediationBannerExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdFoxMediationBannerExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdFoxMediationBannerExample/Pods-AdFoxMediationBannerExample.release.xcconfig"; sourceTree = "<group>"; };
-		B3C6825220A09BB200B3CA70 /* RequestParametersProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestParametersProvider.h; sourceTree = "<group>"; };
-		B3C6825320A09BB200B3CA70 /* RequestParametersProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestParametersProvider.m; sourceTree = "<group>"; };
 		F654F7F61F2B495300106F2C /* AdFoxMediationBannerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdFoxMediationBannerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F654F7FA1F2B495300106F2C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F654F7FC1F2B495300106F2C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -89,8 +86,6 @@
 				F654F7FD1F2B495300106F2C /* AppDelegate.m */,
 				F654F7FF1F2B495300106F2C /* ViewController.h */,
 				F654F8001F2B495300106F2C /* ViewController.m */,
-				B3C6825220A09BB200B3CA70 /* RequestParametersProvider.h */,
-				B3C6825320A09BB200B3CA70 /* RequestParametersProvider.m */,
 				F654F8021F2B495300106F2C /* Main.storyboard */,
 				F654F8101F2B4A1C00106F2C /* Images.xcassets */,
 				F654F8071F2B495300106F2C /* LaunchScreen.storyboard */,
@@ -202,7 +197,6 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AdFoxMediationBannerExample/Pods-AdFoxMediationBannerExample-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/StartAppSDK/StartAppSDK.bundle",
 				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Internal/Common/MPAdBrowserController.xib",
 				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseBtn.png",
 				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseBtn@2x.png",
@@ -228,7 +222,6 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/StartAppSDK.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPAdBrowserController.nib",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPCloseBtn.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPCloseBtn@2x.png",
@@ -266,7 +259,6 @@
 			files = (
 				F654F8011F2B495300106F2C /* ViewController.m in Sources */,
 				F654F7FE1F2B495300106F2C /* AppDelegate.m in Sources */,
-				B3C6825420A09BB200B3CA70 /* RequestParametersProvider.m in Sources */,
 				F654F7FB1F2B495300106F2C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
