@@ -5,15 +5,17 @@
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
  */
 
+#import <YandexMobileAds/YandexMobileNativeAds.h>
 #import "ViewController.h"
 #import "NativeAppInstallAdView.h"
 #import "NativeContentAdView.h"
-#import <YandexMobileAds/YandexMobileNativeAds.h>
+#import "NativeImageAdView.h"
 
 @interface ViewController () <YMANativeAdLoaderDelegate, YMANativeAdDelegate>
 
 @property (nonatomic, strong) NativeContentAdView *contentAdView;
 @property (nonatomic, strong) NativeAppInstallAdView *appInstallAdView;
+@property (nonatomic, strong) NativeImageAdView *imageAdView;
 @property (nonatomic, strong) YMANativeAdLoader *adLoader;
 
 @end
@@ -31,6 +33,10 @@
     self.appInstallAdView = [[NativeAppInstallAdView alloc] initWithFrame:CGRectZero];
     self.appInstallAdView.translatesAutoresizingMaskIntoConstraints = NO;
     self.appInstallAdView.backgroundColor = [UIColor colorWithWhite:0.9f alpha:1.f];
+
+    self.imageAdView = [[NativeImageAdView alloc] initWithFrame:CGRectZero];
+    self.imageAdView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.imageAdView.backgroundColor = [UIColor colorWithWhite:0.9f alpha:1.f];
 
     // Replace demo R-M-DEMO-native-c with actual Block ID
     // Following demo Block IDs may be used for testing:
@@ -60,6 +66,7 @@
 {
     [self.appInstallAdView removeFromSuperview];
     [self.contentAdView removeFromSuperview];
+    [self.imageAdView removeFromSuperview];
 }
 
 - (void)addConstraintsToAdView:(UIView *)adView
@@ -127,6 +134,20 @@
 
     [self.view addSubview:self.contentAdView];
     [self addConstraintsToAdView:self.contentAdView];
+}
+
+- (void)nativeAdLoader:(null_unspecified YMANativeAdLoader *)loader didLoadImageAd:(id<YMANativeImageAd> __nonnull)ad
+{
+    [self removeCurrentAdView];
+
+    NSError * __autoreleasing error = nil;
+    [ad bindImageAdToView:self.imageAdView delegate:self error:&error];
+    NSLog(@"Binding finished with error: %@", error);
+
+    [self.imageAdView prepareForDisplay];
+
+    [self.view addSubview:self.imageAdView];
+    [self addConstraintsToAdView:self.imageAdView];
 }
 
 - (void)nativeAdLoader:(null_unspecified YMANativeAdLoader *)loader didFailLoadingWithError:(NSError * __nonnull)error

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B38D1696226DFE3F00E7FC1B /* NativeImageAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = B38D1695226DFE3F00E7FC1B /* NativeImageAdView.m */; };
 		B3946C41204583290081899C /* NativeContentAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3946C3C204583280081899C /* NativeContentAdView.m */; };
 		B3946C42204583290081899C /* NativeAssetsComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = B3946C3D204583290081899C /* NativeAssetsComposer.m */; };
 		B3946C43204583290081899C /* NativeAppInstallAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3946C3E204583290081899C /* NativeAppInstallAdView.m */; };
@@ -24,6 +25,8 @@
 /* Begin PBXFileReference section */
 		1CAAD34D46E7915EB9B081CB /* Pods-NativeExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-NativeExample/Pods-NativeExample.release.xcconfig"; sourceTree = "<group>"; };
 		9EC9550EB33B879BFFF14BD4 /* Pods-NativeExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NativeExample/Pods-NativeExample.debug.xcconfig"; sourceTree = "<group>"; };
+		B38D1694226DFE3F00E7FC1B /* NativeImageAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NativeImageAdView.h; path = ../../Common/NativeImageAdView.h; sourceTree = "<group>"; };
+		B38D1695226DFE3F00E7FC1B /* NativeImageAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NativeImageAdView.m; path = ../../Common/NativeImageAdView.m; sourceTree = "<group>"; };
 		B3946C3B204583280081899C /* NativeAppInstallAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NativeAppInstallAdView.h; path = ../../Common/NativeAppInstallAdView.h; sourceTree = "<group>"; };
 		B3946C3C204583280081899C /* NativeContentAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NativeContentAdView.m; path = ../../Common/NativeContentAdView.m; sourceTree = "<group>"; };
 		B3946C3D204583290081899C /* NativeAssetsComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NativeAssetsComposer.m; path = ../../Common/NativeAssetsComposer.m; sourceTree = "<group>"; };
@@ -88,23 +91,25 @@
 		F6805F241B8E078000BD2111 /* NativeExample */ = {
 			isa = PBXGroup;
 			children = (
-				F6A63CCB1ECE0C1A007B8940 /* Assets.xcassets */,
-				F6A63CC81ECE0BB4007B8940 /* StarRatingView.h */,
-				F6A63CC91ECE0BB4007B8940 /* StarRatingView.m */,
 				F6805F291B8E078000BD2111 /* AppDelegate.h */,
 				F6805F2A1B8E078000BD2111 /* AppDelegate.m */,
+				F6A63CCB1ECE0C1A007B8940 /* Assets.xcassets */,
+				F6805F321B8E078000BD2111 /* Images.xcassets */,
+				F6805F341B8E078000BD2111 /* LaunchScreen.xib */,
+				F6805F2F1B8E078000BD2111 /* Main.storyboard */,
 				B3946C3B204583280081899C /* NativeAppInstallAdView.h */,
 				B3946C3E204583290081899C /* NativeAppInstallAdView.m */,
 				B3946C3F204583290081899C /* NativeAssetsComposer.h */,
 				B3946C3D204583290081899C /* NativeAssetsComposer.m */,
 				B3946C40204583290081899C /* NativeContentAdView.h */,
 				B3946C3C204583280081899C /* NativeContentAdView.m */,
+				B38D1694226DFE3F00E7FC1B /* NativeImageAdView.h */,
+				B38D1695226DFE3F00E7FC1B /* NativeImageAdView.m */,
+				F6A63CC81ECE0BB4007B8940 /* StarRatingView.h */,
+				F6A63CC91ECE0BB4007B8940 /* StarRatingView.m */,
+				F6805F251B8E078000BD2111 /* Supporting Files */,
 				F6805F2C1B8E078000BD2111 /* ViewController.h */,
 				F6805F2D1B8E078000BD2111 /* ViewController.m */,
-				F6805F2F1B8E078000BD2111 /* Main.storyboard */,
-				F6805F321B8E078000BD2111 /* Images.xcassets */,
-				F6805F341B8E078000BD2111 /* LaunchScreen.xib */,
-				F6805F251B8E078000BD2111 /* Supporting Files */,
 			);
 			path = NativeExample;
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B38D1696226DFE3F00E7FC1B /* NativeImageAdView.m in Sources */,
 				B3946C41204583290081899C /* NativeContentAdView.m in Sources */,
 				F6805F2E1B8E078000BD2111 /* ViewController.m in Sources */,
 				F6805F2B1B8E078000BD2111 /* AppDelegate.m in Sources */,

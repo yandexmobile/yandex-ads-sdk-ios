@@ -11,7 +11,7 @@
 
 @interface NativeContentAdView ()
 
-@property (nonatomic, strong) NativeAssetsComposer *assetsComposer;
+@property (nonatomic, strong, readonly) NativeAssetsComposer *assetsComposer;
 
 @end
 

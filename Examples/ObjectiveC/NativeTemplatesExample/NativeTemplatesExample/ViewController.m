@@ -99,6 +99,11 @@
     [self didLoadAd:ad];
 }
 
+- (void)nativeAdLoader:(YMANativeAdLoader *)loader didLoadImageAd:(id<YMANativeImageAd>)ad
+{
+    [self didLoadAd:ad];
+}
+
 - (void)nativeAdLoader:(null_unspecified YMANativeAdLoader *)loader didFailLoadingWithError:(NSError * __nonnull)error
 {
     NSLog(@"Native ad loading error: %@", error);

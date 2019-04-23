@@ -98,6 +98,11 @@ class ViewController: UIViewController, YMANativeAdDelegate, YMANativeAdLoaderDe
         print("Loaded Content ad")
         didLoadAd(ad)
     }
+
+    func nativeAdLoader(_ loader: YMANativeAdLoader!, didLoad ad: YMANativeImageAd) {
+        print("Loaded Image ad")
+        didLoadAd(ad)
+    }
     
     func nativeAdLoader(_ loader: YMANativeAdLoader!, didFailLoadingWithError error: Error) {
         print("Native ad loading error: \(error)")
