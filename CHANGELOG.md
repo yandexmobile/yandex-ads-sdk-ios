@@ -1,6 +1,15 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# Version 2.13.0
+
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/212922/YandexMobileAds-2.13.0-ios-28924bd3-62d2-436a-87ba-4987ae20ef94.zip)
+
+#### Added
+
+* Added support for VMAP/VAST format
+* Added support for VAST wrappers 
+
 # Version 2.12.0
 
 SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/212922/YandexMobileAds-2.12.0-ios-fc8653b1-15a1-4bf3-8174-fa98a6ab475a.zip)
