@@ -1,0 +1,9 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, :deployment_target => '8.0'
+
+target 'GDPRExample' do
+  use_frameworks!
+
+  pod 'YandexMobileAds/Dynamic'
+
+end

@@ -8,11 +8,13 @@
 #import <YandexMobileAds/YandexMobileAds.h>
 #import "ViewController.h"
 
-static NSString *const kYandexBlockID = @"adf-279013/967178";
 static NSString *const kAdMobBlockID = @"adf-279013/966332";
 static NSString *const kFacebookBlockID = @"adf-279013/966335";
 static NSString *const kMoPubBlockID = @"adf-279013/966333";
 static NSString *const kMyTargetBlockID = @"adf-279013/966334";
+static NSString *const kStartAppBlockID = @"adf-279013/1006617";
+static NSString *const kUnityAdsBlockID = @"adf-279013/1006614";
+static NSString *const kYandexBlockID = @"adf-279013/967178";
 
 @interface ViewController () <YMARewardedAdDelegate>
 
@@ -27,11 +29,13 @@ static NSString *const kMyTargetBlockID = @"adf-279013/966334";
     /*
      Replace demo kAdMobBlockID with actual Block ID.
      Following demo block ids may be used for testing:
-     Yandex: kYandexBlockID
      AdMob mediation: kAdMobBlockID
      Facebook mediation: kFacebookBlockID
      MoPub mediation: kMoPubBlockID
      MyTarget mediation: kMyTargetBlockID
+     StartApp mediation: kStartAppBlockID
+     UnityAds mediation: kUnityAdsBlockID
+     Yandex: kYandexBlockID
      */
     self.rewardedAd = [[YMARewardedAd alloc] initWithBlockID:kAdMobBlockID];
     self.rewardedAd.delegate = self;

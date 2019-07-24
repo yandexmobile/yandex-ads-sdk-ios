@@ -9,12 +9,14 @@ import UIKit
 import YandexMobileAds
 
 class ViewController: UIViewController, YMARewardedAdDelegate {
-    
-    let yandexBlockID = "adf-279013/967178";
-    let adMobBlockID = "adf-279013/966332";
-    let facebookBlockID = "adf-279013/966335";
-    let moPubBlockID = "adf-279013/966333";
-    let myTargetBlockID = "adf-279013/966334";
+
+    let adMobBlockID = "adf-279013/966332"
+    let facebookBlockID = "adf-279013/966335"
+    let moPubBlockID = "adf-279013/966333"
+    let myTargetBlockID = "adf-279013/966334"
+    let startAppBlockID = "adf-279013/1006617"
+    let unityAdsBlockID = "adf-279013/1006614"
+    let yandexBlockID = "adf-279013/967178"
     
     var rewardedAd: YMARewardedAd!
     
@@ -22,11 +24,13 @@ class ViewController: UIViewController, YMARewardedAdDelegate {
         /*
          Replace demo adMobBlockID with actual Block ID.
          Following demo block ids may be used for testing:
-         Yandex: yandexBlockID
          AdMob mediation: adMobBlockID
          Facebook mediation: facebookBlockID
          MoPub mediation: moPubBlockID
          MyTarget mediation: myTargetBlockID
+         StartApp mediation: startAppBlockID
+         UnityAds mediation: unityAdsBlockID
+         Yandex: yandexBlockID
          */
         self.rewardedAd = YMARewardedAd(blockID: adMobBlockID)
         self.rewardedAd.delegate = self

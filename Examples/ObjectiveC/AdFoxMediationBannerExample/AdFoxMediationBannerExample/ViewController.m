@@ -8,11 +8,12 @@
 #import <YandexMobileAds/YandexMobileAds.h>
 #import "ViewController.h"
 
-static NSString *const kYandexBlockID = @"adf-279013/975838";
 static NSString *const kAdMobBlockID = @"adf-279013/975832";
 static NSString *const kFacebookBlockID = @"adf-279013/975836";
 static NSString *const kMoPubBlockID = @"adf-279013/975834";
 static NSString *const kMyTargetBlockID = @"adf-279013/975835";
+static NSString *const kStartAppBlockID = @"adf-279013/1006423";
+static NSString *const kYandexBlockID = @"adf-279013/975838";
 
 @interface ViewController () <YMAAdViewDelegate>
 
@@ -31,11 +32,12 @@ static NSString *const kMyTargetBlockID = @"adf-279013/975835";
     /*
      Replace demo kAdMobBlockID with actual Block ID.
      Following demo block ids may be used for testing:
-     Yandex: kYandexBlockID
      AdMob mediation: kAdMobBlockID
      Facebook mediation: kFacebookBlockID
      MoPub mediation: kMoPubBlockID
      MyTarget mediation: kMyTargetBlockID
+     StartApp mediation: kStartAppBlocID
+     Yandex: kYandexBlockID
      */
     self.adView = [[YMAAdView alloc] initWithBlockID:kAdMobBlockID
                                               adSize:adSize

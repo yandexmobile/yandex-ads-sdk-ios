@@ -10,11 +10,11 @@
 #import "NativeAppInstallAdView.h"
 #import "NativeContentAdView.h"
 
-static NSString *const kYandexBlockID = @"adf-279013/975878";
 static NSString *const kAdMobBlockID = @"adf-279013/975874";
 static NSString *const kFacebookBlockID = @"adf-279013/975877";
 static NSString *const kMoPubBlockID = @"adf-279013/975875";
 static NSString *const kMyTargetBlockID = @"adf-279013/975876";
+static NSString *const kYandexBlockID = @"adf-279013/975878";
 
 @interface ViewController () <YMANativeAdLoaderDelegate, YMANativeAdDelegate>
 
@@ -41,11 +41,11 @@ static NSString *const kMyTargetBlockID = @"adf-279013/975876";
     /*
      Replace demo kYandexBlockID with actual Block ID.
      Following demo block ids may be used for testing:
-     Yandex: kYandexBlockID
      AdMob mediation: kAdMobBlockID
      Facebook mediation: kFacebookBlockID
      MoPub mediation: kMoPubBlockID
      MyTarget mediation: kMyTargetBlockID
+     Yandex: kYandexBlockID
      */
     YMANativeAdLoaderConfiguration *configuration =
         [[YMANativeAdLoaderConfiguration alloc] initWithBlockID:kYandexBlockID

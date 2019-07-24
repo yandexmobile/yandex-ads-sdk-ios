@@ -8,11 +8,13 @@
 #import <YandexMobileAds/YandexMobileAds.h>
 #import "ViewController.h"
 
-static NSString *const kYandexBlockID = @"adf-279013/975873";
 static NSString *const kAdMobBlockID = @"adf-279013/975869";
 static NSString *const kFacebookBlockID = @"adf-279013/975872";
 static NSString *const kMoPubBlockID = @"adf-279013/975870";
 static NSString *const kMyTargetBlockID = @"adf-279013/975871";
+static NSString *const kStartAppBlockID = @"adf-279013/1006406";
+static NSString *const kUnityAdsBlockID = @"adf-279013/1006439";
+static NSString *const kYandexBlockID = @"adf-279013/975873";
 
 @interface ViewController () <YMAInterstitialDelegate>
 
@@ -29,11 +31,13 @@ static NSString *const kMyTargetBlockID = @"adf-279013/975871";
     /*
      Replace demo kAdMobBlockID with actual Block ID.
      Following demo block ids may be used for testing:
-     Yandex: kYandexBlockID
      AdMob mediation: kAdMobBlockID
      Facebook mediation: kFacebookBlockID
      MoPub mediation: kMoPubBlockID
      MyTarget mediation: kMyTargetBlockID
+     StartApp mediation: kStartAppBlockID
+     UnityAds mediation kUnityAdsBlockID
+     Yandex: kYandexBlockID
      */
     self.interstitialController = [[YMAInterstitialController alloc] initWithBlockID:kAdMobBlockID];
     self.interstitialController.delegate = self;

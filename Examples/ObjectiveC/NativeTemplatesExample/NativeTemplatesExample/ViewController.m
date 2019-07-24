@@ -23,20 +23,10 @@
     // Replace demo R-M-DEMO-native-c with actual Block ID.
     // Please, note, that configured image sizes don't affect demo ads.
     // Following demo Block IDs may be used for testing:
+    // R-M-DEMO-native-video
     // R-M-DEMO-native-c
-    // R-M-DEMO-native-c-noage
-    // R-M-DEMO-native-c-nowarning
-    // R-M-DEMO-native-c-wide
-    // R-M-DEMO-native-c-large34
-    // R-M-DEMO-native-c-large43
-    // R-M-DEMO-native-c-large11
     // R-M-DEMO-native-i
-    // R-M-DEMO-native-i-noage
-    // R-M-DEMO-native-i-nowarning
-    // R-M-DEMO-native-i-wide
-    // R-M-DEMO-native-i-large34
-    // R-M-DEMO-native-i-large43
-    // R-M-DEMO-native-i-large11
+
     YMANativeAdLoaderConfiguration *configuration =
         [[YMANativeAdLoaderConfiguration alloc] initWithBlockID:@"R-M-DEMO-native-c"
                                                      imageSizes:@[ kYMANativeImageSizeMedium ]

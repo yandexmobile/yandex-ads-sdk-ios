@@ -25,7 +25,12 @@
 
 - (IBAction)presentAd
 {
-    [[GADRewardBasedVideoAd sharedInstance] presentFromRootViewController:self];
+    if ([[GADRewardBasedVideoAd sharedInstance] isReady]) {
+        [[GADRewardBasedVideoAd sharedInstance] presentFromRootViewController:self];
+    }
+    else {
+        NSLog(@"Rewarded ad wasn't ready");
+    }
 }
 
 #pragma mark - YMARewardedAdDelegate

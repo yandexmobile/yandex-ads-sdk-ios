@@ -20,6 +20,7 @@ EULA is available at [EULA website][LICENSE]
   * /Examples/ObjectiveC/AdFoxMediationRewardedExample
   * /Examples/ObjectiveC/AdFoxNativeExample
   * /Examples/ObjectiveC/AdMobBannerAdapterExample
+  * /Examples/ObjectiveC/AdMobInterstitialAdapterExample
   * /Examples/ObjectiveC/AdMobRewardedAdapterExample
   * /Examples/ObjectiveC/BannerExample
   * /Examples/ObjectiveC/GDPRExample
@@ -34,11 +35,22 @@ EULA is available at [EULA website][LICENSE]
   * /Examples/ObjectiveC/VASTExample
   
 #### Swift
+  * /Examples/Swift/AdFoxMediationBannerExample
+  * /Examples/Swift/AdFoxMediationInterstitialExample
+  * /Examples/Swift/AdFoxMediationNativeExample
   * /Examples/Swift/AdFoxMediationRewardedExample
+  * /Examples/Swift/AdMobBannerAdapterExample
+  * /Examples/Swift/AdMobNativeAdapterExample
+  * /Examples/Swift/AdMobInterstitialAdapterExample
+  * /Examples/Swift/AdMobRewardedAdapterExample
   * /Examples/Swift/BannerExample
+  * /Examples/Swift/GDPRExample
   * /Examples/Swift/InterstitialExample
+  * /Examples/Swift/NativeExample
   * /Examples/Swift/NativeTemplatesExample
+  * /Examples/Swift/NativeTemplatesTableViewExample
   * /Examples/Swift/RewardedExample
+  * /Examples/Swift/VASTExample
 
 3. Install dependencies:
 ```pod install```

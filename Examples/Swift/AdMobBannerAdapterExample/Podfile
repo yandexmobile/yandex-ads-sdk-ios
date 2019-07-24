@@ -1,0 +1,8 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, :deployment_target => '8.0'
+
+target 'AdMobBannerAdapterExample' do
+    use_frameworks!
+  pod 'YandexMobileAdsAdMobAdapters/Dynamic'
+  pod 'YandexMobileAds/Dynamic'
+end
