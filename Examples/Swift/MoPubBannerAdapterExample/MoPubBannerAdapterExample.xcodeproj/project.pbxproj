@@ -1,0 +1,422 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B71D6CDD22E6EA7000AB3B57 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B71D6CDC22E6EA7000AB3B57 /* Images.xcassets */; };
+		B7DFAFB722E1AAF700E68966 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DFAFB622E1AAF700E68966 /* AppDelegate.swift */; };
+		B7DFAFB922E1AAF700E68966 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DFAFB822E1AAF700E68966 /* ViewController.swift */; };
+		B7DFAFBC22E1AAF700E68966 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7DFAFBA22E1AAF700E68966 /* Main.storyboard */; };
+		B7DFAFC122E1AAF800E68966 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7DFAFBF22E1AAF800E68966 /* LaunchScreen.storyboard */; };
+		FC5D3FE59138FE617547F4A3 /* Pods_MoPubBannerAdapterExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D178F0E3E38769D9E3287968 /* Pods_MoPubBannerAdapterExample.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		345521F7DB3EAD15BA508953 /* Pods-MoPubBannerAdapterExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoPubBannerAdapterExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoPubBannerAdapterExample/Pods-MoPubBannerAdapterExample.debug.xcconfig"; sourceTree = "<group>"; };
+		B71D6CDC22E6EA7000AB3B57 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B7DFAFB322E1AAF700E68966 /* MoPubBannerAdapterExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoPubBannerAdapterExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7DFAFB622E1AAF700E68966 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B7DFAFB822E1AAF700E68966 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B7DFAFBB22E1AAF700E68966 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B7DFAFC022E1AAF800E68966 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B7DFAFC222E1AAF800E68966 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D178F0E3E38769D9E3287968 /* Pods_MoPubBannerAdapterExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoPubBannerAdapterExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECCA9BA9A6FE8CD4E42A2EE9 /* Pods-MoPubBannerAdapterExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoPubBannerAdapterExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoPubBannerAdapterExample/Pods-MoPubBannerAdapterExample.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B7DFAFB022E1AAF700E68966 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC5D3FE59138FE617547F4A3 /* Pods_MoPubBannerAdapterExample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D1B678DB086942ABF1DD030 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				345521F7DB3EAD15BA508953 /* Pods-MoPubBannerAdapterExample.debug.xcconfig */,
+				ECCA9BA9A6FE8CD4E42A2EE9 /* Pods-MoPubBannerAdapterExample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		1357D270E142513BA5349F68 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D178F0E3E38769D9E3287968 /* Pods_MoPubBannerAdapterExample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B7DFAFAA22E1AAF700E68966 = {
+			isa = PBXGroup;
+			children = (
+				B7DFAFB522E1AAF700E68966 /* MoPubBannerAdapterExample */,
+				B7DFAFB422E1AAF700E68966 /* Products */,
+				0D1B678DB086942ABF1DD030 /* Pods */,
+				1357D270E142513BA5349F68 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B7DFAFB422E1AAF700E68966 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B7DFAFB322E1AAF700E68966 /* MoPubBannerAdapterExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B7DFAFB522E1AAF700E68966 /* MoPubBannerAdapterExample */ = {
+			isa = PBXGroup;
+			children = (
+				B7DFAFB622E1AAF700E68966 /* AppDelegate.swift */,
+				B71D6CDC22E6EA7000AB3B57 /* Images.xcassets */,
+				B7DFAFC222E1AAF800E68966 /* Info.plist */,
+				B7DFAFBF22E1AAF800E68966 /* LaunchScreen.storyboard */,
+				B7DFAFBA22E1AAF700E68966 /* Main.storyboard */,
+				B7DFAFB822E1AAF700E68966 /* ViewController.swift */,
+			);
+			path = MoPubBannerAdapterExample;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B7DFAFB222E1AAF700E68966 /* MoPubBannerAdapterExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B7DFAFC522E1AAF800E68966 /* Build configuration list for PBXNativeTarget "MoPubBannerAdapterExample" */;
+			buildPhases = (
+				805427E9AAB546DC0B8EE18E /* [CP] Check Pods Manifest.lock */,
+				B7DFAFAF22E1AAF700E68966 /* Sources */,
+				B7DFAFB022E1AAF700E68966 /* Frameworks */,
+				B7DFAFB122E1AAF700E68966 /* Resources */,
+				BF03BB123A517E6F1F762A9D /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MoPubBannerAdapterExample;
+			productName = MoPubBannerAdapterExample;
+			productReference = B7DFAFB322E1AAF700E68966 /* MoPubBannerAdapterExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B7DFAFAB22E1AAF700E68966 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = YANDEX;
+				TargetAttributes = {
+					B7DFAFB222E1AAF700E68966 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = B7DFAFAE22E1AAF700E68966 /* Build configuration list for PBXProject "MoPubBannerAdapterExample" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B7DFAFAA22E1AAF700E68966;
+			productRefGroup = B7DFAFB422E1AAF700E68966 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B7DFAFB222E1AAF700E68966 /* MoPubBannerAdapterExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B7DFAFB122E1AAF700E68966 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B71D6CDD22E6EA7000AB3B57 /* Images.xcassets in Resources */,
+				B7DFAFC122E1AAF800E68966 /* LaunchScreen.storyboard in Resources */,
+				B7DFAFBC22E1AAF700E68966 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		805427E9AAB546DC0B8EE18E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MoPubBannerAdapterExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF03BB123A517E6F1F762A9D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MoPubBannerAdapterExample/Pods-MoPubBannerAdapterExample-frameworks.sh",
+				"${PODS_ROOT}/YandexMobileAds/dynamic/YandexMobileAds.framework",
+				"${PODS_ROOT}/YandexMobileMetrica/dynamic/YandexMobileMetrica.framework",
+				"${PODS_ROOT}/YandexMobileMetrica/dynamic/YandexMobileMetricaCrashes.framework",
+				"${BUILT_PRODUCTS_DIR}/mopub-ios-sdk/MoPub.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YandexMobileAds.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YandexMobileMetrica.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YandexMobileMetricaCrashes.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MoPub.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoPubBannerAdapterExample/Pods-MoPubBannerAdapterExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B7DFAFAF22E1AAF700E68966 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7DFAFB922E1AAF700E68966 /* ViewController.swift in Sources */,
+				B7DFAFB722E1AAF700E68966 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B7DFAFBA22E1AAF700E68966 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7DFAFBB22E1AAF700E68966 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B7DFAFBF22E1AAF800E68966 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7DFAFC022E1AAF800E68966 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B7DFAFC322E1AAF800E68966 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B7DFAFC422E1AAF800E68966 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B7DFAFC622E1AAF800E68966 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 345521F7DB3EAD15BA508953 /* Pods-MoPubBannerAdapterExample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MoPubBannerAdapterExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.MoPubBannerAdapterExampleSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B7DFAFC722E1AAF800E68966 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECCA9BA9A6FE8CD4E42A2EE9 /* Pods-MoPubBannerAdapterExample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MoPubBannerAdapterExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.MoPubBannerAdapterExampleSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B7DFAFAE22E1AAF700E68966 /* Build configuration list for PBXProject "MoPubBannerAdapterExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7DFAFC322E1AAF800E68966 /* Debug */,
+				B7DFAFC422E1AAF800E68966 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B7DFAFC522E1AAF800E68966 /* Build configuration list for PBXNativeTarget "MoPubBannerAdapterExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7DFAFC622E1AAF800E68966 /* Debug */,
+				B7DFAFC722E1AAF800E68966 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B7DFAFAB22E1AAF700E68966 /* Project object */;
+}
