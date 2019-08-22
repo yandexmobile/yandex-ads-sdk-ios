@@ -1,7 +1,7 @@
 # Yandex Advertising Network Mobile
 This package contains Yandex Advertising Network Mobile SDK and source code of samples of SDK usage.
 
-## [**Download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/212922/YandexMobileAds-2.13.1-ios-5ef5729a-cfaf-48e7-b1e3-e9dda237261e.zip) latest SDK archive
+## [**Download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/212922/YandexMobileAds-2.13.2-ios-483935f7-60de-4c1c-9eab-fd5eb770ba3b.zip) latest SDK archive
 
 ## Documentation
 Documentation could be found at the [official website][DOCUMENTATION]
@@ -21,6 +21,7 @@ EULA is available at [EULA website][LICENSE]
   * /Examples/ObjectiveC/AdFoxNativeExample
   * /Examples/ObjectiveC/AdMobBannerAdapterExample
   * /Examples/ObjectiveC/AdMobInterstitialAdapterExample
+  * /Examples/ObjectiveC/AdMobNativeAdapterExample
   * /Examples/ObjectiveC/AdMobRewardedAdapterExample
   * /Examples/ObjectiveC/BannerExample
   * /Examples/ObjectiveC/GDPRExample

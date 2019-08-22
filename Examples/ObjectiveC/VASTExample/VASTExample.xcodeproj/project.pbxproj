@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AF078DAEA33179AFDADF2FB3 /* libPods-VASTExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39D8C6412B579F01128DF04C /* libPods-VASTExample.a */; };
-		D49BCEF122785B1D004AFFA8 /* VideoAdsDescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D49BCEF022785B1D004AFFA8 /* VideoAdsDescriptionViewController.m */; };
+		B7BBCF9A22EEEA2A00575A36 /* VideoAdsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7BBCF9922EEEA2A00575A36 /* VideoAdsTableViewController.m */; };
+		D49BCEF122785B1D004AFFA8 /* VideoAdDescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D49BCEF022785B1D004AFFA8 /* VideoAdDescriptionViewController.m */; };
 		D49BCEF4227869B0004AFFA8 /* TrackingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D49BCEF3227869B0004AFFA8 /* TrackingTableViewController.m */; };
 		F6CC1F2D1B8DE2C100770F3A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CC1F2C1B8DE2C100770F3A /* main.m */; };
 		F6CC1F301B8DE2C100770F3A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CC1F2F1B8DE2C100770F3A /* AppDelegate.m */; };
@@ -24,9 +25,11 @@
 		60AC897427C4A3E4165DB9C0 /* Pods-VASTExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VASTExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-VASTExample/Pods-VASTExample.release.xcconfig"; sourceTree = "<group>"; };
 		9585F336CE43D6ED94A90362 /* Pods-VMAPExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VMAPExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VMAPExample/Pods-VMAPExample.debug.xcconfig"; sourceTree = "<group>"; };
 		B4F6EF23FF5AB8A931F37D62 /* Pods-VASTExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VASTExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VASTExample/Pods-VASTExample.debug.xcconfig"; sourceTree = "<group>"; };
+		B7BBCF9822EEEA2A00575A36 /* VideoAdsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoAdsTableViewController.h; sourceTree = "<group>"; };
+		B7BBCF9922EEEA2A00575A36 /* VideoAdsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoAdsTableViewController.m; sourceTree = "<group>"; };
 		BBCE7987B5AE78FC10634661 /* libPods-VMAPExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VMAPExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D49BCEEF22785B1D004AFFA8 /* VideoAdsDescriptionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoAdsDescriptionViewController.h; sourceTree = "<group>"; };
-		D49BCEF022785B1D004AFFA8 /* VideoAdsDescriptionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoAdsDescriptionViewController.m; sourceTree = "<group>"; };
+		D49BCEEF22785B1D004AFFA8 /* VideoAdDescriptionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoAdDescriptionViewController.h; sourceTree = "<group>"; };
+		D49BCEF022785B1D004AFFA8 /* VideoAdDescriptionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoAdDescriptionViewController.m; sourceTree = "<group>"; };
 		D49BCEF2227869B0004AFFA8 /* TrackingTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrackingTableViewController.h; sourceTree = "<group>"; };
 		D49BCEF3227869B0004AFFA8 /* TrackingTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrackingTableViewController.m; sourceTree = "<group>"; };
 		F6CC1F271B8DE2C100770F3A /* VASTExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VASTExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,8 +101,10 @@
 				F6CC1F2F1B8DE2C100770F3A /* AppDelegate.m */,
 				F6CC1F311B8DE2C100770F3A /* VMAPViewController.h */,
 				F6CC1F321B8DE2C100770F3A /* VMAPViewController.m */,
-				D49BCEEF22785B1D004AFFA8 /* VideoAdsDescriptionViewController.h */,
-				D49BCEF022785B1D004AFFA8 /* VideoAdsDescriptionViewController.m */,
+				D49BCEEF22785B1D004AFFA8 /* VideoAdDescriptionViewController.h */,
+				D49BCEF022785B1D004AFFA8 /* VideoAdDescriptionViewController.m */,
+				B7BBCF9822EEEA2A00575A36 /* VideoAdsTableViewController.h */,
+				B7BBCF9922EEEA2A00575A36 /* VideoAdsTableViewController.m */,
 				D49BCEF2227869B0004AFFA8 /* TrackingTableViewController.h */,
 				D49BCEF3227869B0004AFFA8 /* TrackingTableViewController.m */,
 				F6CC1F341B8DE2C100770F3A /* Main.storyboard */,
@@ -160,6 +165,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -214,7 +220,8 @@
 			files = (
 				D49BCEF4227869B0004AFFA8 /* TrackingTableViewController.m in Sources */,
 				F6CC1F331B8DE2C100770F3A /* VMAPViewController.m in Sources */,
-				D49BCEF122785B1D004AFFA8 /* VideoAdsDescriptionViewController.m in Sources */,
+				B7BBCF9A22EEEA2A00575A36 /* VideoAdsTableViewController.m in Sources */,
+				D49BCEF122785B1D004AFFA8 /* VideoAdDescriptionViewController.m in Sources */,
 				F6CC1F301B8DE2C100770F3A /* AppDelegate.m in Sources */,
 				F6CC1F2D1B8DE2C100770F3A /* main.m in Sources */,
 			);

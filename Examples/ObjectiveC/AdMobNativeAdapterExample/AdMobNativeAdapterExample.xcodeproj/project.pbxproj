@@ -1,0 +1,445 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		81B18A819D60722573F7C642 /* Pods_AdMobNativeAdapterExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AEDC6D24AA1DF9A4C9458BA /* Pods_AdMobNativeAdapterExample.framework */; };
+		B7262AAF22EAF7A000E2DFFD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B7262AAE22EAF7A000E2DFFD /* AppDelegate.m */; };
+		B7262AB222EAF7A000E2DFFD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7262AB122EAF7A000E2DFFD /* ViewController.m */; };
+		B7262AB522EAF7A000E2DFFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7262AB322EAF7A000E2DFFD /* Main.storyboard */; };
+		B7262AB722EAF7A300E2DFFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7262AB622EAF7A300E2DFFD /* Assets.xcassets */; };
+		B7262ABA22EAF7A300E2DFFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7262AB822EAF7A300E2DFFD /* LaunchScreen.storyboard */; };
+		B7262ABD22EAF7A300E2DFFD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B7262ABC22EAF7A300E2DFFD /* main.m */; };
+		B7262AC422EAF99E00E2DFFD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7262AC322EAF99E00E2DFFD /* Images.xcassets */; };
+		B7262AC622EAF9E500E2DFFD /* UnifiedNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7262AC522EAF9E500E2DFFD /* UnifiedNativeAdView.xib */; };
+		B7262AC922EAFA1900E2DFFD /* UnifiedNativeAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7262AC822EAFA1900E2DFFD /* UnifiedNativeAdView.m */; };
+		B7262ACC22EAFF9A00E2DFFD /* StarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7262ACB22EAFF9A00E2DFFD /* StarRatingView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		050F94D8E35BF904D90EB63E /* Pods-AdMobNativeAdapterExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdMobNativeAdapterExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdMobNativeAdapterExample/Pods-AdMobNativeAdapterExample.release.xcconfig"; sourceTree = "<group>"; };
+		3AEDC6D24AA1DF9A4C9458BA /* Pods_AdMobNativeAdapterExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdMobNativeAdapterExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		913557B147E723708AECA46E /* Pods-AdMobNativeAdapterExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdMobNativeAdapterExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdMobNativeAdapterExample/Pods-AdMobNativeAdapterExample.debug.xcconfig"; sourceTree = "<group>"; };
+		B7262AAA22EAF7A000E2DFFD /* AdMobNativeAdapterExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdMobNativeAdapterExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7262AAD22EAF7A000E2DFFD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B7262AAE22EAF7A000E2DFFD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B7262AB022EAF7A000E2DFFD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B7262AB122EAF7A000E2DFFD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B7262AB422EAF7A000E2DFFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B7262AB622EAF7A300E2DFFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B7262AB922EAF7A300E2DFFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B7262ABB22EAF7A300E2DFFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7262ABC22EAF7A300E2DFFD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B7262AC322EAF99E00E2DFFD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B7262AC522EAF9E500E2DFFD /* UnifiedNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnifiedNativeAdView.xib; sourceTree = "<group>"; };
+		B7262AC722EAFA1900E2DFFD /* UnifiedNativeAdView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnifiedNativeAdView.h; sourceTree = "<group>"; };
+		B7262AC822EAFA1900E2DFFD /* UnifiedNativeAdView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnifiedNativeAdView.m; sourceTree = "<group>"; };
+		B7262ACA22EAFF9A00E2DFFD /* StarRatingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StarRatingView.h; sourceTree = "<group>"; };
+		B7262ACB22EAFF9A00E2DFFD /* StarRatingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StarRatingView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B7262AA722EAF7A000E2DFFD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81B18A819D60722573F7C642 /* Pods_AdMobNativeAdapterExample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2F1AD0938D52748FD8FF3158 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				913557B147E723708AECA46E /* Pods-AdMobNativeAdapterExample.debug.xcconfig */,
+				050F94D8E35BF904D90EB63E /* Pods-AdMobNativeAdapterExample.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B7262AA122EAF7A000E2DFFD = {
+			isa = PBXGroup;
+			children = (
+				B7262AAC22EAF7A000E2DFFD /* AdMobNativeAdapterExample */,
+				B7262AAB22EAF7A000E2DFFD /* Products */,
+				2F1AD0938D52748FD8FF3158 /* Pods */,
+				D530CE32DD111BD5F12606D3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B7262AAB22EAF7A000E2DFFD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B7262AAA22EAF7A000E2DFFD /* AdMobNativeAdapterExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B7262AAC22EAF7A000E2DFFD /* AdMobNativeAdapterExample */ = {
+			isa = PBXGroup;
+			children = (
+				B7262AAD22EAF7A000E2DFFD /* AppDelegate.h */,
+				B7262AAE22EAF7A000E2DFFD /* AppDelegate.m */,
+				B7262AB622EAF7A300E2DFFD /* Assets.xcassets */,
+				B7262AC322EAF99E00E2DFFD /* Images.xcassets */,
+				B7262ABB22EAF7A300E2DFFD /* Info.plist */,
+				B7262AB822EAF7A300E2DFFD /* LaunchScreen.storyboard */,
+				B7262AB322EAF7A000E2DFFD /* Main.storyboard */,
+				B7262ABC22EAF7A300E2DFFD /* main.m */,
+				B7262ACA22EAFF9A00E2DFFD /* StarRatingView.h */,
+				B7262ACB22EAFF9A00E2DFFD /* StarRatingView.m */,
+				B7262AC722EAFA1900E2DFFD /* UnifiedNativeAdView.h */,
+				B7262AC822EAFA1900E2DFFD /* UnifiedNativeAdView.m */,
+				B7262AC522EAF9E500E2DFFD /* UnifiedNativeAdView.xib */,
+				B7262AB022EAF7A000E2DFFD /* ViewController.h */,
+				B7262AB122EAF7A000E2DFFD /* ViewController.m */,
+			);
+			path = AdMobNativeAdapterExample;
+			sourceTree = "<group>";
+		};
+		D530CE32DD111BD5F12606D3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3AEDC6D24AA1DF9A4C9458BA /* Pods_AdMobNativeAdapterExample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B7262AA922EAF7A000E2DFFD /* AdMobNativeAdapterExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B7262AC022EAF7A300E2DFFD /* Build configuration list for PBXNativeTarget "AdMobNativeAdapterExample" */;
+			buildPhases = (
+				D9A27B255961B18DC5544888 /* [CP] Check Pods Manifest.lock */,
+				B7262AA622EAF7A000E2DFFD /* Sources */,
+				B7262AA722EAF7A000E2DFFD /* Frameworks */,
+				B7262AA822EAF7A000E2DFFD /* Resources */,
+				D8A048528960536B0E1E0DF3 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AdMobNativeAdapterExample;
+			productName = AdMobNativeAdapterExample;
+			productReference = B7262AAA22EAF7A000E2DFFD /* AdMobNativeAdapterExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B7262AA222EAF7A000E2DFFD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = YANDEX;
+				TargetAttributes = {
+					B7262AA922EAF7A000E2DFFD = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = B7262AA522EAF7A000E2DFFD /* Build configuration list for PBXProject "AdMobNativeAdapterExample" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B7262AA122EAF7A000E2DFFD;
+			productRefGroup = B7262AAB22EAF7A000E2DFFD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B7262AA922EAF7A000E2DFFD /* AdMobNativeAdapterExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B7262AA822EAF7A000E2DFFD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7262ABA22EAF7A300E2DFFD /* LaunchScreen.storyboard in Resources */,
+				B7262AC422EAF99E00E2DFFD /* Images.xcassets in Resources */,
+				B7262AB722EAF7A300E2DFFD /* Assets.xcassets in Resources */,
+				B7262AB522EAF7A000E2DFFD /* Main.storyboard in Resources */,
+				B7262AC622EAF9E500E2DFFD /* UnifiedNativeAdView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D8A048528960536B0E1E0DF3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AdMobNativeAdapterExample/Pods-AdMobNativeAdapterExample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${PODS_ROOT}/YandexMobileAds/dynamic/YandexMobileAds.framework",
+				"${PODS_ROOT}/YandexMobileMetrica/dynamic/YandexMobileMetrica.framework",
+				"${PODS_ROOT}/YandexMobileMetrica/dynamic/YandexMobileMetricaCrashes.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YandexMobileAds.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YandexMobileMetrica.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YandexMobileMetricaCrashes.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdMobNativeAdapterExample/Pods-AdMobNativeAdapterExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9A27B255961B18DC5544888 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AdMobNativeAdapterExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B7262AA622EAF7A000E2DFFD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7262ACC22EAFF9A00E2DFFD /* StarRatingView.m in Sources */,
+				B7262AB222EAF7A000E2DFFD /* ViewController.m in Sources */,
+				B7262ABD22EAF7A300E2DFFD /* main.m in Sources */,
+				B7262AAF22EAF7A000E2DFFD /* AppDelegate.m in Sources */,
+				B7262AC922EAFA1900E2DFFD /* UnifiedNativeAdView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B7262AB322EAF7A000E2DFFD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7262AB422EAF7A000E2DFFD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B7262AB822EAF7A300E2DFFD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7262AB922EAF7A300E2DFFD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B7262ABE22EAF7A300E2DFFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B7262ABF22EAF7A300E2DFFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B7262AC122EAF7A300E2DFFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 913557B147E723708AECA46E /* Pods-AdMobNativeAdapterExample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AdMobNativeAdapterExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.AdMobNativeAdapterExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B7262AC222EAF7A300E2DFFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 050F94D8E35BF904D90EB63E /* Pods-AdMobNativeAdapterExample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AdMobNativeAdapterExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.AdMobNativeAdapterExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B7262AA522EAF7A000E2DFFD /* Build configuration list for PBXProject "AdMobNativeAdapterExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7262ABE22EAF7A300E2DFFD /* Debug */,
+				B7262ABF22EAF7A300E2DFFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B7262AC022EAF7A300E2DFFD /* Build configuration list for PBXNativeTarget "AdMobNativeAdapterExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7262AC122EAF7A300E2DFFD /* Debug */,
+				B7262AC222EAF7A300E2DFFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B7262AA222EAF7A000E2DFFD /* Project object */;
+}

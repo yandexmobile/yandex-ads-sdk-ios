@@ -7,8 +7,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VideoAdsDescriptionViewController : UIViewController
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-- (instancetype)initWithAds:(NSArray<YMAVASTAd *> *)ads;
+@property (strong, nonatomic) UIWindow *window;
 
 @end
+

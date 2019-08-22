@@ -36,7 +36,7 @@ static NSString *const kYandexBlockID = @"adf-279013/975838";
      Facebook mediation: kFacebookBlockID
      MoPub mediation: kMoPubBlockID
      MyTarget mediation: kMyTargetBlockID
-     StartApp mediation: kStartAppBlocID
+     StartApp mediation: kStartAppBlockID
      Yandex: kYandexBlockID
      */
     self.adView = [[YMAAdView alloc] initWithBlockID:kAdMobBlockID

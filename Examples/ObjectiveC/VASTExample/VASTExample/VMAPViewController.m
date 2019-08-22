@@ -7,7 +7,7 @@
 
 #import <YandexMobileAds/YandexMobileVASTAds.h>
 #import "VMAPViewController.h"
-#import "VideoAdsDescriptionViewController.h"
+#import "VideoAdsTableViewController.h"
 
 static NSString *const kPageID = @"349941";
 static NSString *const kCategoryID = @"0";
@@ -75,9 +75,8 @@ static NSString *const kCategoryID = @"0";
 
 - (void)loaderDidLoadVideoAds:(NSArray *)ads
 {
-    VideoAdsDescriptionViewController *descriptionViewController =
-        [[VideoAdsDescriptionViewController alloc] initWithAds:ads];
-    [self.navigationController pushViewController:descriptionViewController animated:YES];
+    VideoAdsTableViewController *adsViewController = [[VideoAdsTableViewController alloc] initWithAds:ads];
+    [self.navigationController pushViewController:adsViewController animated:YES];
 }
 
 - (void)loaderDidFailLoadingVideoAdsWithError:(NSError *)error

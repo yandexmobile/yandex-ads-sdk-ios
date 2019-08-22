@@ -6,22 +6,22 @@
  */
 
 #import <YandexMobileAds/YandexMobileVASTAds.h>
-#import "VideoAdsDescriptionViewController.h"
+#import "VideoAdDescriptionViewController.h"
 #import "TrackingTableViewController.h"
 
-@interface VideoAdsDescriptionViewController ()
+@interface VideoAdDescriptionViewController ()
 
-@property (nonatomic, copy, readonly) NSArray<YMAVASTAd *> *ads;
+@property (nonatomic, strong, readonly) YMAVASTAd *ad;
 
 @end
 
-@implementation VideoAdsDescriptionViewController
+@implementation VideoAdDescriptionViewController
 
-- (id)initWithAds:(NSArray<YMAVASTAd *> *)ads
+- (instancetype)initWithAd:(YMAVASTAd *)ad
 {
     self = [super init];
     if (self != nil) {
-        _ads = [ads copy];
+        _ad = ad;
     }
     return self;
 }
@@ -35,12 +35,7 @@
     UITextView *descriptionTextView = [[UITextView alloc] initWithFrame:CGRectZero];
     descriptionTextView.translatesAutoresizingMaskIntoConstraints = NO;
     descriptionTextView.editable = NO;
-    NSMutableString *description = [NSMutableString string];
-    for (YMAVASTAd *ad in self.ads) {
-        [description appendString:ad.description];
-        [description appendString:@"\n"];
-    }
-    descriptionTextView.text = description;
+    descriptionTextView.text = self.ad.description;
     [self.view addSubview:descriptionTextView];
     NSDictionary *views = NSDictionaryOfVariableBindings(descriptionTextView);
     NSArray *horizontal = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[descriptionTextView]|"
@@ -63,7 +58,7 @@
 - (void)displayTracking
 {
     TrackingTableViewController *controller = [[TrackingTableViewController alloc] init];
-    controller.ad = self.ads.firstObject;
+    controller.ad = self.ad;
     [self.navigationController pushViewController:controller animated:YES];
 }
 
