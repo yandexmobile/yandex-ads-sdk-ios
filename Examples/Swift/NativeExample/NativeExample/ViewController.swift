@@ -34,23 +34,23 @@ class ViewController: UIViewController {
     }
     
     private func loadAdViews() {
-        myContentAdView = Bundle.main.loadNibNamed("NativeContentAdView",
-                                                   owner: nil,
-                                                   options: nil)?.first as? NativeContentAdView
+        contentAdView = Bundle.main.loadNibNamed("NativeContentAdView",
+                                                 owner: nil,
+                                                 options: nil)?.first as? NativeContentAdView
         if let myContentAdView = contentAdView {
             addAdView(myContentAdView)
         }
         
-        myAppInstallView = Bundle.main.loadNibNamed("NativeAppInstallAdView",
-                                                    owner: nil,
-                                                    options: nil)?.first as? NativeAppInstallAdView
+        appInstallView = Bundle.main.loadNibNamed("NativeAppInstallAdView",
+                                                  owner: nil,
+                                                  options: nil)?.first as? NativeAppInstallAdView
         if let myAppInstallView = appInstallView {
             addAdView(myAppInstallView)
         }
         
-        myImageAdView = Bundle.main.loadNibNamed("NativeImageAdView",
-                                                 owner: nil,
-                                                 options: nil)?.first as? NativeImageAdView
+        imageAdView = Bundle.main.loadNibNamed("NativeImageAdView",
+                                               owner: nil,
+                                               options: nil)?.first as? NativeImageAdView
         if let myImageAdView = imageAdView {
             addAdView(myImageAdView)
         }

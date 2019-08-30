@@ -41,14 +41,15 @@ EULA is available at [EULA website][LICENSE]
   * /Examples/Swift/AdFoxMediationNativeExample
   * /Examples/Swift/AdFoxMediationRewardedExample
   * /Examples/Swift/AdMobBannerAdapterExample
-  * /Examples/Swift/AdMobNativeAdapterExample
   * /Examples/Swift/AdMobInterstitialAdapterExample
+  * /Examples/Swift/AdMobNativeAdapterExample
   * /Examples/Swift/AdMobRewardedAdapterExample
   * /Examples/Swift/BannerExample
   * /Examples/Swift/GDPRExample
   * /Examples/Swift/InterstitialExample
   * /Examples/Swift/MoPubBannerAdapterExample
   * /Examples/Swift/MoPubInterstitialAdapterExample
+  * /Examples/Swift/MoPubNativeAdaptersExample
   * /Examples/Swift/MoPubRewardedAdapterExample
   * /Examples/Swift/NativeExample
   * /Examples/Swift/NativeTemplatesExample
