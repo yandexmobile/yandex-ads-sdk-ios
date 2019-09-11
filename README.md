@@ -27,6 +27,7 @@ EULA is available at [EULA website][LICENSE]
   * /Examples/ObjectiveC/GDPRExample
   * /Examples/ObjectiveC/InterstitialExample
   * /Examples/ObjectiveC/MoPubBannerAdapterExample
+  * /Examples/ObjectiveC/MoPubInterstitialAdapterExample
   * /Examples/ObjectiveC/MoPubNativeAdaptersExample
   * /Examples/ObjectiveC/MoPubRewardedAdapterExample
   * /Examples/ObjectiveC/NativeExample

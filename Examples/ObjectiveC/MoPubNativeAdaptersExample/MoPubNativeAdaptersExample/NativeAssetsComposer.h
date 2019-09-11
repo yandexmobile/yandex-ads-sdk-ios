@@ -27,6 +27,6 @@
 
 - (instancetype)initWithView:(UIView *)view;
 
-- (void)layoutAssets;
+- (void)layoutAssetsWithMediaView:(UIView *)mediaView;
 
 @end

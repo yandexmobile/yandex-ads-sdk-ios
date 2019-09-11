@@ -33,7 +33,6 @@ class NativeAdView: UIView {
         configureVisibility(for: domainLabel)
         configureVisibility(for: faviconImage)
         configureVisibility(for: iconImage)
-        configureVisibility(for: image)
         configureVisibility(for: priceLabel)
         configureVisibility(for: reviewCountLabel)
         configureVisibility(for: sponsoredLabel)
@@ -78,6 +77,12 @@ extension NativeAdView: MPNativeAdRendering {
 
     func nativeCallToActionTextLabel() -> UILabel! {
         return self.callToActionButton
+    }
+    
+    func layoutCustomAssets(withProperties customProperties: [AnyHashable : Any]!, imageLoader: MPNativeAdRenderingImageLoader!) {
+        // configure visibility for nativeMainImageView in Yandex Ad
+        let mediaView = customProperties[kAdMainMediaViewKey]
+        self.image.isHidden = mediaView == nil
     }
 
     static func nibForAd() -> UINib! {

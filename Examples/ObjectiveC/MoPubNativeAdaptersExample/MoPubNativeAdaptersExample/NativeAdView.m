@@ -8,6 +8,7 @@
 #import "NativeAdView.h"
 #import "NativeAssetsComposer.h"
 #import "StarRatingView.h"
+#import "MPNativeAdConstants.h"
 
 @interface NativeAdView ()
 
@@ -99,14 +100,10 @@
     return self.assetsComposer.reviewCount;
 }
 
-#pragma mark - Layout
-
-- (void)willMoveToWindow:(UIWindow *)newWindow
+- (void)layoutCustomAssetsWithProperties:(NSDictionary *)customProperties imageLoader:(MPNativeAdRenderingImageLoader *)imageLoader
 {
-    if (newWindow == nil) {
-        return;
-    }
-    [self.assetsComposer layoutAssets];
+    UIView *mediaView = customProperties[kAdMainMediaViewKey];
+    [self.assetsComposer layoutAssetsWithMediaView:mediaView];
 }
 
 @end

@@ -9,6 +9,7 @@
 #import "StarRatingView.h"
 
 static CGFloat const kNativeViewOffset = 8.f;
+static CGFloat const kNativeViewImageHeight = 150.f;
 
 @interface NativeAssetsComposer ()
 
@@ -27,7 +28,6 @@ static CGFloat const kNativeViewOffset = 8.f;
 @property (nonatomic, strong) StarRatingView *rating;
 @property (nonatomic, strong) UILabel *reviewCount;
 @property (nonatomic, weak) UIView *leftView;
-@property (nonatomic, weak) UIImageView *wideImage;
 
 @end
 
@@ -97,7 +97,7 @@ static CGFloat const kNativeViewOffset = 8.f;
 
 #pragma mark - Layout
 
-- (void)layoutAssets
+- (void)layoutAssetsWithMediaView:(UIView *)mediaView
 {
     UILabel *title = self.title;
     UILabel *body = self.body;
@@ -127,14 +127,12 @@ static CGFloat const kNativeViewOffset = 8.f;
                                                          rating);
     [self configureSponsoredLabelWithViewBindings:views];
     [self configureAgeLabelWithViewBindings:views];
-    [self configureImageWithViewBindings:views];
     [self configureFaviconWithViewBindings:views];
     [self configureIconWithViewBindings:views];
-    [self configureLeftImageWithViewBindings:views];
     [self configureTitleLabelWithViewBindings:views];
     [self configureBodyLabelWithViewBindings:views];
     [self configureDomainLabelWithViewBindings:views];
-    [self configureWideImageWithViewBindings:views];
+    [self configureImageWithViewBindings:views mediaView:mediaView];
     [self configureReviewCountLabelWithViewBindings:views];
     [self configureRatingWithViewBindings:views];
     [self configurePriceLabelWithViewBindings:views];
@@ -177,7 +175,7 @@ static CGFloat const kNativeViewOffset = 8.f;
 
 - (void)configureFaviconWithViewBindings:(NSDictionary *)views
 {
-    if (self.favicon.image == nil || (self.image.image != nil && [self hasWideImage] == NO)) {
+    if (self.favicon.image == nil) {
         [self.favicon removeFromSuperview];
         return;
     }
@@ -185,25 +183,6 @@ static CGFloat const kNativeViewOffset = 8.f;
     NSArray *constraints = [self imageConstraintsForImageView:self.favicon width:16.f];
     [self.view addConstraints:constraints];
     self.leftView = self.favicon;
-}
-
-- (void)configureImageWithViewBindings:(NSDictionary *)views
-{
-    if ([self shouldShowImage]) {
-        [self.view addSubview:self.image];
-    }
-    else {
-        [self.image removeFromSuperview];
-    }
-}
-
-- (void)configureLeftImageWithViewBindings:(NSDictionary *)views
-{
-    if ([self shouldShowImage] == NO || [self hasWideImage]) {
-        return;
-    }
-    [self.view addConstraints:[self imageConstraintsForImageView:self.image width:100.f]];
-    self.leftView = self.image;
 }
 
 - (void)configureIconWithViewBindings:(NSDictionary *)views
@@ -253,22 +232,24 @@ static CGFloat const kNativeViewOffset = 8.f;
     [self.view addConstraints:[self textBlockHorizontalConstraintsForView:self.domain]];
 }
 
-- (void)configureWideImageWithViewBindings:(NSDictionary *)views
+- (void)configureImageWithViewBindings:(NSDictionary *)views mediaView:(UIView *)mediaView
 {
-    if ([self shouldShowImage] == NO || [self hasWideImage] == NO) {
+    if ([self shouldShowImageWithMediaView:mediaView] == NO) {
+        [self.image removeFromSuperview];
         return;
     }
+    
+    [self.view addSubview:self.image];
     NSArray *horizontal = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[image]-|"
                                                                   options:0
                                                                   metrics:nil
                                                                     views:views];
-    NSLayoutConstraint *aspectRatio = [self aspectRatioConstraintForImageView:self.image];
+    NSLayoutConstraint *vertical = [self heightConstraintForView:self.image height:kNativeViewImageHeight];
     NSArray *topViews = [self imagesByAddingTopViews:@[ self.body, self.domain ]];
     NSArray *imageVertical = [self verticalConstraintsForView:self.image topViews:topViews];
-    [self.view addConstraint:aspectRatio];
+    [self.view addConstraint:vertical];
     [self.view addConstraints:horizontal];
     [self.view addConstraints:imageVertical];
-    self.wideImage = self.image;
 }
 
 - (void)configureReviewCountLabelWithViewBindings:(NSDictionary *)views
@@ -369,6 +350,17 @@ static CGFloat const kNativeViewOffset = 8.f;
 
 #pragma mark - Helpers
 
+- (NSLayoutConstraint *)heightConstraintForView:(UIView *)view height:(CGFloat)height
+{
+    return [NSLayoutConstraint constraintWithItem:view
+                                        attribute:NSLayoutAttributeHeight
+                                        relatedBy:NSLayoutRelationEqual
+                                           toItem:nil
+                                        attribute:NSLayoutAttributeNotAnAttribute
+                                       multiplier:1.f
+                                         constant:height];
+}
+
 - (NSLayoutConstraint *)aspectRatioConstraintForImageView:(UIImageView *)imageView
 {
     CGFloat ratio = imageView.image.size.width / imageView.image.size.height;
@@ -466,8 +458,8 @@ static CGFloat const kNativeViewOffset = 8.f;
     if (self.leftView != nil) {
         [views addObject:self.leftView];
     }
-    if (self.wideImage != nil) {
-        [views addObject:self.wideImage];
+    if (self.image.superview != nil) {
+        [views addObject:self.image];
     }
     return [views copy];
 }
@@ -493,19 +485,9 @@ static CGFloat const kNativeViewOffset = 8.f;
     return constraints;
 }
 
-- (BOOL)shouldShowImage
+- (BOOL)shouldShowImageWithMediaView:(UIView *)mediaView
 {
-    return self.image.image != nil;
-}
-
-// This is just an example of how to detect widescreen image
-- (BOOL)hasWideImage
-{
-    CGSize size = self.image.image.size;
-    CGFloat screenHalfWidth = CGRectGetWidth([UIScreen mainScreen].bounds) / 2.f;
-    BOOL isWide = size.width / size.height > 1.5f;
-    BOOL isLarge = size.width >= screenHalfWidth;
-    return isWide && isLarge;
+    return mediaView != nil;
 }
 
 @end
