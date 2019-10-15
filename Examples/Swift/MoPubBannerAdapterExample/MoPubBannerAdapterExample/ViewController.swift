@@ -20,7 +20,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         adView = makeAdView()
-        addAdView(adView)
         initializeMoPub()
     }
 
@@ -39,17 +38,17 @@ class ViewController: UIViewController {
     }
 
     private func makeAdView() -> MPAdView {
-        let adView: MPAdView = MPAdView(adUnitId: adUnitId, size: MOPUB_BANNER_SIZE)
-        adView.isHidden = true
+        let adView: MPAdView = MPAdView(adUnitId: adUnitId)
+        adView.frame = CGRect(x: 0, y: 0, width: 320, height: 50)
         adView.delegate = self
         return adView
     }
 
-    private func addAdView(_ banner: UIView) {
+    private func addAdView(_ banner: UIView, adSize: CGSize) {
         banner.translatesAutoresizingMaskIntoConstraints = false
         banner.removeFromSuperview()
         view.addSubview(banner)
-        configureLayoutForView(banner: banner, size: MOPUB_BANNER_SIZE)
+        configureLayoutForView(banner: banner, size: adSize)
     }
 
     private func configureLayoutForView(banner: UIView, size: CGSize) {
@@ -90,9 +89,9 @@ extension ViewController: MPAdViewDelegate {
         return self
     }
 
-    func adViewDidLoadAd(_ view: MPAdView!) {
+    func adViewDidLoadAd(_ view: MPAdView!, adSize: CGSize) {
         print("Ad view did load")
-        view.isHidden = false
+        addAdView(adView, adSize: adSize)
     }
 
     func adView(_ view: MPAdView!, didFailToLoadAdWithError error: Error!) {

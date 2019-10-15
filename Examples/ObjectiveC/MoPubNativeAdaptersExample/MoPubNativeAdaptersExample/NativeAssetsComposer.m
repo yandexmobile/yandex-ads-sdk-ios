@@ -73,6 +73,7 @@ static CGFloat const kNativeViewImageHeight = 150.f;
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     imageView.translatesAutoresizingMaskIntoConstraints = NO;
+    imageView.userInteractionEnabled = YES;
     return imageView;
 }
 

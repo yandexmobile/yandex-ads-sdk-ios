@@ -424,7 +424,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"${PODS_ROOT}/Google-Mobile-Ads-SDK/Frameworks/frameworks\"",
 					"\"${PODS_ROOT}/YandexMobileAds/static\"",
 					"\"${PODS_ROOT}/YandexMobileMetrica/static\"",
 				);
@@ -445,7 +444,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"${PODS_ROOT}/Google-Mobile-Ads-SDK/Frameworks/frameworks\"",
 					"\"${PODS_ROOT}/YandexMobileAds/static\"",
 					"\"${PODS_ROOT}/YandexMobileMetrica/static\"",
 				);

@@ -22,9 +22,11 @@
     
     // Replace XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX with Ad Unit ID generated at https://app.mopub.com.
     NSString *adUnit = @"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
-    self.adView = [[MPAdView alloc] initWithAdUnitId:adUnit size:MOPUB_BANNER_SIZE];
+    self.adView = [[MPAdView alloc] initWithAdUnitId:adUnit];
+    self.adView.frame = CGRectMake(0.f, 0.f, 320.f, 50.f);
     self.adView.delegate = self;
     self.adView.translatesAutoresizingMaskIntoConstraints = NO;
+
     __typeof(self) __weak weakSelf = self;
     MPMoPubConfiguration *configuration = [[MPMoPubConfiguration alloc] initWithAdUnitIdForAppInitialization:adUnit];
     [[MoPub sharedInstance] initializeSdkWithConfiguration:configuration completion:^{
@@ -39,25 +41,29 @@
     return self;
 }
 
-- (void)adViewDidLoadAd:(MPAdView *)view
+- (void)adViewDidLoadAd:(MPAdView *)view adSize:(CGSize)adSize
 {
     NSLog(@"Ad loaded.");
     [self.adView removeFromSuperview];
     [self.view addSubview:view];
     if (@available(iOS 11.0, *)) {
-        [self configureLayoutAtBottomOfSafeAreaForView:view];
+        [self configureLayoutAtBottomOfSafeAreaForView:view adSize:adSize];
     } else {
-        [self configureLayoutAtBottomForView:view];
+        [self configureLayoutAtBottomForView:view adSize:adSize];
     }
 }
 
-- (void)configureLayoutAtBottomForView:(MPAdView *)view
+- (void)configureLayoutAtBottomForView:(MPAdView *)view adSize:(CGSize)adSize
 {
     NSDictionary *views = NSDictionaryOfVariableBindings(view);
+    NSDictionary *metrics = @{
+        @"width" : @(adSize.width),
+        @"height" : @(adSize.height)
+    };
     NSArray *vertical =
-        [NSLayoutConstraint constraintsWithVisualFormat:@"V:[view(50)]|" options:0 metrics:nil views:views];
+        [NSLayoutConstraint constraintsWithVisualFormat:@"V:[view(=height)]|" options:0 metrics:metrics views:views];
     NSArray *horizontal =
-        [NSLayoutConstraint constraintsWithVisualFormat:@"H:[view(320)]" options:0 metrics:nil views:views];
+        [NSLayoutConstraint constraintsWithVisualFormat:@"H:[view(=width)]" options:0 metrics:metrics views:views];
     NSLayoutConstraint *center = [NSLayoutConstraint constraintWithItem:view
                                                               attribute:NSLayoutAttributeCenterX
                                                               relatedBy:NSLayoutRelationEqual
@@ -70,19 +76,19 @@
     [self.view addConstraint:center];
 }
 
-- (void)configureLayoutAtBottomOfSafeAreaForView:(MPAdView *)view NS_AVAILABLE_IOS(11_0)
+- (void)configureLayoutAtBottomOfSafeAreaForView:(MPAdView *)view adSize:(CGSize)adSize NS_AVAILABLE_IOS(11_0)
 {
     UILayoutGuide *guide = self.view.safeAreaLayoutGuide;
     NSArray *constraints = @[
-                             [view.heightAnchor constraintEqualToConstant:MOPUB_BANNER_SIZE.height],
+                             [view.heightAnchor constraintEqualToConstant:adSize.height],
                              [view.centerXAnchor constraintEqualToAnchor:guide.centerXAnchor],
-                             [view.widthAnchor constraintEqualToConstant:MOPUB_BANNER_SIZE.width],
+                             [view.widthAnchor constraintEqualToConstant:adSize.width],
                              [view.bottomAnchor constraintEqualToAnchor:guide.bottomAnchor]
                              ];
     [NSLayoutConstraint activateConstraints:constraints];
 }
 
-- (void)adViewDidFailToLoadAd:(MPAdView *)view
+- (void)adView:(MPAdView *)view didFailToLoadAdWithError:(NSError *)error
 {
     NSLog(@"Ad failed loading.");
 }

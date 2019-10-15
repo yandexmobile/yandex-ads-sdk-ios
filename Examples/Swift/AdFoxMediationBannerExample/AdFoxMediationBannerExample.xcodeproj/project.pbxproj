@@ -10,7 +10,6 @@
 		B734D3E122D768BA002B9489 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B734D3E022D768BA002B9489 /* AppDelegate.swift */; };
 		B734D3E322D768BA002B9489 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B734D3E222D768BA002B9489 /* ViewController.swift */; };
 		B734D3E622D768BA002B9489 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B734D3E422D768BA002B9489 /* Main.storyboard */; };
-		B734D3E822D768BB002B9489 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B734D3E722D768BB002B9489 /* Assets.xcassets */; };
 		B734D3EB22D768BB002B9489 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B734D3E922D768BB002B9489 /* LaunchScreen.storyboard */; };
 		B75C04A422D8BD8700F17153 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B75C04A322D8BD8700F17153 /* Images.xcassets */; };
 		E6AF4B643BEC96D0B5F5518D /* Pods_AdFoxMediationBannerExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 236079CDA520D816CCDD7FDD /* Pods_AdFoxMediationBannerExample.framework */; };
@@ -24,7 +23,6 @@
 		B734D3E022D768BA002B9489 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B734D3E222D768BA002B9489 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B734D3E522D768BA002B9489 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B734D3E722D768BB002B9489 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B734D3EA22D768BB002B9489 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B734D3EC22D768BB002B9489 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B75C04A322D8BD8700F17153 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -77,7 +75,6 @@
 				B75C04A322D8BD8700F17153 /* Images.xcassets */,
 				B734D3E422D768BA002B9489 /* Main.storyboard */,
 				B734D3E922D768BB002B9489 /* LaunchScreen.storyboard */,
-				B734D3E722D768BB002B9489 /* Assets.xcassets */,
 				B734D3E222D768BA002B9489 /* ViewController.swift */,
 			);
 			path = AdFoxMediationBannerExample;
@@ -154,7 +151,6 @@
 			files = (
 				B734D3EB22D768BB002B9489 /* LaunchScreen.storyboard in Resources */,
 				B75C04A422D8BD8700F17153 /* Images.xcassets in Resources */,
-				B734D3E822D768BB002B9489 /* Assets.xcassets in Resources */,
 				B734D3E622D768BA002B9489 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

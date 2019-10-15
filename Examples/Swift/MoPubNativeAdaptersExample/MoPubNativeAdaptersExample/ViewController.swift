@@ -16,6 +16,7 @@ class ViewController: UIViewController {
 
     var rendererConfigurations: [MPNativeAdRendererConfiguration]?
     var adView : UIView?
+    var nativeAd: MPNativeAd?
 
     @IBOutlet weak var loadButton: UIButton!
 
@@ -60,6 +61,7 @@ class ViewController: UIViewController {
     private func display(for ad: MPNativeAd?) {
         self.adView?.removeFromSuperview()
         guard let nativeAd = ad, let adView = try? nativeAd.retrieveAdView() else { return }
+        self.nativeAd = nativeAd
         self.addView(adView)
         self.adView = adView
     }

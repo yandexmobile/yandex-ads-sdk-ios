@@ -1,6 +1,15 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# Version 2.13.3
+
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/212922/YandexMobileAds-2.13.3-ios-96cdc080-dfef-4b7e-b73d-752669c0c5c8.zip)
+
+#### Added
+
+* Supported display of interstitial and rewarded ads on iOS 13
+* Added improvements and fixes
+
 # Version 2.13.2
 
 SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/212922/YandexMobileAds-2.13.2-ios-483935f7-60de-4c1c-9eab-fd5eb770ba3b.zip)
