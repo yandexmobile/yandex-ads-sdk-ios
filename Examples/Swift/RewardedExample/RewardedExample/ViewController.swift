@@ -10,7 +10,14 @@ import YandexMobileAds
 
 class ViewController: UIViewController, YMARewardedAdDelegate {
     
+    @IBOutlet weak var presentButton: UIButton!
+    
     var rewardedAd: YMARewardedAd!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        presentButton.isEnabled = false
+    }
     
     @IBAction func loadAd() {
         // Replace demo R-M-DEMO-rewarded-client-side-rtb with actual Block ID
@@ -35,6 +42,7 @@ class ViewController: UIViewController, YMARewardedAdDelegate {
     
     func rewardedAdDidLoad(_ rewardedAd: YMARewardedAd!) {
         print("Rewarded ad loaded")
+        presentButton.isEnabled = true
     }
     
     func rewardedAdDidFail(toLoad rewardedAd: YMARewardedAd!, error: Error!) {
@@ -59,6 +67,7 @@ class ViewController: UIViewController, YMARewardedAdDelegate {
     
     func rewardedAdWillDisappear(_ rewardedAd: YMARewardedAd!) {
         print("Rewarded ad will disappear")
+        presentButton.isEnabled = false
     }
     
     func rewardedAdDidDisappear(_ rewardedAd: YMARewardedAd!) {
