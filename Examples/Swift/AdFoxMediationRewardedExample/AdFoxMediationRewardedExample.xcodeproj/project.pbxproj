@@ -12,15 +12,12 @@
 		B303457421C1537600C9A4DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B303457221C1537600C9A4DA /* LaunchScreen.storyboard */; };
 		B303457C21C1544000C9A4DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B303457B21C1544000C9A4DA /* Images.xcassets */; };
 		B303457F21C1548300C9A4DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B303457D21C1548300C9A4DA /* Main.storyboard */; };
-		E068A90DB2E0FB58A886CBC5 /* libPods-AdFoxMediationRewardedExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A612B2E3F8B84DA8CB5342 /* libPods-AdFoxMediationRewardedExample.a */; };
+		BCEFED4114DB108949DF3817 /* libPods-AdFoxMediationRewardedExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F29BD3D27027ADAC7D74E8C3 /* libPods-AdFoxMediationRewardedExample.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0DBEE7BE65FFB5E2F45FF3A2 /* libPods-RewardedExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RewardedExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		26A612B2E3F8B84DA8CB5342 /* libPods-AdFoxMediationRewardedExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AdFoxMediationRewardedExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		279B8267CD7D9E9299D20446 /* Pods-RewardedExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RewardedExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-RewardedExample/Pods-RewardedExample.release.xcconfig"; sourceTree = "<group>"; };
-		6DFBC1AB18978ECFE28E0269 /* Pods-AdFoxMediationRewardedExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdFoxMediationRewardedExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdFoxMediationRewardedExample/Pods-AdFoxMediationRewardedExample.release.xcconfig"; sourceTree = "<group>"; };
-		968E893EEA690C89F4B2E532 /* Pods-RewardedExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RewardedExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RewardedExample/Pods-RewardedExample.debug.xcconfig"; sourceTree = "<group>"; };
+		4F4058F29E2FC1F551393E7A /* Pods-AdFoxMediationRewardedExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdFoxMediationRewardedExample.debug.xcconfig"; path = "Target Support Files/Pods-AdFoxMediationRewardedExample/Pods-AdFoxMediationRewardedExample.debug.xcconfig"; sourceTree = "<group>"; };
+		9FA1A5B3B2D676EC4A0D701C /* Pods-AdFoxMediationRewardedExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdFoxMediationRewardedExample.release.xcconfig"; path = "Target Support Files/Pods-AdFoxMediationRewardedExample/Pods-AdFoxMediationRewardedExample.release.xcconfig"; sourceTree = "<group>"; };
 		B303456621C1537400C9A4DA /* AdFoxMediationRewardedExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdFoxMediationRewardedExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B303456921C1537400C9A4DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B303456B21C1537400C9A4DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,7 +25,7 @@
 		B303457521C1537600C9A4DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B303457B21C1544000C9A4DA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B303457E21C1548300C9A4DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BAA5D6CD230570C2F5B3552E /* Pods-AdFoxMediationRewardedExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdFoxMediationRewardedExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdFoxMediationRewardedExample/Pods-AdFoxMediationRewardedExample.debug.xcconfig"; sourceTree = "<group>"; };
+		F29BD3D27027ADAC7D74E8C3 /* libPods-AdFoxMediationRewardedExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AdFoxMediationRewardedExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,31 +33,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E068A90DB2E0FB58A886CBC5 /* libPods-AdFoxMediationRewardedExample.a in Frameworks */,
+				BCEFED4114DB108949DF3817 /* libPods-AdFoxMediationRewardedExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1F07996DC7653B8375D56DE3 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				968E893EEA690C89F4B2E532 /* Pods-RewardedExample.debug.xcconfig */,
-				279B8267CD7D9E9299D20446 /* Pods-RewardedExample.release.xcconfig */,
-				BAA5D6CD230570C2F5B3552E /* Pods-AdFoxMediationRewardedExample.debug.xcconfig */,
-				6DFBC1AB18978ECFE28E0269 /* Pods-AdFoxMediationRewardedExample.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		B303455D21C1537400C9A4DA = {
 			isa = PBXGroup;
 			children = (
 				B303456821C1537400C9A4DA /* AdFoxMediationRewardedExample */,
 				B303456721C1537400C9A4DA /* Products */,
-				1F07996DC7653B8375D56DE3 /* Pods */,
-				B5609CC80D5BDFBFCEFB8AF8 /* Frameworks */,
+				E580CCF1BDF4DDB345386AB2 /* Pods */,
+				E8CA4E35E5EEFA3F9FA1FF27 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,11 +71,20 @@
 			path = AdFoxMediationRewardedExample;
 			sourceTree = "<group>";
 		};
-		B5609CC80D5BDFBFCEFB8AF8 /* Frameworks */ = {
+		E580CCF1BDF4DDB345386AB2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0DBEE7BE65FFB5E2F45FF3A2 /* libPods-RewardedExample.a */,
-				26A612B2E3F8B84DA8CB5342 /* libPods-AdFoxMediationRewardedExample.a */,
+				4F4058F29E2FC1F551393E7A /* Pods-AdFoxMediationRewardedExample.debug.xcconfig */,
+				9FA1A5B3B2D676EC4A0D701C /* Pods-AdFoxMediationRewardedExample.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E8CA4E35E5EEFA3F9FA1FF27 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F29BD3D27027ADAC7D74E8C3 /* libPods-AdFoxMediationRewardedExample.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -101,12 +96,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B303457821C1537600C9A4DA /* Build configuration list for PBXNativeTarget "AdFoxMediationRewardedExample" */;
 			buildPhases = (
-				14D90E64CFE46BEAA08F6D2E /* [CP] Check Pods Manifest.lock */,
+				A8181855303B26E7A2F02EE1 /* [CP] Check Pods Manifest.lock */,
 				B303456221C1537400C9A4DA /* Sources */,
 				B303456321C1537400C9A4DA /* Frameworks */,
 				B303456421C1537400C9A4DA /* Resources */,
-				53626763A6DFB52CB9D9C95A /* [CP] Embed Pods Frameworks */,
-				0E90F6F385921E8290F271A5 /* [CP] Copy Pods Resources */,
+				4032EF66AE85C44E0039112B /* [CP] Embed Pods Frameworks */,
+				4C65B3BB358A2F73C3D686D4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,69 +159,41 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0E90F6F385921E8290F271A5 /* [CP] Copy Pods Resources */ = {
+		4032EF66AE85C44E0039112B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AdFoxMediationRewardedExample/Pods-AdFoxMediationRewardedExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AdFoxMediationRewardedExample/Pods-AdFoxMediationRewardedExample-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/StartAppSDK/StartAppSDK.bundle",
-				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseBtn.png",
-				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseBtn@2x.png",
-				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseBtn@3x.png",
-				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseButtonX.png",
-				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseButtonX@2x.png",
-				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseButtonX@3x.png",
-				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPDAAIcon.png",
-				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPDAAIcon@2x.png",
-				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPDAAIcon@3x.png",
-				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPMutedBtn.png",
-				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPMutedBtn@2x.png",
-				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPMutedBtn@3x.png",
-				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPPlayBtn.png",
-				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPPlayBtn@2x.png",
-				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPPlayBtn@3x.png",
-				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPUnmutedBtn.png",
-				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPUnmutedBtn@2x.png",
-				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPUnmutedBtn@3x.png",
-				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MRAID.bundle",
-				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPAdapters.plist",
-			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/StartAppSDK.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPCloseBtn.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPCloseBtn@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPCloseBtn@3x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPCloseButtonX.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPCloseButtonX@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPCloseButtonX@3x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPDAAIcon.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPDAAIcon@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPDAAIcon@3x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPMutedBtn.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPMutedBtn@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPMutedBtn@3x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPPlayBtn.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPPlayBtn@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPPlayBtn@3x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPUnmutedBtn.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPUnmutedBtn@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPUnmutedBtn@3x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MRAID.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPAdapters.plist",
+				"${PODS_ROOT}/Target Support Files/Pods-AdFoxMediationRewardedExample/Pods-AdFoxMediationRewardedExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdFoxMediationRewardedExample/Pods-AdFoxMediationRewardedExample-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AdFoxMediationRewardedExample/Pods-AdFoxMediationRewardedExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		14D90E64CFE46BEAA08F6D2E /* [CP] Check Pods Manifest.lock */ = {
+		4C65B3BB358A2F73C3D686D4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AdFoxMediationRewardedExample/Pods-AdFoxMediationRewardedExample-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AdFoxMediationRewardedExample/Pods-AdFoxMediationRewardedExample-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AdFoxMediationRewardedExample/Pods-AdFoxMediationRewardedExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8181855303B26E7A2F02EE1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -246,32 +213,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		53626763A6DFB52CB9D9C95A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AdFoxMediationRewardedExample/Pods-AdFoxMediationRewardedExample-frameworks.sh",
-				"${PODS_ROOT}/YandexMobileAds/dynamic/YandexMobileAds.framework",
-				"${PODS_ROOT}/YandexMobileMetrica/dynamic/YandexMobileMetrica.framework",
-				"${PODS_ROOT}/YandexMobileMetrica/dynamic/YandexMobileMetricaCrashes.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YandexMobileAds.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YandexMobileMetrica.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YandexMobileMetricaCrashes.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdFoxMediationRewardedExample/Pods-AdFoxMediationRewardedExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -426,7 +367,7 @@
 		};
 		B303457921C1537600C9A4DA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BAA5D6CD230570C2F5B3552E /* Pods-AdFoxMediationRewardedExample.debug.xcconfig */;
+			baseConfigurationReference = 4F4058F29E2FC1F551393E7A /* Pods-AdFoxMediationRewardedExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -445,7 +386,7 @@
 		};
 		B303457A21C1537600C9A4DA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6DFBC1AB18978ECFE28E0269 /* Pods-AdFoxMediationRewardedExample.release.xcconfig */;
+			baseConfigurationReference = 9FA1A5B3B2D676EC4A0D701C /* Pods-AdFoxMediationRewardedExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

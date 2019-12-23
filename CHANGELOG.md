@@ -1,6 +1,18 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# Version 2.14.0
+
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/2817166/YandexMobileAds-2.14.0-ios-c53c1fa8-72f8-41df-88b5-d23a46fa143c.zip)
+
+#### Updated
+
+* Updated minimum supported version to iOS 9. Deployment target is still iOS 8, but ads will only be shown on iOS 9 and above
+* Updated `YMAMediaView` to respect the aspect ratio of the content
+
+#### Added
+* Added improvements and fixes
+
 # Version 2.13.3
 
 SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/212922/YandexMobileAds-2.13.3-ios-96cdc080-dfef-4b7e-b73d-752669c0c5c8.zip)

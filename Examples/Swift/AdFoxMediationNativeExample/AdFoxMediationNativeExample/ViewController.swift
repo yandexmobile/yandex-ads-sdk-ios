@@ -11,7 +11,6 @@ class ViewController: UIViewController {
     private let adMobBlockID = "adf-279013/975874"
     private let facebookBlockID = "adf-279013/975877"
     private let moPubBlockID = "adf-279013/975875"
-    private let myTargetBlockID = "adf-279013/975876"
     private let yandexBlockID = "adf-279013/975878"
 
     private var contentAdView: NativeContentAdView?
@@ -32,7 +31,6 @@ class ViewController: UIViewController {
          AdMob mediation: adMobBlockID
          Facebook mediation: facebookBlockID
          MoPub mediation: moPubBlockID
-         MyTarget mediation: myTargetBlockID
          Yandex: yandexBlockID
          */
 

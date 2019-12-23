@@ -9,9 +9,9 @@
 #import "ViewController.h"
 
 static NSString *const kAdMobBlockID = @"adf-279013/966332";
+static NSString *const kAppLovinBlockID = @"adf-279013/1052108";
 static NSString *const kFacebookBlockID = @"adf-279013/966335";
 static NSString *const kMoPubBlockID = @"adf-279013/966333";
-static NSString *const kMyTargetBlockID = @"adf-279013/966334";
 static NSString *const kStartAppBlockID = @"adf-279013/1006617";
 static NSString *const kUnityAdsBlockID = @"adf-279013/1006614";
 static NSString *const kYandexBlockID = @"adf-279013/967178";
@@ -30,9 +30,9 @@ static NSString *const kYandexBlockID = @"adf-279013/967178";
      Replace demo kAdMobBlockID with actual Block ID.
      Following demo block ids may be used for testing:
      AdMob mediation: kAdMobBlockID
+     AppLovin mediation: kAppLovinBlockID
      Facebook mediation: kFacebookBlockID
      MoPub mediation: kMoPubBlockID
-     MyTarget mediation: kMyTargetBlockID
      StartApp mediation: kStartAppBlockID
      UnityAds mediation: kUnityAdsBlockID
      Yandex: kYandexBlockID

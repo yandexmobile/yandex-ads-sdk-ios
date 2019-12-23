@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		25A86FFAFFBFA6B2F365EFC8 /* Pods_AdFoxMediationInterstitialExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 216DD532212BF93E8DE2D656 /* Pods_AdFoxMediationInterstitialExample.framework */; };
+		52AF34A62238CFF4FD541257 /* Pods_AdFoxMediationInterstitialExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBB36624EED9364C4DCBA45A /* Pods_AdFoxMediationInterstitialExample.framework */; };
 		B734D3FF22D77AC1002B9489 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B734D3FE22D77AC1002B9489 /* AppDelegate.swift */; };
 		B734D40122D77AC1002B9489 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B734D40022D77AC1002B9489 /* ViewController.swift */; };
 		B734D40422D77AC1002B9489 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B734D40222D77AC1002B9489 /* Main.storyboard */; };
@@ -16,8 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		216DD532212BF93E8DE2D656 /* Pods_AdFoxMediationInterstitialExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdFoxMediationInterstitialExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9170F56616CBBB34D705FCF9 /* Pods-AdFoxMediationInterstitialExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdFoxMediationInterstitialExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdFoxMediationInterstitialExample/Pods-AdFoxMediationInterstitialExample.debug.xcconfig"; sourceTree = "<group>"; };
+		001A53B1F2DE48897936C24C /* Pods-AdFoxMediationInterstitialExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdFoxMediationInterstitialExample.debug.xcconfig"; path = "Target Support Files/Pods-AdFoxMediationInterstitialExample/Pods-AdFoxMediationInterstitialExample.debug.xcconfig"; sourceTree = "<group>"; };
+		B36987257F6BBD759B65715E /* Pods-AdFoxMediationInterstitialExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdFoxMediationInterstitialExample.release.xcconfig"; path = "Target Support Files/Pods-AdFoxMediationInterstitialExample/Pods-AdFoxMediationInterstitialExample.release.xcconfig"; sourceTree = "<group>"; };
 		B734D3FB22D77AC1002B9489 /* AdFoxMediationInterstitialExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdFoxMediationInterstitialExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B734D3FE22D77AC1002B9489 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B734D40022D77AC1002B9489 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -25,7 +25,7 @@
 		B734D40822D77AC3002B9489 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B734D40A22D77AC3002B9489 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B75C04A522D8BFF000F17153 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		CE471C6178EC0FF05F97C076 /* Pods-AdFoxMediationInterstitialExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdFoxMediationInterstitialExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdFoxMediationInterstitialExample/Pods-AdFoxMediationInterstitialExample.release.xcconfig"; sourceTree = "<group>"; };
+		FBB36624EED9364C4DCBA45A /* Pods_AdFoxMediationInterstitialExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdFoxMediationInterstitialExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,28 +33,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25A86FFAFFBFA6B2F365EFC8 /* Pods_AdFoxMediationInterstitialExample.framework in Frameworks */,
+				52AF34A62238CFF4FD541257 /* Pods_AdFoxMediationInterstitialExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7DE01108144B7D0C0DA6B982 /* Frameworks */ = {
+		3EBF5F87D340C55F0FE93CF5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				216DD532212BF93E8DE2D656 /* Pods_AdFoxMediationInterstitialExample.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9E3654DD20F20E082EF17F82 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				9170F56616CBBB34D705FCF9 /* Pods-AdFoxMediationInterstitialExample.debug.xcconfig */,
-				CE471C6178EC0FF05F97C076 /* Pods-AdFoxMediationInterstitialExample.release.xcconfig */,
+				001A53B1F2DE48897936C24C /* Pods-AdFoxMediationInterstitialExample.debug.xcconfig */,
+				B36987257F6BBD759B65715E /* Pods-AdFoxMediationInterstitialExample.release.xcconfig */,
 			);
 			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		B734D3F222D77AC1002B9489 = {
@@ -62,8 +55,8 @@
 			children = (
 				B734D3FD22D77AC1002B9489 /* AdFoxMediationInterstitialExample */,
 				B734D3FC22D77AC1002B9489 /* Products */,
-				9E3654DD20F20E082EF17F82 /* Pods */,
-				7DE01108144B7D0C0DA6B982 /* Frameworks */,
+				3EBF5F87D340C55F0FE93CF5 /* Pods */,
+				ED13C429FB049AA0B3331148 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +81,14 @@
 			path = AdFoxMediationInterstitialExample;
 			sourceTree = "<group>";
 		};
+		ED13C429FB049AA0B3331148 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FBB36624EED9364C4DCBA45A /* Pods_AdFoxMediationInterstitialExample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -95,12 +96,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B734D40D22D77AC3002B9489 /* Build configuration list for PBXNativeTarget "AdFoxMediationInterstitialExample" */;
 			buildPhases = (
-				28FF597F3680C817BCB17473 /* [CP] Check Pods Manifest.lock */,
+				1C494263DFA3904C1320E18C /* [CP] Check Pods Manifest.lock */,
 				B734D3F722D77AC1002B9489 /* Sources */,
 				B734D3F822D77AC1002B9489 /* Frameworks */,
 				B734D3F922D77AC1002B9489 /* Resources */,
-				63229181F335F22E35E8D8F8 /* [CP] Embed Pods Frameworks */,
-				9582D641F05FD547F9E26012 /* [CP] Copy Pods Resources */,
+				A16F9AF94A819E62FE1EF7F4 /* [CP] Embed Pods Frameworks */,
+				50222982A16FA45C4966BE51 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -158,7 +159,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		28FF597F3680C817BCB17473 /* [CP] Check Pods Manifest.lock */ = {
+		1C494263DFA3904C1320E18C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -180,60 +181,38 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		63229181F335F22E35E8D8F8 /* [CP] Embed Pods Frameworks */ = {
+		50222982A16FA45C4966BE51 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AdFoxMediationInterstitialExample/Pods-AdFoxMediationInterstitialExample-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${PODS_ROOT}/YandexMobileAds/dynamic/YandexMobileAds.framework",
-				"${PODS_ROOT}/YandexMobileMetrica/dynamic/YandexMobileMetrica.framework",
-				"${PODS_ROOT}/YandexMobileMetrica/dynamic/YandexMobileMetricaCrashes.framework",
-				"${BUILT_PRODUCTS_DIR}/mopub-ios-sdk/MoPub.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YandexMobileAds.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YandexMobileMetrica.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YandexMobileMetricaCrashes.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MoPub.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdFoxMediationInterstitialExample/Pods-AdFoxMediationInterstitialExample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9582D641F05FD547F9E26012 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AdFoxMediationInterstitialExample/Pods-AdFoxMediationInterstitialExample-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/StartAppSDK/StartAppSDK.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-AdFoxMediationInterstitialExample/Pods-AdFoxMediationInterstitialExample-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/StartAppSDK.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-AdFoxMediationInterstitialExample/Pods-AdFoxMediationInterstitialExample-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdFoxMediationInterstitialExample/Pods-AdFoxMediationInterstitialExample-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AdFoxMediationInterstitialExample/Pods-AdFoxMediationInterstitialExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A16F9AF94A819E62FE1EF7F4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AdFoxMediationInterstitialExample/Pods-AdFoxMediationInterstitialExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AdFoxMediationInterstitialExample/Pods-AdFoxMediationInterstitialExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AdFoxMediationInterstitialExample/Pods-AdFoxMediationInterstitialExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -388,7 +367,7 @@
 		};
 		B734D40E22D77AC3002B9489 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9170F56616CBBB34D705FCF9 /* Pods-AdFoxMediationInterstitialExample.debug.xcconfig */;
+			baseConfigurationReference = 001A53B1F2DE48897936C24C /* Pods-AdFoxMediationInterstitialExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -407,7 +386,7 @@
 		};
 		B734D40F22D77AC3002B9489 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE471C6178EC0FF05F97C076 /* Pods-AdFoxMediationInterstitialExample.release.xcconfig */;
+			baseConfigurationReference = B36987257F6BBD759B65715E /* Pods-AdFoxMediationInterstitialExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
