@@ -13,7 +13,6 @@ class ViewController: UIViewController {
     private let adMobBlockID = "adf-279013/975832"
     private let facebookBlockID = "adf-279013/975836"
     private let moPubBlockID = "adf-279013/975834"
-    private let myTargetBlockID = "adf-279013/975835"
     private let startAppBlockID = "adf-279013/1006423"
     private let yandexBlockID = "adf-279013/975838"
 
@@ -29,7 +28,6 @@ class ViewController: UIViewController {
          AdMob mediation: adMobBlockID
          Facebook mediation: facebookBlockID
          MoPub mediation: moPubBlockID
-         MyTarget mediation: myTargetBlockID
          StartApp mediation: startAppBlockID
          Yandex: yandexBlockID
          */

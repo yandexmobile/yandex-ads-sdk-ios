@@ -11,7 +11,6 @@
 static NSString *const kAdMobBlockID = @"adf-279013/975832";
 static NSString *const kFacebookBlockID = @"adf-279013/975836";
 static NSString *const kMoPubBlockID = @"adf-279013/975834";
-static NSString *const kMyTargetBlockID = @"adf-279013/975835";
 static NSString *const kStartAppBlockID = @"adf-279013/1006423";
 static NSString *const kYandexBlockID = @"adf-279013/975838";
 
@@ -35,7 +34,6 @@ static NSString *const kYandexBlockID = @"adf-279013/975838";
      AdMob mediation: kAdMobBlockID
      Facebook mediation: kFacebookBlockID
      MoPub mediation: kMoPubBlockID
-     MyTarget mediation: kMyTargetBlockID
      StartApp mediation: kStartAppBlockID
      Yandex: kYandexBlockID
      */

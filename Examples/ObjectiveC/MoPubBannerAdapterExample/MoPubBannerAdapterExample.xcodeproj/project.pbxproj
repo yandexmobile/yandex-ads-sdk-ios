@@ -183,7 +183,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MoPubBannerAdapterExample/Pods-MoPubBannerAdapterExample-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-MoPubBannerAdapterExample/Pods-MoPubBannerAdapterExample-resources.sh",
 				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseBtn.png",
 				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseBtn@2x.png",
 				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseBtn@3x.png",
@@ -230,7 +230,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoPubBannerAdapterExample/Pods-MoPubBannerAdapterExample-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoPubBannerAdapterExample/Pods-MoPubBannerAdapterExample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EAF52A9C28A689D551ADBC13 /* [CP] Check Pods Manifest.lock */ = {
@@ -402,6 +402,7 @@
 					"\"${PODS_ROOT}/YandexMobileMetrica/static\"",
 				);
 				INFOPLIST_FILE = MoPubBannerAdapterExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.MoPubBannerAdapterExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -420,6 +421,7 @@
 					"\"${PODS_ROOT}/YandexMobileMetrica/static\"",
 				);
 				INFOPLIST_FILE = MoPubBannerAdapterExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.MoPubBannerAdapterExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";

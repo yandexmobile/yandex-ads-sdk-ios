@@ -178,7 +178,8 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AdFoxMediationInterstitialExample/Pods-AdFoxMediationInterstitialExample-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-AdFoxMediationInterstitialExample/Pods-AdFoxMediationInterstitialExample-resources.sh",
+				"${PODS_ROOT}/AppLovinSDK/applovin-ios-sdk-6.10.3/AppLovinSDKResources.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/StartAppSDK/StartAppSDK.bundle",
 				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseBtn.png",
 				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseBtn@2x.png",
@@ -203,6 +204,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AppLovinSDKResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/StartAppSDK.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPCloseBtn.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MPCloseBtn@2x.png",
@@ -227,7 +229,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdFoxMediationInterstitialExample/Pods-AdFoxMediationInterstitialExample-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AdFoxMediationInterstitialExample/Pods-AdFoxMediationInterstitialExample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A9E3A9EA12370414755620EA /* [CP] Check Pods Manifest.lock */ = {

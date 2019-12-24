@@ -3,9 +3,9 @@ platform :ios, :deployment_target => '9.0'
 
 target 'AdFoxMediationRewardedExample' do
   pod 'AdMobYandexMobileAdsAdapters/Dynamic'
+  pod 'AppLovinYandexMobileAdsAdapters/Dynamic'
   pod 'FacebookYandexMobileAdsAdapters/Dynamic'
   pod 'MoPubYandexMobileAdsAdapters/Dynamic'
-  pod 'MyTargetYandexMobileAdsAdapters/Dynamic'
   pod 'StartAppYandexMobileAdsAdapters/Dynamic'
   pod 'UnityAdsYandexMobileAdsAdapters/Dynamic'
   pod 'YandexMobileAds/Dynamic'

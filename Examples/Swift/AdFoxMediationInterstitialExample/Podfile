@@ -4,9 +4,9 @@ platform :ios, :deployment_target => '9.0'
 target 'AdFoxMediationInterstitialExample' do
   use_frameworks!
   pod 'AdMobYandexMobileAdsAdapters/Dynamic'
+  pod 'AppLovinYandexMobileAdsAdapters/Dynamic'
   pod 'FacebookYandexMobileAdsAdapters/Dynamic'
   pod 'MoPubYandexMobileAdsAdapters/Dynamic'
-  pod 'MyTargetYandexMobileAdsAdapters/Dynamic'
   pod 'StartAppYandexMobileAdsAdapters/Dynamic'
   pod 'UnityAdsYandexMobileAdsAdapters/Dynamic'
   pod 'YandexMobileAds/Dynamic'
