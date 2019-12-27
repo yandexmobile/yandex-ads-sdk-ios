@@ -11,6 +11,7 @@ class ViewController: UIViewController {
     private let adMobBlockID = "adf-279013/975874"
     private let facebookBlockID = "adf-279013/975877"
     private let moPubBlockID = "adf-279013/975875"
+    private let myTargetBlockID = "adf-279013/975876"
     private let yandexBlockID = "adf-279013/975878"
 
     private var contentAdView: NativeContentAdView?
@@ -31,6 +32,7 @@ class ViewController: UIViewController {
          AdMob mediation: adMobBlockID
          Facebook mediation: facebookBlockID
          MoPub mediation: moPubBlockID
+         MyTarget mediation: myTargetBlockID
          Yandex: yandexBlockID
          */
 
@@ -43,22 +45,22 @@ class ViewController: UIViewController {
     
     private func loadAdViews() {
         contentAdView = Bundle.main.loadNibNamed("NativeContentAdView",
-                                                   owner: nil,
-                                                   options: nil)?.first as? NativeContentAdView
+                                                 owner: nil,
+                                                 options: nil)?.first as? NativeContentAdView
         if let myContentAdView = contentAdView {
             addAdView(myContentAdView)
         }
         
         appInstallView = Bundle.main.loadNibNamed("NativeAppInstallAdView",
-                                                    owner: nil,
-                                                    options: nil)?.first as? NativeAppInstallAdView
+                                                  owner: nil,
+                                                  options: nil)?.first as? NativeAppInstallAdView
         if let myAppInstallView = appInstallView {
             addAdView(myAppInstallView)
         }
         
         imageAdView = Bundle.main.loadNibNamed("NativeImageAdView",
-                                                 owner: nil,
-                                                 options: nil)?.first as? NativeImageAdView
+                                               owner: nil,
+                                               options: nil)?.first as? NativeImageAdView
         if let myImageAdView = imageAdView {
             addAdView(myImageAdView)
         }

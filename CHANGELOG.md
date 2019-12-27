@@ -8,7 +8,7 @@ SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/28
 #### Updated
 
 * Updated minimum supported version to iOS 9. Deployment target is still iOS 8, but ads will only be shown on iOS 9 and above
-* Updated `YMAMediaView` to respect the aspect ratio of the content
+* Updated `YMANativeMediaView` to respect the aspect ratio of the content
 
 #### Added
 * Added improvements and fixes

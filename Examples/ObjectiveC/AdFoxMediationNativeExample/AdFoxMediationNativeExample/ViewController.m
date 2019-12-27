@@ -13,6 +13,7 @@
 static NSString *const kAdMobBlockID = @"adf-279013/975874";
 static NSString *const kFacebookBlockID = @"adf-279013/975877";
 static NSString *const kMoPubBlockID = @"adf-279013/975875";
+static NSString *const kMyTargetBlockID = @"adf-279013/975876";
 static NSString *const kYandexBlockID = @"adf-279013/975878";
 
 @interface ViewController () <YMANativeAdLoaderDelegate, YMANativeAdDelegate>
@@ -43,6 +44,7 @@ static NSString *const kYandexBlockID = @"adf-279013/975878";
      AdMob mediation: kAdMobBlockID
      Facebook mediation: kFacebookBlockID
      MoPub mediation: kMoPubBlockID
+     MyTarget mediation: kMyTargetBlockID
      Yandex: kYandexBlockID
      */
     YMANativeAdLoaderConfiguration *configuration =
