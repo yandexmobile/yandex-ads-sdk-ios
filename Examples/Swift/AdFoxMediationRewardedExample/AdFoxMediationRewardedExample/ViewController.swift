@@ -13,7 +13,9 @@ class ViewController: UIViewController, YMARewardedAdDelegate {
     let adMobBlockID = "adf-279013/966332"
     let appLovinBlockID = "adf-279013/1052108"
     let facebookBlockID = "adf-279013/966335"
+    let ironSourceBlockID = "adf-279013/1052110"
     let moPubBlockID = "adf-279013/966333"
+    let myTargetBlockID = "adf-279013/966334"
     let startAppBlockID = "adf-279013/1006617"
     let unityAdsBlockID = "adf-279013/1006614"
     let yandexBlockID = "adf-279013/967178"
@@ -27,7 +29,9 @@ class ViewController: UIViewController, YMARewardedAdDelegate {
          AdMob mediation: adMobBlockID
          AppLovin mediation: appLovinBlockID
          Facebook mediation: facebookBlockID
+         IronSource mediation: ironSourceBlockID
          MoPub mediation: moPubBlockID
+         MyTarget mediation: myTargetBlockID
          StartApp mediation: startAppBlockID
          UnityAds mediation: unityAdsBlockID
          Yandex: yandexBlockID

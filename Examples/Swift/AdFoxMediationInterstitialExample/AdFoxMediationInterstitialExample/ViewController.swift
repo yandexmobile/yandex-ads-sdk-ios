@@ -15,7 +15,9 @@ class ViewController: UIViewController {
     private let adMobBlockID = "adf-279013/975869"
     private let appLovinBlockID = "adf-279013/1052107"
     private let facebookBlockID = "adf-279013/975872"
+    private let ironSourceBlockID = "adf-279013/1052109"
     private let moPubBlockID = "adf-279013/975870"
+    private let myTargetBlockID = "adf-279013/975871";
     private let startAppBlockID = "adf-279013/1006406"
     private let unityAdsBlockID = "adf-279013/1006439"
     private let yandexBlockID = "adf-279013/975873"
@@ -29,7 +31,9 @@ class ViewController: UIViewController {
          AdMob mediation: adMobBlockID
          AppLovin mediation: appLovinBlockID
          Facebook mediation: facebookBlockID
+         IronSource mediation: ironSourceBlockID
          MoPub mediation: moPubBlockID
+         MyTarget mediation: myTargetBlockID
          StartApp mediation: startAppBlockID
          UnityAds mediation: unityAdsBlockID
          Yandex: yandexBlockID
