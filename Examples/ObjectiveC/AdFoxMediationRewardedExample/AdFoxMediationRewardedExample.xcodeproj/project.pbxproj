@@ -185,7 +185,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-AdFoxMediationRewardedExample/Pods-AdFoxMediationRewardedExample-resources.sh",
-				"${PODS_ROOT}/AppLovinSDK/applovin-ios-sdk-6.10.3/AppLovinSDKResources.bundle",
+				"${PODS_ROOT}/AppLovinSDK/applovin-ios-sdk-6.11.1/AppLovinSDKResources.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/StartAppSDK/StartAppSDK.bundle",
 				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseBtn.png",
 				"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Resources/MPCloseBtn@2x.png",
