@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 0.5.0
+
+### Updated
+* Supported Facebook Audience Network SDK 5.7.0
+* Updated minimum supported Facebook Audience Network SDK version to 5.7.0
+
 ## Version 0.4.0
 
 ### Updated
