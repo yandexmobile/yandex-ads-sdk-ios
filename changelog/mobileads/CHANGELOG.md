@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# Version 2.15.0
+
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/205984/YandexMobileAds-2.15.0-ios-8efb5c7e-514a-4f15-8999-c70af32ee269.zip)
+
+#### Added
+* Added support for sticky banners
+* Added improvements and fixes
+
 # Version 2.14.0
 
 SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/2817166/YandexMobileAds-2.14.0-ios-c53c1fa8-72f8-41df-88b5-d23a46fa143c.zip)
