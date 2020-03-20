@@ -1,6 +1,15 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 0.7.0
+
+#### Added
+* Added support for sponsored asset in native ads mediation
+
+#### Updated
+* Supported MoPub SDK 5.11.0
+* Updated minimum supported MoPub SDK version to 5.11.0
+
 ## Version 0.6.0
 
 #### Updated
