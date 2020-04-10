@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 0.5.0
+
+#### Updated
+* Supported AppLovin SDK 6.12.0
+* Updated minimum supported AppLovin SDK version to 6.12.0
+
 ## Version 0.4.0
 
 #### Updated

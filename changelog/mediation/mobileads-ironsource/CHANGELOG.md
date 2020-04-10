@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 0.7.0
+
+#### Updated
+* Supported IronSource SDK 6.16.0.0
+* Updated minimum supported IronSource SDK version to 6.16.0.0
+
 ## Version 0.6.0
 
 #### Updated
