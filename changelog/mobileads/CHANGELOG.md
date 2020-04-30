@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# Version 2.15.2
+
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/2817166/YandexMobileAds-2.15.2-ios-3b9e22dd-ba77-472a-85ba-3054da98e263.zip)
+
+#### Added
+* Added improvements and fixes
+
 # Version 2.15.1
 
 SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/212922/YandexMobileAds-2.15.1-ios-4ae3e4c2-4749-4579-bf86-c293f7154f3b.zip)
