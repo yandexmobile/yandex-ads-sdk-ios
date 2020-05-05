@@ -33,6 +33,7 @@ EULA is available at [EULA website][LICENSE]
   * /Examples/ObjectiveC/NativeTemplatesExample
   * /Examples/ObjectiveC/NativeTemplatesTableViewExample
   * /Examples/ObjectiveC/RewardedExample
+  * /Examples/ObjectiveC/StickyBannerExample
   * /Examples/ObjectiveC/VASTExample
   
 #### Swift
@@ -55,6 +56,7 @@ EULA is available at [EULA website][LICENSE]
   * /Examples/Swift/NativeTemplatesExample
   * /Examples/Swift/NativeTemplatesTableViewExample
   * /Examples/Swift/RewardedExample
+  * /Examples/Swift/StickyBannerExample
   * /Examples/Swift/VASTExample
 
 3. Install dependencies:
