@@ -416,7 +416,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"${PODS_ROOT}/Google-Mobile-Ads-SDK/Frameworks/frameworks\"",
 					"\"${PODS_ROOT}/YandexMobileAds/static\"",
 					"\"${PODS_ROOT}/YandexMobileMetrica/static\"",
 				);
@@ -435,7 +434,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"${PODS_ROOT}/Google-Mobile-Ads-SDK/Frameworks/frameworks\"",
 					"\"${PODS_ROOT}/YandexMobileAds/static\"",
 					"\"${PODS_ROOT}/YandexMobileMetrica/static\"",
 				);
