@@ -1,7 +1,7 @@
 # Yandex Advertising Network Mobile
 This package contains Yandex Advertising Network Mobile SDK and source code of samples of SDK usage.
 
-## [**Download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/2817166/YandexMobileAds-2.15.2-ios-3b9e22dd-ba77-472a-85ba-3054da98e263.zip) latest SDK archive
+## [**Download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/224062/YandexMobileAds-2.15.3-ios-caf035ef-6512-4087-a77f-c25166c9feb0.zip) latest SDK archive
 
 ## Documentation
 Documentation could be found at the [official website][DOCUMENTATION]
