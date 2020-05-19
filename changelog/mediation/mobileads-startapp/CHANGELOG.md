@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 0.6.0
+
+#### Updated
+* Supported StartApp SDK 4.5.0
+* Updated minimum supported StartApp SDK version to 4.5.0
+
 ## Version 0.5.0
 
 #### Updated
