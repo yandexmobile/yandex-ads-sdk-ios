@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 0.12.0
+
+#### Updated
+* Supported Google Mobile Ads SDK 7.60.0
+* Updated minimum supported Google Mobile Ads SDK version to 7.60.0
+
 ## Version 0.11.0
 
 #### Updated
