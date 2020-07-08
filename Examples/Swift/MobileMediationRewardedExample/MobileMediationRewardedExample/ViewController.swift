@@ -8,23 +8,38 @@
 import UIKit
 import YandexMobileAds
 
+let adMobBlockID = "adf-279013/966332"
+let appLovinBlockID = "adf-279013/1052108"
+let facebookBlockID = "adf-279013/966335"
+let ironSourceBlockID = "adf-279013/1052110"
+let moPubBlockID = "adf-279013/966333"
+let myTargetBlockID = "adf-279013/966334"
+let startAppBlockID = "adf-279013/1006617"
+let unityAdsBlockID = "adf-279013/1006614"
+let yandexBlockID = "adf-279013/967178"
+
 class ViewController: UIViewController, YMARewardedAdDelegate {
 
-    let adMobBlockID = "adf-279013/966332"
-    let appLovinBlockID = "adf-279013/1052108"
-    let facebookBlockID = "adf-279013/966335"
-    let ironSourceBlockID = "adf-279013/1052110"
-    let moPubBlockID = "adf-279013/966333"
-    let myTargetBlockID = "adf-279013/966334"
-    let startAppBlockID = "adf-279013/1006617"
-    let unityAdsBlockID = "adf-279013/1006614"
-    let yandexBlockID = "adf-279013/967178"
+    private let blockIDs = [
+        (adapter: "AdMob", blockID: adMobBlockID),
+        (adapter: "AppLovin", blockID: appLovinBlockID),
+        (adapter: "Facebook", blockID: facebookBlockID),
+        (adapter: "IronSource", blockID: ironSourceBlockID),
+        (adapter: "MoPub", blockID: moPubBlockID),
+        (adapter: "myTarget", blockID: myTargetBlockID),
+        (adapter: "StartApp", blockID: startAppBlockID),
+        (adapter: "UnityAds", blockID: unityAdsBlockID),
+        (adapter: "Yandex", blockID: yandexBlockID)
+    ]
+
+    @IBOutlet private var pickerView: UIPickerView!
     
-    var rewardedAd: YMARewardedAd!
+    private var rewardedAd: YMARewardedAd?
     
     @IBAction func loadAd() {
+        let selectedIndex = pickerView.selectedRow(inComponent: 0)
         /*
-         Replace demo adMobBlockID with actual Block ID.
+         Replace blockID with actual Block ID.
          Following demo block ids may be used for testing:
          AdMob mediation: adMobBlockID
          AppLovin mediation: appLovinBlockID
@@ -36,13 +51,14 @@ class ViewController: UIViewController, YMARewardedAdDelegate {
          UnityAds mediation: unityAdsBlockID
          Yandex: yandexBlockID
          */
-        self.rewardedAd = YMARewardedAd(blockID: adMobBlockID)
-        self.rewardedAd.delegate = self
-        self.rewardedAd.load()
+        let blockID = blockIDs[selectedIndex].blockID
+        rewardedAd = YMARewardedAd(blockID: blockID)
+        rewardedAd?.delegate = self
+        rewardedAd?.load()
     }
     
     @IBAction func presentAd() {
-        self.rewardedAd.present(from: self)
+        rewardedAd?.present(from: self)
     }
     
     // MARK: - YMARewardedAdDelegate
@@ -89,5 +105,21 @@ class ViewController: UIViewController, YMARewardedAdDelegate {
     
     func rewardedAd(_ rewardedAd: YMARewardedAd!, willPresentScreen viewController: UIViewController!) {
         print("Rewarded ad will present screen")
+    }
+}
+
+// MARK: - UIPickerViewDelegate & UIPickerViewDataSource
+
+extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return blockIDs.count
+    }
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return blockIDs[row].adapter
     }
 }

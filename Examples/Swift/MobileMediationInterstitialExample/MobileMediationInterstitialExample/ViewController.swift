@@ -8,23 +8,37 @@
 import UIKit
 import YandexMobileAds
 
+private let adMobBlockID = "adf-279013/975869"
+private let appLovinBlockID = "adf-279013/1052107"
+private let facebookBlockID = "adf-279013/975872"
+private let ironSourceBlockID = "adf-279013/1052109"
+private let moPubBlockID = "adf-279013/975870"
+private let myTargetBlockID = "adf-279013/975871";
+private let startAppBlockID = "adf-279013/1006406"
+private let unityAdsBlockID = "adf-279013/1006439"
+private let yandexBlockID = "adf-279013/975873"
+
 class ViewController: UIViewController {
+
+    private let blockIDs = [
+        (adapter: "AdMob", blockID: adMobBlockID),
+        (adapter: "AppLovin", blockID: appLovinBlockID),
+        (adapter: "Facebook", blockID: facebookBlockID),
+        (adapter: "IronSource", blockID: ironSourceBlockID),
+        (adapter: "MoPub", blockID: moPubBlockID),
+        (adapter: "myTarget", blockID: myTargetBlockID),
+        (adapter: "StartApp", blockID: startAppBlockID),
+        (adapter: "UnityAds", blockID: unityAdsBlockID),
+        (adapter: "Yandex", blockID: yandexBlockID)
+    ]
     
-    @IBOutlet weak var showButton: UIButton!
+    @IBOutlet private var showButton: UIButton!
+    @IBOutlet private var pickerView: UIPickerView!
 
-    private let adMobBlockID = "adf-279013/975869"
-    private let appLovinBlockID = "adf-279013/1052107"
-    private let facebookBlockID = "adf-279013/975872"
-    private let ironSourceBlockID = "adf-279013/1052109"
-    private let moPubBlockID = "adf-279013/975870"
-    private let myTargetBlockID = "adf-279013/975871";
-    private let startAppBlockID = "adf-279013/1006406"
-    private let unityAdsBlockID = "adf-279013/1006439"
-    private let yandexBlockID = "adf-279013/975873"
-
-    var interstitialAd: YMAInterstitialController!
+    private var interstitialAd: YMAInterstitialController?
 
     @IBAction func loadAd(_ sender: UIButton) {
+        let selectedIndex = pickerView.selectedRow(inComponent: 0)
         /*
          Replace demo AdMobBlockID with actual Block ID.
          Following demo block ids may be used for testing:
@@ -38,15 +52,18 @@ class ViewController: UIViewController {
          UnityAds mediation: unityAdsBlockID
          Yandex: yandexBlockID
          */
-        interstitialAd = YMAInterstitialController(blockID: adMobBlockID)
-        interstitialAd.delegate = self
-        interstitialAd.load()
+        let blockID = blockIDs[selectedIndex].blockID
+        interstitialAd = YMAInterstitialController(blockID: blockID)
+        interstitialAd?.delegate = self
+        interstitialAd?.load()
     }
 
     @IBAction func presentAd(_ sender: UIButton) {
-        interstitialAd.presentInterstitial(from: self)
+        interstitialAd?.presentInterstitial(from: self)
     }
 }
+
+// MARK: - YMAInterstitialDelegate
 
 extension ViewController: YMAInterstitialDelegate {
     func interstitialDidLoadAd(_ interstitial: YMAInterstitialController!) {
@@ -63,3 +80,18 @@ extension ViewController: YMAInterstitialDelegate {
     }
 }
 
+// MARK: - UIPickerViewDelegate & UIPickerViewDataSource
+
+extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return blockIDs.count
+    }
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return blockIDs[row].adapter
+    }
+}
