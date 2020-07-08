@@ -7,27 +7,42 @@
 
 import YandexMobileAds
 
+private let adMobBlockID = "adf-279013/975874"
+private let facebookBlockID = "adf-279013/975877"
+private let moPubBlockID = "adf-279013/975875"
+private let myTargetBlockID = "adf-279013/975876"
+private let yandexBlockID = "adf-279013/975878"
+
 class ViewController: UIViewController {
-    private let adMobBlockID = "adf-279013/975874"
-    private let facebookBlockID = "adf-279013/975877"
-    private let moPubBlockID = "adf-279013/975875"
-    private let myTargetBlockID = "adf-279013/975876"
-    private let yandexBlockID = "adf-279013/975878"
+
+    private let blockIDs = [
+        (adapter: "AdMob", blockID: adMobBlockID),
+        (adapter: "Facebook", blockID: facebookBlockID),
+        (adapter: "MoPub", blockID: moPubBlockID),
+        (adapter: "myTarget", blockID: myTargetBlockID),
+        (adapter: "Yandex", blockID: yandexBlockID)
+    ]
+
+    @IBOutlet private var pickerView: UIPickerView!
 
     private var contentAdView: NativeContentAdView?
     private var appInstallView: NativeAppInstallAdView?
     private var imageAdView: NativeImageAdView?
     
-    var adLoader: YMANativeAdLoader!
+    private var adLoader: YMANativeAdLoader?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadAdViews()
         hideAllViews()
-        
+    }
+    
+    @IBAction func load(_ sender: Any) {
+        hideAllViews()
+        let selectedIndex = pickerView.selectedRow(inComponent: 0)
         /*
-         Replace demo adMobBlockID with actual Block ID.
+         Replace blockID with actual Block ID.
          Following demo block ids may be used for testing:
          AdMob mediation: adMobBlockID
          Facebook mediation: facebookBlockID
@@ -35,14 +50,13 @@ class ViewController: UIViewController {
          MyTarget mediation: myTargetBlockID
          Yandex: yandexBlockID
          */
-
-        let configuration = YMANativeAdLoaderConfiguration(blockID: adMobBlockID,
-                                                           loadImagesAutomatically: true)
+        let blockID = blockIDs[selectedIndex].blockID
+        let configuration = YMANativeAdLoaderConfiguration(blockID: blockID, loadImagesAutomatically: true)
         adLoader = YMANativeAdLoader(configuration: configuration)
-        adLoader.delegate = self
-        adLoader.loadAd(with: nil)
+        adLoader?.delegate = self
+        adLoader?.loadAd(with: nil)
     }
-    
+
     private func loadAdViews() {
         contentAdView = Bundle.main.loadNibNamed("NativeContentAdView",
                                                  owner: nil,
@@ -129,3 +143,21 @@ extension ViewController: YMANativeAdDelegate {
         hideAllViews()
     }
 }
+
+// MARK: - UIPickerViewDelegate & UIPickerViewDataSource
+
+extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return blockIDs.count
+    }
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let tuple = blockIDs[row]
+        return tuple.adapter
+    }
+}
+

@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "NativeAppInstallAdView.h"
 #import "NativeContentAdView.h"
+#import "NativeImageAdView.h"
 
 static NSString *const kAdMobBlockID = @"adf-279013/975874";
 static NSString *const kFacebookBlockID = @"adf-279013/975877";
@@ -16,15 +17,36 @@ static NSString *const kMoPubBlockID = @"adf-279013/975875";
 static NSString *const kMyTargetBlockID = @"adf-279013/975876";
 static NSString *const kYandexBlockID = @"adf-279013/975878";
 
+static int const kNetworkNameIndex = 0;
+static int const kBlockIDIndex = 1;
+
 @interface ViewController () <YMANativeAdLoaderDelegate, YMANativeAdDelegate>
 
 @property (nonatomic, strong) NativeContentAdView *contentAdView;
 @property (nonatomic, strong) NativeAppInstallAdView *appInstallAdView;
+@property (nonatomic, strong) NativeImageAdView *imageAdView;
 @property (nonatomic, strong) YMANativeAdLoader *adLoader;
+@property (nonatomic, strong) IBOutlet UIPickerView *pickerView;
+@property (nonatomic, copy, readonly) NSArray<NSArray<NSString *> *> *networks;
 
 @end
 
 @implementation ViewController
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self != nil) {
+        _networks = @[
+            @[@"AdMob", kAdMobBlockID],
+            @[@"Facebook", kFacebookBlockID],
+            @[@"MoPub", kMoPubBlockID],
+            @[@"myTarget", kMyTargetBlockID],
+            @[@"Yandex", kYandexBlockID]
+        ];
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
@@ -38,8 +60,17 @@ static NSString *const kYandexBlockID = @"adf-279013/975878";
     self.appInstallAdView.translatesAutoresizingMaskIntoConstraints = NO;
     self.appInstallAdView.backgroundColor = [UIColor colorWithWhite:0.9f alpha:1.f];
 
+    self.imageAdView = [[NativeImageAdView alloc] initWithFrame:CGRectZero];
+    self.imageAdView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.imageAdView.backgroundColor = [UIColor lightGrayColor];
+}
+
+- (IBAction)loadAd:(id)sender
+{
+    [self removeCurrentAdView];
+    NSInteger selectedIndex = [self.pickerView selectedRowInComponent:0];
     /*
-     Replace demo kYandexBlockID with actual Block ID.
+     Replace blockID with actual Block ID.
      Following demo block ids may be used for testing:
      AdMob mediation: kAdMobBlockID
      Facebook mediation: kFacebookBlockID
@@ -47,9 +78,10 @@ static NSString *const kYandexBlockID = @"adf-279013/975878";
      MyTarget mediation: kMyTargetBlockID
      Yandex: kYandexBlockID
      */
+    NSString *blockID = self.networks[selectedIndex][kBlockIDIndex];
     YMANativeAdLoaderConfiguration *configuration =
-        [[YMANativeAdLoaderConfiguration alloc] initWithBlockID:kYandexBlockID
-                                        loadImagesAutomatically:YES];
+    [[YMANativeAdLoaderConfiguration alloc] initWithBlockID:blockID
+                                    loadImagesAutomatically:YES];
     self.adLoader = [[YMANativeAdLoader alloc] initWithConfiguration:configuration];
     self.adLoader.delegate = self;
     [self.adLoader loadAdWithRequest:nil];
@@ -59,6 +91,7 @@ static NSString *const kYandexBlockID = @"adf-279013/975878";
 {
     [self.appInstallAdView removeFromSuperview];
     [self.contentAdView removeFromSuperview];
+    [self.imageAdView removeFromSuperview];
 }
 
 - (void)addConstraintsToAdView:(UIView *)adView
@@ -128,12 +161,27 @@ static NSString *const kYandexBlockID = @"adf-279013/975878";
     [self addConstraintsToAdView:self.contentAdView];
 }
 
+- (void)nativeAdLoader:(YMANativeAdLoader *)loader
+        didLoadImageAd:(id<YMANativeImageAd> __nonnull)ad
+{
+    [self removeCurrentAdView];
+
+    NSError * __autoreleasing error = nil;
+    [ad bindImageAdToView:self.imageAdView delegate:self error:&error];
+    NSLog(@"Binding finished with error: %@", error);
+
+    [self.imageAdView prepareForDisplay];
+
+    [self.view addSubview:self.imageAdView];
+    [self addConstraintsToAdView:self.imageAdView];
+}
+
 - (void)nativeAdLoader:(null_unspecified YMANativeAdLoader *)loader didFailLoadingWithError:(NSError * __nonnull)error
 {
     NSLog(@"Native ad loading error: %@", error);
 }
 
-#pragma  mark - YMANativeAdDelegate
+#pragma mark - YMANativeAdDelegate
 
 // Uncomment to open web links in in-app browser
 
@@ -160,6 +208,25 @@ static NSString *const kYandexBlockID = @"adf-279013/975878";
 - (void)closeNativeAd:(null_unspecified id)ad
 {
     [self removeCurrentAdView];
+}
+
+#pragma mark - UIPickerViewDelegate
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return self.networks[row][kNetworkNameIndex];
+}
+
+#pragma mark - UIPickerViewDataSource
+
+- (NSInteger)numberOfComponentsInPickerView:(nonnull UIPickerView *)pickerView
+{
+    return 1;
+}
+
+- (NSInteger)pickerView:(nonnull UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return self.networks.count;
 }
 
 @end

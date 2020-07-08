@@ -15,22 +15,42 @@ static NSString *const kMyTargetBlockID = @"adf-279013/975835";
 static NSString *const kStartAppBlockID = @"adf-279013/1006423";
 static NSString *const kYandexBlockID = @"adf-279013/975838";
 
-@interface ViewController () <YMAAdViewDelegate>
+static int const kNetworkNameIndex = 0;
+static int const kBlockIDIndex = 1;
+
+@interface ViewController () <YMAAdViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (nonatomic, strong) YMAAdView *adView;
+@property (nonatomic, strong) IBOutlet UIPickerView *pickerView;
+@property (nonatomic, copy, readonly) NSArray<NSArray<NSString *> *> *networks;
+
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
-    [super viewDidLoad];
+    self = [super initWithCoder:aDecoder];
+    if (self != nil) {
+        _networks = @[
+            @[@"AdMob", kAdMobBlockID],
+            @[@"Facebook", kFacebookBlockID],
+            @[@"MoPub", kMoPubBlockID],
+            @[@"myTarget", kMyTargetBlockID],
+            @[@"StartApp", kStartAppBlockID],
+            @[@"Yandex", kYandexBlockID]
+        ];
+    }
+    return self;
+}
 
-    YMAAdSize *adSize = [YMAAdSize fixedSizeWithCGSize:YMAAdSizeBanner_320x50];
-
+- (IBAction)loadAd:(id)sender
+{
+    [self.adView removeFromSuperview];
+    NSInteger selectedIndex = [self.pickerView selectedRowInComponent:0];
     /*
-     Replace demo kAdMobBlockID with actual Block ID.
+     Replace blockID with actual Block ID.
      Following demo block ids may be used for testing:
      AdMob mediation: kAdMobBlockID
      Facebook mediation: kFacebookBlockID
@@ -39,7 +59,9 @@ static NSString *const kYandexBlockID = @"adf-279013/975838";
      StartApp mediation: kStartAppBlockID
      Yandex: kYandexBlockID
      */
-    self.adView = [[YMAAdView alloc] initWithBlockID:kAdMobBlockID
+    NSString *blockID = self.networks[selectedIndex][kBlockIDIndex];
+    YMAAdSize *adSize = [YMAAdSize fixedSizeWithCGSize:YMAAdSizeBanner_320x50];
+    self.adView = [[YMAAdView alloc] initWithBlockID:blockID
                                               adSize:adSize
                                             delegate:self];
     [self.adView loadAd];
@@ -90,6 +112,25 @@ static NSString *const kYandexBlockID = @"adf-279013/975838";
 - (void)adViewDidDismissScreen:(UIViewController *)viewController
 {
     NSLog(@"Ad did dismiss screen");
+}
+
+#pragma mark - UIPickerViewDelegate
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return self.networks[row][kNetworkNameIndex];
+}
+
+#pragma mark - UIPickerViewDataSource
+
+- (NSInteger)numberOfComponentsInPickerView:(nonnull UIPickerView *)pickerView
+{
+    return 1;
+}
+
+- (NSInteger)pickerView:(nonnull UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return self.networks.count;
 }
 
 @end

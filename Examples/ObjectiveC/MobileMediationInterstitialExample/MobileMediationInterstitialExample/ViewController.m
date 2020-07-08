@@ -18,20 +18,43 @@ static NSString *const kStartAppBlockID = @"adf-279013/1006406";
 static NSString *const kUnityAdsBlockID = @"adf-279013/1006439";
 static NSString *const kYandexBlockID = @"adf-279013/975873";
 
-@interface ViewController () <YMAInterstitialDelegate>
+static int const kNetworkNameIndex = 0;
+static int const kBlockIDIndex = 1;
+
+@interface ViewController () <YMAInterstitialDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (nonatomic, strong) YMAInterstitialController *interstitialController;
+@property (nonatomic, strong) IBOutlet UIPickerView *pickerView;
+@property (nonatomic, copy, readonly) NSArray<NSArray<NSString *> *> *networks;
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
-    [super viewDidLoad];
+    self = [super initWithCoder:aDecoder];
+    if (self != nil) {
+        _networks = @[
+            @[@"AdMob", kAdMobBlockID],
+            @[@"AppLovin", kAppLovinBlockID],
+            @[@"Facebook", kFacebookBlockID],
+            @[@"IronSource", kIronSourceBlockID],
+            @[@"MoPub", kMoPubBlockID],
+            @[@"myTarget", kMyTargetBlockID],
+            @[@"StartApp", kStartAppBlockID],
+            @[@"UnityAds", kUnityAdsBlockID],
+            @[@"Yandex", kYandexBlockID]
+        ];
+    }
+    return self;
+}
 
+- (IBAction)loadInterstitial
+{
+    NSInteger selectedIndex = [self.pickerView selectedRowInComponent:0];
     /*
-     Replace demo kAdMobBlockID with actual Block ID.
+     Replace blockID with actual Block ID.
      Following demo block ids may be used for testing:
      AdMob mediation: kAdMobBlockID
      AppLovin mediation: kAppLovinBlockID
@@ -43,12 +66,9 @@ static NSString *const kYandexBlockID = @"adf-279013/975873";
      UnityAds mediation kUnityAdsBlockID
      Yandex: kYandexBlockID
      */
-    self.interstitialController = [[YMAInterstitialController alloc] initWithBlockID:kAdMobBlockID];
+    NSString *blockID = self.networks[selectedIndex][kBlockIDIndex];
+    self.interstitialController = [[YMAInterstitialController alloc] initWithBlockID:blockID];
     self.interstitialController.delegate = self;
-}
-
-- (IBAction)loadInterstitial
-{
     [self.interstitialController load];
 }
 
@@ -102,6 +122,25 @@ static NSString *const kYandexBlockID = @"adf-279013/975873";
 - (void)interstitialWillPresentScreen:(UIViewController *)webBrowser
 {
     NSLog(@"Interstitial will present screen");
+}
+
+#pragma mark - UIPickerViewDelegate
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return self.networks[row][kNetworkNameIndex];
+}
+
+#pragma mark - UIPickerViewDataSource
+
+- (NSInteger)numberOfComponentsInPickerView:(nonnull UIPickerView *)pickerView
+{
+    return 1;
+}
+
+- (NSInteger)pickerView:(nonnull UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return self.networks.count;
 }
 
 @end
