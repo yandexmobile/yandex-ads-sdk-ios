@@ -18,18 +18,43 @@ static NSString *const kStartAppBlockID = @"adf-279013/1006617";
 static NSString *const kUnityAdsBlockID = @"adf-279013/1006614";
 static NSString *const kYandexBlockID = @"adf-279013/967178";
 
+static int const kNetworkNameIndex = 0;
+static int const kBlockIDIndex = 1;
+
 @interface ViewController () <YMARewardedAdDelegate>
 
+@property (nonatomic, strong) IBOutlet UIPickerView *pickerView;
 @property (nonatomic, strong) YMARewardedAd *rewardedAd;
+@property (nonatomic, copy, readonly) NSArray<NSArray<NSString *> *> *networks;
 
 @end
 
 @implementation ViewController
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self != nil) {
+        _networks = @[
+            @[@"AdMob", kAdMobBlockID],
+            @[@"AppLovin", kAppLovinBlockID],
+            @[@"Facebook", kFacebookBlockID],
+            @[@"IronSource", kIronSourceBlockID],
+            @[@"MoPub", kMoPubBlockID],
+            @[@"myTarget", kMyTargetBlockID],
+            @[@"StartApp", kStartAppBlockID],
+            @[@"UnityAds", kUnityAdsBlockID],
+            @[@"Yandex", kYandexBlockID]
+        ];
+    }
+    return self;
+}
+
 - (IBAction)loadAd
 {
+    NSInteger selectedIndex = [self.pickerView selectedRowInComponent:0];
     /*
-     Replace demo kAdMobBlockID with actual Block ID.
+     Replace blockID with actual Block ID.
      Following demo block ids may be used for testing:
      AdMob mediation: kAdMobBlockID
      AppLovin mediation: kAppLovinBlockID
@@ -41,7 +66,8 @@ static NSString *const kYandexBlockID = @"adf-279013/967178";
      UnityAds mediation: kUnityAdsBlockID
      Yandex: kYandexBlockID
      */
-    self.rewardedAd = [[YMARewardedAd alloc] initWithBlockID:kAdMobBlockID];
+    NSString *blockID = self.networks[selectedIndex][kBlockIDIndex];
+    self.rewardedAd = [[YMARewardedAd alloc] initWithBlockID:blockID];
     self.rewardedAd.delegate = self;
     [self.rewardedAd load];
 }
@@ -107,6 +133,25 @@ static NSString *const kYandexBlockID = @"adf-279013/967178";
 - (void)rewardedAd:(YMARewardedAd *)rewardedAd willPresentScreen:(UIViewController *)viewController
 {
     NSLog(@"Rewarded ad will present screen");
+}
+
+#pragma mark - UIPickerViewDelegate
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return self.networks[row][kNetworkNameIndex];
+}
+
+#pragma mark - UIPickerViewDataSource
+
+- (NSInteger)numberOfComponentsInPickerView:(nonnull UIPickerView *)pickerView
+{
+    return 1;
+}
+
+- (NSInteger)pickerView:(nonnull UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return self.networks.count;
 }
 
 @end

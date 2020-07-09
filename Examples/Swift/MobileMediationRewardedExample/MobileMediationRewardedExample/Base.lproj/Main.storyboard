@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7kO-5y-NSY">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7kO-5y-NSY">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,7 +12,7 @@
             <objects>
                 <navigationController id="7kO-5y-NSY" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SLO-Jv-BkC">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -28,17 +26,17 @@
         <!--Yandex Mobile Ads-->
         <scene sceneID="hZN-U7-7cQ">
             <objects>
-                <viewController title="Yandex Mobile Ads" id="x8U-lg-p3K" customClass="ViewController" customModule="RewardedExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Yandex Mobile Ads" id="x8U-lg-p3K" customClass="ViewController" customModule="MobileMediationRewardedExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cM1-Kq-kqT"/>
                         <viewControllerLayoutGuide type="bottom" id="XXa-JJ-ehS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZNo-t4-4Wa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptF-RL-qaW">
-                                <rect key="frame" x="16" y="0.0" width="100" height="40"/>
+                                <rect key="frame" x="16" y="224" width="100" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="0NA-kf-6rn"/>
                                     <constraint firstAttribute="height" constant="40" id="wQO-Le-pAA"/>
@@ -49,8 +47,15 @@
                                     <action selector="loadAd" destination="x8U-lg-p3K" eventType="touchUpInside" id="QIq-Vp-smq"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p7F-eA-RAy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="x8U-lg-p3K" id="mrZ-el-FQc"/>
+                                    <outlet property="delegate" destination="x8U-lg-p3K" id="AF4-iP-5Pe"/>
+                                </connections>
+                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUG-tX-3c6">
-                                <rect key="frame" x="16" y="40" width="80" height="40"/>
+                                <rect key="frame" x="16" y="264" width="80" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="AM5-k8-b1h"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="pJJ-9D-Tdg"/>
@@ -64,16 +69,22 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="p7F-eA-RAy" firstAttribute="top" secondItem="cM1-Kq-kqT" secondAttribute="bottom" id="BdG-QA-fkQ"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oUG-tX-3c6" secondAttribute="trailingMargin" id="CfG-Z2-XKa"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ptF-RL-qaW" secondAttribute="trailingMargin" id="D4j-Ob-sTr"/>
                             <constraint firstItem="oUG-tX-3c6" firstAttribute="leading" secondItem="ZNo-t4-4Wa" secondAttribute="leadingMargin" id="DQf-uK-qsi"/>
                             <constraint firstItem="oUG-tX-3c6" firstAttribute="top" secondItem="ptF-RL-qaW" secondAttribute="bottom" id="FIY-9d-Uhc"/>
-                            <constraint firstItem="ptF-RL-qaW" firstAttribute="top" secondItem="cM1-Kq-kqT" secondAttribute="bottom" id="Fa1-cX-q6J"/>
+                            <constraint firstItem="p7F-eA-RAy" firstAttribute="leading" secondItem="ZNo-t4-4Wa" secondAttribute="leading" id="aLC-pG-ppC"/>
+                            <constraint firstItem="ptF-RL-qaW" firstAttribute="top" secondItem="p7F-eA-RAy" secondAttribute="bottom" constant="8" id="cGW-zV-dVg"/>
                             <constraint firstItem="ptF-RL-qaW" firstAttribute="leading" secondItem="ZNo-t4-4Wa" secondAttribute="leadingMargin" id="fBU-KN-LaG"/>
+                            <constraint firstAttribute="trailing" secondItem="p7F-eA-RAy" secondAttribute="trailing" id="m8d-9h-rPB"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Yandex Mobile Ads" id="IVU-0B-0Cb"/>
+                    <connections>
+                        <outlet property="pickerView" destination="p7F-eA-RAy" id="dMt-Mm-1dR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F1V-X6-DWP" sceneMemberID="firstResponder"/>
             </objects>
