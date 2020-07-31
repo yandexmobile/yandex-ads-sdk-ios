@@ -1,7 +1,16 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# Version 2.17.0
+
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/332493/YandexMobileAds-2.17.0-ios-e6565f29-0e7a-4b98-96fd-ba3c0feed176.zip)
+
+#### Added
+* Added improvements and fixes
+
 # Version 2.16.0
+
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/205984/YandexMobileAds-2.16.0-ios-442c3b1d-4995-4868-81a4-e80d450d5002.zip)
 
 #### Updated
 * Optimized loading of multiple native ads
