@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# Version 2.18.0
+
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/205984/YandexMobileAds-2.18.0-ios-c6680363-e50b-43c1-9285-6b69cf2151a6.zip)
+
+#### Added
+* Optimized presenting of fullscreen ads
+
 # Version 2.17.0
 
 SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/332493/YandexMobileAds-2.17.0-ios-e6565f29-0e7a-4b98-96fd-ba3c0feed176.zip)
