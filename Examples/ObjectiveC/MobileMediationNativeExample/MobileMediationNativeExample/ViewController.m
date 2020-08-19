@@ -10,6 +10,7 @@
 #import "NativeAppInstallAdView.h"
 #import "NativeContentAdView.h"
 #import "NativeImageAdView.h"
+#import "NativeAdViewFactory.h"
 
 static NSString *const kAdMobBlockID = @"adf-279013/975874";
 static NSString *const kFacebookBlockID = @"adf-279013/975877";
@@ -22,6 +23,7 @@ static int const kBlockIDIndex = 1;
 
 @interface ViewController () <YMANativeAdLoaderDelegate, YMANativeAdDelegate>
 
+@property (nonatomic, strong) NativeAdViewFactory *adViewFactory;
 @property (nonatomic, strong) NativeContentAdView *contentAdView;
 @property (nonatomic, strong) NativeAppInstallAdView *appInstallAdView;
 @property (nonatomic, strong) NativeImageAdView *imageAdView;
@@ -37,6 +39,7 @@ static int const kBlockIDIndex = 1;
 {
     self = [super initWithCoder:aDecoder];
     if (self != nil) {
+        _adViewFactory = [[NativeAdViewFactory alloc] init];
         _networks = @[
             @[@"AdMob", kAdMobBlockID],
             @[@"Facebook", kFacebookBlockID],
@@ -46,23 +49,6 @@ static int const kBlockIDIndex = 1;
         ];
     }
     return self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    self.contentAdView = [[NativeContentAdView alloc] initWithFrame:CGRectZero];
-    self.contentAdView.translatesAutoresizingMaskIntoConstraints = NO;
-    self.contentAdView.backgroundColor = [UIColor yellowColor];
-    
-    self.appInstallAdView = [[NativeAppInstallAdView alloc] initWithFrame:CGRectZero];
-    self.appInstallAdView.translatesAutoresizingMaskIntoConstraints = NO;
-    self.appInstallAdView.backgroundColor = [UIColor colorWithWhite:0.9f alpha:1.f];
-
-    self.imageAdView = [[NativeImageAdView alloc] initWithFrame:CGRectZero];
-    self.imageAdView.translatesAutoresizingMaskIntoConstraints = NO;
-    self.imageAdView.backgroundColor = [UIColor lightGrayColor];
 }
 
 - (IBAction)loadAd:(id)sender
@@ -135,45 +121,54 @@ static int const kBlockIDIndex = 1;
    didLoadAppInstallAd:(id<YMANativeAppInstallAd> __nonnull)ad
 {
     [self removeCurrentAdView];
+    self.appInstallAdView = [self.adViewFactory appInstallAdView];
     
     NSError * __autoreleasing error = nil;
     [ad bindAppInstallAdToView:self.appInstallAdView delegate:self error:&error];
-    NSLog(@"Binding finished with error: %@", error);
-    
-    [self.appInstallAdView prepareForDisplay];
-    
-    [self.view addSubview:self.appInstallAdView];
-    [self addConstraintsToAdView:self.appInstallAdView];
+    if (error != nil) {
+        NSLog(@"Binding finished with error: %@", error);
+    } else {
+        [self.appInstallAdView prepareForDisplay];
+        
+        [self.view addSubview:self.appInstallAdView];
+        [self addConstraintsToAdView:self.appInstallAdView];
+    }
 }
 
 - (void)nativeAdLoader:(null_unspecified YMANativeAdLoader *)loader
       didLoadContentAd:(id<YMANativeContentAd> __nonnull)ad
 {
     [self removeCurrentAdView];
+    self.contentAdView = [self.adViewFactory contentAdView];
     
     NSError * __autoreleasing error = nil;
     [ad bindContentAdToView:self.contentAdView delegate:self error:&error];
-    NSLog(@"Binding finished with error: %@", error);
-    
-    [self.contentAdView prepareForDisplay];
-    
-    [self.view addSubview:self.contentAdView];
-    [self addConstraintsToAdView:self.contentAdView];
+    if (error != nil) {
+        NSLog(@"Binding finished with error: %@", error);
+    } else {
+        [self.contentAdView prepareForDisplay];
+        
+        [self.view addSubview:self.contentAdView];
+        [self addConstraintsToAdView:self.contentAdView];
+    }
 }
 
 - (void)nativeAdLoader:(YMANativeAdLoader *)loader
         didLoadImageAd:(id<YMANativeImageAd> __nonnull)ad
 {
     [self removeCurrentAdView];
+    self.imageAdView = [self.adViewFactory imageAdView];
 
     NSError * __autoreleasing error = nil;
     [ad bindImageAdToView:self.imageAdView delegate:self error:&error];
-    NSLog(@"Binding finished with error: %@", error);
+    if (error != nil) {
+        NSLog(@"Binding finished with error: %@", error);
+    } else {
+        [self.imageAdView prepareForDisplay];
 
-    [self.imageAdView prepareForDisplay];
-
-    [self.view addSubview:self.imageAdView];
-    [self addConstraintsToAdView:self.imageAdView];
+        [self.view addSubview:self.imageAdView];
+        [self addConstraintsToAdView:self.imageAdView];
+    }
 }
 
 - (void)nativeAdLoader:(null_unspecified YMANativeAdLoader *)loader didFailLoadingWithError:(NSError * __nonnull)error

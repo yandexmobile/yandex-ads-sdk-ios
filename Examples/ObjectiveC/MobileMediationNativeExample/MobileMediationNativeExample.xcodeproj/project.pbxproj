@@ -18,6 +18,7 @@
 		B3946C50204584540081899C /* StarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3946C4E204584530081899C /* StarRatingView.m */; };
 		B3946C51204584540081899C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3946C4F204584540081899C /* Assets.xcassets */; };
 		B3FF432B23F6B94400D87C74 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FF432A23F6B94400D87C74 /* main.m */; };
+		D4351D1B24D2C92600A4896E /* NativeAdViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = D4351D1A24D2C92600A4896E /* NativeAdViewFactory.m */; };
 		DFD2A9B1249370C000FB3290 /* NativeImageAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD2A9B0249370C000FB3290 /* NativeImageAdView.m */; };
 		FEC67E850C1722D613C20C45 /* libPods-MobileMediationNativeExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECEBB0DE170E0DCB8F582E4D /* libPods-MobileMediationNativeExample.a */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,8 @@
 		B3946C4E204584530081899C /* StarRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StarRatingView.m; path = ../../Common/StarRatingView.m; sourceTree = "<group>"; };
 		B3946C4F204584540081899C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Common/Assets.xcassets; sourceTree = "<group>"; };
 		B3FF432A23F6B94400D87C74 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D4351D1924D2C92600A4896E /* NativeAdViewFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeAdViewFactory.h; sourceTree = "<group>"; };
+		D4351D1A24D2C92600A4896E /* NativeAdViewFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeAdViewFactory.m; sourceTree = "<group>"; };
 		DE2B6B55086834AEB472C008 /* Pods-MobileMediationNativeExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileMediationNativeExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileMediationNativeExample/Pods-MobileMediationNativeExample.release.xcconfig"; sourceTree = "<group>"; };
 		DFD2A9AF249370C000FB3290 /* NativeImageAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NativeImageAdView.h; path = ../../Common/NativeImageAdView.h; sourceTree = "<group>"; };
 		DFD2A9B0249370C000FB3290 /* NativeImageAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NativeImageAdView.m; path = ../../Common/NativeImageAdView.m; sourceTree = "<group>"; };
@@ -112,6 +115,8 @@
 				B3946C2B20456AF50081899C /* LaunchScreen.storyboard */,
 				B3946C3920457DEE0081899C /* Images.xcassets */,
 				B3946C2E20456AF50081899C /* Info.plist */,
+				D4351D1924D2C92600A4896E /* NativeAdViewFactory.h */,
+				D4351D1A24D2C92600A4896E /* NativeAdViewFactory.m */,
 			);
 			path = MobileMediationNativeExample;
 			sourceTree = "<group>";
@@ -240,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFD2A9B1249370C000FB3290 /* NativeImageAdView.m in Sources */,
+				D4351D1B24D2C92600A4896E /* NativeAdViewFactory.m in Sources */,
 				B3946C4C204583D00081899C /* NativeAppInstallAdView.m in Sources */,
 				B3946C2520456AF50081899C /* ViewController.m in Sources */,
 				B3946C4B204583D00081899C /* NativeAssetsComposer.m in Sources */,
