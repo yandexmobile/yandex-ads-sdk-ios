@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 0.11.0
+
+#### Updated
+* Supported MyTarget SDK 5.7.3
+* Updated minimum supported MyTarget SDK version to 5.7.3
+* Updated minimum supported Yandex Mobile Ads SDK version to 2.18.0
+
 ## Version 0.10.0
 
 #### Updated
