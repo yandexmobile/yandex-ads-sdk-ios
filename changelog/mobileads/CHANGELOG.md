@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# Version 2.20.0
+
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/212922/YandexMobileAds-2.20.0-ios-cf2b2f14-5312-4113-ab68-668fd59e77ec.zip)
+
+#### Added
+* Added support for iOS 14
+
 # Version 2.19.0
 
 SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/205984/YandexMobileAds-2.19.0-ios-f5ac992c-102f-4d50-b381-6f87f5e566dc.zip)
