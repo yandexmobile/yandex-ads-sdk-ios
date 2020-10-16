@@ -9,12 +9,14 @@
 #import <YandexMobileAds/YandexMobileNativeAds.h>
 
 /**
- * Sample native app install ad view template which can be configured to display any set of assets.
+ * Sample native ad view which can be configured to display any set of assets.
  */
-@interface NativeAppInstallAdView : YMANativeAppInstallAdView
+@interface NativeAdView : YMANativeAdView
+
++ (NativeAdView *)nib;
 
 /**
- * Configures view depending on assets bound.
+ * Configures view depending on assets bound. 
  * Should be called after binding but before displaying native ad.
  */
 - (void)prepareForDisplay;

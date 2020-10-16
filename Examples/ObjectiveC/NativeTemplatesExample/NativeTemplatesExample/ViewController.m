@@ -36,65 +36,33 @@
     [self.adLoader loadAdWithRequest:nil];
 }
 
-- (void)didLoadAd:(id<YMANativeGenericAd>)ad
+- (void)addConstraintsToAdView:(UIView *)adView
 {
-    ad.delegate = self;
-    YMANativeBannerView *bannerView = [[YMANativeBannerView alloc] init];
-    bannerView.ad = ad;
-    [self.view addSubview:bannerView];
-
-    bannerView.translatesAutoresizingMaskIntoConstraints = NO;
+    adView.translatesAutoresizingMaskIntoConstraints = NO;
+    UILayoutGuide *guide = self.view.layoutMarginsGuide;
     if (@available(iOS 11.0, *)) {
-        [self configureLayoutAtBottomOfSafeAreaForView:bannerView];
-    } else {
-        [self configureLayoutAtBottomForView:bannerView];
+        guide = self.view.safeAreaLayoutGuide;
     }
-}
-
-- (void)configureLayoutAtBottomForView:(UIView *)bannerView
-{
-    NSDictionary *views = NSDictionaryOfVariableBindings(bannerView);
-    NSArray *horizontal = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(10)-[bannerView]-(10)-|"
-                                                                  options:0
-                                                                  metrics:nil
-                                                                    views:views];
-    NSArray *vertical = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[bannerView]-(10)-|"
-                                                                options:0
-                                                                metrics:nil
-                                                                  views:views];
-    [self.view addConstraints:horizontal];
-    [self.view addConstraints:vertical];
-}
-
-- (void)configureLayoutAtBottomOfSafeAreaForView:(UIView *)bannerView NS_AVAILABLE_IOS(11_0)
-{
-    UILayoutGuide *guide = self.view.safeAreaLayoutGuide;
     NSArray *constraints = @[
-                             [bannerView.leadingAnchor constraintEqualToAnchor:guide.leadingAnchor constant:10.f],
-                             [bannerView.trailingAnchor constraintEqualToAnchor:guide.trailingAnchor constant:-10.f],
-                             [bannerView.bottomAnchor constraintEqualToAnchor:guide.bottomAnchor constant:-10.f]
-                             ];
+        [adView.leadingAnchor constraintEqualToAnchor:guide.leadingAnchor],
+        [adView.trailingAnchor constraintEqualToAnchor:guide.trailingAnchor],
+        [adView.bottomAnchor constraintEqualToAnchor:guide.bottomAnchor]
+    ];
     [NSLayoutConstraint activateConstraints:constraints];
 }
 
 #pragma mark - YMANativeAdLoaderDelegate
 
-- (void)nativeAdLoader:(YMANativeAdLoader *)loader didLoadAppInstallAd:(id<YMANativeAppInstallAd>)ad
+- (void)nativeAdLoader:(YMANativeAdLoader *)loader didLoadAd:(id<YMANativeAd>)ad
 {
-    [self didLoadAd:ad];
+    ad.delegate = self;
+    YMANativeBannerView *bannerView = [[YMANativeBannerView alloc] init];
+    bannerView.ad = ad;
+    [self.view addSubview:bannerView];
+    [self addConstraintsToAdView:bannerView];
 }
 
-- (void)nativeAdLoader:(YMANativeAdLoader *)loader didLoadContentAd:(id<YMANativeContentAd>)ad
-{
-    [self didLoadAd:ad];
-}
-
-- (void)nativeAdLoader:(YMANativeAdLoader *)loader didLoadImageAd:(id<YMANativeImageAd>)ad
-{
-    [self didLoadAd:ad];
-}
-
-- (void)nativeAdLoader:(null_unspecified YMANativeAdLoader *)loader didFailLoadingWithError:(NSError * __nonnull)error
+- (void)nativeAdLoader:(YMANativeAdLoader *)loader didFailLoadingWithError:(NSError *)error
 {
     NSLog(@"Native ad loading error: %@", error);
 }
@@ -108,17 +76,17 @@
 //    return self;
 //}
 
-- (void)nativeAdWillLeaveApplication:(id)ad
+- (void)nativeAdWillLeaveApplication:(id<YMANativeAd>)ad
 {
     NSLog(@"Will leave application");
 }
 
-- (void)nativeAd:(id)ad willPresentScreen:(UIViewController *)viewController
+- (void)nativeAd:(id<YMANativeAd>)ad willPresentScreen:(UIViewController *)viewController
 {
     NSLog(@"Will present screen");
 }
 
-- (void)nativeAd:(id)ad didDismissScreen:(UIViewController *)viewController
+- (void)nativeAd:(id<YMANativeAd>)ad didDismissScreen:(UIViewController *)viewController
 {
     NSLog(@"Did dismiss screen");
 }

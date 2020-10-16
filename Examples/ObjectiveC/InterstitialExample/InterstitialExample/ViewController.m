@@ -8,9 +8,9 @@
 #import "ViewController.h"
 #import <YandexMobileAds/YandexMobileAds.h>
 
-@interface ViewController () <YMAInterstitialDelegate>
+@interface ViewController () <YMAInterstitialAdDelegate>
 
-@property (nonatomic, strong) YMAInterstitialController *interstitialController;
+@property (nonatomic, strong) YMAInterstitialAd *interstitialAd;
 
 @end
 
@@ -27,63 +27,62 @@
     // R-M-DEMO-320x480
     // R-M-DEMO-480x320
     // R-M-DEMO-video-interstitial
-    self.interstitialController = [[YMAInterstitialController alloc] initWithBlockID:@"R-M-DEMO-240x400-context"];
-    self.interstitialController.delegate = self;
+    self.interstitialAd = [[YMAInterstitialAd alloc] initWithBlockID:@"R-M-DEMO-240x400-context"];
+    self.interstitialAd.delegate = self;
 }
 
 - (IBAction)loadInterstitial
 {
-    [self.interstitialController load];
+    [self.interstitialAd load];
 }
 
 - (IBAction)presentInterstitial
 {
-    [self.interstitialController presentInterstitialFromViewController:self];
+    [self.interstitialAd presentFromViewController:self];
 }
 
-#pragma mark - YMAInterstitialDelegate
+#pragma mark - YMAInterstitialAdDelegate
 
-- (void)interstitialDidLoadAd:(YMAInterstitialController *)interstitial
+- (void)interstitialAdDidLoad:(YMAInterstitialAd *)interstitialAd
 {
     NSLog(@"Loaded");
 }
 
-- (void)interstitialDidFailToLoadAd:(YMAInterstitialController *)interstitial error:(NSError *)error
+- (void)interstitialAdDidFailToLoad:(YMAInterstitialAd *)interstitialAd error:(NSError *)error
 {
     NSLog(@"Loading failed. Error: %@", error);
 }
 
-- (void)interstitialWillLeaveApplication:(YMAInterstitialController *)interstitial
+- (void)interstitialAdWillLeaveApplication:(YMAInterstitialAd *)interstitialAd
 {
     NSLog(@"Will leave application");
 }
 
-- (void)interstitialDidFailToPresentAd:(YMAInterstitialController *)interstitial error:(NSError *)error
+- (void)interstitialAdDidFailToPresent:(YMAInterstitialAd *)interstitialAd error:(NSError *)error
 {
     NSLog(@"Failed to present interstitial. Error: %@", error);
 }
 
-- (void)interstitialWillAppear:(YMAInterstitialController *)interstitial
+- (void)interstitialAdWillAppear:(YMAInterstitialAd *)interstitialAd
 {
     NSLog(@"Interstitial will appear");
 }
-
-- (void)interstitialDidAppear:(YMAInterstitialController *)interstitial
+- (void)interstitialAdDidAppear:(YMAInterstitialAd *)interstitialAd
 {
     NSLog(@"Interstitial did appear");
 }
 
-- (void)interstitialWillDisappear:(YMAInterstitialController *)interstitial
+- (void)interstitialAdWillDisappear:(YMAInterstitialAd *)interstitialAd
 {
     NSLog(@"Interstitial will disappear");
 }
 
-- (void)interstitialDidDisappear:(YMAInterstitialController *)interstitial
+- (void)interstitialAdDidDisappear:(YMAInterstitialAd *)interstitialAd
 {
     NSLog(@"Interstitial did disappear");
 }
 
-- (void)interstitialWillPresentScreen:(UIViewController *)webBrowser
+- (void)interstitialAd:(YMAInterstitialAd *)interstitialAd willPresentScreen:(UIViewController *)webBrowser
 {
     NSLog(@"Interstitial will present screen");
 }

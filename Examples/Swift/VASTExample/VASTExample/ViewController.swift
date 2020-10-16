@@ -64,13 +64,12 @@ extension ViewController: YMAVMAPLoaderDelegate {
 // MARK: - YMAVideoAdLoaderDelegate
 
 extension ViewController: YMAVideoAdLoaderDelegate {
-    func loaderDidLoadVideoAds(_ ads: [Any]!) {
-        guard let ads = ads as? [YMAVASTAd] else { return }
+    func loaderDidLoadVideoAds(_ ads: [YMAVASTAd]) {
         let viewControler = VideoAdsTableViewController(ads: ads)
         navigationController?.pushViewController(viewControler, animated: true)
     }
 
-    func loaderDidFailLoadingVideoAdsWithError(_ error: Error!) {
+    func loaderDidFailLoadingVideoAdsWithError(_ error: Error) {
         print("Loader did fail loading video ads with error: \(String(describing: error))")
     }
 }

@@ -8,26 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		4D4884526A935658D669DF8A /* Pods_MobileMediationNativeExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E281E479BD52AE50CF42E5 /* Pods_MobileMediationNativeExample.framework */; };
+		B369DF752526492C004E8392 /* NativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B369DF742526492C004E8392 /* NativeAdView.xib */; };
 		B7A1D77722E595EE005DF636 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A1D77622E595EE005DF636 /* AppDelegate.swift */; };
 		B7A1D77922E595EE005DF636 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A1D77822E595EE005DF636 /* ViewController.swift */; };
 		B7A1D77C22E595EE005DF636 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7A1D77A22E595EE005DF636 /* Main.storyboard */; };
 		B7A1D77E22E595EF005DF636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7A1D77D22E595EF005DF636 /* Assets.xcassets */; };
 		B7A1D78122E595EF005DF636 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7A1D77F22E595EF005DF636 /* LaunchScreen.storyboard */; };
-		B7A1D78922E597AD005DF636 /* AssetViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A1D78822E597AC005DF636 /* AssetViewConfigurator.swift */; };
 		B7A1D78B22E5981B005DF636 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7A1D78A22E5981B005DF636 /* Images.xcassets */; };
-		B7A1D79322E5983D005DF636 /* NativeContentAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A1D78C22E5983C005DF636 /* NativeContentAdView.xib */; };
-		B7A1D79422E5983D005DF636 /* NativeContentAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A1D78D22E5983C005DF636 /* NativeContentAdView.swift */; };
-		B7A1D79522E5983D005DF636 /* NativeImageAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A1D78E22E5983C005DF636 /* NativeImageAdView.swift */; };
-		B7A1D79622E5983D005DF636 /* NativeAppInstallAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A1D78F22E5983C005DF636 /* NativeAppInstallAdView.xib */; };
-		B7A1D79722E5983D005DF636 /* NativeImageAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A1D79022E5983C005DF636 /* NativeImageAdView.xib */; };
+		B7A1D79422E5983D005DF636 /* NativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A1D78D22E5983C005DF636 /* NativeAdView.swift */; };
 		B7A1D79822E5983D005DF636 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A1D79122E5983C005DF636 /* StarRatingView.swift */; };
-		B7A1D79922E5983D005DF636 /* NativeAppInstallAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A1D79222E5983C005DF636 /* NativeAppInstallAdView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		67E281E479BD52AE50CF42E5 /* Pods_MobileMediationNativeExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileMediationNativeExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FE375B6C5A04ED74C4B961F /* Pods-AdFoxMediationNativeExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdFoxMediationNativeExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdFoxMediationNativeExample/Pods-AdFoxMediationNativeExample.release.xcconfig"; sourceTree = "<group>"; };
 		8BCCE9FC288CF896EF6FAC50 /* Pods-AdFoxMediationNativeExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdFoxMediationNativeExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdFoxMediationNativeExample/Pods-AdFoxMediationNativeExample.debug.xcconfig"; sourceTree = "<group>"; };
+		B369DF742526492C004E8392 /* NativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NativeAdView.xib; sourceTree = "<group>"; };
 		B7A1D77322E595EE005DF636 /* MobileMediationNativeExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileMediationNativeExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7A1D77622E595EE005DF636 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7A1D77822E595EE005DF636 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,15 +31,9 @@
 		B7A1D77D22E595EF005DF636 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7A1D78022E595EF005DF636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B7A1D78222E595EF005DF636 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B7A1D78822E597AC005DF636 /* AssetViewConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetViewConfigurator.swift; sourceTree = "<group>"; };
 		B7A1D78A22E5981B005DF636 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		B7A1D78C22E5983C005DF636 /* NativeContentAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NativeContentAdView.xib; sourceTree = "<group>"; };
-		B7A1D78D22E5983C005DF636 /* NativeContentAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeContentAdView.swift; sourceTree = "<group>"; };
-		B7A1D78E22E5983C005DF636 /* NativeImageAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeImageAdView.swift; sourceTree = "<group>"; };
-		B7A1D78F22E5983C005DF636 /* NativeAppInstallAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NativeAppInstallAdView.xib; sourceTree = "<group>"; };
-		B7A1D79022E5983C005DF636 /* NativeImageAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NativeImageAdView.xib; sourceTree = "<group>"; };
+		B7A1D78D22E5983C005DF636 /* NativeAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeAdView.swift; sourceTree = "<group>"; };
 		B7A1D79122E5983C005DF636 /* StarRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
-		B7A1D79222E5983C005DF636 /* NativeAppInstallAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeAppInstallAdView.swift; sourceTree = "<group>"; };
 		CBD55696B1F65616F151A65D /* Pods-MobileMediationNativeExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileMediationNativeExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileMediationNativeExample/Pods-MobileMediationNativeExample.release.xcconfig"; sourceTree = "<group>"; };
 		CCC980D9F342ABC9217F3530 /* Pods-MobileMediationNativeExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileMediationNativeExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileMediationNativeExample/Pods-MobileMediationNativeExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,18 +72,13 @@
 			isa = PBXGroup;
 			children = (
 				B7A1D77622E595EE005DF636 /* AppDelegate.swift */,
-				B7A1D78822E597AC005DF636 /* AssetViewConfigurator.swift */,
 				B7A1D77D22E595EF005DF636 /* Assets.xcassets */,
 				B7A1D78A22E5981B005DF636 /* Images.xcassets */,
 				B7A1D78222E595EF005DF636 /* Info.plist */,
 				B7A1D77F22E595EF005DF636 /* LaunchScreen.storyboard */,
 				B7A1D77A22E595EE005DF636 /* Main.storyboard */,
-				B7A1D79222E5983C005DF636 /* NativeAppInstallAdView.swift */,
-				B7A1D78F22E5983C005DF636 /* NativeAppInstallAdView.xib */,
-				B7A1D78D22E5983C005DF636 /* NativeContentAdView.swift */,
-				B7A1D78C22E5983C005DF636 /* NativeContentAdView.xib */,
-				B7A1D78E22E5983C005DF636 /* NativeImageAdView.swift */,
-				B7A1D79022E5983C005DF636 /* NativeImageAdView.xib */,
+				B7A1D78D22E5983C005DF636 /* NativeAdView.swift */,
+				B369DF742526492C004E8392 /* NativeAdView.xib */,
 				B7A1D79122E5983C005DF636 /* StarRatingView.swift */,
 				B7A1D77822E595EE005DF636 /* ViewController.swift */,
 			);
@@ -148,7 +133,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = YANDEX;
 				TargetAttributes = {
 					B7A1D77222E595EE005DF636 = {
@@ -179,12 +164,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7A1D79722E5983D005DF636 /* NativeImageAdView.xib in Resources */,
 				B7A1D78122E595EF005DF636 /* LaunchScreen.storyboard in Resources */,
 				B7A1D78B22E5981B005DF636 /* Images.xcassets in Resources */,
-				B7A1D79622E5983D005DF636 /* NativeAppInstallAdView.xib in Resources */,
-				B7A1D79322E5983D005DF636 /* NativeContentAdView.xib in Resources */,
 				B7A1D77E22E595EF005DF636 /* Assets.xcassets in Resources */,
+				B369DF752526492C004E8392 /* NativeAdView.xib in Resources */,
 				B7A1D77C22E595EE005DF636 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,11 +221,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7A1D78922E597AD005DF636 /* AssetViewConfigurator.swift in Sources */,
-				B7A1D79922E5983D005DF636 /* NativeAppInstallAdView.swift in Sources */,
 				B7A1D77922E595EE005DF636 /* ViewController.swift in Sources */,
-				B7A1D79422E5983D005DF636 /* NativeContentAdView.swift in Sources */,
-				B7A1D79522E5983D005DF636 /* NativeImageAdView.swift in Sources */,
+				B7A1D79422E5983D005DF636 /* NativeAdView.swift in Sources */,
 				B7A1D77722E595EE005DF636 /* AppDelegate.swift in Sources */,
 				B7A1D79822E5983D005DF636 /* StarRatingView.swift in Sources */,
 			);
@@ -296,6 +276,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -357,6 +338,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

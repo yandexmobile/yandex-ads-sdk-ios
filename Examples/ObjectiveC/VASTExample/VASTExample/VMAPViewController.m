@@ -73,7 +73,7 @@ static NSString *const kCategoryID = @"0";
 
 #pragma mark - YMAVideoAdLoaderDelegate
 
-- (void)loaderDidLoadVideoAds:(NSArray *)ads
+- (void)loaderDidLoadVideoAds:(NSArray<YMAVASTAd *> *)ads
 {
     VideoAdsTableViewController *adsViewController = [[VideoAdsTableViewController alloc] initWithAds:ads];
     [self.navigationController pushViewController:adsViewController animated:YES];

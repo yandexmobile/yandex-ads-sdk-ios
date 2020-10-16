@@ -47,44 +47,15 @@
     // Replace it with one which is suitable for the app.
     GDPRDialogViewController *dialog = [[GDPRDialogViewController alloc] initWithDelegate:self];
     dialog.modalPresentationStyle = UIModalPresentationFormSheet;
-    [self presentViewController:dialog
-                       animated:YES
-                     completion:nil];
-}
-
-- (void)didLoadAd:(id<YMANativeGenericAd>)ad
-{
-    YMANativeBannerView *bannerView = [[YMANativeBannerView alloc] init];
-    bannerView.ad = ad;
-    [self.view addSubview:bannerView];
-
-    bannerView.translatesAutoresizingMaskIntoConstraints = NO;
-    if (@available(iOS 11.0, *)) {
-        [self configureLayoutAtBottomOfSafeAreaForView:bannerView];
-    }
-    else {
-        [self configureLayoutAtBottomForView:bannerView];
-    }
+    [self presentViewController:dialog animated:YES completion:nil];
 }
 
 - (void)configureLayoutAtBottomForView:(UIView *)bannerView
 {
-    NSDictionary *views = NSDictionaryOfVariableBindings(bannerView);
-    NSArray *horizontal = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(10)-[bannerView]-(10)-|"
-                                                                  options:0
-                                                                  metrics:nil
-                                                                    views:views];
-    NSArray *vertical = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[bannerView]-(10)-|"
-                                                                options:0
-                                                                metrics:nil
-                                                                  views:views];
-    [self.view addConstraints:horizontal];
-    [self.view addConstraints:vertical];
-}
-
-- (void)configureLayoutAtBottomOfSafeAreaForView:(UIView *)bannerView NS_AVAILABLE_IOS(11_0)
-{
-    UILayoutGuide *guide = self.view.safeAreaLayoutGuide;
+    UILayoutGuide *guide = self.view.layoutMarginsGuide;
+    if (@available(iOS 11.0, *)) {
+        guide = self.view.safeAreaLayoutGuide;
+    }
     NSArray *constraints = @[
         [bannerView.leadingAnchor constraintEqualToAnchor:guide.leadingAnchor constant:10.f],
         [bannerView.trailingAnchor constraintEqualToAnchor:guide.trailingAnchor constant:-10.f],
@@ -102,17 +73,16 @@
 
 #pragma mark - YMANativeAdLoaderDelegate
 
-- (void)nativeAdLoader:(YMANativeAdLoader *)loader didLoadAppInstallAd:(id<YMANativeAppInstallAd>)ad
+- (void)nativeAdLoader:(YMANativeAdLoader *)loader didLoadAd:(id<YMANativeAd>)ad
 {
-    [self didLoadAd:ad];
+    YMANativeBannerView *bannerView = [[YMANativeBannerView alloc] init];
+    bannerView.ad = ad;
+    [self.view addSubview:bannerView];
+    bannerView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self configureLayoutAtBottomForView:bannerView];
 }
 
-- (void)nativeAdLoader:(YMANativeAdLoader *)loader didLoadContentAd:(id<YMANativeContentAd>)ad
-{
-    [self didLoadAd:ad];
-}
-
-- (void)nativeAdLoader:(null_unspecified YMANativeAdLoader *)loader didFailLoadingWithError:(NSError *__nonnull)error
+- (void)nativeAdLoader:(YMANativeAdLoader *)loader didFailLoadingWithError:(NSError *)error
 {
     NSLog(@"Native ad loading error: %@", error);
 }

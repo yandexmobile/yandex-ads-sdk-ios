@@ -31,51 +31,13 @@
     // R-M-DEMO-300x250-context
     // R-M-DEMO-300x300-context
     YMAAdSize *adSize = [YMAAdSize flexibleSizeWithContainerWidth:CGRectGetWidth(self.view.frame)];
-    self.topAdView = [[YMAAdView alloc] initWithBlockID:@"R-M-DEMO-320x50"
-                                              adSize:adSize
-                                            delegate:self];
+    self.topAdView = [[YMAAdView alloc] initWithBlockID:@"R-M-DEMO-320x50" adSize:adSize];
+    self.topAdView.delegate = self;
     [self.topAdView loadAd];
 
-    self.bottomAdView = [[YMAAdView alloc] initWithBlockID:@"R-M-DEMO-320x100-context"
-                                                    adSize:[YMAAdSize flexibleSize]
-                                                  delegate:self];
-    if (@available(iOS 11.0, *)) {
-        [self displayAdAtBottomOfSafeArea];
-    } else {
-        [self.bottomAdView displayAtBottomInView:self.view];
-    }
+    self.bottomAdView = [[YMAAdView alloc] initWithBlockID:@"R-M-DEMO-320x100-context" adSize:[YMAAdSize flexibleSize]];
+    self.bottomAdView.delegate = self;
     [self.bottomAdView loadAd];
-}
-
-// Ability to display ad at top of Safe Area will soon be added to `displayAtBottomOfSafeAreaInView:` method of SDK
-- (void)displayAdAtBottomOfSafeArea NS_AVAILABLE_IOS(11_0)
-{
-    [self.bottomAdView removeFromSuperview];
-    NSLayoutConstraint *anchorConstraint =
-        [self.bottomAdView.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor];
-    [self displayAdView:self.bottomAdView withAnchorConstraint:anchorConstraint];
-}
-
-// Ability to display ad at bottom of Safe Area will soon be added to `displayAdAtTopOfSafeAreaInView:` method of SDK
-- (void)displayAdAtTopOfSafeArea NS_AVAILABLE_IOS(11_0)
-{
-    [self.topAdView removeFromSuperview];
-    NSLayoutConstraint *anchorConstraint =
-        [self.topAdView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor];
-    [self displayAdView:self.topAdView withAnchorConstraint:anchorConstraint];
-}
-
-- (void)displayAdView:(UIView *)view withAnchorConstraint:(NSLayoutConstraint *)anchorConstraint NS_AVAILABLE_IOS(11_0)
-{
-    UILayoutGuide *guide = self.view.safeAreaLayoutGuide;
-    view.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addSubview:view];
-    NSArray *constraints = @[
-                             [view.leadingAnchor constraintEqualToAnchor:guide.leadingAnchor],
-                             [view.trailingAnchor constraintEqualToAnchor:guide.trailingAnchor],
-                             anchorConstraint
-                             ];
-    [NSLayoutConstraint activateConstraints:constraints];
 }
 
 #pragma mark - YMAAdViewDelegate
@@ -91,11 +53,10 @@
 {
     NSLog(@"Ad loaded");
     if (adView == self.topAdView) {
-        if (@available(iOS 11.0, *)) {
-            [self displayAdAtTopOfSafeArea];
-        } else {
-            [self.topAdView displayAtTopInView:self.view];
-        }
+        [self.topAdView displayAtTopInView:self.view];
+    }
+    else {
+        [self.bottomAdView displayAtBottomInView:self.view];
     }
 }
 
@@ -109,12 +70,12 @@
     NSLog(@"Ad will leave application");
 }
 
-- (void)adViewWillPresentScreen:(UIViewController *)viewController
+- (void)adView:(YMAAdView *)adView willPresentScreen:(UIViewController *)viewController
 {
     NSLog(@"Ad will present screen");
 }
 
-- (void)adViewDidDismissScreen:(UIViewController *)viewController
+-(void)adView:(YMAAdView *)adView didDismissScreen:(UIViewController *)viewController
 {
     NSLog(@"Ad did dismiss screen");
 }

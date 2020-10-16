@@ -11,7 +11,10 @@
 /**
  * Sample rating view which implements YMARating protocol and can be used as ratingView for app install ad.
  */
+
 @interface StarRatingView : UIView <YMARating>
+
+@property (nonatomic, strong) IBInspectable UIImage *starImage;
 
 - (instancetype)initWithFrame:(CGRect)frame starImage:(UIImage *)starImage;
 

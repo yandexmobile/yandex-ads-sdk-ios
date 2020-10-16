@@ -43,7 +43,7 @@
 
 - (void)addView:(UIView *)view
 {
-    [view setTranslatesAutoresizingMaskIntoConstraints:NO];
+    view.translatesAutoresizingMaskIntoConstraints = NO; 
     [self.view addSubview:view];
     NSDictionary *views = NSDictionaryOfVariableBindings(view);
     NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[view]-|"

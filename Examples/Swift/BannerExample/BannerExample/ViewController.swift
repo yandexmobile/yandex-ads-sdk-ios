@@ -8,7 +8,7 @@
 import UIKit
 import YandexMobileAds
 
-class ViewController: UIViewController, YMAAdViewDelegate {
+class ViewController: UIViewController {
     
     var topAdView: YMAAdView!
     var bottomAdView: YMAAdView!
@@ -26,20 +26,14 @@ class ViewController: UIViewController, YMAAdViewDelegate {
         // R-M-DEMO-300x250-context
         // R-M-DEMO-300x300-context
         let adSize = YMAAdSize.flexibleSize(withContainerWidth: self.view.frame.width)
-        self.topAdView = YMAAdView(blockID: "R-M-DEMO-320x50",
-                                   adSize: adSize,
-                                   delegate: self)!
-        self.bottomAdView = YMAAdView(blockID: "R-M-DEMO-320x100-context",
-                                      adSize: YMAAdSize.flexible(),
-                                      delegate: self)!
-        
-        if #available(iOS 11.0, *) {
-            displayAdAtTopOfSafeArea();
-            displayAdAtBottomOfSafeArea();
-        } else {
-            self.topAdView.displayAtTop(in: self.view)
-            self.bottomAdView.displayAtBottom(in: self.view)
-        }
+        self.topAdView = YMAAdView(blockID: "R-M-DEMO-320x50", adSize: adSize)
+        self.topAdView.delegate = self
+        self.bottomAdView = YMAAdView(blockID: "R-M-DEMO-320x100-context", adSize: YMAAdSize.flexible())
+        self.bottomAdView.delegate = self
+
+        self.topAdView.displayAtTop(in: self.view)
+        self.bottomAdView.displayAtBottom(in: self.view)
+
         loadAd()
     }
     
@@ -47,60 +41,32 @@ class ViewController: UIViewController, YMAAdViewDelegate {
         self.topAdView.loadAd()
         self.bottomAdView.loadAd()
     }
-    
-    // Ability to display ad at bottom of Safe Area will soon be added to `displayAdAtTopOfSafeAreaInView:` method of SDK
-    @available(iOS 11.0, *)
-    func displayAdAtTopOfSafeArea() {
-        let constraint = self.topAdView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor)
-        display(adView: self.topAdView, anchorConstraint: constraint)
-    }
-    
-    // Ability to display ad at top of Safe Area will soon be added to `displayAtBottomOfSafeAreaInView:` method of SDK
-    @available(iOS 11.0, *)
-    func displayAdAtBottomOfSafeArea() {
-        let constraint = self.bottomAdView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
-        display(adView: self.bottomAdView, anchorConstraint: constraint)
-    }
-    
-    @available(iOS 11.0, *)
-    func display(adView: UIView, anchorConstraint: NSLayoutConstraint) {
-        let layoutGuide = self.view.safeAreaLayoutGuide
-        adView.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(adView)
-        let constraints = [
-            adView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor),
-            adView.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor),
-            anchorConstraint
-        ]
-        NSLayoutConstraint.activate(constraints)
-    }
-    
-    // MARK: - YMAAdViewDelegate
-    
+}
+
+extension ViewController: YMAAdViewDelegate {
     // Uncomment to open web links in in-app browser
-//    func viewControllerForPresentingModalView() -> UIViewController! {
+//    func viewControllerForPresentingModalView() -> UIViewController? {
 //        return self
 //    }
     
-    func adViewDidLoad(_ adView: YMAAdView!) {
+    func adViewDidLoad(_ adView: YMAAdView) {
         print("Ad loaded")
     }
     
-    func adViewDidFailLoading(_ adView: YMAAdView!, error: Error!) {
-        print("Ad failed loading. Error: \(error!)")
+    func adViewDidFailLoading(_ adView: YMAAdView, error: Error) {
+        print("Ad failed loading. Error: \(error)")
     }
     
-    func adViewWillLeaveApplication(_ adView: YMAAdView!) {
+    func adViewWillLeaveApplication(_ adView: YMAAdView) {
         print("Ad will leave application")
     }
     
-    func adViewWillPresentScreen(_ viewController: UIViewController!) {
+    func adView(_ adView: YMAAdView, willPresentScreen viewController: UIViewController?) {
         print("Ad will present screen")
     }
 
-    func adViewDidDismissScreen(_ viewController: UIViewController!) {
+    func adView(_ adView: YMAAdView, didDismissScreen viewController: UIViewController?) {
         print("Ad did dismiss screen")
     }
     
 }
-

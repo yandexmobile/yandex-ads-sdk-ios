@@ -61,16 +61,17 @@ static int const kBlockIDIndex = 1;
      */
     NSString *blockID = self.networks[selectedIndex][kBlockIDIndex];
     YMAAdSize *adSize = [YMAAdSize fixedSizeWithCGSize:YMAAdSizeBanner_320x50];
-    self.adView = [[YMAAdView alloc] initWithBlockID:blockID
-                                              adSize:adSize
-                                            delegate:self];
+    self.adView = [[YMAAdView alloc] initWithBlockID:blockID adSize:adSize];
+    self.adView.delegate = self;
     [self.adView loadAd];
 }
 
-// Ability to display ad in Safe Area will soon be added to `displayAtBottomOfSafeAreaInView:` method of SDK
-- (void)displayAtBottomOfSafeArea NS_AVAILABLE_IOS(11_0)
+- (void)displayAtBottomOfSafeArea
 {
-    UILayoutGuide *guide = self.view.safeAreaLayoutGuide;
+    UILayoutGuide *guide = self.view.layoutMarginsGuide;
+    if (@available(iOS 11.0, *)) {
+        guide = self.view.safeAreaLayoutGuide;
+    }
     self.adView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:self.adView];
     NSArray *constraints = @[
@@ -104,12 +105,12 @@ static int const kBlockIDIndex = 1;
     NSLog(@"Ad will leave application");
 }
 
-- (void)adViewWillPresentScreen:(UIViewController *)viewController
+- (void)adView:(YMAAdView *)adView willPresentScreen:(UIViewController *)viewController
 {
     NSLog(@"Ad will present screen");
 }
 
-- (void)adViewDidDismissScreen:(UIViewController *)viewController
+- (void)adView:(YMAAdView *)adView didDismissScreen:(UIViewController *)viewController
 {
     NSLog(@"Ad did dismiss screen");
 }
@@ -123,12 +124,12 @@ static int const kBlockIDIndex = 1;
 
 #pragma mark - UIPickerViewDataSource
 
-- (NSInteger)numberOfComponentsInPickerView:(nonnull UIPickerView *)pickerView
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
     return 1;
 }
 
-- (NSInteger)pickerView:(nonnull UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
     return self.networks.count;
 }
