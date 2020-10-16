@@ -8,7 +8,10 @@
 #import <GoogleMobileAds/GoogleMobileAds.h>
 #import "ViewController.h"
 
-@interface ViewController () <GADRewardBasedVideoAdDelegate>
+@interface ViewController () <GADRewardedAdDelegate>
+
+@property (nonatomic, weak, readonly) IBOutlet UIButton *presentButton;
+@property (nonatomic, strong) GADRewardedAd *rewardedAd;
 
 @end
 
@@ -16,17 +19,23 @@
 
 - (IBAction)loadAd
 {
-    GADRewardBasedVideoAd *ad = [GADRewardBasedVideoAd sharedInstance];
-    ad.delegate = self;
-    GADRequest *request = [GADRequest request];
     // Replace ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY with Ad Unit ID generated at https://apps.admob.com.
-    [ad loadRequest:request withAdUnitID:@"ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY"];
+    self.rewardedAd = [[GADRewardedAd alloc] initWithAdUnitID:@"ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY"];
+    GADRequest *request = [GADRequest request];
+
+    [self.rewardedAd loadRequest:request completionHandler:^(GADRequestError *error) {
+        if (error) {
+            NSLog(@"Loading failed. Error: %@", error);
+        } else {
+            self.presentButton.enabled = YES;
+        }
+    }];
 }
 
 - (IBAction)presentAd
 {
-    if ([[GADRewardBasedVideoAd sharedInstance] isReady]) {
-        [[GADRewardBasedVideoAd sharedInstance] presentFromRootViewController:self];
+    if (self.rewardedAd.isReady) {
+        [self.rewardedAd presentFromRootViewController:self delegate:self];
     }
     else {
         NSLog(@"Rewarded ad wasn't ready");
@@ -35,8 +44,7 @@
 
 #pragma mark - YMARewardedAdDelegate
 
-- (void)rewardBasedVideoAd:(GADRewardBasedVideoAd *)rewardBasedVideoAd
-   didRewardUserWithReward:(GADAdReward *)reward
+- (void)rewardedAd:(GADRewardedAd *)rewardedAd userDidEarnReward:(GADAdReward *)reward
 {
     NSString *message = [NSString stringWithFormat:@"Rewarded ad did reward: %@ %@", reward.amount, reward.type];
     NSLog(@"%@", message);
@@ -47,40 +55,19 @@
     [self.presentedViewController presentViewController:alertController animated:YES completion:nil];
 }
 
-- (void)rewardBasedVideoAdDidReceiveAd:(GADRewardBasedVideoAd *)rewardBasedVideoAd
+- (void)rewardedAd:(GADRewardedAd *)rewardedAd didFailToPresentWithError:(NSError *)error
 {
-    NSLog(@"Rewarded ad loaded");
+    NSLog(@"Presenting failed. Error: %@", error);
 }
 
-- (void)rewardBasedVideoAd:(GADRewardBasedVideoAd *)rewardBasedVideoAd
-    didFailToLoadWithError:(NSError *)error
+- (void)rewardedAdDidPresent:(GADRewardedAd *)rewardedAd
 {
-    NSLog(@"Loading failed. Error: %@", error);
+    NSLog(@"Rewarded ad presented");
 }
 
-- (void)rewardBasedVideoAdWillLeaveApplication:(GADRewardBasedVideoAd *)rewardBasedVideoAd
+- (void)rewardedAdDidDismiss:(GADRewardedAd *)rewardedAd
 {
-    NSLog(@"Rewarded ad will leave application");
-}
-
-- (void)rewardBasedVideoAdDidOpen:(GADRewardBasedVideoAd *)rewardBasedVideoAd
-{
-    NSLog(@"Rewarded ad is opened");
-}
-
-- (void)rewardBasedVideoAdDidStartPlaying:(GADRewardBasedVideoAd *)rewardBasedVideoAd
-{
-    NSLog(@"Rewarded ad started playing");
-}
-
-- (void)rewardBasedVideoAdDidCompletePlaying:(GADRewardBasedVideoAd *)rewardBasedVideoAd
-{
-    NSLog(@"Rewarded ad complete playing");
-}
-
-- (void)rewardBasedVideoAdDidClose:(GADRewardBasedVideoAd *)rewardBasedVideoAd
-{
-    NSLog(@"Rewarded ad is closed");
+    NSLog(@"Rewarded ad dismissed");
 }
 
 @end

@@ -12,17 +12,15 @@ class ViewController: UIViewController {
 
     var adView: YMAAdView?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBAction func loadAd(_ sender: UIButton) {
+        adView?.removeFromSuperview()
+
         let adSize = YMAAdSize.flexibleSize(withContainerWidth: self.containerWidth())
         // Replace demo R-M-DEMO-adaptive-sticky with actual Block ID
-        adView = YMAAdView(blockID: "R-M-DEMO-adaptive-sticky", adSize: adSize, delegate: self)
-        self.addAdView()
-    }
-
-    @IBAction func loadAd(_ sender: UIButton) {
-        guard let adView = adView else { return }
-        adView.isHidden = true
+        let adView = YMAAdView(blockID: "R-M-DEMO-adaptive-sticky", adSize: adSize)
+        self.adView = adView
+        adView.delegate = self
+        adView.displayAtBottom(in: self.view)
         adView.loadAd()
     }
 
@@ -36,35 +34,18 @@ class ViewController: UIViewController {
         return containerWidth
     }
 
-    private func addAdView() {
-        guard let adView = adView else { return }
-        adView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(adView)
-        let views = ["adView": adView]
-        let horizontal = NSLayoutConstraint.constraints(withVisualFormat: "H:|[adView]|",
-                                                        options: [],
-                                                        metrics: nil,
-                                                        views: views)
-        let vertical = NSLayoutConstraint.constraints(withVisualFormat: "V:[adView]-|",
-                                                      options: [],
-                                                      metrics: nil,
-                                                      views: views)
-        view.addConstraints(horizontal + vertical)
-    }
-
 }
 
 // MARK: - YMAAdViewDelegate
 
 extension ViewController: YMAAdViewDelegate {
 
-    func adViewDidLoad(_ adView: YMAAdView!) {
+    func adViewDidLoad(_ adView: YMAAdView) {
         print("Ad loaded")
-        adView.isHidden = false
     }
 
-    func adViewDidFailLoading(_ adView: YMAAdView!, error: Error!) {
-        print("Ad failed loading. Error: \(error!)")
+    func adViewDidFailLoading(_ adView: YMAAdView, error: Error) {
+        print("Ad failed loading. Error: \(error)")
     }
 
 }

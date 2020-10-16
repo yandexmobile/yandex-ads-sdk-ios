@@ -9,40 +9,49 @@ import GoogleMobileAds
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        GADRewardBasedVideoAd.sharedInstance().delegate = self
-    }
+    var rewardedAd: GADRewardedAd?
+    @IBOutlet weak var showButton: UIButton!
 
     @IBAction func loadAd(_ sender: UIButton) {
         // Replace ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY with Ad Unit ID generated at https://apps.admob.com".
-        GADRewardBasedVideoAd.sharedInstance().load(GADRequest(),
-                                                    withAdUnitID: "ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY")
+        let rewardedAd = GADRewardedAd(adUnitID: "ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY")
+        self.rewardedAd = rewardedAd
+        rewardedAd.load(GADRequest()) { error in
+            if let error = error {
+                print("Reward based video ad did fail to load with error: \(error)")
+            } else {
+                self.showButton.isEnabled = true
+            }
+        }
     }
 
     @IBAction func showAd(_ sender: UIButton) {
-        if GADRewardBasedVideoAd.sharedInstance().isReady {
-            GADRewardBasedVideoAd.sharedInstance().present(fromRootViewController: self)
+        if rewardedAd?.isReady ?? false {
+            rewardedAd?.present(fromRootViewController: self, delegate: self)
         } else {
             print("Rewarded ad wasn't ready")
         }
     }
 }
 
-extension ViewController: GADRewardBasedVideoAdDelegate {
+extension ViewController: GADRewardedAdDelegate {
 
-    func rewardBasedVideoAdDidReceive(_ rewardBasedVideoAd: GADRewardBasedVideoAd) {
-        print("Reward based video ad did receive")
+    func rewardedAdDidPresent(_ rewardedAd: GADRewardedAd) {
+        print("Rewarded ad presented.")
     }
 
-    func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd, didRewardUserWith reward: GADAdReward) {
+    func rewardedAd(_ rewardedAd: GADRewardedAd, didFailToPresentWithError error: Error) {
+        print("Rewarded ad failed to present.")
+    }
+
+    func rewardedAdDidDismiss(_ rewardedAd: GADRewardedAd) {
+        print("Rewarded ad dismissed.")
+    }
+
+    func rewardedAd(_ rewardedAd: GADRewardedAd, userDidEarn reward: GADAdReward) {
         let message = "Rewarded ad did reward \(reward.amount) \(reward.type)"
         let alertController = UIAlertController(title: "Reward", message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         presentedViewController?.present(alertController, animated: true, completion: nil)
-    }
-
-    func rewardBasedVideoAd(_ rewardBasedVideoAd: GADRewardBasedVideoAd, didFailToLoadWithError error: Error) {
-        print("Reward based video ad did fail to load with error: \(error)")
     }
 }

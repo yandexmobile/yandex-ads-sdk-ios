@@ -33,12 +33,12 @@
     return self;
 }
 
-- (void)setAd:(id<YMANativeGenericAd>)ad
+- (void)setAd:(id<YMANativeAd>)ad
 {
     self.adView.ad = ad;
 }
 
-- (id<YMANativeGenericAd>)ad
+- (id<YMANativeAd>)ad
 {
     return self.adView.ad;
 }

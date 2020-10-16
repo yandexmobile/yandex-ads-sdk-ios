@@ -25,21 +25,19 @@ class ViewController: UIViewController {
 
     @IBOutlet private var pickerView: UIPickerView!
 
-    private var contentAdView: NativeContentAdView?
-    private var appInstallView: NativeAppInstallAdView?
-    private var imageAdView: NativeImageAdView?
-    
+    private var adView: NativeAdView?
     private var adLoader: YMANativeAdLoader?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        loadAdViews()
-        hideAllViews()
+
+        adView = NativeAdView.nib
+        addAdView()
+        adView?.isHidden = true
     }
     
     @IBAction func load(_ sender: Any) {
-        hideAllViews()
+        adView?.isHidden = true
         let selectedIndex = pickerView.selectedRow(inComponent: 0)
         /*
          Replace blockID with actual Block ID.
@@ -57,80 +55,41 @@ class ViewController: UIViewController {
         adLoader?.loadAd(with: nil)
     }
 
-    private func loadAdViews() {
-        contentAdView = Bundle.main.loadNibNamed("NativeContentAdView",
-                                                 owner: nil,
-                                                 options: nil)?.first as? NativeContentAdView
-        if let myContentAdView = contentAdView {
-            addAdView(myContentAdView)
-        }
-        
-        appInstallView = Bundle.main.loadNibNamed("NativeAppInstallAdView",
-                                                  owner: nil,
-                                                  options: nil)?.first as? NativeAppInstallAdView
-        if let myAppInstallView = appInstallView {
-            addAdView(myAppInstallView)
-        }
-        
-        imageAdView = Bundle.main.loadNibNamed("NativeImageAdView",
-                                               owner: nil,
-                                               options: nil)?.first as? NativeImageAdView
-        if let myImageAdView = imageAdView {
-            addAdView(myImageAdView)
-        }
-    }
-    
-    private func addAdView(_ adView: UIView) {
+    func addAdView() {
+        guard let adView = adView else { return }
+
         adView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(adView)
-        let views = ["adView": adView]
-        let horizontal = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[adView]-|",
-                                                        options: [],
-                                                        metrics: nil,
-                                                        views: views)
-        let vertical = NSLayoutConstraint.constraints(withVisualFormat: "V:[adView]-|",
-                                                      options: [],
-                                                      metrics: nil,
-                                                      views: views)
-        view.addConstraints(horizontal + vertical)
-    }
-    
-    private func hideAllViews() {
-        imageAdView?.isHidden = true
-        appInstallView?.isHidden = true
-        contentAdView?.isHidden = true
-    }
-    
-    private func showAdView(_ adView: UIView) {
-        adView.isHidden = false
+        var layoutGuide = self.view.layoutMarginsGuide
+        if #available(iOS 11.0, *) {
+            layoutGuide = self.view.safeAreaLayoutGuide
+        }
+        let constraints = [
+            adView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor, constant: 10),
+            adView.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor, constant: -10),
+            adView.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor, constant: -10)
+        ]
+        NSLayoutConstraint.activate(constraints)
     }
 }
 
 // MARK: - YMANativeAdLoaderDelegate
 
 extension ViewController: YMANativeAdLoaderDelegate {
-    func nativeAdLoader(_ loader: YMANativeAdLoader!, didLoad ad: YMANativeImageAd) {
-        guard let myImageAdView = imageAdView else { return }
-        try? ad.bindImageAd(to: myImageAdView, delegate: self)
-        showAdView(myImageAdView)
-        myImageAdView.configureAssetViews()
+    func nativeAdLoader(_ loader: YMANativeAdLoader, didLoad ad: YMANativeAd) {
+        guard let adView = adView else { return }
+
+        ad.delegate = self
+        adView.isHidden = false
+        do {
+            try ad.bind(with: adView)
+            adView.configureAssetViews()
+        } catch {
+            print("Binding error: \(error)")
+        }
     }
     
-    func nativeAdLoader(_ loader: YMANativeAdLoader!, didLoad ad: YMANativeContentAd) {
-        guard let myContentAdView = contentAdView else { return }
-        try? ad.bindContentAd(to: myContentAdView, delegate: self)
-        showAdView(myContentAdView)
-        myContentAdView.configureAssetViews()
-    }
-    
-    func nativeAdLoader(_ loader: YMANativeAdLoader!, didLoad ad: YMANativeAppInstallAd) {
-        guard let myAppInstallView = appInstallView else { return }
-        try? ad.bindAppInstallAd(to: myAppInstallView, delegate: self)
-        showAdView(myAppInstallView)
-        myAppInstallView.configureAssetViews()
-    }
-    
-    func nativeAdLoader(_ loader: YMANativeAdLoader!, didFailLoadingWithError error: Error) {
+    func nativeAdLoader(_ loader: YMANativeAdLoader, didFailLoadingWithError error: Error) {
         print("Native ad loading error: \(error)")
     }
 }
@@ -138,9 +97,8 @@ extension ViewController: YMANativeAdLoaderDelegate {
 // MARK: - YMANativeAdDelegate
 
 extension ViewController: YMANativeAdDelegate {
-    func closeNativeAd(_ ad: Any!) {
-        print("Close native ad")
-        hideAllViews()
+    func close(_ ad: YMANativeAd) {
+        adView?.isHidden = true
     }
 }
 
@@ -160,4 +118,3 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         return tuple.adapter
     }
 }
-

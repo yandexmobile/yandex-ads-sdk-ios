@@ -28,7 +28,7 @@
     [self.adView loadRequest:[GADRequest request]];
 }
 
-#pragma mark Ad Request Lifecycle Notifications
+#pragma mark GADBannerViewDelegate
 
 - (void)adViewDidReceiveAd:(GADBannerView *)view
 {
@@ -36,46 +36,29 @@
     [self.adView removeFromSuperview];
     [self.view addSubview:view];
     view.translatesAutoresizingMaskIntoConstraints = NO;
+    UILayoutGuide *layoutGuide = self.view.layoutMarginsGuide;
     if (@available(iOS 11.0, *)) {
-        [self configureLayoutAtBottomOfSafeAreaForView:view];
-    } else {
-        [self configureLayoutAtBottomForView:view];
+        layoutGuide = self.view.safeAreaLayoutGuide;
     }
-}
-
-- (void)configureLayoutAtBottomForView:(GADBannerView *)view
-{
-    NSDictionary *views = NSDictionaryOfVariableBindings(view);
-    NSArray *vertical =
-        [NSLayoutConstraint constraintsWithVisualFormat:@"V:[view(50)]|" options:0 metrics:nil views:views];
-    NSArray *horizontal =
-        [NSLayoutConstraint constraintsWithVisualFormat:@"H:[view(320)]" options:0 metrics:nil views:views];
-    NSLayoutConstraint *center = [NSLayoutConstraint constraintWithItem:view
-                                                              attribute:NSLayoutAttributeCenterX
-                                                              relatedBy:NSLayoutRelationEqual
-                                                                 toItem:self.view
-                                                              attribute:NSLayoutAttributeCenterX
-                                                             multiplier:1.f
-                                                               constant:0.f];
-    [self.view addConstraints:vertical];
-    [self.view addConstraints:horizontal];
-    [self.view addConstraint:center];
-}
-
-- (void)configureLayoutAtBottomOfSafeAreaForView:(GADBannerView *)view NS_AVAILABLE_IOS(11_0)
-{
-    UILayoutGuide *guide = self.view.safeAreaLayoutGuide;
-    NSArray *constraints = @[
-                             [view.leadingAnchor constraintEqualToAnchor:guide.leadingAnchor],
-                             [view.trailingAnchor constraintEqualToAnchor:guide.trailingAnchor],
-                             [view.bottomAnchor constraintEqualToAnchor:guide.bottomAnchor]
-                             ];
-    [NSLayoutConstraint activateConstraints:constraints];
+    [self configureLayoutAtBottomOfSafeAreaForView:view layoutGuide:layoutGuide];
 }
 
 - (void)adView:(GADBannerView *)bannerView didFailToReceiveAdWithError:(GADRequestError *)error
 {
     NSLog(@"Ad failed loading.");
+}
+
+#pragma mark Private
+
+- (void)configureLayoutAtBottomOfSafeAreaForView:(GADBannerView *)view
+                                     layoutGuide:(UILayoutGuide *)layoutGuide
+{
+    NSArray *constraints = @[
+                             [view.leadingAnchor constraintEqualToAnchor:layoutGuide.leadingAnchor],
+                             [view.trailingAnchor constraintEqualToAnchor:layoutGuide.trailingAnchor],
+                             [view.bottomAnchor constraintEqualToAnchor:layoutGuide.bottomAnchor]
+                             ];
+    [NSLayoutConstraint activateConstraints:constraints];
 }
 
 @end

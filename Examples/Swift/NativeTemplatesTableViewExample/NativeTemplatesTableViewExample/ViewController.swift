@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     private let contentCellId = "Content"
 
     private var adLoader: YMANativeAdLoader!
-    private var ads = [YMANativeGenericAd]()
+    private var ads = [YMANativeAd]()
 
     override func viewDidLoad() {
 
@@ -37,15 +37,6 @@ class ViewController: UIViewController {
         adLoader.loadAd(with: nil)
     }
 
-    private func didLoadAd(_ ad: YMANativeGenericAd) {
-        let startIndex = ads.count * adStride
-        ads.append(ad)
-        var indexPaths = [IndexPath]()
-        for i in 0 ..< adStride {
-            indexPaths.append(IndexPath(row: i + startIndex, section: 0))
-        }
-        tableView.insertRows(at: indexPaths, with: .fade)
-    }
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -83,19 +74,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 // MARK: - YMANativeAdLoaderDelegate
 
 extension ViewController: YMANativeAdLoaderDelegate {
-    func nativeAdLoader(_ loader: YMANativeAdLoader!, didLoad ad: YMANativeImageAd) {
-        didLoadAd(ad)
+    func nativeAdLoader(_ loader: YMANativeAdLoader, didLoad ad: YMANativeAd) {
+        let startIndex = ads.count * adStride
+        ads.append(ad)
+        var indexPaths = [IndexPath]()
+        for i in 0 ..< adStride {
+            indexPaths.append(IndexPath(row: i + startIndex, section: 0))
+        }
+        tableView.insertRows(at: indexPaths, with: .fade)
     }
 
-    func nativeAdLoader(_ loader: YMANativeAdLoader!, didLoad ad: YMANativeContentAd) {
-        didLoadAd(ad)
-    }
-
-    func nativeAdLoader(_ loader: YMANativeAdLoader!, didLoad ad: YMANativeAppInstallAd) {
-        didLoadAd(ad)
-    }
-
-    func nativeAdLoader(_ loader: YMANativeAdLoader!, didFailLoadingWithError error: Error) {
+    func nativeAdLoader(_ loader: YMANativeAdLoader, didFailLoadingWithError error: Error) {
         print("Native ad loading error: \(error)")
     }
 }

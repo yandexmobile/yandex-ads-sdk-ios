@@ -8,7 +8,7 @@
 import UIKit
 import YandexMobileAds
 
-class ViewController: UIViewController, YMANativeAdDelegate, YMANativeAdLoaderDelegate {
+class ViewController: UIViewController {
     
     var adLoader: YMANativeAdLoader!
     var bannerView: YMANativeBannerView?
@@ -34,41 +34,15 @@ class ViewController: UIViewController, YMANativeAdDelegate, YMANativeAdLoaderDe
     @IBAction func loadAd() {
         self.adLoader.loadAd(with: nil)
     }
-    
-    func didLoadAd(_ ad: YMANativeGenericAd) {
-        ad.delegate = self
-        self.bannerView?.removeFromSuperview()
-        let bannerView = YMANativeBannerView(frame: CGRect.zero)
-        bannerView.ad = ad
-        self.view.addSubview(bannerView)
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
-        self.bannerView = bannerView
-        
-        if #available(iOS 11.0, *) {
-            displayAdAtBottomOfSafeArea();
-        } else {
-            displayAdAtBottom();
-        }
-    }
-    
+
     func displayAdAtBottom() {
-        let views = ["bannerView" : self.bannerView!]
-        let horizontal = NSLayoutConstraint.constraints(withVisualFormat: "H:|-(10)-[bannerView]-(10)-|",
-                                                        options: [],
-                                                        metrics: nil,
-                                                        views: views)
-        let vertical = NSLayoutConstraint.constraints(withVisualFormat: "V:[bannerView]-(10)-|",
-                                                      options: [],
-                                                      metrics: nil,
-                                                      views: views)
-        self.view.addConstraints(horizontal)
-        self.view.addConstraints(vertical)
-    }
-    
-    @available(iOS 11.0, *)
-    func displayAdAtBottomOfSafeArea() {
-        let bannerView = self.bannerView!
-        let layoutGuide = self.view.safeAreaLayoutGuide
+        guard let bannerView = bannerView else { return }
+
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        var layoutGuide = self.view.layoutMarginsGuide
+        if #available(iOS 11.0, *) {
+            layoutGuide = self.view.safeAreaLayoutGuide
+        }
         let constraints = [
             bannerView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor, constant: 10),
             bannerView.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor, constant: -10),
@@ -76,44 +50,43 @@ class ViewController: UIViewController, YMANativeAdDelegate, YMANativeAdLoaderDe
         ]
         NSLayoutConstraint.activate(constraints)
     }
-    
-    // MARK: - YMANativeAdDelegate
-    
-    func nativeAdLoader(_ loader: YMANativeAdLoader!, didLoad ad: YMANativeAppInstallAd) {
-        print("Loaded App Install ad")
-        didLoadAd(ad)
-    }
-    
-    func nativeAdLoader(_ loader: YMANativeAdLoader!, didLoad ad: YMANativeContentAd) {
-        print("Loaded Content ad")
-        didLoadAd(ad)
-    }
+}
 
-    func nativeAdLoader(_ loader: YMANativeAdLoader!, didLoad ad: YMANativeImageAd) {
-        print("Loaded Image ad")
-        didLoadAd(ad)
+extension ViewController: YMANativeAdLoaderDelegate {
+    
+    func nativeAdLoader(_ loader: YMANativeAdLoader, didLoad ad: YMANativeAd) {
+        self.bannerView?.removeFromSuperview()
+        ad.delegate = self
+
+        let bannerView = YMANativeBannerView()
+        bannerView.ad = ad
+        self.view.addSubview(bannerView)
+        self.bannerView = bannerView
+        displayAdAtBottom();
     }
     
-    func nativeAdLoader(_ loader: YMANativeAdLoader!, didFailLoadingWithError error: Error) {
+    func nativeAdLoader(_ loader: YMANativeAdLoader, didFailLoadingWithError error: Error) {
         print("Native ad loading error: \(error)")
     }
-    
-    // MARK: - YMANativeAdLoaderDelegate
+
+}
+
+extension ViewController: YMANativeAdDelegate {
     
     // Uncomment to open web links in in-app browser
-//    func viewControllerForPresentingModalView() -> UIViewController {
+//    func viewControllerForPresentingModalView() -> UIViewController? {
 //        return self
 //    }
     
-    func nativeAdWillLeaveApplication(_ ad: Any!) {
+    func nativeAdWillLeaveApplication(_ ad: YMANativeAd) {
         print("Will leave application")
     }
     
-    func nativeAd(_ ad: Any!, willPresentScreen viewController: UIViewController?) {
+    func nativeAd(_ ad: YMANativeAd, willPresentScreen viewController: UIViewController?) {
         print("Will present screen")
     }
     
-    func nativeAd(_ ad: Any!, didDismissScreen viewController: UIViewController?) {
+    func nativeAd(_ ad: YMANativeAd, didDismissScreen viewController: UIViewController?) {
         print("Did dismiss screen")
     }
     

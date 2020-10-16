@@ -16,21 +16,15 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-
-    YMAAdSize *adSize = [YMAAdSize stickySizeWithContainerWidth:[self containerWidth]];
-    // Replace demo R-M-DEMO-adaptive-sticky with actual Block ID
-    self.adView = [[YMAAdView alloc] initWithBlockID:@"R-M-DEMO-adaptive-sticky"
-                                              adSize:adSize
-                                            delegate:self];
-    [self addAdView];
-}
-
 - (IBAction)loadAd:(UIButton *)sender
 {
-    self.adView.hidden = YES;
+    [self.adView removeFromSuperview];
+    
+    YMAAdSize *adSize = [YMAAdSize stickySizeWithContainerWidth:[self containerWidth]];
+    // Replace demo R-M-DEMO-adaptive-sticky with actual Block ID
+    self.adView = [[YMAAdView alloc] initWithBlockID:@"R-M-DEMO-adaptive-sticky" adSize:adSize];
+    self.adView.delegate = self;
+    [self addAdView];
     [self.adView loadAd];
 }
 
@@ -45,21 +39,9 @@
 
 - (void)addAdView
 {
-    self.adView.hidden = YES;
-    self.adView.translatesAutoresizingMaskIntoConstraints = false;
+    self.adView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:self.adView];
-    UIView *adView = self.adView;
-    NSDictionary<NSString *, UIView *> *views = NSDictionaryOfVariableBindings(adView);
-    NSArray<NSLayoutConstraint *> *horizontal = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[adView]|"
-                                                                                        options:0
-                                                                                        metrics:nil
-                                                                                          views:views];
-    NSArray<NSLayoutConstraint *> *vertical = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[adView]-|"
-                                                                                      options:0
-                                                                                      metrics:nil
-                                                                                        views:views];
-    [self.view addConstraints:horizontal];
-    [self.view addConstraints:vertical];
+    [self.adView displayAtBottomInView:self.view];
 }
 
 #pragma mark - YMAAdViewDelegate
@@ -67,8 +49,7 @@
 - (void)adViewDidLoad:(YMAAdView *)adView
 {
     NSLog(@"Ad loaded");
-    adView.hidden = NO;
-}   
+}
 
 - (void)adViewDidFailLoading:(YMAAdView *)adView error:(NSError *)error
 {

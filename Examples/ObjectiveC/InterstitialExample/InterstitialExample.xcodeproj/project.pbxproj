@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5F166E21CABA4B3C0C9C9FA3 /* libPods-InterstitialExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2998A77860D3F3F134F11949 /* libPods-InterstitialExample.a */; };
+		B3290EB42524F9BD0019D71E /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3290EB32524F9BD0019D71E /* CoreFoundation.framework */; };
 		F6CC1EFB1B8DD9B300770F3A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CC1EFA1B8DD9B300770F3A /* main.m */; };
 		F6CC1EFE1B8DD9B300770F3A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CC1EFD1B8DD9B300770F3A /* AppDelegate.m */; };
 		F6CC1F011B8DD9B300770F3A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CC1F001B8DD9B300770F3A /* ViewController.m */; };
@@ -20,6 +21,7 @@
 		2998A77860D3F3F134F11949 /* libPods-InterstitialExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InterstitialExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		603D92404E98E33B0623BD5C /* Pods-InterstitialExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterstitialExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-InterstitialExample/Pods-InterstitialExample.release.xcconfig"; sourceTree = "<group>"; };
 		60AD900780D1564CB77AD103 /* Pods-InterstitialExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InterstitialExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InterstitialExample/Pods-InterstitialExample.debug.xcconfig"; sourceTree = "<group>"; };
+		B3290EB32524F9BD0019D71E /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		F6CC1EF51B8DD9B300770F3A /* InterstitialExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterstitialExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6CC1EF91B8DD9B300770F3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6CC1EFA1B8DD9B300770F3A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -37,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3290EB42524F9BD0019D71E /* CoreFoundation.framework in Frameworks */,
 				5F166E21CABA4B3C0C9C9FA3 /* libPods-InterstitialExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -47,6 +50,7 @@
 		0D3ADAB61F21E1E0C415CBA2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B3290EB32524F9BD0019D71E /* CoreFoundation.framework */,
 				2998A77860D3F3F134F11949 /* libPods-InterstitialExample.a */,
 			);
 			name = Frameworks;
@@ -130,7 +134,7 @@
 		F6CC1EED1B8DD9B300770F3A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = Yandex;
 				TargetAttributes = {
 					F6CC1EF41B8DD9B300770F3A = {
@@ -246,6 +250,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -271,7 +276,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -302,6 +307,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -320,7 +326,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -336,6 +342,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = InterstitialExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yandex.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -350,6 +357,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = InterstitialExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yandex.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -90,12 +90,12 @@ static int const kBlockIDIndex = 1;
     [self.presentedViewController presentViewController:alertController animated:YES completion:nil];
 }
 
-- (void)rewardedAdDidLoadAd:(YMARewardedAd *)rewardedAd
+- (void)rewardedAdDidLoad:(YMARewardedAd *)rewardedAd
 {
     NSLog(@"Rewarded ad loaded");
 }
 
-- (void)rewardedAdDidFailToLoadAd:(YMARewardedAd *)rewardedAd error:(NSError *)error
+- (void)rewardedAdDidFailToLoad:(YMARewardedAd *)rewardedAd error:(NSError *)error
 {
     NSLog(@"Loading failed. Error: %@", error);
 }
@@ -105,7 +105,7 @@ static int const kBlockIDIndex = 1;
     NSLog(@"Rewarded ad will leave application");
 }
 
-- (void)rewardedAdDidFailToPresentAd:(YMARewardedAd *)rewardedAd error:(NSError *)error
+- (void)rewardedAdDidFailToPresent:(YMARewardedAd *)rewardedAd error:(NSError *)error
 {
     NSLog(@"Failed to present rewarded ad. Error: %@", error);
 }
@@ -144,12 +144,12 @@ static int const kBlockIDIndex = 1;
 
 #pragma mark - UIPickerViewDataSource
 
-- (NSInteger)numberOfComponentsInPickerView:(nonnull UIPickerView *)pickerView
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
     return 1;
 }
 
-- (NSInteger)pickerView:(nonnull UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
     return self.networks.count;
 }

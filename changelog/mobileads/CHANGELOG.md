@@ -1,6 +1,23 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# Version 3.0.0
+
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/205984/YandexMobileAds-3.0.0-ios-23abd61e-78d7-4f45-a93d-f4f4df5642f4.zip)
+
+#### Added
+* Added ability to bind native ad with `YMANativeAdView`
+
+#### Removed
+* Removed ability to use imageView in native ads binding. Use mediaView instead
+* Removed classes and protocols for native ad type specific loading and binding. Use `YMANativeAd` and `YMANativeAdView` instead
+* Removed deprecated VAST API
+* Removed deprecated method for enabling logging
+
+#### Updated
+* Renamed `YMAInterstitialController` to `YMAInterstitialAd`
+* Renamed delegate's methods for native ad loader, native ads, interstitial, rewarded, and banner ads
+
 # Version 2.20.0
 
 SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/212922/YandexMobileAds-2.20.0-ios-cf2b2f14-5312-4113-ab68-668fd59e77ec.zip)

@@ -35,7 +35,7 @@ class ViewController: UIViewController {
     @IBOutlet private var showButton: UIButton!
     @IBOutlet private var pickerView: UIPickerView!
 
-    private var interstitialAd: YMAInterstitialController?
+    private var interstitialAd: YMAInterstitialAd?
 
     @IBAction func loadAd(_ sender: UIButton) {
         let selectedIndex = pickerView.selectedRow(inComponent: 0)
@@ -53,30 +53,30 @@ class ViewController: UIViewController {
          Yandex: yandexBlockID
          */
         let blockID = blockIDs[selectedIndex].blockID
-        interstitialAd = YMAInterstitialController(blockID: blockID)
+        interstitialAd = YMAInterstitialAd(blockID: blockID)
         interstitialAd?.delegate = self
         interstitialAd?.load()
     }
 
     @IBAction func presentAd(_ sender: UIButton) {
-        interstitialAd?.presentInterstitial(from: self)
+        interstitialAd?.present(from: self)
     }
 }
 
 // MARK: - YMAInterstitialDelegate
 
-extension ViewController: YMAInterstitialDelegate {
-    func interstitialDidLoadAd(_ interstitial: YMAInterstitialController!) {
+extension ViewController: YMAInterstitialAdDelegate {
+    func interstitialAdDidLoad(_ interstitial: YMAInterstitialAd) {
         print("Interstitial did load ad")
         showButton.isUserInteractionEnabled = true
     }
 
-    func interstitialDidFail(toPresentAd interstitial: YMAInterstitialController!, error: Error!) {
-        print("Interstitial did fail to present ad with error: \(String(describing: error))")
+    func interstitialAdDidFail(toLoad interstitialAd: YMAInterstitialAd, error: Error) {
+        print("Interstitial did fail to load ad with error: \(String(describing: error))")
     }
 
-    func interstitialDidFail(toLoadAd interstitial: YMAInterstitialController!, error: Error!) {
-        print("Interstitial did fail to load ad with error: \(String(describing: error))")
+    func interstitialAdDidFail(toPresent interstitialAd: YMAInterstitialAd, error: Error) {
+        print("Interstitial did fail to present ad with error: \(String(describing: error))")
     }
 }
 

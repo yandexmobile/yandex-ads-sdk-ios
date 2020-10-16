@@ -53,7 +53,9 @@ static NSString *const kNativeBannerCellIdentifier = @"NativeBannerCellIdentifie
     [self.adLoader loadAdWithRequest:nil];
 }
 
-- (void)didLoadAd:(id<YMANativeGenericAd>)ad
+#pragma mark - YMANativeAdLoaderDelegate
+
+- (void)nativeAdLoader:(YMANativeAdLoader *)loader didLoadAd:(id<YMANativeAd>)ad
 {
     ad.delegate = self;
     [self.ads addObject:ad];
@@ -65,24 +67,7 @@ static NSString *const kNativeBannerCellIdentifier = @"NativeBannerCellIdentifie
     [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
 }
 
-#pragma mark - YMANativeAdLoaderDelegate
-
-- (void)nativeAdLoader:(YMANativeAdLoader *)loader didLoadAppInstallAd:(id<YMANativeAppInstallAd>)ad
-{
-    [self didLoadAd:ad];
-}
-
-- (void)nativeAdLoader:(YMANativeAdLoader *)loader didLoadContentAd:(id<YMANativeContentAd>)ad
-{
-    [self didLoadAd:ad];
-}
-
-- (void)nativeAdLoader:(YMANativeAdLoader *)loader didLoadImageAd:(id<YMANativeImageAd>)ad
-{
-    [self didLoadAd:ad];
-}
-
-- (void)nativeAdLoader:(null_unspecified YMANativeAdLoader *)loader didFailLoadingWithError:(NSError * __nonnull)error
+- (void)nativeAdLoader:(YMANativeAdLoader *)loader didFailLoadingWithError:(NSError *)error
 {
     NSLog(@"Native ad loading error: %@", error);
 }
@@ -92,7 +77,7 @@ static NSString *const kNativeBannerCellIdentifier = @"NativeBannerCellIdentifie
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row % kAdStride == 0) {
-        id<YMANativeGenericAd> ad = self.ads[indexPath.row / kAdStride];
+        id<YMANativeAd> ad = self.ads[indexPath.row / kAdStride];
         CGFloat nativeContentHeight =
             [YMANativeBannerView heightWithAd:ad
                                         width:CGRectGetWidth(tableView.frame) - kNativeBannerInsets
@@ -113,7 +98,7 @@ static NSString *const kNativeBannerCellIdentifier = @"NativeBannerCellIdentifie
 {
     UITableViewCell *cell = nil;
     if (indexPath.row % kAdStride == 0) {
-        id<YMANativeGenericAd> ad = self.ads[indexPath.row / kAdStride];
+        id<YMANativeAd> ad = self.ads[indexPath.row / kAdStride];
         NativeBannerTableViewCell *adCell =
             [tableView dequeueReusableCellWithIdentifier:kNativeBannerCellIdentifier forIndexPath:indexPath];
         adCell.ad = ad;
@@ -137,17 +122,17 @@ static NSString *const kNativeBannerCellIdentifier = @"NativeBannerCellIdentifie
 //    return self;
 //}
 
-- (void)nativeAdWillLeaveApplication:(null_unspecified id)ad
+- (void)nativeAdWillLeaveApplication:(id<YMANativeAd>)ad
 {
     NSLog(@"Will leave application");
 }
 
-- (void)nativeAd:(null_unspecified id)ad willPresentScreen:(nullable UIViewController *)viewController
+- (void)nativeAd:(id<YMANativeAd>)ad willPresentScreen:(UIViewController *)viewController
 {
     NSLog(@"Will present screen");
 }
 
-- (void)nativeAd:(null_unspecified id)ad didDismissScreen:(nullable UIViewController *)viewController
+- (void)nativeAd:(id<YMANativeAd>)ad didDismissScreen:(UIViewController *)viewController
 {
     NSLog(@"Did dismiss screen");
 }

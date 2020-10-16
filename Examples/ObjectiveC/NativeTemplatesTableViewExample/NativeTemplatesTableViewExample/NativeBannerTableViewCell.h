@@ -7,12 +7,12 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol YMANativeGenericAd;
+@protocol YMANativeAd;
 @class YMANativeBannerView;
 
 @interface NativeBannerTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) id<YMANativeGenericAd> ad;
+@property (nonatomic, strong) id<YMANativeAd> ad;
 @property (nonatomic, weak, readonly) YMANativeBannerView *adView;
 
 @end

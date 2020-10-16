@@ -8,9 +8,9 @@
 import UIKit
 import YandexMobileAds
 
-class ViewController: UIViewController, YMAInterstitialDelegate {
+class ViewController: UIViewController {
     
-    var interstitialController: YMAInterstitialController!
+    var interstitialAd: YMAInterstitialAd!
     
     @IBAction func loadInterstitial() {
         // Replace demo R-M-DEMO-240x400-context with actual Block ID
@@ -20,51 +20,51 @@ class ViewController: UIViewController, YMAInterstitialDelegate {
         // R-M-DEMO-320x480
         // R-M-DEMO-480x320
         // R-M-DEMO-video-interstitial
-        self.interstitialController = YMAInterstitialController(blockID: "R-M-DEMO-240x400-context")
-        self.interstitialController.delegate = self;
-        self.interstitialController.load()
+        self.interstitialAd = YMAInterstitialAd(blockID: "R-M-DEMO-240x400-context")
+        self.interstitialAd.delegate = self;
+        self.interstitialAd.load()
     }
     
     @IBAction func presentInterstitial() {
-        self.interstitialController.presentInterstitial(from: self)
+        self.interstitialAd.present(from: self)
     }
-    
-    // MARK: - YMAInterstitialDelegate
-    
-    func interstitialDidLoadAd(_ interstitial: YMAInterstitialController!) {
-        print("Ad loaded")
-    }
-    
-    func interstitialDidFail(toLoadAd interstitial: YMAInterstitialController!, error: Error!) {
-        print("Loading failed. Error: \(error!)")
-    }
-    
-    func interstitialWillLeaveApplication(_ interstitial: YMAInterstitialController!) {
-        print("Will leave application")
-    }
-    
-    func interstitialDidFail(toPresentAd interstitial: YMAInterstitialController!, error: Error!) {
-        print("Failed to present interstitial. Error: \(error!)")
-    }
-    
-    func interstitialWillAppear(_ interstitial: YMAInterstitialController!) {
-        print("Interstitial will appear")
-    }
-    
-    func interstitialDidAppear(_ interstitial: YMAInterstitialController!) {
-        print("Interstitial did appear")
-    }
-    
-    func interstitialWillDisappear(_ interstitial: YMAInterstitialController!) {
-        print("Interstitial will disappear")
-    }
-    
-    func interstitialDidDisappear(_ interstitial: YMAInterstitialController!) {
-        print("Interstitial did disappear")
-    }
-    
-    func interstitialWillPresentScreen(_ webBrowser: UIViewController!) {
-        print("Interstitial will present screen")
-    }
+
 }
 
+extension ViewController: YMAInterstitialAdDelegate {
+    func interstitialAdDidLoad(_ interstitialAd: YMAInterstitialAd) {
+        print("Ad loaded")
+    }
+
+    func interstitialAdDidFail(toLoad interstitialAd: YMAInterstitialAd, error: Error) {
+        print("Loading failed. Error: \(error)")
+    }
+
+    func interstitialAdWillLeaveApplication(_ interstitialAd: YMAInterstitialAd) {
+        print("Will leave application")
+    }
+
+    func interstitialAdDidFail(toPresent interstitialAd: YMAInterstitialAd, error: Error) {
+        print("Failed to present interstitial. Error: \(error)")
+    }
+
+    func interstitialAdWillAppear(_ interstitialAd: YMAInterstitialAd) {
+        print("Interstitial ad will appear")
+    }
+
+    func interstitialAdDidAppear(_ interstitialAd: YMAInterstitialAd) {
+        print("Interstitial ad did appear")
+    }
+
+    func interstitialAdWillDisappear(_ interstitialAd: YMAInterstitialAd) {
+        print("Interstitial ad will disappear")
+    }
+
+    func interstitialAdDidDisappear(_ interstitialAd: YMAInterstitialAd) {
+        print("Interstitial ad did disappear")
+    }
+
+    func interstitialAd(_ interstitialAd: YMAInterstitialAd, willPresentScreen webBrowser: UIViewController?) {
+        print("Interstitial ad will present screen")
+    }
+}

@@ -135,7 +135,7 @@
 		F654F8151F2B789500106F2C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = test;
 				TargetAttributes = {
 					F654F81C1F2B789500106F2C = {
@@ -183,7 +183,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MobileMediationInterstitialExample/Pods-MobileMediationInterstitialExample-resources.sh",
-				"${PODS_ROOT}/AppLovinSDK/applovin-ios-sdk-6.13.4/AppLovinSDKResources.bundle",
+				"${PODS_ROOT}/AppLovinSDK/applovin-ios-sdk-6.14.5/AppLovinSDKResources.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/StartAppSDK/StartAppSDK.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/mopub-ios-sdk/MoPubResources.bundle",
 			);
@@ -277,6 +277,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -335,6 +336,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

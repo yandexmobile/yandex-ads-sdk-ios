@@ -21,9 +21,9 @@ static NSString *const kYandexBlockID = @"adf-279013/975873";
 static int const kNetworkNameIndex = 0;
 static int const kBlockIDIndex = 1;
 
-@interface ViewController () <YMAInterstitialDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
+@interface ViewController () <YMAInterstitialAdDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 
-@property (nonatomic, strong) YMAInterstitialController *interstitialController;
+@property (nonatomic, strong) YMAInterstitialAd *interstitialAd;
 @property (nonatomic, strong) IBOutlet UIPickerView *pickerView;
 @property (nonatomic, copy, readonly) NSArray<NSArray<NSString *> *> *networks;
 
@@ -67,59 +67,59 @@ static int const kBlockIDIndex = 1;
      Yandex: kYandexBlockID
      */
     NSString *blockID = self.networks[selectedIndex][kBlockIDIndex];
-    self.interstitialController = [[YMAInterstitialController alloc] initWithBlockID:blockID];
-    self.interstitialController.delegate = self;
-    [self.interstitialController load];
+    self.interstitialAd = [[YMAInterstitialAd alloc] initWithBlockID:blockID];
+    self.interstitialAd.delegate = self;
+    [self.interstitialAd load];
 }
 
 - (IBAction)presentInterstitial
 {
-    [self.interstitialController presentInterstitialFromViewController:self];
+    [self.interstitialAd presentFromViewController:self];
 }
 
-#pragma mark - YMAInterstitialDelegate
+#pragma mark - YMAInterstitialAdDelegate
 
-- (void)interstitialDidLoadAd:(YMAInterstitialController *)interstitial
+- (void)interstitialAdDidLoad:(YMAInterstitialAd *)interstitialAd
 {
     NSLog(@"Loaded");
 }
 
-- (void)interstitialDidFailToLoadAd:(YMAInterstitialController *)interstitial error:(NSError *)error
+- (void)interstitialAdDidFailToLoad:(YMAInterstitialAd *)interstitialAd error:(NSError *)error
 {
     NSLog(@"Loading failed. Error: %@", error);
 }
 
-- (void)interstitialWillLeaveApplication:(YMAInterstitialController *)interstitial
+- (void)interstitialAdWillLeaveApplication:(YMAInterstitialAd *)interstitialAd
 {
     NSLog(@"Will leave application");
 }
 
-- (void)interstitialDidFailToPresentAd:(YMAInterstitialController *)interstitial error:(NSError *)error
+- (void)interstitialAdDidFailToPresent:(YMAInterstitialAd *)interstitialAd error:(NSError *)error
 {
     NSLog(@"Failed to present interstitial. Error: %@", error);
 }
 
-- (void)interstitialWillAppear:(YMAInterstitialController *)interstitial
+- (void)interstitialAdWillAppear:(YMAInterstitialAd *)interstitialAd
 {
     NSLog(@"Interstitial will appear");
 }
 
-- (void)interstitialDidAppear:(YMAInterstitialController *)interstitial
+- (void)interstitialAdDidAppear:(YMAInterstitialAd *)interstitialAd
 {
     NSLog(@"Interstitial did appear");
 }
 
-- (void)interstitialWillDisappear:(YMAInterstitialController *)interstitial
+- (void)interstitialAdWillDisappear:(YMAInterstitialAd *)interstitialAd
 {
     NSLog(@"Interstitial will disappear");
 }
 
-- (void)interstitialDidDisappear:(YMAInterstitialController *)interstitial
+- (void)interstitialAdDidDisappear:(YMAInterstitialAd *)interstitialAd
 {
     NSLog(@"Interstitial did disappear");
 }
 
-- (void)interstitialWillPresentScreen:(UIViewController *)webBrowser
+- (void)interstitialAd:(YMAInterstitialAd *)interstitialAd willPresentScreen:(UIViewController *)webBrowser
 {
     NSLog(@"Interstitial will present screen");
 }
@@ -133,12 +133,12 @@ static int const kBlockIDIndex = 1;
 
 #pragma mark - UIPickerViewDataSource
 
-- (NSInteger)numberOfComponentsInPickerView:(nonnull UIPickerView *)pickerView
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
     return 1;
 }
 
-- (NSInteger)pickerView:(nonnull UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
     return self.networks.count;
 }
