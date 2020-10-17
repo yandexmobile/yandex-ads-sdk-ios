@@ -43,12 +43,12 @@
     [self.presentedViewController presentViewController:alertController animated:YES completion:nil];
 }
 
-- (void)rewardedAdDidLoadAd:(YMARewardedAd *)rewardedAd
+- (void)rewardedAdDidLoad:(YMARewardedAd *)rewardedAd
 {
     NSLog(@"Rewarded ad loaded");
 }
 
-- (void)rewardedAdDidFailToLoadAd:(YMARewardedAd *)rewardedAd error:(NSError *)error
+- (void)rewardedAdDidFailToLoad:(YMARewardedAd *)rewardedAd error:(NSError *)error
 {
     NSLog(@"Loading failed. Error: %@", error);
 }

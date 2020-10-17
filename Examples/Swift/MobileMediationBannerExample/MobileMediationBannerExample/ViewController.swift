@@ -46,7 +46,8 @@ class ViewController: UIViewController {
          */
         let blockID = blockIDs[selectedBlockIndex].blockId
         adView?.removeFromSuperview()
-        adView = YMAAdView(blockID: blockID, adSize: adSize, delegate: self)
+        adView = YMAAdView(blockID: blockID, adSize: adSize)
+        adView?.delegate = self
         adView?.loadAd()
     }
 }
@@ -54,12 +55,12 @@ class ViewController: UIViewController {
 // MARK: - YMAAdViewDelegate
 
 extension ViewController: YMAAdViewDelegate {
-    func adViewDidLoad(_ adView: YMAAdView!) {
+    func adViewDidLoad(_ adView: YMAAdView) {
         print("Ad loaded")
         adView.displayAtBottom(in: container)
     }
 
-    func adViewDidFailLoading(_ adView: YMAAdView!, error: Error!) {
+    func adViewDidFailLoading(_ adView: YMAAdView, error: Error) {
         print("Ad failed loading. Error: \(String(describing: error))")
     }
 }

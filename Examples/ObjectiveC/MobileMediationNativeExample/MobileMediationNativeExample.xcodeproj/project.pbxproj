@@ -7,25 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B369DDF025262AAD004E8392 /* NativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B369DDEE25262AAD004E8392 /* NativeAdView.xib */; };
+		B369DDF125262AAD004E8392 /* NativeAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = B369DDEF25262AAD004E8392 /* NativeAdView.m */; };
 		B3946C2220456AF50081899C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3946C2120456AF50081899C /* AppDelegate.m */; };
 		B3946C2520456AF50081899C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3946C2420456AF50081899C /* ViewController.m */; };
 		B3946C2820456AF50081899C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3946C2620456AF50081899C /* Main.storyboard */; };
 		B3946C2D20456AF50081899C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3946C2B20456AF50081899C /* LaunchScreen.storyboard */; };
 		B3946C3A20457DEE0081899C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3946C3920457DEE0081899C /* Images.xcassets */; };
-		B3946C4A204583D00081899C /* NativeContentAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3946C45204583CF0081899C /* NativeContentAdView.m */; };
-		B3946C4B204583D00081899C /* NativeAssetsComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = B3946C46204583CF0081899C /* NativeAssetsComposer.m */; };
-		B3946C4C204583D00081899C /* NativeAppInstallAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3946C47204583CF0081899C /* NativeAppInstallAdView.m */; };
 		B3946C50204584540081899C /* StarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3946C4E204584530081899C /* StarRatingView.m */; };
 		B3946C51204584540081899C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3946C4F204584540081899C /* Assets.xcassets */; };
 		B3FF432B23F6B94400D87C74 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FF432A23F6B94400D87C74 /* main.m */; };
-		D4351D1B24D2C92600A4896E /* NativeAdViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = D4351D1A24D2C92600A4896E /* NativeAdViewFactory.m */; };
-		DFD2A9B1249370C000FB3290 /* NativeImageAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD2A9B0249370C000FB3290 /* NativeImageAdView.m */; };
 		FEC67E850C1722D613C20C45 /* libPods-MobileMediationNativeExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECEBB0DE170E0DCB8F582E4D /* libPods-MobileMediationNativeExample.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6A843E321EE562BEECF28B69 /* Pods-MobileMediationNativeExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileMediationNativeExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MobileMediationNativeExample/Pods-MobileMediationNativeExample.debug.xcconfig"; sourceTree = "<group>"; };
 		97E5BDA9BE0FEB566F3BE573 /* Pods-AdFoxMediationNativeExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdFoxMediationNativeExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdFoxMediationNativeExample/Pods-AdFoxMediationNativeExample.debug.xcconfig"; sourceTree = "<group>"; };
+		B369DDED25262AAD004E8392 /* NativeAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NativeAdView.h; path = ../../Common/NativeAdView.h; sourceTree = "<group>"; };
+		B369DDEE25262AAD004E8392 /* NativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NativeAdView.xib; path = ../../Common/NativeAdView.xib; sourceTree = "<group>"; };
+		B369DDEF25262AAD004E8392 /* NativeAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NativeAdView.m; path = ../../Common/NativeAdView.m; sourceTree = "<group>"; };
 		B3946C1D20456AF50081899C /* MobileMediationNativeExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileMediationNativeExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3946C2020456AF50081899C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B3946C2120456AF50081899C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -35,21 +35,11 @@
 		B3946C2C20456AF50081899C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3946C2E20456AF50081899C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3946C3920457DEE0081899C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		B3946C44204583CE0081899C /* NativeAppInstallAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NativeAppInstallAdView.h; path = ../../Common/NativeAppInstallAdView.h; sourceTree = "<group>"; };
-		B3946C45204583CF0081899C /* NativeContentAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NativeContentAdView.m; path = ../../Common/NativeContentAdView.m; sourceTree = "<group>"; };
-		B3946C46204583CF0081899C /* NativeAssetsComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NativeAssetsComposer.m; path = ../../Common/NativeAssetsComposer.m; sourceTree = "<group>"; };
-		B3946C47204583CF0081899C /* NativeAppInstallAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NativeAppInstallAdView.m; path = ../../Common/NativeAppInstallAdView.m; sourceTree = "<group>"; };
-		B3946C48204583CF0081899C /* NativeAssetsComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NativeAssetsComposer.h; path = ../../Common/NativeAssetsComposer.h; sourceTree = "<group>"; };
-		B3946C49204583CF0081899C /* NativeContentAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NativeContentAdView.h; path = ../../Common/NativeContentAdView.h; sourceTree = "<group>"; };
 		B3946C4D204584530081899C /* StarRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StarRatingView.h; path = ../../Common/StarRatingView.h; sourceTree = "<group>"; };
 		B3946C4E204584530081899C /* StarRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StarRatingView.m; path = ../../Common/StarRatingView.m; sourceTree = "<group>"; };
 		B3946C4F204584540081899C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Common/Assets.xcassets; sourceTree = "<group>"; };
 		B3FF432A23F6B94400D87C74 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D4351D1924D2C92600A4896E /* NativeAdViewFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeAdViewFactory.h; sourceTree = "<group>"; };
-		D4351D1A24D2C92600A4896E /* NativeAdViewFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeAdViewFactory.m; sourceTree = "<group>"; };
 		DE2B6B55086834AEB472C008 /* Pods-MobileMediationNativeExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileMediationNativeExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileMediationNativeExample/Pods-MobileMediationNativeExample.release.xcconfig"; sourceTree = "<group>"; };
-		DFD2A9AF249370C000FB3290 /* NativeImageAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NativeImageAdView.h; path = ../../Common/NativeImageAdView.h; sourceTree = "<group>"; };
-		DFD2A9B0249370C000FB3290 /* NativeImageAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NativeImageAdView.m; path = ../../Common/NativeImageAdView.m; sourceTree = "<group>"; };
 		ECEBB0DE170E0DCB8F582E4D /* libPods-MobileMediationNativeExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobileMediationNativeExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0D97DDAB2FB67441581DB20 /* Pods-AdFoxMediationNativeExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdFoxMediationNativeExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdFoxMediationNativeExample/Pods-AdFoxMediationNativeExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,22 +91,15 @@
 				B3946C4E204584530081899C /* StarRatingView.m */,
 				B3946C2020456AF50081899C /* AppDelegate.h */,
 				B3946C2120456AF50081899C /* AppDelegate.m */,
-				B3946C44204583CE0081899C /* NativeAppInstallAdView.h */,
-				B3946C47204583CF0081899C /* NativeAppInstallAdView.m */,
-				B3946C48204583CF0081899C /* NativeAssetsComposer.h */,
-				B3946C46204583CF0081899C /* NativeAssetsComposer.m */,
-				B3946C49204583CF0081899C /* NativeContentAdView.h */,
-				B3946C45204583CF0081899C /* NativeContentAdView.m */,
-				DFD2A9AF249370C000FB3290 /* NativeImageAdView.h */,
-				DFD2A9B0249370C000FB3290 /* NativeImageAdView.m */,
 				B3946C2320456AF50081899C /* ViewController.h */,
 				B3946C2420456AF50081899C /* ViewController.m */,
 				B3946C2620456AF50081899C /* Main.storyboard */,
 				B3946C2B20456AF50081899C /* LaunchScreen.storyboard */,
+				B369DDED25262AAD004E8392 /* NativeAdView.h */,
+				B369DDEF25262AAD004E8392 /* NativeAdView.m */,
+				B369DDEE25262AAD004E8392 /* NativeAdView.xib */,
 				B3946C3920457DEE0081899C /* Images.xcassets */,
 				B3946C2E20456AF50081899C /* Info.plist */,
-				D4351D1924D2C92600A4896E /* NativeAdViewFactory.h */,
-				D4351D1A24D2C92600A4896E /* NativeAdViewFactory.m */,
 			);
 			path = MobileMediationNativeExample;
 			sourceTree = "<group>";
@@ -160,7 +143,7 @@
 		B3946C1520456AF50081899C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1200;
 				TargetAttributes = {
 					B3946C1C20456AF50081899C = {
 						CreatedOnToolsVersion = 9.2;
@@ -193,6 +176,7 @@
 			files = (
 				B3946C3A20457DEE0081899C /* Images.xcassets in Resources */,
 				B3946C2D20456AF50081899C /* LaunchScreen.storyboard in Resources */,
+				B369DDF025262AAD004E8392 /* NativeAdView.xib in Resources */,
 				B3946C2820456AF50081899C /* Main.storyboard in Resources */,
 				B3946C51204584540081899C /* Assets.xcassets in Resources */,
 			);
@@ -244,12 +228,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFD2A9B1249370C000FB3290 /* NativeImageAdView.m in Sources */,
-				D4351D1B24D2C92600A4896E /* NativeAdViewFactory.m in Sources */,
-				B3946C4C204583D00081899C /* NativeAppInstallAdView.m in Sources */,
+				B369DDF125262AAD004E8392 /* NativeAdView.m in Sources */,
 				B3946C2520456AF50081899C /* ViewController.m in Sources */,
-				B3946C4B204583D00081899C /* NativeAssetsComposer.m in Sources */,
-				B3946C4A204583D00081899C /* NativeContentAdView.m in Sources */,
 				B3946C2220456AF50081899C /* AppDelegate.m in Sources */,
 				B3FF432B23F6B94400D87C74 /* main.m in Sources */,
 				B3946C50204584540081899C /* StarRatingView.m in Sources */,
@@ -303,6 +283,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -360,6 +341,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

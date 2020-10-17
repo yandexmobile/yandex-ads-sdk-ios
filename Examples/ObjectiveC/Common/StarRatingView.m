@@ -11,7 +11,6 @@ static CGFloat const kStarRatingMargin = 2.f;
 
 @interface StarRatingView ()
 
-@property (nonatomic, strong) UIImage *starImage;
 @property (nonatomic, strong) NSNumber *rating;
 @property (nonatomic, copy) NSArray *starViews;
 @property (nonatomic, copy) NSArray *starConstraints;
@@ -31,7 +30,7 @@ static CGFloat const kStarRatingMargin = 2.f;
 
 - (void)setRating:(nullable NSNumber *)rating
 {
-    if ([_rating isEqualToNumber:rating] == NO) {
+    if ([_rating isEqual:rating] == NO) {
         _rating = rating;
         [self update];
     }

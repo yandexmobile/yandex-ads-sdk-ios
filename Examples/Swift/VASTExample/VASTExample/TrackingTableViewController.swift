@@ -71,7 +71,7 @@ class TrackingTableViewController: UITableViewController {
             let action = trackingEvents[adID]![indexPath.row]
             YMAVASTTracker.trackAdEvent(ad, eventName: action)
         } else {
-            let creative = ad.creatives[indexPath.section - 1] as! YMACreative
+            let creative = ad.creatives[indexPath.section - 1]
             let action = trackingEvents[creativeID]![indexPath.row]
             YMAVASTTracker.trackCreativeEvent(creative, eventName: action)
         }

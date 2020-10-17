@@ -8,7 +8,7 @@
 import UIKit
 import YandexMobileAds
 
-class ViewController: UIViewController, YMARewardedAdDelegate {
+class ViewController: UIViewController {
     
     var rewardedAd: YMARewardedAd!
     
@@ -22,10 +22,10 @@ class ViewController: UIViewController, YMARewardedAdDelegate {
     @IBAction func presentAd() {
         self.rewardedAd.present(from: self)
     }
-    
-    // MARK: - YMARewardedAdDelegate
-    
-    func rewardedAd(_ rewardedAd: YMARewardedAd!, didReward reward: YMAReward!) {
+}
+
+extension ViewController: YMARewardedAdDelegate {
+    func rewardedAd(_ rewardedAd: YMARewardedAd, didReward reward: YMAReward) {
         let message = "Rewarded ad did reward: \(reward.amount) \(reward.type)"
         let alertController = UIAlertController(title: "Reward", message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.cancel, handler: nil))
@@ -33,39 +33,39 @@ class ViewController: UIViewController, YMARewardedAdDelegate {
         print(message)
     }
     
-    func rewardedAdDidLoad(_ rewardedAd: YMARewardedAd!) {
+    func rewardedAdDidLoad(_ rewardedAd: YMARewardedAd) {
         print("Rewarded ad loaded")
     }
     
-    func rewardedAdDidFail(toLoad rewardedAd: YMARewardedAd!, error: Error!) {
+    func rewardedAdDidFail(toLoad rewardedAd: YMARewardedAd, error: Error) {
         print("Loading failed. Error: %@", error)
     }
     
-    func rewardedAdWillLeaveApplication(_ rewardedAd: YMARewardedAd!) {
+    func rewardedAdWillLeaveApplication(_ rewardedAd: YMARewardedAd) {
         print("Rewarded ad will leave application")
     }
     
-    func rewardedAdDidFail(toPresent rewardedAd: YMARewardedAd!, error: Error!) {
+    func rewardedAdDidFail(toPresent rewardedAd: YMARewardedAd, error: Error) {
         print("Failed to present rewarded ad. Error: %@", error)
     }
     
-    func rewardedAdWillAppear(_ rewardedAd: YMARewardedAd!) {
+    func rewardedAdWillAppear(_ rewardedAd: YMARewardedAd) {
         print("Rewarded ad will appear")
     }
-    
-    func rewardedAdDidAppear(_ rewardedAd: YMARewardedAd!) {
+
+    func rewardedAdDidAppear(_ rewardedAd: YMARewardedAd) {
         print("Rewarded ad did appear")
     }
     
-    func rewardedAdWillDisappear(_ rewardedAd: YMARewardedAd!) {
+    func rewardedAdWillDisappear(_ rewardedAd: YMARewardedAd) {
         print("Rewarded ad will disappear")
     }
-    
-    func rewardedAdDidDisappear(_ rewardedAd: YMARewardedAd!) {
+
+    func rewardedAdDidDisappear(_ rewardedAd: YMARewardedAd) {
         print("Rewarded ad did disappear")
     }
     
-    func rewardedAd(_ rewardedAd: YMARewardedAd!, willPresentScreen viewController: UIViewController!) {
+    func rewardedAd(_ rewardedAd: YMARewardedAd, willPresentScreen viewController: UIViewController?) {
         print("Rewarded ad will present screen")
     }
 }

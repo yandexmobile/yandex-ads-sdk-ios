@@ -51,7 +51,7 @@ static NSString *kTrackingCellIdentifier = @"TrackCell";
         [YMAVASTTracker trackAdEvent:self.ad eventName:action];
     }
     else {
-        YMACreative *creative = self.ad.creatives[indexPath.section - 1];
+        YMAVASTCreative *creative = self.ad.creatives[indexPath.section - 1];
         NSString *action = [self trackingEvents][@"creative"][indexPath.row];
         [YMAVASTTracker trackCreativeEvent:creative eventName:action];
     }

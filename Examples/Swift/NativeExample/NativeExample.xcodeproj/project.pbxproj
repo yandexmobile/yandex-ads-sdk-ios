@@ -8,11 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		11E879041711DE4AA8F4F916 /* Pods_NativeExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82AFB72410C43D468962C417 /* Pods_NativeExample.framework */; };
-		B734D39F22D60332002B9489 /* NativeAppInstallAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B734D39E22D60332002B9489 /* NativeAppInstallAdView.swift */; };
-		B734D3A522D61389002B9489 /* NativeImageAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B734D3A422D61389002B9489 /* NativeImageAdView.swift */; };
-		B734D3A722D63DA2002B9489 /* NativeContentAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B734D3A622D63DA2002B9489 /* NativeContentAdView.xib */; };
-		B734D3A922D66DCB002B9489 /* NativeImageAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B734D3A822D66DCB002B9489 /* NativeImageAdView.xib */; };
-		B734D3AB22D686B7002B9489 /* NativeAppInstallAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B734D3AA22D686B7002B9489 /* NativeAppInstallAdView.xib */; };
+		B369DF7B25264DF7004E8392 /* NativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B369DF7925264DF7004E8392 /* NativeAdView.xib */; };
+		B369DF7C25264DF7004E8392 /* NativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B369DF7A25264DF7004E8392 /* NativeAdView.swift */; };
 		B75C049E22D88D6F00F17153 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B75C049D22D88D6800F17153 /* Images.xcassets */; };
 		B75C04A022D8B24200F17153 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75C049F22D8B24200F17153 /* StarRatingView.swift */; };
 		B77246D822D47C2D004BEA3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77246D722D47C2D004BEA3A /* AppDelegate.swift */; };
@@ -20,18 +17,13 @@
 		B77246DD22D47C2D004BEA3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77246DB22D47C2D004BEA3A /* Main.storyboard */; };
 		B77246DF22D47C2E004BEA3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B77246DE22D47C2E004BEA3A /* Assets.xcassets */; };
 		B77246E222D47C2E004BEA3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B77246E022D47C2E004BEA3A /* LaunchScreen.storyboard */; };
-		B77246EC22D4D50F004BEA3A /* NativeContentAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77246EB22D4D50F004BEA3A /* NativeContentAdView.swift */; };
-		B7A5168822E06DB400095829 /* AssetViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A5168722E06DB400095829 /* AssetViewConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		815DB4F378BE323C5A6613BC /* Pods-NativeExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NativeExample/Pods-NativeExample.debug.xcconfig"; sourceTree = "<group>"; };
 		82AFB72410C43D468962C417 /* Pods_NativeExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NativeExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B734D39E22D60332002B9489 /* NativeAppInstallAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeAppInstallAdView.swift; sourceTree = "<group>"; };
-		B734D3A422D61389002B9489 /* NativeImageAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeImageAdView.swift; sourceTree = "<group>"; };
-		B734D3A622D63DA2002B9489 /* NativeContentAdView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NativeContentAdView.xib; sourceTree = "<group>"; };
-		B734D3A822D66DCB002B9489 /* NativeImageAdView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NativeImageAdView.xib; sourceTree = "<group>"; };
-		B734D3AA22D686B7002B9489 /* NativeAppInstallAdView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NativeAppInstallAdView.xib; sourceTree = "<group>"; };
+		B369DF7925264DF7004E8392 /* NativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NativeAdView.xib; sourceTree = "<group>"; };
+		B369DF7A25264DF7004E8392 /* NativeAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeAdView.swift; sourceTree = "<group>"; };
 		B75C049D22D88D6800F17153 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B75C049F22D8B24200F17153 /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
 		B77246D422D47C2D004BEA3A /* NativeExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NativeExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,8 +33,6 @@
 		B77246DE22D47C2E004BEA3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B77246E122D47C2E004BEA3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B77246E322D47C2E004BEA3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B77246EB22D4D50F004BEA3A /* NativeContentAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeContentAdView.swift; sourceTree = "<group>"; };
-		B7A5168722E06DB400095829 /* AssetViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetViewConfigurator.swift; sourceTree = "<group>"; };
 		FAD1C17B2009EC6B5C7E4E8E /* Pods-NativeExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-NativeExample/Pods-NativeExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,19 +87,14 @@
 			isa = PBXGroup;
 			children = (
 				B77246D722D47C2D004BEA3A /* AppDelegate.swift */,
-				B7A5168722E06DB400095829 /* AssetViewConfigurator.swift */,
 				B77246DE22D47C2E004BEA3A /* Assets.xcassets */,
 				B75C049D22D88D6800F17153 /* Images.xcassets */,
 				B77246E322D47C2E004BEA3A /* Info.plist */,
-				B734D39E22D60332002B9489 /* NativeAppInstallAdView.swift */,
-				B734D3AA22D686B7002B9489 /* NativeAppInstallAdView.xib */,
-				B77246EB22D4D50F004BEA3A /* NativeContentAdView.swift */,
-				B734D3A622D63DA2002B9489 /* NativeContentAdView.xib */,
-				B734D3A422D61389002B9489 /* NativeImageAdView.swift */,
-				B734D3A822D66DCB002B9489 /* NativeImageAdView.xib */,
 				B77246DB22D47C2D004BEA3A /* Main.storyboard */,
 				B77246E022D47C2E004BEA3A /* LaunchScreen.storyboard */,
 				B75C049F22D8B24200F17153 /* StarRatingView.swift */,
+				B369DF7A25264DF7004E8392 /* NativeAdView.swift */,
+				B369DF7925264DF7004E8392 /* NativeAdView.xib */,
 				B77246D922D47C2D004BEA3A /* ViewController.swift */,
 			);
 			path = NativeExample;
@@ -144,7 +129,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = YANDEX;
 				TargetAttributes = {
 					B77246D322D47C2D004BEA3A = {
@@ -175,12 +160,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B734D3A922D66DCB002B9489 /* NativeImageAdView.xib in Resources */,
 				B77246E222D47C2E004BEA3A /* LaunchScreen.storyboard in Resources */,
 				B75C049E22D88D6F00F17153 /* Images.xcassets in Resources */,
-				B734D3AB22D686B7002B9489 /* NativeAppInstallAdView.xib in Resources */,
+				B369DF7B25264DF7004E8392 /* NativeAdView.xib in Resources */,
 				B77246DF22D47C2E004BEA3A /* Assets.xcassets in Resources */,
-				B734D3A722D63DA2002B9489 /* NativeContentAdView.xib in Resources */,
 				B77246DD22D47C2D004BEA3A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,12 +218,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B77246DA22D47C2D004BEA3A /* ViewController.swift in Sources */,
-				B734D3A522D61389002B9489 /* NativeImageAdView.swift in Sources */,
-				B734D39F22D60332002B9489 /* NativeAppInstallAdView.swift in Sources */,
-				B7A5168822E06DB400095829 /* AssetViewConfigurator.swift in Sources */,
 				B77246D822D47C2D004BEA3A /* AppDelegate.swift in Sources */,
-				B77246EC22D4D50F004BEA3A /* NativeContentAdView.swift in Sources */,
 				B75C04A022D8B24200F17153 /* StarRatingView.swift in Sources */,
+				B369DF7C25264DF7004E8392 /* NativeAdView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +272,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -353,6 +334,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -389,7 +371,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NativeExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -408,7 +390,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NativeExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

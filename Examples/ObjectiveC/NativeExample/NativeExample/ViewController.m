@@ -7,15 +7,11 @@
 
 #import <YandexMobileAds/YandexMobileNativeAds.h>
 #import "ViewController.h"
-#import "NativeAppInstallAdView.h"
-#import "NativeContentAdView.h"
-#import "NativeImageAdView.h"
+#import "NativeAdView.h"
 
 @interface ViewController () <YMANativeAdLoaderDelegate, YMANativeAdDelegate>
 
-@property (nonatomic, strong) NativeContentAdView *contentAdView;
-@property (nonatomic, strong) NativeAppInstallAdView *appInstallAdView;
-@property (nonatomic, strong) NativeImageAdView *imageAdView;
+@property (nonatomic, strong) NativeAdView *adView;
 @property (nonatomic, strong) YMANativeAdLoader *adLoader;
 
 @end
@@ -26,17 +22,7 @@
 {
     [super viewDidLoad];
 
-    self.contentAdView = [[NativeContentAdView alloc] initWithFrame:CGRectZero];
-    self.contentAdView.translatesAutoresizingMaskIntoConstraints = NO;
-    self.contentAdView.backgroundColor = [UIColor yellowColor];
-
-    self.appInstallAdView = [[NativeAppInstallAdView alloc] initWithFrame:CGRectZero];
-    self.appInstallAdView.translatesAutoresizingMaskIntoConstraints = NO;
-    self.appInstallAdView.backgroundColor = [UIColor colorWithWhite:0.9f alpha:1.f];
-
-    self.imageAdView = [[NativeImageAdView alloc] initWithFrame:CGRectZero];
-    self.imageAdView.translatesAutoresizingMaskIntoConstraints = NO;
-    self.imageAdView.backgroundColor = [UIColor colorWithWhite:0.9f alpha:1.f];
+    self.adView = [NativeAdView nib];
 
     // Replace demo R-M-DEMO-native-c with actual Block ID
     // Following demo Block IDs may be used for testing:
@@ -52,95 +38,41 @@
     [self.adLoader loadAdWithRequest:nil];
 }
 
-- (void)removeCurrentAdView
-{
-    [self.appInstallAdView removeFromSuperview];
-    [self.contentAdView removeFromSuperview];
-    [self.imageAdView removeFromSuperview];
-}
-
 - (void)addConstraintsToAdView:(UIView *)adView
 {
+    adView.translatesAutoresizingMaskIntoConstraints = NO;
+    UILayoutGuide *guide = self.view.layoutMarginsGuide;
     if (@available(iOS 11.0, *)) {
-        [self configureLayoutAtBottomOfSafeArea:adView];
-    } else {
-        [self configureLayoutAtBottom:adView];
+        guide = self.view.safeAreaLayoutGuide;
     }
-}
-
-- (void)configureLayoutAtBottom:(UIView *)bannerView
-{
-    NSDictionary *views = NSDictionaryOfVariableBindings(bannerView);
-    NSArray *horizontal = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[bannerView]|"
-                                                                  options:0
-                                                                  metrics:nil
-                                                                    views:views];
-    NSArray *vertical = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[bannerView]|"
-                                                                options:0
-                                                                metrics:nil
-                                                                  views:views];
-    [self.view addConstraints:horizontal];
-    [self.view addConstraints:vertical];
-}
-
-- (void)configureLayoutAtBottomOfSafeArea:(UIView *)bannerView NS_AVAILABLE_IOS(11_0)
-{
-    UILayoutGuide *guide = self.view.safeAreaLayoutGuide;
     NSArray *constraints = @[
-                             [bannerView.leadingAnchor constraintEqualToAnchor:guide.leadingAnchor],
-                             [bannerView.trailingAnchor constraintEqualToAnchor:guide.trailingAnchor],
-                             [bannerView.bottomAnchor constraintEqualToAnchor:guide.bottomAnchor]
-                             ];
+        [adView.leadingAnchor constraintEqualToAnchor:guide.leadingAnchor],
+        [adView.trailingAnchor constraintEqualToAnchor:guide.trailingAnchor],
+        [adView.bottomAnchor constraintEqualToAnchor:guide.bottomAnchor]
+    ];
     [NSLayoutConstraint activateConstraints:constraints];
 }
 
 #pragma mark - YMANativeAdLoaderDelegate
 
-- (void)nativeAdLoader:(null_unspecified YMANativeAdLoader *)loader
-   didLoadAppInstallAd:(id<YMANativeAppInstallAd> __nonnull)ad
+- (void)nativeAdLoader:(YMANativeAdLoader *)loader didLoadAd:(id<YMANativeAd>)ad
 {
-    [self removeCurrentAdView];
+    [self.adView removeFromSuperview];
 
     NSError * __autoreleasing error = nil;
-    [ad bindAppInstallAdToView:self.appInstallAdView delegate:self error:&error];
-    NSLog(@"Binding finished with error: %@", error);
-
-    [self.appInstallAdView prepareForDisplay];
-
-    [self.view addSubview:self.appInstallAdView];
-    [self addConstraintsToAdView:self.appInstallAdView];
+    ad.delegate = self;
+    [ad bindWithAdView:self.adView error:&error];
+    if (error != nil) {
+        NSLog(@"Binding finished with error: %@", error);
+    }
+    else {
+        [self.adView prepareForDisplay];
+        [self.view addSubview:self.adView];
+        [self addConstraintsToAdView:self.adView];
+    }
 }
 
-- (void)nativeAdLoader:(null_unspecified YMANativeAdLoader *)loader
-      didLoadContentAd:(id<YMANativeContentAd> __nonnull)ad
-{
-    [self removeCurrentAdView];
-
-    NSError * __autoreleasing error = nil;
-    [ad bindContentAdToView:self.contentAdView delegate:self error:&error];
-    NSLog(@"Binding finished with error: %@", error);
-
-    [self.contentAdView prepareForDisplay];
-
-    [self.view addSubview:self.contentAdView];
-    [self addConstraintsToAdView:self.contentAdView];
-}
-
-- (void)nativeAdLoader:(null_unspecified YMANativeAdLoader *)loader didLoadImageAd:(id<YMANativeImageAd> __nonnull)ad
-{
-    [self removeCurrentAdView];
-
-    NSError * __autoreleasing error = nil;
-    [ad bindImageAdToView:self.imageAdView delegate:self error:&error];
-    NSLog(@"Binding finished with error: %@", error);
-
-    [self.imageAdView prepareForDisplay];
-
-    [self.view addSubview:self.imageAdView];
-    [self addConstraintsToAdView:self.imageAdView];
-}
-
-- (void)nativeAdLoader:(null_unspecified YMANativeAdLoader *)loader didFailLoadingWithError:(NSError * __nonnull)error
+- (void)nativeAdLoader:(YMANativeAdLoader *)loader didFailLoadingWithError:(NSError *)error
 {
     NSLog(@"Native ad loading error: %@", error);
 }
@@ -154,24 +86,24 @@
 //    return self;
 //}
 
-- (void)nativeAdWillLeaveApplication:(null_unspecified id)ad
+- (void)nativeAdWillLeaveApplication:(id<YMANativeAd>)ad
 {
     NSLog(@"Will leave application");
 }
 
-- (void)nativeAd:(null_unspecified id)ad willPresentScreen:(nullable UIViewController *)viewController
+- (void)nativeAd:(id<YMANativeAd>)ad willPresentScreen:(UIViewController *)viewController
 {
     NSLog(@"Will present screen");
 }
 
-- (void)nativeAd:(null_unspecified id)ad didDismissScreen:(nullable UIViewController *)viewController
+- (void)nativeAd:(id<YMANativeAd>)ad didDismissScreen:(UIViewController *)viewController
 {
     NSLog(@"Did dismiss screen");
 }
 
-- (void)closeNativeAd:(null_unspecified id)ad
+- (void)closeNativeAd:(id<YMANativeAd>)ad
 {
-    [self removeCurrentAdView];
+    [self.adView removeFromSuperview];
 }
 
 @end
