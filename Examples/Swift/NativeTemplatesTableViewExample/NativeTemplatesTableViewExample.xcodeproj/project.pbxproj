@@ -103,6 +103,7 @@
 				B734D3B222D7226F002B9489 /* Frameworks */,
 				B734D3B322D7226F002B9489 /* Resources */,
 				C43F86BDDCDAB09C5E8A81E2 /* [CP] Embed Pods Frameworks */,
+				47212948F0C660F0B0D6CF0E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -161,6 +162,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		47212948F0C660F0B0D6CF0E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NativeTemplatesTableViewExample/Pods-NativeTemplatesTableViewExample-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NativeTemplatesTableViewExample/Pods-NativeTemplatesTableViewExample-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NativeTemplatesTableViewExample/Pods-NativeTemplatesTableViewExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7841B899C5CA3A2891ADE19D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

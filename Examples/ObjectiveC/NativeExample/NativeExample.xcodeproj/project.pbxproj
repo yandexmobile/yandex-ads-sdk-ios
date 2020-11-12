@@ -130,6 +130,7 @@
 				F6805F1E1B8E078000BD2111 /* Sources */,
 				F6805F1F1B8E078000BD2111 /* Frameworks */,
 				F6805F201B8E078000BD2111 /* Resources */,
+				0FCF75C6A946AA0F5D7EFEFD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -188,6 +189,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0FCF75C6A946AA0F5D7EFEFD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NativeExample/Pods-NativeExample-resources.sh",
+				"${PODS_ROOT}/YandexMobileAds/static/YandexMobileAds.framework/YandexMobileAdsBundle.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YandexMobileAdsBundle.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NativeExample/Pods-NativeExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C4C0518D1BDD3F23098F3702 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

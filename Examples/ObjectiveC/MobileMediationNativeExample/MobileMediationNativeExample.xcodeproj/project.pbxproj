@@ -123,10 +123,12 @@
 			buildConfigurationList = B3946C3320456AF50081899C /* Build configuration list for PBXNativeTarget "MobileMediationNativeExample" */;
 			buildPhases = (
 				C9C3D521EFEACD9805A3CFA6 /* [CP] Check Pods Manifest.lock */,
+				7BA93D2ED65F1B8A163DE5D5 /* [CP] Prepare Artifacts */,
 				B3946C1920456AF50081899C /* Sources */,
 				B3946C1A20456AF50081899C /* Frameworks */,
 				B3946C1B20456AF50081899C /* Resources */,
 				D9C50E2C4F2481A4372AD520 /* [CP] Copy Pods Resources */,
+				51EE2DBA2AE58FD81C7D938A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -185,6 +187,41 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		51EE2DBA2AE58FD81C7D938A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MobileMediationNativeExample/Pods-MobileMediationNativeExample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/cocoapods-artifacts-${CONFIGURATION}.txt",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobileMediationNativeExample/Pods-MobileMediationNativeExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7BA93D2ED65F1B8A163DE5D5 /* [CP] Prepare Artifacts */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MobileMediationNativeExample/Pods-MobileMediationNativeExample-artifacts.sh",
+				"${PODS_ROOT}/GoogleUserMessagingPlatform/Frameworks/Release/UserMessagingPlatform.xcframework",
+			);
+			name = "[CP] Prepare Artifacts";
+			outputPaths = (
+				"${BUILT_PRODUCTS_DIR}/cocoapods-artifacts-${CONFIGURATION}.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobileMediationNativeExample/Pods-MobileMediationNativeExample-artifacts.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C9C3D521EFEACD9805A3CFA6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -210,10 +247,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MobileMediationNativeExample/Pods-MobileMediationNativeExample-resources.sh",
+				"${PODS_ROOT}/YandexMobileAds/static/YandexMobileAds.framework/YandexMobileAdsBundle.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/mopub-ios-sdk/MoPubResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YandexMobileAdsBundle.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MoPubResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -100,6 +100,7 @@
 				B7DFAFB022E1AAF700E68966 /* Frameworks */,
 				B7DFAFB122E1AAF700E68966 /* Resources */,
 				BF03BB123A517E6F1F762A9D /* [CP] Embed Pods Frameworks */,
+				E7931D0B532CBFF296F7AE77 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -194,6 +195,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoPubBannerAdapterExample/Pods-MoPubBannerAdapterExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7931D0B532CBFF296F7AE77 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoPubBannerAdapterExample/Pods-MoPubBannerAdapterExample-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoPubBannerAdapterExample/Pods-MoPubBannerAdapterExample-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoPubBannerAdapterExample/Pods-MoPubBannerAdapterExample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

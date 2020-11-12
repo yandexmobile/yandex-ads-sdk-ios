@@ -100,6 +100,7 @@
 				B7F1931622E8379700C3E223 /* Frameworks */,
 				B7F1931722E8379700C3E223 /* Resources */,
 				F73D41641E20377E389E6D91 /* [CP] Embed Pods Frameworks */,
+				1C9BF6010451A09316CC8145 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -157,6 +158,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1C9BF6010451A09316CC8145 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoPubRewardedAdapterExample/Pods-MoPubRewardedAdapterExample-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoPubRewardedAdapterExample/Pods-MoPubRewardedAdapterExample-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoPubRewardedAdapterExample/Pods-MoPubRewardedAdapterExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9C33861A0913B889F6C7C156 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

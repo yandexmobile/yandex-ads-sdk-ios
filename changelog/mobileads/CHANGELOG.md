@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# Version 3.1.0
+
+#### Added
+* Added improvements and fixes
+* Optimized loading of interstitial ads
+
 # Version 3.0.0
 
 SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/205984/YandexMobileAds-3.0.0-ios-23abd61e-78d7-4f45-a93d-f4f4df5642f4.zip)
