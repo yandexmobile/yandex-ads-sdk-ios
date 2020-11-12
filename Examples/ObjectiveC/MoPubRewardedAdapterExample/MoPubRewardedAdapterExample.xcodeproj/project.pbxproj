@@ -197,10 +197,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MoPubRewardedAdapterExample/Pods-MoPubRewardedAdapterExample-resources.sh",
+				"${PODS_ROOT}/YandexMobileAds/static/YandexMobileAds.framework/YandexMobileAdsBundle.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/mopub-ios-sdk/MoPubResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YandexMobileAdsBundle.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MoPubResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
