@@ -96,10 +96,12 @@
 			buildConfigurationList = B7A5170222E0DAFC00095829 /* Build configuration list for PBXNativeTarget "AdMobInterstitialAdapterExample" */;
 			buildPhases = (
 				581D3A478098D8248C02E778 /* [CP] Check Pods Manifest.lock */,
+				EC9C49A9181E0CFA4D206501 /* [CP] Prepare Artifacts */,
 				B7A516EC22E0DAFB00095829 /* Sources */,
 				B7A516ED22E0DAFB00095829 /* Frameworks */,
 				B7A516EE22E0DAFB00095829 /* Resources */,
 				7C4C322A7AFBC7D1638FA671 /* [CP] Embed Pods Frameworks */,
+				702E4FCF80EF520FB728BEB4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -179,6 +181,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		702E4FCF80EF520FB728BEB4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AdMobInterstitialAdapterExample/Pods-AdMobInterstitialAdapterExample-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AdMobInterstitialAdapterExample/Pods-AdMobInterstitialAdapterExample-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AdMobInterstitialAdapterExample/Pods-AdMobInterstitialAdapterExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7C4C322A7AFBC7D1638FA671 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -194,6 +213,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AdMobInterstitialAdapterExample/Pods-AdMobInterstitialAdapterExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC9C49A9181E0CFA4D206501 /* [CP] Prepare Artifacts */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AdMobInterstitialAdapterExample/Pods-AdMobInterstitialAdapterExample-artifacts-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Prepare Artifacts";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AdMobInterstitialAdapterExample/Pods-AdMobInterstitialAdapterExample-artifacts-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AdMobInterstitialAdapterExample/Pods-AdMobInterstitialAdapterExample-artifacts.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

@@ -106,6 +106,7 @@
 				B759B6072445D34800A51EC6 /* Sources */,
 				B759B6082445D34800A51EC6 /* Frameworks */,
 				B759B6092445D34800A51EC6 /* Resources */,
+				958280495989D6259E3B9345 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -162,6 +163,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		958280495989D6259E3B9345 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StickyBannerExample/Pods-StickyBannerExample-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StickyBannerExample/Pods-StickyBannerExample-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StickyBannerExample/Pods-StickyBannerExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		AEA98E164B2AD6215868A9F0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

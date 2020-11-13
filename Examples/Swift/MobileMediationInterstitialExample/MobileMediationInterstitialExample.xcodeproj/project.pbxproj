@@ -100,6 +100,7 @@
 			buildConfigurationList = B734D40D22D77AC3002B9489 /* Build configuration list for PBXNativeTarget "MobileMediationInterstitialExample" */;
 			buildPhases = (
 				1C494263DFA3904C1320E18C /* [CP] Check Pods Manifest.lock */,
+				5B9FE4C630C3BFA96EDAC50A /* [CP] Prepare Artifacts */,
 				B734D3F722D77AC1002B9489 /* Sources */,
 				B734D3F822D77AC1002B9489 /* Frameworks */,
 				B734D3F922D77AC1002B9489 /* Resources */,
@@ -199,6 +200,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobileMediationInterstitialExample/Pods-MobileMediationInterstitialExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B9FE4C630C3BFA96EDAC50A /* [CP] Prepare Artifacts */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MobileMediationInterstitialExample/Pods-MobileMediationInterstitialExample-artifacts-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Prepare Artifacts";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MobileMediationInterstitialExample/Pods-MobileMediationInterstitialExample-artifacts-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobileMediationInterstitialExample/Pods-MobileMediationInterstitialExample-artifacts.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A16F9AF94A819E62FE1EF7F4 /* [CP] Embed Pods Frameworks */ = {

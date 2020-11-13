@@ -107,6 +107,7 @@
 				B7E561232316EC7300480FBA /* Frameworks */,
 				B7E561242316EC7300480FBA /* Resources */,
 				A490A8EACF883E0CD164164C /* [CP] Embed Pods Frameworks */,
+				4F18ED3FEC073930AB585310 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -163,6 +164,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4F18ED3FEC073930AB585310 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoPubInterstitialAdapterExample/Pods-MoPubInterstitialAdapterExample-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoPubInterstitialAdapterExample/Pods-MoPubInterstitialAdapterExample-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoPubInterstitialAdapterExample/Pods-MoPubInterstitialAdapterExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A3D864316E547367F9C81F03 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

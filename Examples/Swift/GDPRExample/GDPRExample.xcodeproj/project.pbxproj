@@ -115,6 +115,7 @@
 				B7D7896922D3519500A88789 /* Frameworks */,
 				B7D7896A22D3519500A88789 /* Resources */,
 				624531FF921AD1B759E56A83 /* [CP] Embed Pods Frameworks */,
+				134A984FE7E4CD90633794E6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -174,6 +175,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		134A984FE7E4CD90633794E6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GDPRExample/Pods-GDPRExample-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GDPRExample/Pods-GDPRExample-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GDPRExample/Pods-GDPRExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		45D5A104512E7AD0E13A72FE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

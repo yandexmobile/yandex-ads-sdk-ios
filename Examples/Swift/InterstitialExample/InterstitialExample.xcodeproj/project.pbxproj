@@ -106,6 +106,7 @@
 				B3636D972074DE6900BF6EFA /* Frameworks */,
 				B3636D982074DE6900BF6EFA /* Resources */,
 				EC5C14DD05990765BE62E651 /* [CP] Embed Pods Frameworks */,
+				9D39E5970CDCF7524D3B681F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -181,6 +182,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D39E5970CDCF7524D3B681F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InterstitialExample/Pods-InterstitialExample-resources.sh",
+				"${PODS_ROOT}/YandexMobileAds/dynamic/YandexMobileAds.framework/YandexMobileAdsBundle.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YandexMobileAdsBundle.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InterstitialExample/Pods-InterstitialExample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EC5C14DD05990765BE62E651 /* [CP] Embed Pods Frameworks */ = {
