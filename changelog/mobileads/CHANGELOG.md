@@ -1,7 +1,16 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# Version 3.1.1
+
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/212922/YandexMobileAds-3.1.1-ios-5b5379d9-e4b4-4710-a3fb-e707fb00f596.zip)
+
+#### Fixed
+* Fixed Info.plist format in resources bundle
+
 # Version 3.1.0
+
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/223308/YandexMobileAds-3.1.0-ios-b04e96c5-e0d2-4fa5-b6af-8df27a40a0fa.zip)
 
 #### Added
 * Added improvements and fixes
