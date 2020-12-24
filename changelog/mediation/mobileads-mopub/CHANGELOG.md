@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 0.15.0
+
+#### Added
+* Added support for MoPub sdk version 5.15.0
+* Updated minimum supported MoPub sdk version to 5.15.0
+* Updated minimum supported Yandex Mobile Ads SDK version to 3.2.0
+
 ## Version 0.14.0
 
 #### Added

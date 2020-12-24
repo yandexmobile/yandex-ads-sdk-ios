@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B7607F00259496DD00CF22C3 /* MoPub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7607EFF259496DD00CF22C3 /* MoPub.swift */; };
 		D6903BADF320569DE61A86E7 /* libPods-MoPubRewardedAdapterExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0F176B9FC7DBF039574454 /* libPods-MoPubRewardedAdapterExample.a */; };
 		F654F8221F2B789500106F2C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F654F8211F2B789500106F2C /* main.m */; };
 		F654F8251F2B789500106F2C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F654F8241F2B789500106F2C /* AppDelegate.m */; };
@@ -23,6 +24,7 @@
 		851E17DA6E1BDC5EE4F13004 /* Pods-AdMobRewardedAdapterExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdMobRewardedAdapterExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdMobRewardedAdapterExample/Pods-AdMobRewardedAdapterExample.debug.xcconfig"; sourceTree = "<group>"; };
 		A01224925D3F582E29914A39 /* Pods-AdFoxMediationRewardedExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdFoxMediationRewardedExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdFoxMediationRewardedExample/Pods-AdFoxMediationRewardedExample.debug.xcconfig"; sourceTree = "<group>"; };
 		AD0F176B9FC7DBF039574454 /* libPods-MoPubRewardedAdapterExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MoPubRewardedAdapterExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7607EFF259496DD00CF22C3 /* MoPub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoPub.swift; sourceTree = "<group>"; };
 		C432E53653BD709CB4F31493 /* Pods-MoPubRewardedAdapterExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoPubRewardedAdapterExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoPubRewardedAdapterExample/Pods-MoPubRewardedAdapterExample.release.xcconfig"; sourceTree = "<group>"; };
 		C9836CC86A442244D950F189 /* libPods-AdFoxMediationRewardedExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AdFoxMediationRewardedExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD4CB19FF0812E6E70DFB94A /* Pods-AdFoxMediationInterstitialExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdFoxMediationInterstitialExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdFoxMediationInterstitialExample/Pods-AdFoxMediationInterstitialExample.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 		F654F81F1F2B789500106F2C /* MoPubRewardedAdapterExample */ = {
 			isa = PBXGroup;
 			children = (
+				B7607EFF259496DD00CF22C3 /* MoPub.swift */,
 				F654F8231F2B789500106F2C /* AppDelegate.h */,
 				F654F8241F2B789500106F2C /* AppDelegate.m */,
 				F654F8261F2B789500106F2C /* ViewController.h */,
@@ -154,6 +157,7 @@
 				TargetAttributes = {
 					F654F81C1F2B789500106F2C = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 1210;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -236,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F654F8281F2B789500106F2C /* ViewController.m in Sources */,
+				B7607F00259496DD00CF22C3 /* MoPub.swift in Sources */,
 				F654F8251F2B789500106F2C /* AppDelegate.m in Sources */,
 				F654F8221F2B789500106F2C /* main.m in Sources */,
 			);
@@ -380,6 +385,7 @@
 			baseConfigurationReference = 13FEDFB39AB5AD7578795BE3 /* Pods-MoPubRewardedAdapterExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/YandexMobileAds/static\"",
@@ -390,6 +396,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.MoPubRewardedAdapterExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -398,6 +406,7 @@
 			baseConfigurationReference = C432E53653BD709CB4F31493 /* Pods-MoPubRewardedAdapterExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/YandexMobileAds/static\"",
@@ -408,6 +417,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.MoPubRewardedAdapterExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

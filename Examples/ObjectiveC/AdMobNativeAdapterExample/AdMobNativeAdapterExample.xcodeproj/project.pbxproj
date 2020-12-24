@@ -119,7 +119,6 @@
 			buildConfigurationList = B7262AC022EAF7A300E2DFFD /* Build configuration list for PBXNativeTarget "AdMobNativeAdapterExample" */;
 			buildPhases = (
 				D9A27B255961B18DC5544888 /* [CP] Check Pods Manifest.lock */,
-				EBBD49BCAE5A64377D77E906 /* [CP] Prepare Artifacts */,
 				B7262AA622EAF7A000E2DFFD /* Sources */,
 				B7262AA722EAF7A000E2DFFD /* Frameworks */,
 				B7262AA822EAF7A000E2DFFD /* Resources */,
@@ -237,23 +236,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EBBD49BCAE5A64377D77E906 /* [CP] Prepare Artifacts */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AdMobNativeAdapterExample/Pods-AdMobNativeAdapterExample-artifacts-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Prepare Artifacts";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AdMobNativeAdapterExample/Pods-AdMobNativeAdapterExample-artifacts-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AdMobNativeAdapterExample/Pods-AdMobNativeAdapterExample-artifacts.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
