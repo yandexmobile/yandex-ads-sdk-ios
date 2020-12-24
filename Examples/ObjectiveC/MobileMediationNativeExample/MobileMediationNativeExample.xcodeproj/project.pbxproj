@@ -17,6 +17,7 @@
 		B3946C50204584540081899C /* StarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3946C4E204584530081899C /* StarRatingView.m */; };
 		B3946C51204584540081899C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3946C4F204584540081899C /* Assets.xcassets */; };
 		B3FF432B23F6B94400D87C74 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FF432A23F6B94400D87C74 /* main.m */; };
+		B7607ED82594949800CF22C3 /* MoPub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7607ED72594949800CF22C3 /* MoPub.swift */; };
 		FEC67E850C1722D613C20C45 /* libPods-MobileMediationNativeExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECEBB0DE170E0DCB8F582E4D /* libPods-MobileMediationNativeExample.a */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		B3946C4E204584530081899C /* StarRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StarRatingView.m; path = ../../Common/StarRatingView.m; sourceTree = "<group>"; };
 		B3946C4F204584540081899C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Common/Assets.xcassets; sourceTree = "<group>"; };
 		B3FF432A23F6B94400D87C74 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B7607ED72594949800CF22C3 /* MoPub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoPub.swift; sourceTree = "<group>"; };
 		DE2B6B55086834AEB472C008 /* Pods-MobileMediationNativeExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileMediationNativeExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-MobileMediationNativeExample/Pods-MobileMediationNativeExample.release.xcconfig"; sourceTree = "<group>"; };
 		ECEBB0DE170E0DCB8F582E4D /* libPods-MobileMediationNativeExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobileMediationNativeExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0D97DDAB2FB67441581DB20 /* Pods-AdFoxMediationNativeExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdFoxMediationNativeExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdFoxMediationNativeExample/Pods-AdFoxMediationNativeExample.release.xcconfig"; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		B3946C1F20456AF50081899C /* MobileMediationNativeExample */ = {
 			isa = PBXGroup;
 			children = (
+				B7607ED72594949800CF22C3 /* MoPub.swift */,
 				B3FF432A23F6B94400D87C74 /* main.m */,
 				B3946C4F204584540081899C /* Assets.xcassets */,
 				B3946C4D204584530081899C /* StarRatingView.h */,
@@ -123,12 +126,10 @@
 			buildConfigurationList = B3946C3320456AF50081899C /* Build configuration list for PBXNativeTarget "MobileMediationNativeExample" */;
 			buildPhases = (
 				C9C3D521EFEACD9805A3CFA6 /* [CP] Check Pods Manifest.lock */,
-				7BA93D2ED65F1B8A163DE5D5 /* [CP] Prepare Artifacts */,
 				B3946C1920456AF50081899C /* Sources */,
 				B3946C1A20456AF50081899C /* Frameworks */,
 				B3946C1B20456AF50081899C /* Resources */,
 				D9C50E2C4F2481A4372AD520 /* [CP] Copy Pods Resources */,
-				51EE2DBA2AE58FD81C7D938A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +150,7 @@
 				TargetAttributes = {
 					B3946C1C20456AF50081899C = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1210;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -187,41 +189,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		51EE2DBA2AE58FD81C7D938A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MobileMediationNativeExample/Pods-MobileMediationNativeExample-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/cocoapods-artifacts-${CONFIGURATION}.txt",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobileMediationNativeExample/Pods-MobileMediationNativeExample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7BA93D2ED65F1B8A163DE5D5 /* [CP] Prepare Artifacts */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MobileMediationNativeExample/Pods-MobileMediationNativeExample-artifacts.sh",
-				"${PODS_ROOT}/GoogleUserMessagingPlatform/Frameworks/Release/UserMessagingPlatform.xcframework",
-			);
-			name = "[CP] Prepare Artifacts";
-			outputPaths = (
-				"${BUILT_PRODUCTS_DIR}/cocoapods-artifacts-${CONFIGURATION}.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobileMediationNativeExample/Pods-MobileMediationNativeExample-artifacts.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C9C3D521EFEACD9805A3CFA6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -272,6 +239,7 @@
 				B3946C2220456AF50081899C /* AppDelegate.m in Sources */,
 				B3FF432B23F6B94400D87C74 /* main.m in Sources */,
 				B3946C50204584540081899C /* StarRatingView.m in Sources */,
+				B7607ED82594949800CF22C3 /* MoPub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +380,7 @@
 			baseConfigurationReference = 6A843E321EE562BEECF28B69 /* Pods-MobileMediationNativeExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -423,6 +392,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.MobileMediationNativeExample;
 				PRODUCT_NAME = MobileMediationNativeExample;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -432,6 +403,7 @@
 			baseConfigurationReference = DE2B6B55086834AEB472C008 /* Pods-MobileMediationNativeExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -443,6 +415,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.MobileMediationNativeExample;
 				PRODUCT_NAME = MobileMediationNativeExample;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
