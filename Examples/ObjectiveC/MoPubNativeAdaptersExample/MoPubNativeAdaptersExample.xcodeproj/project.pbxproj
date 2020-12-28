@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4BE14FFCCFF4A569615F2CB2 /* libPods-MoPubNativeAdaptersExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A8C6E3B57075FE09D99F2053 /* libPods-MoPubNativeAdaptersExample.a */; };
+		B7607EF5259495B400CF22C3 /* MoPub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7607EF4259495B400CF22C3 /* MoPub.swift */; };
 		F60333B51ECDB181008D5604 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F60333B41ECDB181008D5604 /* main.m */; };
 		F60333B81ECDB181008D5604 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F60333B71ECDB181008D5604 /* AppDelegate.m */; };
 		F60333BB1ECDB181008D5604 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F60333BA1ECDB181008D5604 /* ViewController.m */; };
@@ -24,6 +25,7 @@
 		3E0704437C8322781B9CE3FA /* Pods-MoPubNativeAdaptersExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoPubNativeAdaptersExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoPubNativeAdaptersExample/Pods-MoPubNativeAdaptersExample.debug.xcconfig"; sourceTree = "<group>"; };
 		3F4067181FAD252A916BB0C3 /* Pods-MoPubNativeAdaptersExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoPubNativeAdaptersExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoPubNativeAdaptersExample/Pods-MoPubNativeAdaptersExample.release.xcconfig"; sourceTree = "<group>"; };
 		A8C6E3B57075FE09D99F2053 /* libPods-MoPubNativeAdaptersExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MoPubNativeAdaptersExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7607EF4259495B400CF22C3 /* MoPub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoPub.swift; sourceTree = "<group>"; };
 		F60333B01ECDB181008D5604 /* MoPubNativeAdaptersExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoPubNativeAdaptersExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F60333B41ECDB181008D5604 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F60333B61ECDB181008D5604 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 		F60333B21ECDB181008D5604 /* MoPubNativeAdaptersExample */ = {
 			isa = PBXGroup;
 			children = (
+				B7607EF4259495B400CF22C3 /* MoPub.swift */,
 				F69CFA4120E69E5C00A426C5 /* Assets.xcassets */,
 				F6A63CC51ECE0BA1007B8940 /* StarRatingView.h */,
 				F6A63CC61ECE0BA1007B8940 /* StarRatingView.m */,
@@ -154,6 +157,7 @@
 				TargetAttributes = {
 					F60333AF1ECDB181008D5604 = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 1210;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -239,6 +243,7 @@
 				F60333BB1ECDB181008D5604 /* ViewController.m in Sources */,
 				F60333E01ECDEAC4008D5604 /* NativeAssetsComposer.m in Sources */,
 				F60333B81ECDB181008D5604 /* AppDelegate.m in Sources */,
+				B7607EF5259495B400CF22C3 /* MoPub.swift in Sources */,
 				F60333E11ECDEAC4008D5604 /* NativeAdView.m in Sources */,
 				F60333B51ECDB181008D5604 /* main.m in Sources */,
 				F6A63CC71ECE0BA1007B8940 /* StarRatingView.m in Sources */,
@@ -384,6 +389,7 @@
 			baseConfigurationReference = 3E0704437C8322781B9CE3FA /* Pods-MoPubNativeAdaptersExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/YandexMobileAds/static\"",
@@ -401,6 +407,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.MoPubNativeAdaptersExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -409,6 +417,7 @@
 			baseConfigurationReference = 3F4067181FAD252A916BB0C3 /* Pods-MoPubNativeAdaptersExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/YandexMobileAds/static\"",
@@ -426,6 +435,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.MoPubNativeAdaptersExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

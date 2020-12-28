@@ -96,7 +96,6 @@
 			buildConfigurationList = B7A516E222E0CCA700095829 /* Build configuration list for PBXNativeTarget "AdMobRewardedAdapterExample" */;
 			buildPhases = (
 				44A2678B97A631BDBA06C742 /* [CP] Check Pods Manifest.lock */,
-				C01D18FE0741D251A6AE75F5 /* [CP] Prepare Artifacts */,
 				B7A516CC22E0CCA500095829 /* Sources */,
 				B7A516CD22E0CCA500095829 /* Frameworks */,
 				B7A516CE22E0CCA500095829 /* Resources */,
@@ -196,23 +195,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AdMobRewardedAdapterExample/Pods-AdMobRewardedAdapterExample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C01D18FE0741D251A6AE75F5 /* [CP] Prepare Artifacts */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AdMobRewardedAdapterExample/Pods-AdMobRewardedAdapterExample-artifacts-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Prepare Artifacts";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AdMobRewardedAdapterExample/Pods-AdMobRewardedAdapterExample-artifacts-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AdMobRewardedAdapterExample/Pods-AdMobRewardedAdapterExample-artifacts.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E57E2D961CBBCD7BA6383013 /* [CP] Copy Pods Resources */ = {

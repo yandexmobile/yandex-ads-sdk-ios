@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2FE3BDA801B1CB359B0625EB /* Pods_MoPubInterstitialAdapterExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C350C0D50C1F37D28F30D80 /* Pods_MoPubInterstitialAdapterExample.framework */; };
+		B7607F0F2594978100CF22C3 /* MoPub.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7607F0E2594978100CF22C3 /* MoPub.swift */; };
 		B7E5612B2316EC7300480FBA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B7E5612A2316EC7300480FBA /* AppDelegate.m */; };
 		B7E5612E2316EC7300480FBA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7E5612D2316EC7300480FBA /* ViewController.m */; };
 		B7E561312316EC7300480FBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7E5612F2316EC7300480FBA /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		3C350C0D50C1F37D28F30D80 /* Pods_MoPubInterstitialAdapterExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoPubInterstitialAdapterExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB92AB19718C390B6BA14D7 /* Pods-MoPubInterstitialAdapterExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoPubInterstitialAdapterExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoPubInterstitialAdapterExample/Pods-MoPubInterstitialAdapterExample.debug.xcconfig"; sourceTree = "<group>"; };
+		B7607F0E2594978100CF22C3 /* MoPub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoPub.swift; sourceTree = "<group>"; };
 		B7E561262316EC7300480FBA /* MoPubInterstitialAdapterExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoPubInterstitialAdapterExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7E561292316EC7300480FBA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B7E5612A2316EC7300480FBA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 		B7E561282316EC7300480FBA /* MoPubInterstitialAdapterExample */ = {
 			isa = PBXGroup;
 			children = (
+				B7607F0E2594978100CF22C3 /* MoPub.swift */,
 				B7E561292316EC7300480FBA /* AppDelegate.h */,
 				B7E5612A2316EC7300480FBA /* AppDelegate.m */,
 				B7E5613F2316ECA000480FBA /* Images.xcassets */,
@@ -129,6 +132,7 @@
 				TargetAttributes = {
 					B7E561252316EC7300480FBA = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1210;
 					};
 				};
 			};
@@ -228,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7E5612E2316EC7300480FBA /* ViewController.m in Sources */,
+				B7607F0F2594978100CF22C3 /* MoPub.swift in Sources */,
 				B7E561392316EC7500480FBA /* main.m in Sources */,
 				B7E5612B2316EC7300480FBA /* AppDelegate.m in Sources */,
 			);
@@ -374,6 +379,7 @@
 			baseConfigurationReference = ACB92AB19718C390B6BA14D7 /* Pods-MoPubInterstitialAdapterExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MoPubInterstitialAdapterExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -383,6 +389,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.MoPubInterstitialAdapterExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -392,6 +400,7 @@
 			baseConfigurationReference = FA6B60B75F41DBF2ED547C1E /* Pods-MoPubInterstitialAdapterExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MoPubInterstitialAdapterExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -401,6 +410,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.MoPubInterstitialAdapterExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
