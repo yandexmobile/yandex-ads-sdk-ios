@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# Version 3.4.0
+
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/212922/YandexMobileAds-3.4.0-ios-db9060f8-923a-4df6-b48c-dfd337ea655e.zip)
+
+#### Added
+* Added support for native video playback
+* Added improvements and fixes
+
 # Version 3.3.0
 
 SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/2817166/YandexMobileAds-3.3.0-ios-52a3718c-cb85-4369-a92f-f4b86b5f281c.zip)
