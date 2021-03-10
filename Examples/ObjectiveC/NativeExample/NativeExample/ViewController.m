@@ -23,6 +23,8 @@
     [super viewDidLoad];
 
     self.adView = [NativeAdView nib];
+    self.adLoader = [[YMANativeAdLoader alloc] init];
+    self.adLoader.delegate = self;
 
     // Replace demo R-M-DEMO-native-c with actual Block ID
     // Following demo Block IDs may be used for testing:
@@ -30,12 +32,9 @@
     // R-M-DEMO-native-c
     // R-M-DEMO-native-i
 
-    YMANativeAdLoaderConfiguration *configuration =
-        [[YMANativeAdLoaderConfiguration alloc] initWithBlockID:@"R-M-DEMO-native-c"
-                                        loadImagesAutomatically:YES];
-    self.adLoader = [[YMANativeAdLoader alloc] initWithConfiguration:configuration];
-    self.adLoader.delegate = self;
-    [self.adLoader loadAdWithRequest:nil];
+    YMANativeAdRequestConfiguration *requestConfiguration =
+        [[YMANativeAdRequestConfiguration alloc] initWithBlockID:@"R-M-DEMO-native-c"];
+    [self.adLoader loadAdWithRequestConfiguration:requestConfiguration];
 }
 
 - (void)addConstraintsToAdView:(UIView *)adView

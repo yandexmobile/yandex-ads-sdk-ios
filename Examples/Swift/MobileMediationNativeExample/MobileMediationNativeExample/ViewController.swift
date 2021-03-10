@@ -34,6 +34,8 @@ class ViewController: UIViewController {
         adView = NativeAdView.nib
         addAdView()
         adView?.isHidden = true
+        adLoader = YMANativeAdLoader()
+        adLoader?.delegate = self
     }
     
     @IBAction func load(_ sender: Any) {
@@ -49,10 +51,8 @@ class ViewController: UIViewController {
          Yandex: yandexBlockID
          */
         let blockID = blockIDs[selectedIndex].blockID
-        let configuration = YMANativeAdLoaderConfiguration(blockID: blockID, loadImagesAutomatically: true)
-        adLoader = YMANativeAdLoader(configuration: configuration)
-        adLoader?.delegate = self
-        adLoader?.loadAd(with: nil)
+        let requestConfiguration = YMANativeAdRequestConfiguration(blockID: blockID)
+        adLoader?.loadAd(with: requestConfiguration)
     }
 
     func addAdView() {

@@ -21,11 +21,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    YMANativeAdLoaderConfiguration *configuration =
-        [[YMANativeAdLoaderConfiguration alloc] initWithBlockID:@"R-M-DEMO-native-c"
-                                                     imageSizes:@[ kYMANativeImageSizeMedium ]
-                                        loadImagesAutomatically:YES];
-    self.adLoader = [[YMANativeAdLoader alloc] initWithConfiguration:configuration];
+
+    self.adLoader = [[YMANativeAdLoader alloc] init];
     self.adLoader.delegate = self;
 }
 
@@ -36,7 +33,9 @@
         [self showGDPRDialog];
     }
     else {
-        [self.adLoader loadAdWithRequest:nil];
+        YMANativeAdRequestConfiguration *configuration =
+            [[YMANativeAdRequestConfiguration alloc] initWithBlockID:@"R-M-DEMO-native-c"];
+        [self.adLoader loadAdWithRequestConfiguration:configuration];
     }
 }
 
@@ -68,7 +67,9 @@
 
 - (void)dialogDidDismiss:(GDPRDialogViewController *)dialog
 {
-    [self.adLoader loadAdWithRequest:nil];
+    YMANativeAdRequestConfiguration *configuration =
+        [[YMANativeAdRequestConfiguration alloc] initWithBlockID:@"R-M-DEMO-native-c"];
+    [self.adLoader loadAdWithRequestConfiguration:configuration];
 }
 
 #pragma mark - YMANativeAdLoaderDelegate

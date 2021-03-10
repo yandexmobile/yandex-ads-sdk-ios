@@ -15,8 +15,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad(){
         super.viewDidLoad()
-        let configuration = YMANativeAdLoaderConfiguration(blockID: "R-M-DEMO-native-c", loadImagesAutomatically: true)
-        adLoader = YMANativeAdLoader(configuration: configuration)
+        adLoader = YMANativeAdLoader()
         adLoader.delegate = self
     }
 
@@ -44,7 +43,8 @@ class ViewController: UIViewController {
     }
 
     private func loadAd() {
-        adLoader.loadAd(with: nil)
+        let requestConfiguration = YMANativeAdRequestConfiguration(blockID: "R-M-DEMO-native-c")
+        adLoader.loadAd(with: requestConfiguration)
     }
 
     private func configureLayoutAtBottom(for bannerView: UIView) {

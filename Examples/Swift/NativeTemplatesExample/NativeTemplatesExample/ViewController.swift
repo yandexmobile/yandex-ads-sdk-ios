@@ -15,7 +15,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.adLoader = YMANativeAdLoader()
+        self.adLoader.delegate = self
+
+        loadAd()
+    }
+    
+    @IBAction func loadAd() {
         // Replace demo R-M-DEMO-native-c with actual Block ID.
         // Please, note, that configured image sizes don't affect demo ads.
         // Following demo Block IDs may be used for testing:
@@ -23,16 +29,8 @@ class ViewController: UIViewController {
         // R-M-DEMO-native-c
         // R-M-DEMO-native-i
 
-        let configuration = YMANativeAdLoaderConfiguration(blockID: "R-M-DEMO-native-c",
-                                                           imageSizes: [kYMANativeImageSizeMedium],
-                                                           loadImagesAutomatically: true)
-        self.adLoader = YMANativeAdLoader(configuration: configuration)
-        self.adLoader.delegate = self
-        loadAd()
-    }
-    
-    @IBAction func loadAd() {
-        self.adLoader.loadAd(with: nil)
+        let requestConfiguration = YMANativeAdRequestConfiguration(blockID: "R-M-DEMO-native-c")
+        self.adLoader.loadAd(with: requestConfiguration)
     }
 
     func displayAdAtBottom() {
