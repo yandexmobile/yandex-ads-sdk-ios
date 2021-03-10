@@ -1,6 +1,23 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# Version 4.0.0
+
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/205984/YandexMobileAds-4.0.0-ios-4ba3309b-e23c-4a37-9eef-b037c03a98d5.zip)
+
+#### Added
+* Added support for SKAdNetwork
+* Optimized loading of rewarded ads
+* Added ability to load multiple native ads
+* Added improvements for native video design
+* Added improvements for interstitial design
+* Added improvements and fixes
+
+#### Updated
+
+* Updated deployment target to iOS 9
+* Updated minimum compatible AppMetrica version to 3.14.1
+
 # Version 3.5.0
 
 SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/212922/YandexMobileAds-3.5.0-ios-353dd363-003a-48d6-bc9d-3c6c57d0c9ee.zip)

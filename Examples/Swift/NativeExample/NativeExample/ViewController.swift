@@ -18,18 +18,18 @@ class ViewController: UIViewController {
         adView = NativeAdView.nib
         addAdView()
         adView?.isHidden = true
+
+        adLoader = YMANativeAdLoader()
+        adLoader.delegate = self
         
         // Replace demo R-M-DEMO-native-c with actual Block ID
         // Following demo Block IDs may be used for testing:
         // R-M-DEMO-native-c
         // R-M-DEMO-native-i
         // R-M-DEMO-native-video
-        let configuration = YMANativeAdLoaderConfiguration(blockID: "R-M-DEMO-native-c",
-                                                           loadImagesAutomatically: true)
-        
-        adLoader = YMANativeAdLoader(configuration: configuration)
-        adLoader.delegate = self
-        adLoader.loadAd(with: nil)
+
+        let requestConfiguration = YMANativeAdRequestConfiguration(blockID: "R-M-DEMO-native-c")
+        adLoader.loadAd(with: requestConfiguration)
     }
     
     func addAdView() {

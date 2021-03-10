@@ -21,20 +21,18 @@ class ViewController: UIViewController {
     private var ads = [YMANativeAd]()
 
     override func viewDidLoad() {
+        adLoader = YMANativeAdLoader()
+        adLoader.delegate = self
+    }
 
+    @IBAction func loadAd(_ sender: UIButton) {
         // Following demo Block IDs may be used for testing:
         // R-M-DEMO-native-c
         // R-M-DEMO-native-i
         // R-M-DEMO-native-video
 
-        let configuration = YMANativeAdLoaderConfiguration(blockID: "R-M-DEMO-native-c",
-                                                           loadImagesAutomatically: false)
-        adLoader = YMANativeAdLoader(configuration: configuration)
-        adLoader.delegate = self
-    }
-
-    @IBAction func loadAd(_ sender: UIButton) {
-        adLoader.loadAd(with: nil)
+        let requestConfiguration = YMANativeAdRequestConfiguration(blockID: "R-M-DEMO-native-c")
+        adLoader.loadAd(with: requestConfiguration)
     }
 
 }

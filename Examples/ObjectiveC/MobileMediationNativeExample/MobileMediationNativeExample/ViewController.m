@@ -41,6 +41,8 @@ static int const kBlockIDIndex = 1;
             @[@"Yandex", kYandexBlockID]
         ];
         _adView = [NativeAdView nib];
+        _adLoader = [[YMANativeAdLoader alloc] init];
+        _adLoader.delegate = self;
     }
     return self;
 }
@@ -58,11 +60,9 @@ static int const kBlockIDIndex = 1;
      Yandex: kYandexBlockID
      */
     NSString *blockID = self.networks[selectedIndex][kBlockIDIndex];
-    YMANativeAdLoaderConfiguration *configuration = [[YMANativeAdLoaderConfiguration alloc] initWithBlockID:blockID
-                                                                                    loadImagesAutomatically:YES];
-    self.adLoader = [[YMANativeAdLoader alloc] initWithConfiguration:configuration];
-    self.adLoader.delegate = self;
-    [self.adLoader loadAdWithRequest:nil];
+    YMANativeAdRequestConfiguration *requestConfiguration =
+        [[YMANativeAdRequestConfiguration alloc] initWithBlockID:blockID];
+    [self.adLoader loadAdWithRequestConfiguration:requestConfiguration];
 }
 
 - (void)addConstraintsToAdView:(UIView *)adView
