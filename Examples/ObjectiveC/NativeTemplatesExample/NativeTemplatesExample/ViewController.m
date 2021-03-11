@@ -20,6 +20,9 @@
 {
     [super viewDidLoad];
 
+    self.adLoader = [[YMANativeAdLoader alloc] init];
+    self.adLoader.delegate = self;
+
     // Replace demo R-M-DEMO-native-c with actual Block ID.
     // Please, note, that configured image sizes don't affect demo ads.
     // Following demo Block IDs may be used for testing:
@@ -27,13 +30,9 @@
     // R-M-DEMO-native-c
     // R-M-DEMO-native-i
 
-    YMANativeAdLoaderConfiguration *configuration =
-        [[YMANativeAdLoaderConfiguration alloc] initWithBlockID:@"R-M-DEMO-native-c"
-                                                     imageSizes:@[ kYMANativeImageSizeMedium ]
-                                        loadImagesAutomatically:YES];
-    self.adLoader = [[YMANativeAdLoader alloc] initWithConfiguration:configuration];
-    self.adLoader.delegate = self;
-    [self.adLoader loadAdWithRequest:nil];
+    YMANativeAdRequestConfiguration *requestConfiguration =
+        [[YMANativeAdRequestConfiguration alloc] initWithBlockID:@"R-M-DEMO-native-c"];
+    [self.adLoader loadAdWithRequestConfiguration:requestConfiguration];
 }
 
 - (void)addConstraintsToAdView:(UIView *)adView

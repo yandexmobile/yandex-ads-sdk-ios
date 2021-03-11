@@ -6,7 +6,7 @@
  */
 
 import UIKit
-import MoPub
+import MoPubSDK
 import YandexMobileAds
 import YandexMobileAdsMoPubAdapters
 

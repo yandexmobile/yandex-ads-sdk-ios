@@ -29,19 +29,7 @@ static NSString *const kNativeBannerCellIdentifier = @"NativeBannerCellIdentifie
     [super viewDidLoad];
 
     self.ads = [NSMutableArray array];
-
-    // Replace demo R-M-DEMO-native-c with actual Block ID.
-    // Please, note, that configured image sizes don't affect demo ads.
-    // Following demo Block IDs may be used for testing:
-    // R-M-DEMO-native-video
-    // R-M-DEMO-native-c
-    // R-M-DEMO-native-i
-
-    YMANativeAdLoaderConfiguration *configuration =
-        [[YMANativeAdLoaderConfiguration alloc] initWithBlockID:@"R-M-DEMO-native-c"
-                                                     imageSizes:@[ kYMANativeImageSizeLarge ]
-                                        loadImagesAutomatically:NO];
-    self.adLoader = [[YMANativeAdLoader alloc] initWithConfiguration:configuration];
+    self.adLoader = [[YMANativeAdLoader alloc] init];
     self.adLoader.delegate = self;
 
     [self.tableView registerClass:[NativeBannerTableViewCell class] forCellReuseIdentifier:kNativeBannerCellIdentifier];
@@ -50,7 +38,16 @@ static NSString *const kNativeBannerCellIdentifier = @"NativeBannerCellIdentifie
 
 - (IBAction)loadAd:(id)sender
 {
-    [self.adLoader loadAdWithRequest:nil];
+    // Replace demo R-M-DEMO-native-c with actual Block ID.
+    // Please, note, that configured image sizes don't affect demo ads.
+    // Following demo Block IDs may be used for testing:
+    // R-M-DEMO-native-video
+    // R-M-DEMO-native-c
+    // R-M-DEMO-native-i
+    
+    YMANativeAdRequestConfiguration *requestConfiguration =
+        [[YMANativeAdRequestConfiguration alloc] initWithBlockID:@"R-M-DEMO-native-c"];
+    [self.adLoader loadAdWithRequestConfiguration:requestConfiguration];
 }
 
 #pragma mark - YMANativeAdLoaderDelegate
