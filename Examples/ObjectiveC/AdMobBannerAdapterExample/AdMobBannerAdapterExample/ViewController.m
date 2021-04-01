@@ -10,7 +10,7 @@
 
 @interface ViewController () <GADBannerViewDelegate>
 
-@property (nonatomic, strong) GADBannerView *adView;
+@property (nonatomic, strong) GADBannerView *bannerView;
 
 @end
 
@@ -21,29 +21,29 @@
     [super viewDidLoad];
 
     // Replace ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY with Ad Unit ID generated at https://apps.admob.com".
-    self.adView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
-    self.adView.adUnitID = @"ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY";
-    self.adView.rootViewController = self;
-    self.adView.delegate = self;
-    [self.adView loadRequest:[GADRequest request]];
+    self.bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
+    self.bannerView.adUnitID = @"ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY";
+    self.bannerView.rootViewController = self;
+    self.bannerView.delegate = self;
+    [self.bannerView loadRequest:[GADRequest request]];
+    self.bannerView.translatesAutoresizingMaskIntoConstraints = NO;
 }
 
 #pragma mark GADBannerViewDelegate
 
-- (void)adViewDidReceiveAd:(GADBannerView *)view
+- (void)bannerViewDidReceiveAd:(GADBannerView *)bannerView
 {
     NSLog(@"Ad loaded.");
-    [self.adView removeFromSuperview];
-    [self.view addSubview:view];
-    view.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.bannerView removeFromSuperview];
+    [self.view addSubview:bannerView];
     UILayoutGuide *layoutGuide = self.view.layoutMarginsGuide;
     if (@available(iOS 11.0, *)) {
         layoutGuide = self.view.safeAreaLayoutGuide;
     }
-    [self configureLayoutAtBottomOfSafeAreaForView:view layoutGuide:layoutGuide];
+    [self configureLayoutAtBottomOfSafeAreaForView:bannerView layoutGuide:layoutGuide];
 }
 
-- (void)adView:(GADBannerView *)bannerView didFailToReceiveAdWithError:(GADRequestError *)error
+- (void)bannerView:(GADBannerView *)bannerView didFailToReceiveAdWithError:(NSError *)error
 {
     NSLog(@"Ad failed loading.");
 }

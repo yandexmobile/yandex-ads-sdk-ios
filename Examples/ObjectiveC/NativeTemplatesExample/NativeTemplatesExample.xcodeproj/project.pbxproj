@@ -131,7 +131,7 @@
 		F61FE0C61C9D9DF8001BF8DE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = yandex;
 				TargetAttributes = {
 					F61FE0CD1C9D9DF8001BF8DE = {

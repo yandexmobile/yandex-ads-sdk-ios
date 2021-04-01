@@ -11,7 +11,7 @@
 // Replace XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX with Ad Unit ID generated at https://app.mopub.com
 static NSString *const kMoPubBlockID = @"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 
-@interface ViewController () <MPRewardedVideoDelegate>
+@interface ViewController () <MPRewardedAdsDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *loadButton;
 
@@ -35,21 +35,19 @@ static NSString *const kMoPubBlockID = @"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 
 - (IBAction)loadAd
 {
-    [MPRewardedVideo setDelegate:self forAdUnitId:kMoPubBlockID];
-    [MPRewardedVideo loadRewardedVideoAdWithAdUnitID:kMoPubBlockID withMediationSettings:nil];
+    [MPRewardedAds setDelegate:self forAdUnitId:kMoPubBlockID];
+    [MPRewardedAds loadRewardedAdWithAdUnitID:kMoPubBlockID withMediationSettings:nil];
 }
 
 - (IBAction)presentAd
 {
-    MPRewardedVideoReward *reward = [MPRewardedVideo selectedRewardForAdUnitID:kMoPubBlockID];
-    [MPRewardedVideo presentRewardedVideoAdForAdUnitID:kMoPubBlockID
-                                    fromViewController:self
-                                            withReward:reward];
+    MPReward *reward = [MPRewardedAds selectedRewardForAdUnitID:kMoPubBlockID];
+    [MPRewardedAds presentRewardedAdForAdUnitID:kMoPubBlockID fromViewController:self withReward:reward];
 }
 
-#pragma mark - YMARewardedAdDelegate
+#pragma mark - MPRewardedAdsDelegate
 
-- (void)rewardedVideoAdShouldRewardForAdUnitID:(NSString *)adUnitID reward:(MPRewardedVideoReward *)reward
+- (void)rewardedAdShouldRewardForAdUnitID:(NSString *)adUnitID reward:(MPReward *)reward
 {
     NSString *message = [NSString stringWithFormat:@"Rewarded ad did reward: %@ %@", reward.amount, reward.currencyType];
     NSLog(@"%@", message);
@@ -60,49 +58,14 @@ static NSString *const kMoPubBlockID = @"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
     [self.presentedViewController presentViewController:alertController animated:YES completion:nil];
 }
 
-- (void)rewardedVideoAdDidLoadForAdUnitID:(NSString *)adUnitID
+- (void)rewardedAdDidLoadForAdUnitID:(NSString *)adUnitID
 {
     NSLog(@"Rewarded ad loaded");
 }
 
-- (void)rewardedVideoAdDidFailToPlayForAdUnitID:(NSString *)adUnitID error:(NSError *)error
+- (void)rewardedAdDidFailToLoadForAdUnitID:(NSString *)adUnitID error:(NSError *)error
 {
     NSLog(@"Loading failed. Error: %@", error);
-}
-
-- (void)rewardedVideoAdWillAppearForAdUnitID:(NSString *)adUnitID
-{
-    NSLog(@"Rewarded ad will appear");
-}
-
-- (void)rewardedVideoAdDidAppearForAdUnitID:(NSString *)adUnitID
-{
-    NSLog(@"Rewarded ad did appear");
-}
-
-- (void)rewardedVideoAdWillDisappearForAdUnitID:(NSString *)adUnitID
-{
-    NSLog(@"Rewarded ad will disappear");
-}
-
-- (void)rewardedVideoAdDidDisappearForAdUnitID:(NSString *)adUnitID
-{
-    NSLog(@"Rewarded ad did disappear");
-}
-
-- (void)rewardedVideoAdDidExpireForAdUnitID:(NSString *)adUnitID
-{
-    NSLog(@"Rewarded ad did expire");
-}
-
-- (void)rewardedVideoAdDidReceiveTapEventForAdUnitID:(NSString *)adUnitID
-{
-    NSLog(@"Rewarded ad tapped");
-}
-
-- (void)rewardedVideoAdWillLeaveApplicationForAdUnitID:(NSString *)adUnitID
-{
-    NSLog(@"Rewarded ad will leave application");
 }
 
 @end

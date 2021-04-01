@@ -8,9 +8,9 @@
 #import <GoogleMobileAds/GoogleMobileAds.h>
 #import "ViewController.h"
 
-@interface ViewController () <GADRewardedAdDelegate>
+@interface ViewController () <GADFullScreenContentDelegate>
 
-@property (nonatomic, weak, readonly) IBOutlet UIButton *presentButton;
+@property (nonatomic, weak) IBOutlet UIButton *presentButton;
 @property (nonatomic, strong) GADRewardedAd *rewardedAd;
 
 @end
@@ -19,14 +19,19 @@
 
 - (IBAction)loadAd
 {
-    // Replace ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY with Ad Unit ID generated at https://apps.admob.com.
-    self.rewardedAd = [[GADRewardedAd alloc] initWithAdUnitID:@"ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY"];
-    GADRequest *request = [GADRequest request];
+    self.presentButton.enabled = NO;
 
-    [self.rewardedAd loadRequest:request completionHandler:^(GADRequestError *error) {
-        if (error) {
-            NSLog(@"Loading failed. Error: %@", error);
-        } else {
+    // Replace ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY with Ad Unit ID generated at https://apps.admob.com.
+    [GADRewardedAd loadWithAdUnitID:@"ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY"
+                            request:[GADRequest request]
+                  completionHandler:^(GADRewardedAd *ad, NSError *error) {
+        if (error != nil) {
+            NSLog(@"Rewarded did fail to receive ad with error: %@", [error localizedDescription]);
+        }
+        else {
+            NSLog(@"Rewarded did receive ad");
+            self.rewardedAd = ad;
+            self.rewardedAd.fullScreenContentDelegate = self;
             self.presentButton.enabled = YES;
         }
     }];
@@ -34,18 +39,14 @@
 
 - (IBAction)presentAd
 {
-    if (self.rewardedAd.isReady) {
-        [self.rewardedAd presentFromRootViewController:self delegate:self];
-    }
-    else {
-        NSLog(@"Rewarded ad wasn't ready");
-    }
+    [self.rewardedAd presentFromRootViewController:self userDidEarnRewardHandler:^{
+        [self showReward];
+    }];
 }
 
-#pragma mark - YMARewardedAdDelegate
-
-- (void)rewardedAd:(GADRewardedAd *)rewardedAd userDidEarnReward:(GADAdReward *)reward
+- (void)showReward
 {
+    GADAdReward *reward = self.rewardedAd.adReward;
     NSString *message = [NSString stringWithFormat:@"Rewarded ad did reward: %@ %@", reward.amount, reward.type];
     NSLog(@"%@", message);
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Reward"
@@ -55,19 +56,11 @@
     [self.presentedViewController presentViewController:alertController animated:YES completion:nil];
 }
 
+#pragma mark - GADFullScreenContentDelegate
+
 - (void)rewardedAd:(GADRewardedAd *)rewardedAd didFailToPresentWithError:(NSError *)error
 {
     NSLog(@"Presenting failed. Error: %@", error);
-}
-
-- (void)rewardedAdDidPresent:(GADRewardedAd *)rewardedAd
-{
-    NSLog(@"Rewarded ad presented");
-}
-
-- (void)rewardedAdDidDismiss:(GADRewardedAd *)rewardedAd
-{
-    NSLog(@"Rewarded ad dismissed");
 }
 
 @end

@@ -13,8 +13,8 @@
 		B7A1D70122E48310005DF636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7A1D70022E48310005DF636 /* Assets.xcassets */; };
 		B7A1D70422E48310005DF636 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7A1D70222E48310005DF636 /* LaunchScreen.storyboard */; };
 		B7A1D70C22E485FB005DF636 /* YandexMobileAdsAdMobAdapters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7A1D70B22E485FB005DF636 /* YandexMobileAdsAdMobAdapters.framework */; };
-		B7A1D70E22E4B2B1005DF636 /* UnifiedNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A1D70D22E4B2B1005DF636 /* UnifiedNativeAdView.swift */; };
-		B7A1D71022E4B2EB005DF636 /* UnifiedNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A1D70F22E4B2EB005DF636 /* UnifiedNativeAdView.xib */; };
+		B7A1D70E22E4B2B1005DF636 /* NativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A1D70D22E4B2B1005DF636 /* NativeAdView.swift */; };
+		B7A1D71022E4B2EB005DF636 /* NativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A1D70F22E4B2EB005DF636 /* NativeAdView.xib */; };
 		B7A1D71222E4EC43005DF636 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7A1D71122E4EC43005DF636 /* Images.xcassets */; };
 		B7A1D79B22E59E9E005DF636 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A1D79A22E59E9E005DF636 /* StarRatingView.swift */; };
 		D4116DBE07859550C7125B1B /* Pods_AdMobNativeAdapterExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3818389A34AFA653B4C9180F /* Pods_AdMobNativeAdapterExample.framework */; };
@@ -32,8 +32,8 @@
 		B7A1D70322E48310005DF636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B7A1D70522E48310005DF636 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7A1D70B22E485FB005DF636 /* YandexMobileAdsAdMobAdapters.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YandexMobileAdsAdMobAdapters.framework; path = "../../../../../../Downloads/YandexMobileAdsAdMobAdapters-0.3.0-ios-81398331-de85-444b-ac6d-7bd9af663a93/YandexMobileAdsAdMobAdapters.framework"; sourceTree = "<group>"; };
-		B7A1D70D22E4B2B1005DF636 /* UnifiedNativeAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnifiedNativeAdView.swift; sourceTree = "<group>"; };
-		B7A1D70F22E4B2EB005DF636 /* UnifiedNativeAdView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnifiedNativeAdView.xib; sourceTree = "<group>"; };
+		B7A1D70D22E4B2B1005DF636 /* NativeAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeAdView.swift; sourceTree = "<group>"; };
+		B7A1D70F22E4B2EB005DF636 /* NativeAdView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NativeAdView.xib; sourceTree = "<group>"; };
 		B7A1D71122E4EC43005DF636 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B7A1D79A22E59E9E005DF636 /* StarRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,8 +88,8 @@
 				B7A1D70222E48310005DF636 /* LaunchScreen.storyboard */,
 				B7A1D6FD22E48310005DF636 /* Main.storyboard */,
 				B7A1D79A22E59E9E005DF636 /* StarRatingView.swift */,
-				B7A1D70D22E4B2B1005DF636 /* UnifiedNativeAdView.swift */,
-				B7A1D70F22E4B2EB005DF636 /* UnifiedNativeAdView.xib */,
+				B7A1D70D22E4B2B1005DF636 /* NativeAdView.swift */,
+				B7A1D70F22E4B2EB005DF636 /* NativeAdView.xib */,
 				B7A1D6FB22E4830F005DF636 /* ViewController.swift */,
 			);
 			path = AdMobNativeAdapterExample;
@@ -134,7 +134,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = YANDEX;
 				TargetAttributes = {
 					B7A1D6F522E4830F005DF636 = {
@@ -169,7 +169,7 @@
 				B7A1D71222E4EC43005DF636 /* Images.xcassets in Resources */,
 				B7A1D70122E48310005DF636 /* Assets.xcassets in Resources */,
 				B7A1D6FF22E48310005DF636 /* Main.storyboard in Resources */,
-				B7A1D71022E4B2EB005DF636 /* UnifiedNativeAdView.xib in Resources */,
+				B7A1D71022E4B2EB005DF636 /* NativeAdView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,7 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7A1D70E22E4B2B1005DF636 /* UnifiedNativeAdView.swift in Sources */,
+				B7A1D70E22E4B2B1005DF636 /* NativeAdView.swift in Sources */,
 				B7A1D79B22E59E9E005DF636 /* StarRatingView.swift in Sources */,
 				B7A1D6FC22E4830F005DF636 /* ViewController.swift in Sources */,
 				B7A1D6FA22E4830F005DF636 /* AppDelegate.swift in Sources */,

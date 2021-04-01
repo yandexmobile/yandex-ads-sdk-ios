@@ -138,7 +138,7 @@
 		F654F8151F2B789500106F2C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = test;
 				TargetAttributes = {
 					F654F81C1F2B789500106F2C = {
@@ -187,15 +187,13 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MobileMediationInterstitialExample/Pods-MobileMediationInterstitialExample-resources.sh",
-				"${PODS_ROOT}/AppLovinSDK/applovin-ios-sdk-6.15.2/AppLovinSDKResources.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/StartAppSDK/StartAppSDK.bundle",
+				"${PODS_ROOT}/AppLovinSDK/applovin-ios-sdk-10.0.1/AppLovinSDKResources.bundle",
 				"${PODS_ROOT}/YandexMobileAds/static/YandexMobileAds.framework/YandexMobileAdsBundle.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/mopub-ios-sdk/MoPubResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AppLovinSDKResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/StartAppSDK.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YandexMobileAdsBundle.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MoPubResources.bundle",
 			);
@@ -380,7 +378,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/YandexMobileAds/static\"",
-					"\"${PODS_ROOT}/YandexMobileMetrica/static\"",
 				);
 				INFOPLIST_FILE = MobileMediationInterstitialExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -402,7 +399,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/YandexMobileAds/static\"",
-					"\"${PODS_ROOT}/YandexMobileMetrica/static\"",
 				);
 				INFOPLIST_FILE = MobileMediationInterstitialExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

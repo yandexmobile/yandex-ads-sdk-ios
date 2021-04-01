@@ -143,7 +143,7 @@
 		F6599FCB1BC55EF500FDEF0A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = Yandex;
 				TargetAttributes = {
 					F6599FD21BC55EF500FDEF0A = {
@@ -367,9 +367,7 @@
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"${PODS_ROOT}/Google-Mobile-Ads-SDK/Frameworks/frameworks\"",
 					"\"${PODS_ROOT}/YandexMobileAds/static\"",
-					"\"${PODS_ROOT}/YandexMobileMetrica/static\"",
 				);
 				INFOPLIST_FILE = AdMobBannerAdapterExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -390,9 +388,7 @@
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"${PODS_ROOT}/Google-Mobile-Ads-SDK/Frameworks/frameworks\"",
 					"\"${PODS_ROOT}/YandexMobileAds/static\"",
-					"\"${PODS_ROOT}/YandexMobileMetrica/static\"",
 				);
 				INFOPLIST_FILE = AdMobBannerAdapterExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

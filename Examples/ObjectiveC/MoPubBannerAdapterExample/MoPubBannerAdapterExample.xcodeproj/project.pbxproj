@@ -140,7 +140,7 @@
 		F612F2A41BA958A60009805A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = Yandex;
 				TargetAttributes = {
 					F612F2AB1BA958A60009805A = {
@@ -369,16 +369,23 @@
 				CLANG_ENABLE_MODULES = YES;
 				ENABLE_BITCODE = YES;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
-				FRAMEWORK_SEARCH_PATHS = (
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"${PODS_ROOT}/YandexMobileAds/static\"",
-					"\"${PODS_ROOT}/YandexMobileMetrica/static\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
 				);
 				INFOPLIST_FILE = MoPubBannerAdapterExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Internal/Viewability/OMSDK\"",
+				);
+				OTHER_CFLAGS = "";
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.MoPubBannerAdapterExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -392,16 +399,24 @@
 				CLANG_ENABLE_MODULES = YES;
 				ENABLE_BITCODE = YES;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
-				FRAMEWORK_SEARCH_PATHS = (
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"${PODS_ROOT}/YandexMobileAds/static\"",
-					"\"${PODS_ROOT}/YandexMobileMetrica/static\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
 				);
 				INFOPLIST_FILE = MoPubBannerAdapterExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/mopub-ios-sdk/MoPubSDK/Internal/Viewability/OMSDK\"",
+				);
+				OTHER_CFLAGS = "";
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.MoPubBannerAdapterExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "";
+				"SWIFT_INCLUDE_PATHS[arch=*]" = "$(inherited)";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
