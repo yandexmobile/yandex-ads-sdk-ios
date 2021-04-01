@@ -152,7 +152,7 @@
 		F60333A81ECDB181008D5604 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = yandex;
 				TargetAttributes = {
 					F60333AF1ECDB181008D5604 = {
@@ -394,7 +394,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/YandexMobileAds/static\"",
-					"\"${PODS_ROOT}/YandexMobileMetrica/static\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -423,7 +422,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/YandexMobileAds/static\"",
-					"\"${PODS_ROOT}/YandexMobileMetrica/static\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",

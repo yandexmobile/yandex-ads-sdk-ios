@@ -21,17 +21,17 @@ class ViewController: UIViewController {
     }
 
     @IBAction func loadAd(_ sender: UIButton) {
-        MPRewardedVideo.loadAd(withAdUnitID: adUnitID, withMediationSettings: nil)
+        MPRewardedAds.loadRewardedAd(withAdUnitID: adUnitID, withMediationSettings: [])
     }
     
     @IBAction func showAd(_ sender: UIButton) {
-        let reward = MPRewardedVideo.selectedReward(forAdUnitID: adUnitID)
-        MPRewardedVideo.presentAd(forAdUnitID: adUnitID, from: self, with: reward)
+        let reward = MPRewardedAds.selectedReward(forAdUnitID: adUnitID)
+        MPRewardedAds.presentRewardedAd(forAdUnitID: adUnitID, from: self, with: reward)
     }
     
     private func initializeMoPub() {
+        MPRewardedAds.setDelegate(self, forAdUnitId: adUnitID)
         let configuration = MPMoPubConfiguration(adUnitIdForAppInitialization: adUnitID)
-        MPRewardedVideo.setDelegate(self, forAdUnitId: adUnitID)
         MoPub.sharedInstance().initializeSdk(with: configuration){ [weak self] in
             DispatchQueue.main.async { [weak self] in
                 self?.loadButton.isUserInteractionEnabled = true
@@ -40,9 +40,9 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: MPRewardedVideoDelegate {
+extension ViewController: MPRewardedAdsDelegate {
 
-    func rewardedVideoAdShouldReward(forAdUnitID adUnitID: String!, reward: MPRewardedVideoReward!) {
+    func rewardedAdShouldReward(forAdUnitID adUnitID: String!, reward: MPReward!) {
         let amount = reward.amount!
         let currencyType = reward.currencyType!
         let message = "Rewarded ad did reward: \(amount) \(currencyType)"
@@ -51,11 +51,15 @@ extension ViewController: MPRewardedVideoDelegate {
         presentedViewController?.present(allertController, animated: true, completion: nil)
     }
 
-    func rewardedVideoAdDidLoad(forAdUnitID adUnitID: String!) {
+    func rewardedAdDidLoad(forAdUnitID adUnitID: String!) {
         print("Rewarded ad did load")
     }
 
-    func rewardedVideoAdDidFailToLoad(forAdUnitID adUnitID: String!, error: Error!) {
-        print("Rewarded ad did fail to load ad with error: \(String(describing: error))")
+    func rewardedAdDidFailToLoad(forAdUnitID adUnitID: String!, error: Error!) {
+        print("Rewarded ad did fail to load ad with error: \(error.localizedDescription)")
+    }
+
+    func rewardedAdDidFailToShow(forAdUnitID adUnitID: String!, error: Error!) {
+        print("Rewarded ad did fail to present ad with error: \(error.localizedDescription)")
     }
 }

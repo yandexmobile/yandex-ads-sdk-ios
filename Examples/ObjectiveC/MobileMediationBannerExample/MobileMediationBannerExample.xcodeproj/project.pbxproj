@@ -138,7 +138,7 @@
 		F654F7EE1F2B495300106F2C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = test;
 				TargetAttributes = {
 					F654F7F51F2B495300106F2C = {
@@ -205,13 +205,11 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MobileMediationBannerExample/Pods-MobileMediationBannerExample-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/StartAppSDK/StartAppSDK.bundle",
 				"${PODS_ROOT}/YandexMobileAds/static/YandexMobileAds.framework/YandexMobileAdsBundle.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/mopub-ios-sdk/MoPubResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/StartAppSDK.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YandexMobileAdsBundle.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MoPubResources.bundle",
 			);
@@ -376,7 +374,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/YandexMobileAds/static\"",
-					"\"${PODS_ROOT}/YandexMobileMetrica/static\"",
 				);
 				INFOPLIST_FILE = MobileMediationBannerExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -398,7 +395,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/YandexMobileAds/static\"",
-					"\"${PODS_ROOT}/YandexMobileMetrica/static\"",
 				);
 				INFOPLIST_FILE = MobileMediationBannerExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

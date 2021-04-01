@@ -8,9 +8,9 @@
 #import "ViewController.h"
 #import <GoogleMobileAds/GoogleMobileAds.h>
 
-@interface ViewController () <GADInterstitialDelegate>
+@interface ViewController () <GADFullScreenContentDelegate>
 
-@property (nonatomic, strong) GADInterstitial *interstitial;
+@property (nonatomic, strong) GADInterstitialAd *interstitial;
 
 @end
 
@@ -19,31 +19,30 @@
 - (IBAction)loadAd:(id)sender
 {
     // Replace ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY with Ad Unit ID generated at https://apps.admob.com".
-    self.interstitial = [[GADInterstitial alloc] initWithAdUnitID:@"ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY"];
-    self.interstitial.delegate = self;
-    [self.interstitial loadRequest:[GADRequest request]];
+    [GADInterstitialAd loadWithAdUnitID:@"ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY"
+                                request:[GADRequest request]
+                      completionHandler:^(GADInterstitialAd *ad, NSError *error) {
+        if (error != nil) {
+            NSLog(@"Interstitial did fail to receive ad with error: %@", [error localizedDescription]);
+        }
+        else {
+            NSLog(@"Interstitial did receive ad");
+            self.interstitial = ad;
+            self.interstitial.fullScreenContentDelegate = self;
+        }
+    }];
 }
 
 - (IBAction)showAd:(id)sender
 {
-    if (self.interstitial.isReady) {
-        [self.interstitial presentFromRootViewController:self];
-    }
-    else {
-        NSLog(@"Interstitial ad wasn't ready");
-    }
+    [self.interstitial presentFromRootViewController:self];
 }
 
-#pragma mark GADInterstitialDelegate
+#pragma mark OGADFullScreenContentDelegate
 
-- (void)interstitialDidReceiveAd:(GADInterstitial *)ad
+- (void)ad:(id<GADFullScreenPresentingAd>)ad didFailToPresentFullScreenContentWithError:(NSError *)error
 {
-    NSLog(@"interstitial did receive ad");
-}
-
-- (void)interstitial:(GADInterstitial *)ad didFailToReceiveAdWithError:(GADRequestError *)error
-{
-    NSLog(@"did fail to receive ad with error: %@", error);
+    NSLog(@"Interstitial did fail to present ad with error: %@", [error localizedDescription]);
 }
 
 @end

@@ -10,7 +10,7 @@
 
 @class StarRatingView;
 
-@interface UnifiedNativeAdView : GADUnifiedNativeAdView  <YMAAdMobCustomEventNativeAdView>
+@interface NativeAdView : GADNativeAdView  <YMAAdMobCustomEventNativeAdView>
 
 @property (nonatomic, weak) IBOutlet UILabel *ageLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *faviconImageView;

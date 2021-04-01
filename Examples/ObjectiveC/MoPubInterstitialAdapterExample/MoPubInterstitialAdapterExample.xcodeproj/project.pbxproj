@@ -127,7 +127,7 @@
 		B7E5611E2316EC7300480FBA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = YANDEX;
 				TargetAttributes = {
 					B7E561252316EC7300480FBA = {

@@ -7,12 +7,12 @@
 
 #import <GoogleMobileAds/GoogleMobileAds.h>
 #import "ViewController.h"
-#import "UnifiedNativeAdView.h"
+#import "NativeAdView.h"
 
-@interface ViewController () <GADUnifiedNativeAdLoaderDelegate>
+@interface ViewController () <GADNativeAdLoaderDelegate>
 
 @property (nonatomic, strong) GADAdLoader *adLoader;
-@property (nonatomic, weak) UnifiedNativeAdView *adView;
+@property (nonatomic, weak) NativeAdView *adView;
 
 @end
 
@@ -33,8 +33,8 @@
 
 - (void)configureAdView
 {
-    UnifiedNativeAdView *adView =
-        [[[NSBundle mainBundle] loadNibNamed:@"UnifiedNativeAdView" owner:nil options:nil] firstObject];
+    NativeAdView *adView =
+        [[[NSBundle mainBundle] loadNibNamed:@"NativeAdView" owner:nil options:nil] firstObject];
     adView.hidden = YES;
     [self addView:adView];
     [self.adView removeFromSuperview];
@@ -63,19 +63,21 @@
     // Replace ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY with Ad Unit ID generated at https://apps.admob.com".
     self.adLoader = [[GADAdLoader alloc] initWithAdUnitID:@"ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY"
                                        rootViewController:self
-                                                  adTypes:@[ kGADAdLoaderAdTypeUnifiedNative ]
+                                                  adTypes:@[ kGADAdLoaderAdTypeNative ]
                                                   options:nil];
     self.adLoader.delegate = self;
 }
 
-- (void)adLoader:(nonnull GADAdLoader *)adLoader didFailToReceiveAdWithError:(nonnull GADRequestError *)error
+#pragma mark - GADNativeAdLoaderDelegate
+
+- (void)adLoader:(GADAdLoader *)adLoader didFailToReceiveAdWithError:(NSError *)error
 {
     NSLog(@"Ad loader did fail to receive ad with error: %@", error);
 }
 
-- (void)adLoader:(nonnull GADAdLoader *)adLoader didReceiveUnifiedNativeAd:(nonnull GADUnifiedNativeAd *)nativeAd
+- (void)adLoader:(GADAdLoader *)adLoader didReceiveNativeAd:(GADNativeAd *)nativeAd
 {
-    NSLog(@"Ad loader did receive unified native ad");
+    NSLog(@"Ad loader did receive native ad");
     self.adView.nativeAd = nativeAd;
     [self.adView configureAssetViews];
     self.adView.hidden = NO;

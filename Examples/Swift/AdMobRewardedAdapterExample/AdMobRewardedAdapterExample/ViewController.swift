@@ -13,45 +13,40 @@ class ViewController: UIViewController {
     @IBOutlet weak var showButton: UIButton!
 
     @IBAction func loadAd(_ sender: UIButton) {
+        self.showButton.isEnabled = false
+
         // Replace ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY with Ad Unit ID generated at https://apps.admob.com".
-        let rewardedAd = GADRewardedAd(adUnitID: "ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY")
-        self.rewardedAd = rewardedAd
-        rewardedAd.load(GADRequest()) { error in
+        GADRewardedAd .load(withAdUnitID: "ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY",
+                            request: GADRequest()) { [self] ad, error in
             if let error = error {
-                print("Reward based video ad did fail to load with error: \(error)")
+                print("Did fail to receive ad with error: \(error.localizedDescription)")
             } else {
+                print("Did receive ad")
+                rewardedAd = ad
+                rewardedAd?.fullScreenContentDelegate = self
                 self.showButton.isEnabled = true
             }
         }
     }
 
     @IBAction func showAd(_ sender: UIButton) {
-        if rewardedAd?.isReady ?? false {
-            rewardedAd?.present(fromRootViewController: self, delegate: self)
-        } else {
-            print("Rewarded ad wasn't ready")
-        }
-    }
-}
-
-extension ViewController: GADRewardedAdDelegate {
-
-    func rewardedAdDidPresent(_ rewardedAd: GADRewardedAd) {
-        print("Rewarded ad presented.")
+        rewardedAd?.present(fromRootViewController: self
+                            , userDidEarnRewardHandler: {
+                                self.showReward()
+                            })
     }
 
-    func rewardedAd(_ rewardedAd: GADRewardedAd, didFailToPresentWithError error: Error) {
-        print("Rewarded ad failed to present.")
-    }
-
-    func rewardedAdDidDismiss(_ rewardedAd: GADRewardedAd) {
-        print("Rewarded ad dismissed.")
-    }
-
-    func rewardedAd(_ rewardedAd: GADRewardedAd, userDidEarn reward: GADAdReward) {
+    func showReward() {
+        let reward = rewardedAd!.adReward
         let message = "Rewarded ad did reward \(reward.amount) \(reward.type)"
         let alertController = UIAlertController(title: "Reward", message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         presentedViewController?.present(alertController, animated: true, completion: nil)
+    }
+}
+
+extension ViewController: GADFullScreenContentDelegate {
+    func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+        print("Ad failed to present with error: \(error.localizedDescription)")
     }
 }

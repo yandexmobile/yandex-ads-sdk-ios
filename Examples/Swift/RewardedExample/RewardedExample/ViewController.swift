@@ -10,17 +10,17 @@ import YandexMobileAds
 
 class ViewController: UIViewController {
     
-    var rewardedAd: YMARewardedAd!
+    var rewardedAd: YMARewardedAd?
     
     @IBAction func loadAd() {
         // Replace demo R-M-DEMO-rewarded-client-side-rtb with actual Block ID
         self.rewardedAd = YMARewardedAd(blockID: "R-M-DEMO-rewarded-client-side-rtb")
-        self.rewardedAd.delegate = self
-        self.rewardedAd.load()
+        self.rewardedAd?.delegate = self
+        self.rewardedAd?.load()
     }
     
     @IBAction func presentAd() {
-        self.rewardedAd.present(from: self)
+        self.rewardedAd?.present(from: self)
     }
 }
 
