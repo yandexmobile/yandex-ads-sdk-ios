@@ -25,20 +25,16 @@ class ViewController: UIViewController {
     func addBannerView(banner: GADBannerView) {
         banner.removeFromSuperview()
         view.addSubview(banner)
-        view.addConstraints([NSLayoutConstraint(item: banner,
-                                                attribute: .bottom,
-                                                relatedBy: .equal,
-                                                toItem: bottomLayoutGuide,
-                                                attribute: .top,
-                                                multiplier: 1,
-                                                constant: 0),
-                             NSLayoutConstraint(item: banner,
-                                                attribute: .centerX,
-                                                relatedBy: .equal,
-                                                toItem: view,
-                                                attribute: .centerX,
-                                                multiplier: 1,
-                                                constant: 0)])
+
+        var layoutGuide = self.view.layoutMarginsGuide
+        if #available(iOS 11.0, *) {
+            layoutGuide = self.view.safeAreaLayoutGuide
+        }
+        let constraints = [
+            banner.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor),
+            banner.centerXAnchor.constraint(equalTo: layoutGuide.centerXAnchor),
+        ]
+        NSLayoutConstraint.activate(constraints)
     }
 
     @IBAction func loadAd(_ sender: UIButton) {
@@ -47,12 +43,12 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: GADBannerViewDelegate {
-    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
         addBannerView(banner: bannerView)
         print("Ad view did receive ad")
     }
 
-    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
         print("Ad view did fail to receive ad with error: \(error)")
     }
 }

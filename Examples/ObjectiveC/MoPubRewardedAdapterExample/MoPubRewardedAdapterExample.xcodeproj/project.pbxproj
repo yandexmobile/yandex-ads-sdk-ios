@@ -152,7 +152,7 @@
 		F654F8151F2B789500106F2C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = test;
 				TargetAttributes = {
 					F654F81C1F2B789500106F2C = {

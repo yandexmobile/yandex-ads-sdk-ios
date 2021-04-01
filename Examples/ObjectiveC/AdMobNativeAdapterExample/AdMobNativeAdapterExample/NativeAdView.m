@@ -6,16 +6,16 @@
  */
 
 #import <YandexMobileAds/YandexMobileAds.h>
-#import "UnifiedNativeAdView.h"
+#import "NativeAdView.h"
 #import "StarRatingView.h"
 
-@interface UnifiedNativeAdView ()
+@interface NativeAdView ()
 
 @property (nonatomic, weak) NSLayoutConstraint *aspectRatioConstraint;
 
 @end
 
-@implementation UnifiedNativeAdView
+@implementation NativeAdView
 
 - (void)configureAssetViews
 {

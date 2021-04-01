@@ -122,7 +122,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = Yandex;
 				TargetAttributes = {
 					B303456521C1537400C9A4DA = {
@@ -384,6 +384,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.MobileMediationRewardedExampleSwift;
 				PRODUCT_NAME = MobileMediationRewardedExample;
 				SWIFT_VERSION = 5.0;
@@ -404,6 +405,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yandex.MobileMediationRewardedExampleSwift;
 				PRODUCT_NAME = MobileMediationRewardedExample;
 				SWIFT_VERSION = 5.0;

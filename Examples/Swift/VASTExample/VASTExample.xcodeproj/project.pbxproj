@@ -126,7 +126,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = YANDEX;
 				TargetAttributes = {
 					B7FB822422DC58B800679B81 = {

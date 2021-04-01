@@ -5,7 +5,7 @@
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
  */
 
-#import <MoPub/MoPub.h>
+#import <MoPubSDK/MoPub.h>
 #import "ViewController.h"
 
 // Replace XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX with Ad Unit ID generated at https://app.mopub.com.

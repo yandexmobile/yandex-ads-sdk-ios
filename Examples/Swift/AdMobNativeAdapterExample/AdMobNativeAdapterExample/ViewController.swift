@@ -9,7 +9,7 @@ import GoogleMobileAds
 
 class ViewController: UIViewController {
     private var adLoader: GADAdLoader!
-    private var adView: UnifiedNativeAdView?
+    private var adView: NativeAdView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +23,9 @@ class ViewController: UIViewController {
     }
     
     private func createAdView() {
-        adView = Bundle.main.loadNibNamed("UnifiedNativeAdView",
+        adView = Bundle.main.loadNibNamed("NativeAdView",
                                           owner: nil,
-                                          options: nil)?.first as? UnifiedNativeAdView
+                                          options: nil)?.first as? NativeAdView
         if let adView = adView {
             adView.isHidden = true
             addView(adView)
@@ -35,31 +35,30 @@ class ViewController: UIViewController {
     private func addView(_ adView: UIView) {
         adView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(adView)
-        let views = ["adView": adView]
-        let horizontal = NSLayoutConstraint.constraints(withVisualFormat: "H:|-[adView]-|",
-                                                        options: [],
-                                                        metrics: nil,
-                                                        views: views)
-        let vertical = NSLayoutConstraint.constraints(withVisualFormat: "V:[adView]-|",
-                                                      options: [],
-                                                      metrics: nil,
-                                                      views: views)
-        view.addConstraints(horizontal + vertical)
+        var layoutGuide = self.view.layoutMarginsGuide
+        if #available(iOS 11.0, *) {
+            layoutGuide = self.view.safeAreaLayoutGuide
+        }
+        let constraints = [
+            adView.leftAnchor.constraint(equalTo: layoutGuide.leftAnchor),
+            adView.rightAnchor.constraint(equalTo: layoutGuide.rightAnchor),
+            adView.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor),
+        ]
+        NSLayoutConstraint.activate(constraints)
     }
 
     private func createLoader() {
         // Replace ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY with Ad Unit ID generated at https://apps.admob.com".
         adLoader = GADAdLoader(adUnitID: "ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY",
                                rootViewController: self,
-                               adTypes: [.unifiedNative],
+                               adTypes: [.native],
                                options: nil)
         adLoader.delegate = self
     }
 }
 
-extension ViewController: GADUnifiedNativeAdLoaderDelegate, GADUnifiedNativeAdDelegate {
-    func adLoader(_ adLoader: GADAdLoader, didReceive nativeAd: GADUnifiedNativeAd) {
-
+extension ViewController: GADNativeAdLoaderDelegate, GADNativeAdDelegate {
+    func adLoader(_ adLoader: GADAdLoader, didReceive nativeAd: GADNativeAd) {
         guard let adView = adView else { return }
 
         nativeAd.delegate = self
@@ -68,7 +67,7 @@ extension ViewController: GADUnifiedNativeAdLoaderDelegate, GADUnifiedNativeAdDe
         adView.isHidden = false
     }
 
-    func adLoader(_ adLoader: GADAdLoader, didFailToReceiveAdWithError error: GADRequestError) {
-        print("Ad loader did fail to receive ad with error: \(error)")
+    func adLoader(_ adLoader: GADAdLoader, didFailToReceiveAdWithError error: Error) {
+        print("Ad loader did fail to receive ad with error: \(error.localizedDescription)")
     }
 }

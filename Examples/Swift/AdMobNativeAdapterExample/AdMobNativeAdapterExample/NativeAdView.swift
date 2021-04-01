@@ -9,7 +9,7 @@ import GoogleMobileAds
 import YandexMobileAdsAdMobAdapters
 import YandexMobileAds
 
-class UnifiedNativeAdView: GADUnifiedNativeAdView {
+class NativeAdView: GADNativeAdView {
     @IBOutlet weak var warningLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var reviewCountLabel: UILabel!
@@ -73,7 +73,7 @@ class UnifiedNativeAdView: GADUnifiedNativeAdView {
     }
 }
 
-extension UnifiedNativeAdView: YMAAdMobCustomEventNativeAdView {
+extension NativeAdView: YMAAdMobCustomEventNativeAdView {
     func nativeAgeLabel() -> UILabel! {
         return ageLabel
     }

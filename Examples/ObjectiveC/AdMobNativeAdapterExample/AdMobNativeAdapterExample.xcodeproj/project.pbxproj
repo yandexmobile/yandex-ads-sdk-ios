@@ -15,8 +15,8 @@
 		B7262ABA22EAF7A300E2DFFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7262AB822EAF7A300E2DFFD /* LaunchScreen.storyboard */; };
 		B7262ABD22EAF7A300E2DFFD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B7262ABC22EAF7A300E2DFFD /* main.m */; };
 		B7262AC422EAF99E00E2DFFD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7262AC322EAF99E00E2DFFD /* Images.xcassets */; };
-		B7262AC622EAF9E500E2DFFD /* UnifiedNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7262AC522EAF9E500E2DFFD /* UnifiedNativeAdView.xib */; };
-		B7262AC922EAFA1900E2DFFD /* UnifiedNativeAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7262AC822EAFA1900E2DFFD /* UnifiedNativeAdView.m */; };
+		B7262AC622EAF9E500E2DFFD /* NativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7262AC522EAF9E500E2DFFD /* NativeAdView.xib */; };
+		B7262AC922EAFA1900E2DFFD /* NativeAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7262AC822EAFA1900E2DFFD /* NativeAdView.m */; };
 		B7262ACC22EAFF9A00E2DFFD /* StarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7262ACB22EAFF9A00E2DFFD /* StarRatingView.m */; };
 /* End PBXBuildFile section */
 
@@ -35,9 +35,9 @@
 		B7262ABB22EAF7A300E2DFFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7262ABC22EAF7A300E2DFFD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B7262AC322EAF99E00E2DFFD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		B7262AC522EAF9E500E2DFFD /* UnifiedNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnifiedNativeAdView.xib; sourceTree = "<group>"; };
-		B7262AC722EAFA1900E2DFFD /* UnifiedNativeAdView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnifiedNativeAdView.h; sourceTree = "<group>"; };
-		B7262AC822EAFA1900E2DFFD /* UnifiedNativeAdView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnifiedNativeAdView.m; sourceTree = "<group>"; };
+		B7262AC522EAF9E500E2DFFD /* NativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NativeAdView.xib; sourceTree = "<group>"; };
+		B7262AC722EAFA1900E2DFFD /* NativeAdView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeAdView.h; sourceTree = "<group>"; };
+		B7262AC822EAFA1900E2DFFD /* NativeAdView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeAdView.m; sourceTree = "<group>"; };
 		B7262ACA22EAFF9A00E2DFFD /* StarRatingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StarRatingView.h; sourceTree = "<group>"; };
 		B7262ACB22EAFF9A00E2DFFD /* StarRatingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StarRatingView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,9 +94,9 @@
 				B7262ABC22EAF7A300E2DFFD /* main.m */,
 				B7262ACA22EAFF9A00E2DFFD /* StarRatingView.h */,
 				B7262ACB22EAFF9A00E2DFFD /* StarRatingView.m */,
-				B7262AC722EAFA1900E2DFFD /* UnifiedNativeAdView.h */,
-				B7262AC822EAFA1900E2DFFD /* UnifiedNativeAdView.m */,
-				B7262AC522EAF9E500E2DFFD /* UnifiedNativeAdView.xib */,
+				B7262AC722EAFA1900E2DFFD /* NativeAdView.h */,
+				B7262AC822EAFA1900E2DFFD /* NativeAdView.m */,
+				B7262AC522EAF9E500E2DFFD /* NativeAdView.xib */,
 				B7262AB022EAF7A000E2DFFD /* ViewController.h */,
 				B7262AB122EAF7A000E2DFFD /* ViewController.m */,
 			);
@@ -140,7 +140,7 @@
 		B7262AA222EAF7A000E2DFFD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = YANDEX;
 				TargetAttributes = {
 					B7262AA922EAF7A000E2DFFD = {
@@ -175,7 +175,7 @@
 				B7262AC422EAF99E00E2DFFD /* Images.xcassets in Resources */,
 				B7262AB722EAF7A300E2DFFD /* Assets.xcassets in Resources */,
 				B7262AB522EAF7A000E2DFFD /* Main.storyboard in Resources */,
-				B7262AC622EAF9E500E2DFFD /* UnifiedNativeAdView.xib in Resources */,
+				B7262AC622EAF9E500E2DFFD /* NativeAdView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,7 +249,7 @@
 				B7262AB222EAF7A000E2DFFD /* ViewController.m in Sources */,
 				B7262ABD22EAF7A300E2DFFD /* main.m in Sources */,
 				B7262AAF22EAF7A000E2DFFD /* AppDelegate.m in Sources */,
-				B7262AC922EAFA1900E2DFFD /* UnifiedNativeAdView.m in Sources */,
+				B7262AC922EAFA1900E2DFFD /* NativeAdView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
