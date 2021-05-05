@@ -3,6 +3,8 @@ All notable changes to this project will be documented in this file.
 
 # Version 4.1.2
 
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/332493/YandexMobileAds-4.1.2-ios-7645fdd7-addc-4c36-8158-d94249e30644.zip)
+
 #### Fixed
 * Fixed support for SKAdNetwork
 
