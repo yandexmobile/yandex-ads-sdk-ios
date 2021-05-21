@@ -62,4 +62,32 @@ extension ViewController: MPRewardedAdsDelegate {
     func rewardedAdDidFailToShow(forAdUnitID adUnitID: String!, error: Error!) {
         print("Rewarded ad did fail to present ad with error: \(error.localizedDescription)")
     }
+
+    func rewardedAdWillPresent(forAdUnitID adUnitID: String!) {
+        print("Rewarded ad will present")
+    }
+
+    func rewardedAdDidPresent(forAdUnitID adUnitID: String!) {
+        print("Rewarded ad did present")
+    }
+
+    func rewardedAdWillDismiss(forAdUnitID adUnitID: String!) {
+        print("Rewarded ad will dismiss")
+    }
+
+    func rewardedAdDidDismiss(forAdUnitID adUnitID: String!) {
+        print("Rewarded ad did dismiss")
+    }
+
+    func rewardedAdDidReceiveTapEvent(forAdUnitID adUnitID: String!) {
+        print("Rewarded ad did track tap")
+    }
+
+    func rewardedAdWillLeaveApplication(forAdUnitID adUnitID: String!) {
+        print("Rewarded ad will leave application")
+    }
+
+    func didTrackImpression(withAdUnitID adUnitID: String!, impressionData: MPImpressionData!) {
+        print("Rewarded ad did track impression")
+    }
 }

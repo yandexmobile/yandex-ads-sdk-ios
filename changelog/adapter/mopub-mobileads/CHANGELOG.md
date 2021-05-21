@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 0.22.0
+
+#### Updated
+* Fixed support for fullscreenAdAdapterAdWillDismiss: and fullscreenAdAdapterAdDidDismiss: callbacks
+
 ## Version 0.21.0
 
 #### Updated
