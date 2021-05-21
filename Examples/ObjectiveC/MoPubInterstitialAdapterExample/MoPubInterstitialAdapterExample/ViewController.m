@@ -62,4 +62,34 @@ static NSString *const kMoPubBlockID = @"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
     NSLog(@"Interstitial did fail to load ad with error: %@", error);
 }
 
+- (void)interstitialWillAppear:(MPInterstitialAdController *)interstitial
+{
+    NSLog(@"Interstitial will appear");
+}
+
+- (void)interstitialDidAppear:(MPInterstitialAdController *)interstitial;
+{
+    NSLog(@"Interstitial did appear");
+}
+
+- (void)interstitialWillDismiss:(MPInterstitialAdController *)interstitial
+{
+    NSLog(@"Interstitial will dismiss");
+}
+
+- (void)interstitialDidDismiss:(MPInterstitialAdController *)interstitial
+{
+    NSLog(@"Interstitial did dismiss");
+}
+
+- (void)interstitialDidReceiveTapEvent:(MPInterstitialAdController *)interstitial
+{
+    NSLog(@"Interstitial did receive tap event");
+}
+
+- (void)mopubAd:(id<MPMoPubAd>)ad didTrackImpressionWithImpressionData:(MPImpressionData *)impressionData
+{
+    NSLog(@"Interstitial did track impression");
+}
+
 @end

@@ -51,4 +51,28 @@ extension ViewController: MPInterstitialAdControllerDelegate {
     func interstitialDidFail(toLoadAd interstitial: MPInterstitialAdController!, withError error: Error!) {
         print("Interstitial did fail to load ad with error: \(String(describing: error))")
     }
+
+    func interstitialWillAppear(_ interstitial: MPInterstitialAdController!) {
+        print("Interstitial will appear")
+    }
+
+    func interstitialDidAppear(_ interstitial: MPInterstitialAdController!) {
+        print("Interstitial did appear")
+    }
+
+    func interstitialWillDismiss(_ interstitial: MPInterstitialAdController!) {
+        print("Interstitial will sidmiss")
+    }
+
+    func interstitialDidDismiss(_ interstitial: MPInterstitialAdController!) {
+        print("Interstitial did dismiss")
+    }
+
+    func interstitialDidReceiveTapEvent(_ interstitial: MPInterstitialAdController!) {
+        print("Interstitial did receive tap event")
+    }
+
+    func mopubAd(_ ad: MPMoPubAd, didTrackImpressionWith impressionData: MPImpressionData?) {
+        print("Interstitial did track impression")
+    }
 }

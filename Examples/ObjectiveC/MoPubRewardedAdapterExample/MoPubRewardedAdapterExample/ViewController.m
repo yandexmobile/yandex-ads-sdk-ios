@@ -68,4 +68,44 @@ static NSString *const kMoPubBlockID = @"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
     NSLog(@"Loading failed. Error: %@", error);
 }
 
+- (void)rewardedAdDidFailToShowForAdUnitID:(NSString *)adUnitID error:(NSError *)error
+{
+    NSLog(@"Rewarded ad loaded");
+}
+
+- (void)rewardedAdWillPresentForAdUnitID:(NSString *)adUnitID
+{
+    NSLog(@"Rewarded ad will present");
+}
+
+- (void)rewardedAdDidPresentForAdUnitID:(NSString *)adUnitID
+{
+    NSLog(@"Rewarded ad did present");
+}
+
+- (void)rewardedAdWillDismissForAdUnitID:(NSString *)adUnitID
+{
+    NSLog(@"Rewarded ad will dismiss");
+}
+
+- (void)rewardedAdDidDismissForAdUnitID:(NSString *)adUnitID
+{
+    NSLog(@"Rewarded ad did dismiss");
+}
+
+- (void)rewardedAdDidReceiveTapEventForAdUnitID:(NSString *)adUnitID
+{
+    NSLog(@"Rewarded ad receive tap event");
+}
+
+- (void)rewardedAdWillLeaveApplicationForAdUnitID:(NSString *)adUnitID
+{
+    NSLog(@"Rewarded ad will leave application");
+}
+
+- (void)didTrackImpressionWithAdUnitID:(NSString *)adUnitID impressionData:(MPImpressionData *)impressionData
+{
+    NSLog(@"Rewarded ad loaded");
+}
+
 @end
