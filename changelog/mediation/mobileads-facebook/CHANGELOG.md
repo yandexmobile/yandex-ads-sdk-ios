@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 0.22.0
+
+#### Added
+* Added support for Facebook sdk version 6.4.0
+* Updated minimum supported Facebook sdk version to 6.4.0
+
 ## Version 0.21.0
 
 #### Added
