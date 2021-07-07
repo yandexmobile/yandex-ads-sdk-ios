@@ -207,8 +207,8 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-StickyBannerExample/Pods-StickyBannerExample-frameworks.sh",
 				"${PODS_ROOT}/YandexMobileAds/dynamic/YandexMobileAds.framework",
-				"${PODS_ROOT}/YandexMobileMetrica/ios/dynamic/YandexMobileMetrica.framework",
-				"${PODS_ROOT}/YandexMobileMetrica/ios/dynamic/YandexMobileMetricaCrashes.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexMobileMetrica/YandexMobileMetrica.framework/YandexMobileMetrica",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexMobileMetricaCrashes/YandexMobileMetricaCrashes.framework/YandexMobileMetricaCrashes",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (

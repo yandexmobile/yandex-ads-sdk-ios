@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 0.22.0
+
+#### Added
+* Updated minimum supported Yandex Mobile Ads SDK version to 4.3.0
+
+#### Fixed
+* Fixed bug when the loading callback was lost after double loading fullscreen ads
+
 ## Version 0.21.0
 
 #### Added
