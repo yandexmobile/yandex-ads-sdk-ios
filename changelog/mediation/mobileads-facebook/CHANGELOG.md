@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 0.23.0
+
+#### Added
+* Added support for Facebook sdk version 6.5.1
+* Updated minimum supported Facebook sdk version to 6.5.1
+* Updated minimum supported Yandex Mobile Ads SDK version to 4.3.0
+
 ## Version 0.22.0
 
 #### Added
