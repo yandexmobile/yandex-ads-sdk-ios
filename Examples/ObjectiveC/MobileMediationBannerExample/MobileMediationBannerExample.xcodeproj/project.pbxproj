@@ -122,6 +122,7 @@
 				F654F7F31F2B495300106F2C /* Frameworks */,
 				F654F7F41F2B495300106F2C /* Resources */,
 				2AFB1BF1C09E74E7CE14396E /* [CP] Copy Pods Resources */,
+				7A6C5E0FFE5364B305BAAE35 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -216,6 +217,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobileMediationBannerExample/Pods-MobileMediationBannerExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A6C5E0FFE5364B305BAAE35 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MobileMediationBannerExample/Pods-MobileMediationBannerExample-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OMSDK_Mopub/OMSDK_Mopub.framework/OMSDK_Mopub",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OMSDK_Mopub.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobileMediationBannerExample/Pods-MobileMediationBannerExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 0.24.0
+
+#### Updated
+* Added support for MyTarget sdk version 5.12.0
+* Updated minimum supported MyTarget sdk version to 5.12.0
+
 ## Version 0.23.0
 
 #### Updated
