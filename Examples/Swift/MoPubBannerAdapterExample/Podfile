@@ -3,7 +3,6 @@ platform :ios, :deployment_target => '10.0'
 
 target 'MoPubBannerAdapterExample' do
   use_frameworks!
-  pod 'mopub-ios-sdk', '5.16.2'
   pod 'YandexMobileAdsMoPubAdapters/Dynamic'
   pod 'YandexMobileAds/Dynamic'
 end

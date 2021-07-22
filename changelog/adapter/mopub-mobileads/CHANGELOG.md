@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 0.25.0
+
+#### Updated
+* Added support for MoPub sdk version 5.17.0
+* Updated minimum supported MoPub sdk version to 5.17.0
+
 ## Version 0.24.0
 
 #### Added

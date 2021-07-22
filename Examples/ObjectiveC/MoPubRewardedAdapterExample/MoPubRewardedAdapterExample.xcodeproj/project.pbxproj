@@ -136,6 +136,7 @@
 				F654F81A1F2B789500106F2C /* Frameworks */,
 				F654F81B1F2B789500106F2C /* Resources */,
 				7326371AEE8A5EC012082124 /* [CP] Copy Pods Resources */,
+				8E5EF198D32D3E7641ED9EF1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -212,6 +213,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoPubRewardedAdapterExample/Pods-MoPubRewardedAdapterExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E5EF198D32D3E7641ED9EF1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoPubRewardedAdapterExample/Pods-MoPubRewardedAdapterExample-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OMSDK_Mopub/OMSDK_Mopub.framework/OMSDK_Mopub",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OMSDK_Mopub.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoPubRewardedAdapterExample/Pods-MoPubRewardedAdapterExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A9E3A9EA12370414755620EA /* [CP] Check Pods Manifest.lock */ = {
