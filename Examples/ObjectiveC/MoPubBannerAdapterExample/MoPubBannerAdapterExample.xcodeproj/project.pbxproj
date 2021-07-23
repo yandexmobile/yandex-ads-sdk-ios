@@ -124,6 +124,7 @@
 				F612F2A91BA958A60009805A /* Frameworks */,
 				F612F2AA1BA958A60009805A /* Resources */,
 				2F66C5BF9D8DDD1111A47C57 /* [CP] Copy Pods Resources */,
+				0CA6968593BAA4AB0F726F1D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -181,6 +182,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0CA6968593BAA4AB0F726F1D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoPubBannerAdapterExample/Pods-MoPubBannerAdapterExample-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OMSDK_Mopub/OMSDK_Mopub.framework/OMSDK_Mopub",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OMSDK_Mopub.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoPubBannerAdapterExample/Pods-MoPubBannerAdapterExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2F66C5BF9D8DDD1111A47C57 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

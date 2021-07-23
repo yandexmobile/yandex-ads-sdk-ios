@@ -130,6 +130,7 @@
 				B3946C1A20456AF50081899C /* Frameworks */,
 				B3946C1B20456AF50081899C /* Resources */,
 				D9C50E2C4F2481A4372AD520 /* [CP] Copy Pods Resources */,
+				2FEC951B984DF33B48F89074 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -189,6 +190,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2FEC951B984DF33B48F89074 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MobileMediationNativeExample/Pods-MobileMediationNativeExample-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OMSDK_Mopub/OMSDK_Mopub.framework/OMSDK_Mopub",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OMSDK_Mopub.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MobileMediationNativeExample/Pods-MobileMediationNativeExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C9C3D521EFEACD9805A3CFA6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
