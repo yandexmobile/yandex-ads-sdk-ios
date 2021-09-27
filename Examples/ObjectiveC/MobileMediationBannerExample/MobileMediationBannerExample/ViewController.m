@@ -6,6 +6,7 @@
  */
 
 #import <YandexMobileAds/YandexMobileAds.h>
+#import <StartApp/StartApp.h>
 #import "ViewController.h"
 
 static NSString *const kAdMobBlockID = @"adf-279013/975832";
@@ -43,6 +44,11 @@ static int const kBlockIDIndex = 1;
         ];
     }
     return self;
+}
+
+- (void)viewDidLoad
+{
+    [STAStartAppSDK sharedInstance].testAdsEnabled = YES;
 }
 
 - (IBAction)loadAd:(id)sender
