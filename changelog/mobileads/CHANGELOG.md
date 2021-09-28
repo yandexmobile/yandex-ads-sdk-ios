@@ -1,6 +1,16 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# Version 4.4.0
+
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/212922/YandexMobileAds-4.4.0-ios-8648e3dd-e0ec-44f3-8064-d336efdf59c5.zip)
+
+#### Added
+* Added support for Xcode 13
+* Added support for SKAdNetwork 3.0
+* Added improvements for fullscreen designs
+* Added improvements and fixes
+
 # Version 4.3.1
 
 SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/332493/YandexMobileAds-4.3.1-ios-e636b136-13f1-41b8-9872-a2306045bb8c.zip)

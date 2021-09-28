@@ -35,6 +35,10 @@ class ViewController: UIViewController {
     @IBOutlet private var pickerView: UIPickerView!
     
     private var rewardedAd: YMARewardedAd?
+
+    override func viewDidLoad() {
+        STAStartAppSDK.sharedInstance().testAdsEnabled = true
+    }
     
     @IBAction func loadAd() {
         let selectedIndex = pickerView.selectedRow(inComponent: 0)

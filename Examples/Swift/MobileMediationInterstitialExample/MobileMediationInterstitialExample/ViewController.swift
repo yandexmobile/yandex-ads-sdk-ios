@@ -37,6 +37,10 @@ class ViewController: UIViewController {
 
     private var interstitialAd: YMAInterstitialAd?
 
+    override func viewDidLoad() {
+        STAStartAppSDK.sharedInstance().testAdsEnabled = true
+    }
+
     @IBAction func loadAd(_ sender: UIButton) {
         let selectedIndex = pickerView.selectedRow(inComponent: 0)
         /*

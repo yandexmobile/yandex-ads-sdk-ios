@@ -31,6 +31,10 @@ class ViewController: UIViewController {
 
     private var adView: YMAAdView?
 
+    override func viewDidLoad() {
+        STAStartAppSDK.sharedInstance().testAdsEnabled = true
+    }
+
     @IBAction func loadAd(_ sender: UIButton) {
         let adSize = YMAAdSize.fixedSize(with: YMAAdSizeBanner_320x50)
         let selectedBlockIndex = pickerView.selectedRow(inComponent: 0)
