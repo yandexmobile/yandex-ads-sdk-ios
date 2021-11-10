@@ -1,0 +1,836 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14033F5E27201B8A00A24D5E /* MobileMediationInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F5D27201B8A00A24D5E /* MobileMediationInterstitialViewController.swift */; };
+		14033F6527201E2700A24D5E /* MobileMediationNativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F6427201E2700A24D5E /* MobileMediationNativeViewController.swift */; };
+		14033F6827201F7900A24D5E /* MobileMediationRewardedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F6727201F7900A24D5E /* MobileMediationRewardedViewController.swift */; };
+		14033F6B2720246900A24D5E /* MoPubBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F6A2720246900A24D5E /* MoPubBannerViewController.swift */; };
+		14033F702720259B00A24D5E /* MoPubInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F6F2720259B00A24D5E /* MoPubInterstitialViewController.swift */; };
+		14033F732720261E00A24D5E /* MoPubNativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F722720261E00A24D5E /* MoPubNativeViewController.swift */; };
+		14033F76272026EB00A24D5E /* MoPubRewardedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F75272026EB00A24D5E /* MoPubRewardedViewController.swift */; };
+		14033F7A272028E100A24D5E /* AdMobBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F79272028E100A24D5E /* AdMobBannerViewController.swift */; };
+		14033F7D27202A5800A24D5E /* AdMobInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F7C27202A5800A24D5E /* AdMobInterstitialViewController.swift */; };
+		14033F8027202AC300A24D5E /* AdMobNativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F7F27202AC300A24D5E /* AdMobNativeViewController.swift */; };
+		14033F8527202B8D00A24D5E /* AdMobNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F8227202B8D00A24D5E /* AdMobNativeAdView.swift */; };
+		14033F8627202B8D00A24D5E /* AdMobNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14033F8327202B8D00A24D5E /* AdMobNativeAdView.xib */; };
+		14033F8927202CA800A24D5E /* AdMobRewardedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F8827202CA800A24D5E /* AdMobRewardedViewController.swift */; };
+		14033FAE2720457800A24D5E /* InstreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F8E2720457800A24D5E /* InstreamViewController.swift */; };
+		14033FB02720457800A24D5E /* InstreamContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F902720457800A24D5E /* InstreamContent.swift */; };
+		14033FB12720457800A24D5E /* ContentControlsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F912720457800A24D5E /* ContentControlsController.swift */; };
+		14033FB22720457800A24D5E /* AdPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F942720457800A24D5E /* AdPlayer.swift */; };
+		14033FB32720457800A24D5E /* LRUCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F972720457800A24D5E /* LRUCache.swift */; };
+		14033FB42720457800A24D5E /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F982720457800A24D5E /* LinkedList.swift */; };
+		14033FB52720457800A24D5E /* ReusablePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F992720457800A24D5E /* ReusablePlayer.swift */; };
+		14033FB62720457800A24D5E /* VideoPlayerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F9A2720457800A24D5E /* VideoPlayerProvider.swift */; };
+		14033FB72720457800A24D5E /* VideoAVPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F9B2720457800A24D5E /* VideoAVPlayer.swift */; };
+		14033FB82720457800A24D5E /* ContentPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F9D2720457800A24D5E /* ContentPlayer.swift */; };
+		14033FB92720457800A24D5E /* ContentPlayerControlsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F9E2720457800A24D5E /* ContentPlayerControlsDelegate.swift */; };
+		14033FBA2720457800A24D5E /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F9F2720457800A24D5E /* PlayerView.swift */; };
+		14033FBB2720457800A24D5E /* VideoAVPlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033FA02720457800A24D5E /* VideoAVPlayerDelegate.swift */; };
+		14033FBC2720457800A24D5E /* VideoPlayerVisibilityTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033FA22720457800A24D5E /* VideoPlayerVisibilityTracker.swift */; };
+		14033FBD2720457800A24D5E /* ViewVisibilityValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033FA32720457800A24D5E /* ViewVisibilityValidator.swift */; };
+		14033FBE2720457800A24D5E /* InstreamAdBinderToastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033FA52720457800A24D5E /* InstreamAdBinderToastDelegate.swift */; };
+		14033FBF2720457800A24D5E /* InstreamParametersParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033FA72720457800A24D5E /* InstreamParametersParser.swift */; };
+		14033FC02720457800A24D5E /* InstreamAdBreakPositionFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033FA82720457800A24D5E /* InstreamAdBreakPositionFormatter.swift */; };
+		14033FC12720457800A24D5E /* InrollsPlaybackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033FAA2720457800A24D5E /* InrollsPlaybackController.swift */; };
+		14033FC22720457800A24D5E /* InstreamInrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033FAB2720457800A24D5E /* InstreamInrollViewController.swift */; };
+		14033FC42720598D00A24D5E /* TemplateNativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033FC32720598D00A24D5E /* TemplateNativeViewController.swift */; };
+		144C966B272A931800D8DD63 /* MoPubNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144C9669272A931800D8DD63 /* MoPubNativeAdView.swift */; };
+		144C966C272A931800D8DD63 /* MoPubNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 144C966A272A931800D8DD63 /* MoPubNativeAdView.xib */; };
+		1467E353271EA91500DF104A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1467E352271EA91500DF104A /* AppDelegate.swift */; };
+		1467E35A271EA91500DF104A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1467E358271EA91500DF104A /* Main.storyboard */; };
+		1467E35C271EA91700DF104A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1467E35B271EA91700DF104A /* Assets.xcassets */; };
+		1467E35F271EA91700DF104A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1467E35D271EA91700DF104A /* LaunchScreen.storyboard */; };
+		1474FC1E2721A4E500276688 /* GDPRUserConsentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474FC182721A4E500276688 /* GDPRUserConsentManager.swift */; };
+		1474FC212721A4E500276688 /* GDPRDDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474FC1B2721A4E500276688 /* GDPRDDialogViewController.swift */; };
+		1474FC222721A4E500276688 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474FC1C2721A4E500276688 /* SettingsViewController.swift */; };
+		1474FC232721A4E500276688 /* GDPRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474FC1D2721A4E500276688 /* GDPRViewController.swift */; };
+		147B0BC9271FFC53005F4062 /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147B0BC8271FFC53005F4062 /* InterstitialViewController.swift */; };
+		147B0BCF27200D14005F4062 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147B0BCB27200D12005F4062 /* StarRatingView.swift */; };
+		147B0BD027200D14005F4062 /* NativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 147B0BCC27200D13005F4062 /* NativeAdView.xib */; };
+		147B0BD127200D14005F4062 /* NativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147B0BCD27200D14005F4062 /* NativeAdView.swift */; };
+		147B0BD227200D14005F4062 /* CustomNativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147B0BCE27200D14005F4062 /* CustomNativeViewController.swift */; };
+		147B0BD527200E75005F4062 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147B0BD427200E75005F4062 /* BannerViewController.swift */; };
+		147B0BD827200FCE005F4062 /* RewardedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147B0BD727200FCE005F4062 /* RewardedViewController.swift */; };
+		147B0BDD27201213005F4062 /* MobileMediationBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147B0BDB27201212005F4062 /* MobileMediationBannerViewController.swift */; };
+		149931842722BD94005D2E87 /* AdFoxNativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149931832722BD94005D2E87 /* AdFoxNativeViewController.swift */; };
+		149931882722C423005D2E87 /* AdFoxBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149931872722C423005D2E87 /* AdFoxBannerViewController.swift */; };
+		1499318B2722CD44005D2E87 /* AdFoxInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1499318A2722CD44005D2E87 /* AdFoxInterstitialViewController.swift */; };
+		14A06392273030BA00BED7A7 /* MediationTestConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A06391273030BA00BED7A7 /* MediationTestConfigurator.swift */; };
+		BAB52D75A74975130850B568 /* libPods-YandexMobileAdsExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B2F6F1A96B25E24D5E486C /* libPods-YandexMobileAdsExample.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		14033F5D27201B8A00A24D5E /* MobileMediationInterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileMediationInterstitialViewController.swift; sourceTree = "<group>"; };
+		14033F6427201E2700A24D5E /* MobileMediationNativeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileMediationNativeViewController.swift; sourceTree = "<group>"; };
+		14033F6727201F7900A24D5E /* MobileMediationRewardedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileMediationRewardedViewController.swift; sourceTree = "<group>"; };
+		14033F6A2720246900A24D5E /* MoPubBannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoPubBannerViewController.swift; sourceTree = "<group>"; };
+		14033F6F2720259B00A24D5E /* MoPubInterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoPubInterstitialViewController.swift; sourceTree = "<group>"; };
+		14033F722720261E00A24D5E /* MoPubNativeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoPubNativeViewController.swift; sourceTree = "<group>"; };
+		14033F75272026EB00A24D5E /* MoPubRewardedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoPubRewardedViewController.swift; sourceTree = "<group>"; };
+		14033F79272028E100A24D5E /* AdMobBannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMobBannerViewController.swift; sourceTree = "<group>"; };
+		14033F7C27202A5800A24D5E /* AdMobInterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMobInterstitialViewController.swift; sourceTree = "<group>"; };
+		14033F7F27202AC300A24D5E /* AdMobNativeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMobNativeViewController.swift; sourceTree = "<group>"; };
+		14033F8227202B8D00A24D5E /* AdMobNativeAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMobNativeAdView.swift; sourceTree = "<group>"; };
+		14033F8327202B8D00A24D5E /* AdMobNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdMobNativeAdView.xib; sourceTree = "<group>"; };
+		14033F8827202CA800A24D5E /* AdMobRewardedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMobRewardedViewController.swift; sourceTree = "<group>"; };
+		14033F8E2720457800A24D5E /* InstreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstreamViewController.swift; sourceTree = "<group>"; };
+		14033F902720457800A24D5E /* InstreamContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstreamContent.swift; sourceTree = "<group>"; };
+		14033F912720457800A24D5E /* ContentControlsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentControlsController.swift; sourceTree = "<group>"; };
+		14033F942720457800A24D5E /* AdPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdPlayer.swift; sourceTree = "<group>"; };
+		14033F972720457800A24D5E /* LRUCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LRUCache.swift; sourceTree = "<group>"; };
+		14033F982720457800A24D5E /* LinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
+		14033F992720457800A24D5E /* ReusablePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusablePlayer.swift; sourceTree = "<group>"; };
+		14033F9A2720457800A24D5E /* VideoPlayerProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerProvider.swift; sourceTree = "<group>"; };
+		14033F9B2720457800A24D5E /* VideoAVPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoAVPlayer.swift; sourceTree = "<group>"; };
+		14033F9D2720457800A24D5E /* ContentPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentPlayer.swift; sourceTree = "<group>"; };
+		14033F9E2720457800A24D5E /* ContentPlayerControlsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentPlayerControlsDelegate.swift; sourceTree = "<group>"; };
+		14033F9F2720457800A24D5E /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		14033FA02720457800A24D5E /* VideoAVPlayerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoAVPlayerDelegate.swift; sourceTree = "<group>"; };
+		14033FA22720457800A24D5E /* VideoPlayerVisibilityTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerVisibilityTracker.swift; sourceTree = "<group>"; };
+		14033FA32720457800A24D5E /* ViewVisibilityValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewVisibilityValidator.swift; sourceTree = "<group>"; };
+		14033FA52720457800A24D5E /* InstreamAdBinderToastDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstreamAdBinderToastDelegate.swift; sourceTree = "<group>"; };
+		14033FA72720457800A24D5E /* InstreamParametersParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstreamParametersParser.swift; sourceTree = "<group>"; };
+		14033FA82720457800A24D5E /* InstreamAdBreakPositionFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstreamAdBreakPositionFormatter.swift; sourceTree = "<group>"; };
+		14033FAA2720457800A24D5E /* InrollsPlaybackController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InrollsPlaybackController.swift; sourceTree = "<group>"; };
+		14033FAB2720457800A24D5E /* InstreamInrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstreamInrollViewController.swift; sourceTree = "<group>"; };
+		14033FC32720598D00A24D5E /* TemplateNativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateNativeViewController.swift; sourceTree = "<group>"; };
+		144C9669272A931800D8DD63 /* MoPubNativeAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoPubNativeAdView.swift; sourceTree = "<group>"; };
+		144C966A272A931800D8DD63 /* MoPubNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoPubNativeAdView.xib; sourceTree = "<group>"; };
+		1467E34F271EA91500DF104A /* YandexMobileAdsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YandexMobileAdsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1467E352271EA91500DF104A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1467E359271EA91500DF104A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1467E35B271EA91700DF104A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1467E35E271EA91700DF104A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1467E360271EA91700DF104A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1474FC182721A4E500276688 /* GDPRUserConsentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDPRUserConsentManager.swift; sourceTree = "<group>"; };
+		1474FC1B2721A4E500276688 /* GDPRDDialogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDPRDDialogViewController.swift; sourceTree = "<group>"; };
+		1474FC1C2721A4E500276688 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		1474FC1D2721A4E500276688 /* GDPRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDPRViewController.swift; sourceTree = "<group>"; };
+		147B0BC8271FFC53005F4062 /* InterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterstitialViewController.swift; sourceTree = "<group>"; };
+		147B0BCB27200D12005F4062 /* StarRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
+		147B0BCC27200D13005F4062 /* NativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NativeAdView.xib; sourceTree = "<group>"; };
+		147B0BCD27200D14005F4062 /* NativeAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeAdView.swift; sourceTree = "<group>"; };
+		147B0BCE27200D14005F4062 /* CustomNativeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNativeViewController.swift; sourceTree = "<group>"; };
+		147B0BD427200E75005F4062 /* BannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
+		147B0BD727200FCE005F4062 /* RewardedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardedViewController.swift; sourceTree = "<group>"; };
+		147B0BDB27201212005F4062 /* MobileMediationBannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileMediationBannerViewController.swift; sourceTree = "<group>"; };
+		147B0BDC27201213005F4062 /* YandexMobileAdsExample-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YandexMobileAdsExample-Bridging-Header.h"; sourceTree = "<group>"; };
+		149931832722BD94005D2E87 /* AdFoxNativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdFoxNativeViewController.swift; sourceTree = "<group>"; };
+		149931872722C423005D2E87 /* AdFoxBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdFoxBannerViewController.swift; sourceTree = "<group>"; };
+		1499318A2722CD44005D2E87 /* AdFoxInterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdFoxInterstitialViewController.swift; sourceTree = "<group>"; };
+		14A06391273030BA00BED7A7 /* MediationTestConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediationTestConfigurator.swift; sourceTree = "<group>"; };
+		7DFE728DF3E2215855AE4E5D /* Pods-YandexMobileAdsSampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsSampleApp.debug.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsSampleApp/Pods-YandexMobileAdsSampleApp.debug.xcconfig"; sourceTree = "<group>"; };
+		B7B2F6F1A96B25E24D5E486C /* libPods-YandexMobileAdsExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YandexMobileAdsExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B999054E57E2B5872F906D20 /* Pods-YandexMobileAdsExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsExample.release.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample.release.xcconfig"; sourceTree = "<group>"; };
+		CD8EF53A225BD22C326812B4 /* Pods-YandexMobileAdsExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsExample.debug.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample.debug.xcconfig"; sourceTree = "<group>"; };
+		ECF36AB0056029F6F616522E /* Pods-YandexMobileAdsSampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsSampleApp.release.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsSampleApp/Pods-YandexMobileAdsSampleApp.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1467E34C271EA91500DF104A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAB52D75A74975130850B568 /* libPods-YandexMobileAdsExample.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14033F6027201D9800A24D5E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				14033F6127201D9E00A24D5E /* Native */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		14033F6127201D9E00A24D5E /* Native */ = {
+			isa = PBXGroup;
+			children = (
+				147B0BCB27200D12005F4062 /* StarRatingView.swift */,
+				147B0BCD27200D14005F4062 /* NativeAdView.swift */,
+				147B0BCC27200D13005F4062 /* NativeAdView.xib */,
+			);
+			path = Native;
+			sourceTree = "<group>";
+		};
+		14033F692720245600A24D5E /* Third-PartyMediation */ = {
+			isa = PBXGroup;
+			children = (
+				14033F772720274500A24D5E /* AdMob */,
+				14033F6C272024F400A24D5E /* MoPub */,
+			);
+			path = "Third-PartyMediation";
+			sourceTree = "<group>";
+		};
+		14033F6C272024F400A24D5E /* MoPub */ = {
+			isa = PBXGroup;
+			children = (
+				144C9669272A931800D8DD63 /* MoPubNativeAdView.swift */,
+				144C966A272A931800D8DD63 /* MoPubNativeAdView.xib */,
+				14033F75272026EB00A24D5E /* MoPubRewardedViewController.swift */,
+				14033F722720261E00A24D5E /* MoPubNativeViewController.swift */,
+				14033F6F2720259B00A24D5E /* MoPubInterstitialViewController.swift */,
+				14033F6A2720246900A24D5E /* MoPubBannerViewController.swift */,
+			);
+			path = MoPub;
+			sourceTree = "<group>";
+		};
+		14033F772720274500A24D5E /* AdMob */ = {
+			isa = PBXGroup;
+			children = (
+				14033F8827202CA800A24D5E /* AdMobRewardedViewController.swift */,
+				14033F8227202B8D00A24D5E /* AdMobNativeAdView.swift */,
+				14033F8327202B8D00A24D5E /* AdMobNativeAdView.xib */,
+				14033F7F27202AC300A24D5E /* AdMobNativeViewController.swift */,
+				14033F7C27202A5800A24D5E /* AdMobInterstitialViewController.swift */,
+				14033F79272028E100A24D5E /* AdMobBannerViewController.swift */,
+			);
+			path = AdMob;
+			sourceTree = "<group>";
+		};
+		14033F8D2720457800A24D5E /* Instream */ = {
+			isa = PBXGroup;
+			children = (
+				14033F8E2720457800A24D5E /* InstreamViewController.swift */,
+				14033F902720457800A24D5E /* InstreamContent.swift */,
+				14033F912720457800A24D5E /* ContentControlsController.swift */,
+			);
+			path = Instream;
+			sourceTree = "<group>";
+		};
+		14033F922720457800A24D5E /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				14033F932720457800A24D5E /* Ad */,
+				14033F952720457800A24D5E /* PlayerPool */,
+				14033F9B2720457800A24D5E /* VideoAVPlayer.swift */,
+				14033F9C2720457800A24D5E /* Content */,
+				14033F9F2720457800A24D5E /* PlayerView.swift */,
+				14033FA02720457800A24D5E /* VideoAVPlayerDelegate.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		14033F932720457800A24D5E /* Ad */ = {
+			isa = PBXGroup;
+			children = (
+				14033F942720457800A24D5E /* AdPlayer.swift */,
+			);
+			path = Ad;
+			sourceTree = "<group>";
+		};
+		14033F952720457800A24D5E /* PlayerPool */ = {
+			isa = PBXGroup;
+			children = (
+				14033F962720457800A24D5E /* LRU */,
+				14033F992720457800A24D5E /* ReusablePlayer.swift */,
+				14033F9A2720457800A24D5E /* VideoPlayerProvider.swift */,
+			);
+			path = PlayerPool;
+			sourceTree = "<group>";
+		};
+		14033F962720457800A24D5E /* LRU */ = {
+			isa = PBXGroup;
+			children = (
+				14033F972720457800A24D5E /* LRUCache.swift */,
+				14033F982720457800A24D5E /* LinkedList.swift */,
+			);
+			path = LRU;
+			sourceTree = "<group>";
+		};
+		14033F9C2720457800A24D5E /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				14033F9D2720457800A24D5E /* ContentPlayer.swift */,
+				14033F9E2720457800A24D5E /* ContentPlayerControlsDelegate.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		14033FA12720457800A24D5E /* Visibility */ = {
+			isa = PBXGroup;
+			children = (
+				14033FA22720457800A24D5E /* VideoPlayerVisibilityTracker.swift */,
+				14033FA32720457800A24D5E /* ViewVisibilityValidator.swift */,
+			);
+			path = Visibility;
+			sourceTree = "<group>";
+		};
+		14033FA42720457800A24D5E /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				14033FA52720457800A24D5E /* InstreamAdBinderToastDelegate.swift */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
+		14033FA62720457800A24D5E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				14033FA72720457800A24D5E /* InstreamParametersParser.swift */,
+				14033FA82720457800A24D5E /* InstreamAdBreakPositionFormatter.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		14033FA92720457800A24D5E /* Inrolls */ = {
+			isa = PBXGroup;
+			children = (
+				14033FAA2720457800A24D5E /* InrollsPlaybackController.swift */,
+				14033FAB2720457800A24D5E /* InstreamInrollViewController.swift */,
+			);
+			path = Inrolls;
+			sourceTree = "<group>";
+		};
+		1467E346271EA91500DF104A = {
+			isa = PBXGroup;
+			children = (
+				1467E351271EA91500DF104A /* YandexMobileAdsExample */,
+				1467E350271EA91500DF104A /* Products */,
+				79BD0E00D8B73D2FF9E77E93 /* Pods */,
+				D4B32CCEE734D52CC1A49CEA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1467E350271EA91500DF104A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1467E34F271EA91500DF104A /* YandexMobileAdsExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1467E351271EA91500DF104A /* YandexMobileAdsExample */ = {
+			isa = PBXGroup;
+			children = (
+				147B0BC6271FFBF7005F4062 /* Yandex */,
+				149931802722BD01005D2E87 /* Adfox */,
+				1474FC172721A48200276688 /* GDPR */,
+				14033F692720245600A24D5E /* Third-PartyMediation */,
+				147B0BDA27201201005F4062 /* MobileMediation */,
+				14033F6027201D9800A24D5E /* Common */,
+				1467E352271EA91500DF104A /* AppDelegate.swift */,
+				147B0BDC27201213005F4062 /* YandexMobileAdsExample-Bridging-Header.h */,
+				1467E358271EA91500DF104A /* Main.storyboard */,
+				1467E35B271EA91700DF104A /* Assets.xcassets */,
+				1467E35D271EA91700DF104A /* LaunchScreen.storyboard */,
+				1467E360271EA91700DF104A /* Info.plist */,
+			);
+			path = YandexMobileAdsExample;
+			sourceTree = "<group>";
+		};
+		1474FC172721A48200276688 /* GDPR */ = {
+			isa = PBXGroup;
+			children = (
+				1474FC1B2721A4E500276688 /* GDPRDDialogViewController.swift */,
+				1474FC182721A4E500276688 /* GDPRUserConsentManager.swift */,
+				1474FC1D2721A4E500276688 /* GDPRViewController.swift */,
+				1474FC1C2721A4E500276688 /* SettingsViewController.swift */,
+			);
+			path = GDPR;
+			sourceTree = "<group>";
+		};
+		147B0BC6271FFBF7005F4062 /* Yandex */ = {
+			isa = PBXGroup;
+			children = (
+				147B0BD327200E62005F4062 /* Banner */,
+				147B0BD927200FEC005F4062 /* Instream */,
+				147B0BC7271FFC04005F4062 /* Interstitial */,
+				147B0BCA27200CF3005F4062 /* Native */,
+				147B0BD627200F66005F4062 /* Rewarded */,
+			);
+			path = Yandex;
+			sourceTree = "<group>";
+		};
+		147B0BC7271FFC04005F4062 /* Interstitial */ = {
+			isa = PBXGroup;
+			children = (
+				147B0BC8271FFC53005F4062 /* InterstitialViewController.swift */,
+			);
+			path = Interstitial;
+			sourceTree = "<group>";
+		};
+		147B0BCA27200CF3005F4062 /* Native */ = {
+			isa = PBXGroup;
+			children = (
+				147B0BCE27200D14005F4062 /* CustomNativeViewController.swift */,
+				14033FC32720598D00A24D5E /* TemplateNativeViewController.swift */,
+			);
+			path = Native;
+			sourceTree = "<group>";
+		};
+		147B0BD327200E62005F4062 /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				147B0BD427200E75005F4062 /* BannerViewController.swift */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
+		147B0BD627200F66005F4062 /* Rewarded */ = {
+			isa = PBXGroup;
+			children = (
+				147B0BD727200FCE005F4062 /* RewardedViewController.swift */,
+			);
+			path = Rewarded;
+			sourceTree = "<group>";
+		};
+		147B0BD927200FEC005F4062 /* Instream */ = {
+			isa = PBXGroup;
+			children = (
+				14033FA62720457800A24D5E /* Helpers */,
+				14033FA92720457800A24D5E /* Inrolls */,
+				14033F8D2720457800A24D5E /* Instream */,
+				14033F922720457800A24D5E /* Player */,
+				14033FA42720457800A24D5E /* Toast */,
+				14033FA12720457800A24D5E /* Visibility */,
+			);
+			path = Instream;
+			sourceTree = "<group>";
+		};
+		147B0BDA27201201005F4062 /* MobileMediation */ = {
+			isa = PBXGroup;
+			children = (
+				147B0BDB27201212005F4062 /* MobileMediationBannerViewController.swift */,
+				14033F5D27201B8A00A24D5E /* MobileMediationInterstitialViewController.swift */,
+				14033F6427201E2700A24D5E /* MobileMediationNativeViewController.swift */,
+				14033F6727201F7900A24D5E /* MobileMediationRewardedViewController.swift */,
+				14A06391273030BA00BED7A7 /* MediationTestConfigurator.swift */,
+			);
+			path = MobileMediation;
+			sourceTree = "<group>";
+		};
+		149931802722BD01005D2E87 /* Adfox */ = {
+			isa = PBXGroup;
+			children = (
+				149931872722C423005D2E87 /* AdFoxBannerViewController.swift */,
+				1499318A2722CD44005D2E87 /* AdFoxInterstitialViewController.swift */,
+				149931832722BD94005D2E87 /* AdFoxNativeViewController.swift */,
+			);
+			path = Adfox;
+			sourceTree = "<group>";
+		};
+		79BD0E00D8B73D2FF9E77E93 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7DFE728DF3E2215855AE4E5D /* Pods-YandexMobileAdsSampleApp.debug.xcconfig */,
+				ECF36AB0056029F6F616522E /* Pods-YandexMobileAdsSampleApp.release.xcconfig */,
+				CD8EF53A225BD22C326812B4 /* Pods-YandexMobileAdsExample.debug.xcconfig */,
+				B999054E57E2B5872F906D20 /* Pods-YandexMobileAdsExample.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D4B32CCEE734D52CC1A49CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B7B2F6F1A96B25E24D5E486C /* libPods-YandexMobileAdsExample.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1467E34E271EA91500DF104A /* YandexMobileAdsExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1467E379271EA91700DF104A /* Build configuration list for PBXNativeTarget "YandexMobileAdsExample" */;
+			buildPhases = (
+				506EC2F1FCBB6A32251C155F /* [CP] Check Pods Manifest.lock */,
+				1467E34B271EA91500DF104A /* Sources */,
+				1467E34C271EA91500DF104A /* Frameworks */,
+				1467E34D271EA91500DF104A /* Resources */,
+				CFCB6C72C2AFF90E39A609BD /* [CP] Copy Pods Resources */,
+				013072F80BA48E97A50A12BF /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YandexMobileAdsExample;
+			productName = YandexMobileAdsSampleApp;
+			productReference = 1467E34F271EA91500DF104A /* YandexMobileAdsExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1467E347271EA91500DF104A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					1467E34E271EA91500DF104A = {
+						CreatedOnToolsVersion = 12.5;
+					};
+				};
+			};
+			buildConfigurationList = 1467E34A271EA91500DF104A /* Build configuration list for PBXProject "YandexMobileAdsExample" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1467E346271EA91500DF104A;
+			productRefGroup = 1467E350271EA91500DF104A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1467E34E271EA91500DF104A /* YandexMobileAdsExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1467E34D271EA91500DF104A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				147B0BD027200D14005F4062 /* NativeAdView.xib in Resources */,
+				1467E35F271EA91700DF104A /* LaunchScreen.storyboard in Resources */,
+				14033F8627202B8D00A24D5E /* AdMobNativeAdView.xib in Resources */,
+				1467E35C271EA91700DF104A /* Assets.xcassets in Resources */,
+				1467E35A271EA91500DF104A /* Main.storyboard in Resources */,
+				144C966C272A931800D8DD63 /* MoPubNativeAdView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		013072F80BA48E97A50A12BF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		506EC2F1FCBB6A32251C155F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YandexMobileAdsExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CFCB6C72C2AFF90E39A609BD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1467E34B271EA91500DF104A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				144C966B272A931800D8DD63 /* MoPubNativeAdView.swift in Sources */,
+				14033FAE2720457800A24D5E /* InstreamViewController.swift in Sources */,
+				14033F702720259B00A24D5E /* MoPubInterstitialViewController.swift in Sources */,
+				14033FB42720457800A24D5E /* LinkedList.swift in Sources */,
+				14033F7D27202A5800A24D5E /* AdMobInterstitialViewController.swift in Sources */,
+				14A06392273030BA00BED7A7 /* MediationTestConfigurator.swift in Sources */,
+				1474FC1E2721A4E500276688 /* GDPRUserConsentManager.swift in Sources */,
+				14033FB32720457800A24D5E /* LRUCache.swift in Sources */,
+				14033FB22720457800A24D5E /* AdPlayer.swift in Sources */,
+				14033FC22720457800A24D5E /* InstreamInrollViewController.swift in Sources */,
+				147B0BDD27201213005F4062 /* MobileMediationBannerViewController.swift in Sources */,
+				14033FC12720457800A24D5E /* InrollsPlaybackController.swift in Sources */,
+				14033FC42720598D00A24D5E /* TemplateNativeViewController.swift in Sources */,
+				147B0BC9271FFC53005F4062 /* InterstitialViewController.swift in Sources */,
+				14033FB72720457800A24D5E /* VideoAVPlayer.swift in Sources */,
+				14033F8927202CA800A24D5E /* AdMobRewardedViewController.swift in Sources */,
+				147B0BD127200D14005F4062 /* NativeAdView.swift in Sources */,
+				14033F6B2720246900A24D5E /* MoPubBannerViewController.swift in Sources */,
+				14033F5E27201B8A00A24D5E /* MobileMediationInterstitialViewController.swift in Sources */,
+				14033FB52720457800A24D5E /* ReusablePlayer.swift in Sources */,
+				147B0BD827200FCE005F4062 /* RewardedViewController.swift in Sources */,
+				14033F6527201E2700A24D5E /* MobileMediationNativeViewController.swift in Sources */,
+				1499318B2722CD44005D2E87 /* AdFoxInterstitialViewController.swift in Sources */,
+				14033FB12720457800A24D5E /* ContentControlsController.swift in Sources */,
+				14033FBD2720457800A24D5E /* ViewVisibilityValidator.swift in Sources */,
+				14033FB02720457800A24D5E /* InstreamContent.swift in Sources */,
+				14033F8027202AC300A24D5E /* AdMobNativeViewController.swift in Sources */,
+				14033FB62720457800A24D5E /* VideoPlayerProvider.swift in Sources */,
+				1474FC222721A4E500276688 /* SettingsViewController.swift in Sources */,
+				14033F76272026EB00A24D5E /* MoPubRewardedViewController.swift in Sources */,
+				14033FBA2720457800A24D5E /* PlayerView.swift in Sources */,
+				149931882722C423005D2E87 /* AdFoxBannerViewController.swift in Sources */,
+				14033FBC2720457800A24D5E /* VideoPlayerVisibilityTracker.swift in Sources */,
+				1474FC232721A4E500276688 /* GDPRViewController.swift in Sources */,
+				1467E353271EA91500DF104A /* AppDelegate.swift in Sources */,
+				14033F6827201F7900A24D5E /* MobileMediationRewardedViewController.swift in Sources */,
+				14033FB92720457800A24D5E /* ContentPlayerControlsDelegate.swift in Sources */,
+				14033FC02720457800A24D5E /* InstreamAdBreakPositionFormatter.swift in Sources */,
+				14033FBF2720457800A24D5E /* InstreamParametersParser.swift in Sources */,
+				14033F8527202B8D00A24D5E /* AdMobNativeAdView.swift in Sources */,
+				14033FBB2720457800A24D5E /* VideoAVPlayerDelegate.swift in Sources */,
+				149931842722BD94005D2E87 /* AdFoxNativeViewController.swift in Sources */,
+				14033F7A272028E100A24D5E /* AdMobBannerViewController.swift in Sources */,
+				1474FC212721A4E500276688 /* GDPRDDialogViewController.swift in Sources */,
+				147B0BD227200D14005F4062 /* CustomNativeViewController.swift in Sources */,
+				14033FBE2720457800A24D5E /* InstreamAdBinderToastDelegate.swift in Sources */,
+				147B0BCF27200D14005F4062 /* StarRatingView.swift in Sources */,
+				147B0BD527200E75005F4062 /* BannerViewController.swift in Sources */,
+				14033F732720261E00A24D5E /* MoPubNativeViewController.swift in Sources */,
+				14033FB82720457800A24D5E /* ContentPlayer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1467E358271EA91500DF104A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1467E359271EA91500DF104A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1467E35D271EA91700DF104A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1467E35E271EA91700DF104A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1467E377271EA91700DF104A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1467E378271EA91700DF104A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1467E37A271EA91700DF104A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD8EF53A225BD22C326812B4 /* Pods-YandexMobileAdsExample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = YandexMobileAdsExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ru.yandex.mobile.YandexMobileAdsExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "YandexMobileAdsExample/YandexMobileAdsExample-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1467E37B271EA91700DF104A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B999054E57E2B5872F906D20 /* Pods-YandexMobileAdsExample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = YandexMobileAdsExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ru.yandex.mobile.YandexMobileAdsExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "YandexMobileAdsExample/YandexMobileAdsExample-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1467E34A271EA91500DF104A /* Build configuration list for PBXProject "YandexMobileAdsExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1467E377271EA91700DF104A /* Debug */,
+				1467E378271EA91700DF104A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1467E379271EA91700DF104A /* Build configuration list for PBXNativeTarget "YandexMobileAdsExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1467E37A271EA91700DF104A /* Debug */,
+				1467E37B271EA91700DF104A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1467E347271EA91500DF104A /* Project object */;
+}

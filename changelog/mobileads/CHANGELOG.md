@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# Version 4.4.2
+
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/223308/YandexMobileAds-4.4.2-ios-8f3b8e7d-8973-421a-b7bf-5d8c4855899b.zip)
+
+#### Added
+* Added possibility to configure audio session
+* Added improvements and fixes
+
 # Version 4.4.1
 
 SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/223308/YandexMobileAds-4.4.1-ios-bc2a95f8-006b-4811-a216-c538709ac022.zip)
