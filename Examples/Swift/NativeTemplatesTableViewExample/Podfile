@@ -1,9 +1,0 @@
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, :deployment_target => '9.0'
-
-target 'NativeTemplatesTableViewExample' do
-  use_frameworks!
-
-  pod 'YandexMobileAds/Dynamic'
-
-end
