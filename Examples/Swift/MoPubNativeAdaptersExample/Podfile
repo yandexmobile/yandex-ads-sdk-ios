@@ -1,8 +1,0 @@
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, :deployment_target => '10.0'
-
-target 'MoPubNativeAdaptersExample' do
-  use_frameworks!
-  pod 'YandexMobileAdsMoPubAdapters/Dynamic'
-  pod 'YandexMobileAds/Dynamic'
-end
