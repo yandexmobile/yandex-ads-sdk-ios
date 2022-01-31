@@ -1,6 +1,20 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# Version 5.0.0-alpha.1
+
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/332493/YandexMobileAds-5.0.0-ios-e9dcd076-c773-42b3-9527-ea8774b74049.zip)
+
+#### Added
+* Migrated to XCFramework
+* Updated minimum supported AppMetrica SDK version to 4.0.0
+* Added M1 support
+* Added click callback
+* Renamed blockID to adUnitID
+
+#### Removed
+* Removed old methods for setting banner ad size
+
 # Version 4.4.2
 
 SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/223308/YandexMobileAds-4.4.2-ios-8f3b8e7d-8973-421a-b7bf-5d8c4855899b.zip)
