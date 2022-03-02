@@ -11,7 +11,7 @@ target 'YandexMobileAdsExample' do
   pod 'StartAppYandexMobileAdsAdapters'
   pod 'YandexMobileAdsMoPubAdapters'
   pod 'YandexMobileAdsAdMobAdapters'
-  pod 'YandexMobileAds'
-  pod 'YandexMobileAdsInstream'
+  pod 'YandexMobileAds', '5.0.0-alpha.2'
+  pod 'YandexMobileAdsInstream', '0.9.0-alpha.2'
 end
 
