@@ -7,19 +7,19 @@
 
 import YandexMobileAds
 
-private let adMobBlockID = "adf-279013/975874"
-private let facebookBlockID = "adf-279013/975877"
-private let moPubBlockID = "adf-279013/975875"
-private let myTargetBlockID = "adf-279013/975876"
-private let yandexBlockID = "adf-279013/975878"
+private let adMobAdUnitID = "adf-279013/975874"
+private let facebookAdUnitID = "adf-279013/975877"
+private let moPubAdUnitID = "adf-279013/975875"
+private let myTargetAdUnitID = "adf-279013/975876"
+private let yandexAdUnitID = "adf-279013/975878"
 
 class MobileMediationNativeViewController: UIViewController {
-    private let blockIDs = [
-        (adapter: "AdMob", blockID: adMobBlockID),
-        (adapter: "Facebook", blockID: facebookBlockID),
-        (adapter: "MoPub", blockID: moPubBlockID),
-        (adapter: "myTarget", blockID: myTargetBlockID),
-        (adapter: "Yandex", blockID: yandexBlockID)
+    private let adUnitIDs = [
+        (adapter: "AdMob", adUnitID: adMobAdUnitID),
+        (adapter: "Facebook", adUnitID: facebookAdUnitID),
+        (adapter: "MoPub", adUnitID: moPubAdUnitID),
+        (adapter: "myTarget", adUnitID: myTargetAdUnitID),
+        (adapter: "Yandex", adUnitID: yandexAdUnitID)
     ]
 
     @IBOutlet private var pickerView: UIPickerView!
@@ -42,16 +42,16 @@ class MobileMediationNativeViewController: UIViewController {
         adView?.isHidden = true
         let selectedIndex = pickerView.selectedRow(inComponent: 0)
         /*
-         Replace blockID with actual Block ID.
-         Following demo block ids may be used for testing:
-         AdMob mediation: adMobBlockID
-         Facebook mediation: facebookBlockID
-         MoPub mediation: moPubBlockID
-         MyTarget mediation: myTargetBlockID
-         Yandex: yandexBlockID
+         Replace adUnitID with actual Ad Unit ID.
+         Following demo ad unit ids may be used for testing:
+         AdMob mediation: adMobAdUnitID
+         Facebook mediation: facebookAdUnitID
+         MoPub mediation: moPubAdUnitID
+         MyTarget mediation: myTargetAdUnitID
+         Yandex: yandexAdUnitID
          */
-        let blockID = blockIDs[selectedIndex].blockID
-        let requestConfiguration = YMANativeAdRequestConfiguration(blockID: blockID)
+        let adUnitID = adUnitIDs[selectedIndex].adUnitID
+        let requestConfiguration = YMANativeAdRequestConfiguration(adUnitID: adUnitID)
         adLoader?.loadAd(with: requestConfiguration)
     }
 
@@ -121,7 +121,7 @@ extension MobileMediationNativeViewController: YMANativeAdDelegate {
 
 extension MobileMediationNativeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return blockIDs.count
+        return adUnitIDs.count
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -129,6 +129,6 @@ extension MobileMediationNativeViewController: UIPickerViewDelegate, UIPickerVie
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return blockIDs[row].adapter
+        return adUnitIDs[row].adapter
     }
 }

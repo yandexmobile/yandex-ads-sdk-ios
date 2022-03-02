@@ -8,27 +8,27 @@
 import UIKit
 import YandexMobileAds
 
-private let adMobBlockID = "adf-279013/966332"
-private let appLovinBlockID = "adf-279013/1052108"
-private let facebookBlockID = "adf-279013/966335"
-private let ironSourceBlockID = "adf-279013/1052110"
-private let moPubBlockID = "adf-279013/966333"
-private let myTargetBlockID = "adf-279013/966334"
-private let startAppBlockID = "adf-279013/1006617"
-private let unityAdsBlockID = "adf-279013/1006614"
-private let yandexBlockID = "adf-279013/967178"
+private let adMobAdUnitID = "adf-279013/966332"
+private let appLovinAdUnitID = "adf-279013/1052108"
+private let facebookAdUnitID = "adf-279013/966335"
+private let ironSourceAdUnitID = "adf-279013/1052110"
+private let moPubAdUnitID = "adf-279013/966333"
+private let myTargetAdUnitID = "adf-279013/966334"
+private let startAppAdUnitID = "adf-279013/1006617"
+private let unityAdsAdUnitID = "adf-279013/1006614"
+private let yandexAdUnitID = "adf-279013/967178"
 
 class MobileMediationRewardedViewController: UIViewController {
-    private let blockIDs = [
-        (adapter: "AdMob", blockID: adMobBlockID),
-        (adapter: "AppLovin", blockID: appLovinBlockID),
-        (adapter: "Facebook", blockID: facebookBlockID),
-        (adapter: "IronSource", blockID: ironSourceBlockID),
-        (adapter: "MoPub", blockID: moPubBlockID),
-        (adapter: "myTarget", blockID: myTargetBlockID),
-        (adapter: "StartApp", blockID: startAppBlockID),
-        (adapter: "UnityAds", blockID: unityAdsBlockID),
-        (adapter: "Yandex", blockID: yandexBlockID)
+    private let adUnitIDs = [
+        (adapter: "AdMob", adUnitID: adMobAdUnitID),
+        (adapter: "AppLovin", adUnitID: appLovinAdUnitID),
+        (adapter: "Facebook", adUnitID: facebookAdUnitID),
+        (adapter: "IronSource", adUnitID: ironSourceAdUnitID),
+        (adapter: "MoPub", adUnitID: moPubAdUnitID),
+        (adapter: "myTarget", adUnitID: myTargetAdUnitID),
+        (adapter: "StartApp", adUnitID: startAppAdUnitID),
+        (adapter: "UnityAds", adUnitID: unityAdsAdUnitID),
+        (adapter: "Yandex", adUnitID: yandexAdUnitID)
     ]
 
     @IBOutlet weak var showButton: UIButton!
@@ -44,20 +44,20 @@ class MobileMediationRewardedViewController: UIViewController {
         self.showButton.isEnabled = false
         let selectedIndex = pickerView.selectedRow(inComponent: 0)
         /*
-         Replace blockID with actual Block ID.
-         Following demo block ids may be used for testing:
-         AdMob mediation: adMobBlockID
-         AppLovin mediation: appLovinBlockID
-         Facebook mediation: facebookBlockID
-         IronSource mediation: ironSourceBlockID
-         MoPub mediation: moPubBlockID
-         MyTarget mediation: myTargetBlockID
-         StartApp mediation: startAppBlockID
-         UnityAds mediation: unityAdsBlockID
-         Yandex: yandexBlockID
+         Replace adUnitID with actual Ad Unit ID.
+         Following demo ad unit ids may be used for testing:
+         AdMob mediation: adMobAdUnitID
+         AppLovin mediation: appLovinAdUnitID
+         Facebook mediation: facebookAdUnitID
+         IronSource mediation: ironSourceAdUnitID
+         MoPub mediation: moPubAdUnitID
+         MyTarget mediation: myTargetAdUnitID
+         StartApp mediation: startAppAdUnitID
+         UnityAds mediation: unityAdsAdUnitID
+         Yandex: yandexAdUnitID
          */
-        let blockID = blockIDs[selectedIndex].blockID
-        rewardedAd = YMARewardedAd(blockID: blockID)
+        let adUnitID = adUnitIDs[selectedIndex].adUnitID
+        rewardedAd = YMARewardedAd(adUnitID: adUnitID)
         rewardedAd?.delegate = self
         rewardedAd?.load()
     }
@@ -122,7 +122,7 @@ extension MobileMediationRewardedViewController: YMARewardedAdDelegate {
 
 extension MobileMediationRewardedViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return blockIDs.count
+        return adUnitIDs.count
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -130,6 +130,6 @@ extension MobileMediationRewardedViewController: UIPickerViewDelegate, UIPickerV
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return blockIDs[row].adapter
+        return adUnitIDs[row].adapter
     }
 }

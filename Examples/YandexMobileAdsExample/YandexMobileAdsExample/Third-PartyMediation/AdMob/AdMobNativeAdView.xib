@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AdMobNativeAdView" customModule="YandexMobileAdsSampleApp" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AdMobNativeAdView" customModule="YandexMobileAdsExample" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="416"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -44,19 +45,19 @@
                         <constraint firstAttribute="width" secondItem="1QV-5q-MeU" secondAttribute="height" multiplier="61:28" placeholder="YES" id="WsK-do-MBS"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKb-Bf-aCC">
-                    <rect key="frame" x="28" y="326" width="39" height="20.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKb-Bf-aCC">
+                    <rect key="frame" x="28" y="331" width="41" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6s-Gi-adJ">
-                    <rect key="frame" x="28" y="354.5" width="41" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6s-Gi-adJ">
+                    <rect key="frame" x="28" y="359.5" width="39" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQw-9W-GDk">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="999" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQw-9W-GDk">
                     <rect key="frame" x="308" y="326" width="86" height="30"/>
                     <state key="normal" title="CallToAction"/>
                 </button>
@@ -67,12 +68,12 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Warning" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thh-Nj-gT3">
-                    <rect key="frame" x="28" y="383.5" width="366" height="20.5"/>
+                    <rect key="frame" x="28" y="388.5" width="366" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nTg-KT-HVq" customClass="StarRatingView" customModule="YandexMobileAdsSampleApp" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nTg-KT-HVq" customClass="StarRatingView" customModule="YandexMobileAdsExample" customModuleProvider="target">
                     <rect key="frame" x="198.5" y="69" width="166.5" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="R08-OM-Mo6"/>
@@ -94,6 +95,7 @@
             </subviews>
             <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
             <constraints>
+                <constraint firstItem="RQw-9W-GDk" firstAttribute="centerY" secondItem="OKb-Bf-aCC" secondAttribute="centerY" id="0bR-6c-8sJ"/>
                 <constraint firstItem="z6s-Gi-adJ" firstAttribute="top" secondItem="OKb-Bf-aCC" secondAttribute="bottom" constant="8" id="1Hd-0m-7Ql"/>
                 <constraint firstItem="Hbh-Xj-buk" firstAttribute="leading" secondItem="3BZ-jL-hua" secondAttribute="leading" id="2re-dB-mst"/>
                 <constraint firstItem="I56-Pg-L5r" firstAttribute="top" secondItem="TiW-hX-AIL" secondAttribute="top" id="5Js-hg-Edz"/>
@@ -113,7 +115,7 @@
                 <constraint firstItem="jiD-ne-mCm" firstAttribute="top" secondItem="TiW-hX-AIL" secondAttribute="bottom" constant="8" id="aea-8f-hVY"/>
                 <constraint firstItem="TiW-hX-AIL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="c7H-Db-nhJ"/>
                 <constraint firstItem="jnO-dF-eBS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="cVb-Qk-vRR"/>
-                <constraint firstItem="OKb-Bf-aCC" firstAttribute="top" secondItem="1QV-5q-MeU" secondAttribute="bottom" constant="8" id="g5I-39-Y3x"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="RQw-9W-GDk" secondAttribute="bottom" constant="5" id="eBr-Lo-8FB"/>
                 <constraint firstItem="RQw-9W-GDk" firstAttribute="top" secondItem="1QV-5q-MeU" secondAttribute="bottom" constant="8" id="iUx-0K-Ch8"/>
                 <constraint firstItem="1QV-5q-MeU" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="kCf-7w-gI9"/>
                 <constraint firstItem="thh-Nj-gT3" firstAttribute="top" secondItem="z6s-Gi-adJ" secondAttribute="bottom" constant="8" id="kTB-Cl-5At"/>
@@ -136,11 +138,11 @@
                 <outlet property="headlineView" destination="I56-Pg-L5r" id="IKk-5B-PiI"/>
                 <outlet property="iconView" destination="TiW-hX-AIL" id="VUa-Ol-bjE"/>
                 <outlet property="mediaView" destination="1QV-5q-MeU" id="L58-Ll-B0e"/>
-                <outlet property="priceView" destination="OKb-Bf-aCC" id="3Pz-3c-2ni"/>
+                <outlet property="priceView" destination="z6s-Gi-adJ" id="spg-6R-ci5"/>
                 <outlet property="ratingView" destination="nTg-KT-HVq" id="UOc-G4-mxn"/>
                 <outlet property="reviewCountLabel" destination="Hbh-Xj-buk" id="Qk4-5t-KT1"/>
                 <outlet property="starRatingView" destination="nTg-KT-HVq" id="8Mx-hL-9JR"/>
-                <outlet property="storeView" destination="z6s-Gi-adJ" id="sh9-qM-L7n"/>
+                <outlet property="storeView" destination="OKb-Bf-aCC" id="5vb-SF-agK"/>
                 <outlet property="warningLabel" destination="thh-Nj-gT3" id="NOl-Eg-gPI"/>
             </connections>
             <point key="canvasLocation" x="837.68115942028987" y="316.07142857142856"/>

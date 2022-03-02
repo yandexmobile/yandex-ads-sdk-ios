@@ -24,8 +24,8 @@ class CustomNativeViewController: UIViewController {
     
     @IBAction func loadAd(_ sender: Any) {
         adView?.removeFromSuperview()
-        // Replace demo R-M-DEMO-native-c with actual Block ID
-        let requestConfiguration = YMANativeAdRequestConfiguration(blockID: "R-M-DEMO-native-c")
+        // Replace demo R-M-DEMO-native-c with actual Ad Unit ID
+        let requestConfiguration = YMANativeAdRequestConfiguration(adUnitID: "R-M-DEMO-native-c")
         adLoader.loadAd(with: requestConfiguration)
     }
 

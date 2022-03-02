@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -13,9 +13,10 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="416"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="toH-t1-NWu" customClass="YMANativeMediaView">
-                    <rect key="frame" x="47" y="119" width="320" height="211.5"/>
+                <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="toH-t1-NWu" customClass="YMANativeMediaView">
+                    <rect key="frame" x="47" y="118" width="320" height="212.5"/>
                     <constraints>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="XUi-IW-eNr"/>
                         <constraint firstAttribute="width" priority="250" constant="320" id="zki-H2-l0Y"/>
                     </constraints>
                 </view>
@@ -31,7 +32,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9D-FK-lmi">
+                <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="999" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9D-FK-lmi">
                     <rect key="frame" x="308" y="362.5" width="86" height="30"/>
                     <state key="normal" title="CallToAction"/>
                 </button>
@@ -42,7 +43,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uNh-sf-Ioc">
-                    <rect key="frame" x="8" y="8" width="398" height="103"/>
+                    <rect key="frame" x="8" y="8" width="398" height="102"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h8k-qp-18M">
                             <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
@@ -52,35 +53,35 @@
                             </constraints>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mIP-Vr-dOP">
-                            <rect key="frame" x="78" y="0.0" width="244" height="103"/>
+                            <rect key="frame" x="78" y="0.0" width="244" height="102"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="900" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSL-JO-CyN">
-                                    <rect key="frame" x="0.0" y="0.0" width="33" height="21.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="33" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                     <size key="shadowOffset" width="0.0" height="0.0"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="900" text="Sponsored" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otO-dG-aBg">
-                                    <rect key="frame" x="0.0" y="25.5" width="83" height="20.5"/>
+                                    <rect key="frame" x="0.0" y="24.5" width="83" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="900" text="Body" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJJ-vy-fYU">
-                                    <rect key="frame" x="0.0" y="82.5" width="39.5" height="20.5"/>
+                                    <rect key="frame" x="0.0" y="81.5" width="39.5" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ReviewCount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wV3-Z8-8e4">
-                                    <rect key="frame" x="0.0" y="54" width="100.5" height="20.5"/>
+                                    <rect key="frame" x="0.0" y="53" width="100.5" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kDh-v9-DLJ" customClass="StarRatingView" customModule="YandexMobileAdsExample" customModuleProvider="target">
-                                    <rect key="frame" x="102.5" y="56" width="93" height="17"/>
+                                    <rect key="frame" x="102.5" y="55" width="93" height="17"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="17" id="MpL-oh-UVL"/>
@@ -88,7 +89,7 @@
                                     </constraints>
                                 </view>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t8Y-K2-Gok">
-                                    <rect key="frame" x="37" y="3" width="16" height="16"/>
+                                    <rect key="frame" x="37" y="2.5" width="16" height="16"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="16" id="3Kw-QG-u3c"/>
                                         <constraint firstAttribute="width" constant="16" id="LKF-tz-e45"/>
@@ -150,6 +151,7 @@
                 <constraint firstItem="Y9D-FK-lmi" firstAttribute="trailing" secondItem="44I-go-4K7" secondAttribute="trailingMargin" id="aW3-Ja-9yw"/>
                 <constraint firstItem="v2j-b6-AzJ" firstAttribute="top" secondItem="x6g-V4-qSg" secondAttribute="bottom" constant="8" id="d6B-tQ-lGq"/>
                 <constraint firstItem="x6g-V4-qSg" firstAttribute="top" secondItem="jyl-04-sI9" secondAttribute="bottom" constant="8" id="eCD-oD-8d5"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Y9D-FK-lmi" secondAttribute="bottom" constant="5" id="enV-Ei-mzF"/>
                 <constraint firstItem="uNh-sf-Ioc" firstAttribute="top" secondItem="44I-go-4K7" secondAttribute="top" constant="8" id="j5I-VX-Oes"/>
                 <constraint firstItem="x6g-V4-qSg" firstAttribute="leading" secondItem="jyl-04-sI9" secondAttribute="leading" id="qnh-cv-BiR"/>
                 <constraint firstItem="v2j-b6-AzJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Y9D-FK-lmi" secondAttribute="bottom" id="r6Y-Jo-XiW"/>

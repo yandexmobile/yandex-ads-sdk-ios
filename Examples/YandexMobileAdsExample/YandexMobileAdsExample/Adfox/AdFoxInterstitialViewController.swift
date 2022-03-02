@@ -14,8 +14,8 @@ class AdFoxInterstitialViewController: UIViewController {
 
     @IBAction func loadInterstitial() {
         self.showButton.isEnabled = false
-        // Replace demo R-M-243655-9 with actual Block ID
-        self.interstitialAd = YMAInterstitialAd(blockID: "R-M-243655-9")
+        // Replace demo R-M-243655-9 with actual Ad Unit ID
+        self.interstitialAd = YMAInterstitialAd(adUnitID: "R-M-243655-9")
         self.interstitialAd.delegate = self;
 
         var parameters = Dictionary<String, String>()

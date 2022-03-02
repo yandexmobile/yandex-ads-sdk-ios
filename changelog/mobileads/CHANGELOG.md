@@ -1,11 +1,19 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# Version 5.0.0-alpha.2
+
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/212922/YandexMobileAds-5.0.0-ios-496e7614-a2cb-4b87-aeb7-8853d15e2b5d.zip)
+
+#### Added
+* Added improvements and fixes
+
 # Version 5.0.0-alpha.1
 
 SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/332493/YandexMobileAds-5.0.0-ios-e9dcd076-c773-42b3-9527-ea8774b74049.zip)
 
 #### Added
+* Updated minimum supported version to iOS 10.
 * Migrated to XCFramework
 * Updated minimum supported AppMetrica SDK version to 4.0.0
 * Added M1 support

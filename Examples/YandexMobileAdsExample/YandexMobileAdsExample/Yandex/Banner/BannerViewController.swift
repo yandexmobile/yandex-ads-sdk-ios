@@ -14,9 +14,9 @@ class BannerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Replace demo R-M-DEMO-320x500 with actual Block ID
+        // Replace demo R-M-DEMO-320x500 with actual Ad Unit ID
         let adSize = YMAAdSize.fixedSize(with: .init(width: 320, height: 100))
-        self.adView = YMAAdView(blockID: "R-M-DEMO-320x100-context", adSize: adSize)
+        self.adView = YMAAdView(adUnitID: "R-M-DEMO-320x100-context", adSize: adSize)
         self.adView.delegate = self
     }
     

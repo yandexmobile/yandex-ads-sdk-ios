@@ -47,11 +47,8 @@ class AdMobNativeAdView: GADNativeAdView {
         storeView?.isHidden = nativeAd?.store == nil
 
         ageLabel.isHidden = nativeAd?.extraAssets?[kYMAAdMobNativeAdAgeExtraAsset] == nil
-
         faviconImageView.isHidden = nativeAd?.extraAssets?[kYMAAdMobNativeAdFaviconExtraAsset] == nil
-
         reviewCountLabel.isHidden = nativeAd?.extraAssets?[kYMAAdMobNativeAdReviewCountExtraAsset] == nil
-
         warningLabel.isHidden = nativeAd?.extraAssets?[kYMAAdMobNativeAdWarningExtraAsset] == nil
     }
 

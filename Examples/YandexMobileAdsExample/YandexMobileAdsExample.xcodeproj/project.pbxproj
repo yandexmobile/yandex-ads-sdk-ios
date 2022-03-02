@@ -63,6 +63,7 @@
 		149931882722C423005D2E87 /* AdFoxBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149931872722C423005D2E87 /* AdFoxBannerViewController.swift */; };
 		1499318B2722CD44005D2E87 /* AdFoxInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1499318A2722CD44005D2E87 /* AdFoxInterstitialViewController.swift */; };
 		14A06392273030BA00BED7A7 /* MediationTestConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A06391273030BA00BED7A7 /* MediationTestConfigurator.swift */; };
+		B394AC8627A868DB00D92CD9 /* AdPlayerErrorConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B394AC8527A868DB00D92CD9 /* AdPlayerErrorConverter.swift */; };
 		BAB52D75A74975130850B568 /* libPods-YandexMobileAdsExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B2F6F1A96B25E24D5E486C /* libPods-YandexMobileAdsExample.a */; };
 /* End PBXBuildFile section */
 
@@ -126,11 +127,10 @@
 		149931872722C423005D2E87 /* AdFoxBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdFoxBannerViewController.swift; sourceTree = "<group>"; };
 		1499318A2722CD44005D2E87 /* AdFoxInterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdFoxInterstitialViewController.swift; sourceTree = "<group>"; };
 		14A06391273030BA00BED7A7 /* MediationTestConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediationTestConfigurator.swift; sourceTree = "<group>"; };
-		7DFE728DF3E2215855AE4E5D /* Pods-YandexMobileAdsSampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsSampleApp.debug.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsSampleApp/Pods-YandexMobileAdsSampleApp.debug.xcconfig"; sourceTree = "<group>"; };
+		B394AC8527A868DB00D92CD9 /* AdPlayerErrorConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdPlayerErrorConverter.swift; sourceTree = "<group>"; };
 		B7B2F6F1A96B25E24D5E486C /* libPods-YandexMobileAdsExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YandexMobileAdsExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B999054E57E2B5872F906D20 /* Pods-YandexMobileAdsExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsExample.release.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample.release.xcconfig"; sourceTree = "<group>"; };
 		CD8EF53A225BD22C326812B4 /* Pods-YandexMobileAdsExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsExample.debug.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample.debug.xcconfig"; sourceTree = "<group>"; };
-		ECF36AB0056029F6F616522E /* Pods-YandexMobileAdsSampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsSampleApp.release.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsSampleApp/Pods-YandexMobileAdsSampleApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				14033F942720457800A24D5E /* AdPlayer.swift */,
+				B394AC8527A868DB00D92CD9 /* AdPlayerErrorConverter.swift */,
 			);
 			path = Ad;
 			sourceTree = "<group>";
@@ -423,8 +424,6 @@
 		79BD0E00D8B73D2FF9E77E93 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7DFE728DF3E2215855AE4E5D /* Pods-YandexMobileAdsSampleApp.debug.xcconfig */,
-				ECF36AB0056029F6F616522E /* Pods-YandexMobileAdsSampleApp.release.xcconfig */,
 				CD8EF53A225BD22C326812B4 /* Pods-YandexMobileAdsExample.debug.xcconfig */,
 				B999054E57E2B5872F906D20 /* Pods-YandexMobileAdsExample.release.xcconfig */,
 			);
@@ -451,7 +450,7 @@
 				1467E34C271EA91500DF104A /* Frameworks */,
 				1467E34D271EA91500DF104A /* Resources */,
 				CFCB6C72C2AFF90E39A609BD /* [CP] Copy Pods Resources */,
-				013072F80BA48E97A50A12BF /* [CP] Embed Pods Frameworks */,
+				F40F1BE2C463E27CE94D2C99 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -511,23 +510,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		013072F80BA48E97A50A12BF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		506EC2F1FCBB6A32251C155F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -565,6 +547,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F40F1BE2C463E27CE94D2C99 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -610,6 +609,7 @@
 				1474FC232721A4E500276688 /* GDPRViewController.swift in Sources */,
 				1467E353271EA91500DF104A /* AppDelegate.swift in Sources */,
 				14033F6827201F7900A24D5E /* MobileMediationRewardedViewController.swift in Sources */,
+				B394AC8627A868DB00D92CD9 /* AdPlayerErrorConverter.swift in Sources */,
 				14033FB92720457800A24D5E /* ContentPlayerControlsDelegate.swift in Sources */,
 				14033FC02720457800A24D5E /* InstreamAdBreakPositionFormatter.swift in Sources */,
 				14033FBF2720457800A24D5E /* InstreamParametersParser.swift in Sources */,

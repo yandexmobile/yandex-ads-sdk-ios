@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 4.0.0.0
+
+#### Updated
+* Added support for UnityAds sdk version 4.0.0
+* Updated minimum supported UnityAds sdk version to 4.0.0
+* Updated minimum supported Yandex Mobile Ads SDK version to 5.0.0
+
 ## Version 3.7.0.0
 
 #### Updated
