@@ -63,7 +63,7 @@ class AdMobNativeViewController: UIViewController {
     }
 
     private func createLoader() {
-        // Replace ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY with Ad Unit ID generated at https://apps.admob.com".
+        // Replace ca-app-pub-4449457472880521/7598370022 with Ad Unit ID generated at https://apps.admob.com".
         adLoader = GADAdLoader(adUnitID: "ca-app-pub-4449457472880521/7598370022",
                                rootViewController: self,
                                adTypes: [.native],

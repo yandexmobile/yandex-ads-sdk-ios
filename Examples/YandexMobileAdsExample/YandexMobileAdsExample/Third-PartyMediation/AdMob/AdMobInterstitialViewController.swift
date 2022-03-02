@@ -34,7 +34,7 @@ class AdMobInterstitialViewController: UIViewController {
     @IBAction func loadAd(_ sender: UIButton) {
         self.showButton.isEnabled = false
 
-        // Replace ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY with Ad Unit ID generated at https://apps.admob.com".
+        // Replace ca-app-pub-4449457472880521/5935222734 with Ad Unit ID generated at https://apps.admob.com".
         GADInterstitialAd.load(withAdUnitID:"ca-app-pub-4449457472880521/5935222734",
                                request: GADRequest()) { [self] ad, error in
             if let error = error {

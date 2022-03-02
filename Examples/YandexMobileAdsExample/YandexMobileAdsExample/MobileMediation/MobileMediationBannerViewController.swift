@@ -8,21 +8,21 @@
 import UIKit
 import YandexMobileAds
 
-private let adMobBlockID = "adf-279013/975832"
-private let facebookBlockID = "adf-279013/975836"
-private let moPubBlockID = "adf-279013/975834"
-private let myTargetBlockID = "adf-279013/975835"
-private let startAppBlockID = "adf-279013/1006423"
-private let yandexBlockID = "adf-279013/975838"
+private let adMobAdUnitID = "adf-279013/975832"
+private let facebookAdUnitID = "adf-279013/975836"
+private let moPubAdUnitID = "adf-279013/975834"
+private let myTargetAdUnitID = "adf-279013/975835"
+private let startAppAdUnitID = "adf-279013/1006423"
+private let yandexAdUnitID = "adf-279013/975838"
 
 class MobileMediationBannerViewController: UIViewController {
-    private let blockIDs = [
-        (adapter: "AdMob",    blockId: adMobBlockID),
-        (adapter: "Facebook", blockId: facebookBlockID),
-        (adapter: "MoPub",    blockId: moPubBlockID),
-        (adapter: "myTarget", blockId: myTargetBlockID),
-        (adapter: "StartApp", blockId: startAppBlockID),
-        (adapter: "Yandex",   blockId: yandexBlockID)
+    private let adUnitIDs = [
+        (adapter: "AdMob",    adUnitID: adMobAdUnitID),
+        (adapter: "Facebook", adUnitID: facebookAdUnitID),
+        (adapter: "MoPub",    adUnitID: moPubAdUnitID),
+        (adapter: "myTarget", adUnitID: myTargetAdUnitID),
+        (adapter: "StartApp", adUnitID: startAppAdUnitID),
+        (adapter: "Yandex",   adUnitID: yandexAdUnitID)
     ]
 
     @IBOutlet private var pickerView: UIPickerView!
@@ -37,18 +37,18 @@ class MobileMediationBannerViewController: UIViewController {
         let adSize = YMAAdSize.fixedSize(with: YMAAdSizeBanner_320x50)
         let selectedBlockIndex = pickerView.selectedRow(inComponent: 0)
         /*
-         Replace blockID with actual Block ID.
-         Following demo block ids may be used for testing:
-         AdMob mediation: adMobBlockID
-         Facebook mediation: facebookBlockID
-         MoPub mediation: moPubBlockID
-         MyTarget mediation: myTargetBlockID
-         StartApp mediation: startAppBlockID
-         Yandex: yandexBlockID
+         Replace adUnitID with actual Ad unitt ID.
+         Following demo ad unit ids may be used for testing:
+         AdMob mediation: adMobAdUnitID
+         Facebook mediation: facebookAdUnitID
+         MoPub mediation: moPubAdUnitID
+         MyTarget mediation: myTargetAdUnitID
+         StartApp mediation: startAppAdUnitID
+         Yandex: yandexAdUnitID
          */
-        let blockID = blockIDs[selectedBlockIndex].blockId
+        let adUnitID = adUnitIDs[selectedBlockIndex].adUnitID
         adView?.removeFromSuperview()
-        adView = YMAAdView(blockID: blockID, adSize: adSize)
+        adView = YMAAdView(adUnitID: adUnitID, adSize: adSize)
         adView?.delegate = self
         adView?.loadAd()
     }
@@ -91,11 +91,11 @@ extension MobileMediationBannerViewController: UIPickerViewDelegate, UIPickerVie
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return blockIDs.count
+        return adUnitIDs.count
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return blockIDs[row].adapter
+        return adUnitIDs[row].adapter
     }
 }
 

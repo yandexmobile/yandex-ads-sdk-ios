@@ -31,8 +31,8 @@ class AdFoxNativeViewController: UIViewController {
         parameters["adf_pfc"] = "bskug"
         parameters["adf_pfb"] = "fkjas"
         parameters["adf_pt"] = "b"
-        // Replace demo R-M-243655-10 with actual Block ID
-        let requestConfiguration = YMAMutableNativeAdRequestConfiguration(blockID: "R-M-243655-10")
+        // Replace demo R-M-243655-10 with actual Ad Unit ID
+        let requestConfiguration = YMAMutableNativeAdRequestConfiguration(adUnitID: "R-M-243655-10")
         requestConfiguration.parameters = parameters
         adLoader.loadAd(with: requestConfiguration)
     }

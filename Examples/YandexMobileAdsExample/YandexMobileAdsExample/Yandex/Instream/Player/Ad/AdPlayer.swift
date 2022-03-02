@@ -11,8 +11,7 @@ import YandexMobileAdsInstream
 class AdPlayer: NSObject {
     weak var delegate: InstreamAdPlayerDelegate?
     var invalidateCallback: (() -> ())?
-
-    var isPlayingObservation: ((_ isPlaying: Bool) -> ())?
+    var errorConverter = AdPlayerErrorConverter()
 
     private var playerView: PlayerView?
     private var player: VideoAVPlayer?
@@ -49,30 +48,26 @@ extension AdPlayer: InstreamAdPlayer {
     func prepareAd(with videoAd: VideoAd) {
         let mediaFile = videoAd.mediaFile
         guard let mediaFileUrl = URL(string: mediaFile.url) else {
-            delegate?.instreamAdPlayer(self, didError: videoAd)
+            didFailVideoAd(videoAd, withReason: .fileNotFound)
             return
         }
-
         self.videoAd = videoAd
         if let player = player {
             player.prepare(url: mediaFileUrl)
         } else {
-            delegate?.instreamAdPlayer(self, didError: videoAd)
+            didFailVideoAd(videoAd, withReason: .unknown)
         }
     }
 
     func playAd() {
-        guard let player = player else { return }
         if let playerView = playerView {
-            player.setPlayerView(playerView)
+            player!.setPlayerView(playerView)
         }
-        player.play()
-        isPlayingObservation?(true)
+        player!.play()
     }
 
     func pauseAd() {
         player?.pause()
-        isPlayingObservation?(false)
     }
 
     func resumeAd() {
@@ -80,16 +75,18 @@ extension AdPlayer: InstreamAdPlayer {
             player?.setPlayerView(playerView)
         }
         player?.play()
-        isPlayingObservation?(true)
     }
 
     func stopAd() {
         player?.stopAd()
-        isPlayingObservation?(false)
     }
 
     func setVolume(_ level: Double) {
         player?.setVolume(level)
+    }
+
+    private final func didFailVideoAd(_ videoAd: VideoAd, withReason reason: InstreamAdPlayerErrorReason) {
+        delegate?.instreamAdPlayer(self, didFailVideoAd: videoAd, withError: errorConverter.convert(reason))
     }
 }
 
@@ -109,7 +106,6 @@ extension AdPlayer: VideoAVPlayerDelegate {
     func playerDidComplete(_ player: VideoAVPlayer) {
         guard let videoAd = videoAd else { return }
         delegate?.instreamAdPlayer(self, didComplete: videoAd)
-        isPlayingObservation?(false)
     }
 
     func playerDidResume(_ player: VideoAVPlayer) {
@@ -122,9 +118,9 @@ extension AdPlayer: VideoAVPlayerDelegate {
         delegate?.instreamAdPlayer(self, didPause: videoAd)
     }
 
-    func playerDidFailToPlay(_ player: VideoAVPlayer) {
+    func playerDidFailToPlay(_ player: VideoAVPlayer, error: Error?) {
         guard let videoAd = videoAd else { return }
-        delegate?.instreamAdPlayer(self, didError: videoAd)
+        delegate?.instreamAdPlayer(self, didFailVideoAd: videoAd, withError: errorConverter.convert(error))
     }
 
     func playerDidStop(_ player: VideoAVPlayer) {

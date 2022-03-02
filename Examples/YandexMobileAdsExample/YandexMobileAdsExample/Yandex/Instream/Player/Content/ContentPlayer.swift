@@ -113,7 +113,6 @@ extension ContentPlayer: VideoAVPlayerDelegate {
     }
 
     func playerDidComplete(_ player: VideoAVPlayer) {
-        onIsPlayingChangeCallback?(false)
         stopTracking()
         delegate?.videoPlayerDidComplete(self)
     }
@@ -126,7 +125,7 @@ extension ContentPlayer: VideoAVPlayerDelegate {
         delegate?.videoPlayerDidPause(self)
     }
 
-    func playerDidFailToPlay(_ player: VideoAVPlayer) {
+    func playerDidFailToPlay(_ player: VideoAVPlayer, error: Error?) {
         delegate?.videoPlayerDidFail(self)
     }
 

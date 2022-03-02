@@ -34,7 +34,7 @@ class AdMobRewardedViewController: UIViewController {
     @IBAction func loadAd(_ sender: UIButton) {
         self.showButton.isEnabled = false
 
-        // Replace ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY with Ad Unit ID generated at https://apps.admob.com".
+        // Replace ca-app-pub-4449457472880521/8830996342 with Ad Unit ID generated at https://apps.admob.com".
         GADRewardedAd.load(withAdUnitID: "ca-app-pub-4449457472880521/8830996342",
                             request: GADRequest()) { [self] ad, error in
             if let error = error {

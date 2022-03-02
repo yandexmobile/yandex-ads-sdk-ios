@@ -98,9 +98,9 @@ class VideoAVPlayer: NSObject {
 
     private func subscribeToPlayerRateChanges() {
         avPlayer.addObserver(self,
-                           forKeyPath: #keyPath(AVPlayer.rate),
-                           options: [.old, .new],
-                           context: &playerContext)
+                             forKeyPath: #keyPath(AVPlayer.rate),
+                             options: [.old, .new],
+                             context: &playerContext)
     }
 
     private func replaceCurrentObservedItem(newItem: AVPlayerItem) {
@@ -124,8 +124,8 @@ class VideoAVPlayer: NSObject {
         guard keyPath == #keyPath(AVPlayer.rate),
               let oldRateNumber = change?[.oldKey] as? NSNumber,
               let newRateNumber = change?[.newKey] as? NSNumber else {
-            return
-        }
+                  return
+              }
         let oldRate = oldRateNumber.doubleValue
         let newRate = newRateNumber.doubleValue
         let isResumed = oldRate == 0 && newRate > 0
@@ -154,8 +154,8 @@ class VideoAVPlayer: NSObject {
         guard keyPath == #keyPath(AVPlayerItem.status),
               let statusNumber = change?[.newKey] as? NSNumber,
               let status = AVPlayerItem.Status(rawValue: statusNumber.intValue) else {
-            return
-        }
+                  return
+              }
 
         switch status {
         case .readyToPlay:
@@ -163,7 +163,8 @@ class VideoAVPlayer: NSObject {
             break
         case .failed:
             avPlayer.rate = 0
-            delegate?.playerDidFailToPlay(self)
+            let error = avPlayer.currentItem?.error ?? avPlayer.error
+            delegate?.playerDidFailToPlay(self, error: error)
         case .unknown:
             break
         @unknown default:
