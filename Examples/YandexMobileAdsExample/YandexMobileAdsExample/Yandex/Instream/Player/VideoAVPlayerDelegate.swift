@@ -16,9 +16,9 @@ protocol VideoAVPlayerDelegate: AnyObject {
 
     func playerDidPause(_ player: VideoAVPlayer)
 
-    func playerDidFailToPlay(_ player: VideoAVPlayer)
+    func playerDidUpdateVolume(_ player: VideoAVPlayer, _ volume: Double)
+
+    func playerDidFailToPlay(_ player: VideoAVPlayer, error: Error?)
 
     func playerDidStop(_ player: VideoAVPlayer)
-
-    func playerDidUpdateVolume(_ player: VideoAVPlayer, _ volume: Double)
 }

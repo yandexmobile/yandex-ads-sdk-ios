@@ -15,8 +15,8 @@ class InterstitialViewController: UIViewController {
     
     @IBAction func loadInterstitial() {
         self.showButton.isEnabled = false
-        // Replace demo R-M-DEMO-240x400-context with actual Block ID
-        self.interstitialAd = YMAInterstitialAd(blockID: "R-M-DEMO-240x400-context")
+        // Replace demo R-M-DEMO-240x400-context with actual Ad Unit ID
+        self.interstitialAd = YMAInterstitialAd(adUnitID: "R-M-DEMO-240x400-context")
         self.interstitialAd.delegate = self;
         self.interstitialAd.load()
     }

@@ -14,8 +14,8 @@ class AdFoxBannerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let adSize = YMAAdSize.fixedSize(with: .init(width: 320, height: 100))
-        // Replace demo R-M-243655-8 with actual Block ID
-        self.adView = YMAAdView(blockID: "R-M-243655-8", adSize: adSize)
+        // Replace demo R-M-243655-8 with actual Ad Unit ID
+        self.adView = YMAAdView(adUnitID: "R-M-243655-8", adSize: adSize)
         self.adView.delegate = self
     }
 
