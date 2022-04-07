@@ -10,10 +10,6 @@
 		14033F5E27201B8A00A24D5E /* MobileMediationInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F5D27201B8A00A24D5E /* MobileMediationInterstitialViewController.swift */; };
 		14033F6527201E2700A24D5E /* MobileMediationNativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F6427201E2700A24D5E /* MobileMediationNativeViewController.swift */; };
 		14033F6827201F7900A24D5E /* MobileMediationRewardedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F6727201F7900A24D5E /* MobileMediationRewardedViewController.swift */; };
-		14033F6B2720246900A24D5E /* MoPubBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F6A2720246900A24D5E /* MoPubBannerViewController.swift */; };
-		14033F702720259B00A24D5E /* MoPubInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F6F2720259B00A24D5E /* MoPubInterstitialViewController.swift */; };
-		14033F732720261E00A24D5E /* MoPubNativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F722720261E00A24D5E /* MoPubNativeViewController.swift */; };
-		14033F76272026EB00A24D5E /* MoPubRewardedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F75272026EB00A24D5E /* MoPubRewardedViewController.swift */; };
 		14033F7A272028E100A24D5E /* AdMobBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F79272028E100A24D5E /* AdMobBannerViewController.swift */; };
 		14033F7D27202A5800A24D5E /* AdMobInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F7C27202A5800A24D5E /* AdMobInterstitialViewController.swift */; };
 		14033F8027202AC300A24D5E /* AdMobNativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F7F27202AC300A24D5E /* AdMobNativeViewController.swift */; };
@@ -41,8 +37,6 @@
 		14033FC12720457800A24D5E /* InrollsPlaybackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033FAA2720457800A24D5E /* InrollsPlaybackController.swift */; };
 		14033FC22720457800A24D5E /* InstreamInrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033FAB2720457800A24D5E /* InstreamInrollViewController.swift */; };
 		14033FC42720598D00A24D5E /* TemplateNativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033FC32720598D00A24D5E /* TemplateNativeViewController.swift */; };
-		144C966B272A931800D8DD63 /* MoPubNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144C9669272A931800D8DD63 /* MoPubNativeAdView.swift */; };
-		144C966C272A931800D8DD63 /* MoPubNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 144C966A272A931800D8DD63 /* MoPubNativeAdView.xib */; };
 		1467E353271EA91500DF104A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1467E352271EA91500DF104A /* AppDelegate.swift */; };
 		1467E35A271EA91500DF104A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1467E358271EA91500DF104A /* Main.storyboard */; };
 		1467E35C271EA91700DF104A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1467E35B271EA91700DF104A /* Assets.xcassets */; };
@@ -71,10 +65,6 @@
 		14033F5D27201B8A00A24D5E /* MobileMediationInterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileMediationInterstitialViewController.swift; sourceTree = "<group>"; };
 		14033F6427201E2700A24D5E /* MobileMediationNativeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileMediationNativeViewController.swift; sourceTree = "<group>"; };
 		14033F6727201F7900A24D5E /* MobileMediationRewardedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileMediationRewardedViewController.swift; sourceTree = "<group>"; };
-		14033F6A2720246900A24D5E /* MoPubBannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoPubBannerViewController.swift; sourceTree = "<group>"; };
-		14033F6F2720259B00A24D5E /* MoPubInterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoPubInterstitialViewController.swift; sourceTree = "<group>"; };
-		14033F722720261E00A24D5E /* MoPubNativeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoPubNativeViewController.swift; sourceTree = "<group>"; };
-		14033F75272026EB00A24D5E /* MoPubRewardedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoPubRewardedViewController.swift; sourceTree = "<group>"; };
 		14033F79272028E100A24D5E /* AdMobBannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMobBannerViewController.swift; sourceTree = "<group>"; };
 		14033F7C27202A5800A24D5E /* AdMobInterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMobInterstitialViewController.swift; sourceTree = "<group>"; };
 		14033F7F27202AC300A24D5E /* AdMobNativeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMobNativeViewController.swift; sourceTree = "<group>"; };
@@ -102,8 +92,6 @@
 		14033FAA2720457800A24D5E /* InrollsPlaybackController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InrollsPlaybackController.swift; sourceTree = "<group>"; };
 		14033FAB2720457800A24D5E /* InstreamInrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstreamInrollViewController.swift; sourceTree = "<group>"; };
 		14033FC32720598D00A24D5E /* TemplateNativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateNativeViewController.swift; sourceTree = "<group>"; };
-		144C9669272A931800D8DD63 /* MoPubNativeAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoPubNativeAdView.swift; sourceTree = "<group>"; };
-		144C966A272A931800D8DD63 /* MoPubNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoPubNativeAdView.xib; sourceTree = "<group>"; };
 		1467E34F271EA91500DF104A /* YandexMobileAdsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YandexMobileAdsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1467E352271EA91500DF104A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1467E359271EA91500DF104A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -167,22 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				14033F772720274500A24D5E /* AdMob */,
-				14033F6C272024F400A24D5E /* MoPub */,
 			);
 			path = "Third-PartyMediation";
-			sourceTree = "<group>";
-		};
-		14033F6C272024F400A24D5E /* MoPub */ = {
-			isa = PBXGroup;
-			children = (
-				144C9669272A931800D8DD63 /* MoPubNativeAdView.swift */,
-				144C966A272A931800D8DD63 /* MoPubNativeAdView.xib */,
-				14033F75272026EB00A24D5E /* MoPubRewardedViewController.swift */,
-				14033F722720261E00A24D5E /* MoPubNativeViewController.swift */,
-				14033F6F2720259B00A24D5E /* MoPubInterstitialViewController.swift */,
-				14033F6A2720246900A24D5E /* MoPubBannerViewController.swift */,
-			);
-			path = MoPub;
 			sourceTree = "<group>";
 		};
 		14033F772720274500A24D5E /* AdMob */ = {
@@ -450,7 +424,6 @@
 				1467E34C271EA91500DF104A /* Frameworks */,
 				1467E34D271EA91500DF104A /* Resources */,
 				CFCB6C72C2AFF90E39A609BD /* [CP] Copy Pods Resources */,
-				F40F1BE2C463E27CE94D2C99 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -503,7 +476,6 @@
 				14033F8627202B8D00A24D5E /* AdMobNativeAdView.xib in Resources */,
 				1467E35C271EA91700DF104A /* Assets.xcassets in Resources */,
 				1467E35A271EA91500DF104A /* Main.storyboard in Resources */,
-				144C966C272A931800D8DD63 /* MoPubNativeAdView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,23 +521,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F40F1BE2C463E27CE94D2C99 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -573,9 +528,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				144C966B272A931800D8DD63 /* MoPubNativeAdView.swift in Sources */,
 				14033FAE2720457800A24D5E /* InstreamViewController.swift in Sources */,
-				14033F702720259B00A24D5E /* MoPubInterstitialViewController.swift in Sources */,
 				14033FB42720457800A24D5E /* LinkedList.swift in Sources */,
 				14033F7D27202A5800A24D5E /* AdMobInterstitialViewController.swift in Sources */,
 				14A06392273030BA00BED7A7 /* MediationTestConfigurator.swift in Sources */,
@@ -590,7 +543,6 @@
 				14033FB72720457800A24D5E /* VideoAVPlayer.swift in Sources */,
 				14033F8927202CA800A24D5E /* AdMobRewardedViewController.swift in Sources */,
 				147B0BD127200D14005F4062 /* NativeAdView.swift in Sources */,
-				14033F6B2720246900A24D5E /* MoPubBannerViewController.swift in Sources */,
 				14033F5E27201B8A00A24D5E /* MobileMediationInterstitialViewController.swift in Sources */,
 				14033FB52720457800A24D5E /* ReusablePlayer.swift in Sources */,
 				147B0BD827200FCE005F4062 /* RewardedViewController.swift in Sources */,
@@ -602,7 +554,6 @@
 				14033F8027202AC300A24D5E /* AdMobNativeViewController.swift in Sources */,
 				14033FB62720457800A24D5E /* VideoPlayerProvider.swift in Sources */,
 				1474FC222721A4E500276688 /* SettingsViewController.swift in Sources */,
-				14033F76272026EB00A24D5E /* MoPubRewardedViewController.swift in Sources */,
 				14033FBA2720457800A24D5E /* PlayerView.swift in Sources */,
 				149931882722C423005D2E87 /* AdFoxBannerViewController.swift in Sources */,
 				14033FBC2720457800A24D5E /* VideoPlayerVisibilityTracker.swift in Sources */,
@@ -622,7 +573,6 @@
 				14033FBE2720457800A24D5E /* InstreamAdBinderToastDelegate.swift in Sources */,
 				147B0BCF27200D14005F4062 /* StarRatingView.swift in Sources */,
 				147B0BD527200E75005F4062 /* BannerViewController.swift in Sources */,
-				14033F732720261E00A24D5E /* MoPubNativeViewController.swift in Sources */,
 				14033FB82720457800A24D5E /* ContentPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
