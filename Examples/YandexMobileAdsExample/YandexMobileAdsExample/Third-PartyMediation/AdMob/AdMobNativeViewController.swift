@@ -20,15 +20,10 @@ class AdMobNativeViewController: UIViewController {
     }
 
     func initializeAdMob() {
-        let initializationStatus =
-            GADMobileAds.sharedInstance().initializationStatus.adapterStatusesByClassName[GADMobileAds.className()]
-        if (initializationStatus?.state == .notReady) {
-            self.loadButton.isUserInteractionEnabled = false
-            GADMobileAds.sharedInstance().start { [weak self] status in
-                let initializationStatus = status.adapterStatusesByClassName[GADMobileAds.className()]?.state == .ready
-                DispatchQueue.main.async {
-                    self?.loadButton.isUserInteractionEnabled = initializationStatus
-                }
+        loadButton.isUserInteractionEnabled = false
+        GADMobileAds.sharedInstance().start { [weak self] status in
+            DispatchQueue.main.async {
+                self?.loadButton.isUserInteractionEnabled = true
             }
         }
     }
