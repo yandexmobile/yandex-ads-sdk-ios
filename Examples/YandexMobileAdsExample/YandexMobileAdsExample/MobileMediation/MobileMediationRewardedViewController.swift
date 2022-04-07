@@ -12,7 +12,6 @@ private let adMobAdUnitID = "adf-279013/966332"
 private let appLovinAdUnitID = "adf-279013/1052108"
 private let facebookAdUnitID = "adf-279013/966335"
 private let ironSourceAdUnitID = "adf-279013/1052110"
-private let moPubAdUnitID = "adf-279013/966333"
 private let myTargetAdUnitID = "adf-279013/966334"
 private let startAppAdUnitID = "adf-279013/1006617"
 private let unityAdsAdUnitID = "adf-279013/1006614"
@@ -24,7 +23,6 @@ class MobileMediationRewardedViewController: UIViewController {
         (adapter: "AppLovin", adUnitID: appLovinAdUnitID),
         (adapter: "Facebook", adUnitID: facebookAdUnitID),
         (adapter: "IronSource", adUnitID: ironSourceAdUnitID),
-        (adapter: "MoPub", adUnitID: moPubAdUnitID),
         (adapter: "myTarget", adUnitID: myTargetAdUnitID),
         (adapter: "StartApp", adUnitID: startAppAdUnitID),
         (adapter: "UnityAds", adUnitID: unityAdsAdUnitID),
@@ -50,7 +48,6 @@ class MobileMediationRewardedViewController: UIViewController {
          AppLovin mediation: appLovinAdUnitID
          Facebook mediation: facebookAdUnitID
          IronSource mediation: ironSourceAdUnitID
-         MoPub mediation: moPubAdUnitID
          MyTarget mediation: myTargetAdUnitID
          StartApp mediation: startAppAdUnitID
          UnityAds mediation: unityAdsAdUnitID

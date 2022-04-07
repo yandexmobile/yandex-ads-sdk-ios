@@ -30,6 +30,13 @@ SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/33
 #### Removed
 * Removed old methods for setting banner ad size
 
+# Version 4.4.3
+
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/212922/YandexMobileAds-4.4.3-ios-6411e0fc-b8a7-4a2d-a70f-977b44511a8d.zip)
+
+#### Added
+* Added improvements and fixes
+
 # Version 4.4.2
 
 SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/223308/YandexMobileAds-4.4.2-ios-8f3b8e7d-8973-421a-b7bf-5d8c4855899b.zip)
