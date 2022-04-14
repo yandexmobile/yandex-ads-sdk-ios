@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 4.1.0.0
+
+#### Updated
+* Added support for UnityAds SDK version 4.1.0
+* Updated minimum supported UnityAds SDK version to 4.1.0
+
 ## Version 4.0.0.0
 
 #### Updated
