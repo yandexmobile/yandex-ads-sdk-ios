@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 11.3.2.0
+
+#### Added
+* Added support for AppLovin SDK version 11.3.2
+* Updated minimum supported AppLovin SDK version to 11.3.2
+
 ## Version 11.0.0.0
 
 #### Added
