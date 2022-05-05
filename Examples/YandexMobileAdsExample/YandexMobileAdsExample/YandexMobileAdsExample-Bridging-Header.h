@@ -6,3 +6,4 @@
  */
 
 #import <StartApp/StartApp.h>
+#import <IronSource/IronSource.h>
