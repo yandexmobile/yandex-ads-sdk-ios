@@ -9,6 +9,7 @@ target 'YandexMobileAdsExample' do
   pod 'MyTargetYandexMobileAdsAdapters'
   pod 'StartAppYandexMobileAdsAdapters'
   pod 'YandexMobileAdsAdMobAdapters'
+  pod 'YandexMobileAdsIronSourceAdapters'
   pod 'YandexMobileAds'
   pod 'YandexMobileAdsInstream'
 end
