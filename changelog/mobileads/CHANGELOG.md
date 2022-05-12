@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# Version 5.0.1
+
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/223308/YandexMobileAds-5.0.1-ios-600986ab-fae2-4f1d-a8ca-e9908d3e126d.zip)
+
+#### Added
+* Added improvements and fixes
+
 # Version 5.0.0
 
 SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/212922/YandexMobileAds-5.0.0-ios-19291768-8833-47f7-a4ef-06686dc09227.zip)
@@ -312,7 +319,7 @@ SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/21
 #### Added
 
 * Added support for VMAP format
-* Added support for VAST wrappers 
+* Added support for VAST wrappers
 
 # Version 2.12.0
 
@@ -404,7 +411,7 @@ SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/21
 
 #### Added
 
-* Added native ad mediation 
+* Added native ad mediation
 
 #### Fixed
 
@@ -444,7 +451,7 @@ SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/21
 
 #### Added
 
-* Added HTML banners and interstitials mediation 
+* Added HTML banners and interstitials mediation
 
 ## Version 2.7.0
 
@@ -498,12 +505,12 @@ SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/20
 * Updated compatible AppMetrica versions range
 
 #### Added
-* Added minor improvements 
+* Added minor improvements
 
 ## Version 2.2.2
 
 #### Added
-* Added minor improvements 
+* Added minor improvements
 
 ## Version 2.2.1
 
@@ -534,7 +541,7 @@ SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/20
 ## Version 2.1.1
 
 #### Added
-* Added minor improvements 
+* Added minor improvements
 
 ## Version 2.1.0
 
