@@ -37,6 +37,14 @@ extension InterstitialViewController: YMAInterstitialAdDelegate {
         print("Loading failed. Error: \(error)")
     }
 
+    func interstitialAdDidClick(_ interstitialAd: YMAInterstitialAd) {
+        print("Ad clicked")
+    }
+
+    func interstitialAd(_ interstitialAd: YMAInterstitialAd, didTrackImpressionWith impressionData: YMAImpressionData?) {
+        print("Impression tracked")
+    }
+
     func interstitialAdWillLeaveApplication(_ interstitialAd: YMAInterstitialAd) {
         print("Will leave application")
     }

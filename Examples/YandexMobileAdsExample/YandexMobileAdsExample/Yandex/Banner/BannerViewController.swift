@@ -14,9 +14,9 @@ class BannerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Replace demo R-M-DEMO-320x500 with actual Ad Unit ID
-        let adSize = YMAAdSize.fixedSize(with: .init(width: 320, height: 100))
-        self.adView = YMAAdView(adUnitID: "R-M-DEMO-320x100-context", adSize: adSize)
+        // Replace demo R-M-DEMO-320x50 with actual Ad Unit ID
+        let adSize = YMAAdSize.fixedSize(with: .init(width: 320, height: 50))
+        self.adView = YMAAdView(adUnitID: "R-M-DEMO-320x50", adSize: adSize)
         self.adView.delegate = self
     }
     
@@ -35,6 +35,14 @@ extension BannerViewController: YMAAdViewDelegate {
     func adViewDidLoad(_ adView: YMAAdView) {
         self.adView.displayAtBottom(in: self.view)
         print("Ad loaded")
+    }
+
+    func adViewDidClick(_ adView: YMAAdView) {
+        print("Ad clicked")
+    }
+
+    func adView(_ adView: YMAAdView, didTrackImpressionWith impressionData: YMAImpressionData?) {
+        print("Impression tracked")
     }
     
     func adViewDidFailLoading(_ adView: YMAAdView, error: Error) {
