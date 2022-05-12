@@ -42,6 +42,14 @@ extension RewardedViewController: YMARewardedAdDelegate {
     func rewardedAdDidFail(toLoad rewardedAd: YMARewardedAd, error: Error) {
         print("Loading failed. Error: %@", error)
     }
+
+    func rewardedAdDidClick(_ rewardedAd: YMARewardedAd) {
+        print("Ad clicked")
+    }
+
+    func rewardedAd(_ rewardedAd: YMARewardedAd, didTrackImpressionWith impressionData: YMAImpressionData?) {
+        print("Impression tracked")
+    }
     
     func rewardedAdWillLeaveApplication(_ rewardedAd: YMARewardedAd) {
         print("Rewarded ad will leave application")

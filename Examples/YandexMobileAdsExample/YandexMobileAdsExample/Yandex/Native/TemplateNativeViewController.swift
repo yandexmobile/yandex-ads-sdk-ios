@@ -74,6 +74,14 @@ extension TemplateNativeViewController: YMANativeAdDelegate {
 //        return self
 //    }
 
+    func nativeAdDidClick(_ ad: YMANativeAd) {
+        print("Ad clicked")
+    }
+
+    func nativeAd(_ ad: YMANativeAd, didTrackImpressionWith impressionData: YMAImpressionData?) {
+        print("Impression tracked")
+    }
+
     func nativeAdWillLeaveApplication(_ ad: YMANativeAd) {
         print("Will leave application")
     }

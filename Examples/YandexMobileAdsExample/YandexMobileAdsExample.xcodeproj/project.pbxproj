@@ -57,9 +57,9 @@
 		149931882722C423005D2E87 /* AdFoxBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149931872722C423005D2E87 /* AdFoxBannerViewController.swift */; };
 		1499318B2722CD44005D2E87 /* AdFoxInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1499318A2722CD44005D2E87 /* AdFoxInterstitialViewController.swift */; };
 		14A06392273030BA00BED7A7 /* MediationTestConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A06391273030BA00BED7A7 /* MediationTestConfigurator.swift */; };
-		46D1BFF027DC9AF100EFE7CF /* IronSourceInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1BFEF27DC9AF100EFE7CF /* IronSourceInterstitialViewController.swift */; };
-		46D1BFF227DCA6D600EFE7CF /* IronSourceRewardedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1BFF127DCA6D600EFE7CF /* IronSourceRewardedViewController.swift */; };
-		46D1BFF427DCBD5000EFE7CF /* IronSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1BFF327DCBD5000EFE7CF /* IronSourceManager.swift */; };
+		46C354A0282560FE00832C7C /* IronSourceRewardedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C3549D282560FE00832C7C /* IronSourceRewardedViewController.swift */; };
+		46C354A1282560FE00832C7C /* IronSourceInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C3549E282560FE00832C7C /* IronSourceInterstitialViewController.swift */; };
+		46C354A2282560FE00832C7C /* IronSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C3549F282560FE00832C7C /* IronSourceManager.swift */; };
 		B394AC8627A868DB00D92CD9 /* AdPlayerErrorConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B394AC8527A868DB00D92CD9 /* AdPlayerErrorConverter.swift */; };
 		BAB52D75A74975130850B568 /* libPods-YandexMobileAdsExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B2F6F1A96B25E24D5E486C /* libPods-YandexMobileAdsExample.a */; };
 /* End PBXBuildFile section */
@@ -118,9 +118,9 @@
 		149931872722C423005D2E87 /* AdFoxBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdFoxBannerViewController.swift; sourceTree = "<group>"; };
 		1499318A2722CD44005D2E87 /* AdFoxInterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdFoxInterstitialViewController.swift; sourceTree = "<group>"; };
 		14A06391273030BA00BED7A7 /* MediationTestConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediationTestConfigurator.swift; sourceTree = "<group>"; };
-		46D1BFEF27DC9AF100EFE7CF /* IronSourceInterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IronSourceInterstitialViewController.swift; sourceTree = "<group>"; };
-		46D1BFF127DCA6D600EFE7CF /* IronSourceRewardedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IronSourceRewardedViewController.swift; sourceTree = "<group>"; };
-		46D1BFF327DCBD5000EFE7CF /* IronSourceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IronSourceManager.swift; sourceTree = "<group>"; };
+		46C3549D282560FE00832C7C /* IronSourceRewardedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IronSourceRewardedViewController.swift; sourceTree = "<group>"; };
+		46C3549E282560FE00832C7C /* IronSourceInterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IronSourceInterstitialViewController.swift; sourceTree = "<group>"; };
+		46C3549F282560FE00832C7C /* IronSourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IronSourceManager.swift; sourceTree = "<group>"; };
 		B394AC8527A868DB00D92CD9 /* AdPlayerErrorConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdPlayerErrorConverter.swift; sourceTree = "<group>"; };
 		B7B2F6F1A96B25E24D5E486C /* libPods-YandexMobileAdsExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YandexMobileAdsExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B999054E57E2B5872F906D20 /* Pods-YandexMobileAdsExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsExample.release.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample.release.xcconfig"; sourceTree = "<group>"; };
@@ -160,8 +160,8 @@
 		14033F692720245600A24D5E /* Third-PartyMediation */ = {
 			isa = PBXGroup;
 			children = (
-				46D1BFEE27DC9ABC00EFE7CF /* IronSource */,
 				14033F772720274500A24D5E /* AdMob */,
+				46C3549C282560FE00832C7C /* IronSource */,
 			);
 			path = "Third-PartyMediation";
 			sourceTree = "<group>";
@@ -402,12 +402,12 @@
 			path = Adfox;
 			sourceTree = "<group>";
 		};
-		46D1BFEE27DC9ABC00EFE7CF /* IronSource */ = {
+		46C3549C282560FE00832C7C /* IronSource */ = {
 			isa = PBXGroup;
 			children = (
-				46D1BFEF27DC9AF100EFE7CF /* IronSourceInterstitialViewController.swift */,
-				46D1BFF127DCA6D600EFE7CF /* IronSourceRewardedViewController.swift */,
-				46D1BFF327DCBD5000EFE7CF /* IronSourceManager.swift */,
+				46C3549D282560FE00832C7C /* IronSourceRewardedViewController.swift */,
+				46C3549E282560FE00832C7C /* IronSourceInterstitialViewController.swift */,
+				46C3549F282560FE00832C7C /* IronSourceManager.swift */,
 			);
 			path = IronSource;
 			sourceTree = "<group>";
@@ -548,7 +548,6 @@
 				14033FAE2720457800A24D5E /* InstreamViewController.swift in Sources */,
 				14033FB42720457800A24D5E /* LinkedList.swift in Sources */,
 				14033F7D27202A5800A24D5E /* AdMobInterstitialViewController.swift in Sources */,
-				46D1BFF227DCA6D600EFE7CF /* IronSourceRewardedViewController.swift in Sources */,
 				14A06392273030BA00BED7A7 /* MediationTestConfigurator.swift in Sources */,
 				1474FC1E2721A4E500276688 /* GDPRUserConsentManager.swift in Sources */,
 				14033FB32720457800A24D5E /* LRUCache.swift in Sources */,
@@ -556,9 +555,9 @@
 				14033FC22720457800A24D5E /* InstreamInrollViewController.swift in Sources */,
 				147B0BDD27201213005F4062 /* MobileMediationBannerViewController.swift in Sources */,
 				14033FC12720457800A24D5E /* InrollsPlaybackController.swift in Sources */,
-				46D1BFF427DCBD5000EFE7CF /* IronSourceManager.swift in Sources */,
 				14033FC42720598D00A24D5E /* TemplateNativeViewController.swift in Sources */,
 				147B0BC9271FFC53005F4062 /* InterstitialViewController.swift in Sources */,
+				46C354A0282560FE00832C7C /* IronSourceRewardedViewController.swift in Sources */,
 				14033FB72720457800A24D5E /* VideoAVPlayer.swift in Sources */,
 				14033F8927202CA800A24D5E /* AdMobRewardedViewController.swift in Sources */,
 				147B0BD127200D14005F4062 /* NativeAdView.swift in Sources */,
@@ -573,7 +572,7 @@
 				14033F8027202AC300A24D5E /* AdMobNativeViewController.swift in Sources */,
 				14033FB62720457800A24D5E /* VideoPlayerProvider.swift in Sources */,
 				1474FC222721A4E500276688 /* SettingsViewController.swift in Sources */,
-				46D1BFF027DC9AF100EFE7CF /* IronSourceInterstitialViewController.swift in Sources */,
+				46C354A2282560FE00832C7C /* IronSourceManager.swift in Sources */,
 				14033FBA2720457800A24D5E /* PlayerView.swift in Sources */,
 				149931882722C423005D2E87 /* AdFoxBannerViewController.swift in Sources */,
 				14033FBC2720457800A24D5E /* VideoPlayerVisibilityTracker.swift in Sources */,
@@ -588,6 +587,7 @@
 				14033FBB2720457800A24D5E /* VideoAVPlayerDelegate.swift in Sources */,
 				149931842722BD94005D2E87 /* AdFoxNativeViewController.swift in Sources */,
 				14033F7A272028E100A24D5E /* AdMobBannerViewController.swift in Sources */,
+				46C354A1282560FE00832C7C /* IronSourceInterstitialViewController.swift in Sources */,
 				1474FC212721A4E500276688 /* GDPRDDialogViewController.swift in Sources */,
 				147B0BD227200D14005F4062 /* CustomNativeViewController.swift in Sources */,
 				14033FBE2720457800A24D5E /* InstreamAdBinderToastDelegate.swift in Sources */,
