@@ -15,6 +15,6 @@ buildScript
 intermediates
 External/
 Pods/
-podfile\.lock
+Podfile\.lock
 tmp
 XcodeBuild/
