@@ -8,14 +8,14 @@
 import UIKit
 import YandexMobileAds
 
-private let adMobAdUnitID = "adf-279013/966332"
-private let appLovinAdUnitID = "adf-279013/1052108"
-private let facebookAdUnitID = "adf-279013/966335"
-private let ironSourceAdUnitID = "adf-279013/1052110"
-private let myTargetAdUnitID = "adf-279013/966334"
-private let startAppAdUnitID = "adf-279013/1006617"
-private let unityAdsAdUnitID = "adf-279013/1006614"
-private let yandexAdUnitID = "adf-279013/967178"
+private let adMobAdUnitID = "R-M-338238-1"
+private let appLovinAdUnitID = "R-M-338238-34"
+private let facebookAdUnitID = "R-M-338238-4"
+private let ironSourceAdUnitID = "R-M-338238-36"
+private let myTargetAdUnitID = "R-M-338238-3"
+private let startAppAdUnitID = "R-M-338238-31"
+private let unityAdsAdUnitID = "R-M-338238-30"
+private let yandexAdUnitID = "R-M-338238-6"
 
 class MobileMediationRewardedViewController: UIViewController {
     private let adUnitIDs = [
