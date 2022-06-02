@@ -8,11 +8,11 @@
 import UIKit
 import YandexMobileAds
 
-private let adMobAdUnitID = "adf-279013/975832"
-private let facebookAdUnitID = "adf-279013/975836"
-private let myTargetAdUnitID = "adf-279013/975835"
-private let startAppAdUnitID = "adf-279013/1006423"
-private let yandexAdUnitID = "adf-279013/975838"
+private let adMobAdUnitID = "R-M-338238-9"
+private let facebookAdUnitID = "R-M-338238-12"
+private let myTargetAdUnitID = "R-M-338238-11"
+private let startAppAdUnitID = "R-M-338238-26"
+private let yandexAdUnitID = "R-M-338238-13"
 
 class MobileMediationBannerViewController: UIViewController {
     private let adUnitIDs = [
