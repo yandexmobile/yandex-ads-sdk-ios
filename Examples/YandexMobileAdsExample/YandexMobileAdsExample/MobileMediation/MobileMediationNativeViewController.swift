@@ -7,10 +7,10 @@
 
 import YandexMobileAds
 
-private let adMobAdUnitID = "adf-279013/975874"
-private let facebookAdUnitID = "adf-279013/975877"
-private let myTargetAdUnitID = "adf-279013/975876"
-private let yandexAdUnitID = "adf-279013/975878"
+private let adMobAdUnitID = "R-M-338238-19"
+private let facebookAdUnitID = "R-M-338238-22"
+private let myTargetAdUnitID = "R-M-338238-21"
+private let yandexAdUnitID = "R-M-338238-23"
 
 class MobileMediationNativeViewController: UIViewController {
     private let adUnitIDs = [
