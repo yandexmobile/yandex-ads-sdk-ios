@@ -10,7 +10,6 @@ import YandexMobileAds
 
 private let adMobAdUnitID = "R-M-338238-1"
 private let appLovinAdUnitID = "R-M-338238-34"
-private let facebookAdUnitID = "R-M-338238-4"
 private let ironSourceAdUnitID = "R-M-338238-36"
 private let myTargetAdUnitID = "R-M-338238-3"
 private let startAppAdUnitID = "R-M-338238-31"
@@ -21,7 +20,6 @@ class MobileMediationRewardedViewController: UIViewController {
     private let adUnitIDs = [
         (adapter: "AdMob", adUnitID: adMobAdUnitID),
         (adapter: "AppLovin", adUnitID: appLovinAdUnitID),
-        (adapter: "Facebook", adUnitID: facebookAdUnitID),
         (adapter: "IronSource", adUnitID: ironSourceAdUnitID),
         (adapter: "myTarget", adUnitID: myTargetAdUnitID),
         (adapter: "StartApp", adUnitID: startAppAdUnitID),
@@ -46,7 +44,6 @@ class MobileMediationRewardedViewController: UIViewController {
          Following demo ad unit ids may be used for testing:
          AdMob mediation: adMobAdUnitID
          AppLovin mediation: appLovinAdUnitID
-         Facebook mediation: facebookAdUnitID
          IronSource mediation: ironSourceAdUnitID
          MyTarget mediation: myTargetAdUnitID
          StartApp mediation: startAppAdUnitID
