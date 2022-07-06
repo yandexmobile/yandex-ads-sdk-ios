@@ -1,6 +1,16 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# Version 5.1.0
+
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/332493/YandexMobileAds-5.1.0-ios-9a36dc03-ad68-4ebf-ae24-c3f9c37465ed.zip)
+
+#### Added
+* Added improvements and fixes
+
+#### Deprecated
+* Deprecated `fixedSizeWithCGSize` init in `YMAAdSize`
+
 # Version 5.0.2
 
 SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/212922/YandexMobileAds-5.0.2-ios-8197cee1-76ee-4740-a109-74d3f16e1560.zip)

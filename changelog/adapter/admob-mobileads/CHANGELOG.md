@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 5.1.0.0
+
+#### Updated
+* Added support for Yandex Mobile Ads SDK 5.1.0
+* Added support for Google Mobile Ads SDK 9.6.0
+* Updated minimum supported Google Mobile Ads SDK version to 9.6.0
+
 ## Version 5.0.0.1
 
 #### Updated

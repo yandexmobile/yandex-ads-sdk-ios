@@ -9,7 +9,6 @@ import UIKit
 import YandexMobileAds
 
 private let adMobAdUnitID = "R-M-338238-9"
-private let facebookAdUnitID = "R-M-338238-12"
 private let myTargetAdUnitID = "R-M-338238-11"
 private let startAppAdUnitID = "R-M-338238-26"
 private let yandexAdUnitID = "R-M-338238-13"
@@ -17,7 +16,6 @@ private let yandexAdUnitID = "R-M-338238-13"
 class MobileMediationBannerViewController: UIViewController {
     private let adUnitIDs = [
         (adapter: "AdMob",    adUnitID: adMobAdUnitID),
-        (adapter: "Facebook", adUnitID: facebookAdUnitID),
         (adapter: "myTarget", adUnitID: myTargetAdUnitID),
         (adapter: "StartApp", adUnitID: startAppAdUnitID),
         (adapter: "Yandex",   adUnitID: yandexAdUnitID)
@@ -32,13 +30,12 @@ class MobileMediationBannerViewController: UIViewController {
     }
 
     @IBAction func loadAd(_ sender: UIButton) {
-        let adSize = YMAAdSize.fixedSize(with: YMAAdSizeBanner_320x50)
+        let adSize = YMAAdSize.flexibleSize(with: YMAAdSizeBanner_320x50)
         let selectedBlockIndex = pickerView.selectedRow(inComponent: 0)
         /*
          Replace adUnitID with actual Ad unitt ID.
          Following demo ad unit ids may be used for testing:
          AdMob mediation: adMobAdUnitID
-         Facebook mediation: facebookAdUnitID
          MyTarget mediation: myTargetAdUnitID
          StartApp mediation: startAppAdUnitID
          Yandex: yandexAdUnitID
