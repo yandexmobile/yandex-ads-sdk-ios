@@ -4,7 +4,6 @@ platform :ios, :deployment_target => '10.0'
 target 'YandexMobileAdsExample' do
   pod 'AppLovinYandexMobileAdsAdapters'
   pod 'AdMobYandexMobileAdsAdapters'
-  pod 'FacebookYandexMobileAdsAdapters'
   pod 'IronSourceYandexMobileAdsAdapters'
   pod 'MyTargetYandexMobileAdsAdapters'
   pod 'MintegralYandexMobileAdsAdapters'
