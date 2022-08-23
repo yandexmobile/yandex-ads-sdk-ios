@@ -1,6 +1,15 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# Version 5.2.0
+
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/223308/YandexMobileAds-5.2.0-ios-69eacc49-4277-4b9d-a6c2-c85ff9d9979a.zip)
+
+#### Added
+* Added fixes
+* Improved the speed of loading and displaying native ads
+* Improved the speed of loading and displaying video ads
+
 # Version 5.1.0
 
 SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/332493/YandexMobileAds-5.1.0-ios-9a36dc03-ad68-4ebf-ae24-c3f9c37465ed.zip)
