@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# Version 5.2.1
+
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/212922/YandexMobileAds-5.2.1-ios-546eb7f8-5202-4b79-8813-5fbabc0f0565.zip)
+
+#### Fixed
+* Fixed high CPU consumption
+* Fixed native templates presentation
+
 # Version 5.2.0
 
 SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/223308/YandexMobileAds-5.2.0-ios-69eacc49-4277-4b9d-a6c2-c85ff9d9979a.zip)
