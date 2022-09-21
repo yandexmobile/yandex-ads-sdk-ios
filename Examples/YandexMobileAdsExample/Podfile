@@ -2,15 +2,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, :deployment_target => '10.0'
 
 target 'YandexMobileAdsExample' do
-  pod 'AppLovinYandexMobileAdsAdapters'
-  pod 'AdMobYandexMobileAdsAdapters'
-  pod 'IronSourceYandexMobileAdsAdapters'
-  pod 'MyTargetYandexMobileAdsAdapters'
-  pod 'MintegralYandexMobileAdsAdapters'
-  pod 'StartAppYandexMobileAdsAdapters'
   pod 'YandexMobileAdsAdMobAdapters'
   pod 'YandexMobileAdsIronSourceAdapters'
-  pod 'YandexMobileAds'
-  pod 'YandexMobileAdsInstream'
+  pod 'YandexMobileAdsMediation'
 end
-
