@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 11.5.5.0
+
+#### Added
+* Added support for AppLovin sdk version 11.5.5
+* Updated minimum supported AppLovin sdk version to 11.5.5
+* Updated minimum supported Yandex Mobile Ads SDK version to 5.3.0
+
 ## Version 11.4.3.0
 
 #### Added

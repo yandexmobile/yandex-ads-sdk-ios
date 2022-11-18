@@ -5,5 +5,4 @@
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
  */
 
-#import <StartApp/StartApp.h>
 #import <IronSource/IronSource.h>

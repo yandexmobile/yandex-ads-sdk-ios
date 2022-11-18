@@ -26,7 +26,6 @@ class MobileMediationNativeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        MediationTestsConfigurator.enableTestMode()
         adView = NativeAdView.nib
         addAdView()
         adView?.isHidden = true
