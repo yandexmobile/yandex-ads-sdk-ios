@@ -10,24 +10,18 @@ import YandexMobileAds
 
 private let adMobAdUnitID = "R-M-338238-9"
 private let myTargetAdUnitID = "R-M-338238-11"
-private let startAppAdUnitID = "R-M-338238-26"
 private let yandexAdUnitID = "R-M-338238-13"
 
 class MobileMediationBannerViewController: UIViewController {
     private let adUnitIDs = [
         (adapter: "AdMob",    adUnitID: adMobAdUnitID),
         (adapter: "myTarget", adUnitID: myTargetAdUnitID),
-        (adapter: "StartApp", adUnitID: startAppAdUnitID),
         (adapter: "Yandex",   adUnitID: yandexAdUnitID)
     ]
 
     @IBOutlet private var pickerView: UIPickerView!
 
     private var adView: YMAAdView?
-
-    override func viewDidLoad() {
-        MediationTestsConfigurator.enableTestMode()
-    }
 
     @IBAction func loadAd(_ sender: UIButton) {
         let adSize = YMAAdSize.flexibleSize(with: .init(width: 320, height: 50))
@@ -37,7 +31,6 @@ class MobileMediationBannerViewController: UIViewController {
          Following demo ad unit ids may be used for testing:
          AdMob mediation: adMobAdUnitID
          MyTarget mediation: myTargetAdUnitID
-         StartApp mediation: startAppAdUnitID
          Yandex: yandexAdUnitID
          */
         let adUnitID = adUnitIDs[selectedBlockIndex].adUnitID

@@ -56,12 +56,11 @@
 		149931842722BD94005D2E87 /* AdFoxNativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149931832722BD94005D2E87 /* AdFoxNativeViewController.swift */; };
 		149931882722C423005D2E87 /* AdFoxBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149931872722C423005D2E87 /* AdFoxBannerViewController.swift */; };
 		1499318B2722CD44005D2E87 /* AdFoxInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1499318A2722CD44005D2E87 /* AdFoxInterstitialViewController.swift */; };
-		14A06392273030BA00BED7A7 /* MediationTestConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A06391273030BA00BED7A7 /* MediationTestConfigurator.swift */; };
 		46C354A0282560FE00832C7C /* IronSourceRewardedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C3549D282560FE00832C7C /* IronSourceRewardedViewController.swift */; };
 		46C354A1282560FE00832C7C /* IronSourceInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C3549E282560FE00832C7C /* IronSourceInterstitialViewController.swift */; };
 		46C354A2282560FE00832C7C /* IronSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C3549F282560FE00832C7C /* IronSourceManager.swift */; };
+		70011FE6B068EC271A1051CB /* libPods-YandexMobileAdsExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A35F1D3A95F5CC1C05B0ED57 /* libPods-YandexMobileAdsExample.a */; };
 		B394AC8627A868DB00D92CD9 /* AdPlayerErrorConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B394AC8527A868DB00D92CD9 /* AdPlayerErrorConverter.swift */; };
-		BAB52D75A74975130850B568 /* libPods-YandexMobileAdsExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7B2F6F1A96B25E24D5E486C /* libPods-YandexMobileAdsExample.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,14 +116,13 @@
 		149931832722BD94005D2E87 /* AdFoxNativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdFoxNativeViewController.swift; sourceTree = "<group>"; };
 		149931872722C423005D2E87 /* AdFoxBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdFoxBannerViewController.swift; sourceTree = "<group>"; };
 		1499318A2722CD44005D2E87 /* AdFoxInterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdFoxInterstitialViewController.swift; sourceTree = "<group>"; };
-		14A06391273030BA00BED7A7 /* MediationTestConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediationTestConfigurator.swift; sourceTree = "<group>"; };
 		46C3549D282560FE00832C7C /* IronSourceRewardedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IronSourceRewardedViewController.swift; sourceTree = "<group>"; };
 		46C3549E282560FE00832C7C /* IronSourceInterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IronSourceInterstitialViewController.swift; sourceTree = "<group>"; };
 		46C3549F282560FE00832C7C /* IronSourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IronSourceManager.swift; sourceTree = "<group>"; };
+		9722EABB876EC1FBC865DDBE /* Pods-YandexMobileAdsExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsExample.release.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample.release.xcconfig"; sourceTree = "<group>"; };
+		A35F1D3A95F5CC1C05B0ED57 /* libPods-YandexMobileAdsExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YandexMobileAdsExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B394AC8527A868DB00D92CD9 /* AdPlayerErrorConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdPlayerErrorConverter.swift; sourceTree = "<group>"; };
-		B7B2F6F1A96B25E24D5E486C /* libPods-YandexMobileAdsExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YandexMobileAdsExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B999054E57E2B5872F906D20 /* Pods-YandexMobileAdsExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsExample.release.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample.release.xcconfig"; sourceTree = "<group>"; };
-		CD8EF53A225BD22C326812B4 /* Pods-YandexMobileAdsExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsExample.debug.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample.debug.xcconfig"; sourceTree = "<group>"; };
+		EA2B7BC1DE6EF14C5B13E9F5 /* Pods-YandexMobileAdsExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsExample.debug.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAB52D75A74975130850B568 /* libPods-YandexMobileAdsExample.a in Frameworks */,
+				70011FE6B068EC271A1051CB /* libPods-YandexMobileAdsExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +278,7 @@
 				1467E351271EA91500DF104A /* YandexMobileAdsExample */,
 				1467E350271EA91500DF104A /* Products */,
 				79BD0E00D8B73D2FF9E77E93 /* Pods */,
-				D4B32CCEE734D52CC1A49CEA /* Frameworks */,
+				2C60026A65F390098BEA71D6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -387,7 +385,6 @@
 				14033F5D27201B8A00A24D5E /* MobileMediationInterstitialViewController.swift */,
 				14033F6427201E2700A24D5E /* MobileMediationNativeViewController.swift */,
 				14033F6727201F7900A24D5E /* MobileMediationRewardedViewController.swift */,
-				14A06391273030BA00BED7A7 /* MediationTestConfigurator.swift */,
 			);
 			path = MobileMediation;
 			sourceTree = "<group>";
@@ -400,6 +397,14 @@
 				149931832722BD94005D2E87 /* AdFoxNativeViewController.swift */,
 			);
 			path = Adfox;
+			sourceTree = "<group>";
+		};
+		2C60026A65F390098BEA71D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A35F1D3A95F5CC1C05B0ED57 /* libPods-YandexMobileAdsExample.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		46C3549C282560FE00832C7C /* IronSource */ = {
@@ -415,18 +420,10 @@
 		79BD0E00D8B73D2FF9E77E93 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CD8EF53A225BD22C326812B4 /* Pods-YandexMobileAdsExample.debug.xcconfig */,
-				B999054E57E2B5872F906D20 /* Pods-YandexMobileAdsExample.release.xcconfig */,
+				EA2B7BC1DE6EF14C5B13E9F5 /* Pods-YandexMobileAdsExample.debug.xcconfig */,
+				9722EABB876EC1FBC865DDBE /* Pods-YandexMobileAdsExample.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		D4B32CCEE734D52CC1A49CEA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B7B2F6F1A96B25E24D5E486C /* libPods-YandexMobileAdsExample.a */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -436,11 +433,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1467E379271EA91700DF104A /* Build configuration list for PBXNativeTarget "YandexMobileAdsExample" */;
 			buildPhases = (
-				506EC2F1FCBB6A32251C155F /* [CP] Check Pods Manifest.lock */,
+				0774874AE61A4B3DC4B5CCEC /* [CP] Check Pods Manifest.lock */,
 				1467E34B271EA91500DF104A /* Sources */,
 				1467E34C271EA91500DF104A /* Frameworks */,
 				1467E34D271EA91500DF104A /* Resources */,
-				CFCB6C72C2AFF90E39A609BD /* [CP] Copy Pods Resources */,
+				5BE131876F56185647AB5025 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -499,7 +496,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		506EC2F1FCBB6A32251C155F /* [CP] Check Pods Manifest.lock */ = {
+		0774874AE61A4B3DC4B5CCEC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -521,7 +518,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CFCB6C72C2AFF90E39A609BD /* [CP] Copy Pods Resources */ = {
+		5BE131876F56185647AB5025 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -548,7 +545,6 @@
 				14033FAE2720457800A24D5E /* InstreamViewController.swift in Sources */,
 				14033FB42720457800A24D5E /* LinkedList.swift in Sources */,
 				14033F7D27202A5800A24D5E /* AdMobInterstitialViewController.swift in Sources */,
-				14A06392273030BA00BED7A7 /* MediationTestConfigurator.swift in Sources */,
 				1474FC1E2721A4E500276688 /* GDPRUserConsentManager.swift in Sources */,
 				14033FB32720457800A24D5E /* LRUCache.swift in Sources */,
 				14033FB22720457800A24D5E /* AdPlayer.swift in Sources */,
@@ -737,17 +733,139 @@
 		};
 		1467E37A271EA91700DF104A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CD8EF53A225BD22C326812B4 /* Pods-YandexMobileAdsExample.debug.xcconfig */;
+			baseConfigurationReference = EA2B7BC1DE6EF14C5B13E9F5 /* Pods-YandexMobileAdsExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = YandexMobileAdsExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-l\"GoogleUtilities\"",
+					"-l\"PromisesObjC\"",
+					"-l\"c++\"",
+					"-l\"nanopb\"",
+					"-l\"sqlite3\"",
+					"-l\"xml2\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"AdMobYandexMobileAdsAdapters\"",
+					"-framework",
+					"\"AdSupport\"",
+					"-framework",
+					"\"AppLovinSDK\"",
+					"-framework",
+					"\"AppLovinYandexMobileAdsAdapters\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreData\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreImage\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreMotion\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreVideo\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"GoogleAppMeasurement\"",
+					"-framework",
+					"\"GoogleAppMeasurementIdentitySupport\"",
+					"-framework",
+					"\"GoogleMobileAds\"",
+					"-framework",
+					"\"IronSource\"",
+					"-framework",
+					"\"IronSourceYandexMobileAdsAdapters\"",
+					"-framework",
+					"\"MTGSDK\"",
+					"-framework",
+					"\"MTGSDKBanner\"",
+					"-framework",
+					"\"MTGSDKBidding\"",
+					"-framework",
+					"\"MTGSDKInterstitialVideo\"",
+					"-framework",
+					"\"MTGSDKNewInterstitial\"",
+					"-framework",
+					"\"MTGSDKReward\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"MintegralYandexMobileAdsAdapters\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"MyTargetSDK\"",
+					"-framework",
+					"\"MyTargetYandexMobileAdsAdapters\"",
+					"-framework",
+					"\"MyTrackerSDK\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"SafariServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"UserMessagingPlatform\"",
+					"-framework",
+					"\"WebKit\"",
+					"-framework",
+					"\"YandexMobileAds\"",
+					"-framework",
+					"\"YandexMobileAdsAdMobAdapters\"",
+					"-framework",
+					"\"YandexMobileAdsInstream\"",
+					"-framework",
+					"\"YandexMobileAdsIronSourceAdapters\"",
+					"-framework",
+					"\"YandexMobileMetrica\"",
+					"-framework",
+					"\"YandexMobileMetricaCrashes\"",
+					"-framework",
+					"\"iAd\"",
+					"-weak_framework",
+					"\"AdServices\"",
+					"-weak_framework",
+					"\"AdSupport\"",
+					"-weak_framework",
+					"\"AppTrackingTransparency\"",
+					"-weak_framework",
+					"\"JavaScriptCore\"",
+					"-weak_framework",
+					"\"SafariServices\"",
+					"-weak_framework",
+					"\"WebKit\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.yandex.mobile.YandexMobileAdsExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -759,17 +877,139 @@
 		};
 		1467E37B271EA91700DF104A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B999054E57E2B5872F906D20 /* Pods-YandexMobileAdsExample.release.xcconfig */;
+			baseConfigurationReference = 9722EABB876EC1FBC865DDBE /* Pods-YandexMobileAdsExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = YandexMobileAdsExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-l\"GoogleUtilities\"",
+					"-l\"PromisesObjC\"",
+					"-l\"c++\"",
+					"-l\"nanopb\"",
+					"-l\"sqlite3\"",
+					"-l\"xml2\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"AdMobYandexMobileAdsAdapters\"",
+					"-framework",
+					"\"AdSupport\"",
+					"-framework",
+					"\"AppLovinSDK\"",
+					"-framework",
+					"\"AppLovinYandexMobileAdsAdapters\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreData\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreImage\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreMotion\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreVideo\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"GoogleAppMeasurement\"",
+					"-framework",
+					"\"GoogleAppMeasurementIdentitySupport\"",
+					"-framework",
+					"\"GoogleMobileAds\"",
+					"-framework",
+					"\"IronSource\"",
+					"-framework",
+					"\"IronSourceYandexMobileAdsAdapters\"",
+					"-framework",
+					"\"MTGSDK\"",
+					"-framework",
+					"\"MTGSDKBanner\"",
+					"-framework",
+					"\"MTGSDKBidding\"",
+					"-framework",
+					"\"MTGSDKInterstitialVideo\"",
+					"-framework",
+					"\"MTGSDKNewInterstitial\"",
+					"-framework",
+					"\"MTGSDKReward\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"MintegralYandexMobileAdsAdapters\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"MyTargetSDK\"",
+					"-framework",
+					"\"MyTargetYandexMobileAdsAdapters\"",
+					"-framework",
+					"\"MyTrackerSDK\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"SafariServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"UserMessagingPlatform\"",
+					"-framework",
+					"\"WebKit\"",
+					"-framework",
+					"\"YandexMobileAds\"",
+					"-framework",
+					"\"YandexMobileAdsAdMobAdapters\"",
+					"-framework",
+					"\"YandexMobileAdsInstream\"",
+					"-framework",
+					"\"YandexMobileAdsIronSourceAdapters\"",
+					"-framework",
+					"\"YandexMobileMetrica\"",
+					"-framework",
+					"\"YandexMobileMetricaCrashes\"",
+					"-framework",
+					"\"iAd\"",
+					"-weak_framework",
+					"\"AdServices\"",
+					"-weak_framework",
+					"\"AdSupport\"",
+					"-weak_framework",
+					"\"AppTrackingTransparency\"",
+					"-weak_framework",
+					"\"JavaScriptCore\"",
+					"-weak_framework",
+					"\"SafariServices\"",
+					"-weak_framework",
+					"\"WebKit\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.yandex.mobile.YandexMobileAdsExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
