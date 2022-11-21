@@ -12,7 +12,6 @@ private let adMobAdUnitID = "R-M-338238-14"
 private let appLovinAdUnitID = "R-M-338238-33"
 private let ironSourceAdUnitID = "R-M-338238-35"
 private let myTargetAdUnitID = "R-M-338238-16";
-private let startAppAdUnitID = "R-M-338238-25"
 private let unityAdsAdUnitID = "R-M-338238-29"
 private let yandexAdUnitID = "R-M-338238-18"
 
@@ -22,7 +21,6 @@ class MobileMediationInterstitialViewController: UIViewController {
         (adapter: "AppLovin", adUnitID: appLovinAdUnitID),
         (adapter: "IronSource", adUnitID: ironSourceAdUnitID),
         (adapter: "myTarget", adUnitID: myTargetAdUnitID),
-        (adapter: "StartApp", adUnitID: startAppAdUnitID),
         (adapter: "UnityAds", adUnitID: unityAdsAdUnitID),
         (adapter: "Yandex", adUnitID: yandexAdUnitID)
     ]
@@ -31,10 +29,6 @@ class MobileMediationInterstitialViewController: UIViewController {
     @IBOutlet private var pickerView: UIPickerView!
 
     private var interstitialAd: YMAInterstitialAd?
-
-    override func viewDidLoad() {
-        MediationTestsConfigurator.enableTestMode()
-    }
 
     @IBAction func loadAd(_ sender: UIButton) {
         self.showButton.isEnabled = false
@@ -46,7 +40,6 @@ class MobileMediationInterstitialViewController: UIViewController {
          AppLovin mediation: appLovinAdUnitID
          IronSource mediation: ironSourceAdUnitID
          MyTarget mediation: myTargetAdUnitID
-         StartApp mediation: startAppAdUnitID
          UnityAds mediation: unityAdsAdUnitID
          Yandex: yandexAdUnitID
          */
