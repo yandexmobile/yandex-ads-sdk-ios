@@ -15,8 +15,8 @@ class InterstitialViewController: UIViewController {
     
     @IBAction func loadInterstitial() {
         self.showButton.isEnabled = false
-        // Replace demo R-M-DEMO-interstitial with actual Ad Unit ID
-        self.interstitialAd = YMAInterstitialAd(adUnitID: "R-M-DEMO-interstitial")
+        // Replace demo-interstitial-yandex with actual Ad Unit ID
+        self.interstitialAd = YMAInterstitialAd(adUnitID: "demo-interstitial-yandex")
         self.interstitialAd.delegate = self;
         self.interstitialAd.load()
     }

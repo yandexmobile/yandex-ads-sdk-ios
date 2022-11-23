@@ -8,15 +8,17 @@
 import UIKit
 import YandexMobileAds
 
-private let adMobAdUnitID = "R-M-338238-9"
-private let myTargetAdUnitID = "R-M-338238-11"
-private let yandexAdUnitID = "R-M-338238-13"
+private let adMobAdUnitID = "demo-banner-admob"
+private let mintegralAdUnitID = "demo-banner-mintegral"
+private let myTargetAdUnitID = "demo-banner-mytarget"
+private let yandexAdUnitID = "demo-banner-yandex"
 
 class MobileMediationBannerViewController: UIViewController {
     private let adUnitIDs = [
-        (adapter: "AdMob",    adUnitID: adMobAdUnitID),
-        (adapter: "myTarget", adUnitID: myTargetAdUnitID),
-        (adapter: "Yandex",   adUnitID: yandexAdUnitID)
+        (adapter: "AdMob",     adUnitID: adMobAdUnitID),
+        (adapter: "Mintegral", adUnitID: mintegralAdUnitID),
+        (adapter: "myTarget",  adUnitID: myTargetAdUnitID),
+        (adapter: "Yandex",    adUnitID: yandexAdUnitID)
     ]
 
     @IBOutlet private var pickerView: UIPickerView!
