@@ -42,8 +42,8 @@ class GDPRViewController: UIViewController {
     }
 
     private func loadAd() {
-        // Replace demo R-M-DEMO-native-c with actual Ad Unit ID
-        let requestConfiguration = YMANativeAdRequestConfiguration(adUnitID: "R-M-DEMO-native-c")
+        // Replace demo-native-yandex with actual Ad Unit ID
+        let requestConfiguration = YMANativeAdRequestConfiguration(adUnitID: "demo-native-yandex")
         adLoader.loadAd(with: requestConfiguration)
     }
 
