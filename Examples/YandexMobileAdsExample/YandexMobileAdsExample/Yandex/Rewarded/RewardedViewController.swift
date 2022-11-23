@@ -14,8 +14,8 @@ class RewardedViewController: UIViewController {
     
     @IBAction func loadAd() {
         self.showButton.isEnabled = false
-        // Replace demo R-M-DEMO-rewarded-client-side-rtb with actual Ad Unit ID
-        self.rewardedAd = YMARewardedAd(adUnitID: "R-M-DEMO-rewarded-client-side-rtb")
+        // Replace demo-rewarded-yandex with actual Ad Unit ID
+        self.rewardedAd = YMARewardedAd(adUnitID: "demo-rewarded-yandex")
         self.rewardedAd?.delegate = self
         self.rewardedAd?.load()
     }
