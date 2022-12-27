@@ -15,10 +15,10 @@ private let yandexAdUnitID = "demo-banner-yandex"
 
 class MobileMediationBannerViewController: UIViewController {
     private let adUnitIDs = [
-        (adapter: "AdMob",     adUnitID: adMobAdUnitID),
+        (adapter: "AdMob", adUnitID: adMobAdUnitID),
         (adapter: "Mintegral", adUnitID: mintegralAdUnitID),
-        (adapter: "myTarget",  adUnitID: myTargetAdUnitID),
-        (adapter: "Yandex",    adUnitID: yandexAdUnitID)
+        (adapter: "MyTarget", adUnitID: myTargetAdUnitID),
+        (adapter: "Yandex", adUnitID: yandexAdUnitID)
     ]
 
     @IBOutlet private var pickerView: UIPickerView!

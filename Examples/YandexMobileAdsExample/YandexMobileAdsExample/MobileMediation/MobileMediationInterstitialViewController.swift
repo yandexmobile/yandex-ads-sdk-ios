@@ -22,7 +22,7 @@ class MobileMediationInterstitialViewController: UIViewController {
         (adapter: "AppLovin", adUnitID: appLovinAdUnitID),
         (adapter: "IronSource", adUnitID: ironSourceAdUnitID),
         (adapter: "Mintegral", adUnitID: mintegralAdUnitID),
-        (adapter: "myTarget", adUnitID: myTargetAdUnitID),
+        (adapter: "MyTarget", adUnitID: myTargetAdUnitID),
         (adapter: "UnityAds", adUnitID: unityAdsAdUnitID),
         (adapter: "Yandex", adUnitID: yandexAdUnitID)
     ]
