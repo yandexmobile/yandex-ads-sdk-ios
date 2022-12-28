@@ -14,7 +14,7 @@ private let yandexAdUnitID = "demo-native-yandex"
 class MobileMediationNativeViewController: UIViewController {
     private let adUnitIDs = [
         (adapter: "AdMob", adUnitID: adMobAdUnitID),
-        (adapter: "myTarget", adUnitID: myTargetAdUnitID),
+        (adapter: "MyTarget", adUnitID: myTargetAdUnitID),
         (adapter: "Yandex", adUnitID: yandexAdUnitID)
     ]
 
