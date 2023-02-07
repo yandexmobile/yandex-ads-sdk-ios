@@ -25,8 +25,8 @@ class TemplateNativeViewController: UIViewController {
 
     @IBAction func loadAd(_ sender: Any) {
         adView?.removeFromSuperview()
-        // Replace demo demo-native-yandex with actual Ad Unit ID
-        let requestConfiguration = YMANativeAdRequestConfiguration(adUnitID: "demo-native-yandex")
+        // Replace demo demo-native-content-yandex with actual Ad Unit ID
+        let requestConfiguration = YMANativeAdRequestConfiguration(adUnitID: "demo-native-content-yandex")
         adLoader.loadAd(with: requestConfiguration)
     }
 
