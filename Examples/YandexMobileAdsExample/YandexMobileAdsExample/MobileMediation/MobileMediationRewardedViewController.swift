@@ -14,6 +14,8 @@ private let ironSourceAdUnitID = "demo-rewarded-ironsource"
 private let mintegralAdUnitID = "demo-rewarded-mintegral"
 private let myTargetAdUnitID = "demo-rewarded-mytarget"
 private let unityAdsAdUnitID = "demo-rewarded-unityads"
+private let chartboostAdUnitID = "demo-rewarded-chartboost"
+private let adColonyAdUnitID = "demo-rewarded-adcolony"
 private let yandexAdUnitID = "demo-rewarded-yandex"
 
 class MobileMediationRewardedViewController: UIViewController {
@@ -24,6 +26,8 @@ class MobileMediationRewardedViewController: UIViewController {
         (adapter: "Mintegral", adUnitID: mintegralAdUnitID),
         (adapter: "MyTarget", adUnitID: myTargetAdUnitID),
         (adapter: "UnityAds", adUnitID: unityAdsAdUnitID),
+        (adapter: "Chartboost", adUnitID: chartboostAdUnitID),
+        (adapter: "AdColony", adUnitID: adColonyAdUnitID),
         (adapter: "Yandex", adUnitID: yandexAdUnitID)
     ]
 
