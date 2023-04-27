@@ -11,13 +11,18 @@ import YandexMobileAds
 private let adMobAdUnitID = "demo-banner-admob"
 private let mintegralAdUnitID = "demo-banner-mintegral"
 private let myTargetAdUnitID = "demo-banner-mytarget"
+private let chartboostAdUnitID = "demo-banner-chartboost"
+private let adColonyAdUnitID = "demo-banner-adcolony"
 private let yandexAdUnitID = "demo-banner-yandex"
 
 class MobileMediationBannerViewController: UIViewController {
+    
     private let adUnitIDs = [
         (adapter: "AdMob", adUnitID: adMobAdUnitID),
         (adapter: "Mintegral", adUnitID: mintegralAdUnitID),
         (adapter: "MyTarget", adUnitID: myTargetAdUnitID),
+        (adapter: "Chartboost", adUnitID: chartboostAdUnitID),
+        (adapter: "AdColony", adUnitID: adColonyAdUnitID),
         (adapter: "Yandex", adUnitID: yandexAdUnitID)
     ]
 
