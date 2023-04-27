@@ -1,6 +1,21 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# Version 5.6.0
+
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/205984/YandexMobileAds-c50310a7-3eb0-4244-8e6f-5e583e5add19.zip)
+
+#### Added
+* Added improvements and fixes
+* Update adapter versions
+- AppLovinSDK: 11.8.2
+- ChartboostSDK: 9.2.0
+- Google-Mobile-Ads-SDK: 10.3.0
+- IronSourceSDK: 7.3.0.0
+- MintegralAdSDK: 7.3.4
+- UnityAds: 4.6.1
+- myTargetSDK: 5.17.4
+
 # Version 5.5.0
 
 SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/205984/YandexMobileAds-a848cd71-27a2-4ad8-8ad0-4edc38499444.zip)
@@ -24,10 +39,8 @@ SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/22
 
 # Version 5.3.0
 
-SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/205984/YandexMobileAds-5.3.0-ios-12c5720b-942e-404d-ae47-97b9347342d5.zip)
-
+SDK archive: [**download**](https://storage.mds.yandex.net/get-ads-mobile-sdk/205984/YandexMobileAds-5.3.0-ios-4d8e0253-6c04-4003-bccd-d2914835435f.zip)
 #### Added
-* Updated minimum supported version to iOS 12.
 * Added improvements and fixes
 
 # Version 5.2.1

@@ -24,8 +24,8 @@ class IronSourceManager: NSObject {
 
     func initializeSDK() {
         IronSource.setRewardedVideoManualDelegate(self)
-        // Replace 121255e8d with app key generated at https://www.is.com/
-        IronSource.initWithAppKey("121255e8d", adUnits: [IS_INTERSTITIAL, IS_REWARDED_VIDEO])
+        // Replace 199eacc45 with app key generated at https://www.is.com/
+        IronSource.initWithAppKey("199eacc45", adUnits: [IS_INTERSTITIAL, IS_REWARDED_VIDEO])
     }
 }
 
