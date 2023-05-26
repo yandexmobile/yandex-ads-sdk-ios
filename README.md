@@ -21,3 +21,6 @@ EULA is available at [EULA website][LICENSE]
 [DOCUMENTATION]: https://tech.yandex.ru/mobile-ads/
 [LICENSE]: https://yandex.com/legal/mobileads_sdk_agreement/
 [CocoaPods]: http://cocoapods.org/
+
+## SKAdNetwork
+File with a list of SKAdNetwork [identifiers](./SKAdNetworkIds.xml)

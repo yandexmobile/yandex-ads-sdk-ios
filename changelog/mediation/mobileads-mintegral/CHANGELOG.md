@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 7.3.5.0
+
+#### Updated
+* Added support for Mintegral SDK version 7.3.5
+* Updated minimum supported Mintegral SDK version to 7.3.5
+* Updated minimum supported Yandex Mobile Ads SDK version to 5.7.0
+
 ## Version 7.3.4.0
 
 #### Updated
