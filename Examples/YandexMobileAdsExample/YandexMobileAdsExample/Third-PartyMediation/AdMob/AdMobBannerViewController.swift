@@ -9,14 +9,14 @@ import GoogleMobileAds
 
 class AdMobBannerViewController: UIViewController {
     private var bannerView: GADBannerView!
-    @IBOutlet weak var loadButton: UIButton!
+    @IBOutlet var loadButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeAdMob()
-        // Replace ca-app-pub-4449457472880521/5093091962 with Ad Unit ID generated at https://apps.admob.com".
+        // Replace ca-app-pub-4449457472880521/8471882114 with Ad Unit ID generated at https://apps.admob.com".
         bannerView = GADBannerView(adSize: GADAdSizeBanner)
-        bannerView.adUnitID = "ca-app-pub-4449457472880521/5093091962"
+        bannerView.adUnitID = "ca-app-pub-4449457472880521/8471882114"
         bannerView.delegate = self
         bannerView.rootViewController = self
         bannerView.translatesAutoresizingMaskIntoConstraints = false
@@ -24,7 +24,7 @@ class AdMobBannerViewController: UIViewController {
 
     func initializeAdMob() {
         loadButton.isUserInteractionEnabled = false
-        GADMobileAds.sharedInstance().start { [weak self] status in
+        GADMobileAds.sharedInstance().start { [weak self] _ in
             DispatchQueue.main.async {
                 self?.loadButton.isUserInteractionEnabled = true
             }
@@ -35,7 +35,7 @@ class AdMobBannerViewController: UIViewController {
         banner.removeFromSuperview()
         view.addSubview(banner)
 
-        var layoutGuide = self.view.layoutMarginsGuide
+        var layoutGuide = view.layoutMarginsGuide
         if #available(iOS 11.0, *) {
             layoutGuide = self.view.safeAreaLayoutGuide
         }
@@ -46,7 +46,7 @@ class AdMobBannerViewController: UIViewController {
         NSLayoutConstraint.activate(constraints)
     }
 
-    @IBAction func loadAd(_ sender: UIButton) {
+    @IBAction func loadAd(_: UIButton) {
         bannerView.load(GADRequest())
     }
 }
@@ -57,7 +57,7 @@ extension AdMobBannerViewController: GADBannerViewDelegate {
         print("Ad view did receive ad")
     }
 
-    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+    func bannerView(_: GADBannerView, didFailToReceiveAdWithError error: Error) {
         print("Ad view did fail to receive ad with error: \(error)")
     }
 }

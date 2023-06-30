@@ -5,6 +5,7 @@ target 'YandexMobileAdsExample' do
   pod 'YandexMobileAdsAdMobAdapters'
   pod 'YandexMobileAdsIronSourceAdapters'
   pod 'YandexMobileAdsMediation'
+  pod 'YandexMobileAdsInstream'
 end
 
 post_install do |installer|

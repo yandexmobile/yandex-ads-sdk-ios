@@ -9,8 +9,8 @@ import GoogleMobileAds
 
 class AdMobInterstitialViewController: UIViewController {
     var interstitial: GADInterstitialAd?
-    @IBOutlet weak var showButton: UIButton!
-    @IBOutlet weak var loadButton: UIButton!
+    @IBOutlet var showButton: UIButton!
+    @IBOutlet var loadButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,18 +19,18 @@ class AdMobInterstitialViewController: UIViewController {
 
     func initializeAdMob() {
         loadButton.isUserInteractionEnabled = false
-        GADMobileAds.sharedInstance().start { [weak self] status in
+        GADMobileAds.sharedInstance().start { [weak self] _ in
             DispatchQueue.main.async {
                 self?.loadButton.isUserInteractionEnabled = true
             }
         }
     }
 
-    @IBAction func loadAd(_ sender: UIButton) {
-        self.showButton.isEnabled = false
+    @IBAction func loadAd(_: UIButton) {
+        showButton.isEnabled = false
 
-        // Replace ca-app-pub-4449457472880521/5935222734 with Ad Unit ID generated at https://apps.admob.com".
-        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-4449457472880521/5935222734",
+        // Replace ca-app-pub-4449457472880521/3027983741 with Ad Unit ID generated at https://apps.admob.com".
+        GADInterstitialAd.load(withAdUnitID: "ca-app-pub-4449457472880521/3027983741",
                                request: GADRequest()) { [self] ad, error in
             if let error = error {
                 print("Did fail to receive ad with error: \(error.localizedDescription)")
@@ -42,14 +42,14 @@ class AdMobInterstitialViewController: UIViewController {
             }
         }
     }
-    
-    @IBAction func showAd(_ sender: UIButton) {
+
+    @IBAction func showAd(_: UIButton) {
         interstitial?.present(fromRootViewController: self)
     }
 }
 
 extension AdMobInterstitialViewController: GADFullScreenContentDelegate {
-    func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+    func ad(_: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
         print("Did fail to present ad with error: \(error.localizedDescription)")
     }
 }
