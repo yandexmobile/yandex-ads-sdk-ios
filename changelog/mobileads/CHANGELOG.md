@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# Version 5.8.0
+
+#### Added
+* Added SKOverlay support
+* Added improvements and fixes
+
 # Version 5.7.0
 
 #### Added

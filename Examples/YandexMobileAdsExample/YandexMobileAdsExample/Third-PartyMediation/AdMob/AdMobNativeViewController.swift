@@ -10,7 +10,7 @@ import GoogleMobileAds
 class AdMobNativeViewController: UIViewController {
     private var adLoader: GADAdLoader?
     private var adView: AdMobNativeAdView?
-    @IBOutlet weak var loadButton: UIButton!
+    @IBOutlet var loadButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,17 +21,17 @@ class AdMobNativeViewController: UIViewController {
 
     func initializeAdMob() {
         loadButton.isUserInteractionEnabled = false
-        GADMobileAds.sharedInstance().start { [weak self] status in
+        GADMobileAds.sharedInstance().start { [weak self] _ in
             DispatchQueue.main.async {
                 self?.loadButton.isUserInteractionEnabled = true
             }
         }
     }
 
-    @IBAction func loadAd(_ sender: UIButton) {
+    @IBAction func loadAd(_: UIButton) {
         adLoader?.load(GADRequest())
     }
-    
+
     private func createAdView() {
         adView = Bundle.main.loadNibNamed("AdMobNativeAdView",
                                           owner: nil,
@@ -44,8 +44,8 @@ class AdMobNativeViewController: UIViewController {
 
     private func addView(_ adView: UIView) {
         adView.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(adView)
-        var layoutGuide = self.view.layoutMarginsGuide
+        view.addSubview(adView)
+        var layoutGuide = view.layoutMarginsGuide
         if #available(iOS 11.0, *) {
             layoutGuide = self.view.safeAreaLayoutGuide
         }
@@ -58,8 +58,8 @@ class AdMobNativeViewController: UIViewController {
     }
 
     private func createLoader() {
-        // Replace ca-app-pub-4449457472880521/7598370022 with Ad Unit ID generated at https://apps.admob.com".
-        adLoader = GADAdLoader(adUnitID: "ca-app-pub-4449457472880521/7598370022",
+        // Replace ca-app-pub-4449457472880521/2142524905 with Ad Unit ID generated at https://apps.admob.com".
+        adLoader = GADAdLoader(adUnitID: "ca-app-pub-4449457472880521/2142524905",
                                rootViewController: self,
                                adTypes: [.native],
                                options: nil)
@@ -68,7 +68,7 @@ class AdMobNativeViewController: UIViewController {
 }
 
 extension AdMobNativeViewController: GADNativeAdLoaderDelegate, GADNativeAdDelegate {
-    func adLoader(_ adLoader: GADAdLoader, didReceive nativeAd: GADNativeAd) {
+    func adLoader(_: GADAdLoader, didReceive nativeAd: GADNativeAd) {
         guard let adView = adView else { return }
 
         nativeAd.delegate = self
@@ -77,7 +77,7 @@ extension AdMobNativeViewController: GADNativeAdLoaderDelegate, GADNativeAdDeleg
         adView.isHidden = false
     }
 
-    func adLoader(_ adLoader: GADAdLoader, didFailToReceiveAdWithError error: Error) {
+    func adLoader(_: GADAdLoader, didFailToReceiveAdWithError error: Error) {
         print("Ad loader did fail to receive ad with error: \(error.localizedDescription)")
     }
 }
