@@ -15,7 +15,7 @@ class BannerViewController: UIViewController {
         super.viewDidLoad()
         
         // Replace demo demo-banner-yandex with actual Ad Unit ID
-        let adSize = YMAAdSize.flexibleSize(with: .init(width: 320, height: 50))
+        let adSize = YMAAdSize.inlineSize(withWidth: 320, maxHeight: 50)
         self.adView = YMAAdView(adUnitID: "demo-banner-yandex", adSize: adSize)
         self.adView.delegate = self
     }
