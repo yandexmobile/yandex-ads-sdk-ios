@@ -13,7 +13,7 @@ class IronSourceRewardedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        IronSourceManager.shared.set(rewardedVideoManualDelegate: self)
+        IronSource.setLevelPlayRewardedVideoManualDelegate(self)
         IronSourceManager.shared.initializeSDK()
     }
 
@@ -27,24 +27,28 @@ class IronSourceRewardedViewController: UIViewController {
     }
 }
 
-extension IronSourceRewardedViewController: ISRewardedVideoManualDelegate {
-    func rewardedVideoDidLoad() {
+extension IronSourceRewardedViewController: LevelPlayRewardedVideoManualDelegate {
+    func didLoad(with adInfo: ISAdInfo!) {
         print("Rewarded did load")
         showButton.isEnabled = true
     }
 
-    func rewardedVideoDidFailToLoadWithError(_ error: Error!) {
+    func didFailToLoadWithError(_ error: Error!) {
         print("Rewarded did fail to load")
         showButton.isEnabled = false
     }
 
-    // MARK: - ISRewardedVideoDelegate
-    func rewardedVideoHasChangedAvailability(_ available: Bool) {
-        print(String(format: "Rewarded ad changed availability: %@", String(available)))
-        showButton.isEnabled = available
+    func hasAvailableAd(with adInfo: ISAdInfo!) {
+        print("Rewarded ad is available")
+        showButton.isEnabled = true
     }
 
-    func didReceiveReward(forPlacement placementInfo: ISPlacementInfo!) {
+    func hasNoAvailableAd() {
+        print("Rewarded ad isn't available")
+        showButton.isEnabled = false
+    }
+
+    func didReceiveReward(forPlacement placementInfo: ISPlacementInfo!, with adInfo: ISAdInfo!) {
         let message = String(
             format: "Did reward: %@ %@ %@",
             placementInfo.placementName,
@@ -54,19 +58,19 @@ extension IronSourceRewardedViewController: ISRewardedVideoManualDelegate {
         print(message)
     }
 
-    func rewardedVideoDidFailToShowWithError(_ error: Error!) {
+    func didFailToShowWithError(_ error: Error!, andAdInfo adInfo: ISAdInfo!) {
         print("Rewarded ad failed to load: \(error.localizedDescription)")
     }
 
-    func rewardedVideoDidOpen() {
+    func didOpen(with adInfo: ISAdInfo!) {
         print("Did open rewarded video")
     }
 
-    func rewardedVideoDidClose() {
+    func didClose(with adInfo: ISAdInfo!) {
         print("Did close rewarded video")
     }
 
-    func didClickRewardedVideo(_ placementInfo: ISPlacementInfo!) {
+    func didClick(_ placementInfo: ISPlacementInfo!, with adInfo: ISAdInfo!) {
         let message = String(
             format: "Did click rewarded video: %@ %@ %@",
             placementInfo.placementName,
