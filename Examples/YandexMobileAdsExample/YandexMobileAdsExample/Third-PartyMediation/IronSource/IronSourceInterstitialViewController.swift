@@ -18,7 +18,7 @@ class IronSourceInterstitialViewController: UIViewController {
 
     func initializeIronSource() {
         IronSourceManager.shared.initializeSDK()
-        IronSource.setInterstitialDelegate(self)
+        IronSource.setLevelPlayInterstitialDelegate(self)
     }
 
     @IBAction func loadAd(_ sender: UIButton) {
@@ -31,34 +31,36 @@ class IronSourceInterstitialViewController: UIViewController {
     }
 }
 
-extension IronSourceInterstitialViewController: ISInterstitialDelegate {
-    func interstitialDidFailToLoadWithError(_ error: Error!) {
-        print("Interstitial did fail to load")
-        showButton.isEnabled = false
-    }
+// MARK: - LevelPlayInterstitialDelegate
 
-    func interstitialDidLoad() {
+extension IronSourceInterstitialViewController: LevelPlayInterstitialDelegate {
+    func didLoad(with adInfo: ISAdInfo!) {
         print("Interstitial did load")
         showButton.isEnabled = true
     }
 
-    func interstitialDidFailToShowWithError(_ error: Error!) {
-        print("Interstitial did fail to show")
+    func didFailToLoadWithError(_ error: Error!) {
+        print("Interstitial did fail to load")
+        showButton.isEnabled = false
     }
 
-    func interstitialDidShow() {
-        print("Interstitial did show")
-    }
-
-    func didClickInterstitial() {
-        print("Did click interstitial")
-    }
-
-    func interstitialDidOpen() {
+    func didOpen(with adInfo: ISAdInfo!) {
         print("Interstitial did open")
     }
 
-    func interstitialDidClose() {
+    func didShow(with adInfo: ISAdInfo!) {
+        print("Interstitial did show")
+    }
+
+    func didFailToShowWithError(_ error: Error!, andAdInfo adInfo: ISAdInfo!) {
+        print("Interstitial did fail to show")
+    }
+
+    func didClick(with adInfo: ISAdInfo!) {
+        print("Did click interstitial")
+    }
+
+    func didClose(with adInfo: ISAdInfo!) {
         print("Interstital did close")
     }
 }

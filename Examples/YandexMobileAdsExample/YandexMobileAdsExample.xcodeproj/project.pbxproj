@@ -61,6 +61,16 @@
 		46C354A2282560FE00832C7C /* IronSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C3549F282560FE00832C7C /* IronSourceManager.swift */; };
 		70011FE6B068EC271A1051CB /* libPods-YandexMobileAdsExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A35F1D3A95F5CC1C05B0ED57 /* libPods-YandexMobileAdsExample.a */; };
 		B394AC8627A868DB00D92CD9 /* AdPlayerErrorConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B394AC8527A868DB00D92CD9 /* AdPlayerErrorConverter.swift */; };
+		DEC81ADA2A53A89B008FE935 /* YandexAdsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC81AD92A53A89B008FE935 /* YandexAdsViewController.swift */; };
+		DEC81ADC2A53B9E7008FE935 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC81ADB2A53B9E7008FE935 /* String+Extensions.swift */; };
+		DEC81ADE2A53BE28008FE935 /* InstreamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC81ADD2A53BE28008FE935 /* InstreamListViewController.swift */; };
+		DEC81AE02A53C28D008FE935 /* NavigationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC81ADF2A53C28D008FE935 /* NavigationTableViewController.swift */; };
+		DEC81AE22A53C840008FE935 /* NativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC81AE12A53C840008FE935 /* NativeViewController.swift */; };
+		DEC81AE42A53C945008FE935 /* NavigationScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC81AE32A53C945008FE935 /* NavigationScreenDataSource.swift */; };
+		DEC81AE62A54D5A3008FE935 /* StickyBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC81AE52A54D5A3008FE935 /* StickyBannerViewController.swift */; };
+		DEC81AE82A54D8DE008FE935 /* InlineBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC81AE72A54D8DE008FE935 /* InlineBannerViewController.swift */; };
+		DEC81AEC2A55A2F6008FE935 /* RewardedAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC81AEB2A55A2F6008FE935 /* RewardedAdViewController.swift */; };
+		DEC81AEE2A55ADEC008FE935 /* InterstitialAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC81AED2A55ADEC008FE935 /* InterstitialAdViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +132,16 @@
 		9722EABB876EC1FBC865DDBE /* Pods-YandexMobileAdsExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsExample.release.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample.release.xcconfig"; sourceTree = "<group>"; };
 		A35F1D3A95F5CC1C05B0ED57 /* libPods-YandexMobileAdsExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YandexMobileAdsExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B394AC8527A868DB00D92CD9 /* AdPlayerErrorConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdPlayerErrorConverter.swift; sourceTree = "<group>"; };
+		DEC81AD92A53A89B008FE935 /* YandexAdsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexAdsViewController.swift; sourceTree = "<group>"; };
+		DEC81ADB2A53B9E7008FE935 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		DEC81ADD2A53BE28008FE935 /* InstreamListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstreamListViewController.swift; sourceTree = "<group>"; };
+		DEC81ADF2A53C28D008FE935 /* NavigationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTableViewController.swift; sourceTree = "<group>"; };
+		DEC81AE12A53C840008FE935 /* NativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeViewController.swift; sourceTree = "<group>"; };
+		DEC81AE32A53C945008FE935 /* NavigationScreenDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationScreenDataSource.swift; sourceTree = "<group>"; };
+		DEC81AE52A54D5A3008FE935 /* StickyBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyBannerViewController.swift; sourceTree = "<group>"; };
+		DEC81AE72A54D8DE008FE935 /* InlineBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineBannerViewController.swift; sourceTree = "<group>"; };
+		DEC81AEB2A55A2F6008FE935 /* RewardedAdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardedAdViewController.swift; sourceTree = "<group>"; };
+		DEC81AED2A55ADEC008FE935 /* InterstitialAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialAdViewController.swift; sourceTree = "<group>"; };
 		EA2B7BC1DE6EF14C5B13E9F5 /* Pods-YandexMobileAdsExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsExample.debug.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +161,9 @@
 			isa = PBXGroup;
 			children = (
 				14033F6127201D9E00A24D5E /* Native */,
+				DEC81ADB2A53B9E7008FE935 /* String+Extensions.swift */,
+				DEC81ADF2A53C28D008FE935 /* NavigationTableViewController.swift */,
+				DEC81AE32A53C945008FE935 /* NavigationScreenDataSource.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -328,6 +351,7 @@
 				147B0BC7271FFC04005F4062 /* Interstitial */,
 				147B0BCA27200CF3005F4062 /* Native */,
 				147B0BD627200F66005F4062 /* Rewarded */,
+				DEC81AD92A53A89B008FE935 /* YandexAdsViewController.swift */,
 			);
 			path = Yandex;
 			sourceTree = "<group>";
@@ -336,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				147B0BC8271FFC53005F4062 /* InterstitialViewController.swift */,
+				DEC81AED2A55ADEC008FE935 /* InterstitialAdViewController.swift */,
 			);
 			path = Interstitial;
 			sourceTree = "<group>";
@@ -344,6 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				147B0BCE27200D14005F4062 /* CustomNativeViewController.swift */,
+				DEC81AE12A53C840008FE935 /* NativeViewController.swift */,
 				14033FC32720598D00A24D5E /* TemplateNativeViewController.swift */,
 			);
 			path = Native;
@@ -353,6 +379,8 @@
 			isa = PBXGroup;
 			children = (
 				147B0BD427200E75005F4062 /* BannerViewController.swift */,
+				DEC81AE52A54D5A3008FE935 /* StickyBannerViewController.swift */,
+				DEC81AE72A54D8DE008FE935 /* InlineBannerViewController.swift */,
 			);
 			path = Banner;
 			sourceTree = "<group>";
@@ -361,6 +389,7 @@
 			isa = PBXGroup;
 			children = (
 				147B0BD727200FCE005F4062 /* RewardedViewController.swift */,
+				DEC81AEB2A55A2F6008FE935 /* RewardedAdViewController.swift */,
 			);
 			path = Rewarded;
 			sourceTree = "<group>";
@@ -374,6 +403,7 @@
 				14033F922720457800A24D5E /* Player */,
 				14033FA42720457800A24D5E /* Toast */,
 				14033FA12720457800A24D5E /* Visibility */,
+				DEC81ADD2A53BE28008FE935 /* InstreamListViewController.swift */,
 			);
 			path = Instream;
 			sourceTree = "<group>";
@@ -548,10 +578,12 @@
 				1474FC1E2721A4E500276688 /* GDPRUserConsentManager.swift in Sources */,
 				14033FB32720457800A24D5E /* LRUCache.swift in Sources */,
 				14033FB22720457800A24D5E /* AdPlayer.swift in Sources */,
+				DEC81AE82A54D8DE008FE935 /* InlineBannerViewController.swift in Sources */,
 				14033FC22720457800A24D5E /* InstreamInrollViewController.swift in Sources */,
 				147B0BDD27201213005F4062 /* MobileMediationBannerViewController.swift in Sources */,
 				14033FC12720457800A24D5E /* InrollsPlaybackController.swift in Sources */,
 				14033FC42720598D00A24D5E /* TemplateNativeViewController.swift in Sources */,
+				DEC81AE42A53C945008FE935 /* NavigationScreenDataSource.swift in Sources */,
 				147B0BC9271FFC53005F4062 /* InterstitialViewController.swift in Sources */,
 				46C354A0282560FE00832C7C /* IronSourceRewardedViewController.swift in Sources */,
 				14033FB72720457800A24D5E /* VideoAVPlayer.swift in Sources */,
@@ -559,26 +591,34 @@
 				147B0BD127200D14005F4062 /* NativeAdView.swift in Sources */,
 				14033F5E27201B8A00A24D5E /* MobileMediationInterstitialViewController.swift in Sources */,
 				14033FB52720457800A24D5E /* ReusablePlayer.swift in Sources */,
+				DEC81ADA2A53A89B008FE935 /* YandexAdsViewController.swift in Sources */,
 				147B0BD827200FCE005F4062 /* RewardedViewController.swift in Sources */,
+				DEC81AEE2A55ADEC008FE935 /* InterstitialAdViewController.swift in Sources */,
 				14033F6527201E2700A24D5E /* MobileMediationNativeViewController.swift in Sources */,
 				1499318B2722CD44005D2E87 /* AdFoxInterstitialViewController.swift in Sources */,
 				14033FB12720457800A24D5E /* ContentControlsController.swift in Sources */,
 				14033FBD2720457800A24D5E /* ViewVisibilityValidator.swift in Sources */,
+				DEC81AE62A54D5A3008FE935 /* StickyBannerViewController.swift in Sources */,
 				14033FB02720457800A24D5E /* InstreamContent.swift in Sources */,
+				DEC81AE02A53C28D008FE935 /* NavigationTableViewController.swift in Sources */,
 				14033F8027202AC300A24D5E /* AdMobNativeViewController.swift in Sources */,
 				14033FB62720457800A24D5E /* VideoPlayerProvider.swift in Sources */,
+				DEC81ADE2A53BE28008FE935 /* InstreamListViewController.swift in Sources */,
 				1474FC222721A4E500276688 /* SettingsViewController.swift in Sources */,
+				DEC81AE22A53C840008FE935 /* NativeViewController.swift in Sources */,
 				46C354A2282560FE00832C7C /* IronSourceManager.swift in Sources */,
 				14033FBA2720457800A24D5E /* PlayerView.swift in Sources */,
 				149931882722C423005D2E87 /* AdFoxBannerViewController.swift in Sources */,
 				14033FBC2720457800A24D5E /* VideoPlayerVisibilityTracker.swift in Sources */,
 				1474FC232721A4E500276688 /* GDPRViewController.swift in Sources */,
 				1467E353271EA91500DF104A /* AppDelegate.swift in Sources */,
+				DEC81AEC2A55A2F6008FE935 /* RewardedAdViewController.swift in Sources */,
 				14033F6827201F7900A24D5E /* MobileMediationRewardedViewController.swift in Sources */,
 				B394AC8627A868DB00D92CD9 /* AdPlayerErrorConverter.swift in Sources */,
 				14033FB92720457800A24D5E /* ContentPlayerControlsDelegate.swift in Sources */,
 				14033FC02720457800A24D5E /* InstreamAdBreakPositionFormatter.swift in Sources */,
 				14033FBF2720457800A24D5E /* InstreamParametersParser.swift in Sources */,
+				DEC81ADC2A53B9E7008FE935 /* String+Extensions.swift in Sources */,
 				14033F8527202B8D00A24D5E /* AdMobNativeAdView.swift in Sources */,
 				14033FBB2720457800A24D5E /* VideoAVPlayerDelegate.swift in Sources */,
 				149931842722BD94005D2E87 /* AdFoxNativeViewController.swift in Sources */,
@@ -741,7 +781,7 @@
 				CURRENT_PROJECT_VERSION = 531;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = YandexMobileAdsExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -750,9 +790,12 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.yandex.mobile.YandexMobileAdsExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "YandexMobileAdsExample/YandexMobileAdsExample-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -766,7 +809,7 @@
 				CURRENT_PROJECT_VERSION = 531;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = YandexMobileAdsExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -775,9 +818,12 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.yandex.mobile.YandexMobileAdsExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "YandexMobileAdsExample/YandexMobileAdsExample-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
