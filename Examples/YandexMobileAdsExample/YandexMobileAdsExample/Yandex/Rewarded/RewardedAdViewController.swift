@@ -8,24 +8,47 @@
 import YandexMobileAds
 
 final class RewardedAdViewController: UIViewController {
-    private var rewardedAd: YMARewardedAd?
-    private var presentButton: UIButton?
+    private lazy var rewardedAd: YMARewardedAd = {
+        // Replace demo-rewarded-yandex with actual Ad Unit ID
+        let rewardedAd = YMARewardedAd(adUnitID: "demo-rewarded-yandex")
+        rewardedAd.delegate = self
+        return rewardedAd
+    }()
 
-    override func viewDidLayoutSubviews() {
+    private lazy var presentButton: UIButton = {
+        let button = UIButton(
+            configuration: .tinted(),
+            primaryAction: UIAction(title: "Present ad") { [weak self] _ in
+                guard let self else { return }
+                self.rewardedAd.present(from: self)
+            }
+        )
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Present ad", for: .normal)
+        button.isEnabled = false
+        return button
+    }()
+
+    private lazy var loadButton: UIButton = {
+        let button = UIButton(
+            configuration: .tinted(),
+            primaryAction: UIAction(title: "Load ad") { [weak self] _ in
+                self?.rewardedAd.load()
+            }
+        )
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Load ad", for: .normal)
+        return button
+    }()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
         setupUI()
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        createRewardedAd()
+        addSubviews()
+        setupConstraints()
     }
 
     // MARK: - Ad
-
-    private func createRewardedAd() {
-        // Replace demo-rewarded-yandex with actual Ad Unit ID
-        rewardedAd = YMARewardedAd(adUnitID: "demo-rewarded-yandex")
-        rewardedAd?.delegate = self
-    }
 
     private func giveReward(_ reward: YMAReward) {
         let alertController = UIAlertController(
@@ -41,46 +64,21 @@ final class RewardedAdViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = .white
         title = "Rewarded Ad"
-
-        setupLoadButton()
-        setupPresentButton()
     }
 
-    private func setupLoadButton() {
-        let button = UIButton(
-            configuration: .tinted(),
-            primaryAction: UIAction(title: "Load ad") { [weak self] _ in
-                self?.rewardedAd?.load()
-            }
-        )
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Load ad", for: .normal)
-        view.addSubview(button)
-
-        NSLayoutConstraint.activate([
-            button.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 100),
-            button.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor, constant: -20)
-        ])
+    private func addSubviews() {
+        view.addSubview(loadButton)
+        view.addSubview(presentButton)
     }
 
-    private func setupPresentButton() {
-        let button = UIButton(
-            configuration: .tinted(),
-            primaryAction: UIAction(title: "Present ad") { [weak self] _ in
-                guard let self else { return }
-                self.rewardedAd?.present(from: self)
-            }
-        )
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Present ad", for: .normal)
-        button.isEnabled = false
-        view.addSubview(button)
-
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
-            button.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 100),
-            button.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor, constant: 20)
+            loadButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            loadButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -20),
+
+            presentButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            presentButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 20)
         ])
-        presentButton = button
     }
 }
 
@@ -92,7 +90,7 @@ extension RewardedAdViewController: YMARewardedAdDelegate {
 
     func rewardedAdDidLoad(_ rewardedAd: YMARewardedAd) {
         print(#function)
-        presentButton?.isEnabled = true
+        presentButton.isEnabled = true
     }
 
     func rewardedAdDidFail(toLoad rewardedAd: YMARewardedAd, error: Error) {

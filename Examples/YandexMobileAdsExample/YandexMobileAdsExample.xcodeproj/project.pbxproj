@@ -61,6 +61,9 @@
 		46C354A2282560FE00832C7C /* IronSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C3549F282560FE00832C7C /* IronSourceManager.swift */; };
 		70011FE6B068EC271A1051CB /* libPods-YandexMobileAdsExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A35F1D3A95F5CC1C05B0ED57 /* libPods-YandexMobileAdsExample.a */; };
 		B394AC8627A868DB00D92CD9 /* AdPlayerErrorConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B394AC8527A868DB00D92CD9 /* AdPlayerErrorConverter.swift */; };
+		DE0C2CBE2A65760900A84D00 /* NativeTemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C2CBD2A65760900A84D00 /* NativeTemplateViewController.swift */; };
+		DE0C2CC02A66245700A84D00 /* NativeCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C2CBF2A66245700A84D00 /* NativeCustomViewController.swift */; };
+		DE0C2CC22A671FF500A84D00 /* NativeCustomAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C2CC12A671FF500A84D00 /* NativeCustomAdView.swift */; };
 		DEC81ADA2A53A89B008FE935 /* YandexAdsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC81AD92A53A89B008FE935 /* YandexAdsViewController.swift */; };
 		DEC81ADC2A53B9E7008FE935 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC81ADB2A53B9E7008FE935 /* String+Extensions.swift */; };
 		DEC81ADE2A53BE28008FE935 /* InstreamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC81ADD2A53BE28008FE935 /* InstreamListViewController.swift */; };
@@ -132,6 +135,9 @@
 		9722EABB876EC1FBC865DDBE /* Pods-YandexMobileAdsExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsExample.release.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample.release.xcconfig"; sourceTree = "<group>"; };
 		A35F1D3A95F5CC1C05B0ED57 /* libPods-YandexMobileAdsExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YandexMobileAdsExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B394AC8527A868DB00D92CD9 /* AdPlayerErrorConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdPlayerErrorConverter.swift; sourceTree = "<group>"; };
+		DE0C2CBD2A65760900A84D00 /* NativeTemplateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeTemplateViewController.swift; sourceTree = "<group>"; };
+		DE0C2CBF2A66245700A84D00 /* NativeCustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeCustomViewController.swift; sourceTree = "<group>"; };
+		DE0C2CC12A671FF500A84D00 /* NativeCustomAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeCustomAdView.swift; sourceTree = "<group>"; };
 		DEC81AD92A53A89B008FE935 /* YandexAdsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexAdsViewController.swift; sourceTree = "<group>"; };
 		DEC81ADB2A53B9E7008FE935 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		DEC81ADD2A53BE28008FE935 /* InstreamListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstreamListViewController.swift; sourceTree = "<group>"; };
@@ -371,6 +377,9 @@
 				147B0BCE27200D14005F4062 /* CustomNativeViewController.swift */,
 				DEC81AE12A53C840008FE935 /* NativeViewController.swift */,
 				14033FC32720598D00A24D5E /* TemplateNativeViewController.swift */,
+				DE0C2CBD2A65760900A84D00 /* NativeTemplateViewController.swift */,
+				DE0C2CBF2A66245700A84D00 /* NativeCustomViewController.swift */,
+				DE0C2CC12A671FF500A84D00 /* NativeCustomAdView.swift */,
 			);
 			path = Native;
 			sourceTree = "<group>";
@@ -592,11 +601,13 @@
 				14033F5E27201B8A00A24D5E /* MobileMediationInterstitialViewController.swift in Sources */,
 				14033FB52720457800A24D5E /* ReusablePlayer.swift in Sources */,
 				DEC81ADA2A53A89B008FE935 /* YandexAdsViewController.swift in Sources */,
+				DE0C2CC02A66245700A84D00 /* NativeCustomViewController.swift in Sources */,
 				147B0BD827200FCE005F4062 /* RewardedViewController.swift in Sources */,
 				DEC81AEE2A55ADEC008FE935 /* InterstitialAdViewController.swift in Sources */,
 				14033F6527201E2700A24D5E /* MobileMediationNativeViewController.swift in Sources */,
 				1499318B2722CD44005D2E87 /* AdFoxInterstitialViewController.swift in Sources */,
 				14033FB12720457800A24D5E /* ContentControlsController.swift in Sources */,
+				DE0C2CBE2A65760900A84D00 /* NativeTemplateViewController.swift in Sources */,
 				14033FBD2720457800A24D5E /* ViewVisibilityValidator.swift in Sources */,
 				DEC81AE62A54D5A3008FE935 /* StickyBannerViewController.swift in Sources */,
 				14033FB02720457800A24D5E /* InstreamContent.swift in Sources */,
@@ -627,6 +638,7 @@
 				1474FC212721A4E500276688 /* GDPRDDialogViewController.swift in Sources */,
 				147B0BD227200D14005F4062 /* CustomNativeViewController.swift in Sources */,
 				14033FBE2720457800A24D5E /* InstreamAdBinderToastDelegate.swift in Sources */,
+				DE0C2CC22A671FF500A84D00 /* NativeCustomAdView.swift in Sources */,
 				147B0BCF27200D14005F4062 /* StarRatingView.swift in Sources */,
 				147B0BD527200E75005F4062 /* BannerViewController.swift in Sources */,
 				14033FB82720457800A24D5E /* ContentPlayer.swift in Sources */,
