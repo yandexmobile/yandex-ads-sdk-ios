@@ -8,36 +8,32 @@
 import YandexMobileAds
 
 final class InlineBannerViewController: UIViewController {
-    private var adView: YMAAdView?
-    private var loadButton: UIButton?
-
-    override func viewDidLayoutSubviews() {
-        setupUI()
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        createAdView()
-        setupAdView()
-    }
-
-    // MARK: - Ad
-
-    private func createAdView() {
+    private lazy var adView: YMAAdView = {
         let adSize = YMAAdSize.inlineSize(withWidth: 320, maxHeight: 320)
         // Replace demo demo-banner-yandex with actual Ad Unit ID
-        adView = YMAAdView(adUnitID: "demo-banner-yandex", adSize: adSize)
-        adView?.delegate = self
-    }
-
-    private func setupAdView() {
-        guard let adView, let loadButton else { return }
+        let adView = YMAAdView(adUnitID: "demo-banner-yandex", adSize: adSize)
+        adView.delegate = self
         adView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(adView)
+        return adView
+    }()
 
-        NSLayoutConstraint.activate([
-            adView.topAnchor.constraint(equalTo: loadButton.layoutMarginsGuide.bottomAnchor, constant: 100),
-            adView.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
-        ])
+    private lazy var loadButton: UIButton = {
+        let button = UIButton(
+            configuration: .tinted(),
+            primaryAction: UIAction(title: "Load ad") { [weak self] _ in
+                self?.adView.loadAd()
+            }
+        )
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Load ad", for: .normal)
+        return button
+    }()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+        addSubviews()
+        setupConstraints()
     }
 
     // MARK: - UI
@@ -45,26 +41,21 @@ final class InlineBannerViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = .white
         title = "Inline Banner"
-
-        setupLoadButton()
     }
 
-    private func setupLoadButton() {
-        let button = UIButton(
-            configuration: .tinted(),
-            primaryAction: UIAction(title: "Load ad") { [weak self] _ in
-                self?.adView?.loadAd()
-            }
-        )
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Load ad", for: .normal)
-        view.addSubview(button)
+    private func addSubviews() {
+        view.addSubview(adView)
+        view.addSubview(loadButton)
+    }
 
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
-            button.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 100),
-            button.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
+            adView.topAnchor.constraint(equalTo: loadButton.bottomAnchor, constant: 100),
+            adView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+
+            loadButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            loadButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
-        loadButton = button
     }
 }
 

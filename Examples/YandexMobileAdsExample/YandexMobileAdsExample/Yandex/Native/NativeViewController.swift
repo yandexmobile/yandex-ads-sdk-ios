@@ -14,9 +14,9 @@ enum NativeCellModel: NavigationScreenDataSource, CaseIterable {
     var destinationViewController: UIViewController {
         switch self {
         case .template:
-            return TemplateNativeViewController()
+            return NativeTemplateViewController()
         case .custom:
-            return CustomNativeViewController()
+            return NativeCustomViewController()
         }
     }
 

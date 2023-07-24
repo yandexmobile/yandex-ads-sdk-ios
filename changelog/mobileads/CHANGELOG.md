@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# Version 5.9.1
+
+#### Added
+* Added improvements and fixes
+
 # Version 5.9.0
 
 #### Added
