@@ -8,23 +8,44 @@
 import YandexMobileAds
 
 final class InterstitialAdViewController: UIViewController {
-    private var interstitialAd: YMAInterstitialAd?
-    private var presentButton: UIButton?
-
-    override func viewDidLayoutSubviews() {
-        setupUI()
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        createRewardedAd()
-    }
-
-    // MARK: - Ad
-
-    private func createRewardedAd() {
+    private lazy var interstitialAd: YMAInterstitialAd = {
         // Replace demo-interstitial-yandex with actual Ad Unit ID
-        interstitialAd = YMAInterstitialAd(adUnitID: "demo-interstitial-yandex")
-        interstitialAd?.delegate = self
+        let ad = YMAInterstitialAd(adUnitID: "demo-interstitial-yandex")
+        ad.delegate = self
+        return ad
+    }()
+
+    private lazy var presentButton: UIButton = {
+        let button = UIButton(
+            configuration: .tinted(),
+            primaryAction: UIAction(title: "Present ad") { [weak self] _ in
+                guard let self else { return }
+                self.interstitialAd.present(from: self)
+            }
+        )
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Present ad", for: .normal)
+        button.isEnabled = false
+        return button
+    }()
+
+    private lazy var loadButton: UIButton = {
+        let button = UIButton(
+            configuration: .tinted(),
+            primaryAction: UIAction(title: "Load ad") { [weak self] _ in
+                self?.interstitialAd.load()
+            }
+        )
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Load ad", for: .normal)
+        return button
+    }()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+        addSubviews()
+        setupConstraints()
     }
 
     // MARK: - UI
@@ -32,53 +53,28 @@ final class InterstitialAdViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = .white
         title = "Interstitial Ad"
-
-        setupLoadButton()
-        setupPresentButton()
     }
 
-    private func setupLoadButton() {
-        let button = UIButton(
-            configuration: .tinted(),
-            primaryAction: UIAction(title: "Load ad") { [weak self] _ in
-                self?.interstitialAd?.load()
-            }
-        )
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Load ad", for: .normal)
-        view.addSubview(button)
-
-        NSLayoutConstraint.activate([
-            button.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 100),
-            button.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor, constant: -20)
-        ])
+    private func addSubviews() {
+        view.addSubview(loadButton)
+        view.addSubview(presentButton)
     }
 
-    private func setupPresentButton() {
-        let button = UIButton(
-            configuration: .tinted(),
-            primaryAction: UIAction(title: "Present ad") { [weak self] _ in
-                guard let self else { return }
-                self.interstitialAd?.present(from: self)
-            }
-        )
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Present ad", for: .normal)
-        button.isEnabled = false
-        view.addSubview(button)
-
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
-            button.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 100),
-            button.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor, constant: 20)
+            loadButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            loadButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -20),
+
+            presentButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            presentButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 20)
         ])
-        presentButton = button
     }
 }
 
 extension InterstitialAdViewController: YMAInterstitialAdDelegate {
     func interstitialAdDidLoad(_ interstitialAd: YMAInterstitialAd) {
         print(#function)
-        presentButton?.isEnabled = true
+        presentButton.isEnabled = true
     }
 
     func interstitialAdDidFail(toLoad interstitialAd: YMAInterstitialAd, error: Error) {

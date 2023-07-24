@@ -8,25 +8,32 @@
 import YandexMobileAds
 
 final class StickyBannerViewController: UIViewController {
-    private var adView: YMAAdView?
-
-    override func viewDidLayoutSubviews() {
-        setupUI()
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        createAdView()
-    }
-
-    // MARK: - Ad
-
-    private func createAdView() {
+    private lazy var adView: YMAAdView = {
         let width = view.safeAreaLayoutGuide.layoutFrame.width
         let adSize = YMAAdSize.stickySize(withContainerWidth: width)
         // Replace demo demo-banner-yandex with actual Ad Unit ID
-        adView = YMAAdView(adUnitID: "demo-banner-yandex", adSize: adSize)
-        adView?.delegate = self
-        adView?.displayAtBottom(in: view)
+        let adView = YMAAdView(adUnitID: "demo-banner-yandex", adSize: adSize)
+        adView.delegate = self
+        return adView
+    }()
+
+    private lazy var loadButton: UIButton = {
+        let button = UIButton(
+            configuration: .tinted(),
+            primaryAction: UIAction(title: "Load ad") { [weak self] _ in
+                self?.adView.loadAd()
+            }
+        )
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Load ad", for: .normal)
+        return button
+    }()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+        addSubviews()
+        setupConstraints()
     }
 
     // MARK: - UI
@@ -34,27 +41,19 @@ final class StickyBannerViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = .white
         title = "Sticky Banner"
-
-        setupLoadButton()
     }
 
-    private func setupLoadButton() {
-        let button = UIButton(
-            configuration: .tinted(),
-            primaryAction: UIAction(title: "Load ad") { [weak self] _ in
-                self?.adView?.loadAd()
-            }
-        )
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Load ad", for: .normal)
-        view.addSubview(button)
+    private func addSubviews() {
+        adView.displayAtBottom(in: view)
+        view.addSubview(loadButton)
+    }
 
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
-            button.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 100),
-            button.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
+            loadButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            loadButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
     }
-
 }
 
 extension StickyBannerViewController: YMAAdViewDelegate {

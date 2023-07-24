@@ -26,7 +26,7 @@ enum YandexAdsCellModel: NavigationScreenDataSource, CaseIterable {
         case .rewarded:
             return RewardedAdViewController()
         case .native:
-            return UIViewController()
+            return NativeViewController()
         case .instream:
             return InstreamListViewController()
         }
