@@ -31,7 +31,7 @@ class MobileMediationBannerViewController: UIViewController {
     private var adView: YMAAdView?
 
     @IBAction func loadAd(_ sender: UIButton) {
-        let adSize = YMAAdSize.inlineSize(withWidth: 320, maxHeight: 50)
+        let adSize = YMABannerAdSize.inlineSize(withWidth: 320, maxHeight: 50)
         let selectedBlockIndex = pickerView.selectedRow(inComponent: 0)
         /*
          Replace adUnitID with actual Ad unitt ID.

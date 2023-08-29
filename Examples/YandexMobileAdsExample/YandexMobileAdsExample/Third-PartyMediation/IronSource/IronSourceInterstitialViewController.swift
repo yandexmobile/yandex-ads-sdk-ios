@@ -28,6 +28,7 @@ class IronSourceInterstitialViewController: UIViewController {
 
     @IBAction func showAd(_ sender: UIButton) {
         IronSource.showInterstitial(with: self)
+        showButton.isEnabled = false
     }
 }
 

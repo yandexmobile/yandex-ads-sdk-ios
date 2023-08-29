@@ -10,7 +10,8 @@ import YandexMobileAds
 final class StickyBannerViewController: UIViewController {
     private lazy var adView: YMAAdView = {
         let width = view.safeAreaLayoutGuide.layoutFrame.width
-        let adSize = YMAAdSize.stickySize(withContainerWidth: width)
+        let adSize = YMABannerAdSize.stickySize(withContainerWidth: width)
+        
         // Replace demo demo-banner-yandex with actual Ad Unit ID
         let adView = YMAAdView(adUnitID: "demo-banner-yandex", adSize: adSize)
         adView.delegate = self

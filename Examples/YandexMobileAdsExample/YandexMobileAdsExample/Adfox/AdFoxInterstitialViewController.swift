@@ -9,14 +9,16 @@ import UIKit
 import YandexMobileAds
 
 class AdFoxInterstitialViewController: UIViewController {
+    private let interstitialAdLoader = YMAInterstitialAdLoader()
+    private var interstitialAd: YMAInterstitialAd?
+
     @IBOutlet weak var showButton: UIButton!
-    var interstitialAd: YMAInterstitialAd!
 
     @IBAction func loadInterstitial() {
         self.showButton.isEnabled = false
+
         // Replace demo R-M-243655-9 with actual Ad Unit ID
-        self.interstitialAd = YMAInterstitialAd(adUnitID: "R-M-243655-9")
-        self.interstitialAd.delegate = self;
+        let requestConfiguration = YMAMutableAdRequestConfiguration(adUnitID: "R-M-243655-9")
 
         var parameters = Dictionary<String, String>()
         parameters["adf_ownerid"] = "270901"
@@ -25,53 +27,57 @@ class AdFoxInterstitialViewController: UIViewController {
         parameters["adf_pfc"] = "bskug"
         parameters["adf_pfb"] = "fkjam"
         parameters["adf_pt"] = "b"
-        let request = YMAMutableAdRequest()
-        request.parameters = parameters
 
-        self.interstitialAd.load(with: request)
+        requestConfiguration.parameters = parameters
+        interstitialAdLoader.delegate = self
+        interstitialAdLoader.loadAd(with: requestConfiguration)
     }
 
     @IBAction func presentInterstitial() {
-        self.interstitialAd.present(from: self)
+        interstitialAd?.show(from: self)
+        showButton.isEnabled = false
     }
-
+    private func makeMessageDescription(_ interstitial: YMAInterstitialAd) -> String {
+        "Interstitial Ad with Unit ID: \(String(describing: interstitial.adInfo?.adUnitId))"
+    }
 }
 
-extension AdFoxInterstitialViewController: YMAInterstitialAdDelegate {
-    func interstitialAdDidLoad(_ interstitialAd: YMAInterstitialAd) {
+// MARK: - YMAInterstitialAdLoaderDelegate
+
+extension AdFoxInterstitialViewController: YMAInterstitialAdLoaderDelegate {
+    func interstitialAdLoader(_ adLoader: YMAInterstitialAdLoader, didLoad interstitialAd: YMAInterstitialAd) {
+        print("\(makeMessageDescription(interstitialAd)) loaded")
+        self.interstitialAd = interstitialAd
         self.showButton.isEnabled = true
-        print("Ad loaded")
     }
 
-    func interstitialAdDidFail(toLoad interstitialAd: YMAInterstitialAd, error: Error) {
-        print("Loading failed. Error: \(error)")
+    func interstitialAdLoader(_ adLoader: YMAInterstitialAdLoader, didFailToLoadWithError error: YMAAdRequestError) {
+        let id = error.adUnitId
+        let error = error.error
+        print("Loading failed for Ad with Unit ID: \(String(describing: id)). Error: \(String(describing: error))")
+    }
+}
+
+// MARK: - YMARewardedAdDelegate
+
+extension AdFoxInterstitialViewController: YMAInterstitialAdDelegate {
+    func interstitialAd(_ interstitialAd: YMAInterstitialAd, didFailToShowWithError error: Error) {
+        print("\(makeMessageDescription(interstitialAd)) failed to show. Error: \(error)")
     }
 
-    func interstitialAdWillLeaveApplication(_ interstitialAd: YMAInterstitialAd) {
-        print("Will leave application")
+    func interstitialAdDidShow(_ interstitialAd: YMAInterstitialAd) {
+        print("\(makeMessageDescription(interstitialAd)) did show")
     }
 
-    func interstitialAdDidFail(toPresent interstitialAd: YMAInterstitialAd, error: Error) {
-        print("Failed to present interstitial. Error: \(error)")
+    func interstitialAdDidDismiss(_ interstitialAd: YMAInterstitialAd) {
+        print("\(makeMessageDescription(interstitialAd)) did dismiss")
     }
 
-    func interstitialAdWillAppear(_ interstitialAd: YMAInterstitialAd) {
-        print("Interstitial ad will appear")
+    func interstitialAdDidClick(_ interstitialAd: YMAInterstitialAd) {
+        print("\(makeMessageDescription(interstitialAd)) did click")
     }
 
-    func interstitialAdDidAppear(_ interstitialAd: YMAInterstitialAd) {
-        print("Interstitial ad did appear")
-    }
-
-    func interstitialAdWillDisappear(_ interstitialAd: YMAInterstitialAd) {
-        print("Interstitial ad will disappear")
-    }
-
-    func interstitialAdDidDisappear(_ interstitialAd: YMAInterstitialAd) {
-        print("Interstitial ad did disappear")
-    }
-
-    func interstitialAd(_ interstitialAd: YMAInterstitialAd, willPresentScreen webBrowser: UIViewController?) {
-        print("Interstitial ad will present screen")
+    func interstitialAd(_ interstitialAd: YMAInterstitialAd, didTrackImpressionWith impressionData: YMAImpressionData?) {
+        print("\(makeMessageDescription(interstitialAd)) did track impression")
     }
 }

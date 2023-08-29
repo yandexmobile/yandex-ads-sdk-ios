@@ -30,6 +30,7 @@ class MobileMediationRewardedViewController: UIViewController {
         (adapter: "AdColony", adUnitID: adColonyAdUnitID),
         (adapter: "Yandex", adUnitID: yandexAdUnitID)
     ]
+    private let rewardedAdLoader = YMARewardedAdLoader()
 
     @IBOutlet weak var showButton: UIButton!
     @IBOutlet private var pickerView: UIPickerView!
@@ -50,64 +51,68 @@ class MobileMediationRewardedViewController: UIViewController {
          Yandex: yandexAdUnitID
          */
         let adUnitID = adUnitIDs[selectedIndex].adUnitID
-        rewardedAd = YMARewardedAd(adUnitID: adUnitID)
-        rewardedAd?.delegate = self
-        rewardedAd?.load()
+        let configuration = YMAAdRequestConfiguration(adUnitID: adUnitID)
+
+        rewardedAdLoader.delegate = self
+        rewardedAdLoader.loadAd(with: configuration)
     }
     
     @IBAction func presentAd() {
-        rewardedAd?.present(from: self)
+        rewardedAd?.delegate = self
+        rewardedAd?.show(from: self)
+        showButton.isEnabled = false
     }
 
+    private func makeMessageDescription(_ rewarded: YMARewardedAd) -> String {
+        "Rewarded Ad with Unit ID: \(String(describing: rewarded.adInfo?.adUnitId))"
+    }
 }
 
-extension MobileMediationRewardedViewController: YMARewardedAdDelegate {
-    
-    // MARK: - YMARewardedAdDelegate
-    
-    func rewardedAd(_ rewardedAd: YMARewardedAd, didReward reward: YMAReward) {
-        let message = "Rewarded ad did reward: \(reward.amount) \(reward.type)"
-        let alertController = UIAlertController(title: "Reward", message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.cancel, handler: nil))
-        self.presentedViewController?.present(alertController, animated: true, completion: nil)
-        print(message)
-    }
+// MARK: - YMARewardedAdLoaderDelegate
 
-    func rewardedAdDidLoad(_ rewardedAd: YMARewardedAd) {
+extension MobileMediationRewardedViewController: YMARewardedAdLoaderDelegate {
+    func rewardedAdLoader(_ adLoader: YMARewardedAdLoader, didLoad rewardedAd: YMARewardedAd) {
+        print("\(makeMessageDescription(rewardedAd)) loaded")
+        self.rewardedAd = rewardedAd
         self.showButton.isEnabled = true
-        print("Rewarded ad loaded")
     }
 
-    func rewardedAdDidFail(toLoad rewardedAd: YMARewardedAd, error: Error) {
-        print("Loading failed. Error: %@", error)
+    func rewardedAdLoader(_ adLoader: YMARewardedAdLoader, didFailToLoadWithError error: YMAAdRequestError) {
+        let id = error.adUnitId
+        let error = error.error
+        print("Loading failed for Ad with Unit ID: \(String(describing: id)). Error: \(String(describing: error))")
+    }
+}
+
+// MARK: - YMARewardedAdDelegate
+
+extension MobileMediationRewardedViewController: YMARewardedAdDelegate {
+    func rewardedAd(_ rewardedAd: YMARewardedAd, didReward reward: YMAReward) {
+        let message = "\(makeMessageDescription(rewardedAd)) did reward: \(reward.amount) \(reward.type)"
+             let alertController = UIAlertController(title: "Reward", message: message, preferredStyle: .alert)
+             alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.cancel, handler: nil))
+             self.presentedViewController?.present(alertController, animated: true, completion: nil)
+             print(message)
     }
 
-    func rewardedAdWillLeaveApplication(_ rewardedAd: YMARewardedAd) {
-        print("Rewarded ad will leave application")
+    func rewardedAd(_ rewardedAd: YMARewardedAd, didFailToShowWithError error: Error) {
+        print("\(makeMessageDescription(rewardedAd)) failed to show. Error: \(error)")
     }
 
-    func rewardedAdDidFail(toPresent rewardedAd: YMARewardedAd, error: Error) {
-        print("Failed to present rewarded ad. Error: %@", error)
+    func rewardedAdDidShow(_ rewardedAd: YMARewardedAd) {
+        print("\(makeMessageDescription(rewardedAd)) did show")
     }
 
-    func rewardedAdWillAppear(_ rewardedAd: YMARewardedAd) {
-        print("Rewarded ad will appear")
+    func rewardedAdDidDismiss(_ rewardedAd: YMARewardedAd) {
+        print("\(makeMessageDescription(rewardedAd)) did dismiss")
     }
 
-    func rewardedAdDidAppear(_ rewardedAd: YMARewardedAd) {
-        print("Rewarded ad did appear")
+    func rewardedAdDidClick(_ rewardedAd: YMARewardedAd) {
+        print("\(makeMessageDescription(rewardedAd)) did click")
     }
 
-    func rewardedAdWillDisappear(_ rewardedAd: YMARewardedAd) {
-        print("Rewarded ad will disappear")
-    }
-
-    func rewardedAdDidDisappear(_ rewardedAd: YMARewardedAd) {
-        print("Rewarded ad did disappear")
-    }
-
-    func rewardedAd(_ rewardedAd: YMARewardedAd, willPresentScreen viewController: UIViewController?) {
-        print("Rewarded ad will present screen")
+    func rewardedAd(_ rewardedAd: YMARewardedAd, didTrackImpressionWith impressionData: YMAImpressionData?) {
+        print("\(makeMessageDescription(rewardedAd)) did track impression")
     }
 }
 

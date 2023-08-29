@@ -1,10 +1,18 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-# Version 5.9.1
+# Version 6.0.0
 
-#### Added
-* Added improvements and fixes
+### Added
+* App Open Ad format
+* Improvements and optimizations
+* Updated minimum supported version to iOS 13
+
+### Breaking changes
+* New banner ad size API
+* Interstitial ad loading and ad show API decomposition
+* Rewarded ad loading and ad show API decomposition
+* Removed deprecated methods `setAnalyticsReportingEnabled:(BOOL)enabled` and `flexibleSizeWithCGSize:(CGSize)size`
 
 # Version 5.9.0
 
@@ -68,7 +76,7 @@ All notable changes to this project will be documented in this file.
 * Added improvements and fixes
 
 #### Deprecated
-* Deprecated `fixedSizeWithCGSize` init in `YMAAdSize`
+* Deprecated `fixedSizeWithCGSize` init in `YMABannerAdSize`
 
 # Version 5.0.2
 

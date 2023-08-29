@@ -16,7 +16,6 @@
 		14033F8527202B8D00A24D5E /* AdMobNativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F8227202B8D00A24D5E /* AdMobNativeAdView.swift */; };
 		14033F8627202B8D00A24D5E /* AdMobNativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14033F8327202B8D00A24D5E /* AdMobNativeAdView.xib */; };
 		14033F8927202CA800A24D5E /* AdMobRewardedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F8827202CA800A24D5E /* AdMobRewardedViewController.swift */; };
-		14033FAE2720457800A24D5E /* InstreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F8E2720457800A24D5E /* InstreamViewController.swift */; };
 		14033FB02720457800A24D5E /* InstreamContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F902720457800A24D5E /* InstreamContent.swift */; };
 		14033FB12720457800A24D5E /* ContentControlsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F912720457800A24D5E /* ContentControlsController.swift */; };
 		14033FB22720457800A24D5E /* AdPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F942720457800A24D5E /* AdPlayer.swift */; };
@@ -35,8 +34,6 @@
 		14033FBF2720457800A24D5E /* InstreamParametersParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033FA72720457800A24D5E /* InstreamParametersParser.swift */; };
 		14033FC02720457800A24D5E /* InstreamAdBreakPositionFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033FA82720457800A24D5E /* InstreamAdBreakPositionFormatter.swift */; };
 		14033FC12720457800A24D5E /* InrollsPlaybackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033FAA2720457800A24D5E /* InrollsPlaybackController.swift */; };
-		14033FC22720457800A24D5E /* InstreamInrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033FAB2720457800A24D5E /* InstreamInrollViewController.swift */; };
-		14033FC42720598D00A24D5E /* TemplateNativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033FC32720598D00A24D5E /* TemplateNativeViewController.swift */; };
 		1467E353271EA91500DF104A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1467E352271EA91500DF104A /* AppDelegate.swift */; };
 		1467E35A271EA91500DF104A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1467E358271EA91500DF104A /* Main.storyboard */; };
 		1467E35C271EA91700DF104A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1467E35B271EA91700DF104A /* Assets.xcassets */; };
@@ -45,13 +42,9 @@
 		1474FC212721A4E500276688 /* GDPRDDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474FC1B2721A4E500276688 /* GDPRDDialogViewController.swift */; };
 		1474FC222721A4E500276688 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474FC1C2721A4E500276688 /* SettingsViewController.swift */; };
 		1474FC232721A4E500276688 /* GDPRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474FC1D2721A4E500276688 /* GDPRViewController.swift */; };
-		147B0BC9271FFC53005F4062 /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147B0BC8271FFC53005F4062 /* InterstitialViewController.swift */; };
 		147B0BCF27200D14005F4062 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147B0BCB27200D12005F4062 /* StarRatingView.swift */; };
 		147B0BD027200D14005F4062 /* NativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 147B0BCC27200D13005F4062 /* NativeAdView.xib */; };
 		147B0BD127200D14005F4062 /* NativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147B0BCD27200D14005F4062 /* NativeAdView.swift */; };
-		147B0BD227200D14005F4062 /* CustomNativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147B0BCE27200D14005F4062 /* CustomNativeViewController.swift */; };
-		147B0BD527200E75005F4062 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147B0BD427200E75005F4062 /* BannerViewController.swift */; };
-		147B0BD827200FCE005F4062 /* RewardedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147B0BD727200FCE005F4062 /* RewardedViewController.swift */; };
 		147B0BDD27201213005F4062 /* MobileMediationBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147B0BDB27201212005F4062 /* MobileMediationBannerViewController.swift */; };
 		149931842722BD94005D2E87 /* AdFoxNativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149931832722BD94005D2E87 /* AdFoxNativeViewController.swift */; };
 		149931882722C423005D2E87 /* AdFoxBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149931872722C423005D2E87 /* AdFoxBannerViewController.swift */; };
@@ -64,6 +57,8 @@
 		DE0C2CBE2A65760900A84D00 /* NativeTemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C2CBD2A65760900A84D00 /* NativeTemplateViewController.swift */; };
 		DE0C2CC02A66245700A84D00 /* NativeCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C2CBF2A66245700A84D00 /* NativeCustomViewController.swift */; };
 		DE0C2CC22A671FF500A84D00 /* NativeCustomAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C2CC12A671FF500A84D00 /* NativeCustomAdView.swift */; };
+		DE6D740A2A740DF30024DA8F /* InstreamSingleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6D74092A740DF30024DA8F /* InstreamSingleViewController.swift */; };
+		DE6D740C2A740E080024DA8F /* InstreamInrollsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6D740B2A740E080024DA8F /* InstreamInrollsViewController.swift */; };
 		DEC81ADA2A53A89B008FE935 /* YandexAdsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC81AD92A53A89B008FE935 /* YandexAdsViewController.swift */; };
 		DEC81ADC2A53B9E7008FE935 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC81ADB2A53B9E7008FE935 /* String+Extensions.swift */; };
 		DEC81ADE2A53BE28008FE935 /* InstreamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC81ADD2A53BE28008FE935 /* InstreamListViewController.swift */; };
@@ -74,6 +69,7 @@
 		DEC81AE82A54D8DE008FE935 /* InlineBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC81AE72A54D8DE008FE935 /* InlineBannerViewController.swift */; };
 		DEC81AEC2A55A2F6008FE935 /* RewardedAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC81AEB2A55A2F6008FE935 /* RewardedAdViewController.swift */; };
 		DEC81AEE2A55ADEC008FE935 /* InterstitialAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC81AED2A55ADEC008FE935 /* InterstitialAdViewController.swift */; };
+		F7D8B4D32A97B41F00E7A40D /* AppOpenAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D8B4D22A97B41F00E7A40D /* AppOpenAdViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,7 +82,6 @@
 		14033F8227202B8D00A24D5E /* AdMobNativeAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMobNativeAdView.swift; sourceTree = "<group>"; };
 		14033F8327202B8D00A24D5E /* AdMobNativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdMobNativeAdView.xib; sourceTree = "<group>"; };
 		14033F8827202CA800A24D5E /* AdMobRewardedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMobRewardedViewController.swift; sourceTree = "<group>"; };
-		14033F8E2720457800A24D5E /* InstreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstreamViewController.swift; sourceTree = "<group>"; };
 		14033F902720457800A24D5E /* InstreamContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstreamContent.swift; sourceTree = "<group>"; };
 		14033F912720457800A24D5E /* ContentControlsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentControlsController.swift; sourceTree = "<group>"; };
 		14033F942720457800A24D5E /* AdPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdPlayer.swift; sourceTree = "<group>"; };
@@ -105,8 +100,6 @@
 		14033FA72720457800A24D5E /* InstreamParametersParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstreamParametersParser.swift; sourceTree = "<group>"; };
 		14033FA82720457800A24D5E /* InstreamAdBreakPositionFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstreamAdBreakPositionFormatter.swift; sourceTree = "<group>"; };
 		14033FAA2720457800A24D5E /* InrollsPlaybackController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InrollsPlaybackController.swift; sourceTree = "<group>"; };
-		14033FAB2720457800A24D5E /* InstreamInrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstreamInrollViewController.swift; sourceTree = "<group>"; };
-		14033FC32720598D00A24D5E /* TemplateNativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateNativeViewController.swift; sourceTree = "<group>"; };
 		1467E34F271EA91500DF104A /* YandexMobileAdsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YandexMobileAdsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1467E352271EA91500DF104A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1467E359271EA91500DF104A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -117,13 +110,9 @@
 		1474FC1B2721A4E500276688 /* GDPRDDialogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDPRDDialogViewController.swift; sourceTree = "<group>"; };
 		1474FC1C2721A4E500276688 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		1474FC1D2721A4E500276688 /* GDPRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDPRViewController.swift; sourceTree = "<group>"; };
-		147B0BC8271FFC53005F4062 /* InterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterstitialViewController.swift; sourceTree = "<group>"; };
 		147B0BCB27200D12005F4062 /* StarRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
 		147B0BCC27200D13005F4062 /* NativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NativeAdView.xib; sourceTree = "<group>"; };
 		147B0BCD27200D14005F4062 /* NativeAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeAdView.swift; sourceTree = "<group>"; };
-		147B0BCE27200D14005F4062 /* CustomNativeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNativeViewController.swift; sourceTree = "<group>"; };
-		147B0BD427200E75005F4062 /* BannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
-		147B0BD727200FCE005F4062 /* RewardedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardedViewController.swift; sourceTree = "<group>"; };
 		147B0BDB27201212005F4062 /* MobileMediationBannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileMediationBannerViewController.swift; sourceTree = "<group>"; };
 		147B0BDC27201213005F4062 /* YandexMobileAdsExample-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YandexMobileAdsExample-Bridging-Header.h"; sourceTree = "<group>"; };
 		149931832722BD94005D2E87 /* AdFoxNativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdFoxNativeViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +127,8 @@
 		DE0C2CBD2A65760900A84D00 /* NativeTemplateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeTemplateViewController.swift; sourceTree = "<group>"; };
 		DE0C2CBF2A66245700A84D00 /* NativeCustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeCustomViewController.swift; sourceTree = "<group>"; };
 		DE0C2CC12A671FF500A84D00 /* NativeCustomAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeCustomAdView.swift; sourceTree = "<group>"; };
+		DE6D74092A740DF30024DA8F /* InstreamSingleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstreamSingleViewController.swift; sourceTree = "<group>"; };
+		DE6D740B2A740E080024DA8F /* InstreamInrollsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstreamInrollsViewController.swift; sourceTree = "<group>"; };
 		DEC81AD92A53A89B008FE935 /* YandexAdsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexAdsViewController.swift; sourceTree = "<group>"; };
 		DEC81ADB2A53B9E7008FE935 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		DEC81ADD2A53BE28008FE935 /* InstreamListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstreamListViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +140,7 @@
 		DEC81AEB2A55A2F6008FE935 /* RewardedAdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardedAdViewController.swift; sourceTree = "<group>"; };
 		DEC81AED2A55ADEC008FE935 /* InterstitialAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialAdViewController.swift; sourceTree = "<group>"; };
 		EA2B7BC1DE6EF14C5B13E9F5 /* Pods-YandexMobileAdsExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsExample.debug.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample.debug.xcconfig"; sourceTree = "<group>"; };
+		F7D8B4D22A97B41F00E7A40D /* AppOpenAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOpenAdViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,7 +201,7 @@
 		14033F8D2720457800A24D5E /* Instream */ = {
 			isa = PBXGroup;
 			children = (
-				14033F8E2720457800A24D5E /* InstreamViewController.swift */,
+				DE6D74092A740DF30024DA8F /* InstreamSingleViewController.swift */,
 				14033F902720457800A24D5E /* InstreamContent.swift */,
 				14033F912720457800A24D5E /* ContentControlsController.swift */,
 			);
@@ -296,7 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				14033FAA2720457800A24D5E /* InrollsPlaybackController.swift */,
-				14033FAB2720457800A24D5E /* InstreamInrollViewController.swift */,
+				DE6D740B2A740E080024DA8F /* InstreamInrollsViewController.swift */,
 			);
 			path = Inrolls;
 			sourceTree = "<group>";
@@ -352,6 +344,7 @@
 		147B0BC6271FFBF7005F4062 /* Yandex */ = {
 			isa = PBXGroup;
 			children = (
+				F7D8B4D12A97B3F800E7A40D /* AppOpenAd */,
 				147B0BD327200E62005F4062 /* Banner */,
 				147B0BD927200FEC005F4062 /* Instream */,
 				147B0BC7271FFC04005F4062 /* Interstitial */,
@@ -365,7 +358,6 @@
 		147B0BC7271FFC04005F4062 /* Interstitial */ = {
 			isa = PBXGroup;
 			children = (
-				147B0BC8271FFC53005F4062 /* InterstitialViewController.swift */,
 				DEC81AED2A55ADEC008FE935 /* InterstitialAdViewController.swift */,
 			);
 			path = Interstitial;
@@ -374,9 +366,7 @@
 		147B0BCA27200CF3005F4062 /* Native */ = {
 			isa = PBXGroup;
 			children = (
-				147B0BCE27200D14005F4062 /* CustomNativeViewController.swift */,
 				DEC81AE12A53C840008FE935 /* NativeViewController.swift */,
-				14033FC32720598D00A24D5E /* TemplateNativeViewController.swift */,
 				DE0C2CBD2A65760900A84D00 /* NativeTemplateViewController.swift */,
 				DE0C2CBF2A66245700A84D00 /* NativeCustomViewController.swift */,
 				DE0C2CC12A671FF500A84D00 /* NativeCustomAdView.swift */,
@@ -387,7 +377,6 @@
 		147B0BD327200E62005F4062 /* Banner */ = {
 			isa = PBXGroup;
 			children = (
-				147B0BD427200E75005F4062 /* BannerViewController.swift */,
 				DEC81AE52A54D5A3008FE935 /* StickyBannerViewController.swift */,
 				DEC81AE72A54D8DE008FE935 /* InlineBannerViewController.swift */,
 			);
@@ -397,7 +386,6 @@
 		147B0BD627200F66005F4062 /* Rewarded */ = {
 			isa = PBXGroup;
 			children = (
-				147B0BD727200FCE005F4062 /* RewardedViewController.swift */,
 				DEC81AEB2A55A2F6008FE935 /* RewardedAdViewController.swift */,
 			);
 			path = Rewarded;
@@ -463,6 +451,14 @@
 				9722EABB876EC1FBC865DDBE /* Pods-YandexMobileAdsExample.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F7D8B4D12A97B3F800E7A40D /* AppOpenAd */ = {
+			isa = PBXGroup;
+			children = (
+				F7D8B4D22A97B41F00E7A40D /* AppOpenAdViewController.swift */,
+			);
+			path = AppOpenAd;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -581,19 +577,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14033FAE2720457800A24D5E /* InstreamViewController.swift in Sources */,
 				14033FB42720457800A24D5E /* LinkedList.swift in Sources */,
 				14033F7D27202A5800A24D5E /* AdMobInterstitialViewController.swift in Sources */,
 				1474FC1E2721A4E500276688 /* GDPRUserConsentManager.swift in Sources */,
 				14033FB32720457800A24D5E /* LRUCache.swift in Sources */,
 				14033FB22720457800A24D5E /* AdPlayer.swift in Sources */,
 				DEC81AE82A54D8DE008FE935 /* InlineBannerViewController.swift in Sources */,
-				14033FC22720457800A24D5E /* InstreamInrollViewController.swift in Sources */,
 				147B0BDD27201213005F4062 /* MobileMediationBannerViewController.swift in Sources */,
 				14033FC12720457800A24D5E /* InrollsPlaybackController.swift in Sources */,
-				14033FC42720598D00A24D5E /* TemplateNativeViewController.swift in Sources */,
+				DE6D740C2A740E080024DA8F /* InstreamInrollsViewController.swift in Sources */,
 				DEC81AE42A53C945008FE935 /* NavigationScreenDataSource.swift in Sources */,
-				147B0BC9271FFC53005F4062 /* InterstitialViewController.swift in Sources */,
 				46C354A0282560FE00832C7C /* IronSourceRewardedViewController.swift in Sources */,
 				14033FB72720457800A24D5E /* VideoAVPlayer.swift in Sources */,
 				14033F8927202CA800A24D5E /* AdMobRewardedViewController.swift in Sources */,
@@ -602,7 +595,6 @@
 				14033FB52720457800A24D5E /* ReusablePlayer.swift in Sources */,
 				DEC81ADA2A53A89B008FE935 /* YandexAdsViewController.swift in Sources */,
 				DE0C2CC02A66245700A84D00 /* NativeCustomViewController.swift in Sources */,
-				147B0BD827200FCE005F4062 /* RewardedViewController.swift in Sources */,
 				DEC81AEE2A55ADEC008FE935 /* InterstitialAdViewController.swift in Sources */,
 				14033F6527201E2700A24D5E /* MobileMediationNativeViewController.swift in Sources */,
 				1499318B2722CD44005D2E87 /* AdFoxInterstitialViewController.swift in Sources */,
@@ -616,8 +608,10 @@
 				14033FB62720457800A24D5E /* VideoPlayerProvider.swift in Sources */,
 				DEC81ADE2A53BE28008FE935 /* InstreamListViewController.swift in Sources */,
 				1474FC222721A4E500276688 /* SettingsViewController.swift in Sources */,
+				F7D8B4D32A97B41F00E7A40D /* AppOpenAdViewController.swift in Sources */,
 				DEC81AE22A53C840008FE935 /* NativeViewController.swift in Sources */,
 				46C354A2282560FE00832C7C /* IronSourceManager.swift in Sources */,
+				DE6D740A2A740DF30024DA8F /* InstreamSingleViewController.swift in Sources */,
 				14033FBA2720457800A24D5E /* PlayerView.swift in Sources */,
 				149931882722C423005D2E87 /* AdFoxBannerViewController.swift in Sources */,
 				14033FBC2720457800A24D5E /* VideoPlayerVisibilityTracker.swift in Sources */,
@@ -636,11 +630,9 @@
 				14033F7A272028E100A24D5E /* AdMobBannerViewController.swift in Sources */,
 				46C354A1282560FE00832C7C /* IronSourceInterstitialViewController.swift in Sources */,
 				1474FC212721A4E500276688 /* GDPRDDialogViewController.swift in Sources */,
-				147B0BD227200D14005F4062 /* CustomNativeViewController.swift in Sources */,
 				14033FBE2720457800A24D5E /* InstreamAdBinderToastDelegate.swift in Sources */,
 				DE0C2CC22A671FF500A84D00 /* NativeCustomAdView.swift in Sources */,
 				147B0BCF27200D14005F4062 /* StarRatingView.swift in Sources */,
-				147B0BD527200E75005F4062 /* BannerViewController.swift in Sources */,
 				14033FB82720457800A24D5E /* ContentPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
