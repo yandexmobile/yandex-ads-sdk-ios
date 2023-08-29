@@ -59,6 +59,8 @@ class AdMobRewardedViewController: UIViewController {
         let alertController = UIAlertController(title: "Reward", message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         presentedViewController?.present(alertController, animated: true, completion: nil)
+
+        showButton.isEnabled = false
     }
 }
 

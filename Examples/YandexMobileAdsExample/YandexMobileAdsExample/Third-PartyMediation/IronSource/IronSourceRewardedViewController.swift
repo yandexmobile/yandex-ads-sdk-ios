@@ -13,9 +13,10 @@ class IronSourceRewardedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        IronSource.setLevelPlayRewardedVideoManualDelegate(self)
         IronSourceManager.shared.initializeSDK()
+        IronSource.setLevelPlayRewardedVideoManualDelegate(self)
     }
+
 
     @IBAction func loadAd(_ sender: UIButton) {
         showButton.isEnabled = false
@@ -24,6 +25,7 @@ class IronSourceRewardedViewController: UIViewController {
 
     @IBAction func showAd(_ sender: UIButton) {
         IronSource.showRewardedVideo(with: self)
+        showButton.isEnabled = false
     }
 }
 

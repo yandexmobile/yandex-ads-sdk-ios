@@ -12,6 +12,7 @@ enum YandexAdsCellModel: NavigationScreenDataSource, CaseIterable {
     case inlineBanner
     case interstitial
     case rewarded
+    case appOpenAd
     case native
     case instream
 
@@ -25,6 +26,8 @@ enum YandexAdsCellModel: NavigationScreenDataSource, CaseIterable {
             return InterstitialAdViewController()
         case .rewarded:
             return RewardedAdViewController()
+        case .appOpenAd:
+            return AppOpenAdController()
         case .native:
             return NativeViewController()
         case .instream:

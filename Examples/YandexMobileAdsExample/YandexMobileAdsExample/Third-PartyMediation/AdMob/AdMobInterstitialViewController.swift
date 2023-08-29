@@ -45,6 +45,7 @@ class AdMobInterstitialViewController: UIViewController {
 
     @IBAction func showAd(_: UIButton) {
         interstitial?.present(fromRootViewController: self)
+        showButton.isEnabled = false
     }
 }
 
