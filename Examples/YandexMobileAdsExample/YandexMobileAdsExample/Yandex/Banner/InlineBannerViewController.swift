@@ -9,7 +9,8 @@ import YandexMobileAds
 
 final class InlineBannerViewController: UIViewController {
     private lazy var adView: YMAAdView = {
-        let adSize = YMAAdSize.inlineSize(withWidth: 320, maxHeight: 320)
+        let adSize = YMABannerAdSize.inlineSize(withWidth: 320, maxHeight: 320)
+        
         // Replace demo demo-banner-yandex with actual Ad Unit ID
         let adView = YMAAdView(adUnitID: "demo-banner-yandex", adSize: adSize)
         adView.delegate = self

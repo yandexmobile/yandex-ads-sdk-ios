@@ -8,11 +8,11 @@
 import YandexMobileAds
 
 final class RewardedAdViewController: UIViewController {
-    private lazy var rewardedAd: YMARewardedAd = {
-        // Replace demo-rewarded-yandex with actual Ad Unit ID
-        let rewardedAd = YMARewardedAd(adUnitID: "demo-rewarded-yandex")
-        rewardedAd.delegate = self
-        return rewardedAd
+    private var rewardedAd: YMARewardedAd?
+    private lazy var rewardedAdLoader: YMARewardedAdLoader = {
+        let loader = YMARewardedAdLoader()
+        loader.delegate = self
+        return loader
     }()
 
     private lazy var presentButton: UIButton = {
@@ -20,7 +20,8 @@ final class RewardedAdViewController: UIViewController {
             configuration: .tinted(),
             primaryAction: UIAction(title: "Present ad") { [weak self] _ in
                 guard let self else { return }
-                self.rewardedAd.present(from: self)
+                self.rewardedAd?.show(from: self)
+                self.presentButton.isEnabled = false
             }
         )
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -33,7 +34,12 @@ final class RewardedAdViewController: UIViewController {
         let button = UIButton(
             configuration: .tinted(),
             primaryAction: UIAction(title: "Load ad") { [weak self] _ in
-                self?.rewardedAd.load()
+                guard let self else { return }
+
+                // Replace demo-rewarded-yandex with actual Ad Unit ID
+                let configuration = YMAAdRequestConfiguration(adUnitID: "demo-rewarded-yandex")
+                self.rewardedAdLoader.loadAd(with: configuration)
+
             }
         )
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -41,22 +47,15 @@ final class RewardedAdViewController: UIViewController {
         return button
     }()
 
+    private var messageDescription: String {
+        "Rewarded Ad with Unit ID: \(String(describing: rewardedAd?.adInfo?.adUnitId))"
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         addSubviews()
         setupConstraints()
-    }
-
-    // MARK: - Ad
-
-    private func giveReward(_ reward: YMAReward) {
-        let alertController = UIAlertController(
-            title: "Reward",
-            message: "Rewarded ad did reward: \(reward.amount) \(reward.type)",
-            preferredStyle: .alert)
-        alertController.addAction(.init(title: "Ok", style: .default))
-        presentedViewController?.present(alertController, animated: true, completion: nil)
     }
 
     // MARK: - UI
@@ -82,54 +81,51 @@ final class RewardedAdViewController: UIViewController {
     }
 }
 
+// MARK: - YMARewardedAdLoaderDelegate
+
+extension RewardedAdViewController: YMARewardedAdLoaderDelegate {
+    func rewardedAdLoader(_ adLoader: YMARewardedAdLoader, didLoad rewardedAd: YMARewardedAd) {
+        self.rewardedAd = rewardedAd
+        self.rewardedAd.delegate = self
+        presentButton.isEnabled = true
+        print("\(messageDescription)) loaded")
+    }
+
+    func rewardedAdLoader(_ adLoader: YMARewardedAdLoader, didFailToLoadWithError error: YMAAdRequestError) {
+        let id = error.adUnitId
+        let error = error.error
+        print("Loading failed for Ad with Unit ID: \(String(describing: id)). Error: \(String(describing: error))")
+    }
+}
+
+// MARK: - YMARewardedAdDelegate
+
 extension RewardedAdViewController: YMARewardedAdDelegate {
     func rewardedAd(_ rewardedAd: YMARewardedAd, didReward reward: YMAReward) {
-        print(#function)
-        giveReward(reward)
+        let message = "\(messageDescription) did reward: \(reward.amount) \(reward.type)"
+        let alertController = UIAlertController(title: "Reward", message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.cancel, handler: nil))
+        presentedViewController?.present(alertController, animated: true, completion: nil)
+        print(message)
     }
 
-    func rewardedAdDidLoad(_ rewardedAd: YMARewardedAd) {
-        print(#function)
-        presentButton.isEnabled = true
+    func rewardedAd(_ rewardedAd: YMARewardedAd, didFailToShowWithError error: Error) {
+        print("\(messageDescription) failed to show. Error: \(error)")
     }
 
-    func rewardedAdDidFail(toLoad rewardedAd: YMARewardedAd, error: Error) {
-        print(#function + "Error: \(error)")
+    func rewardedAdDidShow(_ rewardedAd: YMARewardedAd) {
+        print("\(messageDescription) did show")
+    }
+
+    func rewardedAdDidDismiss(_ rewardedAd: YMARewardedAd) {
+        print("\(messageDescription) did dismiss")
     }
 
     func rewardedAdDidClick(_ rewardedAd: YMARewardedAd) {
-        print(#function)
+        print("\(messageDescription) did click")
     }
 
     func rewardedAd(_ rewardedAd: YMARewardedAd, didTrackImpressionWith impressionData: YMAImpressionData?) {
-        print(#function)
-    }
-
-    func rewardedAdWillLeaveApplication(_ rewardedAd: YMARewardedAd) {
-        print(#function)
-    }
-
-    func rewardedAdDidFail(toPresent rewardedAd: YMARewardedAd, error: Error) {
-        print(#function + "Error: \(error)")
-    }
-
-    func rewardedAdWillAppear(_ rewardedAd: YMARewardedAd) {
-        print(#function)
-    }
-
-    func rewardedAdDidAppear(_ rewardedAd: YMARewardedAd) {
-        print(#function)
-    }
-
-    func rewardedAdWillDisappear(_ rewardedAd: YMARewardedAd) {
-        print(#function)
-    }
-
-    func rewardedAdDidDisappear(_ rewardedAd: YMARewardedAd) {
-        print(#function)
-    }
-
-    func rewardedAd(_ rewardedAd: YMARewardedAd, willPresentScreen viewController: UIViewController?) {
-        print(#function)
+        print("\(messageDescription) did track impression")
     }
 }

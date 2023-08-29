@@ -14,9 +14,9 @@ enum InstreamListCellModel: NavigationScreenDataSource, CaseIterable {
     var destinationViewController: UIViewController {
         switch self {
         case .singleInstream:
-            return InstreamViewController()
+            return InstreamSingleViewController()
         case .inroll:
-            return InstreamInrollViewController()
+            return InstreamInrollsViewController()
         }
     }
 

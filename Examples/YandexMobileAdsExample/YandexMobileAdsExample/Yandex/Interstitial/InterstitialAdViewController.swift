@@ -8,11 +8,11 @@
 import YandexMobileAds
 
 final class InterstitialAdViewController: UIViewController {
-    private lazy var interstitialAd: YMAInterstitialAd = {
-        // Replace demo-interstitial-yandex with actual Ad Unit ID
-        let ad = YMAInterstitialAd(adUnitID: "demo-interstitial-yandex")
-        ad.delegate = self
-        return ad
+    private var interstitialAd: YMAInterstitialAd?
+    private lazy var interstitialAdLoader: YMAInterstitialAdLoader = {
+        let loader = YMAInterstitialAdLoader()
+        loader.delegate = self
+        return loader
     }()
 
     private lazy var presentButton: UIButton = {
@@ -20,7 +20,8 @@ final class InterstitialAdViewController: UIViewController {
             configuration: .tinted(),
             primaryAction: UIAction(title: "Present ad") { [weak self] _ in
                 guard let self else { return }
-                self.interstitialAd.present(from: self)
+                self.interstitialAd?.show(from: self)
+                self.presentButton.isEnabled = false
             }
         )
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -33,13 +34,21 @@ final class InterstitialAdViewController: UIViewController {
         let button = UIButton(
             configuration: .tinted(),
             primaryAction: UIAction(title: "Load ad") { [weak self] _ in
-                self?.interstitialAd.load()
+                guard let self else { return }
+                
+                // Replace demo-interstitial-yandex with actual Ad Unit ID
+                let configuration = YMAAdRequestConfiguration(adUnitID: "demo-interstitial-yandex")
+                self.interstitialAdLoader.loadAd(with: configuration)
             }
         )
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Load ad", for: .normal)
         return button
     }()
+
+    private var messageDescription: String {
+        "Interstitial Ad with Unit ID: \(String(describing: interstitialAd?.adInfo?.adUnitId))"
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,49 +80,43 @@ final class InterstitialAdViewController: UIViewController {
     }
 }
 
-extension InterstitialAdViewController: YMAInterstitialAdDelegate {
-    func interstitialAdDidLoad(_ interstitialAd: YMAInterstitialAd) {
-        print(#function)
+// MARK: - YMAInterstitialAdLoaderDelegate
+
+extension InterstitialAdViewController: YMAInterstitialAdLoaderDelegate {
+    func interstitialAdLoader(_ adLoader: YMAInterstitialAdLoader, didLoad interstitialAd: YMAInterstitialAd) {
+        self.interstitialAd = interstitialAd
+        self.interstitialAd.delegate = self
         presentButton.isEnabled = true
+        print("\(messageDescription) loaded")
     }
 
-    func interstitialAdDidFail(toLoad interstitialAd: YMAInterstitialAd, error: Error) {
-        print(#function + "Error: \(error)")
+    func interstitialAdLoader(_ adLoader: YMAInterstitialAdLoader, didFailToLoadWithError error: YMAAdRequestError) {
+        let id = error.adUnitId
+        let error = error.error
+        print("Loading failed for Ad with Unit ID: \(String(describing: id)). Error: \(String(describing: error))")
+    }
+}
+
+// MARK: - YMARewardedAdDelegate
+
+extension InterstitialAdViewController: YMAInterstitialAdDelegate {
+    func interstitialAd(_ interstitialAd: YMAInterstitialAd, didFailToShowWithError error: Error) {
+        print("\(messageDescription) failed to show. Error: \(error)")
+    }
+
+    func interstitialAdDidShow(_ interstitialAd: YMAInterstitialAd) {
+        print("\(messageDescription) did show")
+    }
+
+    func interstitialAdDidDismiss(_ interstitialAd: YMAInterstitialAd) {
+        print("\(messageDescription) did dismiss")
     }
 
     func interstitialAdDidClick(_ interstitialAd: YMAInterstitialAd) {
-        print(#function)
+        print("\(messageDescription) did click")
     }
 
     func interstitialAd(_ interstitialAd: YMAInterstitialAd, didTrackImpressionWith impressionData: YMAImpressionData?) {
-        print(#function)
-    }
-
-    func interstitialAdWillLeaveApplication(_ interstitialAd: YMAInterstitialAd) {
-        print(#function)
-    }
-
-    func interstitialAdDidFail(toPresent interstitialAd: YMAInterstitialAd, error: Error) {
-        print(#function + "Error: \(error)")
-    }
-
-    func interstitialAdWillAppear(_ interstitialAd: YMAInterstitialAd) {
-        print(#function)
-    }
-
-    func interstitialAdDidAppear(_ interstitialAd: YMAInterstitialAd) {
-        print(#function)
-    }
-
-    func interstitialAdWillDisappear(_ interstitialAd: YMAInterstitialAd) {
-        print(#function)
-    }
-
-    func interstitialAdDidDisappear(_ interstitialAd: YMAInterstitialAd) {
-        print(#function)
-    }
-
-    func interstitialAd(_ interstitialAd: YMAInterstitialAd, willPresentScreen webBrowser: UIViewController?) {
-        print(#function)
+        print("\(messageDescription) did track impression")
     }
 }
