@@ -14,6 +14,11 @@ All notable changes to this project will be documented in this file.
 * Rewarded ad loading and ad show API decomposition
 * Removed deprecated methods `setAnalyticsReportingEnabled:(BOOL)enabled` and `flexibleSizeWithCGSize:(CGSize)size`
 
+# Version 5.9.1
+
+#### Added
+* Added improvements and fixes
+
 # Version 5.9.0
 
 #### Added
