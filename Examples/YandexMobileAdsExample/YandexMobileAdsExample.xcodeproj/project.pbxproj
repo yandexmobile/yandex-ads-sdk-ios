@@ -52,8 +52,8 @@
 		46C354A0282560FE00832C7C /* IronSourceRewardedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C3549D282560FE00832C7C /* IronSourceRewardedViewController.swift */; };
 		46C354A1282560FE00832C7C /* IronSourceInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C3549E282560FE00832C7C /* IronSourceInterstitialViewController.swift */; };
 		46C354A2282560FE00832C7C /* IronSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C3549F282560FE00832C7C /* IronSourceManager.swift */; };
-		70011FE6B068EC271A1051CB /* libPods-YandexMobileAdsExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A35F1D3A95F5CC1C05B0ED57 /* libPods-YandexMobileAdsExample.a */; };
 		B394AC8627A868DB00D92CD9 /* AdPlayerErrorConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B394AC8527A868DB00D92CD9 /* AdPlayerErrorConverter.swift */; };
+		D875A622E1AC90D14FC62770 /* libPods-YandexMobileAdsExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BF35ACE34CE63F32697C83A /* libPods-YandexMobileAdsExample.a */; };
 		DE0C2CBE2A65760900A84D00 /* NativeTemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C2CBD2A65760900A84D00 /* NativeTemplateViewController.swift */; };
 		DE0C2CC02A66245700A84D00 /* NativeCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C2CBF2A66245700A84D00 /* NativeCustomViewController.swift */; };
 		DE0C2CC22A671FF500A84D00 /* NativeCustomAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C2CC12A671FF500A84D00 /* NativeCustomAdView.swift */; };
@@ -69,6 +69,8 @@
 		DEC81AE82A54D8DE008FE935 /* InlineBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC81AE72A54D8DE008FE935 /* InlineBannerViewController.swift */; };
 		DEC81AEC2A55A2F6008FE935 /* RewardedAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC81AEB2A55A2F6008FE935 /* RewardedAdViewController.swift */; };
 		DEC81AEE2A55ADEC008FE935 /* InterstitialAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC81AED2A55ADEC008FE935 /* InterstitialAdViewController.swift */; };
+		F7613F2C2A9E384F0024A580 /* AppOpenAdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7613F2B2A9E384F0024A580 /* AppOpenAdController.swift */; };
+		F7613F2E2A9E3BF90024A580 /* AppOpenAdControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7613F2D2A9E3BF90024A580 /* AppOpenAdControllerDelegate.swift */; };
 		F7D8B4D32A97B41F00E7A40D /* AppOpenAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D8B4D22A97B41F00E7A40D /* AppOpenAdViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -118,11 +120,12 @@
 		149931832722BD94005D2E87 /* AdFoxNativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdFoxNativeViewController.swift; sourceTree = "<group>"; };
 		149931872722C423005D2E87 /* AdFoxBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdFoxBannerViewController.swift; sourceTree = "<group>"; };
 		1499318A2722CD44005D2E87 /* AdFoxInterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdFoxInterstitialViewController.swift; sourceTree = "<group>"; };
+		1E90A095D570D172ED5B43BF /* Pods-YandexMobileAdsExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsExample.release.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample.release.xcconfig"; sourceTree = "<group>"; };
 		46C3549D282560FE00832C7C /* IronSourceRewardedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IronSourceRewardedViewController.swift; sourceTree = "<group>"; };
 		46C3549E282560FE00832C7C /* IronSourceInterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IronSourceInterstitialViewController.swift; sourceTree = "<group>"; };
 		46C3549F282560FE00832C7C /* IronSourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IronSourceManager.swift; sourceTree = "<group>"; };
-		9722EABB876EC1FBC865DDBE /* Pods-YandexMobileAdsExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsExample.release.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample.release.xcconfig"; sourceTree = "<group>"; };
-		A35F1D3A95F5CC1C05B0ED57 /* libPods-YandexMobileAdsExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YandexMobileAdsExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D78122160DD5201E335FB9A /* Pods-YandexMobileAdsExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsExample.debug.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample.debug.xcconfig"; sourceTree = "<group>"; };
+		5BF35ACE34CE63F32697C83A /* libPods-YandexMobileAdsExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YandexMobileAdsExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B394AC8527A868DB00D92CD9 /* AdPlayerErrorConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdPlayerErrorConverter.swift; sourceTree = "<group>"; };
 		DE0C2CBD2A65760900A84D00 /* NativeTemplateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeTemplateViewController.swift; sourceTree = "<group>"; };
 		DE0C2CBF2A66245700A84D00 /* NativeCustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeCustomViewController.swift; sourceTree = "<group>"; };
@@ -139,7 +142,8 @@
 		DEC81AE72A54D8DE008FE935 /* InlineBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineBannerViewController.swift; sourceTree = "<group>"; };
 		DEC81AEB2A55A2F6008FE935 /* RewardedAdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardedAdViewController.swift; sourceTree = "<group>"; };
 		DEC81AED2A55ADEC008FE935 /* InterstitialAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialAdViewController.swift; sourceTree = "<group>"; };
-		EA2B7BC1DE6EF14C5B13E9F5 /* Pods-YandexMobileAdsExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsExample.debug.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample.debug.xcconfig"; sourceTree = "<group>"; };
+		F7613F2B2A9E384F0024A580 /* AppOpenAdController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOpenAdController.swift; sourceTree = "<group>"; };
+		F7613F2D2A9E3BF90024A580 /* AppOpenAdControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOpenAdControllerDelegate.swift; sourceTree = "<group>"; };
 		F7D8B4D22A97B41F00E7A40D /* AppOpenAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOpenAdViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,7 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70011FE6B068EC271A1051CB /* libPods-YandexMobileAdsExample.a in Frameworks */,
+				D875A622E1AC90D14FC62770 /* libPods-YandexMobileAdsExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,7 +303,7 @@
 				1467E351271EA91500DF104A /* YandexMobileAdsExample */,
 				1467E350271EA91500DF104A /* Products */,
 				79BD0E00D8B73D2FF9E77E93 /* Pods */,
-				2C60026A65F390098BEA71D6 /* Frameworks */,
+				5E36114E6565E861DBB72B75 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -426,14 +430,6 @@
 			path = Adfox;
 			sourceTree = "<group>";
 		};
-		2C60026A65F390098BEA71D6 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A35F1D3A95F5CC1C05B0ED57 /* libPods-YandexMobileAdsExample.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		46C3549C282560FE00832C7C /* IronSource */ = {
 			isa = PBXGroup;
 			children = (
@@ -444,11 +440,19 @@
 			path = IronSource;
 			sourceTree = "<group>";
 		};
+		5E36114E6565E861DBB72B75 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5BF35ACE34CE63F32697C83A /* libPods-YandexMobileAdsExample.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		79BD0E00D8B73D2FF9E77E93 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				EA2B7BC1DE6EF14C5B13E9F5 /* Pods-YandexMobileAdsExample.debug.xcconfig */,
-				9722EABB876EC1FBC865DDBE /* Pods-YandexMobileAdsExample.release.xcconfig */,
+				4D78122160DD5201E335FB9A /* Pods-YandexMobileAdsExample.debug.xcconfig */,
+				1E90A095D570D172ED5B43BF /* Pods-YandexMobileAdsExample.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -457,6 +461,8 @@
 			isa = PBXGroup;
 			children = (
 				F7D8B4D22A97B41F00E7A40D /* AppOpenAdViewController.swift */,
+				F7613F2B2A9E384F0024A580 /* AppOpenAdController.swift */,
+				F7613F2D2A9E3BF90024A580 /* AppOpenAdControllerDelegate.swift */,
 			);
 			path = AppOpenAd;
 			sourceTree = "<group>";
@@ -468,11 +474,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1467E379271EA91700DF104A /* Build configuration list for PBXNativeTarget "YandexMobileAdsExample" */;
 			buildPhases = (
-				0774874AE61A4B3DC4B5CCEC /* [CP] Check Pods Manifest.lock */,
+				12B2C11F8B81B215E323277A /* [CP] Check Pods Manifest.lock */,
 				1467E34B271EA91500DF104A /* Sources */,
 				1467E34C271EA91500DF104A /* Frameworks */,
 				1467E34D271EA91500DF104A /* Resources */,
-				5BE131876F56185647AB5025 /* [CP] Copy Pods Resources */,
+				E4E9AE0924D84CE9CC90A2AD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -531,7 +537,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0774874AE61A4B3DC4B5CCEC /* [CP] Check Pods Manifest.lock */ = {
+		12B2C11F8B81B215E323277A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -553,7 +559,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5BE131876F56185647AB5025 /* [CP] Copy Pods Resources */ = {
+		E4E9AE0924D84CE9CC90A2AD /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -588,6 +594,7 @@
 				DE6D740C2A740E080024DA8F /* InstreamInrollsViewController.swift in Sources */,
 				DEC81AE42A53C945008FE935 /* NavigationScreenDataSource.swift in Sources */,
 				46C354A0282560FE00832C7C /* IronSourceRewardedViewController.swift in Sources */,
+				F7613F2E2A9E3BF90024A580 /* AppOpenAdControllerDelegate.swift in Sources */,
 				14033FB72720457800A24D5E /* VideoAVPlayer.swift in Sources */,
 				14033F8927202CA800A24D5E /* AdMobRewardedViewController.swift in Sources */,
 				147B0BD127200D14005F4062 /* NativeAdView.swift in Sources */,
@@ -633,6 +640,7 @@
 				14033FBE2720457800A24D5E /* InstreamAdBinderToastDelegate.swift in Sources */,
 				DE0C2CC22A671FF500A84D00 /* NativeCustomAdView.swift in Sources */,
 				147B0BCF27200D14005F4062 /* StarRatingView.swift in Sources */,
+				F7613F2C2A9E384F0024A580 /* AppOpenAdController.swift in Sources */,
 				14033FB82720457800A24D5E /* ContentPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -777,7 +785,7 @@
 		};
 		1467E37A271EA91700DF104A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA2B7BC1DE6EF14C5B13E9F5 /* Pods-YandexMobileAdsExample.debug.xcconfig */;
+			baseConfigurationReference = 4D78122160DD5201E335FB9A /* Pods-YandexMobileAdsExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -805,7 +813,7 @@
 		};
 		1467E37B271EA91700DF104A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9722EABB876EC1FBC865DDBE /* Pods-YandexMobileAdsExample.release.xcconfig */;
+			baseConfigurationReference = 1E90A095D570D172ED5B43BF /* Pods-YandexMobileAdsExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
