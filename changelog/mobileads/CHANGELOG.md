@@ -5,14 +5,17 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 * App Open Ad format
-* Improvements and optimizations
+* New ad formats in rewarded
+* Ability to close rewarded ad before reward
 * Updated minimum supported version to iOS 13
+* Improvements and optimizations
 
 ### Breaking changes
 * New banner ad size API
 * Interstitial ad loading and ad show API decomposition
 * Rewarded ad loading and ad show API decomposition
 * Removed deprecated methods `setAnalyticsReportingEnabled:(BOOL)enabled` and `flexibleSizeWithCGSize:(CGSize)size`
+* See [migration guide](https://yandex.ru/support2/mobile-ads/ru/dev/ios/release/6-0-0-migration)
 
 # Version 5.9.1
 

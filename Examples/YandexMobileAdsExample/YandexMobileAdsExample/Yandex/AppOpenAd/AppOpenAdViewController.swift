@@ -7,43 +7,17 @@
 
 import YandexMobileAds
 
-final class AppOpenAdController: UIViewController {
-    private var appOpenAd: YMAAppOpenAd?
-    private lazy var interstitialAdLoader: YMAAppOpenAdLoader = {
-        let loader = YMAAppOpenAdLoader()
-        loader.delegate = self
-        return loader
-    }()
-
-    private lazy var showButton: UIButton = {
-        let button = UIButton(
-            configuration: .tinted(),
-            primaryAction: UIAction(title: "Show ad") { [weak self] _ in
-                guard let self else { return }
-                self.appOpenAd?.show(from: self)
-                self.showButton.isEnabled = false
-                self.statusLabel.text = "Ad is ready for presentation. Leave the application, then return to see the ad."
-            }
-        )
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Show ad", for: .normal)
-        button.isEnabled = false
-        return button
-    }()
-
+final class AppOpenAdViewController: UIViewController {
     private lazy var loadButton: UIButton = {
         let button = UIButton(
             configuration: .tinted(),
-            primaryAction: UIAction(title: "Load ad") { [weak self] _ in
+            primaryAction: UIAction(title: "Load Ad") { [weak self] _ in
                 guard let self else { return }
-
-                // Replace demo-appopenad-direct with actual Ad Unit ID
-                let configuration = YMAAdRequestConfiguration(adUnitID: "demo-appopenad-direct")
-                self.appOpenAdLoader.loadAd(with: configuration)
+                AppOpenAdController.shared.loadAd()
             }
         )
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Load ad", for: .normal)
+        button.setTitle("Load Ad", for: .normal)
         return button
     }()
 
@@ -56,86 +30,54 @@ final class AppOpenAdController: UIViewController {
         return label
     }()
 
-    private var messageDescription: String {
-        "AppOpenAd with Unit ID: \(String(describing: appOpenAd?.adInfo?.adUnitId))"
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         addSubviews()
         setupConstraints()
+        AppOpenAdController.shared.delegate = self
     }
 
     // MARK: - UI
 
     private func setupUI() {
         view.backgroundColor = .white
-        title = "AppOpenAd"
+        title = "App Open Ad"
     }
 
     private func addSubviews() {
         view.addSubview(loadButton)
-        view.addSubview(showButton)
         view.addSubview(statusLabel)
     }
 
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             loadButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
-            loadButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -20),
+            loadButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 
-            showButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
-            showButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 20),
-
-            statusLabel.topAnchor.constraint(equalTo: showButton.bottomAnchor, constant: 50),
+            statusLabel.topAnchor.constraint(equalTo: loadButton.bottomAnchor, constant: 50),
             statusLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             statusLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16)
         ])
     }
 }
 
-// MARK: - YMAAppOpenAdLoaderDelegate
+// MARK: - AppOpenAdControllerDelegate
 
-extension AppOpenAdController: YMAAppOpenAdLoaderDelegate {
-    func appOpenAdLoader(_ adLoader: YMAAppOpenAdLoader, didLoad appOpenAd: YMAAppOpenAd) {
-        self.appOpenAd = appOpenAd
-        self.appOpenAd.delegate = self
-        showButton.isEnabled = true
-        statusLabel.text = "Ad is loaded."
-        print("\(messageDescription) loaded")
+extension AppOpenAdViewController: AppOpenAdControllerDelegate {
+    func appOpenAdControllerDidLoad(_ appOpenAdController: AppOpenAdController) {
+        statusLabel.text = "Ad is ready for presentation. Leave the application, then return to see the ad."
     }
 
-    func appOpenAdLoader(_ adLoader: YMAAppOpenAdLoader, didFailToLoadWithError error: YMAAdRequestError) {
-        let id = error.adUnitId
-        let error = error.error
-        statusLabel.text = "Ad failed to load."
-        print("Loading failed for Ad with Unit ID: \(String(describing: id)). Error: \(String(describing: error))")
-    }
-}
-
-// MARK: - YMAAppOpenAdDelegate
-
-extension AppOpenAdController: YMAAppOpenAdDelegate {
-    func appOpenAd(_ appOpenAd: YMAAppOpenAd, didFailToShowWithError error: Error) {
-        statusLabel.text = "Ad failed to show."
-        print("\(messageDescription) failed to show. Error: \(error)")
-    }
-
-    func appOpenAdDidShow(_ appOpenAd: YMAAppOpenAd) {
-        print("\(messageDescription) did show")
-    }
-
-    func appOpenAdDidDismiss(_ appOpenAd: YMAAppOpenAd) {
+    func appOpenAdControllerDidDismiss(_ appOpenAdController: AppOpenAdController) {
         statusLabel.text = "Ad is not loaded."
-        print("\(messageDescription) did dismiss")
     }
 
-    func appOpenAdDidClick(_ appOpenAd: YMAAppOpenAd) {
-        print("\(messageDescription) did click")
+    func appOpenAdController(_ appOpenAdController: AppOpenAdController, didFailToLoadWithError error: Error) {
+        statusLabel.text = "Ad failed to load."
     }
 
-    func appOpenAd(_ appOpenAd: YMAAppOpenAd, didTrackImpressionWithData impressionData: YMAImpressionData?) {
-        print("\(messageDescription) did track impression")
+    func appOpenAdController(_ appOpenAdController: AppOpenAdController, didFailToShowWithError error: Error) {
+        statusLabel.text = "Ad failed to show."
     }
 }

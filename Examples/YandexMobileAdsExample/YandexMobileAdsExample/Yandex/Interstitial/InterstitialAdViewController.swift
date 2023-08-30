@@ -46,10 +46,6 @@ final class InterstitialAdViewController: UIViewController {
         return button
     }()
 
-    private var messageDescription: String {
-        "Interstitial Ad with Unit ID: \(String(describing: interstitialAd?.adInfo?.adUnitId))"
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -78,6 +74,10 @@ final class InterstitialAdViewController: UIViewController {
             presentButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 20)
         ])
     }
+
+    private func makeMessageDescription(_ interstitialAd: YMAInterstitialAd) -> String {
+        "Interstitial Ad with Unit ID: \(String(describing: interstitialAd.adInfo?.adUnitId))"
+    }
 }
 
 // MARK: - YMAInterstitialAdLoaderDelegate
@@ -85,9 +85,9 @@ final class InterstitialAdViewController: UIViewController {
 extension InterstitialAdViewController: YMAInterstitialAdLoaderDelegate {
     func interstitialAdLoader(_ adLoader: YMAInterstitialAdLoader, didLoad interstitialAd: YMAInterstitialAd) {
         self.interstitialAd = interstitialAd
-        self.interstitialAd.delegate = self
+        self.interstitialAd?.delegate = self
         presentButton.isEnabled = true
-        print("\(messageDescription) loaded")
+        print("\(makeMessageDescription(interstitialAd)) loaded")
     }
 
     func interstitialAdLoader(_ adLoader: YMAInterstitialAdLoader, didFailToLoadWithError error: YMAAdRequestError) {
@@ -101,22 +101,22 @@ extension InterstitialAdViewController: YMAInterstitialAdLoaderDelegate {
 
 extension InterstitialAdViewController: YMAInterstitialAdDelegate {
     func interstitialAd(_ interstitialAd: YMAInterstitialAd, didFailToShowWithError error: Error) {
-        print("\(messageDescription) failed to show. Error: \(error)")
+        print("\(makeMessageDescription(interstitialAd)) failed to show. Error: \(error)")
     }
 
     func interstitialAdDidShow(_ interstitialAd: YMAInterstitialAd) {
-        print("\(messageDescription) did show")
+        print("\(makeMessageDescription(interstitialAd)) did show")
     }
 
     func interstitialAdDidDismiss(_ interstitialAd: YMAInterstitialAd) {
-        print("\(messageDescription) did dismiss")
+        print("\(makeMessageDescription(interstitialAd)) did dismiss")
     }
 
     func interstitialAdDidClick(_ interstitialAd: YMAInterstitialAd) {
-        print("\(messageDescription) did click")
+        print("\(makeMessageDescription(interstitialAd)) did click")
     }
 
     func interstitialAd(_ interstitialAd: YMAInterstitialAd, didTrackImpressionWith impressionData: YMAImpressionData?) {
-        print("\(messageDescription) did track impression")
+        print("\(makeMessageDescription(interstitialAd)) did track impression")
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Version for iOS © 2015–2021 YANDEX
+ * Version for iOS © 2015–2023 YANDEX
  *
  * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
@@ -15,7 +15,7 @@ class AdMobNativeAdView: GADNativeAdView {
     @IBOutlet weak var reviewCountLabel: UILabel!
     @IBOutlet weak var ratingView: StarRatingView!
     @IBOutlet weak var faviconImageView: UIImageView!
-    
+
     private var aspectRatioConstraint: NSLayoutConstraint?
 
     func configureAssetViews() {
@@ -70,24 +70,24 @@ class AdMobNativeAdView: GADNativeAdView {
     }
 }
 
-extension AdMobNativeAdView: YMAAdMobCustomEventNativeAdView {
-    func nativeAgeLabel() -> UILabel! {
+extension AdMobNativeAdView: YandexAdMobCustomEventNativeAdView {
+    func nativeAgeLabel() -> UILabel? {
         return ageLabel
     }
 
-    func nativeFaviconImageView() -> UIImageView! {
+    func nativeFaviconImageView() -> UIImageView? {
         return faviconImageView
     }
 
-    func nativeRatingView() -> (UIView & YMARating)! {
+    func nativeRatingView() -> (UIView & YMARating)? {
         return ratingView
     }
 
-    func nativeReviewCountLabel() -> UILabel! {
+    func nativeReviewCountLabel() -> UILabel? {
         return reviewCountLabel
     }
 
-    func nativeWarningLabel() -> UILabel! {
+    func nativeWarningLabel() -> UILabel? {
         return warningLabel
     }
 }

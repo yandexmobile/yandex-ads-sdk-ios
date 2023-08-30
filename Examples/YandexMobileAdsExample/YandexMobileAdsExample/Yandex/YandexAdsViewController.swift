@@ -27,7 +27,7 @@ enum YandexAdsCellModel: NavigationScreenDataSource, CaseIterable {
         case .rewarded:
             return RewardedAdViewController()
         case .appOpenAd:
-            return AppOpenAdController()
+            return AppOpenAdViewController()
         case .native:
             return NativeViewController()
         case .instream:

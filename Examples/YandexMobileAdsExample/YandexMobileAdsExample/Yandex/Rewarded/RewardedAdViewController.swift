@@ -47,10 +47,6 @@ final class RewardedAdViewController: UIViewController {
         return button
     }()
 
-    private var messageDescription: String {
-        "Rewarded Ad with Unit ID: \(String(describing: rewardedAd?.adInfo?.adUnitId))"
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -79,6 +75,10 @@ final class RewardedAdViewController: UIViewController {
             presentButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 20)
         ])
     }
+
+    private func makeMessageDescription(_ rewardedAd: YMARewardedAd) -> String {
+        "Rewarded Ad with Unit ID: \(String(describing: rewardedAd.adInfo?.adUnitId))"
+    }
 }
 
 // MARK: - YMARewardedAdLoaderDelegate
@@ -86,9 +86,9 @@ final class RewardedAdViewController: UIViewController {
 extension RewardedAdViewController: YMARewardedAdLoaderDelegate {
     func rewardedAdLoader(_ adLoader: YMARewardedAdLoader, didLoad rewardedAd: YMARewardedAd) {
         self.rewardedAd = rewardedAd
-        self.rewardedAd.delegate = self
+        self.rewardedAd?.delegate = self
         presentButton.isEnabled = true
-        print("\(messageDescription)) loaded")
+        print("\(makeMessageDescription(rewardedAd))) loaded")
     }
 
     func rewardedAdLoader(_ adLoader: YMARewardedAdLoader, didFailToLoadWithError error: YMAAdRequestError) {
@@ -102,7 +102,7 @@ extension RewardedAdViewController: YMARewardedAdLoaderDelegate {
 
 extension RewardedAdViewController: YMARewardedAdDelegate {
     func rewardedAd(_ rewardedAd: YMARewardedAd, didReward reward: YMAReward) {
-        let message = "\(messageDescription) did reward: \(reward.amount) \(reward.type)"
+        let message = "\(makeMessageDescription(rewardedAd)) did reward: \(reward.amount) \(reward.type)"
         let alertController = UIAlertController(title: "Reward", message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.cancel, handler: nil))
         presentedViewController?.present(alertController, animated: true, completion: nil)
@@ -110,22 +110,22 @@ extension RewardedAdViewController: YMARewardedAdDelegate {
     }
 
     func rewardedAd(_ rewardedAd: YMARewardedAd, didFailToShowWithError error: Error) {
-        print("\(messageDescription) failed to show. Error: \(error)")
+        print("\(makeMessageDescription(rewardedAd)) failed to show. Error: \(error)")
     }
 
     func rewardedAdDidShow(_ rewardedAd: YMARewardedAd) {
-        print("\(messageDescription) did show")
+        print("\(makeMessageDescription(rewardedAd)) did show")
     }
 
     func rewardedAdDidDismiss(_ rewardedAd: YMARewardedAd) {
-        print("\(messageDescription) did dismiss")
+        print("\(makeMessageDescription(rewardedAd)) did dismiss")
     }
 
     func rewardedAdDidClick(_ rewardedAd: YMARewardedAd) {
-        print("\(messageDescription) did click")
+        print("\(makeMessageDescription(rewardedAd)) did click")
     }
 
     func rewardedAd(_ rewardedAd: YMARewardedAd, didTrackImpressionWith impressionData: YMAImpressionData?) {
-        print("\(messageDescription) did track impression")
+        print("\(makeMessageDescription(rewardedAd)) did track impression")
     }
 }
