@@ -16,18 +16,24 @@ private let myTargetAdUnitID = "demo-rewarded-mytarget"
 private let unityAdsAdUnitID = "demo-rewarded-unityads"
 private let chartboostAdUnitID = "demo-rewarded-chartboost"
 private let adColonyAdUnitID = "demo-rewarded-adcolony"
+private let bigoAdsAdUnitID = "demo-rewarded-bigoads"
+private let inMobiAdUnitID = "demo-rewarded-inmobi"
+private let startAppAdUnitID = "demo-rewarded-startapp"
 private let yandexAdUnitID = "demo-rewarded-yandex"
 
 class MobileMediationRewardedViewController: UIViewController {
     private let adUnitIDs = [
-        (adapter: "AdMob", adUnitID: adMobAdUnitID),
+        (adapter: "AdColony", adUnitID: adColonyAdUnitID),
         (adapter: "AppLovin", adUnitID: appLovinAdUnitID),
+        (adapter: "BigoAds", adUnitID: bigoAdsAdUnitID),
+        (adapter: "Chartboost", adUnitID: chartboostAdUnitID),
+        (adapter: "Google", adUnitID: adMobAdUnitID),
+        (adapter: "InMobi", adUnitID: inMobiAdUnitID),
         (adapter: "IronSource", adUnitID: ironSourceAdUnitID),
         (adapter: "Mintegral", adUnitID: mintegralAdUnitID),
         (adapter: "MyTarget", adUnitID: myTargetAdUnitID),
+        (adapter: "StartApp", adUnitID: startAppAdUnitID),
         (adapter: "UnityAds", adUnitID: unityAdsAdUnitID),
-        (adapter: "Chartboost", adUnitID: chartboostAdUnitID),
-        (adapter: "AdColony", adUnitID: adColonyAdUnitID),
         (adapter: "Yandex", adUnitID: yandexAdUnitID)
     ]
     private let rewardedAdLoader = YMARewardedAdLoader()

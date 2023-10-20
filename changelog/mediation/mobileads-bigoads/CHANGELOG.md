@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 4.0.4.0
+
+#### Added
+* Added support for BigoADS sdk version 4.0.4
+* Updated minimum supported BigoADS sdk version to 4.0.4
+* Updated minimum supported Yandex Mobile Ads SDK version to 6.1.0
+
 ## Version 4.0.2.0
 
 #### Added

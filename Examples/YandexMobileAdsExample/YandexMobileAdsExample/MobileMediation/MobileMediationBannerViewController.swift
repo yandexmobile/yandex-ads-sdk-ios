@@ -13,16 +13,22 @@ private let mintegralAdUnitID = "demo-banner-mintegral"
 private let myTargetAdUnitID = "demo-banner-mytarget"
 private let chartboostAdUnitID = "demo-banner-chartboost"
 private let adColonyAdUnitID = "demo-banner-adcolony"
+private let bigoAdsAdUnitID = "demo-banner-bigoads"
+private let inMobiAdsAdUnitID = "demo-banner-inmobi"
+private let startAppAdUnitID = "demo-banner-startapp"
 private let yandexAdUnitID = "demo-banner-yandex"
 
 class MobileMediationBannerViewController: UIViewController {
     
     private let adUnitIDs = [
-        (adapter: "AdMob", adUnitID: adMobAdUnitID),
+        (adapter: "AdColony", adUnitID: adColonyAdUnitID),
+        (adapter: "BigoAds", adUnitID: bigoAdsAdUnitID),
+        (adapter: "Chartboost", adUnitID: chartboostAdUnitID),
+        (adapter: "Google", adUnitID: adMobAdUnitID),
+        (adapter: "InMobi", adUnitID: inMobiAdsAdUnitID),
         (adapter: "Mintegral", adUnitID: mintegralAdUnitID),
         (adapter: "MyTarget", adUnitID: myTargetAdUnitID),
-        (adapter: "Chartboost", adUnitID: chartboostAdUnitID),
-        (adapter: "AdColony", adUnitID: adColonyAdUnitID),
+        (adapter: "StartApp", adUnitID: startAppAdUnitID),
         (adapter: "Yandex", adUnitID: yandexAdUnitID)
     ]
 
