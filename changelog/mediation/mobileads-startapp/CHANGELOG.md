@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 4.10.0.0
+
+#### Updated
+* Added support for StartApp sdk version 4.10.0
+* Updated minimum supported StartApp sdk version to 4.10.0
+* Updated minimum supported Yandex Mobile Ads SDK version to 6.1.0
+
 ## Version 4.7.3.0
 
 #### Updated
