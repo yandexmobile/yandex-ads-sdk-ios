@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+# Version 6.1.0
+
+### Added
+* Added support of CMP (Consent Management Platform)
+* Improved ads loading caching
+* Improvements and optimizations
+
 # Version 6.0.0
 
 ### Added

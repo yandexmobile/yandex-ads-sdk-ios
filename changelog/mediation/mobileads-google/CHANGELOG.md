@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 10.12.0.0
+
+#### Added
+* Added support for AdMob SDK version 10.12.0
+* Updated minimum supported AdMob SDK version to 10.12.0
+* Updated minimum supported Yandex Mobile Ads SDK version to 6.1.0
+
 ## Version 10.9.0.0
 
 #### Added

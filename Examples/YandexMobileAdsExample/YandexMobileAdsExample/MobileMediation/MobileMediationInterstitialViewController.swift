@@ -16,18 +16,24 @@ private let myTargetAdUnitID = "demo-interstitial-mytarget"
 private let unityAdsAdUnitID = "demo-interstitial-unityads"
 private let chartboostAdUnitID = "demo-interstitial-chartboost"
 private let adColonyAdUnitID = "demo-interstitial-adcolony"
+private let bigoAdsAdUnitID = "demo-interstitial-bigoads"
+private let inMobiAdUnitID = "demo-interstitial-inmobi"
+private let startAppAdUnitID = "demo-interstitial-startapp"
 private let yandexAdUnitID = "demo-interstitial-yandex"
 
 class MobileMediationInterstitialViewController: UIViewController {
     private let adUnitIDs = [
-        (adapter: "AdMob", adUnitID: adMobAdUnitID),
+        (adapter: "AdColony", adUnitID: adColonyAdUnitID),
         (adapter: "AppLovin", adUnitID: appLovinAdUnitID),
+        (adapter: "BigoAds", adUnitID: bigoAdsAdUnitID),
+        (adapter: "Chartboost", adUnitID: chartboostAdUnitID),
+        (adapter: "Google", adUnitID: adMobAdUnitID),
+        (adapter: "InMobi", adUnitID: inMobiAdUnitID),
         (adapter: "IronSource", adUnitID: ironSourceAdUnitID),
         (adapter: "Mintegral", adUnitID: mintegralAdUnitID),
         (adapter: "MyTarget", adUnitID: myTargetAdUnitID),
+        (adapter: "StartApp", adUnitID: startAppAdUnitID),
         (adapter: "UnityAds", adUnitID: unityAdsAdUnitID),
-        (adapter: "Chartboost", adUnitID: chartboostAdUnitID),
-        (adapter: "AdColony", adUnitID: adColonyAdUnitID),
         (adapter: "Yandex", adUnitID: yandexAdUnitID)
     ]
     private let interstitialAdLoader = YMAInterstitialAdLoader()
