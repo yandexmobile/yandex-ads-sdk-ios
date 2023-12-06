@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 10.5.5.3
+
+#### Added
+* Updated minimum supported Yandex Mobile Ads SDK version to 6.2.0
+
 ## Version 10.5.5.2
 
 #### Added
