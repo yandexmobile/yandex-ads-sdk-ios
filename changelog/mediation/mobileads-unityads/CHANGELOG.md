@@ -1,12 +1,19 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## Version 4.9.1.0
+
+#### Updated
+* Added support for UnityAds SDK version 4.9.1
+* Updated minimum supported UnityAds SDK version to 4.9.1
+* Updated minimum supported Yandex Mobile Ads SDK version to 6.2.0
+
 ## Version 4.9.0.0
 
 #### Updated
 * Added support for UnityAds SDK version 4.9.0
 * Updated minimum supported UnityAds SDK version to 4.9.0
-* Updated minimum supported UnityAds SDK version to 6.1.0
+* Updated minimum supported Yandex Mobile Ads SDK version to 6.1.0
 
 ## Version 4.8.0.1
 
@@ -18,7 +25,7 @@ All notable changes to this project will be documented in this file.
 #### Updated
 * Added support for UnityAds SDK version 4.8.0
 * Updated minimum supported UnityAds SDK version to 4.8.9
-* Updated minimum supported UnityAds SDK version to 5.9.0
+* Updated minimum supported Yandex Mobile Ads SDK version to 5.9.0
 
 ## Version 4.7.1.1
 
@@ -30,53 +37,53 @@ All notable changes to this project will be documented in this file.
 #### Updated
 * Added support for UnityAds SDK version 4.7.1
 * Updated minimum supported UnityAds SDK version to 4.7.1
-* Updated minimum supported UnityAds SDK version to 5.7.0
+* Updated minimum supported Yandex Mobile Ads SDK version to 5.7.0
 
 ## Version 4.6.1.0
 
 #### Updated
 * Added support for UnityAds SDK version 4.6.1
 * Updated minimum supported UnityAds SDK version to 4.6.1
-* Updated minimum supported UnityAds SDK version to 5.6.0
+* Updated minimum supported Yandex Mobile Ads SDK version to 5.6.0
 
 ## Version 4.5.0.0
 
 #### Updated
 * Added support for UnityAds SDK version 4.5.0
 * Updated minimum supported UnityAds SDK version to 4.5.0
-* Updated minimum supported UnityAds SDK version to 5.5.0
+* Updated minimum supported Yandex Mobile Ads SDK version to 5.5.0
 
 ## Version 4.4.1.1
 
 #### Updated
-* Updated minimum supported UnityAds SDK version to 5.4.0
+* Updated minimum supported Yandex Mobile Ads SDK version to 5.4.0
 
 ## Version 4.4.1.0
 
 #### Updated
 * Added support for UnityAds SDK version 4.4.1
 * Updated minimum supported UnityAds SDK version to 4.4.1
-* Updated minimum supported UnityAds SDK version to 5.3.0
+* Updated minimum supported Yandex Mobile Ads SDK version to 5.3.0
 
 ## Version 4.3.0.0
 
 #### Updated
 * Added support for UnityAds SDK version 4.3.0
 * Updated minimum supported UnityAds SDK version to 4.3.0
-* Updated minimum supported UnityAds SDK version to 5.2.0
+* Updated minimum supported Yandex Mobile Ads SDK version to 5.2.0
 
 ## Version 4.2.1.0
 
 #### Updated
 * Added support for UnityAds SDK version 4.2.1
 * Updated minimum supported UnityAds SDK version to 4.2.1
-* Updated minimum supported UnityAds SDK version to 5.1.0
+* Updated minimum supported Yandex Mobile Ads SDK version to 5.1.0
 
 ## Version 4.1.0.0
 
 #### Updated
 * Added support for UnityAds SDK version 4.1.0
-* Updated minimum supported UnityAds SDK version to 4.1.0
+* Updated minimum supported Yandex Mobile Ads SDK version to 4.1.0
 
 ## Version 4.0.0.0
 
