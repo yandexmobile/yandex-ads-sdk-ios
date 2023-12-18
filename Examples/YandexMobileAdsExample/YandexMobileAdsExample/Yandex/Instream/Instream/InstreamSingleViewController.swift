@@ -24,6 +24,7 @@ final class InstreamSingleViewController: UIViewController {
         )
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Load", for: .normal)
+        button.accessibilityIdentifier = CommonAccessibility.loadButton
         return button
     }()
 
@@ -36,6 +37,7 @@ final class InstreamSingleViewController: UIViewController {
         )
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Prepare ad", for: .normal)
+        button.accessibilityIdentifier = YandexInstreamAccessibility.prepareButton
         return button
     }()
 
@@ -49,6 +51,7 @@ final class InstreamSingleViewController: UIViewController {
         )
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Present ad", for: .normal)
+        button.accessibilityIdentifier = CommonAccessibility.presentButton
         return button
     }()
 
@@ -91,6 +94,14 @@ final class InstreamSingleViewController: UIViewController {
         adPlayer.bind(to: playerView)
         return adPlayer
     }()
+    
+    private lazy var stateLabel: UILabel = {
+        let label = UILabel()
+        label.accessibilityIdentifier = CommonAccessibility.stateLabel
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
 
     private var ad: InstreamAd?
     private var adBinder: InstreamAdBinder?
@@ -110,7 +121,7 @@ final class InstreamSingleViewController: UIViewController {
 
     private func loadAd() {
         // Replace demo-instream-yandex with actual Ad Unit ID
-        let configuration = InstreamAdRequestConfiguration(pageID: "demo-instream-yandex")
+        let configuration = InstreamAdRequestConfiguration(pageID: "demo-instream-vmap-yandex")
         loader.loadInstreamAd(configuration: configuration)
     }
 
@@ -126,6 +137,7 @@ final class InstreamSingleViewController: UIViewController {
         buttonsStack.addArrangedSubview(loadButton)
         buttonsStack.addArrangedSubview(prepareButton)
         buttonsStack.addArrangedSubview(presentButton)
+        view.addSubview(stateLabel)
         view.addSubview(instreamAdView)
         instreamAdView.addSubview(playerView)
     }
@@ -133,10 +145,7 @@ final class InstreamSingleViewController: UIViewController {
     private func setupConstraints() {
         let layoutGuide = view.safeAreaLayoutGuide
         NSLayoutConstraint.activate([
-            buttonsStack.topAnchor.constraint(
-                equalTo: view.topAnchor,
-                constant: 100
-            ),
+            buttonsStack.topAnchor.constraint(equalTo: layoutGuide.topAnchor, constant: 10),
             buttonsStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 
             instreamAdView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor),
@@ -150,6 +159,10 @@ final class InstreamSingleViewController: UIViewController {
             playerView.trailingAnchor.constraint(equalTo: instreamAdView.trailingAnchor),
             playerView.bottomAnchor.constraint(equalTo: instreamAdView.bottomAnchor),
             playerView.topAnchor.constraint(equalTo: instreamAdView.topAnchor),
+            
+            stateLabel.topAnchor.constraint(equalTo: buttonsStack.bottomAnchor, constant: 10),
+            stateLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            stateLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
         ])
     }
 }
@@ -162,10 +175,12 @@ extension InstreamSingleViewController: InstreamAdLoaderDelegate {
         self.ad = ad
         adBinder = InstreamAdBinder(ad: ad, adPlayer: adPlayer, videoPlayer: contentPlayer)
         adBinder?.delegate = self
+        stateLabel.text = StateUtils.loaded()
     }
 
     func instreamAdLoader(_ instreamAdLoader: InstreamAdLoader, didFailToLoad reason: String) {
         print(#function + "Error: \(reason)")
+        stateLabel.text = StateUtils.loadError(reason)
     }
 }
 
@@ -184,6 +199,7 @@ extension InstreamSingleViewController: InstreamAdBinderDelegate {
         didPrepare instreamAd: InstreamAd
     ) {
         print(#function)
+        stateLabel.text = StateUtils.prepared()
     }
 
     func instreamAdBinder(

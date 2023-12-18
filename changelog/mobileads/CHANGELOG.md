@@ -1,126 +1,155 @@
 # Change Log
+
 All notable changes to this project will be documented in this file.
 
-# Version 6.2.0
+## Version 6.3.0
 
 ### Added
+
 * Improvements and fixes
 
-# Version 6.1.0
+## Version 6.2.0
 
 ### Added
-* Added support of CMP (Consent Management Platform)
-* Improved ads loading caching
-* Improvements and optimizations
 
-# Version 6.0.0
+* Improvements and fixes
+
+## Version 6.1.0
 
 ### Added
+
 * App Open Ad format
 * New ad formats in rewarded
 * Ability to close rewarded ad before reward
 * Updated minimum supported version to iOS 13
 * Improvements and optimizations
 
+## Version 6.0.0
+
+### Added
+
+* App Open Ad format
+* Improvements and optimizations
+* Updated minimum supported version to iOS 13
+
 ### Breaking changes
+
 * New banner ad size API
 * Interstitial ad loading and ad show API decomposition
 * Rewarded ad loading and ad show API decomposition
 * Removed deprecated methods `setAnalyticsReportingEnabled:(BOOL)enabled` and `flexibleSizeWithCGSize:(CGSize)size`
 * See [migration guide](https://yandex.ru/support2/mobile-ads/ru/dev/ios/release/6-0-0-migration)
 
-# Version 5.9.1
+## Version 5.9.1
 
-#### Added
+### Added
+
 * Added improvements and fixes
 
-# Version 5.9.0
+## Version 5.9.0
 
-#### Added
+### Added
+
 * Added improvements and fixes
 
-# Version 5.8.0
+## Version 5.8.0
 
-#### Added
+### Added
+
 * Added SKOverlay support
 * Added improvements and fixes
 
-# Version 5.7.0
+## Version 5.7.0
 
-#### Added
+### Added
+
 * Added improvements and fixes
 * Updated integration logs
 
-# Version 5.6.0
+## Version 5.6.0
 
-#### Added
+### Added
+
 * Added improvements and fixes
 
-# Version 5.5.0
+## Version 5.5.0
 
-#### Added
+### Added
+
 * Added improvements and fixes
 
-# Version 5.4.0
+## Version 5.4.0
 
-#### Added
+### Added
+
 * Added improvements and fixes
 
-# Version 5.3.1
+## Version 5.3.1
 
-#### Added
+### Added
+
 * Added improvements and fixes
 
-# Version 5.3.0
+## Version 5.3.0
 
-#### Added
+### Added
+
 * Updated minimum supported version to iOS 12.
 * Added improvements and fixes
 
-# Version 5.2.1
+## Version 5.2.1
 
-#### Fixed
+### Fixed
+
 * Fixed high CPU consumption
 * Fixed native templates presentation
 
-# Version 5.2.0
+## Version 5.2.0
 
-#### Added
+### Added
+
 * Added fixes
 * Improved the speed of loading and displaying native ads
 * Improved the speed of loading and displaying video ads
 
-# Version 5.1.0
+## Version 5.1.0
 
-#### Added
+### Added
+
 * Added improvements and fixes
 
-#### Deprecated
+### Deprecated
+
 * Deprecated `fixedSizeWithCGSize` init in `YMABannerAdSize`
 
-# Version 5.0.2
+## Version 5.0.2
 
-#### Added
+### Added
+
 * Added improvements and fixes
 
-# Version 5.0.1
+## Version 5.0.1
 
-#### Added
+### Added
+
 * Added improvements and fixes
 
-# Version 5.0.0
+## Version 5.0.0
 
-#### Added
+### Added
+
 * Added improvements and fixes
 
-# Version 5.0.0-alpha.2
+## Version 5.0.0-alpha.2
 
-#### Added
+### Added
+
 * Added improvements and fixes
 
-# Version 5.0.0-alpha.1
+## Version 5.0.0-alpha.1
 
-#### Added
+### Added
+
 * Updated minimum supported version to iOS 10.
 * Migrated to XCFramework
 * Updated minimum supported AppMetrica SDK version to 4.0.0
@@ -128,72 +157,85 @@ All notable changes to this project will be documented in this file.
 * Added click callback
 * Renamed blockID to adUnitID
 
-#### Removed
+### Removed
+
 * Removed old methods for setting banner ad size
 
-# Version 4.4.3
+## Version 4.4.3
 
-#### Added
+### Added
+
 * Added improvements and fixes
 
-# Version 4.4.2
+## Version 4.4.2
 
-#### Added
+### Added
+
 * Added possibility to configure audio session
 * Added improvements and fixes
 
-# Version 4.4.1
+## Version 4.4.1
 
-#### Added
+### Added
+
 * Added improvements and fixes
 
-# Version 4.4.0
+## Version 4.4.0
 
-#### Added
+### Added
+
 * Added support for Xcode 13
 * Added support for SKAdNetwork 3.0
 * Added improvements for fullscreen designs
 * Added improvements and fixes
 
-# Version 4.3.1
+## Version 4.3.1
 
-#### Added
+### Added
+
 * Added improvements and fixes
 
-# Version 4.3.0
+## Version 4.3.0
 
-#### Added
+### Added
+
 * Added support for delayed close button in interstitial ads
 * Added improvements and fixes
 
-# Version 4.2.0
+## Version 4.2.0
 
-#### Added
+### Added
+
 * Added improvements and fixes
 
-# Version 4.1.2
+## Version 4.1.2
 
-#### Fixed
+### Fixed
+
 * Fixed support for SKAdNetwork
 
-# Version 4.1.1
+## Version 4.1.1
 
-#### Added
+### Added
+
 * Added improvements and fixes
 
-# Version 4.1.0
+## Version 4.1.0
 
-#### Added
+### Added
+
 * Added ad impression callbacks
 * Added improvements and fixes
 
-#### Fixed
+### Fixed
+
 * Fixed native bulk ad loading for mediation
 * Fixed ad impression report in mediation
 
-# Version 4.0.0
+## Version 4.0.0
 
-#### Added
+### Added
+
 * Added support for SKAdNetwork
 * Optimized loading of rewarded ads
 * Added ability to load multiple native ads
@@ -201,242 +243,266 @@ All notable changes to this project will be documented in this file.
 * Added improvements for interstitial design
 * Added improvements and fixes
 
-#### Updated
+### Updated
 
 * Updated deployment target to iOS 9
 * Updated minimum compatible AppMetrica version to 3.14.1
 
-# Version 3.5.0
+## Version 3.5.0
 
-#### Added
+### Added
+
 * Added support for inrolls and pauserolls in In-Stream
 * Added support for social ads in In-Stream
 * Added improvements and fixes
 
-# Version 3.4.0
+## Version 3.4.0
 
-#### Added
+### Added
+
 * Added support for native video playback
 * Added improvements and fixes
 
-# Version 3.3.0
+## Version 3.3.0
 
-#### Added
+### Added
+
 * Added support for In-Stream ads
 * Added improvements and fixes
 
-# Version 3.2.0
+## Version 3.2.0
 
-#### Added
+### Added
+
 * Added improvements and fixes
 
-#### Fixed
+### Fixed
+
 * Fixed crashes on wrapper ads loading in VAST
 
-# Version 3.1.1
+## Version 3.1.1
 
-#### Fixed
+### Fixed
+
 * Fixed Info.plist format in resources bundle
 
-# Version 3.1.0
+## Version 3.1.0
 
-#### Added
+### Added
+
 * Added improvements and fixes
 * Optimized loading of interstitial ads
 
-# Version 3.0.0
+## Version 3.0.0
 
-#### Added
+### Added
+
 * Added ability to bind native ad with `YMANativeAdView`
 
-#### Removed
+### Removed
+
 * Removed ability to use imageView in native ads binding. Use mediaView instead
 * Removed classes and protocols for native ad type specific loading and binding. Use `YMANativeAd` and `YMANativeAdView` instead
 * Removed deprecated VAST API
 * Removed deprecated method for enabling logging
 
-#### Updated
+### Updated
+
 * Renamed `YMAInterstitialController` to `YMAInterstitialAd`
 * Renamed delegate's methods for native ad loader, native ads, interstitial, rewarded, and banner ads
 
-# Version 2.20.0
+## Version 2.20.0
 
-#### Added
+### Added
+
 * Added support for iOS 14
 
-# Version 2.19.0
+## Version 2.19.0
 
-#### Added
+### Added
+
 * Added improvements and fixes
 
-# Version 2.18.0
+## Version 2.18.0
 
-#### Added
+### Added
+
 * Optimized presenting of fullscreen ads
 
-# Version 2.17.0
+## Version 2.17.0
 
-#### Added
+### Added
+
 * Added improvements and fixes
 
-# Version 2.16.0
+## Version 2.16.0
 
-#### Updated
+### Updated
+
 * Optimized loading of multiple native ads
 
-#### Added
+### Added
+
 * Added improvements and fixes
 
-# Version 2.15.4
+## Version 2.15.4
 
-#### Added
+### Added
+
 * Added improvements and fixes
 
-# Version 2.15.3
+## Version 2.15.3
 
-#### Added
+### Added
+
 * Added improvements and fixes
 
-# Version 2.15.2
+## Version 2.15.2
 
-#### Added
+### Added
+
 * Added improvements and fixes
 
-# Version 2.15.1
+## Version 2.15.1
 
-#### Added
+### Added
+
 * Added improvements and fixes
 
-# Version 2.15.0
+## Version 2.15.0
 
-#### Added
+### Added
+
 * Added support for sticky banners
 * Added improvements and fixes
 
-# Version 2.14.0
+## Version 2.14.0
 
-#### Updated
+### Updated
 
 * Updated minimum supported version to iOS 9. Deployment target is still iOS 8, but ads will only be shown on iOS 9 and above
 * Updated `YMANativeMediaView` to respect the aspect ratio of the content
 
-#### Added
+### Added
+
 * Added improvements and fixes
 
-# Version 2.13.3
+## Version 2.13.3
 
-#### Added
+### Added
 
 * Supported display of interstitial and rewarded ads on iOS 13
 * Added improvements and fixes
 
-# Version 2.13.2
+## Version 2.13.2
 
-#### Added
-
-* Added improvements and fixes
-
-# Version 2.13.1
-
-#### Added
+### Added
 
 * Added improvements and fixes
 
-# Version 2.13.0
+## Version 2.13.1
 
-#### Added
+### Added
+
+* Added improvements and fixes
+
+## Version 2.13.0
+
+### Added
 
 * Added support for VMAP format
 * Added support for VAST wrappers
 
-# Version 2.12.0
+## Version 2.12.0
 
-#### Added
+### Added
 
 * Added support for media view in native ad mediation
 * Added minor improvements and fixes
 
-# Version 2.11.1
+## Version 2.11.1
 
-#### Updated
+### Updated
 
 * Added improvements and fixes
 
-# Version 2.11.0
+## Version 2.11.0
 
-#### Added
+### Added
 
 * Added support for rewarded ad
 * Added support for GDPR to obtain and manage consent from users from GDPR region to serve personalized ads.
 * Added `YMANativeMediaView` and video support in native ad
 
-#### Deprecated
+### Deprecated
+
 * Deprecated `imageView` property on `YMANativeAppInstallAdView`, `YMANativeContentAdView` and `YMANativeImageAdView` in favor of `mediaView`
 
-# Version 2.10.0
+## Version 2.10.0
 
-#### Added
+### Added
 
 * Added `YMAVideoDelegate` delegate to notify app when ad video completed
 
 ## Version 2.9.1
 
-#### Updated
+### Updated
 
 * Dropped iOS 7 support
 * Updated minimum compatible AppMetrica version to 3.1.2
 
 ## Version 2.9.0
 
-#### Added
+### Added
 
 * Added ability to specify age and gender in `YMAAdRequest`
 * Added feedback asset
 
-#### Updated
+### Updated
 
 * Updated module map
 
 ## Version 2.8.4
 
-#### Fixed
+### Fixed
 
 * Fixed missing bitcode in dynamic framework
 
 ## Version 2.8.3
 
-#### Updated
+### Updated
 
 * Added minor improvements
 
 ## Version 2.8.2
 
-#### Fixed
+### Fixed
 
 * Fixed missing bitcode in dynamic framework
 
 ## Version 2.8.1
 
-#### Added
+### Added
 
 * Added native ad mediation
 
-#### Fixed
+### Fixed
 
 * Fixed visibility error indicator main thread checker warnings and crashes when native ad is deallocated on background thread
 * Fixed memory usage in video interstitial
 
 ## Version 2.8.0
 
-#### Added
+### Added
 
 * Added view visibility error indicator which should help to detect SDK integration problems while testing the application
 
-#### Updated
+### Updated
+
 * Updated minimum compatible AppMetrica version to 2.9.4
 * Updated license
 
-#### Fixed
+### Fixed
 
 * Fixed main thread checker warnings
 * Fixed rotation issues when interstitial was shown, specifically, crashes during attempts to use AppDelegate
@@ -444,165 +510,199 @@ All notable changes to this project will be documented in this file.
 
 ## Version 2.7.2
 
-#### Added
+### Added
 
 * Added video interstitial support
 * Added ability to use SDK without AppMetrica activation
 
 ## Version 2.7.1
 
-#### Added
+### Added
 
 * Added HTML banners and interstitials mediation
 
 ## Version 2.7.0
 
-#### Updated
+### Updated
+
 * Updated MoPub adapters distribution: replaced source code with framework
 * Updated minimum compatible AppMetrica version to 2.8.0
 
-#### Fixed
+### Fixed
+
 * Fixed crash after attempt to display `YMAAdView` in nil `UIView`
 
 ## Version 2.6.1
 
-#### Fixed
+### Fixed
+
 * Fixed incorrect behavior of media HTML banners and interstitials on iOS 10.3
 
 ## Version 2.6.0
 
-#### Added
+### Added
+
 * Added dynamic framework
 * Added ability to disable automatic location tracking
 
-#### Updated
+### Updated
+
 * Dropped iOS 6 support
 * Updated distribution: replaced static library on GitHub with zip archive containing static and dynamic frameworks
 * Updated minimum compatible AppMetrica version to 2.7.0
 
 ## Version 2.5.0
 
-#### Added
+### Added
+
 * Added native image ad type
 
 ## Version 2.4.0
 
-#### Updated
+### Updated
+
 * Added minor improvements and fixes
 
 ## Version 2.3.1
 
-#### Updated
+### Updated
+
 * Added minor improvements and fixes
 
 ## Version 2.3.0
 
-#### Updated
+### Updated
+
 * Updated compatible AppMetrica versions range
 
-#### Added
+### Added
+
 * Added minor improvements
 
 ## Version 2.2.2
 
-#### Added
+### Added
+
 * Added minor improvements
 
 ## Version 2.2.1
 
-#### Fixed
+### Fixed
+
 * Fixed misaligned views in native templates
 
 ## Version 2.2.0
 
-#### Added
+### Added
+
 * Added ability to load native ad images manually
 * Added loaded image sizes configuration for native ads
 * Added ability to get native ad asset values
 
-#### Updated
+### Updated
+
 * Updated maximum compatible AppMetrica version to 2.5.0
 
-#### Fixed
+### Fixed
+
 * Fixed imports in YMANativeAdDelegate
 
 ## Version 2.1.2
 
-#### Updated
+### Updated
+
 * Updated compatible AppMetrica version to 2.4.1
 
-#### Fixed
+### Fixed
+
 * Fixed links opening on OS versions lower than iOS 9
 
 ## Version 2.1.1
 
-#### Added
+### Added
+
 * Added minor improvements
 
 ## Version 2.1.0
 
-#### Added
+### Added
+
 * Added native ads template view
 
-#### Fixed
+### Fixed
+
 * Fixed ad clicks on devices with force touch
 
 ## Version 2.0.2
 
-#### Updated
+### Updated
+
 * Updated maximum compatible AppMetrica version to 2.3.1
 
-#### Fixed
+### Fixed
+
 * Fixed URL opening bug in native ads bound to reusable views
 
 ## Version 2.0.1
 
-#### Added
+### Added
+
 * Added native assets highlighting
 
-#### Fixed
+### Fixed
+
 * Fixed errors handling
 
 ## Version 2.0.0
 
-#### Added
+### Added
+
 * Added flexible banner sizes
 
-#### Updated
+### Updated
+
 * Updated maximum compatible AppMetrica version to 2.3.0
 
-#### Deprecated
+### Deprecated
+
 * Deprecated `[YMAAdView initWithBlockID:size:delegate]` in favor of `[YMAAdView initWithBlockID:adSize:delegate]`
 * Deprecated `[YMALog enableLogging]` in favor of `[YMAMobileAds enableLogging]`
 
 ## Version 1.9.2
 
-#### Added
+### Added
+
 * Supported bitcode
 
-#### Removed
+### Removed
+
 * Removed SLColorArt and TOWebViewController dependencies
 
-#### Fixed
+### Fixed
+
 * Fixed errors
 * Fixed HTML escaped symbols in native ads texts
 
 ## Version 1.9.1
 
-#### Added
+### Added
+
 * Added 300x300, 300x250 and 320x100 ad sizes
 * Improved impression tracking
 
 ## Version 1.9.0
 
-#### Added
+### Added
+
 * Added App Install native ad type
 * Added ability to open web links in application or browser
 * Supported iOS 9
 
-#### Updated
+### Updated
+
 * Updated AppMetrica to 2.0.0
 
-#### Breaking changes
+### Breaking changes
+
 * Changed AdUnitID to BlockID in public API
 * Moved context parameters to ad request class

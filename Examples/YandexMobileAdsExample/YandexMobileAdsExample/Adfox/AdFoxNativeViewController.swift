@@ -42,10 +42,7 @@ class AdFoxNativeViewController: UIViewController {
 
         adView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(adView)
-        var layoutGuide = self.view.layoutMarginsGuide
-        if #available(iOS 11.0, *) {
-            layoutGuide = self.view.safeAreaLayoutGuide
-        }
+        let layoutGuide = self.view.layoutMarginsGuide
         let constraints = [
             adView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor, constant: 10),
             adView.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor, constant: -10),

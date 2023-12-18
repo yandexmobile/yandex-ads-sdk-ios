@@ -1,0 +1,32 @@
+{
+  "configurations" : [
+    {
+      "id" : "49A2E4A5-CA08-471A-8F56-ACEEDECEFED1",
+      "name" : "Main",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "maximumTestRepetitions" : 3,
+    "preferredScreenCaptureFormat" : "screenshot",
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:YandexMobileAdsExample.xcodeproj",
+      "identifier" : "1467E34E271EA91500DF104A",
+      "name" : "YandexMobileAdsExample"
+    },
+    "testRepetitionMode" : "retryOnFailure"
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:YandexMobileAdsExample.xcodeproj",
+        "identifier" : "7AFDCA142B10EA9F00D35B17",
+        "name" : "YandexMobileAdsExampleUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

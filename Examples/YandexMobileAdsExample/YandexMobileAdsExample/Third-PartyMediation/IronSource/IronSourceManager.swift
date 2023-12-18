@@ -16,6 +16,6 @@ class IronSourceManager: NSObject {
 
     func initializeSDK() {
         // Replace 199eacc45 with app key generated at https://www.is.com/
-        IronSource.initWithAppKey("199eacc45", adUnits: [IS_INTERSTITIAL, IS_REWARDED_VIDEO])
+        IronSource.initWithAppKey("199eacc45", adUnits: [IS_BANNER, IS_INTERSTITIAL, IS_REWARDED_VIDEO])
     }
 }

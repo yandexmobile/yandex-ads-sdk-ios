@@ -15,6 +15,7 @@ final class InlineBannerViewController: UIViewController {
         let adView = YMAAdView(adUnitID: "demo-banner-yandex", adSize: adSize)
         adView.delegate = self
         adView.translatesAutoresizingMaskIntoConstraints = false
+        adView.accessibilityIdentifier = CommonAccessibility.bannerView
         return adView
     }()
 
@@ -27,7 +28,16 @@ final class InlineBannerViewController: UIViewController {
         )
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Load ad", for: .normal)
+        button.accessibilityIdentifier = CommonAccessibility.loadButton
         return button
+    }()
+    
+    private lazy var stateLabel: UILabel = {
+        let label = UILabel()
+        label.accessibilityIdentifier = CommonAccessibility.stateLabel
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
 
     override func viewDidLoad() {
@@ -47,6 +57,7 @@ final class InlineBannerViewController: UIViewController {
     private func addSubviews() {
         view.addSubview(adView)
         view.addSubview(loadButton)
+        view.addSubview(stateLabel)
     }
 
     private func setupConstraints() {
@@ -54,14 +65,18 @@ final class InlineBannerViewController: UIViewController {
             adView.topAnchor.constraint(equalTo: loadButton.bottomAnchor, constant: 100),
             adView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 
-            loadButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
-            loadButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            loadButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            loadButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            stateLabel.topAnchor.constraint(equalTo: loadButton.bottomAnchor, constant: 10),
+            stateLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            stateLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
         ])
     }
 }
 
 extension InlineBannerViewController: YMAAdViewDelegate {
     func adViewDidLoad(_ adView: YMAAdView) {
+        stateLabel.text = StateUtils.loaded()
         print(#function)
     }
 
@@ -74,7 +89,9 @@ extension InlineBannerViewController: YMAAdViewDelegate {
     }
 
     func adViewDidFailLoading(_ adView: YMAAdView, error: Error) {
-        print(#function + "Error: \(error)")
+        let text = StateUtils.loadError(error)
+        stateLabel.text = text
+        print(#function + text)
     }
 
     func adViewWillLeaveApplication(_ adView: YMAAdView) {
