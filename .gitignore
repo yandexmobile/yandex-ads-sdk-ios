@@ -1,6 +1,7 @@
 .DS_Store
 *.o
 build
+.build
 buildResults
 *.mode1v3
 *.mode2v3
@@ -18,3 +19,6 @@ Pods/
 Podfile\.lock
 tmp
 XcodeBuild/
+**/scratches/**
+Package\.resolved
+.swiftpm

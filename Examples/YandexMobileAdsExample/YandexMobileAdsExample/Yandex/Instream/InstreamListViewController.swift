@@ -6,6 +6,7 @@
  */
 
 import Foundation
+import UIKit
 
 enum InstreamListCellModel: NavigationScreenDataSource, CaseIterable {
     case singleInstream
@@ -22,6 +23,15 @@ enum InstreamListCellModel: NavigationScreenDataSource, CaseIterable {
 
     var title: String {
         String(describing: self).camelCaseToWords()
+    }
+    
+    var accessibilityId: String? {
+        switch self {
+        case .singleInstream:
+            return YandexInstreamListAccessibility.singleInstream
+        case .inroll:
+            return YandexInstreamListAccessibility.inroll
+        }
     }
 }
 

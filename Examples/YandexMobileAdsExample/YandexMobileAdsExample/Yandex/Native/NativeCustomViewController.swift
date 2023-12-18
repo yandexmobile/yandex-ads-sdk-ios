@@ -12,6 +12,7 @@ final class NativeCustomViewController: UIViewController {
         let adView = NativeCustomAdView()
         adView.translatesAutoresizingMaskIntoConstraints = false
         adView.isHidden = true
+        adView.accessibilityIdentifier = CommonAccessibility.bannerView
         return adView
     }()
 
@@ -24,7 +25,16 @@ final class NativeCustomViewController: UIViewController {
         )
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Load ad", for: .normal)
+        button.accessibilityIdentifier = CommonAccessibility.loadButton
         return button
+    }()
+    
+    private lazy var stateLabel: UILabel = {
+        let label = UILabel()
+        label.accessibilityIdentifier = CommonAccessibility.stateLabel
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
 
     private lazy var adLoader: YMANativeAdLoader = {
@@ -46,6 +56,7 @@ final class NativeCustomViewController: UIViewController {
         // Replace demo-native-app-yandex with actual Ad Unit ID
         let requestConfiguration = YMANativeAdRequestConfiguration(adUnitID: "demo-native-app-yandex")
         adLoader.loadAd(with: requestConfiguration)
+        stateLabel.text = nil
     }
 
     private func bindNativeAd(_ ad: YMANativeAd) {
@@ -53,6 +64,7 @@ final class NativeCustomViewController: UIViewController {
         do {
             try ad.bind(with: adView)
             adView.isHidden = false
+            adView.callToActionButton?.accessibilityIdentifier = "call"
         } catch {
             print("Binding error: \(error)")
         }
@@ -68,17 +80,22 @@ final class NativeCustomViewController: UIViewController {
     private func addSubviews() {
         view.addSubview(adView)
         view.addSubview(loadButton)
+        view.addSubview(stateLabel)
     }
 
     private func setupConstraints() {
         let layoutGuide = view.safeAreaLayoutGuide
         NSLayoutConstraint.activate([
-            loadButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            loadButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             loadButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 
             adView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor, constant: 10),
             adView.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor, constant: -10),
             adView.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor, constant: -10),
+            
+            stateLabel.topAnchor.constraint(equalTo: loadButton.bottomAnchor, constant: 10),
+            stateLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            stateLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
         ])
     }
 }
@@ -89,10 +106,12 @@ extension NativeCustomViewController: YMANativeAdLoaderDelegate {
     func nativeAdLoader(_ loader: YMANativeAdLoader, didLoad ad: YMANativeAd) {
         print(#function)
         bindNativeAd(ad)
+        stateLabel.text = StateUtils.loaded()
     }
 
     func nativeAdLoader(_ loader: YMANativeAdLoader, didFailLoadingWithError error: Error) {
         print(#function + "Error: \(error)")
+        stateLabel.text = StateUtils.loadError(error)
     }
 }
 

@@ -1,5 +1,5 @@
 /*
- * Version for iOS © 2015–2022 YANDEX
+ * Version for iOS © 2015–2023 YANDEX
  *
  * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
@@ -14,7 +14,7 @@ class IronSourceRewardedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         IronSourceManager.shared.initializeSDK()
-        IronSource.setLevelPlayRewardedVideoManualDelegate(self)
+        IronSource.setLevelPlayRewardedVideoDelegate(self)
     }
 
 
@@ -29,7 +29,9 @@ class IronSourceRewardedViewController: UIViewController {
     }
 }
 
-extension IronSourceRewardedViewController: LevelPlayRewardedVideoManualDelegate {
+// MARK: - LevelPlayRewardedVideoDelegate
+
+extension IronSourceRewardedViewController: LevelPlayRewardedVideoDelegate {
     func didLoad(with adInfo: ISAdInfo!) {
         print("Rewarded did load")
         showButton.isEnabled = true

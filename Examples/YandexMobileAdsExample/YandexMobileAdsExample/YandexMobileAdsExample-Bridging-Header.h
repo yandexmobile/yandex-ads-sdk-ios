@@ -5,4 +5,6 @@
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
  */
 
+#if COCOAPODS
 #import <IronSource/IronSource.h>
+#endif

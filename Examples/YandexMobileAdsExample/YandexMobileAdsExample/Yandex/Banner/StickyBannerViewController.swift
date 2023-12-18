@@ -14,6 +14,7 @@ final class StickyBannerViewController: UIViewController {
         
         // Replace demo demo-banner-yandex with actual Ad Unit ID
         let adView = YMAAdView(adUnitID: "demo-banner-yandex", adSize: adSize)
+        adView.accessibilityIdentifier = CommonAccessibility.bannerView
         adView.delegate = self
         return adView
     }()
@@ -27,7 +28,16 @@ final class StickyBannerViewController: UIViewController {
         )
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Load ad", for: .normal)
+        button.accessibilityIdentifier = CommonAccessibility.loadButton
         return button
+    }()
+    
+    private lazy var stateLabel: UILabel = {
+        let label = UILabel()
+        label.accessibilityIdentifier = CommonAccessibility.stateLabel
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
 
     override func viewDidLoad() {
@@ -47,18 +57,24 @@ final class StickyBannerViewController: UIViewController {
     private func addSubviews() {
         adView.displayAtBottom(in: view)
         view.addSubview(loadButton)
+        view.addSubview(stateLabel)
     }
 
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            loadButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            loadButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             loadButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            stateLabel.topAnchor.constraint(equalTo: loadButton.bottomAnchor, constant: 10),
+            stateLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            stateLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
         ])
     }
 }
 
 extension StickyBannerViewController: YMAAdViewDelegate {
     func adViewDidLoad(_ adView: YMAAdView) {
+        stateLabel.text = StateUtils.loaded()
         print(#function)
     }
 
@@ -71,7 +87,9 @@ extension StickyBannerViewController: YMAAdViewDelegate {
     }
 
     func adViewDidFailLoading(_ adView: YMAAdView, error: Error) {
-        print(#function + "Error: \(error)")
+        let text = StateUtils.loadError(error)
+        stateLabel.text = text
+        print(#function + text)
     }
 
     func adViewWillLeaveApplication(_ adView: YMAAdView) {

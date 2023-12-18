@@ -45,10 +45,7 @@ class AdMobNativeViewController: UIViewController {
     private func addView(_ adView: UIView) {
         adView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(adView)
-        var layoutGuide = view.layoutMarginsGuide
-        if #available(iOS 11.0, *) {
-            layoutGuide = self.view.safeAreaLayoutGuide
-        }
+        let layoutGuide = view.layoutMarginsGuide
         let constraints = [
             adView.leftAnchor.constraint(equalTo: layoutGuide.leftAnchor),
             adView.rightAnchor.constraint(equalTo: layoutGuide.rightAnchor),

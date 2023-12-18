@@ -1,5 +1,5 @@
 /*
- * Version for iOS © 2015–2021 YANDEX
+ * Version for iOS © 2015–2023 YANDEX
  *
  * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
@@ -15,6 +15,7 @@ private let chartboostAdUnitID = "demo-banner-chartboost"
 private let adColonyAdUnitID = "demo-banner-adcolony"
 private let bigoAdsAdUnitID = "demo-banner-bigoads"
 private let inMobiAdsAdUnitID = "demo-banner-inmobi"
+private let ironSourceAdUnitID = "demo-banner-ironsource"
 private let startAppAdUnitID = "demo-banner-startapp"
 private let yandexAdUnitID = "demo-banner-yandex"
 
@@ -28,6 +29,7 @@ class MobileMediationBannerViewController: UIViewController {
         (adapter: "InMobi", adUnitID: inMobiAdsAdUnitID),
         (adapter: "Mintegral", adUnitID: mintegralAdUnitID),
         (adapter: "MyTarget", adUnitID: myTargetAdUnitID),
+        (adapter: "IronSource", adUnitID: ironSourceAdUnitID),
         (adapter: "StartApp", adUnitID: startAppAdUnitID),
         (adapter: "Yandex", adUnitID: yandexAdUnitID)
     ]

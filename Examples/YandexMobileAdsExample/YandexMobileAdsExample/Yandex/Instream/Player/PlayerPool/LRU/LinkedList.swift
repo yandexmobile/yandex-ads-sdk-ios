@@ -7,7 +7,7 @@
 
 final class LinkedList<T> {
 
-    class LinkedListNode<T> {
+    class LinkedListNode {
         var value: T
         var next: LinkedListNode?
         weak var previous: LinkedListNode?
@@ -17,7 +17,7 @@ final class LinkedList<T> {
         }
     }
 
-    typealias Node = LinkedListNode<T>
+    typealias Node = LinkedListNode
 
     fileprivate var head: Node?
 

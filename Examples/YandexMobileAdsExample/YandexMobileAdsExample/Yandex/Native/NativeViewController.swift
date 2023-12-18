@@ -6,6 +6,7 @@
  */
 
 import Foundation
+import UIKit
 
 enum NativeCellModel: NavigationScreenDataSource, CaseIterable {
     case template
@@ -22,6 +23,15 @@ enum NativeCellModel: NavigationScreenDataSource, CaseIterable {
 
     var title: String {
         String(describing: self).camelCaseToWords()
+    }
+    
+    var accessibilityId: String? {
+        switch self {
+        case .template:
+            YandexNativeAccessibility.template
+        case .custom:
+            YandexNativeAccessibility.custom
+        }
     }
 }
 
