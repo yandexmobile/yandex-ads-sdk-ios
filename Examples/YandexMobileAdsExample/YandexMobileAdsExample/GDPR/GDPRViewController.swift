@@ -48,10 +48,7 @@ class GDPRViewController: UIViewController {
     }
 
     private func configureLayoutAtBottom(for bannerView: UIView) {
-        var guide = self.view.layoutMarginsGuide
-        if #available(iOS 11.0, *) {
-            guide = self.view.safeAreaLayoutGuide
-        }
+        let guide = self.view.layoutMarginsGuide
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         let constraints = [bannerView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
                            bannerView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),

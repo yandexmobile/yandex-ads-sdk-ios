@@ -6,6 +6,7 @@
  */
 
 import Foundation
+import UIKit
 
 enum YandexAdsCellModel: NavigationScreenDataSource, CaseIterable {
     case stickyBanner
@@ -37,6 +38,25 @@ enum YandexAdsCellModel: NavigationScreenDataSource, CaseIterable {
 
     var title: String {
         String(describing: self).camelCaseToWords()
+    }
+    
+    var accessibilityId: String? {
+        switch self {
+        case .stickyBanner:
+            return YandexAdsAccessibility.sticky
+        case .inlineBanner:
+            return YandexAdsAccessibility.inline
+        case .interstitial:
+            return YandexAdsAccessibility.interstitial
+        case .rewarded:
+            return YandexAdsAccessibility.rewarded
+        case .appOpenAd:
+            return YandexAdsAccessibility.appOpenAd
+        case .native:
+            return YandexAdsAccessibility.native
+        case .instream:
+            return YandexAdsAccessibility.instream
+        }
     }
 }
 

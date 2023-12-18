@@ -35,10 +35,7 @@ class AdMobBannerViewController: UIViewController {
         banner.removeFromSuperview()
         view.addSubview(banner)
 
-        var layoutGuide = view.layoutMarginsGuide
-        if #available(iOS 11.0, *) {
-            layoutGuide = self.view.safeAreaLayoutGuide
-        }
+        let layoutGuide = view.layoutMarginsGuide
         let constraints = [
             banner.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor),
             banner.centerXAnchor.constraint(equalTo: layoutGuide.centerXAnchor),

@@ -22,11 +22,13 @@ final class InterstitialAdViewController: UIViewController {
                 guard let self else { return }
                 self.interstitialAd?.show(from: self)
                 self.presentButton.isEnabled = false
+                self.presentedViewController?.view.accessibilityIdentifier = CommonAccessibility.bannerView
             }
         )
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Present ad", for: .normal)
         button.isEnabled = false
+        button.accessibilityIdentifier = CommonAccessibility.presentButton
         return button
     }()
 
@@ -39,11 +41,21 @@ final class InterstitialAdViewController: UIViewController {
                 // Replace demo-interstitial-yandex with actual Ad Unit ID
                 let configuration = YMAAdRequestConfiguration(adUnitID: "demo-interstitial-yandex")
                 self.interstitialAdLoader.loadAd(with: configuration)
+                self.stateLabel.text = nil
             }
         )
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Load ad", for: .normal)
+        button.accessibilityIdentifier = CommonAccessibility.loadButton
         return button
+    }()
+    
+    private lazy var stateLabel: UILabel = {
+        let label = UILabel()
+        label.accessibilityIdentifier = CommonAccessibility.stateLabel
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
 
     override func viewDidLoad() {
@@ -63,15 +75,18 @@ final class InterstitialAdViewController: UIViewController {
     private func addSubviews() {
         view.addSubview(loadButton)
         view.addSubview(presentButton)
+        view.addSubview(stateLabel)
     }
 
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            loadButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            loadButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             loadButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -20),
-
-            presentButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
-            presentButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 20)
+            presentButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            presentButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 20),
+            stateLabel.topAnchor.constraint(equalTo: loadButton.bottomAnchor, constant: 10),
+            stateLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            stateLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
         ])
     }
 
@@ -87,6 +102,7 @@ extension InterstitialAdViewController: YMAInterstitialAdLoaderDelegate {
         self.interstitialAd = interstitialAd
         self.interstitialAd?.delegate = self
         presentButton.isEnabled = true
+        stateLabel.text = StateUtils.loaded()
         print("\(makeMessageDescription(interstitialAd)) loaded")
     }
 
@@ -94,6 +110,7 @@ extension InterstitialAdViewController: YMAInterstitialAdLoaderDelegate {
         let id = error.adUnitId
         let error = error.error
         print("Loading failed for Ad with Unit ID: \(String(describing: id)). Error: \(String(describing: error))")
+        stateLabel.text = StateUtils.loadError(error)
     }
 }
 

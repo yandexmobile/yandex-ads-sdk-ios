@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 class NavigationTableViewController<T: NavigationScreenDataSource>: UITableViewController where T: CaseIterable {
     private var dataSource = Array(T.allCases)
@@ -11,6 +12,7 @@ class NavigationTableViewController<T: NavigationScreenDataSource>: UITableViewC
         let cell = UITableViewCell()
         let cellModel = dataSource[indexPath.row]
         cell.textLabel?.text = cellModel.title
+        cell.accessibilityIdentifier = cellModel.accessibilityId
         return cell
     }
 

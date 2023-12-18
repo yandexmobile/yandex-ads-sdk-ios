@@ -17,7 +17,7 @@ class LRUCache<KeyType: Hashable, ValueType> {
     private let maxSize: Int
     private var cache: [KeyType: ValueType] = [:]
     private var priority: LinkedList<KeyType> = LinkedList<KeyType>()
-    private var key2node: [KeyType: LinkedList<KeyType>.LinkedListNode<KeyType>] = [:]
+    private var key2node: [KeyType: LinkedList<KeyType>.LinkedListNode] = [:]
 
     init(_ maxSize: Int) {
         self.maxSize = maxSize

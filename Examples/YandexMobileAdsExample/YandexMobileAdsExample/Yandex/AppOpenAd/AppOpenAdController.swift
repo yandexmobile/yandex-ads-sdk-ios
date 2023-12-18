@@ -29,6 +29,7 @@ final class AppOpenAdController: NSObject {
     func showAdIfAvailable(from window: UIWindow?) {
         guard let viewController = window?.rootViewController else { return }
         appOpenAd?.show(from: viewController)
+        viewController.presentedViewController?.view.accessibilityIdentifier = CommonAccessibility.bannerView
     }
 
     private func makeMessageDescription(_ appOpenAd: YMAAppOpenAd) -> String {

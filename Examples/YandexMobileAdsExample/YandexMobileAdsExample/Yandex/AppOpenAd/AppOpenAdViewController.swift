@@ -18,6 +18,7 @@ final class AppOpenAdViewController: UIViewController {
         )
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Load Ad", for: .normal)
+        button.accessibilityIdentifier = CommonAccessibility.loadButton
         return button
     }()
 
@@ -27,6 +28,7 @@ final class AppOpenAdViewController: UIViewController {
         label.textAlignment = .center
         label.numberOfLines = 0
         label.text = "Ad is not loaded."
+        label.accessibilityIdentifier = CommonAccessibility.stateLabel
         return label
     }()
 
@@ -52,7 +54,7 @@ final class AppOpenAdViewController: UIViewController {
 
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            loadButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            loadButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             loadButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 
             statusLabel.topAnchor.constraint(equalTo: loadButton.bottomAnchor, constant: 50),
@@ -66,7 +68,7 @@ final class AppOpenAdViewController: UIViewController {
 
 extension AppOpenAdViewController: AppOpenAdControllerDelegate {
     func appOpenAdControllerDidLoad(_ appOpenAdController: AppOpenAdController) {
-        statusLabel.text = "Ad is ready for presentation. Leave the application, then return to see the ad."
+        statusLabel.text = "\(StateUtils.loaded()). Ad is ready for presentation. Leave the application, then return to see the ad."
     }
 
     func appOpenAdControllerDidDismiss(_ appOpenAdController: AppOpenAdController) {

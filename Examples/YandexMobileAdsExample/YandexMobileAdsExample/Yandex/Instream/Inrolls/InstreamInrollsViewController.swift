@@ -25,6 +25,7 @@ final class InstreamInrollsViewController: UIViewController {
         )
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Load", for: .normal)
+        button.accessibilityIdentifier = CommonAccessibility.loadButton
         return button
     }()
 
@@ -37,6 +38,7 @@ final class InstreamInrollsViewController: UIViewController {
         )
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Start playback", for: .normal)
+        button.accessibilityIdentifier = YandexInstreamAccessibility.startPlaybackButton
         return button
     }()
 
@@ -49,6 +51,7 @@ final class InstreamInrollsViewController: UIViewController {
         )
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Play inroll", for: .normal)
+        button.accessibilityIdentifier = YandexInstreamAccessibility.playInrollButton
         return button
     }()
 
@@ -61,6 +64,7 @@ final class InstreamInrollsViewController: UIViewController {
         )
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Pause inroll", for: .normal)
+        button.accessibilityIdentifier = YandexInstreamAccessibility.pauseInrollButton
         return button
     }()
 
@@ -73,6 +77,7 @@ final class InstreamInrollsViewController: UIViewController {
         )
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Resume inroll", for: .normal)
+        button.accessibilityIdentifier = YandexInstreamAccessibility.resumeInrollButton
         return button
     }()
 
@@ -133,6 +138,14 @@ final class InstreamInrollsViewController: UIViewController {
         adPlayer.prepareVideo()
         return adPlayer
     }()
+    
+    private lazy var stateLabel: UILabel = {
+        let label = UILabel()
+        label.accessibilityIdentifier = CommonAccessibility.stateLabel
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
 
     private var inrollsPlaybackController: InrollsPlaybackController?
 
@@ -147,7 +160,7 @@ final class InstreamInrollsViewController: UIViewController {
 
     private func loadAd() {
         // Replace demo-instream-yandex with actual Ad Unit ID
-        let configuration = InstreamAdRequestConfiguration(pageID: "demo-instream-yandex")
+        let configuration = InstreamAdRequestConfiguration(pageID: "demo-instream-vmap-yandex")
         loader.loadInstreamAd(configuration: configuration)
     }
 
@@ -172,6 +185,7 @@ final class InstreamInrollsViewController: UIViewController {
         bottomButtonsStack.addArrangedSubview(playInrollButton)
         bottomButtonsStack.addArrangedSubview(pauseInrollButton)
         bottomButtonsStack.addArrangedSubview(resumeInrollButton)
+        view.addSubview(stateLabel)
         view.addSubview(instreamAdView)
         instreamAdView.addSubview(playerView)
     }
@@ -180,8 +194,8 @@ final class InstreamInrollsViewController: UIViewController {
         let layoutGuide = view.safeAreaLayoutGuide
         NSLayoutConstraint.activate([
             buttonsStack.topAnchor.constraint(
-                equalTo: view.topAnchor,
-                constant: 100
+                equalTo: layoutGuide.topAnchor,
+                constant: 10
             ),
             buttonsStack.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.bigMargin),
             buttonsStack.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -Constants.bigMargin),
@@ -197,6 +211,10 @@ final class InstreamInrollsViewController: UIViewController {
             playerView.trailingAnchor.constraint(equalTo: instreamAdView.trailingAnchor),
             playerView.bottomAnchor.constraint(equalTo: instreamAdView.bottomAnchor),
             playerView.topAnchor.constraint(equalTo: instreamAdView.topAnchor),
+            
+            stateLabel.topAnchor.constraint(equalTo: buttonsStack.bottomAnchor, constant: 10),
+            stateLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            stateLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
         ])
     }
 }
@@ -213,9 +231,11 @@ extension InstreamInrollsViewController: InstreamAdLoaderDelegate {
             adPlayer: adPlayer,
             inrollQueue: inrollQueue
         )
+        stateLabel.text = StateUtils.loaded()
     }
 
     func instreamAdLoader(_ instreamAdLoader: InstreamAdLoader, didFailToLoad reason: String) {
         print(#function + "Error: \(reason)")
+        stateLabel.text = StateUtils.loadError(reason)
     }
 }
