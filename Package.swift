@@ -16,7 +16,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/yandexmobile/metrica-sdk-ios", "4.0.0"..<"5.0.0"),
-        .package(url: "https://github.com/divkit/divkit-ios", "28.13.0"..<"29.0.0")
+        .package(url: "https://github.com/divkit/divkit-ios", exact: "28.13.0")
     ],
     targets: [
         .target(
