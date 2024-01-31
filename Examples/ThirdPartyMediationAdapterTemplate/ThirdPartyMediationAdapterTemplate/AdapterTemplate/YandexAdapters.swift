@@ -54,6 +54,10 @@ class YandexBaseAdapter: NSObject, MediationBidding, MediationInitialization {
             YMAMobileAds.setUserConsent(userConsent)
         }
 
+        if let locationTracking = parameters.locationTracking {
+            YMAMobileAds.setLocationTrackingEnabled(locationTracking)
+        }
+
         if let isTesting = parameters.isTesting, isTesting {
             YMAMobileAds.enableLogging()
         }
