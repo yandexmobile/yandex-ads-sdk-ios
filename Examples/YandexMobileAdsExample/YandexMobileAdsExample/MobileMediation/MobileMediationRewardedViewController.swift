@@ -27,7 +27,7 @@ class MobileMediationRewardedViewController: UIViewController {
         (adapter: "AppLovin", adUnitID: appLovinAdUnitID),
         (adapter: "BigoAds", adUnitID: bigoAdsAdUnitID),
         (adapter: "Chartboost", adUnitID: chartboostAdUnitID),
-        (adapter: "Google", adUnitID: adMobAdUnitID),
+        (adapter: "AdMob", adUnitID: adMobAdUnitID),
         (adapter: "InMobi", adUnitID: inMobiAdUnitID),
         (adapter: "IronSource", adUnitID: ironSourceAdUnitID),
         (adapter: "Mintegral", adUnitID: mintegralAdUnitID),
@@ -38,10 +38,20 @@ class MobileMediationRewardedViewController: UIViewController {
     ]
     private let rewardedAdLoader = YMARewardedAdLoader()
 
-    @IBOutlet weak var showButton: UIButton!
+    @IBOutlet private var showButton: UIButton!
     @IBOutlet private var pickerView: UIPickerView!
+    @IBOutlet private var stateLabel: UILabel!
+    @IBOutlet private var loadButton: UIButton!
     
     private var rewardedAd: YMARewardedAd?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        stateLabel.accessibilityIdentifier = CommonAccessibility.stateLabel
+        loadButton.accessibilityIdentifier = CommonAccessibility.loadButton
+        showButton.accessibilityIdentifier = CommonAccessibility.presentButton
+    }
     
     @IBAction func loadAd() {
         self.showButton.isEnabled = false
@@ -61,6 +71,8 @@ class MobileMediationRewardedViewController: UIViewController {
 
         rewardedAdLoader.delegate = self
         rewardedAdLoader.loadAd(with: configuration)
+        
+        stateLabel.text = nil
     }
     
     @IBAction func presentAd() {
@@ -81,12 +93,14 @@ extension MobileMediationRewardedViewController: YMARewardedAdLoaderDelegate {
         print("\(makeMessageDescription(rewardedAd)) loaded")
         self.rewardedAd = rewardedAd
         self.showButton.isEnabled = true
+        stateLabel.text = StateUtils.loaded()
     }
 
     func rewardedAdLoader(_ adLoader: YMARewardedAdLoader, didFailToLoadWithError error: YMAAdRequestError) {
         let id = error.adUnitId
         let error = error.error
         print("Loading failed for Ad with Unit ID: \(String(describing: id)). Error: \(String(describing: error))")
+        stateLabel.text = StateUtils.loadError(error)
     }
 }
 

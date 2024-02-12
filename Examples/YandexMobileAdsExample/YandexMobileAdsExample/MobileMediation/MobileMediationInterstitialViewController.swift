@@ -27,7 +27,7 @@ class MobileMediationInterstitialViewController: UIViewController {
         (adapter: "AppLovin", adUnitID: appLovinAdUnitID),
         (adapter: "BigoAds", adUnitID: bigoAdsAdUnitID),
         (adapter: "Chartboost", adUnitID: chartboostAdUnitID),
-        (adapter: "Google", adUnitID: adMobAdUnitID),
+        (adapter: "AdMob", adUnitID: adMobAdUnitID),
         (adapter: "InMobi", adUnitID: inMobiAdUnitID),
         (adapter: "IronSource", adUnitID: ironSourceAdUnitID),
         (adapter: "Mintegral", adUnitID: mintegralAdUnitID),
@@ -40,6 +40,18 @@ class MobileMediationInterstitialViewController: UIViewController {
     
     @IBOutlet private var showButton: UIButton!
     @IBOutlet private var pickerView: UIPickerView!
+    @IBOutlet private var stateLabel: UILabel!
+    @IBOutlet private var loadButton: UIButton!
+
+    private var adView: YMAAdView?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        stateLabel.accessibilityIdentifier = CommonAccessibility.stateLabel
+        loadButton.accessibilityIdentifier = CommonAccessibility.loadButton
+        showButton.accessibilityIdentifier = CommonAccessibility.presentButton
+    }
 
     private var interstitialAd: YMAInterstitialAd?
 
@@ -61,6 +73,8 @@ class MobileMediationInterstitialViewController: UIViewController {
 
         interstitialAdLoader.delegate = self
         interstitialAdLoader.loadAd(with: configuration)
+        
+        stateLabel.text = nil
     }
 
     @IBAction func presentAd(_ sender: UIButton) {
@@ -81,12 +95,14 @@ extension MobileMediationInterstitialViewController: YMAInterstitialAdLoaderDele
         print("\(makeMessageDescription(interstitialAd)) loaded")
         self.interstitialAd = interstitialAd
         self.showButton.isEnabled = true
+        stateLabel.text = StateUtils.loaded()
     }
 
     func interstitialAdLoader(_ adLoader: YMAInterstitialAdLoader, didFailToLoadWithError error: YMAAdRequestError) {
         let id = error.adUnitId
         let error = error.error
         print("Loading failed for Ad with Unit ID: \(String(describing: id)). Error: \(String(describing: error))")
+        stateLabel.text = StateUtils.loadError(error)
     }
 }
 

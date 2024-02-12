@@ -19,11 +19,52 @@ private let mockPresentingError = AdapterError(errorDescription: "Ad Display Fai
 class YandexBaseAdapter: NSObject, MediationBidding, MediationInitialization {
     private static let bidderTokenLoader = YMABidderTokenLoader()
 
-    /// Get a bidding token in order to use it with in-app bidding integration with Yandex.
+    /// This method implements obtaining a bid token in order to use it with in-app bidding integration with Yandex.
     /// https://yastatic.net/s3/doc-binary/src/dev/mobile-ads/ru/jazzy/Classes/YMABidderTokenLoader.html
-    static func getBiddingToken(completion: @escaping (String?) -> Void) {
-        Self.bidderTokenLoader.loadBidderToken() { token in
+    static func getBiddingToken(parameters: AdapterParameters, completion: @escaping (String?) -> Void) {
+
+        /// Configure all necessary parameters and create YMABidderTokenRequestConfiguration.
+        let requestConfiguraton: YMABidderTokenRequestConfiguration
+        switch parameters.adFormat {
+        case .banner(let size):
+            requestConfiguraton = YMABidderTokenRequestConfiguration(adType: .banner)
+            requestConfiguraton.bannerAdSize = YMABannerAdSize.fixedSize(withWidth: size.width, height: size.height)
+        case .interstitial:
+            requestConfiguraton = YMABidderTokenRequestConfiguration(adType: .interstitial)
+        case .rewarded:
+            requestConfiguraton = YMABidderTokenRequestConfiguration(adType: .rewarded)
+        case .appOpen:
+            requestConfiguraton = YMABidderTokenRequestConfiguration(adType: .appOpenAd)
+        }
+
+        requestConfiguraton.parameters = Self.makeConfigurationParameters(parameters)
+        Self.setupYandexSDK(with: parameters)
+        Self.bidderTokenLoader.loadBidderToken(requestConfiguration: requestConfiguraton) { token in
             completion(token)
+        }
+    }
+
+    /// This method implements creation of general parameters that have to be presented in each request to the Yandex API.
+    private static func makeConfigurationParameters(_ parameters: AdapterParameters) -> [String: String] {
+        [
+            "adapter_network_name": parameters.adapterNetworkName,
+            "adapter_version": parameters.adapterVersion,
+            "adapter_network_sdk_version": parameters.adapterSdkVersion
+        ]
+    }
+
+    /// This method implements setting up YMAMobileAds parameters, which must be current before each request to the Yandex API.
+    static func setupYandexSDK(with parameters: AdapterParameters) {
+        if let userConsent = parameters.userConsent {
+            YMAMobileAds.setUserConsent(userConsent)
+        }
+
+        if let locationTracking = parameters.locationTracking {
+            YMAMobileAds.setLocationTrackingEnabled(locationTracking)
+        }
+
+        if let isTesting = parameters.isTesting, isTesting {
+            YMAMobileAds.enableLogging()
         }
     }
 
@@ -35,31 +76,15 @@ class YandexBaseAdapter: NSObject, MediationBidding, MediationInitialization {
         YMAMobileAds.initializeSDK()
     }
 
-    /// Configure all necessary parameters and create YMAAdRequestConfiguration.
+    /// This method implements creation of YMAAdRequestConfiguration with  all the necessary parameters.
     func makeAdRequestConfiguration(with adData: AdData, parameters: AdapterParameters) -> YMAAdRequestConfiguration {
-        let configParameters = [
-            "adapter_network_name": parameters.adapterNetworkName,
-            "adapter_version": parameters.adapterVersion,
-            "adapter_network_sdk_version": parameters.adapterSdkVersion
-        ]
         let configuration = YMAMutableAdRequestConfiguration(adUnitID: adData.adUinitId)
-        
+        let configParameters = Self.makeConfigurationParameters(parameters)
+
         configuration.parameters = configParameters
 
         if let biddingData = adData.bidId {
             configuration.biddingData = biddingData
-        }
-
-        if let userConsent = parameters.userConsent {
-            YMAMobileAds.setUserConsent(userConsent)
-        }
-
-        if let locationTracking = parameters.locationTracking {
-            YMAMobileAds.setLocationTrackingEnabled(locationTracking)
-        }
-
-        if let isTesting = parameters.isTesting, isTesting {
-            YMAMobileAds.enableLogging()
         }
 
         return configuration
@@ -80,7 +105,7 @@ final class YandexBannerAdapter: YandexBaseAdapter, MediationBanner {
 
         /// Creates an object of the YMABannerAdSize class with the specified maximum height and width of the banner.
         /// Also you coud use another sizes: https://yastatic.net/s3/doc-binary/src/dev/mobile-ads/ru/jazzy/Classes/YMABannerAdSize.html
-        let adSize = YMABannerAdSize.inlineSize(withWidth: size.width, maxHeight: size.height)
+        let adSize = YMABannerAdSize.fixedSize(withWidth: size.width, height: size.height)
         let adView = YMAAdView(adUnitID: adData.adUinitId,
                                adSize: adSize)
         let requestConfiguration = makeAdRequestConfiguration(with: adData, parameters: parameters)
@@ -89,6 +114,7 @@ final class YandexBannerAdapter: YandexBaseAdapter, MediationBanner {
         request.parameters = requestConfiguration.parameters
 
         adView.delegate = self
+        Self.setupYandexSDK(with: parameters)
         adView.loadAd(with: request)
     }
 
@@ -126,7 +152,7 @@ extension YandexBannerAdapter: YMAAdViewDelegate {
         delegate?.didFailToLoadAdView(with: error)
     }
 
-    func adView(_ adView: YMAAdView, didTrackImpressionWith impressionData: YMAImpressionData?) {
+    func adView(_ adView: YMAAdView, didTrackImpression impressionData: YMAImpressionData?) {
         delegate?.didTrackImpression()
     }
 }
@@ -148,6 +174,7 @@ final class YandexInterstitialAdapter: YandexBaseAdapter, MediationInterstitial 
                             parameters: AdapterParameters) {
         self.delegate  = delegate
         let configuration = makeAdRequestConfiguration(with: adData, parameters: parameters)
+        Self.setupYandexSDK(with: parameters)
         loader.loadAd(with: configuration)
     }
     
@@ -223,6 +250,7 @@ final class YandexRewardedAdapter: YandexBaseAdapter, MediationRewarded {
                         parameters: AdapterParameters) {
         self.delegate  = delegate
         let configuration = makeAdRequestConfiguration(with: adData, parameters: parameters)
+        Self.setupYandexSDK(with: parameters)
         loader.loadAd(with: configuration)
     }
     
@@ -302,6 +330,7 @@ final class YandexAppOpenAdapter: YandexBaseAdapter, MediationAppOpen {
                 parameters: AdapterParameters) {
         self.delegate  = delegate
         let configuration = makeAdRequestConfiguration(with: adData, parameters: parameters)
+        Self.setupYandexSDK(with: parameters)
         loader.loadAd(with: configuration)
     }
 

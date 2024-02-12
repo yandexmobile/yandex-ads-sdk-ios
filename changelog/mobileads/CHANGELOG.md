@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 6.4.0
+
+### Added
+
+* New method `loadBidderTokenWithRequestConfiguration:completionHandler:` for generating an Open Bidding token
+* Improvements and fixes
+
+### Deprecated
+
+* Deprecated `loadBidderTokenWithCompletionHandler:` method in `YMABidderTokenLoader`
+
 ## Version 6.3.0
 
 ### Added

@@ -10,6 +10,9 @@ import YandexMobileAds
 
 class AdFoxBannerViewController: UIViewController {
     var adView: YMAAdView!
+    
+    @IBOutlet private var stateLabel: UILabel!
+    @IBOutlet private var loadButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +20,9 @@ class AdFoxBannerViewController: UIViewController {
         // Replace demo R-M-243655-8 with actual Ad Unit ID
         self.adView = YMAAdView(adUnitID: "R-M-243655-8", adSize: adSize)
         self.adView.delegate = self
+        adView.accessibilityIdentifier = CommonAccessibility.bannerView
+        loadButton.accessibilityIdentifier = CommonAccessibility.loadButton
+        stateLabel.accessibilityIdentifier = CommonAccessibility.stateLabel
     }
 
     @IBAction func loadAd() {
@@ -32,6 +38,8 @@ class AdFoxBannerViewController: UIViewController {
         request.parameters = parameters
 
         self.adView.loadAd(with: request)
+        
+        stateLabel.text = nil
     }
 }
 
@@ -43,11 +51,13 @@ extension AdFoxBannerViewController: YMAAdViewDelegate {
 
     func adViewDidLoad(_ adView: YMAAdView) {
         self.adView.displayAtBottom(in: self.view)
-        print("Ad loaded")
+        print("Ad loaded")        
+        stateLabel.text = StateUtils.loaded()
     }
 
     func adViewDidFailLoading(_ adView: YMAAdView, error: Error) {
         print("Ad failed loading. Error: \(error)")
+        stateLabel.text = StateUtils.loadError(error)
     }
 
     func adViewWillLeaveApplication(_ adView: YMAAdView) {
