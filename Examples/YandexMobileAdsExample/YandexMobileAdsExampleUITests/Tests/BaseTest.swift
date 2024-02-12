@@ -30,6 +30,12 @@ class BaseTest: XCTestCase {
         }
     }
     
+    func goBack() {
+        step("Go to previous screen") {
+            app.navigationBars.element.buttons.firstMatch.tap()
+        }
+    }
+    
     func assertAdLoaded(stateLabel: XCUIElement) throws {
         try step("Check ad loaded") {
             let noAdsError = "Ad request completed successfully, but there are no ads available."

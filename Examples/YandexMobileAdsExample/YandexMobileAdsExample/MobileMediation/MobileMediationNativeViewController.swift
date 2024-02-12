@@ -19,7 +19,9 @@ class MobileMediationNativeViewController: UIViewController {
     ]
 
     @IBOutlet private var pickerView: UIPickerView!
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet private var scrollView: UIScrollView!
+    @IBOutlet private var stateLabel: UILabel!
+    @IBOutlet private var loadButton: UIButton!
 
     private var adView: NativeAdView?
     private var adLoader: YMANativeAdLoader?
@@ -31,6 +33,10 @@ class MobileMediationNativeViewController: UIViewController {
         adView?.isHidden = true
         adLoader = YMANativeAdLoader()
         adLoader?.delegate = self
+        adView?.accessibilityIdentifier = CommonAccessibility.bannerView
+        
+        stateLabel.accessibilityIdentifier = CommonAccessibility.stateLabel
+        loadButton.accessibilityIdentifier = CommonAccessibility.loadButton
     }
     
     @IBAction func load(_ sender: Any) {
@@ -46,6 +52,8 @@ class MobileMediationNativeViewController: UIViewController {
         let adUnitID = adUnitIDs[selectedIndex].adUnitID
         let requestConfiguration = YMANativeAdRequestConfiguration(adUnitID: adUnitID)
         adLoader?.loadAd(with: requestConfiguration)
+        
+        stateLabel.text = nil
     }
 
     func addAdView() {
@@ -76,13 +84,16 @@ extension MobileMediationNativeViewController: YMANativeAdLoaderDelegate {
         do {
             try ad.bind(with: adView)
             adView.configureAssetViews()
+            stateLabel.text = StateUtils.loaded()
         } catch {
             print("Binding error: \(error)")
+            stateLabel.text = StateUtils.loadError(error)
         }
     }
     
     func nativeAdLoader(_ loader: YMANativeAdLoader, didFailLoadingWithError error: Error) {
         print("Native ad loading error: \(error)")
+        stateLabel.text = StateUtils.loadError(error)
     }
 }
 

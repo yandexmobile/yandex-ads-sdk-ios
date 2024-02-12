@@ -9,13 +9,17 @@ import UIKit
 import YandexMobileAds
 
 class SettingsViewController: UIViewController {
-    @IBOutlet weak var userConsentSwitch: UISwitch!
+    @IBOutlet private var userConsentSwitch: UISwitch!
+    @IBOutlet private var resetButton: UIButton!
 
     var gdprManager: GDPRUserConsentManager?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         userConsentSwitch.isOn = gdprManager?.userConsent ?? false
+        
+        userConsentSwitch.accessibilityIdentifier = GDPRAccessibility.userConsentSwitch
+        resetButton.accessibilityIdentifier = GDPRAccessibility.resetButton
     }
 
     @IBAction func userConsentDidChange(_ sender: UISwitch) {

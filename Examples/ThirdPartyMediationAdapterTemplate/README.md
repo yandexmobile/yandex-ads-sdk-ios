@@ -31,12 +31,12 @@ See [also](https://yandex.ru/support2/mobile-ads/en/dev/ios/quick-start#app).
 Copy [YandexAdapters](./ThirdPartyMediationAdapterTemplate/AdapterTemplate/YandexAdapters.swift) file content and change stub API to your actual API.
 This way you will get a separate adapter class for each of the ad formats. If your API requires a single class for all formats, you can merge classes.
 
-* Mediation parameters must be set for each request as shown in the [template](./ThirdPartyMediationAdapterTemplate/AdapterTemplate/YandexAdapters.swift#L40):
+* Mediation parameters must be set for each request as shown in the [template](./ThirdPartyMediationAdapterTemplate/AdapterTemplate/YandexAdapters.swift#L82):
   * `"adapter_network_name"` represents your ad network name in lowercase.
   * `"adapter_version"` represents Yandex adapter version. Construct this version by adding one more number to the Yandex SDK version. For example, `6.3.0.0` if the Yandex SDK version is `6.3.0`. If you need to update an adapter without changing the Yandex SDK version, increment the fourth number like `6.3.0.1`.
   * `"adapter_network_sdk_version"` represents your ad network SDK version.
 
-* `Interstitial`, `Rewarded`, `AppOpen` formats provide loader classes. A loader object can be [created](./ThirdPartyMediationAdapterTemplate/AdapterTemplate/YandexAdapters.swift#L139) once and can be reused. This speeds up loading and can be helpful to implement preloading logic, if your network supports it.
+* `Interstitial`, `Rewarded`, `AppOpen` formats provide loader classes. A loader object can be [created](./ThirdPartyMediationAdapterTemplate/AdapterTemplate/YandexAdapters.swift#L165) once and can be reused. This speeds up loading and can be helpful to implement preloading logic, if your network supports it.
 
 ### 4. Test integration
 
@@ -74,14 +74,20 @@ See also: [GDPR](https://ads.yandex.com/helpcenter/en/dev/ios/gdpr).
 
 ### S2S bidding integration
 
-As shown in the [template](./ThirdPartyMediationAdapterTemplate/AdapterTemplate/YandexAdapters.swift#L25), the bidder token can be obtained as follows:
+As shown in the [template](./ThirdPartyMediationAdapterTemplate/AdapterTemplate/YandexAdapters.swift#L42), the bidder token can be obtained as follows:
 
 ```swift
-private static let bidderTokenLoader = YMABidderTokenLoader()
-
-Self.bidderTokenLoader.loadBidderToken() { token in
-            completion(token)
+let bidderTokenLoader = YMABidderTokenLoader()
+bidderTokenLoader.loadBidderToken(requestConfiguration: requestConfiguraton) { token in
+    completion(token)
  }
 ```
 
-You need to load a bidder token for each new ad request.
+You need to load a bidder token for each new ad request. Token request can be created as follows (also shown in [template](./ThirdPartyMediationAdapterTemplate/AdapterTemplate/YandexAdapters.swift#L27)):
+
+```swift
+let requestConfiguraton = YMABidderTokenRequestConfiguration(adType: adType)
+if adType == .banner {
+    requestConfiguraton.bannerAdSize = bannerAdSize
+}
+```
