@@ -6,6 +6,14 @@ All notable changes to this project will be documented in this file.
 
 ### Updated
 
+* Added support for Yandex Mobile Ads SDK 6.4.0
+* Added support for IronSource SDK 7.7.0.0
+* Updated minimum supported IronSource SDK version to 7.7.0.0
+
+## Version 6.3.0.0
+
+### Updated
+
 * Added support for Yandex Mobile Ads SDK 6.3.0
 * Added support for IronSource SDK 7.6.0.0
 * Updated minimum supported IronSource SDK version to 7.6.0.0

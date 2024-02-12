@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 6.4.0.0
+
+### Updated
+
+* Added support for Yandex Mobile Ads SDK 6.4.0
+
 ## Version 6.3.0.0
 
 ### Updated

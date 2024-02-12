@@ -12,7 +12,17 @@ class AdFoxInterstitialViewController: UIViewController {
     private let interstitialAdLoader = YMAInterstitialAdLoader()
     private var interstitialAd: YMAInterstitialAd?
 
-    @IBOutlet weak var showButton: UIButton!
+    @IBOutlet private var showButton: UIButton!
+    @IBOutlet private var stateLabel: UILabel!
+    @IBOutlet private var loadButton: UIButton!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        loadButton.accessibilityIdentifier = CommonAccessibility.loadButton
+        stateLabel.accessibilityIdentifier = CommonAccessibility.stateLabel
+        showButton.accessibilityIdentifier = CommonAccessibility.presentButton
+    }
 
     @IBAction func loadInterstitial() {
         self.showButton.isEnabled = false
@@ -36,6 +46,7 @@ class AdFoxInterstitialViewController: UIViewController {
     @IBAction func presentInterstitial() {
         interstitialAd?.show(from: self)
         showButton.isEnabled = false
+        presentedViewController?.view.accessibilityIdentifier = CommonAccessibility.bannerView
     }
     private func makeMessageDescription(_ interstitial: YMAInterstitialAd) -> String {
         "Interstitial Ad with Unit ID: \(String(describing: interstitial.adInfo?.adUnitId))"
@@ -49,12 +60,14 @@ extension AdFoxInterstitialViewController: YMAInterstitialAdLoaderDelegate {
         print("\(makeMessageDescription(interstitialAd)) loaded")
         self.interstitialAd = interstitialAd
         self.showButton.isEnabled = true
+        stateLabel.text = StateUtils.loaded()
     }
 
     func interstitialAdLoader(_ adLoader: YMAInterstitialAdLoader, didFailToLoadWithError error: YMAAdRequestError) {
         let id = error.adUnitId
         let error = error.error
         print("Loading failed for Ad with Unit ID: \(String(describing: id)). Error: \(String(describing: error))")
+        stateLabel.text = StateUtils.loadError(error)
     }
 }
 

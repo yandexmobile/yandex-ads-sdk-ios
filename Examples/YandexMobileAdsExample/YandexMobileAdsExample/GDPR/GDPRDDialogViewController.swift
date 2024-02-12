@@ -14,8 +14,20 @@ protocol GDPRDialogDelegate: NSObject {
 
 class GDPRDialogViewController: UIViewController {
     var gdprManager: GDPRUserConsentManager?
+    
+    @IBOutlet private var acceptButton: UIButton!
+    @IBOutlet private var declineButton: UIButton!
+    @IBOutlet private var aboutButton: UIButton!
 
     weak var delegate: GDPRDialogDelegate?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        acceptButton.accessibilityIdentifier = GDPRAccessibility.acceptButton
+        declineButton.accessibilityIdentifier = GDPRAccessibility.declineButton
+        aboutButton.accessibilityIdentifier = GDPRAccessibility.aboutButton
+    }
 
     @IBAction func about(_ sender: UIButton) {
         let url = URL(string: "https://yandex.com/legal/confidential/")!

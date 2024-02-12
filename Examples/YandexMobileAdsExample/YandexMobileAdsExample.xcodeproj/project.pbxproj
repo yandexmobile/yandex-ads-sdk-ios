@@ -136,6 +136,22 @@
 		7AA816A12B20C723006C9D91 /* YandexAppOpenAdTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA816A02B20C723006C9D91 /* YandexAppOpenAdTest.swift */; };
 		7AA816A32B20C733006C9D91 /* YandexAppOpenAdPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA816A22B20C733006C9D91 /* YandexAppOpenAdPage.swift */; };
 		7AA816A42B20D76E006C9D91 /* YandexNativeAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA816972B20BF32006C9D91 /* YandexNativeAccessibility.swift */; };
+		7AE29EB92B3B1124004A3420 /* MobileMediationBannerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE29EB82B3B1124004A3420 /* MobileMediationBannerTest.swift */; };
+		7AE29EBB2B3B115D004A3420 /* MobileMediationAdPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE29EBA2B3B115D004A3420 /* MobileMediationAdPage.swift */; };
+		7AE29EBD2B3B1172004A3420 /* MobileMediationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE29EBC2B3B1172004A3420 /* MobileMediationPage.swift */; };
+		7AE29EBF2B3B11B0004A3420 /* MobileMediationInterstitialTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE29EBE2B3B11B0004A3420 /* MobileMediationInterstitialTest.swift */; };
+		7AE29EC12B3B149B004A3420 /* MobileMediationRewardedTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE29EC02B3B149B004A3420 /* MobileMediationRewardedTest.swift */; };
+		7AE29EC32B3B1665004A3420 /* MobileMediationNativeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE29EC22B3B1665004A3420 /* MobileMediationNativeTest.swift */; };
+		7AE29EC72B3DB071004A3420 /* AdFoxPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE29EC62B3DB071004A3420 /* AdFoxPage.swift */; };
+		7AE29EC92B3DB0AD004A3420 /* AdFoxAdPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE29EC82B3DB0AD004A3420 /* AdFoxAdPage.swift */; };
+		7AE29ECB2B3DB705004A3420 /* AdFoxTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE29ECA2B3DB705004A3420 /* AdFoxTest.swift */; };
+		7AE29ECD2B3DBD1A004A3420 /* GDPRTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE29ECC2B3DBD1A004A3420 /* GDPRTest.swift */; };
+		7AE29ECF2B3DBE63004A3420 /* GDPRAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE29ECE2B3DBE63004A3420 /* GDPRAccessibility.swift */; };
+		7AE29ED02B3DBEE7004A3420 /* GDPRAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE29ECE2B3DBE63004A3420 /* GDPRAccessibility.swift */; };
+		7AE29ED12B3DBEE7004A3420 /* GDPRAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE29ECE2B3DBE63004A3420 /* GDPRAccessibility.swift */; };
+		7AE29ED32B3DC307004A3420 /* GDPRDialogPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE29ED22B3DC307004A3420 /* GDPRDialogPage.swift */; };
+		7AE29ED52B3DC31F004A3420 /* GDPRSettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE29ED42B3DC31F004A3420 /* GDPRSettingsPage.swift */; };
+		7AE29ED72B3DC332004A3420 /* GDPRExamplePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE29ED62B3DC332004A3420 /* GDPRExamplePage.swift */; };
 		7AF4B0B42B2774B2004974FD /* YandexInstreamListAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF4B0B32B2774B2004974FD /* YandexInstreamListAccessibility.swift */; };
 		7AF4B0B52B2774CC004974FD /* YandexInstreamListAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF4B0B32B2774B2004974FD /* YandexInstreamListAccessibility.swift */; };
 		7AF4B0B62B2774CD004974FD /* YandexInstreamListAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF4B0B32B2774B2004974FD /* YandexInstreamListAccessibility.swift */; };
@@ -251,6 +267,20 @@
 		7AA816A02B20C723006C9D91 /* YandexAppOpenAdTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexAppOpenAdTest.swift; sourceTree = "<group>"; };
 		7AA816A22B20C733006C9D91 /* YandexAppOpenAdPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexAppOpenAdPage.swift; sourceTree = "<group>"; };
 		7AC09FFE2B1DF5D200FF69F9 /* StateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateUtils.swift; sourceTree = "<group>"; };
+		7AE29EB82B3B1124004A3420 /* MobileMediationBannerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileMediationBannerTest.swift; sourceTree = "<group>"; };
+		7AE29EBA2B3B115D004A3420 /* MobileMediationAdPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileMediationAdPage.swift; sourceTree = "<group>"; };
+		7AE29EBC2B3B1172004A3420 /* MobileMediationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileMediationPage.swift; sourceTree = "<group>"; };
+		7AE29EBE2B3B11B0004A3420 /* MobileMediationInterstitialTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileMediationInterstitialTest.swift; sourceTree = "<group>"; };
+		7AE29EC02B3B149B004A3420 /* MobileMediationRewardedTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileMediationRewardedTest.swift; sourceTree = "<group>"; };
+		7AE29EC22B3B1665004A3420 /* MobileMediationNativeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileMediationNativeTest.swift; sourceTree = "<group>"; };
+		7AE29EC62B3DB071004A3420 /* AdFoxPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdFoxPage.swift; sourceTree = "<group>"; };
+		7AE29EC82B3DB0AD004A3420 /* AdFoxAdPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdFoxAdPage.swift; sourceTree = "<group>"; };
+		7AE29ECA2B3DB705004A3420 /* AdFoxTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdFoxTest.swift; sourceTree = "<group>"; };
+		7AE29ECC2B3DBD1A004A3420 /* GDPRTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDPRTest.swift; sourceTree = "<group>"; };
+		7AE29ECE2B3DBE63004A3420 /* GDPRAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDPRAccessibility.swift; sourceTree = "<group>"; };
+		7AE29ED22B3DC307004A3420 /* GDPRDialogPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDPRDialogPage.swift; sourceTree = "<group>"; };
+		7AE29ED42B3DC31F004A3420 /* GDPRSettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDPRSettingsPage.swift; sourceTree = "<group>"; };
+		7AE29ED62B3DC332004A3420 /* GDPRExamplePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDPRExamplePage.swift; sourceTree = "<group>"; };
 		7AF4B0B32B2774B2004974FD /* YandexInstreamListAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexInstreamListAccessibility.swift; sourceTree = "<group>"; };
 		7AF4B0B72B277503004974FD /* YandexInstreamListPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexInstreamListPage.swift; sourceTree = "<group>"; };
 		7AF4B0B92B278CF8004974FD /* YandexInstreamPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexInstreamPage.swift; sourceTree = "<group>"; };
@@ -626,6 +656,7 @@
 			isa = PBXGroup;
 			children = (
 				7A851DDA2B1E2D8100D03655 /* CommonAccessibility.swift */,
+				7AE29ECE2B3DBE63004A3420 /* GDPRAccessibility.swift */,
 				7A851DF82B1E313C00D03655 /* RootAccessibility.swift */,
 				7A851DEE2B1E2F5C00D03655 /* YandexAdsAccessibility.swift */,
 				7AA816972B20BF32006C9D91 /* YandexNativeAccessibility.swift */,
@@ -642,9 +673,15 @@
 				7A851DDD2B1E2DBB00D03655 /* BaseTest.swift */,
 				7A851DE92B1E2E3100D03655 /* YandexFullscreenTest.swift */,
 				7A851DE72B1E2E1A00D03655 /* YandexBannersTest.swift */,
+				7AE29EBE2B3B11B0004A3420 /* MobileMediationInterstitialTest.swift */,
+				7AE29EC02B3B149B004A3420 /* MobileMediationRewardedTest.swift */,
+				7AE29EC22B3B1665004A3420 /* MobileMediationNativeTest.swift */,
 				7AA8169E2B20C260006C9D91 /* YandexNativeTest.swift */,
 				7AA816A02B20C723006C9D91 /* YandexAppOpenAdTest.swift */,
 				7AF4B0BB2B278D0D004974FD /* YandexInstreamTest.swift */,
+				7AE29EB82B3B1124004A3420 /* MobileMediationBannerTest.swift */,
+				7AE29ECC2B3DBD1A004A3420 /* GDPRTest.swift */,
+				7AE29ECA2B3DB705004A3420 /* AdFoxTest.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -653,15 +690,22 @@
 			isa = PBXGroup;
 			children = (
 				7A851DDF2B1E2DD500D03655 /* PageObject.swift */,
+				7AE29EBC2B3B1172004A3420 /* MobileMediationPage.swift */,
 				7A851DF52B1E309100D03655 /* YandexFullscreenAdPage.swift */,
 				7A851DE12B1E2DE300D03655 /* RootPage.swift */,
+				7AE29ED42B3DC31F004A3420 /* GDPRSettingsPage.swift */,
 				7A851DE32B1E2DF500D03655 /* YandexAdsPage.swift */,
+				7AE29ED22B3DC307004A3420 /* GDPRDialogPage.swift */,
+				7AE29ED62B3DC332004A3420 /* GDPRExamplePage.swift */,
 				7AA8169A2B20BFE7006C9D91 /* YandexNativePage.swift */,
 				7AF4B0B72B277503004974FD /* YandexInstreamListPage.swift */,
 				7AA8169C2B20C244006C9D91 /* YandexNativeAdPage.swift */,
 				7AA816A22B20C733006C9D91 /* YandexAppOpenAdPage.swift */,
 				7AF4B0B92B278CF8004974FD /* YandexInstreamPage.swift */,
 				7A851DE52B1E2E0600D03655 /* YandexBannerPage.swift */,
+				7AE29EBA2B3B115D004A3420 /* MobileMediationAdPage.swift */,
+				7AE29EC82B3DB0AD004A3420 /* AdFoxAdPage.swift */,
+				7AE29EC62B3DB071004A3420 /* AdFoxPage.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -895,6 +939,7 @@
 				14033F6527201E2700A24D5E /* MobileMediationNativeViewController.swift in Sources */,
 				1499318B2722CD44005D2E87 /* AdFoxInterstitialViewController.swift in Sources */,
 				14033FB12720457800A24D5E /* ContentControlsController.swift in Sources */,
+				7AE29ECF2B3DBE63004A3420 /* GDPRAccessibility.swift in Sources */,
 				DE0C2CBE2A65760900A84D00 /* NativeTemplateViewController.swift in Sources */,
 				76DEC6852B0E18B10014B6B4 /* IronSourceBannerViewController.swift in Sources */,
 				7A527BC92B1E36490002B416 /* RootAccessibility.swift in Sources */,
@@ -954,6 +999,7 @@
 				64F70DC12B0B64D300A31CE8 /* InrollsPlaybackController.swift in Sources */,
 				64F70DC22B0B64D300A31CE8 /* InstreamInrollsViewController.swift in Sources */,
 				64F70DC32B0B64D300A31CE8 /* NavigationScreenDataSource.swift in Sources */,
+				7AE29ED02B3DBEE7004A3420 /* GDPRAccessibility.swift in Sources */,
 				7AF4B0BF2B279167004974FD /* YandexInstreamAccessibility.swift in Sources */,
 				64F70DC52B0B64D300A31CE8 /* AppOpenAdControllerDelegate.swift in Sources */,
 				64F70DC62B0B64D300A31CE8 /* VideoAVPlayer.swift in Sources */,
@@ -1009,12 +1055,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AE29ED52B3DC31F004A3420 /* GDPRSettingsPage.swift in Sources */,
+				7AE29EC32B3B1665004A3420 /* MobileMediationNativeTest.swift in Sources */,
 				7A851DE42B1E2DF500D03655 /* YandexAdsPage.swift in Sources */,
+				7AE29ECD2B3DBD1A004A3420 /* GDPRTest.swift in Sources */,
 				7AA8169F2B20C260006C9D91 /* YandexNativeTest.swift in Sources */,
+				7AE29EB92B3B1124004A3420 /* MobileMediationBannerTest.swift in Sources */,
 				7A851DE22B1E2DE300D03655 /* RootPage.swift in Sources */,
+				7AE29ECB2B3DB705004A3420 /* AdFoxTest.swift in Sources */,
 				7AA8169B2B20BFE7006C9D91 /* YandexNativePage.swift in Sources */,
+				7AE29ED12B3DBEE7004A3420 /* GDPRAccessibility.swift in Sources */,
+				7AE29EC92B3DB0AD004A3420 /* AdFoxAdPage.swift in Sources */,
 				7AF4B0BA2B278CF8004974FD /* YandexInstreamPage.swift in Sources */,
+				7AE29ED72B3DC332004A3420 /* GDPRExamplePage.swift in Sources */,
+				7AE29ED32B3DC307004A3420 /* GDPRDialogPage.swift in Sources */,
 				7AF4B0B82B277503004974FD /* YandexInstreamListPage.swift in Sources */,
+				7AE29EBF2B3B11B0004A3420 /* MobileMediationInterstitialTest.swift in Sources */,
 				7AF4B0B62B2774CD004974FD /* YandexInstreamListAccessibility.swift in Sources */,
 				7AA816A32B20C733006C9D91 /* YandexAppOpenAdPage.swift in Sources */,
 				7AA816992B20BFB7006C9D91 /* YandexNativeAccessibility.swift in Sources */,
@@ -1022,6 +1078,8 @@
 				7AF4B0C02B279168004974FD /* YandexInstreamAccessibility.swift in Sources */,
 				7A527BC02B1E36480002B416 /* YandexAdsAccessibility.swift in Sources */,
 				7AF4B0BC2B278D0D004974FD /* YandexInstreamTest.swift in Sources */,
+				7AE29EBB2B3B115D004A3420 /* MobileMediationAdPage.swift in Sources */,
+				7AE29EC12B3B149B004A3420 /* MobileMediationRewardedTest.swift in Sources */,
 				7A851DE02B1E2DD500D03655 /* PageObject.swift in Sources */,
 				7A527BBE2B1E36480002B416 /* StateUtils.swift in Sources */,
 				7A851DF62B1E309100D03655 /* YandexFullscreenAdPage.swift in Sources */,
@@ -1029,7 +1087,9 @@
 				7AA816A12B20C723006C9D91 /* YandexAppOpenAdTest.swift in Sources */,
 				7A851DE82B1E2E1A00D03655 /* YandexBannersTest.swift in Sources */,
 				7A851DEA2B1E2E3100D03655 /* YandexFullscreenTest.swift in Sources */,
+				7AE29EC72B3DB071004A3420 /* AdFoxPage.swift in Sources */,
 				7A851DDE2B1E2DBB00D03655 /* BaseTest.swift in Sources */,
+				7AE29EBD2B3B1172004A3420 /* MobileMediationPage.swift in Sources */,
 				7A527BBF2B1E36480002B416 /* RootAccessibility.swift in Sources */,
 				7AA8169D2B20C244006C9D91 /* YandexNativeAdPage.swift in Sources */,
 			);
@@ -1099,7 +1159,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 6.3.0;
+				CURRENT_PROJECT_VERSION = 6.4.0;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1118,7 +1178,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 6.3.0;
+				MARKETING_VERSION = 6.4.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1162,7 +1222,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 6.3.0;
+				CURRENT_PROJECT_VERSION = 6.4.0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1175,7 +1235,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 6.3.0;
+				MARKETING_VERSION = 6.4.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1191,7 +1251,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = YandexMobileAdsExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1202,6 +1262,7 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.yandex.mobile.YandexMobileAdsExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1217,7 +1278,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = YandexMobileAdsExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1228,6 +1289,7 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.yandex.mobile.YandexMobileAdsExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1271,7 +1333,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 6.3.0;
+				CURRENT_PROJECT_VERSION = 6.4.0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1284,7 +1346,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 6.3.0;
+				MARKETING_VERSION = 6.4.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1300,7 +1362,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = YandexMobileAdsExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1311,6 +1373,7 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.yandex.mobile.YandexMobileAdsExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

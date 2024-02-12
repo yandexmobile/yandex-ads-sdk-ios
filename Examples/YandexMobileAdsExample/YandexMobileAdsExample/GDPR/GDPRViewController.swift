@@ -15,6 +15,9 @@ class GDPRViewController: UIViewController {
     var adLoader: YMANativeAdLoader!
     var bannerView: YMANativeBannerView?
     var gdprManager: GDPRUserConsentManager
+    
+    @IBOutlet private var loadButton: UIButton!
+    @IBOutlet private var settingsButton: UIButton!
 
     required init?(coder: NSCoder) {
         gdprManager = GDPRUserConsentManager(userDefaults: UserDefaults.standard)
@@ -26,6 +29,9 @@ class GDPRViewController: UIViewController {
         super.viewDidLoad()
         adLoader = YMANativeAdLoader()
         adLoader.delegate = self
+        
+        loadButton.accessibilityIdentifier = CommonAccessibility.loadButton
+        settingsButton.accessibilityIdentifier = GDPRAccessibility.settingsButton
     }
 
     @IBAction func loadAd(_ sender: Any) {

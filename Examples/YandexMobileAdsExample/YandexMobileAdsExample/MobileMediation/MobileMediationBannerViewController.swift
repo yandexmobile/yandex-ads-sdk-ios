@@ -25,7 +25,7 @@ class MobileMediationBannerViewController: UIViewController {
         (adapter: "AdColony", adUnitID: adColonyAdUnitID),
         (adapter: "BigoAds", adUnitID: bigoAdsAdUnitID),
         (adapter: "Chartboost", adUnitID: chartboostAdUnitID),
-        (adapter: "Google", adUnitID: adMobAdUnitID),
+        (adapter: "AdMob", adUnitID: adMobAdUnitID),
         (adapter: "InMobi", adUnitID: inMobiAdsAdUnitID),
         (adapter: "Mintegral", adUnitID: mintegralAdUnitID),
         (adapter: "MyTarget", adUnitID: myTargetAdUnitID),
@@ -35,8 +35,17 @@ class MobileMediationBannerViewController: UIViewController {
     ]
 
     @IBOutlet private var pickerView: UIPickerView!
+    @IBOutlet private var stateLabel: UILabel!
+    @IBOutlet private var loadButton: UIButton!
 
     private var adView: YMAAdView?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        stateLabel.accessibilityIdentifier = CommonAccessibility.stateLabel
+        loadButton.accessibilityIdentifier = CommonAccessibility.loadButton
+    }
 
     @IBAction func loadAd(_ sender: UIButton) {
         let adSize = YMABannerAdSize.inlineSize(withWidth: 320, maxHeight: 50)
@@ -53,6 +62,9 @@ class MobileMediationBannerViewController: UIViewController {
         adView = YMAAdView(adUnitID: adUnitID, adSize: adSize)
         adView?.delegate = self
         adView?.loadAd()
+        adView?.accessibilityIdentifier = CommonAccessibility.bannerView
+        
+        stateLabel.text = nil
     }
 }
 
@@ -62,10 +74,12 @@ extension MobileMediationBannerViewController: YMAAdViewDelegate {
     func adViewDidLoad(_ adView: YMAAdView) {
         print("ad loaded")
         adView.displayAtBottom(in: view)
+        stateLabel.text = StateUtils.loaded()
     }
 
     func adViewDidFailLoading(_ adView: YMAAdView, error: Error) {
         print("ad failed loading. Error: \(String(describing: error))")
+        stateLabel.text = StateUtils.loadError(error)
     }
 
     func adViewWillLeaveApplication(_ adView: YMAAdView) {

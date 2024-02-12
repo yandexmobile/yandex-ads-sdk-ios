@@ -9,6 +9,9 @@ import YandexMobileAds
 
 class AdFoxNativeViewController: UIViewController {
     private var adView: NativeAdView?
+    
+    @IBOutlet private var stateLabel: UILabel!
+    @IBOutlet private var loadButton: UIButton!
 
     var adLoader: YMANativeAdLoader!
 
@@ -20,6 +23,10 @@ class AdFoxNativeViewController: UIViewController {
 
         adLoader = YMANativeAdLoader()
         adLoader.delegate = self
+        
+        adView?.accessibilityIdentifier = CommonAccessibility.bannerView
+        loadButton.accessibilityIdentifier = CommonAccessibility.loadButton
+        stateLabel.accessibilityIdentifier = CommonAccessibility.stateLabel
     }
 
     @IBAction func loadAd(_ sender: UIButton) {
@@ -64,13 +71,16 @@ extension AdFoxNativeViewController: YMANativeAdLoaderDelegate {
             try ad.bind(with: adView)
             adView.configureAssetViews()
             addAdView()
+            stateLabel.text = StateUtils.loaded()
         } catch {
             print("Binding error: \(error)")
+            stateLabel.text = StateUtils.loadError(error)
         }
     }
 
     func nativeAdLoader(_ loader: YMANativeAdLoader, didFailLoadingWithError error: Error) {
         print("Native ad loading error: \(error)")
+        stateLabel.text = StateUtils.loadError(error)
     }
 }
 

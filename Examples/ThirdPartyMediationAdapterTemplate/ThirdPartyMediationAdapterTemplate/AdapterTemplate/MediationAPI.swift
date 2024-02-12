@@ -21,6 +21,7 @@ struct AdData {
 /// This is a mock of the object that represents the scope of parameters  for successful adapter configuration and ads request. 
 /// You can pass these parameters as required by your network API, but they must be passed.
 /// - Parameters:
+///   - adFormat: Requested ad format. Used if ad network supported in-app bidding integration with Yandex.
 ///   - adapterVersion: Version of your adapter you are using for Yandex mediation.
 ///   - adapterSdkVersion: Version of you ad network sdk.
 ///   - adapterNetworkName: Yor ad network name.
@@ -28,6 +29,7 @@ struct AdData {
 ///   - locationTracking: Used for collecting location data if the user allowed the app to track the location. True - by default.
 ///   - isTesting: Used for extended YandexSDK logging. Extended logging is disabled - by default.
 struct AdapterParameters {
+    let adFormat: MediationAdFormat
     let adapterVersion: String
     let adapterSdkVersion: String
     let adapterNetworkName: String
@@ -36,7 +38,15 @@ struct AdapterParameters {
     let isTesting: Bool?
 }
 
-///List of adUnits for checking inegration with Yandex.
+/// This is a mock of the object that represents supported  ad formats.
+enum MediationAdFormat {
+    case banner(size: CGSize)
+    case interstitial
+    case rewarded
+    case appOpen
+}
+
+/// List of adUnits for checking inegration with Yandex.
 enum DemoAdUnit: String {
     case demoBannerAdUinitId = "demo-banner-yandex"
     case demoInterstititalAdUinitId = "demo-interstitital-yandex"
@@ -55,7 +65,7 @@ protocol MediationInitialization {
 
 /// This protocol describes methods for getting a bidding token in order to use it with in-app bidding integration with Yandex.
 protocol MediationBidding {
-    static func getBiddingToken(completion: @escaping (String?) -> Void)
+    static func getBiddingToken(parameters: AdapterParameters, completion: @escaping (String?) -> Void)
 }
 
 //MARK: - Banner API
