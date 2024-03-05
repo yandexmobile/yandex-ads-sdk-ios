@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 6.4.1
+
+### Added
+
+* Improvements and fixes
+
 ## Version 6.4.0
 
 ### Added
