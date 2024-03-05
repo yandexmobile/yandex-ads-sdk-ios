@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 7.7.0.1
+
+### Updated
+
+* Updated minimum supported Yandex Mobile Ads SDK version to 6.4.1
+
 ## Version 7.7.0.0
 
 ### Updated
