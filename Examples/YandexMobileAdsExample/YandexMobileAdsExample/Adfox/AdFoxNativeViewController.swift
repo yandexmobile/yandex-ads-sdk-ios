@@ -13,7 +13,7 @@ class AdFoxNativeViewController: UIViewController {
     @IBOutlet private var stateLabel: UILabel!
     @IBOutlet private var loadButton: UIButton!
 
-    var adLoader: YMANativeAdLoader!
+    var adLoader: NativeAdLoader!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ class AdFoxNativeViewController: UIViewController {
         adView = NativeAdView.nib
         adView?.isHidden = true
 
-        adLoader = YMANativeAdLoader()
+        adLoader = NativeAdLoader()
         adLoader.delegate = self
         
         adView?.accessibilityIdentifier = CommonAccessibility.bannerView
@@ -39,7 +39,7 @@ class AdFoxNativeViewController: UIViewController {
         parameters["adf_pfb"] = "fkjas"
         parameters["adf_pt"] = "b"
         // Replace demo R-M-243655-10 with actual Ad Unit ID
-        let requestConfiguration = YMAMutableNativeAdRequestConfiguration(adUnitID: "R-M-243655-10")
+        let requestConfiguration = MutableNativeAdRequestConfiguration(adUnitID: "R-M-243655-10")
         requestConfiguration.parameters = parameters
         adLoader.loadAd(with: requestConfiguration)
     }
@@ -61,8 +61,8 @@ class AdFoxNativeViewController: UIViewController {
 
 // MARK: - YMANativeAdLoaderDelegate
 
-extension AdFoxNativeViewController: YMANativeAdLoaderDelegate {
-    func nativeAdLoader(_ loader: YMANativeAdLoader, didLoad ad: YMANativeAd) {
+extension AdFoxNativeViewController: NativeAdLoaderDelegate {
+    func nativeAdLoader(_ loader: NativeAdLoader, didLoad ad: NativeAd) {
         guard let adView = adView else { return }
 
         ad.delegate = self
@@ -78,7 +78,7 @@ extension AdFoxNativeViewController: YMANativeAdLoaderDelegate {
         }
     }
 
-    func nativeAdLoader(_ loader: YMANativeAdLoader, didFailLoadingWithError error: Error) {
+    func nativeAdLoader(_ loader: NativeAdLoader, didFailLoadingWithError error: Error) {
         print("Native ad loading error: \(error)")
         stateLabel.text = StateUtils.loadError(error)
     }
@@ -86,26 +86,26 @@ extension AdFoxNativeViewController: YMANativeAdLoaderDelegate {
 
 // MARK: - YMANativeAdDelegate
 
-extension AdFoxNativeViewController: YMANativeAdDelegate {
+extension AdFoxNativeViewController: NativeAdDelegate {
 
     // Uncomment to open web links in in-app browser
 //    func viewControllerForPresentingModalView() -> UIViewController? {
 //        return self
 //    }
 
-    func nativeAdWillLeaveApplication(_ ad: YMANativeAd) {
+    func nativeAdWillLeaveApplication(_ ad: NativeAd) {
         print("Will leave application")
     }
 
-    func nativeAd(_ ad: YMANativeAd, willPresentScreen viewController: UIViewController?) {
+    func nativeAd(_ ad: NativeAd, willPresentScreen viewController: UIViewController?) {
         print("Will present screen")
     }
 
-    func nativeAd(_ ad: YMANativeAd, didDismissScreen viewController: UIViewController?) {
+    func nativeAd(_ ad: NativeAd, didDismissScreen viewController: UIViewController?) {
         print("Did dismiss screen")
     }
 
-    func close(_ ad: YMANativeAd) {
+    func close(_ ad: NativeAd) {
         adView?.isHidden = true
     }
 }

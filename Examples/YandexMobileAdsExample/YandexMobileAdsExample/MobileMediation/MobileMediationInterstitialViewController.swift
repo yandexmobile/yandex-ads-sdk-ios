@@ -36,14 +36,14 @@ class MobileMediationInterstitialViewController: UIViewController {
         (adapter: "UnityAds", adUnitID: unityAdsAdUnitID),
         (adapter: "Yandex", adUnitID: yandexAdUnitID)
     ]
-    private let interstitialAdLoader = YMAInterstitialAdLoader()
+    private let interstitialAdLoader = InterstitialAdLoader()
     
     @IBOutlet private var showButton: UIButton!
     @IBOutlet private var pickerView: UIPickerView!
     @IBOutlet private var stateLabel: UILabel!
     @IBOutlet private var loadButton: UIButton!
 
-    private var adView: YMAAdView?
+    private var adView: AdView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +53,7 @@ class MobileMediationInterstitialViewController: UIViewController {
         showButton.accessibilityIdentifier = CommonAccessibility.presentButton
     }
 
-    private var interstitialAd: YMAInterstitialAd?
+    private var interstitialAd: InterstitialAd?
 
     @IBAction func loadAd(_ sender: UIButton) {
         showButton.isEnabled = false
@@ -69,7 +69,7 @@ class MobileMediationInterstitialViewController: UIViewController {
          Yandex: yandexAdUnitID
          */
         let adUnitID = adUnitIDs[selectedIndex].adUnitID
-        let configuration = YMAAdRequestConfiguration(adUnitID: adUnitID)
+        let configuration = AdRequestConfiguration(adUnitID: adUnitID)
 
         interstitialAdLoader.delegate = self
         interstitialAdLoader.loadAd(with: configuration)
@@ -83,22 +83,22 @@ class MobileMediationInterstitialViewController: UIViewController {
         showButton.isEnabled = false
     }
 
-    private func makeMessageDescription(_ interstitial: YMAInterstitialAd) -> String {
+    private func makeMessageDescription(_ interstitial: InterstitialAd) -> String {
         "Interstitial Ad with Unit ID: \(String(describing: interstitial.adInfo?.adUnitId))"
     }
 }
 
 // MARK: - YMAInterstitialAdLoaderDelegate
 
-extension MobileMediationInterstitialViewController: YMAInterstitialAdLoaderDelegate {
-    func interstitialAdLoader(_ adLoader: YMAInterstitialAdLoader, didLoad interstitialAd: YMAInterstitialAd) {
+extension MobileMediationInterstitialViewController: InterstitialAdLoaderDelegate {
+    func interstitialAdLoader(_ adLoader: InterstitialAdLoader, didLoad interstitialAd: InterstitialAd) {
         print("\(makeMessageDescription(interstitialAd)) loaded")
         self.interstitialAd = interstitialAd
         self.showButton.isEnabled = true
         stateLabel.text = StateUtils.loaded()
     }
 
-    func interstitialAdLoader(_ adLoader: YMAInterstitialAdLoader, didFailToLoadWithError error: YMAAdRequestError) {
+    func interstitialAdLoader(_ adLoader: InterstitialAdLoader, didFailToLoadWithError error: AdRequestError) {
         let id = error.adUnitId
         let error = error.error
         print("Loading failed for Ad with Unit ID: \(String(describing: id)). Error: \(String(describing: error))")
@@ -108,24 +108,24 @@ extension MobileMediationInterstitialViewController: YMAInterstitialAdLoaderDele
 
 // MARK: - YMARewardedAdDelegate
 
-extension MobileMediationInterstitialViewController: YMAInterstitialAdDelegate {
-    func interstitialAd(_ interstitialAd: YMAInterstitialAd, didFailToShowWithError error: Error) {
+extension MobileMediationInterstitialViewController: InterstitialAdDelegate {
+    func interstitialAd(_ interstitialAd: InterstitialAd, didFailToShowWithError error: Error) {
         print("\(makeMessageDescription(interstitialAd)) failed to show. Error: \(error)")
     }
 
-    func interstitialAdDidShow(_ interstitialAd: YMAInterstitialAd) {
+    func interstitialAdDidShow(_ interstitialAd: InterstitialAd) {
         print("\(makeMessageDescription(interstitialAd)) did show")
     }
 
-    func interstitialAdDidDismiss(_ interstitialAd: YMAInterstitialAd) {
+    func interstitialAdDidDismiss(_ interstitialAd: InterstitialAd) {
         print("\(makeMessageDescription(interstitialAd)) did dismiss")
     }
 
-    func interstitialAdDidClick(_ interstitialAd: YMAInterstitialAd) {
+    func interstitialAdDidClick(_ interstitialAd: InterstitialAd) {
         print("\(makeMessageDescription(interstitialAd)) did click")
     }
 
-    func interstitialAd(_ interstitialAd: YMAInterstitialAd, didTrackImpressionWith impressionData: YMAImpressionData?) {
+    func interstitialAd(_ interstitialAd: InterstitialAd, didTrackImpressionWith impressionData: ImpressionData?) {
         print("\(makeMessageDescription(interstitialAd)) did track impression")
     }
 }

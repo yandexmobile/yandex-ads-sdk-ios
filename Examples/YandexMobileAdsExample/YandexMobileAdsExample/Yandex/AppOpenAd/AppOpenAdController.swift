@@ -12,17 +12,17 @@ final class AppOpenAdController: NSObject {
 
     weak var delegate: AppOpenAdControllerDelegate?
 
-    private var appOpenAd: YMAAppOpenAd?
+    private var appOpenAd: AppOpenAd?
 
-    private lazy var appOpenAdLoader: YMAAppOpenAdLoader = {
-            let loader = YMAAppOpenAdLoader()
+    private lazy var appOpenAdLoader: AppOpenAdLoader = {
+        let loader = AppOpenAdLoader()
             loader.delegate = self
             return loader
     }()
 
     func loadAd() {
         // Replace demo-appopenad-yandex with actual Ad Unit ID
-        let configuration = YMAAdRequestConfiguration(adUnitID: "demo-appopenad-yandex")
+        let configuration = AdRequestConfiguration(adUnitID: "demo-appopenad-yandex")
         appOpenAdLoader.loadAd(with: configuration)
     }
 
@@ -32,22 +32,22 @@ final class AppOpenAdController: NSObject {
         viewController.presentedViewController?.view.accessibilityIdentifier = CommonAccessibility.bannerView
     }
 
-    private func makeMessageDescription(_ appOpenAd: YMAAppOpenAd) -> String {
+    private func makeMessageDescription(_ appOpenAd: AppOpenAd) -> String {
         "AppOpenAd with Ad Unit ID: \(String(describing: appOpenAd.adInfo?.adUnitId))"
     }
 }
 
 // MARK: - YMAAppOpenAdDelegate
 
-extension AppOpenAdController: YMAAppOpenAdDelegate {
-    func appOpenAdDidDismiss(_ appOpenAd: YMAAppOpenAd) {
+extension AppOpenAdController: AppOpenAdDelegate {
+    func appOpenAdDidDismiss(_ appOpenAd: AppOpenAd) {
         self.appOpenAd = nil
         print("\(makeMessageDescription(appOpenAd)) did dismiss")
         delegate?.appOpenAdControllerDidDismiss(self)
     }
 
     func appOpenAd(
-        _ appOpenAd: YMAAppOpenAd,
+        _ appOpenAd: AppOpenAd,
         didFailToShowWithError error: Error
     ) {
         self.appOpenAd = nil
@@ -55,25 +55,25 @@ extension AppOpenAdController: YMAAppOpenAdDelegate {
         delegate?.appOpenAdController(self, didFailToShowWithError: error)
     }
 
-    func appOpenAdDidShow(_ appOpenAd: YMAAppOpenAd) {
+    func appOpenAdDidShow(_ appOpenAd: AppOpenAd) {
         print("\(makeMessageDescription(appOpenAd)) did show")
     }
 
-    func appOpenAdDidClick(_ appOpenAd: YMAAppOpenAd) {
+    func appOpenAdDidClick(_ appOpenAd: AppOpenAd) {
         print("\(makeMessageDescription(appOpenAd)) did click")
     }
 
-    func appOpenAd(_ appOpenAd: YMAAppOpenAd, didTrackImpressionWith impressionData: YMAImpressionData?) {
+    func appOpenAd(_ appOpenAd: AppOpenAd, didTrackImpressionWith impressionData: ImpressionData?) {
         print("\(makeMessageDescription(appOpenAd)) did track impression")
     }
 }
 
 // MARK: - YMAAppOpenAdLoaderDelegate
 
-extension AppOpenAdController: YMAAppOpenAdLoaderDelegate {
+extension AppOpenAdController: AppOpenAdLoaderDelegate {
     func appOpenAdLoader(
-        _ adLoader: YMAAppOpenAdLoader,
-        didLoad appOpenAd: YMAAppOpenAd
+        _ adLoader: AppOpenAdLoader,
+        didLoad appOpenAd: AppOpenAd
     ) {
         self.appOpenAd = appOpenAd
         self.appOpenAd?.delegate = self
@@ -82,8 +82,8 @@ extension AppOpenAdController: YMAAppOpenAdLoaderDelegate {
     }
 
     func appOpenAdLoader(
-        _ adLoader: YMAAppOpenAdLoader,
-        didFailToLoadWithError error: YMAAdRequestError
+        _ adLoader: AppOpenAdLoader,
+        didFailToLoadWithError error: AdRequestError
     ) {
         appOpenAd = nil
         let id = error.adUnitId
