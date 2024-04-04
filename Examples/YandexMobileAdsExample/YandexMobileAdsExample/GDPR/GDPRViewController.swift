@@ -12,8 +12,8 @@ private let settingsSegueID = "showSettingsViewController"
 private let dialogSegueID = "showDialogViewController"
 
 class GDPRViewController: UIViewController {
-    var adLoader: YMANativeAdLoader!
-    var bannerView: YMANativeBannerView?
+    var adLoader: NativeAdLoader!
+    var bannerView: NativeBannerView?
     var gdprManager: GDPRUserConsentManager
     
     @IBOutlet private var loadButton: UIButton!
@@ -27,7 +27,7 @@ class GDPRViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        adLoader = YMANativeAdLoader()
+        adLoader = NativeAdLoader()
         adLoader.delegate = self
         
         loadButton.accessibilityIdentifier = CommonAccessibility.loadButton
@@ -49,7 +49,7 @@ class GDPRViewController: UIViewController {
 
     private func loadAd() {
         // Replace demo-native-content-yandex with actual Ad Unit ID
-        let requestConfiguration = YMANativeAdRequestConfiguration(adUnitID: "demo-native-content-yandex")
+        let requestConfiguration = NativeAdRequestConfiguration(adUnitID: "demo-native-content-yandex")
         adLoader.loadAd(with: requestConfiguration)
     }
 
@@ -86,9 +86,9 @@ extension GDPRViewController: GDPRDialogDelegate {
 
 // MARK: - YMANativeAdLoaderDelegate
 
-extension GDPRViewController: YMANativeAdLoaderDelegate {
-    func nativeAdLoader(_ loader: YMANativeAdLoader, didLoad ad: YMANativeAd) {
-        let bannerView = YMANativeBannerView()
+extension GDPRViewController: NativeAdLoaderDelegate {
+    func nativeAdLoader(_ loader: NativeAdLoader, didLoad ad: NativeAd) {
+        let bannerView = NativeBannerView()
         bannerView.ad = ad
 
         self.bannerView?.removeFromSuperview()
@@ -97,7 +97,7 @@ extension GDPRViewController: YMANativeAdLoaderDelegate {
         configureLayoutAtBottom(for: bannerView)
     }
 
-    func nativeAdLoader(_ loader: YMANativeAdLoader, didFailLoadingWithError error: Error) {
+    func nativeAdLoader(_ loader: NativeAdLoader, didFailLoadingWithError error: Error) {
         print("Native ad loading error: ", error)
     }
 }

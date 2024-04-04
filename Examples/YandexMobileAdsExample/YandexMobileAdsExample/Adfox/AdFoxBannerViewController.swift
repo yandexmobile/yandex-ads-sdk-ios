@@ -9,16 +9,16 @@ import UIKit
 import YandexMobileAds
 
 class AdFoxBannerViewController: UIViewController {
-    var adView: YMAAdView!
+    var adView: AdView!
     
     @IBOutlet private var stateLabel: UILabel!
     @IBOutlet private var loadButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let adSize = YMABannerAdSize.inlineSize(withWidth: 320, maxHeight: 100)
+        let adSize = BannerAdSize.inlineSize(withWidth: 320, maxHeight: 100)
         // Replace demo R-M-243655-8 with actual Ad Unit ID
-        self.adView = YMAAdView(adUnitID: "R-M-243655-8", adSize: adSize)
+        self.adView = AdView(adUnitID: "R-M-243655-8", adSize: adSize)
         self.adView.delegate = self
         adView.accessibilityIdentifier = CommonAccessibility.bannerView
         loadButton.accessibilityIdentifier = CommonAccessibility.loadButton
@@ -34,7 +34,7 @@ class AdFoxBannerViewController: UIViewController {
         parameters["adf_pfc"] = "bskug"
         parameters["adf_pfb"] = "flrlu"
         parameters["adf_pt"] = "b"
-        let request = YMAMutableAdRequest()
+        let request = MutableAdRequest()
         request.parameters = parameters
 
         self.adView.loadAd(with: request)
@@ -43,32 +43,32 @@ class AdFoxBannerViewController: UIViewController {
     }
 }
 
-extension AdFoxBannerViewController: YMAAdViewDelegate {
+extension AdFoxBannerViewController: AdViewDelegate {
     // Uncomment to open web links in in-app browser
 //    func viewControllerForPresentingModalView() -> UIViewController? {
 //        return self
 //    }
 
-    func adViewDidLoad(_ adView: YMAAdView) {
+    func adViewDidLoad(_ adView: AdView) {
         self.adView.displayAtBottom(in: self.view)
         print("Ad loaded")        
         stateLabel.text = StateUtils.loaded()
     }
 
-    func adViewDidFailLoading(_ adView: YMAAdView, error: Error) {
+    func adViewDidFailLoading(_ adView: AdView, error: Error) {
         print("Ad failed loading. Error: \(error)")
         stateLabel.text = StateUtils.loadError(error)
     }
 
-    func adViewWillLeaveApplication(_ adView: YMAAdView) {
+    func adViewWillLeaveApplication(_ adView: AdView) {
         print("Ad will leave application")
     }
 
-    func adView(_ adView: YMAAdView, willPresentScreen viewController: UIViewController?) {
+    func adView(_ adView: AdView, willPresentScreen viewController: UIViewController?) {
         print("Ad will present screen")
     }
 
-    func adView(_ adView: YMAAdView, didDismissScreen viewController: UIViewController?) {
+    func adView(_ adView: AdView, didDismissScreen viewController: UIViewController?) {
         print("Ad did dismiss screen")
     }
 

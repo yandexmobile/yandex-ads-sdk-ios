@@ -8,8 +8,8 @@
 import YandexMobileAds
 
 final class NativeTemplateViewController: UIViewController {
-    private let adView: YMANativeBannerView = {
-        let adView = YMANativeBannerView()
+    private let adView: NativeBannerView = {
+        let adView = NativeBannerView()
         adView.translatesAutoresizingMaskIntoConstraints = false
         adView.accessibilityIdentifier = CommonAccessibility.bannerView
         return adView
@@ -36,8 +36,8 @@ final class NativeTemplateViewController: UIViewController {
         return label
     }()
 
-    private lazy var adLoader: YMANativeAdLoader = {
-        let adLoader = YMANativeAdLoader()
+    private lazy var adLoader: NativeAdLoader = {
+        let adLoader = NativeAdLoader()
         adLoader.delegate = self
         return adLoader
     }()
@@ -53,12 +53,12 @@ final class NativeTemplateViewController: UIViewController {
 
     private func loadNativeAd() {
         // Replace demo-native-content-yandex with actual Ad Unit ID
-        let requestConfiguration = YMANativeAdRequestConfiguration(adUnitID: "demo-native-content-yandex")
+        let requestConfiguration = NativeAdRequestConfiguration(adUnitID: "demo-native-content-yandex")
         adLoader.loadAd(with: requestConfiguration)
         stateLabel.text = nil
     }
 
-    private func bindNativeAd(_ ad: YMANativeAd) {
+    private func bindNativeAd(_ ad: NativeAd) {
         ad.delegate = self
         adView.ad = ad
     }
@@ -95,14 +95,14 @@ final class NativeTemplateViewController: UIViewController {
 
 // MARK: - YMANativeAdLoaderDelegate
 
-extension NativeTemplateViewController: YMANativeAdLoaderDelegate {
-    func nativeAdLoader(_ loader: YMANativeAdLoader, didLoad ad: YMANativeAd) {
+extension NativeTemplateViewController: NativeAdLoaderDelegate {
+    func nativeAdLoader(_ loader: NativeAdLoader, didLoad ad: NativeAd) {
         print(#function)
         bindNativeAd(ad)
         stateLabel.text = StateUtils.loaded()
     }
 
-    func nativeAdLoader(_ loader: YMANativeAdLoader, didFailLoadingWithError error: Error) {
+    func nativeAdLoader(_ loader: NativeAdLoader, didFailLoadingWithError error: Error) {
         print(#function + "Error: \(error)")
         stateLabel.text = StateUtils.loadError(error)
     }
@@ -110,28 +110,28 @@ extension NativeTemplateViewController: YMANativeAdLoaderDelegate {
 
 // MARK: - YMANativeAdDelegate
 
-extension NativeTemplateViewController: YMANativeAdDelegate {
-    func nativeAdDidClick(_ ad: YMANativeAd) {
+extension NativeTemplateViewController: NativeAdDelegate {
+    func nativeAdDidClick(_ ad: NativeAd) {
         print(#function)
     }
 
-    func nativeAdWillLeaveApplication(_ ad: YMANativeAd) {
+    func nativeAdWillLeaveApplication(_ ad: NativeAd) {
         print(#function)
     }
 
-    func nativeAd(_ ad: YMANativeAd, willPresentScreen viewController: UIViewController?) {
+    func nativeAd(_ ad: NativeAd, willPresentScreen viewController: UIViewController?) {
         print(#function)
     }
 
-    func nativeAd(_ ad: YMANativeAd, didTrackImpressionWith impressionData: YMAImpressionData?) {
+    func nativeAd(_ ad: NativeAd, didTrackImpressionWith impressionData: ImpressionData?) {
         print(#function)
     }
 
-    func nativeAd(_ ad: YMANativeAd, didDismissScreen viewController: UIViewController?) {
+    func nativeAd(_ ad: NativeAd, didDismissScreen viewController: UIViewController?) {
         print(#function)
     }
 
-    func close(_ ad: YMANativeAd) {
+    func close(_ ad: NativeAd) {
         print(#function)
     }
 }

@@ -9,8 +9,8 @@ import UIKit
 import YandexMobileAds
 
 class AdFoxInterstitialViewController: UIViewController {
-    private let interstitialAdLoader = YMAInterstitialAdLoader()
-    private var interstitialAd: YMAInterstitialAd?
+    private let interstitialAdLoader = InterstitialAdLoader()
+    private var interstitialAd: InterstitialAd?
 
     @IBOutlet private var showButton: UIButton!
     @IBOutlet private var stateLabel: UILabel!
@@ -28,7 +28,7 @@ class AdFoxInterstitialViewController: UIViewController {
         self.showButton.isEnabled = false
 
         // Replace demo R-M-243655-9 with actual Ad Unit ID
-        let requestConfiguration = YMAMutableAdRequestConfiguration(adUnitID: "R-M-243655-9")
+        let requestConfiguration = MutableAdRequestConfiguration(adUnitID: "R-M-243655-9")
 
         var parameters = Dictionary<String, String>()
         parameters["adf_ownerid"] = "270901"
@@ -48,22 +48,22 @@ class AdFoxInterstitialViewController: UIViewController {
         showButton.isEnabled = false
         presentedViewController?.view.accessibilityIdentifier = CommonAccessibility.bannerView
     }
-    private func makeMessageDescription(_ interstitial: YMAInterstitialAd) -> String {
+    private func makeMessageDescription(_ interstitial: InterstitialAd) -> String {
         "Interstitial Ad with Unit ID: \(String(describing: interstitial.adInfo?.adUnitId))"
     }
 }
 
 // MARK: - YMAInterstitialAdLoaderDelegate
 
-extension AdFoxInterstitialViewController: YMAInterstitialAdLoaderDelegate {
-    func interstitialAdLoader(_ adLoader: YMAInterstitialAdLoader, didLoad interstitialAd: YMAInterstitialAd) {
+extension AdFoxInterstitialViewController: InterstitialAdLoaderDelegate {
+    func interstitialAdLoader(_ adLoader: InterstitialAdLoader, didLoad interstitialAd: InterstitialAd) {
         print("\(makeMessageDescription(interstitialAd)) loaded")
         self.interstitialAd = interstitialAd
         self.showButton.isEnabled = true
         stateLabel.text = StateUtils.loaded()
     }
 
-    func interstitialAdLoader(_ adLoader: YMAInterstitialAdLoader, didFailToLoadWithError error: YMAAdRequestError) {
+    func interstitialAdLoader(_ adLoader: InterstitialAdLoader, didFailToLoadWithError error: AdRequestError) {
         let id = error.adUnitId
         let error = error.error
         print("Loading failed for Ad with Unit ID: \(String(describing: id)). Error: \(String(describing: error))")
@@ -73,24 +73,24 @@ extension AdFoxInterstitialViewController: YMAInterstitialAdLoaderDelegate {
 
 // MARK: - YMARewardedAdDelegate
 
-extension AdFoxInterstitialViewController: YMAInterstitialAdDelegate {
-    func interstitialAd(_ interstitialAd: YMAInterstitialAd, didFailToShowWithError error: Error) {
+extension AdFoxInterstitialViewController: InterstitialAdDelegate {
+    func interstitialAd(_ interstitialAd: InterstitialAd, didFailToShowWithError error: Error) {
         print("\(makeMessageDescription(interstitialAd)) failed to show. Error: \(error)")
     }
 
-    func interstitialAdDidShow(_ interstitialAd: YMAInterstitialAd) {
+    func interstitialAdDidShow(_ interstitialAd: InterstitialAd) {
         print("\(makeMessageDescription(interstitialAd)) did show")
     }
 
-    func interstitialAdDidDismiss(_ interstitialAd: YMAInterstitialAd) {
+    func interstitialAdDidDismiss(_ interstitialAd: InterstitialAd) {
         print("\(makeMessageDescription(interstitialAd)) did dismiss")
     }
 
-    func interstitialAdDidClick(_ interstitialAd: YMAInterstitialAd) {
+    func interstitialAdDidClick(_ interstitialAd: InterstitialAd) {
         print("\(makeMessageDescription(interstitialAd)) did click")
     }
 
-    func interstitialAd(_ interstitialAd: YMAInterstitialAd, didTrackImpressionWith impressionData: YMAImpressionData?) {
+    func interstitialAd(_ interstitialAd: InterstitialAd, didTrackImpressionWith impressionData: ImpressionData?) {
         print("\(makeMessageDescription(interstitialAd)) did track impression")
     }
 }

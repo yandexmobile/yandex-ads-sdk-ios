@@ -8,12 +8,12 @@
 import YandexMobileAds
 
 final class StickyBannerViewController: UIViewController {
-    private lazy var adView: YMAAdView = {
+    private lazy var adView: AdView = {
         let width = view.safeAreaLayoutGuide.layoutFrame.width
-        let adSize = YMABannerAdSize.stickySize(withContainerWidth: width)
+        let adSize = BannerAdSize.stickySize(withContainerWidth: width)
         
         // Replace demo demo-banner-yandex with actual Ad Unit ID
-        let adView = YMAAdView(adUnitID: "demo-banner-yandex", adSize: adSize)
+        let adView = AdView(adUnitID: "demo-banner-yandex", adSize: adSize)
         adView.accessibilityIdentifier = CommonAccessibility.bannerView
         adView.delegate = self
         return adView
@@ -72,35 +72,35 @@ final class StickyBannerViewController: UIViewController {
     }
 }
 
-extension StickyBannerViewController: YMAAdViewDelegate {
-    func adViewDidLoad(_ adView: YMAAdView) {
+extension StickyBannerViewController: AdViewDelegate {
+    func adViewDidLoad(_ adView: AdView) {
         stateLabel.text = StateUtils.loaded()
         print(#function)
     }
 
-    func adViewDidClick(_ adView: YMAAdView) {
+    func adViewDidClick(_ adView: AdView) {
         print(#function)
     }
 
-    func adView(_ adView: YMAAdView, didTrackImpressionWith impressionData: YMAImpressionData?) {
+    func adView(_ adView: AdView, didTrackImpression impressionData: ImpressionData?) {
         print(#function)
     }
 
-    func adViewDidFailLoading(_ adView: YMAAdView, error: Error) {
+    func adViewDidFailLoading(_ adView: AdView, error: Error) {
         let text = StateUtils.loadError(error)
         stateLabel.text = text
         print(#function + text)
     }
 
-    func adViewWillLeaveApplication(_ adView: YMAAdView) {
+    func adViewWillLeaveApplication(_ adView: AdView) {
         print(#function)
     }
 
-    func adView(_ adView: YMAAdView, willPresentScreen viewController: UIViewController?) {
+    func adView(_ adView: AdView, willPresentScreen viewController: UIViewController?) {
         print(#function)
     }
 
-    func adView(_ adView: YMAAdView, didDismissScreen viewController: UIViewController?) {
+    func adView(_ adView: AdView, didDismissScreen viewController: UIViewController?) {
         print(#function)
     }
 }

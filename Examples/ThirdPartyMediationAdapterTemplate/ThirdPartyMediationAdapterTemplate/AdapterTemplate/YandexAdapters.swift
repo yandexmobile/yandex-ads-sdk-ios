@@ -17,24 +17,24 @@ private let mockPresentingError = AdapterError(errorDescription: "Ad Display Fai
 
 /// This class implements base methods for all other adapters.
 class YandexBaseAdapter: NSObject, MediationBidding, MediationInitialization {
-    private static let bidderTokenLoader = YMABidderTokenLoader()
+    private static let bidderTokenLoader = BidderTokenLoader()
 
     /// This method implements obtaining a bid token in order to use it with in-app bidding integration with Yandex.
     /// https://yastatic.net/s3/doc-binary/src/dev/mobile-ads/ru/jazzy/Classes/YMABidderTokenLoader.html
     static func getBiddingToken(parameters: AdapterParameters, completion: @escaping (String?) -> Void) {
 
         /// Configure all necessary parameters and create YMABidderTokenRequestConfiguration.
-        let requestConfiguraton: YMABidderTokenRequestConfiguration
+        let requestConfiguraton: BidderTokenRequestConfiguration
         switch parameters.adFormat {
         case .banner(let size):
-            requestConfiguraton = YMABidderTokenRequestConfiguration(adType: .banner)
-            requestConfiguraton.bannerAdSize = YMABannerAdSize.fixedSize(withWidth: size.width, height: size.height)
+            requestConfiguraton = BidderTokenRequestConfiguration(adType: .banner)
+            requestConfiguraton.bannerAdSize = BannerAdSize.fixedSize(withWidth: size.width, height: size.height)
         case .interstitial:
-            requestConfiguraton = YMABidderTokenRequestConfiguration(adType: .interstitial)
+            requestConfiguraton = BidderTokenRequestConfiguration(adType: .interstitial)
         case .rewarded:
-            requestConfiguraton = YMABidderTokenRequestConfiguration(adType: .rewarded)
+            requestConfiguraton = BidderTokenRequestConfiguration(adType: .rewarded)
         case .appOpen:
-            requestConfiguraton = YMABidderTokenRequestConfiguration(adType: .appOpenAd)
+            requestConfiguraton = BidderTokenRequestConfiguration(adType: .appOpenAd)
         }
 
         requestConfiguraton.parameters = Self.makeConfigurationParameters(parameters)
@@ -56,15 +56,15 @@ class YandexBaseAdapter: NSObject, MediationBidding, MediationInitialization {
     /// This method implements setting up YMAMobileAds parameters, which must be current before each request to the Yandex API.
     static func setupYandexSDK(with parameters: AdapterParameters) {
         if let userConsent = parameters.userConsent {
-            YMAMobileAds.setUserConsent(userConsent)
+            MobileAds.setUserConsent(userConsent)
         }
 
         if let locationTracking = parameters.locationTracking {
-            YMAMobileAds.setLocationTrackingEnabled(locationTracking)
+            MobileAds.setLocationTrackingEnabled(locationTracking)
         }
 
         if let isTesting = parameters.isTesting, isTesting {
-            YMAMobileAds.enableLogging()
+            MobileAds.enableLogging()
         }
     }
 
@@ -73,12 +73,12 @@ class YandexBaseAdapter: NSObject, MediationBidding, MediationInitialization {
     /// and therefore increase revenue from monetization.
     /// https://yandex.ru/support2/mobile-ads/en/dev/ios/quick-start
     static func initializeSDK() {
-        YMAMobileAds.initializeSDK()
+        MobileAds.initializeSDK()
     }
 
     /// This method implements creation of YMAAdRequestConfiguration with  all the necessary parameters.
-    func makeAdRequestConfiguration(with adData: AdData, parameters: AdapterParameters) -> YMAAdRequestConfiguration {
-        let configuration = YMAMutableAdRequestConfiguration(adUnitID: adData.adUinitId)
+    func makeAdRequestConfiguration(with adData: AdData, parameters: AdapterParameters) -> AdRequestConfiguration {
+        let configuration = MutableAdRequestConfiguration(adUnitID: adData.adUinitId)
         let configParameters = Self.makeConfigurationParameters(parameters)
 
         configuration.parameters = configParameters
@@ -96,7 +96,7 @@ class YandexBaseAdapter: NSObject, MediationBidding, MediationInitialization {
 /// This class implements base methods for banner adapter.
 final class YandexBannerAdapter: YandexBaseAdapter, MediationBanner {
     private weak var delegate: MediationBannerDelegate?
-    private var adView: YMAAdView?
+    private var adView: AdView?
 
     func loadBannerAd(with adData: AdData,
                       size: CGSize,
@@ -105,11 +105,11 @@ final class YandexBannerAdapter: YandexBaseAdapter, MediationBanner {
 
         /// Creates an object of the YMABannerAdSize class with the specified maximum height and width of the banner.
         /// Also you coud use another sizes: https://yastatic.net/s3/doc-binary/src/dev/mobile-ads/ru/jazzy/Classes/YMABannerAdSize.html
-        let adSize = YMABannerAdSize.fixedSize(withWidth: size.width, height: size.height)
-        let adView = YMAAdView(adUnitID: adData.adUinitId,
+        let adSize = BannerAdSize.fixedSize(withWidth: size.width, height: size.height)
+        let adView = AdView(adUnitID: adData.adUinitId,
                                adSize: adSize)
         let requestConfiguration = makeAdRequestConfiguration(with: adData, parameters: parameters)
-        let request = YMAMutableAdRequest()
+        let request = MutableAdRequest()
         request.biddingData = requestConfiguration.biddingData
         request.parameters = requestConfiguration.parameters
 
@@ -127,32 +127,32 @@ final class YandexBannerAdapter: YandexBaseAdapter, MediationBanner {
 
 /// YMAAdViewDelegate implementation.
 /// https://yastatic.net/s3/doc-binary/src/dev/mobile-ads/ru/jazzy/Protocols/YMAAdViewDelegate.html
-extension YandexBannerAdapter: YMAAdViewDelegate {
-    func adViewDidLoad(_ adView: YMAAdView) {
+extension YandexBannerAdapter: AdViewDelegate {
+    func adViewDidLoad(_ adView: AdView) {
         delegate?.didLoadAd(with: adView)
     }
 
-    func adViewDidClick(_ adView: YMAAdView) {
+    func adViewDidClick(_ adView: AdView) {
         delegate?.didClickAdView()
     }
 
-    func adViewWillLeaveApplication(_ adView: YMAAdView) {
+    func adViewWillLeaveApplication(_ adView: AdView) {
         delegate?.adViewWillLeaveApplication()
     }
 
-    func adView(_ adView: YMAAdView, didDismissScreen viewController: UIViewController?) {
+    func adView(_ adView: AdView, didDismissScreen viewController: UIViewController?) {
         delegate?.adViewWillDismissScreen()
     }
 
-    func adView(_ adView: YMAAdView, willPresentScreen viewController: UIViewController?) {
+    func adView(_ adView: AdView, willPresentScreen viewController: UIViewController?) {
         delegate?.adViewWillPresentScreen()
     }
 
-    func adViewDidFailLoading(_ adView: YMAAdView, error: Error) {
+    func adViewDidFailLoading(_ adView: AdView, error: Error) {
         delegate?.didFailToLoadAdView(with: error)
     }
 
-    func adView(_ adView: YMAAdView, didTrackImpression impressionData: YMAImpressionData?) {
+    func adView(_ adView: AdView, didTrackImpression impressionData: ImpressionData?) {
         delegate?.didTrackImpression()
     }
 }
@@ -162,12 +162,12 @@ extension YandexBannerAdapter: YMAAdViewDelegate {
 /// This class implements base methods for interstitial adapter.
 final class YandexInterstitialAdapter: YandexBaseAdapter, MediationInterstitial {
     private weak var delegate: MediationInterstitialDelegate?
-    private lazy var loader: YMAInterstitialAdLoader = {
-        let loader = YMAInterstitialAdLoader()
+    private lazy var loader: InterstitialAdLoader = {
+        let loader = InterstitialAdLoader()
         loader.delegate = self
         return loader
     }()
-    private var interstitialAd: YMAInterstitialAd?
+    private var interstitialAd: InterstitialAd?
 
     func loadInterstitialAd(with adData: AdData,
                             delegate: MediationInterstitialDelegate,
@@ -197,38 +197,38 @@ final class YandexInterstitialAdapter: YandexBaseAdapter, MediationInterstitial 
 
 /// YMAInterstitialAdDelegate implementation.
 /// https://yastatic.net/s3/doc-binary/src/dev/mobile-ads/ru/jazzy/Protocols/YMAInterstitialAdDelegate.html
-extension YandexInterstitialAdapter: YMAInterstitialAdDelegate {
-    func interstitialAdDidShow(_ interstitialAd: YMAInterstitialAd) {
+extension YandexInterstitialAdapter: InterstitialAdDelegate {
+    func interstitialAdDidShow(_ interstitialAd: InterstitialAd) {
         delegate?.interstitialDidShow()
     }
 
-    func interstitialAdDidDismiss(_ interstitialAd: YMAInterstitialAd) {
+    func interstitialAdDidDismiss(_ interstitialAd: InterstitialAd) {
         delegate?.interstitialDidDismiss()
     }
 
-    func interstitialAdDidClick(_ interstitialAd: YMAInterstitialAd) {
+    func interstitialAdDidClick(_ interstitialAd: InterstitialAd) {
         delegate?.interstitialDidClick()
     }
 
-    func interstitialAd(_ interstitialAd: YMAInterstitialAd, didTrackImpressionWith impressionData: YMAImpressionData?) {
+    func interstitialAd(_ interstitialAd: InterstitialAd, didTrackImpressionWith impressionData: ImpressionData?) {
         delegate?.interstitialDidTrackImpression()
     }
 
-    func interstitialAd(_ interstitialAd: YMAInterstitialAd, didFailToShowWithError error: Error) {
+    func interstitialAd(_ interstitialAd: InterstitialAd, didFailToShowWithError error: Error) {
         delegate?.interstitialDidFailToShow(with: error)
     }
 }
 
 /// YMAInterstitialAdLoaderDelegate implementation.
 /// https://yastatic.net/s3/doc-binary/src/dev/mobile-ads/ru/jazzy/Protocols/YMAInterstitialAdLoaderDelegate.html
-extension YandexInterstitialAdapter: YMAInterstitialAdLoaderDelegate {
-    func interstitialAdLoader(_ adLoader: YMAInterstitialAdLoader, didLoad interstitialAd: YMAInterstitialAd) {
+extension YandexInterstitialAdapter: InterstitialAdLoaderDelegate {
+    func interstitialAdLoader(_ adLoader: InterstitialAdLoader, didLoad interstitialAd: InterstitialAd) {
         interstitialAd.delegate = self
         self.interstitialAd = interstitialAd
         delegate?.interstitialDidLoad()
     }
     
-    func interstitialAdLoader(_ adLoader: YMAInterstitialAdLoader, didFailToLoadWithError error: YMAAdRequestError) {
+    func interstitialAdLoader(_ adLoader: InterstitialAdLoader, didFailToLoadWithError error: AdRequestError) {
         delegate?.interstitialDidFailToLoad(with: error.error)
     }
 }
@@ -238,12 +238,12 @@ extension YandexInterstitialAdapter: YMAInterstitialAdLoaderDelegate {
 /// This class implements base methods for rewardedl adapter.
 final class YandexRewardedAdapter: YandexBaseAdapter, MediationRewarded {
     private weak var delegate: MediationRewardedDelegate?
-    private lazy var loader: YMARewardedAdLoader = {
-        let loader = YMARewardedAdLoader()
+    private lazy var loader: RewardedAdLoader = {
+        let loader = RewardedAdLoader()
         loader.delegate = self
         return loader
     }()
-    private var rewardedAd: YMARewardedAd?
+    private var rewardedAd: RewardedAd?
 
     func loadRewardedAd(with adData: AdData,
                         delegate: MediationRewardedDelegate,
@@ -273,42 +273,42 @@ final class YandexRewardedAdapter: YandexBaseAdapter, MediationRewarded {
 
 /// YMARewardedAdDelegate implementation.
 /// https://yastatic.net/s3/doc-binary/src/dev/mobile-ads/ru/jazzy/Protocols/YMARewardedAdDelegate.html
-extension YandexRewardedAdapter: YMARewardedAdDelegate {
-    func rewardedAd(_ rewardedAd: YMARewardedAd, didReward reward: YMAReward) {
+extension YandexRewardedAdapter: RewardedAdDelegate {
+    func rewardedAd(_ rewardedAd: RewardedAd, didReward reward: Reward) {
         delegate?.didRewardUser()
     }
 
-    func rewardedAdDidShow(_ rewardedAd: YMARewardedAd) {
+    func rewardedAdDidShow(_ rewardedAd: RewardedAd) {
         delegate?.rewardedDidShow()
     }
 
-    func rewardedAdDidDismiss(_ rewardedAd: YMARewardedAd) {
+    func rewardedAdDidDismiss(_ rewardedAd: RewardedAd) {
         delegate?.rewardedDidDismiss()
     }
 
-    func rewardedAdDidClick(_ rewardedAd: YMARewardedAd) {
+    func rewardedAdDidClick(_ rewardedAd: RewardedAd) {
         delegate?.rewardedDidClick()
     }
 
-    func rewardedAd(_ rewardedAd: YMARewardedAd, didTrackImpressionWith impressionData: YMAImpressionData?) {
+    func rewardedAd(_ rewardedAd: RewardedAd, didTrackImpressionWith impressionData: ImpressionData?) {
         delegate?.rewardedDidTrackImpression()
     }
 
-    func rewardedAd(_ rewardedAd: YMARewardedAd, didFailToShowWithError error: Error) {
+    func rewardedAd(_ rewardedAd: RewardedAd, didFailToShowWithError error: Error) {
         delegate?.rewardedDidFailToShow(with: error)
     }
 }
 
 /// YMARewardedAdLoaderDelegate implementation.
 /// https://yastatic.net/s3/doc-binary/src/dev/mobile-ads/ru/jazzy/Protocols/YMARewardedAdLoaderDelegate.html
-extension YandexRewardedAdapter: YMARewardedAdLoaderDelegate {
-    func rewardedAdLoader(_ adLoader: YMARewardedAdLoader, didLoad rewardedAd: YMARewardedAd) {
+extension YandexRewardedAdapter: RewardedAdLoaderDelegate {
+    func rewardedAdLoader(_ adLoader: RewardedAdLoader, didLoad rewardedAd: RewardedAd) {
         rewardedAd.delegate = self
         self.rewardedAd = rewardedAd
         delegate?.rewardedDidLoad()
     }
     
-    func rewardedAdLoader(_ adLoader: YMARewardedAdLoader, didFailToLoadWithError error: YMAAdRequestError) {
+    func rewardedAdLoader(_ adLoader: RewardedAdLoader, didFailToLoadWithError error: AdRequestError) {
         delegate?.rewardedDidFailToShow(with: error.error)
     }
 }
@@ -318,12 +318,12 @@ extension YandexRewardedAdapter: YMARewardedAdLoaderDelegate {
 /// This class implements base methods for appOpen adapter.
 final class YandexAppOpenAdapter: YandexBaseAdapter, MediationAppOpen {
     private weak var delegate: MediationAppOpenDelegate?
-    private lazy var loader: YMAAppOpenAdLoader = {
-        let loader = YMAAppOpenAdLoader()
+    private lazy var loader: AppOpenAdLoader = {
+        let loader = AppOpenAdLoader()
         loader.delegate = self
         return loader
     }()
-    private var appOpenAd: YMAAppOpenAd?
+    private var appOpenAd: AppOpenAd?
 
     func loadAd(with adData: AdData,
                 delegate: MediationAppOpenDelegate,
@@ -353,38 +353,38 @@ final class YandexAppOpenAdapter: YandexBaseAdapter, MediationAppOpen {
 
 /// YMAAppOpenAdDelegate implementation.
 /// https://yastatic.net/s3/doc-binary/src/dev/mobile-ads/ru/jazzy/Protocols/YMAAppOpenAdDelegate.html
-extension YandexAppOpenAdapter: YMAAppOpenAdDelegate {
-    func appOpenAdDidShow(_ appOpenAd: YMAAppOpenAd) {
+extension YandexAppOpenAdapter: AppOpenAdDelegate {
+    func appOpenAdDidShow(_ appOpenAd: AppOpenAd) {
         delegate?.appOpenDidShow()
     }
 
-    func appOpenAdDidDismiss(_ appOpenAd: YMAAppOpenAd) {
+    func appOpenAdDidDismiss(_ appOpenAd: AppOpenAd) {
         delegate?.appOpenDidDismiss()
     }
 
-    func appOpenAdDidClick(_ appOpenAd: YMAAppOpenAd) {
+    func appOpenAdDidClick(_ appOpenAd: AppOpenAd) {
         delegate?.appOpenDidClick()
     }
 
-    func appOpenAd(_ appOpenAd: YMAAppOpenAd, didTrackImpressionWith impressionData: YMAImpressionData?) {
+    func appOpenAd(_ appOpenAd: AppOpenAd, didTrackImpressionWith impressionData: ImpressionData?) {
         delegate?.appOpenDidTrackImpression()
     }
 
-    func appOpenAd(_ appOpenAd: YMAAppOpenAd, didFailToShowWithError error: Error) {
+    func appOpenAd(_ appOpenAd: AppOpenAd, didFailToShowWithError error: Error) {
         delegate?.appOpenDidFailToShow(with: error)
     }
 }
 
 /// YMAAppOpenAdLoaderDelegate implementation.
 /// https://yastatic.net/s3/doc-binary/src/dev/mobile-ads/ru/jazzy/Protocols/YMAAppOpenAdLoaderDelegate.html
-extension YandexAppOpenAdapter: YMAAppOpenAdLoaderDelegate {
-    func appOpenAdLoader(_ adLoader: YMAAppOpenAdLoader, didLoad appOpenAd: YMAAppOpenAd) {
+extension YandexAppOpenAdapter: AppOpenAdLoaderDelegate {
+    func appOpenAdLoader(_ adLoader: AppOpenAdLoader, didLoad appOpenAd: AppOpenAd) {
         appOpenAd.delegate = self
         self.appOpenAd = appOpenAd
         delegate?.appOpenDidLoad()
     }
 
-    func appOpenAdLoader(_ adLoader: YMAAppOpenAdLoader, didFailToLoadWithError error: YMAAdRequestError) {
+    func appOpenAdLoader(_ adLoader: AppOpenAdLoader, didFailToLoadWithError error: AdRequestError) {
         delegate?.appOpenDidFailToLoad(with: error.error)
     }
 }

@@ -44,6 +44,6 @@ final class GDPRUserConsentManager {
     }
 
     private func setUserConsent(_ consent: Bool) {
-        YMAMobileAds.setUserConsent(consent)
+        MobileAds.setUserConsent(consent)
     }
 }
