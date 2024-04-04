@@ -38,7 +38,7 @@ class MobileMediationBannerViewController: UIViewController {
     @IBOutlet private var stateLabel: UILabel!
     @IBOutlet private var loadButton: UIButton!
 
-    private var adView: YMAAdView?
+    private var adView: AdView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +48,7 @@ class MobileMediationBannerViewController: UIViewController {
     }
 
     @IBAction func loadAd(_ sender: UIButton) {
-        let adSize = YMABannerAdSize.inlineSize(withWidth: 320, maxHeight: 50)
+        let adSize = BannerAdSize.inlineSize(withWidth: 320, maxHeight: 50)
         let selectedBlockIndex = pickerView.selectedRow(inComponent: 0)
         /*
          Replace adUnitID with actual Ad unitt ID.
@@ -59,7 +59,7 @@ class MobileMediationBannerViewController: UIViewController {
          */
         let adUnitID = adUnitIDs[selectedBlockIndex].adUnitID
         adView?.removeFromSuperview()
-        adView = YMAAdView(adUnitID: adUnitID, adSize: adSize)
+        adView = AdView(adUnitID: adUnitID, adSize: adSize)
         adView?.delegate = self
         adView?.loadAd()
         adView?.accessibilityIdentifier = CommonAccessibility.bannerView
@@ -70,31 +70,31 @@ class MobileMediationBannerViewController: UIViewController {
 
 // MARK: - YMAAdViewDelegate
 
-extension MobileMediationBannerViewController: YMAAdViewDelegate {
-    func adViewDidLoad(_ adView: YMAAdView) {
+extension MobileMediationBannerViewController: AdViewDelegate {
+    func adViewDidLoad(_ adView: AdView) {
         print("ad loaded")
         adView.displayAtBottom(in: view)
         stateLabel.text = StateUtils.loaded()
     }
 
-    func adViewDidFailLoading(_ adView: YMAAdView, error: Error) {
+    func adViewDidFailLoading(_ adView: AdView, error: Error) {
         print("ad failed loading. Error: \(String(describing: error))")
         stateLabel.text = StateUtils.loadError(error)
     }
 
-    func adViewWillLeaveApplication(_ adView: YMAAdView) {
+    func adViewWillLeaveApplication(_ adView: AdView) {
         print("ad view will leave application")
     }
 
-    func adView(_ adView: YMAAdView, willPresentScreen viewController: UIViewController?) {
+    func adView(_ adView: AdView, willPresentScreen viewController: UIViewController?) {
         print("ad view will present screen")
     }
 
-    func adView(_ adView: YMAAdView, didDismissScreen viewController: UIViewController?) {
+    func adView(_ adView: AdView, didDismissScreen viewController: UIViewController?) {
         print("ad view did dismiss screen")
     }
 
-    func adView(_ adView: YMAAdView, didTrackImpressionWith impressionData: YMAImpressionData?) {
+    func adView(_ adView: AdView, didTrackImpression impressionData: ImpressionData?) {
         print("ad view did track impression with")
     }
 }

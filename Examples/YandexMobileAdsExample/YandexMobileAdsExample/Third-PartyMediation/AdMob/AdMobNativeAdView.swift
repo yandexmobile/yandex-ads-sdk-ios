@@ -79,7 +79,7 @@ extension AdMobNativeAdView: YandexAdMobCustomEventNativeAdView {
         return faviconImageView
     }
 
-    func nativeRatingView() -> (UIView & YMARating)? {
+    func nativeRatingView() -> (UIView & Rating)? {
         return ratingView
     }
 

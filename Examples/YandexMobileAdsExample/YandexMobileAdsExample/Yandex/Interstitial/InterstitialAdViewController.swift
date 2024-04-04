@@ -8,9 +8,9 @@
 import YandexMobileAds
 
 final class InterstitialAdViewController: UIViewController {
-    private var interstitialAd: YMAInterstitialAd?
-    private lazy var interstitialAdLoader: YMAInterstitialAdLoader = {
-        let loader = YMAInterstitialAdLoader()
+    private var interstitialAd: InterstitialAd?
+    private lazy var interstitialAdLoader: InterstitialAdLoader = {
+        let loader = InterstitialAdLoader()
         loader.delegate = self
         return loader
     }()
@@ -39,7 +39,7 @@ final class InterstitialAdViewController: UIViewController {
                 guard let self else { return }
                 
                 // Replace demo-interstitial-yandex with actual Ad Unit ID
-                let configuration = YMAAdRequestConfiguration(adUnitID: "demo-interstitial-yandex")
+                let configuration = AdRequestConfiguration(adUnitID: "demo-interstitial-yandex")
                 self.interstitialAdLoader.loadAd(with: configuration)
                 self.stateLabel.text = nil
             }
@@ -90,15 +90,15 @@ final class InterstitialAdViewController: UIViewController {
         ])
     }
 
-    private func makeMessageDescription(_ interstitialAd: YMAInterstitialAd) -> String {
+    private func makeMessageDescription(_ interstitialAd: InterstitialAd) -> String {
         "Interstitial Ad with Unit ID: \(String(describing: interstitialAd.adInfo?.adUnitId))"
     }
 }
 
 // MARK: - YMAInterstitialAdLoaderDelegate
 
-extension InterstitialAdViewController: YMAInterstitialAdLoaderDelegate {
-    func interstitialAdLoader(_ adLoader: YMAInterstitialAdLoader, didLoad interstitialAd: YMAInterstitialAd) {
+extension InterstitialAdViewController: InterstitialAdLoaderDelegate {
+    func interstitialAdLoader(_ adLoader: InterstitialAdLoader, didLoad interstitialAd: InterstitialAd) {
         self.interstitialAd = interstitialAd
         self.interstitialAd?.delegate = self
         presentButton.isEnabled = true
@@ -106,7 +106,7 @@ extension InterstitialAdViewController: YMAInterstitialAdLoaderDelegate {
         print("\(makeMessageDescription(interstitialAd)) loaded")
     }
 
-    func interstitialAdLoader(_ adLoader: YMAInterstitialAdLoader, didFailToLoadWithError error: YMAAdRequestError) {
+    func interstitialAdLoader(_ adLoader: InterstitialAdLoader, didFailToLoadWithError error: AdRequestError) {
         let id = error.adUnitId
         let error = error.error
         print("Loading failed for Ad with Unit ID: \(String(describing: id)). Error: \(String(describing: error))")
@@ -116,24 +116,24 @@ extension InterstitialAdViewController: YMAInterstitialAdLoaderDelegate {
 
 // MARK: - YMARewardedAdDelegate
 
-extension InterstitialAdViewController: YMAInterstitialAdDelegate {
-    func interstitialAd(_ interstitialAd: YMAInterstitialAd, didFailToShowWithError error: Error) {
+extension InterstitialAdViewController: InterstitialAdDelegate {
+    func interstitialAd(_ interstitialAd: InterstitialAd, didFailToShowWithError error: Error) {
         print("\(makeMessageDescription(interstitialAd)) failed to show. Error: \(error)")
     }
 
-    func interstitialAdDidShow(_ interstitialAd: YMAInterstitialAd) {
+    func interstitialAdDidShow(_ interstitialAd: InterstitialAd) {
         print("\(makeMessageDescription(interstitialAd)) did show")
     }
 
-    func interstitialAdDidDismiss(_ interstitialAd: YMAInterstitialAd) {
+    func interstitialAdDidDismiss(_ interstitialAd: InterstitialAd) {
         print("\(makeMessageDescription(interstitialAd)) did dismiss")
     }
 
-    func interstitialAdDidClick(_ interstitialAd: YMAInterstitialAd) {
+    func interstitialAdDidClick(_ interstitialAd: InterstitialAd) {
         print("\(makeMessageDescription(interstitialAd)) did click")
     }
 
-    func interstitialAd(_ interstitialAd: YMAInterstitialAd, didTrackImpressionWith impressionData: YMAImpressionData?) {
+    func interstitialAd(_ interstitialAd: InterstitialAd, didTrackImpressionWith impressionData: ImpressionData?) {
         print("\(makeMessageDescription(interstitialAd)) did track impression")
     }
 }

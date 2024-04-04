@@ -8,9 +8,9 @@
 import YandexMobileAds
 
 final class RewardedAdViewController: UIViewController {
-    private var rewardedAd: YMARewardedAd?
-    private lazy var rewardedAdLoader: YMARewardedAdLoader = {
-        let loader = YMARewardedAdLoader()
+    private var rewardedAd: RewardedAd?
+    private lazy var rewardedAdLoader: RewardedAdLoader = {
+        let loader = RewardedAdLoader()
         loader.delegate = self
         return loader
     }()
@@ -39,7 +39,7 @@ final class RewardedAdViewController: UIViewController {
                 guard let self else { return }
 
                 // Replace demo-rewarded-yandex with actual Ad Unit ID
-                let configuration = YMAAdRequestConfiguration(adUnitID: "demo-rewarded-yandex")
+                let configuration = AdRequestConfiguration(adUnitID: "demo-rewarded-yandex")
                 self.rewardedAdLoader.loadAd(with: configuration)
 
             }
@@ -90,15 +90,15 @@ final class RewardedAdViewController: UIViewController {
         ])
     }
 
-    private func makeMessageDescription(_ rewardedAd: YMARewardedAd) -> String {
+    private func makeMessageDescription(_ rewardedAd: RewardedAd) -> String {
         "Rewarded Ad with Unit ID: \(String(describing: rewardedAd.adInfo?.adUnitId))"
     }
 }
 
 // MARK: - YMARewardedAdLoaderDelegate
 
-extension RewardedAdViewController: YMARewardedAdLoaderDelegate {
-    func rewardedAdLoader(_ adLoader: YMARewardedAdLoader, didLoad rewardedAd: YMARewardedAd) {
+extension RewardedAdViewController: RewardedAdLoaderDelegate {
+    func rewardedAdLoader(_ adLoader: RewardedAdLoader, didLoad rewardedAd: RewardedAd) {
         self.rewardedAd = rewardedAd
         self.rewardedAd?.delegate = self
         presentButton.isEnabled = true
@@ -106,7 +106,7 @@ extension RewardedAdViewController: YMARewardedAdLoaderDelegate {
         print("\(makeMessageDescription(rewardedAd))) loaded")
     }
 
-    func rewardedAdLoader(_ adLoader: YMARewardedAdLoader, didFailToLoadWithError error: YMAAdRequestError) {
+    func rewardedAdLoader(_ adLoader: RewardedAdLoader, didFailToLoadWithError error: AdRequestError) {
         let id = error.adUnitId
         let error = error.error
         print("Loading failed for Ad with Unit ID: \(String(describing: id)). Error: \(String(describing: error))")
@@ -116,8 +116,8 @@ extension RewardedAdViewController: YMARewardedAdLoaderDelegate {
 
 // MARK: - YMARewardedAdDelegate
 
-extension RewardedAdViewController: YMARewardedAdDelegate {
-    func rewardedAd(_ rewardedAd: YMARewardedAd, didReward reward: YMAReward) {
+extension RewardedAdViewController: RewardedAdDelegate {
+    func rewardedAd(_ rewardedAd: RewardedAd, didReward reward: Reward) {
         let message = "\(makeMessageDescription(rewardedAd)) did reward: \(reward.amount) \(reward.type)"
         let alertController = UIAlertController(title: "Reward", message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.cancel, handler: nil))
@@ -125,23 +125,23 @@ extension RewardedAdViewController: YMARewardedAdDelegate {
         print(message)
     }
 
-    func rewardedAd(_ rewardedAd: YMARewardedAd, didFailToShowWithError error: Error) {
+    func rewardedAd(_ rewardedAd: RewardedAd, didFailToShowWithError error: Error) {
         print("\(makeMessageDescription(rewardedAd)) failed to show. Error: \(error)")
     }
 
-    func rewardedAdDidShow(_ rewardedAd: YMARewardedAd) {
+    func rewardedAdDidShow(_ rewardedAd: RewardedAd) {
         print("\(makeMessageDescription(rewardedAd)) did show")
     }
 
-    func rewardedAdDidDismiss(_ rewardedAd: YMARewardedAd) {
+    func rewardedAdDidDismiss(_ rewardedAd: RewardedAd) {
         print("\(makeMessageDescription(rewardedAd)) did dismiss")
     }
 
-    func rewardedAdDidClick(_ rewardedAd: YMARewardedAd) {
+    func rewardedAdDidClick(_ rewardedAd: RewardedAd) {
         print("\(makeMessageDescription(rewardedAd)) did click")
     }
 
-    func rewardedAd(_ rewardedAd: YMARewardedAd, didTrackImpressionWith impressionData: YMAImpressionData?) {
+    func rewardedAd(_ rewardedAd: RewardedAd, didTrackImpressionWith impressionData: ImpressionData?) {
         print("\(makeMessageDescription(rewardedAd)) did track impression")
     }
 }

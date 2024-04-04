@@ -63,7 +63,7 @@ class StarRatingView: UIView {
     }
 }
 
-extension StarRatingView: YMARating {
+extension StarRatingView: Rating {
     func setRating(_ rating: NSNumber?) {
         _rating = rating as? Int
         updateStarViews()

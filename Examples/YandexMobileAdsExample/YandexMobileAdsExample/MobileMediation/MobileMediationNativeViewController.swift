@@ -24,14 +24,14 @@ class MobileMediationNativeViewController: UIViewController {
     @IBOutlet private var loadButton: UIButton!
 
     private var adView: NativeAdView?
-    private var adLoader: YMANativeAdLoader?
+    private var adLoader: NativeAdLoader?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         adView = NativeAdView.nib
         addAdView()
         adView?.isHidden = true
-        adLoader = YMANativeAdLoader()
+        adLoader = NativeAdLoader()
         adLoader?.delegate = self
         adView?.accessibilityIdentifier = CommonAccessibility.bannerView
         
@@ -50,7 +50,7 @@ class MobileMediationNativeViewController: UIViewController {
          Yandex: yandexAdUnitID
          */
         let adUnitID = adUnitIDs[selectedIndex].adUnitID
-        let requestConfiguration = YMANativeAdRequestConfiguration(adUnitID: adUnitID)
+        let requestConfiguration = NativeAdRequestConfiguration(adUnitID: adUnitID)
         adLoader?.loadAd(with: requestConfiguration)
         
         stateLabel.text = nil
@@ -75,8 +75,8 @@ class MobileMediationNativeViewController: UIViewController {
 
 // MARK: - YMANativeAdLoaderDelegate
 
-extension MobileMediationNativeViewController: YMANativeAdLoaderDelegate {
-    func nativeAdLoader(_ loader: YMANativeAdLoader, didLoad ad: YMANativeAd) {
+extension MobileMediationNativeViewController: NativeAdLoaderDelegate {
+    func nativeAdLoader(_ loader: NativeAdLoader, didLoad ad: NativeAd) {
         guard let adView = adView else { return }
 
         ad.delegate = self
@@ -91,7 +91,7 @@ extension MobileMediationNativeViewController: YMANativeAdLoaderDelegate {
         }
     }
     
-    func nativeAdLoader(_ loader: YMANativeAdLoader, didFailLoadingWithError error: Error) {
+    func nativeAdLoader(_ loader: NativeAdLoader, didFailLoadingWithError error: Error) {
         print("Native ad loading error: \(error)")
         stateLabel.text = StateUtils.loadError(error)
     }
@@ -99,24 +99,24 @@ extension MobileMediationNativeViewController: YMANativeAdLoaderDelegate {
 
 // MARK: - YMANativeAdDelegate
 
-extension MobileMediationNativeViewController: YMANativeAdDelegate {
-    func close(_ ad: YMANativeAd) {
+extension MobileMediationNativeViewController: NativeAdDelegate {
+    func close(_ ad: NativeAd) {
         adView?.isHidden = true
     }
 
-    func nativeAdWillLeaveApplication(_: YMANativeAd) {
+    func nativeAdWillLeaveApplication(_: NativeAd) {
         print("native will leave application")
     }
 
-    func nativeAd(_ ad: YMANativeAd, willPresentScreen viewController: UIViewController?) {
+    func nativeAd(_ ad: NativeAd, willPresentScreen viewController: UIViewController?) {
         print("native will present screen")
     }
 
-    func nativeAd(_ ad: YMANativeAd, didDismissScreen viewController: UIViewController?) {
+    func nativeAd(_ ad: NativeAd, didDismissScreen viewController: UIViewController?) {
         print("native will dismiss screen")
     }
 
-    func nativeAd(_ ad: YMANativeAd, didTrackImpressionWith impressionData: YMAImpressionData?) {
+    func nativeAd(_ ad: NativeAd, didTrackImpressionWith impressionData: ImpressionData?) {
         print("native did track impression")
     }
 }
