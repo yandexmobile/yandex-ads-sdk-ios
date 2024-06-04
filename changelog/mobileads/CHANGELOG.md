@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 7.1.0
+
+### Added
+
+- A public method `func setupVideoPlaybackControls(to view: YMANativeMediaView)` was added to `NativeVideoPlaybackControls`, which allows overriding the mute and progress controls on the video
+
+### Updated
+
+- In AppOpenAd, InterstitialAd and RewardedAd, the method signature of `func show(from viewController: UIViewController)` has changed to `func show(from viewController: UIViewController?)`
+- Updated minimum supported `AppMetricaCore` version to `5.4.0`
+- Updated minimum supported `AppMetricaCrashes` version to `5.4.0`
+- Updated minimum supported `DivKit` version to `30.2.0`
+
 ## Version 7.0.2
 
 ### Fixed
