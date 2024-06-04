@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 12.5.0.0
+
+### Updated
+
+- Updated minimum supported `AppLovinSDK` version to `12.5.0`
+- Updated minimum supported `YandexMobileAds` version to `7.1.0`
+
 ## Version 12.3.1.2
 
 ### Updated
