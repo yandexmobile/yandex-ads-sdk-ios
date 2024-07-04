@@ -16,14 +16,14 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/appmetrica/appmetrica-sdk-ios", "5.0.0"..<"6.0.0"),
-        .package(url: "https://github.com/divkit/divkit-ios", "30.2.0"..<"31.0.0")
+        .package(url: "https://github.com/divkit/divkit-ios", exact: "30.2.0")
     ],
     targets: [
         .target(
             name: "YandexMobileAdsTarget",
             dependencies: [
-                .target(name: "YandexMobileAdsInstream"),
                 .target(name: "YandexMobileAds"),
+                .target(name: "YandexMobileAdsInstream"),
                 .product(name: "AppMetricaCore", package: "appmetrica-sdk-ios"),
                 .product(name: "AppMetricaCrashes", package: "appmetrica-sdk-ios"),
                 .product(name: "DivKit", package: "divkit-ios")
@@ -51,14 +51,14 @@ let package = Package(
             ]
         ),
         .binaryTarget(
-            name: "YandexMobileAdsInstream",
-            url: "https://ads-mobile-sdk.s3.yandex.net/YandexMobileAdsInstream/0.29.0/spm/fdf63ab5-45d9-4866-a231-c142a02f3c51.zip",
-            checksum: "c6a7d0d27a90c7859bed662b611d93b3ad48bef9f2d4e1ab4176be0c2989fe60"
+            name: "YandexMobileAds",
+            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAds/7.1.1/spm/f1f4933e-d5c5-4b34-a486-4b8248157c19.zip",
+            checksum: "3d05668065b5cfc06cee8f28b4efe031f78727e5134490bc5ea10e7a941eae31"
         ),
         .binaryTarget(
-            name: "YandexMobileAds",
-            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAds/7.1.0/spm/d771e7dc-1b7d-46b6-8083-2c3049c9fba7.zip",
-            checksum: "fe8f1188a2c27858bf33894080283c41b19becc8d65ac339bedf87ee45698a4f"
+            name: "YandexMobileAdsInstream",
+            url: "https://ads-mobile-sdk.s3.yandex.net/YandexMobileAdsInstream/0.30.0/spm/96edbdc8-468d-4023-8883-a5f88ae4af63.zip",
+            checksum: "17c0326b15607d089c4d8415f531dfd28c4b53c9b1495c3ad3e6c12cf9437034"
         )
     ]
 )
