@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 7.1.1
+
+### Fixed
+
+- Locked `DivKit` version
+
 ## Version 7.1.0
 
 ### Added
