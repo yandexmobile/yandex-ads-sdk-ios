@@ -51,12 +51,14 @@ let package = Package(
         .binaryTarget(
             name: "YandexMobileAds",
             url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAds/7.2.0/spm/bb634541-f72b-4f3d-a88c-90b56077c1a1.zip",
-            checksum: "92d55937cf6d62bb0dfe4ab679290c25b53413701557e500806c4a9e8dc16a9e"
+            checksum: "4f1f4e96c713d9ff0c3b433b111d94475c890679edc278a48d39e74ce961d068
+"
         ),
         .binaryTarget(
             name: "YandexMobileAdsInstream",
             url: "https://ads-mobile-sdk.s3.yandex.net/YandexMobileAdsInstream/0.31.0/spm/2302cb4e-412f-4ef8-ae0c-858f0fb6e487.zip",
-            checksum: "abb9d5bd110cc4654e25b970c6bfe1844801ed4037088767a153f5b63f4ae7ed"
+            checksum: "254b460acc330848537459de26aa3467d77a238ebc117d8e1c487fc9048d9e6b
+"
         )
     ]
 )
