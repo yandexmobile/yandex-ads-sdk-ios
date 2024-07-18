@@ -28,6 +28,8 @@ final class IronSourceBannerViewController: UIViewController {
         let constraints = [
             banner.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor),
             banner.centerXAnchor.constraint(equalTo: layoutGuide.centerXAnchor),
+            banner.widthAnchor.constraint(equalToConstant: banner.frame.size.width),
+            banner.heightAnchor.constraint(equalToConstant: banner.frame.size.height)
         ]
         NSLayoutConstraint.activate(constraints)
     }

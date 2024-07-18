@@ -19,6 +19,7 @@ private let adColonyAdUnitID = "demo-interstitial-adcolony"
 private let bigoAdsAdUnitID = "demo-interstitial-bigoads"
 private let inMobiAdUnitID = "demo-interstitial-inmobi"
 private let startAppAdUnitID = "demo-interstitial-startapp"
+private let vungleAdUnitID = "demo-interstitial-vungle"
 private let yandexAdUnitID = "demo-interstitial-yandex"
 
 class MobileMediationInterstitialViewController: UIViewController {
@@ -34,6 +35,7 @@ class MobileMediationInterstitialViewController: UIViewController {
         (adapter: "MyTarget", adUnitID: myTargetAdUnitID),
         (adapter: "StartApp", adUnitID: startAppAdUnitID),
         (adapter: "UnityAds", adUnitID: unityAdsAdUnitID),
+        (adapter: "Vungle", adUnitID: vungleAdUnitID),
         (adapter: "Yandex", adUnitID: yandexAdUnitID)
     ]
     private let interstitialAdLoader = InterstitialAdLoader()

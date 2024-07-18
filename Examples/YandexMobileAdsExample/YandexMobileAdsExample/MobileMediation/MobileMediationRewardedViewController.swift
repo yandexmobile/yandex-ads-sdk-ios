@@ -19,6 +19,7 @@ private let adColonyAdUnitID = "demo-rewarded-adcolony"
 private let bigoAdsAdUnitID = "demo-rewarded-bigoads"
 private let inMobiAdUnitID = "demo-rewarded-inmobi"
 private let startAppAdUnitID = "demo-rewarded-startapp"
+private let vungleAdUnitID = "demo-rewarded-vungle"
 private let yandexAdUnitID = "demo-rewarded-yandex"
 
 class MobileMediationRewardedViewController: UIViewController {
@@ -34,6 +35,7 @@ class MobileMediationRewardedViewController: UIViewController {
         (adapter: "MyTarget", adUnitID: myTargetAdUnitID),
         (adapter: "StartApp", adUnitID: startAppAdUnitID),
         (adapter: "UnityAds", adUnitID: unityAdsAdUnitID),
+        (adapter: "Vungle", adUnitID: vungleAdUnitID),
         (adapter: "Yandex", adUnitID: yandexAdUnitID)
     ]
     private let rewardedAdLoader = RewardedAdLoader()

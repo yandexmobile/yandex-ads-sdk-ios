@@ -52,6 +52,10 @@
 		46C354A0282560FE00832C7C /* IronSourceRewardedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C3549D282560FE00832C7C /* IronSourceRewardedViewController.swift */; };
 		46C354A1282560FE00832C7C /* IronSourceInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C3549E282560FE00832C7C /* IronSourceInterstitialViewController.swift */; };
 		46C354A2282560FE00832C7C /* IronSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C3549F282560FE00832C7C /* IronSourceManager.swift */; };
+		4A8FA13B2BFB558700A3DB07 /* NativeBulkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8FA13A2BFB558700A3DB07 /* NativeBulkViewController.swift */; };
+		4A8FA13C2BFB559000A3DB07 /* NativeBulkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8FA13A2BFB558700A3DB07 /* NativeBulkViewController.swift */; };
+		4A8FA13F2BFC9AF800A3DB07 /* NativeBulkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8FA13E2BFC9AF800A3DB07 /* NativeBulkTableViewCell.swift */; };
+		4A8FA1402BFC9AF800A3DB07 /* NativeBulkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8FA13E2BFC9AF800A3DB07 /* NativeBulkTableViewCell.swift */; };
 		646CB7F62B0B5B6F0056DFD5 /* YandexAdsExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646CB7F52B0B5B6F0056DFD5 /* YandexAdsExampleViewController.swift */; };
 		64F70DBA2B0B64D300A31CE8 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F982720457800A24D5E /* LinkedList.swift */; };
 		64F70DBC2B0B64D300A31CE8 /* GDPRUserConsentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474FC182721A4E500276688 /* GDPRUserConsentManager.swift */; };
@@ -243,6 +247,8 @@
 		46C3549D282560FE00832C7C /* IronSourceRewardedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IronSourceRewardedViewController.swift; sourceTree = "<group>"; };
 		46C3549E282560FE00832C7C /* IronSourceInterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IronSourceInterstitialViewController.swift; sourceTree = "<group>"; };
 		46C3549F282560FE00832C7C /* IronSourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IronSourceManager.swift; sourceTree = "<group>"; };
+		4A8FA13A2BFB558700A3DB07 /* NativeBulkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeBulkViewController.swift; sourceTree = "<group>"; };
+		4A8FA13E2BFC9AF800A3DB07 /* NativeBulkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeBulkTableViewCell.swift; sourceTree = "<group>"; };
 		5BF35ACE34CE63F32697C83A /* libPods-YandexMobileAdsExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YandexMobileAdsExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		646CB7F52B0B5B6F0056DFD5 /* YandexAdsExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexAdsExampleViewController.swift; sourceTree = "<group>"; };
 		64F70E022B0B64D300A31CE8 /* YandexMobileAdsExampleSPM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YandexMobileAdsExampleSPM.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -555,6 +561,7 @@
 		147B0BCA27200CF3005F4062 /* Native */ = {
 			isa = PBXGroup;
 			children = (
+				4A8FA13D2BFC9AD300A3DB07 /* Bulk */,
 				DEC81AE12A53C840008FE935 /* NativeViewController.swift */,
 				DE0C2CBD2A65760900A84D00 /* NativeTemplateViewController.swift */,
 				DE0C2CBF2A66245700A84D00 /* NativeCustomViewController.swift */,
@@ -624,6 +631,15 @@
 				46C3549F282560FE00832C7C /* IronSourceManager.swift */,
 			);
 			path = IronSource;
+			sourceTree = "<group>";
+		};
+		4A8FA13D2BFC9AD300A3DB07 /* Bulk */ = {
+			isa = PBXGroup;
+			children = (
+				4A8FA13A2BFB558700A3DB07 /* NativeBulkViewController.swift */,
+				4A8FA13E2BFC9AF800A3DB07 /* NativeBulkTableViewCell.swift */,
+			);
+			path = Bulk;
 			sourceTree = "<group>";
 		};
 		5E36114E6565E861DBB72B75 /* Frameworks */ = {
@@ -975,6 +991,7 @@
 				7AA816982B20BF32006C9D91 /* YandexNativeAccessibility.swift in Sources */,
 				F7D8B4D32A97B41F00E7A40D /* AppOpenAdViewController.swift in Sources */,
 				DEC81AE22A53C840008FE935 /* NativeViewController.swift in Sources */,
+				4A8FA13F2BFC9AF800A3DB07 /* NativeBulkTableViewCell.swift in Sources */,
 				46C354A2282560FE00832C7C /* IronSourceManager.swift in Sources */,
 				DE6D740A2A740DF30024DA8F /* InstreamSingleViewController.swift in Sources */,
 				14033FBA2720457800A24D5E /* PlayerView.swift in Sources */,
@@ -987,6 +1004,7 @@
 				14033F6827201F7900A24D5E /* MobileMediationRewardedViewController.swift in Sources */,
 				B394AC8627A868DB00D92CD9 /* AdPlayerErrorConverter.swift in Sources */,
 				14033FB92720457800A24D5E /* ContentPlayerControlsDelegate.swift in Sources */,
+				4A8FA13B2BFB558700A3DB07 /* NativeBulkViewController.swift in Sources */,
 				14033FC02720457800A24D5E /* InstreamAdBreakPositionFormatter.swift in Sources */,
 				14033FBF2720457800A24D5E /* InstreamParametersParser.swift in Sources */,
 				DEC81ADC2A53B9E7008FE935 /* String+Extensions.swift in Sources */,
@@ -1040,11 +1058,13 @@
 				64F70DD82B0B64D300A31CE8 /* InstreamListViewController.swift in Sources */,
 				64F70DD92B0B64D300A31CE8 /* SettingsViewController.swift in Sources */,
 				64F70DDA2B0B64D300A31CE8 /* AppOpenAdViewController.swift in Sources */,
+				4A8FA13C2BFB559000A3DB07 /* NativeBulkViewController.swift in Sources */,
 				64F70DDB2B0B64D300A31CE8 /* NativeViewController.swift in Sources */,
 				64F70DDD2B0B64D300A31CE8 /* InstreamSingleViewController.swift in Sources */,
 				64F70DDE2B0B64D300A31CE8 /* PlayerView.swift in Sources */,
 				64F70DDF2B0B64D300A31CE8 /* AdFoxBannerViewController.swift in Sources */,
 				64F70DE02B0B64D300A31CE8 /* VideoPlayerVisibilityTracker.swift in Sources */,
+				4A8FA1402BFC9AF800A3DB07 /* NativeBulkTableViewCell.swift in Sources */,
 				64F70DE12B0B64D300A31CE8 /* YandexAdsExampleViewController.swift in Sources */,
 				7AA816A42B20D76E006C9D91 /* YandexNativeAccessibility.swift in Sources */,
 				64F70DE22B0B64D300A31CE8 /* GDPRViewController.swift in Sources */,
@@ -1177,7 +1197,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 7.1.1;
+				CURRENT_PROJECT_VERSION = 7.2.0;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1196,7 +1216,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 7.1.1;
+				MARKETING_VERSION = 7.2.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1240,7 +1260,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 7.1.1;
+				CURRENT_PROJECT_VERSION = 7.2.0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1253,7 +1273,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 7.1.1;
+				MARKETING_VERSION = 7.2.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1351,7 +1371,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 7.1.1;
+				CURRENT_PROJECT_VERSION = 7.2.0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1364,7 +1384,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 7.1.1;
+				MARKETING_VERSION = 7.2.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
