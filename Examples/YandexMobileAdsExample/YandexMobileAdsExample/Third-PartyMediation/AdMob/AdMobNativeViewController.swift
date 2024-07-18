@@ -64,7 +64,7 @@ class AdMobNativeViewController: UIViewController {
     }
 }
 
-extension AdMobNativeViewController: GADNativeAdLoaderDelegate, GADNativeAdDelegate {
+extension AdMobNativeViewController: GADNativeAdLoaderDelegate {
     func adLoader(_: GADAdLoader, didReceive nativeAd: GADNativeAd) {
         guard let adView = adView else { return }
 
@@ -76,5 +76,17 @@ extension AdMobNativeViewController: GADNativeAdLoaderDelegate, GADNativeAdDeleg
 
     func adLoader(_: GADAdLoader, didFailToReceiveAdWithError error: Error) {
         print("Ad loader did fail to receive ad with error: \(error.localizedDescription)")
+    }
+}
+
+// MARK: - GADNativeAdDelegate implementation
+extension AdMobNativeViewController: GADNativeAdDelegate {
+    
+    func nativeAdDidRecordClick(_ nativeAd: GADNativeAd) {
+        print("\(#function) called")
+    }
+    
+    func nativeAdDidRecordImpression(_ nativeAd: GADNativeAd) {
+        print("\(#function) called")
     }
 }

@@ -17,6 +17,7 @@ private let bigoAdsAdUnitID = "demo-banner-bigoads"
 private let inMobiAdsAdUnitID = "demo-banner-inmobi"
 private let ironSourceAdUnitID = "demo-banner-ironsource"
 private let startAppAdUnitID = "demo-banner-startapp"
+private let vungleAdUnitID = "demo-banner-vungle"
 private let yandexAdUnitID = "demo-banner-yandex"
 
 class MobileMediationBannerViewController: UIViewController {
@@ -31,6 +32,7 @@ class MobileMediationBannerViewController: UIViewController {
         (adapter: "MyTarget", adUnitID: myTargetAdUnitID),
         (adapter: "IronSource", adUnitID: ironSourceAdUnitID),
         (adapter: "StartApp", adUnitID: startAppAdUnitID),
+        (adapter: "Vungle", adUnitID: vungleAdUnitID),
         (adapter: "Yandex", adUnitID: yandexAdUnitID)
     ]
 

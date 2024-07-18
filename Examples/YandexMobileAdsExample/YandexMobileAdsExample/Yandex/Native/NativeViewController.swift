@@ -11,6 +11,7 @@ import UIKit
 enum NativeCellModel: NavigationScreenDataSource, CaseIterable {
     case template
     case custom
+    case bulk
 
     var destinationViewController: UIViewController {
         switch self {
@@ -18,6 +19,8 @@ enum NativeCellModel: NavigationScreenDataSource, CaseIterable {
             return NativeTemplateViewController()
         case .custom:
             return NativeCustomViewController()
+        case .bulk:
+            return NativeBulkViewController()
         }
     }
 
@@ -31,6 +34,8 @@ enum NativeCellModel: NavigationScreenDataSource, CaseIterable {
             YandexNativeAccessibility.template
         case .custom:
             YandexNativeAccessibility.custom
+        case .bulk:
+            YandexNativeAccessibility.bulk
         }
     }
 }

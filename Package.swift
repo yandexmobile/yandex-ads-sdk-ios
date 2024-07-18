@@ -16,7 +16,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/appmetrica/appmetrica-sdk-ios", "5.0.0"..<"6.0.0"),
-        .package(url: "https://github.com/divkit/divkit-ios", exact: "30.2.0")
+        .package(url: "https://github.com/divkit/divkit-ios", exact: "30.7.0")
     ],
     targets: [
         .target(
@@ -28,12 +28,10 @@ let package = Package(
                 .product(name: "AppMetricaCrashes", package: "appmetrica-sdk-ios"),
                 .product(name: "DivKit", package: "divkit-ios")
             ],
-            resources: [
-                .process("Resources")
-            ],
             linkerSettings: [
                 .linkedFramework("AVFoundation"),
                 .linkedFramework("AdSupport"),
+                .linkedFramework("AppTrackingTransparency"),
                 .linkedFramework("CoreGraphics"),
                 .linkedFramework("CoreImage"),
                 .linkedFramework("CoreLocation"),
@@ -52,13 +50,13 @@ let package = Package(
         ),
         .binaryTarget(
             name: "YandexMobileAds",
-            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAds/7.1.1/spm/f1f4933e-d5c5-4b34-a486-4b8248157c19.zip",
-            checksum: "3d05668065b5cfc06cee8f28b4efe031f78727e5134490bc5ea10e7a941eae31"
+            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAds/7.2.0/spm/bb634541-f72b-4f3d-a88c-90b56077c1a1.zip",
+            checksum: "92d55937cf6d62bb0dfe4ab679290c25b53413701557e500806c4a9e8dc16a9e"
         ),
         .binaryTarget(
             name: "YandexMobileAdsInstream",
-            url: "https://ads-mobile-sdk.s3.yandex.net/YandexMobileAdsInstream/0.30.0/spm/96edbdc8-468d-4023-8883-a5f88ae4af63.zip",
-            checksum: "17c0326b15607d089c4d8415f531dfd28c4b53c9b1495c3ad3e6c12cf9437034"
+            url: "https://ads-mobile-sdk.s3.yandex.net/YandexMobileAdsInstream/0.31.0/spm/2302cb4e-412f-4ef8-ae0c-858f0fb6e487.zip",
+            checksum: "abb9d5bd110cc4654e25b970c6bfe1844801ed4037088767a153f5b63f4ae7ed"
         )
     ]
 )

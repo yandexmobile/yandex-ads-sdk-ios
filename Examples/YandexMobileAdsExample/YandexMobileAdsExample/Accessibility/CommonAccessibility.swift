@@ -3,4 +3,5 @@ enum CommonAccessibility {
     static let presentButton = "present_button"
     static let stateLabel = "state_label"
     static let bannerView = "banner_view"
+    static let bannerCellView = "banner_cell_view_"
 }

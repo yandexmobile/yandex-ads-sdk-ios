@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 10.7.4.0
+
+### Updated
+
+- Updated minimum supported `InMobiSDK-Swift` version to `10.7.4`
+- Updated minimum supported `YandexMobileAds` version to `7.2.0`
+
 ## Version 10.5.5.11
 
 ### Updated
