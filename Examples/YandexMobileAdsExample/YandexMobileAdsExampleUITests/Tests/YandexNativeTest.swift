@@ -27,4 +27,16 @@ final class YandexNativeTest: BaseTest {
         nativePage.tapAd()
         assertSafariOpened()
     }
+    
+    func testNativeBulkTemplate() throws {
+        launchApp()
+        rootPage.openYandex()
+        yandexAdsPage.openNative()
+        nativeListPage.openBulk()
+        nativePage.tapLoadAd()
+        try assertAdLoaded(stateLabel: nativePage.stateLabel)
+        nativePage.assertAdsDisplayed()
+        nativePage.tapBulkAd()
+        assertSafariOpened()
+    }
 }

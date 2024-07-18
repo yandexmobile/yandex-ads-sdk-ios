@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 5.21.4.0
+
+### Updated
+
+- Updated minimum supported `YandexMobileAds` version to `7.2.0`
+- Updated minimum supported `myTargetSDK` version to `5.21.4`
+
 ## Version 5.21.2.1
 
 ### Updated

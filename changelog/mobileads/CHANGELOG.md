@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 7.2.0
+
+### Updated
+
+- Updated minimum supported `AppMetricaCore` version to `5.6.0`
+- Updated minimum supported `AppMetricaCrashes` version to `5.6.0`
+- Updated minimum supported `DivKit` version to `30.7.0`
+
 ## Version 7.1.1
 
 ### Fixed
