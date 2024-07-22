@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D118F702C3FBF0200E02305 /* AdFoxSliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D118F6F2C3FBF0200E02305 /* AdFoxSliderViewController.swift */; };
+		0D118F722C3FCA2200E02305 /* NativeSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D118F712C3FCA2200E02305 /* NativeSliderView.swift */; };
 		14033F5E27201B8A00A24D5E /* MobileMediationInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F5D27201B8A00A24D5E /* MobileMediationInterstitialViewController.swift */; };
 		14033F6527201E2700A24D5E /* MobileMediationNativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F6427201E2700A24D5E /* MobileMediationNativeViewController.swift */; };
 		14033F6827201F7900A24D5E /* MobileMediationRewardedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F6727201F7900A24D5E /* MobileMediationRewardedViewController.swift */; };
@@ -198,6 +200,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D118F6F2C3FBF0200E02305 /* AdFoxSliderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdFoxSliderViewController.swift; sourceTree = "<group>"; };
+		0D118F712C3FCA2200E02305 /* NativeSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeSliderView.swift; sourceTree = "<group>"; };
 		14033F5D27201B8A00A24D5E /* MobileMediationInterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileMediationInterstitialViewController.swift; sourceTree = "<group>"; };
 		14033F6427201E2700A24D5E /* MobileMediationNativeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileMediationNativeViewController.swift; sourceTree = "<group>"; };
 		14033F6727201F7900A24D5E /* MobileMediationRewardedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileMediationRewardedViewController.swift; sourceTree = "<group>"; };
@@ -360,6 +364,7 @@
 				147B0BCB27200D12005F4062 /* StarRatingView.swift */,
 				147B0BCD27200D14005F4062 /* NativeAdView.swift */,
 				147B0BCC27200D13005F4062 /* NativeAdView.xib */,
+				0D118F712C3FCA2200E02305 /* NativeSliderView.swift */,
 			);
 			path = Native;
 			sourceTree = "<group>";
@@ -618,6 +623,7 @@
 				149931872722C423005D2E87 /* AdFoxBannerViewController.swift */,
 				1499318A2722CD44005D2E87 /* AdFoxInterstitialViewController.swift */,
 				149931832722BD94005D2E87 /* AdFoxNativeViewController.swift */,
+				0D118F6F2C3FBF0200E02305 /* AdFoxSliderViewController.swift */,
 			);
 			path = Adfox;
 			sourceTree = "<group>";
@@ -765,7 +771,7 @@
 				1467E34C271EA91500DF104A /* Frameworks */,
 				1467E34D271EA91500DF104A /* Resources */,
 				E4E9AE0924D84CE9CC90A2AD /* [CP] Copy Pods Resources */,
-				6587175D8225DAC913112E3D /* [CP] Embed Pods Frameworks */,
+				018F87C62B76F7961A9F26CF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -887,6 +893,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		018F87C62B76F7961A9F26CF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		12B2C11F8B81B215E323277A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -907,23 +930,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6587175D8225DAC913112E3D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E4E9AE0924D84CE9CC90A2AD /* [CP] Copy Pods Resources */ = {
@@ -996,6 +1002,7 @@
 				DE6D740A2A740DF30024DA8F /* InstreamSingleViewController.swift in Sources */,
 				14033FBA2720457800A24D5E /* PlayerView.swift in Sources */,
 				149931882722C423005D2E87 /* AdFoxBannerViewController.swift in Sources */,
+				0D118F702C3FBF0200E02305 /* AdFoxSliderViewController.swift in Sources */,
 				14033FBC2720457800A24D5E /* VideoPlayerVisibilityTracker.swift in Sources */,
 				646CB7F62B0B5B6F0056DFD5 /* YandexAdsExampleViewController.swift in Sources */,
 				1474FC232721A4E500276688 /* GDPRViewController.swift in Sources */,
@@ -1008,6 +1015,7 @@
 				14033FC02720457800A24D5E /* InstreamAdBreakPositionFormatter.swift in Sources */,
 				14033FBF2720457800A24D5E /* InstreamParametersParser.swift in Sources */,
 				DEC81ADC2A53B9E7008FE935 /* String+Extensions.swift in Sources */,
+				0D118F722C3FCA2200E02305 /* NativeSliderView.swift in Sources */,
 				14033F8527202B8D00A24D5E /* AdMobNativeAdView.swift in Sources */,
 				14033FBB2720457800A24D5E /* VideoAVPlayerDelegate.swift in Sources */,
 				149931842722BD94005D2E87 /* AdFoxNativeViewController.swift in Sources */,
@@ -1197,7 +1205,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 7.2.0;
+				CURRENT_PROJECT_VERSION = 7.1.1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1216,7 +1224,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 7.2.0;
+				MARKETING_VERSION = 7.1.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1260,7 +1268,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 7.2.0;
+				CURRENT_PROJECT_VERSION = 7.1.1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1273,7 +1281,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 7.2.0;
+				MARKETING_VERSION = 7.1.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1371,7 +1379,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 7.2.0;
+				CURRENT_PROJECT_VERSION = 7.1.1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1384,7 +1392,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 7.2.0;
+				MARKETING_VERSION = 7.1.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
