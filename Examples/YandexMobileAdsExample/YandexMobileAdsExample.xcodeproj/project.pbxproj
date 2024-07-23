@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D62C42B2C4F8F370014CA12 /* NativeSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D62C42A2C4F8F370014CA12 /* NativeSliderView.swift */; };
+		0D62C42D2C4F8F470014CA12 /* AdFoxSliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D62C42C2C4F8F470014CA12 /* AdFoxSliderViewController.swift */; };
 		14033F5E27201B8A00A24D5E /* MobileMediationInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F5D27201B8A00A24D5E /* MobileMediationInterstitialViewController.swift */; };
 		14033F6527201E2700A24D5E /* MobileMediationNativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F6427201E2700A24D5E /* MobileMediationNativeViewController.swift */; };
 		14033F6827201F7900A24D5E /* MobileMediationRewardedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F6727201F7900A24D5E /* MobileMediationRewardedViewController.swift */; };
@@ -198,6 +200,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D62C42A2C4F8F370014CA12 /* NativeSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeSliderView.swift; sourceTree = "<group>"; };
+		0D62C42C2C4F8F470014CA12 /* AdFoxSliderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdFoxSliderViewController.swift; sourceTree = "<group>"; };
 		14033F5D27201B8A00A24D5E /* MobileMediationInterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileMediationInterstitialViewController.swift; sourceTree = "<group>"; };
 		14033F6427201E2700A24D5E /* MobileMediationNativeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileMediationNativeViewController.swift; sourceTree = "<group>"; };
 		14033F6727201F7900A24D5E /* MobileMediationRewardedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileMediationRewardedViewController.swift; sourceTree = "<group>"; };
@@ -357,6 +361,7 @@
 		14033F6127201D9E00A24D5E /* Native */ = {
 			isa = PBXGroup;
 			children = (
+				0D62C42A2C4F8F370014CA12 /* NativeSliderView.swift */,
 				147B0BCB27200D12005F4062 /* StarRatingView.swift */,
 				147B0BCD27200D14005F4062 /* NativeAdView.swift */,
 				147B0BCC27200D13005F4062 /* NativeAdView.xib */,
@@ -615,6 +620,7 @@
 		149931802722BD01005D2E87 /* Adfox */ = {
 			isa = PBXGroup;
 			children = (
+				0D62C42C2C4F8F470014CA12 /* AdFoxSliderViewController.swift */,
 				149931872722C423005D2E87 /* AdFoxBannerViewController.swift */,
 				1499318A2722CD44005D2E87 /* AdFoxInterstitialViewController.swift */,
 				149931832722BD94005D2E87 /* AdFoxNativeViewController.swift */,
@@ -1004,9 +1010,11 @@
 				14033F6827201F7900A24D5E /* MobileMediationRewardedViewController.swift in Sources */,
 				B394AC8627A868DB00D92CD9 /* AdPlayerErrorConverter.swift in Sources */,
 				14033FB92720457800A24D5E /* ContentPlayerControlsDelegate.swift in Sources */,
+				0D62C42B2C4F8F370014CA12 /* NativeSliderView.swift in Sources */,
 				4A8FA13B2BFB558700A3DB07 /* NativeBulkViewController.swift in Sources */,
 				14033FC02720457800A24D5E /* InstreamAdBreakPositionFormatter.swift in Sources */,
 				14033FBF2720457800A24D5E /* InstreamParametersParser.swift in Sources */,
+				0D62C42D2C4F8F470014CA12 /* AdFoxSliderViewController.swift in Sources */,
 				DEC81ADC2A53B9E7008FE935 /* String+Extensions.swift in Sources */,
 				14033F8527202B8D00A24D5E /* AdMobNativeAdView.swift in Sources */,
 				14033FBB2720457800A24D5E /* VideoAVPlayerDelegate.swift in Sources */,
