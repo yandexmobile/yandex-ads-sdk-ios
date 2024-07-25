@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 7.3.0
+
+### Added
+
+- Added improvements and fixes
+
 ## Version 7.2.0
 
 ### Updated
