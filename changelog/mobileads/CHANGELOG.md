@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 7.3.1
+
+### Updated
+
+- Updated minimum supported `DivKit` version to `30.11.0`
+
+### Breaking changes
+
+- Updated integration through SPM and package products. Now MobileAdsBundle.bundle can be removed from the project target.
+
 ## Version 7.3.0
 
 ### Added
