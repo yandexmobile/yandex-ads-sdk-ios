@@ -110,8 +110,9 @@
 		64F70DFA2B0B64D300A31CE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1467E35D271EA91700DF104A /* LaunchScreen.storyboard */; };
 		64F70DFC2B0B64D300A31CE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1467E35B271EA91700DF104A /* Assets.xcassets */; };
 		64F70DFD2B0B64D300A31CE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1467E358271EA91500DF104A /* Main.storyboard */; };
-		64F70E072B0B654200A31CE8 /* YandexMobileAdsPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 64F70E062B0B654200A31CE8 /* YandexMobileAdsPackage */; };
 		76DEC6852B0E18B10014B6B4 /* IronSourceBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DEC6842B0E18B10014B6B4 /* IronSourceBannerViewController.swift */; };
+		7A2B6FAA2C5A5EC60074CD06 /* YandexMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 7A2B6FA92C5A5EC60074CD06 /* YandexMobileAds */; };
+		7A2B6FAC2C5A5ECC0074CD06 /* YandexMobileAdsInstream in Frameworks */ = {isa = PBXBuildFile; productRef = 7A2B6FAB2C5A5ECC0074CD06 /* YandexMobileAdsInstream */; };
 		7A527BBD2B1E36480002B416 /* CommonAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A851DDA2B1E2D8100D03655 /* CommonAccessibility.swift */; };
 		7A527BBE2B1E36480002B416 /* StateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC09FFE2B1DF5D200FF69F9 /* StateUtils.swift */; };
 		7A527BBF2B1E36480002B416 /* RootAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A851DF82B1E313C00D03655 /* RootAccessibility.swift */; };
@@ -333,7 +334,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64F70E072B0B654200A31CE8 /* YandexMobileAdsPackage in Frameworks */,
+				7A2B6FAA2C5A5EC60074CD06 /* YandexMobileAds in Frameworks */,
+				7A2B6FAC2C5A5ECC0074CD06 /* YandexMobileAdsInstream in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -771,7 +773,7 @@
 				1467E34C271EA91500DF104A /* Frameworks */,
 				1467E34D271EA91500DF104A /* Resources */,
 				E4E9AE0924D84CE9CC90A2AD /* [CP] Copy Pods Resources */,
-				637866F3F3E9A65DF17581DC /* [CP] Embed Pods Frameworks */,
+				612410E85586FD2925DAFACA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -796,7 +798,8 @@
 			);
 			name = YandexMobileAdsExampleSPM;
 			packageProductDependencies = (
-				64F70E062B0B654200A31CE8 /* YandexMobileAdsPackage */,
+				7A2B6FA92C5A5EC60074CD06 /* YandexMobileAds */,
+				7A2B6FAB2C5A5ECC0074CD06 /* YandexMobileAdsInstream */,
 			);
 			productName = YandexMobileAdsSampleApp;
 			productReference = 64F70E022B0B64D300A31CE8 /* YandexMobileAdsExampleSPM.app */;
@@ -915,7 +918,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		637866F3F3E9A65DF17581DC /* [CP] Embed Pods Frameworks */ = {
+		612410E85586FD2925DAFACA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1205,7 +1208,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 7.3.0;
+				CURRENT_PROJECT_VERSION = 7.3.1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1224,7 +1227,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 7.3.0;
+				MARKETING_VERSION = 7.3.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1268,7 +1271,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 7.3.0;
+				CURRENT_PROJECT_VERSION = 7.3.1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1281,7 +1284,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 7.3.0;
+				MARKETING_VERSION = 7.3.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1379,7 +1382,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 7.3.0;
+				CURRENT_PROJECT_VERSION = 7.3.1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1392,7 +1395,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 7.3.0;
+				MARKETING_VERSION = 7.3.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1609,9 +1612,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		64F70E062B0B654200A31CE8 /* YandexMobileAdsPackage */ = {
+		7A2B6FA92C5A5EC60074CD06 /* YandexMobileAds */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = YandexMobileAdsPackage;
+			productName = YandexMobileAds;
+		};
+		7A2B6FAB2C5A5ECC0074CD06 /* YandexMobileAdsInstream */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = YandexMobileAdsInstream;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
