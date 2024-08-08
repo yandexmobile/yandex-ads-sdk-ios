@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0D118F702C3FBF0200E02305 /* AdFoxSliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D118F6F2C3FBF0200E02305 /* AdFoxSliderViewController.swift */; };
 		0D118F722C3FCA2200E02305 /* NativeSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D118F712C3FCA2200E02305 /* NativeSliderView.swift */; };
+		0D47BB7F2C5D0B510042AA30 /* YandexMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 0D47BB7E2C5D0B510042AA30 /* YandexMobileAds */; };
+		0D47BB812C5D0B590042AA30 /* YandexMobileAdsInstream in Frameworks */ = {isa = PBXBuildFile; productRef = 0D47BB802C5D0B590042AA30 /* YandexMobileAdsInstream */; };
 		14033F5E27201B8A00A24D5E /* MobileMediationInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F5D27201B8A00A24D5E /* MobileMediationInterstitialViewController.swift */; };
 		14033F6527201E2700A24D5E /* MobileMediationNativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F6427201E2700A24D5E /* MobileMediationNativeViewController.swift */; };
 		14033F6827201F7900A24D5E /* MobileMediationRewardedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F6727201F7900A24D5E /* MobileMediationRewardedViewController.swift */; };
@@ -111,8 +113,6 @@
 		64F70DFC2B0B64D300A31CE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1467E35B271EA91700DF104A /* Assets.xcassets */; };
 		64F70DFD2B0B64D300A31CE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1467E358271EA91500DF104A /* Main.storyboard */; };
 		76DEC6852B0E18B10014B6B4 /* IronSourceBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DEC6842B0E18B10014B6B4 /* IronSourceBannerViewController.swift */; };
-		7A2B6FAA2C5A5EC60074CD06 /* YandexMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 7A2B6FA92C5A5EC60074CD06 /* YandexMobileAds */; };
-		7A2B6FAC2C5A5ECC0074CD06 /* YandexMobileAdsInstream in Frameworks */ = {isa = PBXBuildFile; productRef = 7A2B6FAB2C5A5ECC0074CD06 /* YandexMobileAdsInstream */; };
 		7A527BBD2B1E36480002B416 /* CommonAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A851DDA2B1E2D8100D03655 /* CommonAccessibility.swift */; };
 		7A527BBE2B1E36480002B416 /* StateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC09FFE2B1DF5D200FF69F9 /* StateUtils.swift */; };
 		7A527BBF2B1E36480002B416 /* RootAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A851DF82B1E313C00D03655 /* RootAccessibility.swift */; };
@@ -334,8 +334,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A2B6FAA2C5A5EC60074CD06 /* YandexMobileAds in Frameworks */,
-				7A2B6FAC2C5A5ECC0074CD06 /* YandexMobileAdsInstream in Frameworks */,
+				0D47BB7F2C5D0B510042AA30 /* YandexMobileAds in Frameworks */,
+				0D47BB812C5D0B590042AA30 /* YandexMobileAdsInstream in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -798,8 +798,8 @@
 			);
 			name = YandexMobileAdsExampleSPM;
 			packageProductDependencies = (
-				7A2B6FA92C5A5EC60074CD06 /* YandexMobileAds */,
-				7A2B6FAB2C5A5ECC0074CD06 /* YandexMobileAdsInstream */,
+				0D47BB7E2C5D0B510042AA30 /* YandexMobileAds */,
+				0D47BB802C5D0B590042AA30 /* YandexMobileAdsInstream */,
 			);
 			productName = YandexMobileAdsSampleApp;
 			productReference = 64F70E022B0B64D300A31CE8 /* YandexMobileAdsExampleSPM.app */;
@@ -1208,7 +1208,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 7.3.1;
+				CURRENT_PROJECT_VERSION = 7.3.2;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1227,7 +1227,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 7.3.1;
+				MARKETING_VERSION = 7.3.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1271,7 +1271,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 7.3.1;
+				CURRENT_PROJECT_VERSION = 7.3.2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1284,7 +1284,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 7.3.1;
+				MARKETING_VERSION = 7.3.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1382,7 +1382,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 7.3.1;
+				CURRENT_PROJECT_VERSION = 7.3.2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1395,7 +1395,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 7.3.1;
+				MARKETING_VERSION = 7.3.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1612,11 +1612,11 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7A2B6FA92C5A5EC60074CD06 /* YandexMobileAds */ = {
+		0D47BB7E2C5D0B510042AA30 /* YandexMobileAds */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = YandexMobileAds;
 		};
-		7A2B6FAB2C5A5ECC0074CD06 /* YandexMobileAdsInstream */ = {
+		0D47BB802C5D0B590042AA30 /* YandexMobileAdsInstream */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = YandexMobileAdsInstream;
 		};
