@@ -20,10 +20,10 @@ class YandexBaseAdapter: NSObject, MediationBidding, MediationInitialization {
     private static let bidderTokenLoader = BidderTokenLoader()
 
     /// This method implements obtaining a bid token in order to use it with in-app bidding integration with Yandex.
-    /// https://yastatic.net/s3/doc-binary/src/dev/mobile-ads/ru/jazzy/Classes/YMABidderTokenLoader.html
+    /// https://yastatic.net/s3/doc-binary/src/dev/mobile-ads/ru/jazzy/Classes/BidderTokenLoader.html
     static func getBiddingToken(parameters: AdapterParameters, completion: @escaping (String?) -> Void) {
 
-        /// Configure all necessary parameters and create YMABidderTokenRequestConfiguration.
+        /// Configure all necessary parameters and create `BidderTokenRequestConfiguration`.
         let requestConfiguraton: BidderTokenRequestConfiguration
         switch parameters.adFormat {
         case .banner(let size):
@@ -53,7 +53,7 @@ class YandexBaseAdapter: NSObject, MediationBidding, MediationInitialization {
         ]
     }
 
-    /// This method implements setting up YMAMobileAds parameters, which must be current before each request to the Yandex API.
+    /// This method implements setting up `MobileAds` parameters, which must be current before each request to the Yandex API.
     static func setupYandexSDK(with parameters: AdapterParameters) {
         if let userConsent = parameters.userConsent {
             MobileAds.setUserConsent(userConsent)
@@ -76,7 +76,7 @@ class YandexBaseAdapter: NSObject, MediationBidding, MediationInitialization {
         MobileAds.initializeSDK()
     }
 
-    /// This method implements creation of YMAAdRequestConfiguration with  all the necessary parameters.
+    /// This method implements creation of `AdRequestConfiguration` with  all the necessary parameters.
     func makeAdRequestConfiguration(with adData: AdData, parameters: AdapterParameters) -> AdRequestConfiguration {
         let configuration = MutableAdRequestConfiguration(adUnitID: adData.adUinitId)
         let configParameters = Self.makeConfigurationParameters(parameters)
@@ -103,8 +103,8 @@ final class YandexBannerAdapter: YandexBaseAdapter, MediationBanner {
                       delegate: MediationBannerDelegate,
                       parameters: AdapterParameters) {
 
-        /// Creates an object of the YMABannerAdSize class with the specified maximum height and width of the banner.
-        /// Also you coud use another sizes: https://yastatic.net/s3/doc-binary/src/dev/mobile-ads/ru/jazzy/Classes/YMABannerAdSize.html
+        /// Creates an object of the `BannerAdSize` class with the specified maximum height and width of the banner.
+        /// Also you coud use another sizes: https://yastatic.net/s3/doc-binary/src/dev/mobile-ads/ru/jazzy/Classes/BannerAdSize.html
         let adSize = BannerAdSize.fixedSize(withWidth: size.width, height: size.height)
         let adView = AdView(adUnitID: adData.adUinitId,
                                adSize: adSize)
@@ -125,8 +125,8 @@ final class YandexBannerAdapter: YandexBaseAdapter, MediationBanner {
     }
 }
 
-/// YMAAdViewDelegate implementation.
-/// https://yastatic.net/s3/doc-binary/src/dev/mobile-ads/ru/jazzy/Protocols/YMAAdViewDelegate.html
+/// `AdViewDelegate` implementation.
+/// https://yastatic.net/s3/doc-binary/src/dev/mobile-ads/ru/jazzy/Protocols/AdViewDelegate.html
 extension YandexBannerAdapter: AdViewDelegate {
     func adViewDidLoad(_ adView: AdView) {
         delegate?.didLoadAd(with: adView)
@@ -195,8 +195,8 @@ final class YandexInterstitialAdapter: YandexBaseAdapter, MediationInterstitial 
     }
 }
 
-/// YMAInterstitialAdDelegate implementation.
-/// https://yastatic.net/s3/doc-binary/src/dev/mobile-ads/ru/jazzy/Protocols/YMAInterstitialAdDelegate.html
+/// `InterstitialAdDelegate` implementation.
+/// https://yastatic.net/s3/doc-binary/src/dev/mobile-ads/ru/jazzy/Protocols/InterstitialAdDelegate.html
 extension YandexInterstitialAdapter: InterstitialAdDelegate {
     func interstitialAdDidShow(_ interstitialAd: InterstitialAd) {
         delegate?.interstitialDidShow()
@@ -219,8 +219,8 @@ extension YandexInterstitialAdapter: InterstitialAdDelegate {
     }
 }
 
-/// YMAInterstitialAdLoaderDelegate implementation.
-/// https://yastatic.net/s3/doc-binary/src/dev/mobile-ads/ru/jazzy/Protocols/YMAInterstitialAdLoaderDelegate.html
+/// `InterstitialAdLoaderDelegate` implementation.
+/// https://yastatic.net/s3/doc-binary/src/dev/mobile-ads/ru/jazzy/Protocols/InterstitialAdLoaderDelegate.html
 extension YandexInterstitialAdapter: InterstitialAdLoaderDelegate {
     func interstitialAdLoader(_ adLoader: InterstitialAdLoader, didLoad interstitialAd: InterstitialAd) {
         interstitialAd.delegate = self
@@ -271,8 +271,8 @@ final class YandexRewardedAdapter: YandexBaseAdapter, MediationRewarded {
     }
 }
 
-/// YMARewardedAdDelegate implementation.
-/// https://yastatic.net/s3/doc-binary/src/dev/mobile-ads/ru/jazzy/Protocols/YMARewardedAdDelegate.html
+/// `RewardedAdDelegate` implementation.
+/// https://yastatic.net/s3/doc-binary/src/dev/mobile-ads/ru/jazzy/Protocols/RewardedAdDelegate.html
 extension YandexRewardedAdapter: RewardedAdDelegate {
     func rewardedAd(_ rewardedAd: RewardedAd, didReward reward: Reward) {
         delegate?.didRewardUser()
@@ -299,8 +299,8 @@ extension YandexRewardedAdapter: RewardedAdDelegate {
     }
 }
 
-/// YMARewardedAdLoaderDelegate implementation.
-/// https://yastatic.net/s3/doc-binary/src/dev/mobile-ads/ru/jazzy/Protocols/YMARewardedAdLoaderDelegate.html
+/// `RewardedAdLoaderDelegate` implementation.
+/// https://yastatic.net/s3/doc-binary/src/dev/mobile-ads/ru/jazzy/Protocols/RewardedAdLoaderDelegate.html
 extension YandexRewardedAdapter: RewardedAdLoaderDelegate {
     func rewardedAdLoader(_ adLoader: RewardedAdLoader, didLoad rewardedAd: RewardedAd) {
         rewardedAd.delegate = self
@@ -351,8 +351,8 @@ final class YandexAppOpenAdapter: YandexBaseAdapter, MediationAppOpen {
     }
 }
 
-/// YMAAppOpenAdDelegate implementation.
-/// https://yastatic.net/s3/doc-binary/src/dev/mobile-ads/ru/jazzy/Protocols/YMAAppOpenAdDelegate.html
+/// `AppOpenAdDelegate` implementation.
+/// https://yastatic.net/s3/doc-binary/src/dev/mobile-ads/ru/jazzy/Protocols/AppOpenAdDelegate.html
 extension YandexAppOpenAdapter: AppOpenAdDelegate {
     func appOpenAdDidShow(_ appOpenAd: AppOpenAd) {
         delegate?.appOpenDidShow()
@@ -375,8 +375,8 @@ extension YandexAppOpenAdapter: AppOpenAdDelegate {
     }
 }
 
-/// YMAAppOpenAdLoaderDelegate implementation.
-/// https://yastatic.net/s3/doc-binary/src/dev/mobile-ads/ru/jazzy/Protocols/YMAAppOpenAdLoaderDelegate.html
+/// `AppOpenAdLoaderDelegate` implementation.
+/// https://yastatic.net/s3/doc-binary/src/dev/mobile-ads/ru/jazzy/Protocols/AppOpenAdLoaderDelegate.html
 extension YandexAppOpenAdapter: AppOpenAdLoaderDelegate {
     func appOpenAdLoader(_ adLoader: AppOpenAdLoader, didLoad appOpenAd: AppOpenAd) {
         appOpenAd.delegate = self

@@ -9,66 +9,66 @@ struct YandexInstreamPage: PageObject {
     var playInrollButton: XCUIElement { element(id: YandexInstreamAccessibility.playInrollButton, type: .button) }
     var pauseInrollButton: XCUIElement { element(id: YandexInstreamAccessibility.pauseInrollButton, type: .button) }
     var resumeInrollButton: XCUIElement { element(id: YandexInstreamAccessibility.resumeInrollButton, type: .button) }
-    
+
     var goButton: XCUIElement {
         app
             .descendants(matching: .button)
             .matching(Query.contains(.label, "Go").predicate)
             .firstMatch
     }
-    
+
     var skipButton: XCUIElement {
-        element(id: "Skip", type: .button)
+        element(id: "mac_instream_skip_button", type: .button)
     }
-    
+
     func tapLoadAd() {
         step("Tap load ad") {
             loadButton.tap()
         }
     }
-    
+
     func tapPrepareAd() {
         step("Tap prepare ad") {
             prepareButton.tap()
         }
     }
-    
+
     func tapPresentAd() {
         step("Tap present") {
             presentButton.tap()
         }
     }
-    
+
     func tapGo() {
         step("Tap go") {
             goButton.tap()
         }
     }
-    
+
     func tapSkip() {
         step("Tap skip") {
             skipButton.tap()
         }
     }
-    
+
     func tapStartPlayback() {
         step("Tap start playback") {
             startPlaybackButton.tap()
         }
     }
-    
+
     func tapPlayInroll() {
         step("Tap play inroll") {
             playInrollButton.tap()
         }
     }
-    
+
     func tapPauseInroll() {
         step("Tap pause inroll") {
             pauseInrollButton.tap()
         }
     }
-    
+
     func tapResumeInroll() {
         step("Tap resume inroll") {
             resumeInrollButton.tap()

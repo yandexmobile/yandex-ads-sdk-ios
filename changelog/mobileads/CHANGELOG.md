@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 7.3.2
+
+### Fixed
+
+- Fix duplicated symbols with KSCrash SDK
+
 ## Version 7.3.1
 
 ### Updated

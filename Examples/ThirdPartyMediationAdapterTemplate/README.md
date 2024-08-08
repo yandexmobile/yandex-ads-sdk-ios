@@ -56,7 +56,7 @@ Successfully initializing the Yandex Mobile Ads SDK is an important condition fo
 Manual initialization of the SDK can be used like this (this method is safety and can be reinvoked if SDK already initialized):
 
 ```swift
-YMAMobileAds.initializeSDK()
+MobileAds.initializeSDK()
 ```
 
 ### Privacy policies
@@ -64,8 +64,8 @@ YMAMobileAds.initializeSDK()
 Privacy policies can be configured like this:
 
 ```swift
-YMAMobileAds.setLocationTrackingEnabled(locationTracking)
-YMAMobileAds.setUserConsent(userConsent)
+MobileAds.setLocationTrackingEnabled(locationTracking)
+MobileAds.setUserConsent(userConsent)
 ```
 
 > You should configure policies every time when it changed.
@@ -77,7 +77,7 @@ See also: [GDPR](https://ads.yandex.com/helpcenter/en/dev/ios/gdpr).
 As shown in the [template](./ThirdPartyMediationAdapterTemplate/AdapterTemplate/YandexAdapters.swift#L42), the bidder token can be obtained as follows:
 
 ```swift
-let bidderTokenLoader = YMABidderTokenLoader()
+let bidderTokenLoader = BidderTokenLoader()
 bidderTokenLoader.loadBidderToken(requestConfiguration: requestConfiguraton) { token in
     completion(token)
  }
@@ -86,7 +86,7 @@ bidderTokenLoader.loadBidderToken(requestConfiguration: requestConfiguraton) { t
 You need to load a bidder token for each new ad request. Token request can be created as follows (also shown in [template](./ThirdPartyMediationAdapterTemplate/AdapterTemplate/YandexAdapters.swift#L27)):
 
 ```swift
-let requestConfiguraton = YMABidderTokenRequestConfiguration(adType: adType)
+let requestConfiguraton = BidderTokenRequestConfiguration(adType: adType)
 if adType == .banner {
     requestConfiguraton.bannerAdSize = bannerAdSize
 }
