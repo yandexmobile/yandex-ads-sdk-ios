@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 7.4.0.0
+
+### Updated
+
+- Updated minimum supported `Google-Mobile-Ads-SDK` version to `11.7.0`
+- Updated minimum supported `YandexMobileAds` version to `7.4.0`
+
 ## Version 7.3.2.0
 
 ### Updated

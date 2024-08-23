@@ -18,7 +18,10 @@ struct YandexInstreamPage: PageObject {
     }
 
     var skipButton: XCUIElement {
-        element(id: "mac_instream_skip_button", type: .button)
+        app
+            .descendants(matching: .button)
+            .matching(Query.contains(.label, "Skip").predicate)
+            .firstMatch
     }
 
     func tapLoadAd() {
