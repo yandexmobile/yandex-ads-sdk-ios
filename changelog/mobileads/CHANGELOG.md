@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 7.4.0
+
+### Added
+
+- Debug Panel for checking the correctness of the SDK integration
+
+### Updated
+
+- Updated minimum supported `AppMetricaCore` version to `5.7.0`
+- Updated minimum supported `AppMetricaCrashes` version to `5.7.0`
+- Updated minimum supported `DivKit` version to `30.12.0`
+
 ## Version 7.3.2
 
 ### Fixed
