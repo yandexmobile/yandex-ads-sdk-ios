@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 8.3.0.0
+
+### Updated
+
+- Updated minimum supported `IronSourceSDK` version to `8.3.0.0`
+- Updated minimum supported `YandexMobileAds` version to `7.4.1`
+
 ## Version 8.2.0.3
 
 ### Updated

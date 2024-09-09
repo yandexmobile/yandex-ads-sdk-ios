@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 7.4.1
+
+### Updated
+
+- Updated minimum supported `DivKit` version to `30.16.0`
+
 ## Version 7.4.0
 
 ### Added

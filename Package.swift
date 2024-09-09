@@ -20,7 +20,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/appmetrica/appmetrica-sdk-ios", "5.0.0"..<"6.0.0"),
-        .package(url: "https://github.com/divkit/divkit-ios", exact: "30.12.0")
+        .package(url: "https://github.com/divkit/divkit-ios", exact: "30.16.0")
     ],
     targets: [
         .target(
@@ -63,13 +63,13 @@ let package = Package(
         ),
         .binaryTarget(
             name: "YandexMobileAds",
-            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAds/7.4.0/spm/9b4d472c-eef0-42c6-b9e9-ac091a290412.zip",
-            checksum: "c6e6492251a6fec6999136ef5566d551c77a71f58ab29a86c42191787400442d"
+            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAds/7.4.1/spm/42c6fa00-e552-4174-8aa8-fbdbfd94fa2a.zip",
+            checksum: "205bfae201e8a21ca7e7fd0c617d8db05bef9104628090f94145191e215986bc"
         ),
         .binaryTarget(
             name: "YandexMobileAdsInstream",
-            url: "https://ads-mobile-sdk.s3.yandex.net/YandexMobileAdsInstream/0.35.0/spm/a81209d4-6e22-42ce-aff2-5db57549277c.zip",
-            checksum: "0eb65beea574802bf63533faf67b6d848b49b006ab30659fbc0593ffe02d2236"
+            url: "https://ads-mobile-sdk.s3.yandex.net/YandexMobileAdsInstream/0.36.0/spm/02f058b1-250c-466a-8f23-bc5ce0ee5a83.zip",
+            checksum: "85490029789022c64ac9f327a0ff1f8933f11e451ae083dd13cef8e0cf87f8c4"
         )
     ]
 )
