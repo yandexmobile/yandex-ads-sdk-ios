@@ -29,8 +29,8 @@ class AdMobRewardedViewController: UIViewController {
     @IBAction func loadAd(_: UIButton) {
         showButton.isEnabled = false
 
-        // Replace ca-app-pub-4449457472880521/1866149153 with Ad Unit ID generated at https://apps.admob.com".
-        GADRewardedAd.load(withAdUnitID: "ca-app-pub-4449457472880521/1866149153",
+        // Replace ca-app-pub-4651572829019143/6476005590 with Ad Unit ID generated at https://apps.admob.com".
+        GADRewardedAd.load(withAdUnitID: "ca-app-pub-4651572829019143/6476005590",
                            request: GADRequest()) { [self] ad, error in
             if let error = error {
                 print("Did fail to receive ad with error: \(error.localizedDescription)")

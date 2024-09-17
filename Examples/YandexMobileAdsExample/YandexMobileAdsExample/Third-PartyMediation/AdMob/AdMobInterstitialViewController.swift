@@ -29,8 +29,8 @@ class AdMobInterstitialViewController: UIViewController {
     @IBAction func loadAd(_: UIButton) {
         showButton.isEnabled = false
 
-        // Replace ca-app-pub-4449457472880521/3027983741 with Ad Unit ID generated at https://apps.admob.com".
-        GADInterstitialAd.load(withAdUnitID: "ca-app-pub-4449457472880521/3027983741",
+        // Replace ca-app-pub-4651572829019143/3054278095 with Ad Unit ID generated at https://apps.admob.com".
+        GADInterstitialAd.load(withAdUnitID: "ca-app-pub-4651572829019143/3054278095",
                                request: GADRequest()) { [self] ad, error in
             if let error = error {
                 print("Did fail to receive ad with error: \(error.localizedDescription)")

@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 7.5.0
+
+### Added
+
+- DivKit was replaced with DivKitBinaryCompatibilityFacade
+
+### Updated
+
+- Updated minimum supported `AppMetricaCore` version to `5.8.0`
+- Updated minimum supported `AppMetricaCrashes` version to `5.8.0`
+
 ## Version 7.4.1
 
 ### Updated

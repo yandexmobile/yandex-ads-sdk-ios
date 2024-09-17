@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 7.4.1.0
+
+### Updated
+
+- Updated minimum supported `VungleAds` version to `7.4.1`
+- Updated minimum supported `YandexMobileAds` version to `7.5.0`
+
 ## Version 7.4.0.5
 
 ### Updated
