@@ -55,8 +55,8 @@ class AdMobNativeViewController: UIViewController {
     }
 
     private func createLoader() {
-        // Replace ca-app-pub-4449457472880521/2142524905 with Ad Unit ID generated at https://apps.admob.com".
-        adLoader = GADAdLoader(adUnitID: "ca-app-pub-4449457472880521/2142524905",
+        // Replace ca-app-pub-4651572829019143/9595635718 with Ad Unit ID generated at https://apps.admob.com".
+        adLoader = GADAdLoader(adUnitID: "ca-app-pub-4651572829019143/9595635718",
                                rootViewController: self,
                                adTypes: [.native],
                                options: nil)
@@ -80,13 +80,13 @@ extension AdMobNativeViewController: GADNativeAdLoaderDelegate {
 }
 
 // MARK: - GADNativeAdDelegate implementation
+
 extension AdMobNativeViewController: GADNativeAdDelegate {
-    
-    func nativeAdDidRecordClick(_ nativeAd: GADNativeAd) {
+    func nativeAdDidRecordClick(_: GADNativeAd) {
         print("\(#function) called")
     }
-    
-    func nativeAdDidRecordImpression(_ nativeAd: GADNativeAd) {
+
+    func nativeAdDidRecordImpression(_: GADNativeAd) {
         print("\(#function) called")
     }
 }

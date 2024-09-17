@@ -14,9 +14,9 @@ class AdMobBannerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeAdMob()
-        // Replace ca-app-pub-4449457472880521/8471882114 with Ad Unit ID generated at https://apps.admob.com".
+        // Replace ca-app-pub-4651572829019143/7264255923 with Ad Unit ID generated at https://apps.admob.com".
         bannerView = GADBannerView(adSize: GADAdSizeBanner)
-        bannerView.adUnitID = "ca-app-pub-4449457472880521/8471882114"
+        bannerView.adUnitID = "ca-app-pub-4651572829019143/7264255923"
         bannerView.delegate = self
         bannerView.rootViewController = self
         bannerView.translatesAutoresizingMaskIntoConstraints = false
