@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 7.5.1
+
+### Fixed
+
+- Fixed spm incompatibility caused by DivKitBinaryCompatibilityFacade
+
 ## Version 7.5.0
 
 ### Added
