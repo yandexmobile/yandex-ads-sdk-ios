@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 7.7.3.0
+
+### Updated
+
+- Updated minimum supported `MintegralAdSDK` version to `7.7.3`
+- Updated minimum supported `YandexMobileAds` version to `7.6.0`
+
 ## Version 7.6.9.3
 
 ### Updated

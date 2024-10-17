@@ -44,6 +44,7 @@ enum MediationAdFormat {
     case interstitial
     case rewarded
     case appOpen
+    case native
 }
 
 /// List of adUnits for checking inegration with Yandex.
@@ -52,6 +53,7 @@ enum DemoAdUnit: String {
     case demoInterstititalAdUinitId = "demo-interstitital-yandex"
     case demoRewardedAdUnitId = "demo-rewarded-yandex"
     case demoAppOpenAdUnitId = "demo-appopenad-yandex"
+    case demoNativeAdUnitId = "demo-native-content-yandex"
 }
 
 //MARK: - Initialization API
@@ -266,4 +268,146 @@ protocol MediationAppOpenDelegate: AnyObject {
 
     /// Notifies when an impression was tracked.
     func appOpenDidTrackImpression()
+}
+
+//MARK: - Native API
+
+/// This protocol describes methods for native ads.
+protocol MediationNative {
+    /// Loads nativeAd
+    /// - Parameters:
+    ///   - adData: Object that contains parameters for nativeAd request.
+    ///   - delegate: Delegate that implements your ad network native callbacks.
+    ///   - parameters: Additional parameters for ads request configuration.
+    func loadAd(with adData: AdData,
+                delegate: MediationNativeDelegate,
+                parameters: AdapterParameters)
+    
+    /// The API of some ad networks require a destroy method.
+    /// This method is called when an ad associated with this adapter should be destroyed. Necessary cleanup should be performed here.
+    func destroy()
+}
+
+/// This protocol describes  your ad network native callbacks.
+protocol MediationNativeDelegate: AnyObject {
+    /// Notifies that the native is loaded.
+    func nativeDidLoad(ad: MediationNativeAd)
+
+    /// Notifies that the native is failed to load.
+    func nativeDidFailToLoad(with error: Error)
+    
+    /// Notifies that the native ad is failed to bind.
+    func nativeDidFailToBind(with error: Error)
+
+    /// Notifies that the ad will show the modal `UIViewController` in response to the user interacting with the banner.
+    func nativeWillPresentScreen()
+
+    /// Notifies that the ad finished showing the modal `UIViewController` in response to the user interacting with the banner.
+    func nativeDidDismissScreen()
+
+    /// Called after native the rewarded ad.
+    func nativeDidDismiss()
+
+    /// Notifies that the user has clicked on the native.
+    func nativeDidClick()
+
+    /// Notifies when an impression was tracked.
+    func nativeDidTrackImpression()
+}
+
+/// This protocol describes a native ad object that the ad network SDK expects after it is loaded.
+/// The adapter will extend and bind this class after successful ad loading.
+/// In the real case this logic is strongly depends on the ad network SDK and should be changed to match it.
+protocol MediationNativeAd {
+    /// Age restrictions.
+    var age: String? { get set }
+    
+    /// The main ad text.
+    var body: String? { get set }
+    
+    /// The call to action.
+    var callToAction: String? { get set }
+    
+    /// The domain.
+    var domain: String? { get set }
+    
+    /// The web page's favicon.
+    var favicon: UIImage? { get set }
+    
+    /// The app's icon.
+    var icon: UIImage? { get set }
+    
+    /// The main image.
+    var image: UIImage? { get set }
+    
+    /// Ad media.
+    var media: UIView? { get set }
+    
+    /// The price of the advertised app.
+    var price: String? { get set }
+    
+    /// The app's rating.
+    var rating: NSNumber? { get set }
+    
+    /// The number of app reviews.
+    var reviewCount: String? { get set }
+    
+    /// Data on the ad network.
+    var sponsored: String? { get set }
+    
+    /// The ad title.
+    var title: String? { get set }
+    
+    /// The warning.
+    var warning: String? { get set }
+    
+    /// Method for properly binding views in native ad format.
+    func trackViews(adNetworkView: MediationNativeAdView)
+}
+
+/// This protocol describes a native ad view of the ad network which will be used to obtain ad assets.
+/// Ad network required views and Yandex required views may mismatch. Check docs to resolve it.
+/// https://yandex.ru/support2/mobile-ads/en/dev/ios/components
+protocol MediationNativeAdView: UIView {
+    /// `UILabel` for information about age restrictions.
+    var ageLabel: UILabel? { get }
+    
+    /// `UILabel` for the main ad text.
+    var bodyLabel: UILabel? { get }
+    
+    /// `UIButton` with a call to action.
+    var callToActionButton: UIButton? { get }
+    
+    /// `UILabel` for domain data.
+    var domainLabel: UILabel? { get }
+    
+    /// `UIImageView` for the favicon.
+    var faviconImageView: UIImageView? { get }
+    
+    /// `UIButton` for handling reasons for ad closing.
+    var feedbackButton: UIButton? { get }
+    
+    /// `UIImageView` for the icon.
+    var iconImageView: UIImageView? { get }
+    
+    /// `UIView` for the ad's media.
+    var mediaView: UIView? { get }
+    
+    /// `UILabel` for data on the price of the advertised app.
+    var priceLabel: UILabel? { get }
+    
+    /// `UIView` for data on the app rating.
+    var ratingView: UIView? { get }
+    
+    /// `UILabel` for data on the number of app reviews.
+    var reviewCountLabel: UILabel? { get }
+    
+    /// `UILabel` for information about the ad network.
+    var sponsoredLabel: UILabel? { get }
+    
+    /// `UILabel` for the ad title.
+    var titleLabel: UILabel? { get }
+    
+    /// `UILabel` for the warning.
+    var warningLabel: UILabel? { get }
 }

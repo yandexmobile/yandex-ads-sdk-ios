@@ -11,6 +11,7 @@ final class AppOpenAdController: NSObject {
     static let shared = AppOpenAdController()
 
     weak var delegate: AppOpenAdControllerDelegate?
+    weak var presentingVC: UIViewController?
 
     private var appOpenAd: AppOpenAd?
 
@@ -28,8 +29,8 @@ final class AppOpenAdController: NSObject {
 
     func showAdIfAvailable(from window: UIWindow?) {
         guard let viewController = window?.rootViewController else { return }
-        appOpenAd?.show(from: viewController)
-        viewController.presentedViewController?.view.accessibilityIdentifier = CommonAccessibility.bannerView
+        presentingVC = viewController
+        appOpenAd?.show(from: presentingVC)
     }
 
     private func makeMessageDescription(_ appOpenAd: AppOpenAd) -> String {
@@ -56,6 +57,7 @@ extension AppOpenAdController: AppOpenAdDelegate {
     }
 
     func appOpenAdDidShow(_ appOpenAd: AppOpenAd) {
+        presentingVC?.presentedViewController?.view.accessibilityIdentifier = CommonAccessibility.bannerView
         print("\(makeMessageDescription(appOpenAd)) did show")
     }
 

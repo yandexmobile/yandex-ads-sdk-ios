@@ -22,7 +22,6 @@ final class RewardedAdViewController: UIViewController {
                 guard let self else { return }
                 self.rewardedAd?.show(from: self)
                 self.presentButton.isEnabled = false
-                self.presentedViewController?.view.accessibilityIdentifier = CommonAccessibility.bannerView
             }
         )
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -130,6 +129,7 @@ extension RewardedAdViewController: RewardedAdDelegate {
     }
 
     func rewardedAdDidShow(_ rewardedAd: RewardedAd) {
+        self.presentedViewController?.view.accessibilityIdentifier = CommonAccessibility.bannerView
         print("\(makeMessageDescription(rewardedAd)) did show")
     }
 

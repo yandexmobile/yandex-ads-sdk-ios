@@ -17,7 +17,7 @@ private let mockPresentingError = AdapterError(errorDescription: "Ad Display Fai
 
 /// This class implements base methods for all other adapters.
 class YandexBaseAdapter: NSObject, MediationBidding, MediationInitialization {
-    private static let bidderTokenLoader = BidderTokenLoader()
+    private static let bidderTokenLoader = BidderTokenLoader(mediationNetworkName: "MEDIATION_NETWORK_NAME")
 
     /// This method implements obtaining a bid token in order to use it with in-app bidding integration with Yandex.
     /// https://yastatic.net/s3/doc-binary/src/dev/mobile-ads/ru/jazzy/Classes/BidderTokenLoader.html
@@ -35,6 +35,8 @@ class YandexBaseAdapter: NSObject, MediationBidding, MediationInitialization {
             requestConfiguraton = BidderTokenRequestConfiguration(adType: .rewarded)
         case .appOpen:
             requestConfiguraton = BidderTokenRequestConfiguration(adType: .appOpenAd)
+        case .native:
+            requestConfiguraton = BidderTokenRequestConfiguration(adType: .native)
         }
 
         requestConfiguraton.parameters = Self.makeConfigurationParameters(parameters)
@@ -79,6 +81,20 @@ class YandexBaseAdapter: NSObject, MediationBidding, MediationInitialization {
     /// This method implements creation of `AdRequestConfiguration` with  all the necessary parameters.
     func makeAdRequestConfiguration(with adData: AdData, parameters: AdapterParameters) -> AdRequestConfiguration {
         let configuration = MutableAdRequestConfiguration(adUnitID: adData.adUinitId)
+        let configParameters = Self.makeConfigurationParameters(parameters)
+
+        configuration.parameters = configParameters
+
+        if let biddingData = adData.bidId {
+            configuration.biddingData = biddingData
+        }
+
+        return configuration
+    }
+    
+    /// This method implements creation of `NativeAdRequestConfiguration` with  all the necessary parameters.
+    func makeNativeAdRequestConfiguration(with adData: AdData, parameters: AdapterParameters) -> NativeAdRequestConfiguration {
+        let configuration = MutableNativeAdRequestConfiguration(adUnitID: adData.adUinitId)
         let configParameters = Self.makeConfigurationParameters(parameters)
 
         configuration.parameters = configParameters
@@ -387,4 +403,137 @@ extension YandexAppOpenAdapter: AppOpenAdLoaderDelegate {
     func appOpenAdLoader(_ adLoader: AppOpenAdLoader, didFailToLoadWithError error: AdRequestError) {
         delegate?.appOpenDidFailToLoad(with: error.error)
     }
+}
+
+//MARK: - Native Adapter
+
+/// This class implements base methods for native adapter.
+final class YandexNativeAdapter: YandexBaseAdapter, MediationNative {
+    private weak var delegate: MediationNativeDelegate?
+    private lazy var loader: NativeAdLoader = {
+        let loader = NativeAdLoader()
+        loader.delegate = self
+        return loader
+    }()
+    private var nativeAd: NativeAd?
+    
+    func loadAd(with adData: AdData,
+                delegate: MediationNativeDelegate,
+                parameters: AdapterParameters) {
+        self.delegate = delegate
+        let configuration = makeNativeAdRequestConfiguration(with: adData, parameters: parameters)
+        Self.setupYandexSDK(with: parameters)
+        loader.loadAd(with: configuration)
+    }
+    
+    func destroy() {
+        nativeAd?.delegate = nil
+        nativeAd = nil
+    }
+}
+
+/// `NativeAdDelegate` implementation.
+/// https://yastatic.net/s3/doc-binary/src/dev/mobile-ads/ru/jazzy/Protocols/NativeAdDelegate.html
+extension YandexNativeAdapter: NativeAdDelegate {
+    func nativeAdDidClick(_ ad: NativeAd) {
+        delegate?.nativeDidClick()
+    }
+    
+    func nativeAd(_ ad: NativeAd, didTrackImpressionWith impressionData: ImpressionData?) {
+        delegate?.nativeDidTrackImpression()
+    }
+    
+    func nativeAd(_ ad: NativeAd, didDismissScreen viewController: UIViewController?) {
+        delegate?.nativeDidDismissScreen()
+    }
+    
+    func nativeAd(_ ad: any NativeAd, willPresentScreen viewController: UIViewController?) {
+        delegate?.nativeWillPresentScreen()
+    }
+    
+    func close(_ ad: NativeAd) {
+        delegate?.nativeDidDismiss()
+    }
+}
+
+/// `NativeAdLoaderDelegate` implementation.
+/// https://yastatic.net/s3/doc-binary/src/dev/mobile-ads/ru/jazzy/Protocols/NativeAdLoaderDelegate.html
+extension YandexNativeAdapter: NativeAdLoaderDelegate {
+    func nativeAdLoader(_ loader: NativeAdLoader, didLoad ad: NativeAd) {
+        ad.delegate = self
+        nativeAd = ad
+        let assets = ad.adAssets()
+        
+        let mediationNativeAd = YandexNativeAd(nativeAd: ad)
+        mediationNativeAd.delegate = delegate
+        mediationNativeAd.age = assets.age
+        mediationNativeAd.body = assets.body
+        mediationNativeAd.callToAction = assets.callToAction
+        mediationNativeAd.domain = assets.domain
+        mediationNativeAd.favicon = assets.favicon?.imageValue
+        mediationNativeAd.icon = assets.icon?.imageValue
+        mediationNativeAd.image = assets.image?.imageValue
+        mediationNativeAd.media = YMANativeMediaView()
+        mediationNativeAd.price = assets.price
+        mediationNativeAd.rating = assets.rating
+        mediationNativeAd.reviewCount = assets.reviewCount
+        mediationNativeAd.sponsored = assets.sponsored
+        mediationNativeAd.title = assets.title
+        mediationNativeAd.warning = assets.warning
+        
+        delegate?.nativeDidLoad(ad: mediationNativeAd)
+    }
+    
+    func nativeAdLoader(_ loader: NativeAdLoader, didFailLoadingWithError error: Error) {
+        delegate?.nativeDidFailToLoad(with: error)
+    }
+}
+
+/// This class implements a native ad object that the ad network SDK expects after it is loaded.
+final class YandexNativeAd: MediationNativeAd {
+    weak var delegate: MediationNativeDelegate?
+    let nativeAd: NativeAd
+    
+    init(nativeAd: NativeAd) {
+        self.nativeAd = nativeAd
+    }
+    
+    /// Method for properly binding views in native ad format.
+    /// In the real case this logic is strongly depends on the ad network SDK and should be changed to match it.
+    func trackViews(adNetworkView: MediationNativeAdView) {
+        let viewData = NativeAdViewData()
+        viewData.ageLabel = adNetworkView.ageLabel
+        viewData.bodyLabel = adNetworkView.bodyLabel
+        viewData.callToActionButton = adNetworkView.callToActionButton
+        viewData.domainLabel = adNetworkView.domainLabel
+        viewData.faviconImageView = adNetworkView.faviconImageView
+        viewData.iconImageView = adNetworkView.iconImageView
+        viewData.mediaView = adNetworkView.mediaView as? YMANativeMediaView
+        viewData.priceLabel = adNetworkView.priceLabel
+        viewData.ratingView = adNetworkView.priceLabel as? (UIView & Rating)
+        viewData.reviewCountLabel = adNetworkView.reviewCountLabel
+        viewData.sponsoredLabel = adNetworkView.sponsoredLabel
+        viewData.titleLabel = adNetworkView.titleLabel
+        viewData.warningLabel = adNetworkView.warningLabel
+        do {
+            try nativeAd.bindAd(to: adNetworkView, viewData: viewData)
+        } catch {
+            delegate?.nativeDidFailToBind(with: error)
+        }
+    }
+    
+    var age: String?
+    var body: String?
+    var callToAction: String?
+    var domain: String?
+    var favicon: UIImage?
+    var icon: UIImage?
+    var image: UIImage?
+    var media: UIView?
+    var price: String?
+    var rating: NSNumber?
+    var reviewCount: String?
+    var sponsored: String?
+    var title: String?
+    var warning: String?
 }

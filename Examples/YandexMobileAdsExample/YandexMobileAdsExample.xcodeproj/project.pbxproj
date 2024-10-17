@@ -112,7 +112,11 @@
 		64F70DFA2B0B64D300A31CE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1467E35D271EA91700DF104A /* LaunchScreen.storyboard */; };
 		64F70DFC2B0B64D300A31CE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1467E35B271EA91700DF104A /* Assets.xcassets */; };
 		64F70DFD2B0B64D300A31CE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1467E358271EA91500DF104A /* Main.storyboard */; };
+		761E541C2CB9572F00CEEF49 /* NativeVideoProgressControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761E541B2CB9572F00CEEF49 /* NativeVideoProgressControlView.swift */; };
+		761E541E2CB9581900CEEF49 /* NativeVideoMuteControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761E541D2CB9581900CEEF49 /* NativeVideoMuteControlView.swift */; };
 		76DEC6852B0E18B10014B6B4 /* IronSourceBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DEC6842B0E18B10014B6B4 /* IronSourceBannerViewController.swift */; };
+		76F361F72CBD224800CC6E89 /* NativeVideoProgressControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761E541B2CB9572F00CEEF49 /* NativeVideoProgressControlView.swift */; };
+		76F361F82CBD224F00CC6E89 /* NativeVideoMuteControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761E541D2CB9581900CEEF49 /* NativeVideoMuteControlView.swift */; };
 		7A527BBD2B1E36480002B416 /* CommonAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A851DDA2B1E2D8100D03655 /* CommonAccessibility.swift */; };
 		7A527BBE2B1E36480002B416 /* StateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC09FFE2B1DF5D200FF69F9 /* StateUtils.swift */; };
 		7A527BBF2B1E36480002B416 /* RootAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A851DF82B1E313C00D03655 /* RootAccessibility.swift */; };
@@ -258,6 +262,8 @@
 		646CB7F52B0B5B6F0056DFD5 /* YandexAdsExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexAdsExampleViewController.swift; sourceTree = "<group>"; };
 		64F70E022B0B64D300A31CE8 /* YandexMobileAdsExampleSPM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YandexMobileAdsExampleSPM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F70E052B0B652600A31CE8 /* sample-public */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "sample-public"; path = ../..; sourceTree = "<group>"; };
+		761E541B2CB9572F00CEEF49 /* NativeVideoProgressControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeVideoProgressControlView.swift; sourceTree = "<group>"; };
+		761E541D2CB9581900CEEF49 /* NativeVideoMuteControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeVideoMuteControlView.swift; sourceTree = "<group>"; };
 		76DEC6842B0E18B10014B6B4 /* IronSourceBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IronSourceBannerViewController.swift; sourceTree = "<group>"; };
 		7A851DDA2B1E2D8100D03655 /* CommonAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonAccessibility.swift; sourceTree = "<group>"; };
 		7A851DDD2B1E2DBB00D03655 /* BaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTest.swift; sourceTree = "<group>"; };
@@ -572,6 +578,8 @@
 				DEC81AE12A53C840008FE935 /* NativeViewController.swift */,
 				DE0C2CBD2A65760900A84D00 /* NativeTemplateViewController.swift */,
 				DE0C2CBF2A66245700A84D00 /* NativeCustomViewController.swift */,
+				761E541B2CB9572F00CEEF49 /* NativeVideoProgressControlView.swift */,
+				761E541D2CB9581900CEEF49 /* NativeVideoMuteControlView.swift */,
 				DE0C2CC12A671FF500A84D00 /* NativeCustomAdView.swift */,
 			);
 			path = Native;
@@ -973,6 +981,7 @@
 				14033FB72720457800A24D5E /* VideoAVPlayer.swift in Sources */,
 				14033F8927202CA800A24D5E /* AdMobRewardedViewController.swift in Sources */,
 				147B0BD127200D14005F4062 /* NativeAdView.swift in Sources */,
+				761E541C2CB9572F00CEEF49 /* NativeVideoProgressControlView.swift in Sources */,
 				14033F5E27201B8A00A24D5E /* MobileMediationInterstitialViewController.swift in Sources */,
 				14033FB52720457800A24D5E /* ReusablePlayer.swift in Sources */,
 				7A527BCA2B1E36490002B416 /* YandexAdsAccessibility.swift in Sources */,
@@ -984,6 +993,7 @@
 				14033FB12720457800A24D5E /* ContentControlsController.swift in Sources */,
 				7AE29ECF2B3DBE63004A3420 /* GDPRAccessibility.swift in Sources */,
 				DE0C2CBE2A65760900A84D00 /* NativeTemplateViewController.swift in Sources */,
+				761E541E2CB9581900CEEF49 /* NativeVideoMuteControlView.swift in Sources */,
 				76DEC6852B0E18B10014B6B4 /* IronSourceBannerViewController.swift in Sources */,
 				7A527BC92B1E36490002B416 /* RootAccessibility.swift in Sources */,
 				14033FBD2720457800A24D5E /* ViewVisibilityValidator.swift in Sources */,
@@ -1063,6 +1073,7 @@
 				64F70DD22B0B64D300A31CE8 /* ViewVisibilityValidator.swift in Sources */,
 				64F70DD32B0B64D300A31CE8 /* StickyBannerViewController.swift in Sources */,
 				64F70DD42B0B64D300A31CE8 /* InstreamContent.swift in Sources */,
+				76F361F72CBD224800CC6E89 /* NativeVideoProgressControlView.swift in Sources */,
 				64F70DD52B0B64D300A31CE8 /* NavigationTableViewController.swift in Sources */,
 				64F70DD72B0B64D300A31CE8 /* VideoPlayerProvider.swift in Sources */,
 				7AF4B0B52B2774CC004974FD /* YandexInstreamListAccessibility.swift in Sources */,
@@ -1094,6 +1105,7 @@
 				64F70DF02B0B64D300A31CE8 /* GDPRDDialogViewController.swift in Sources */,
 				64F70DF12B0B64D300A31CE8 /* InstreamAdBinderToastDelegate.swift in Sources */,
 				64F70DF22B0B64D300A31CE8 /* NativeCustomAdView.swift in Sources */,
+				76F361F82CBD224F00CC6E89 /* NativeVideoMuteControlView.swift in Sources */,
 				64F70DF32B0B64D300A31CE8 /* StarRatingView.swift in Sources */,
 				64F70DF42B0B64D300A31CE8 /* AppOpenAdController.swift in Sources */,
 				64F70DF52B0B64D300A31CE8 /* ContentPlayer.swift in Sources */,
@@ -1208,7 +1220,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 7.5.1;
+				CURRENT_PROJECT_VERSION = 7.6.0;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1227,7 +1239,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 7.5.1;
+				MARKETING_VERSION = 7.6.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1271,7 +1283,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 7.5.1;
+				CURRENT_PROJECT_VERSION = 7.6.0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1284,7 +1296,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 7.5.1;
+				MARKETING_VERSION = 7.6.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1382,7 +1394,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 7.5.1;
+				CURRENT_PROJECT_VERSION = 7.6.0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1395,7 +1407,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 7.5.1;
+				MARKETING_VERSION = 7.6.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

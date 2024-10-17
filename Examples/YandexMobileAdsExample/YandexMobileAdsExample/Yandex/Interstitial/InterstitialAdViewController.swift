@@ -22,7 +22,6 @@ final class InterstitialAdViewController: UIViewController {
                 guard let self else { return }
                 self.interstitialAd?.show(from: self)
                 self.presentButton.isEnabled = false
-                self.presentedViewController?.view.accessibilityIdentifier = CommonAccessibility.bannerView
             }
         )
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -122,6 +121,7 @@ extension InterstitialAdViewController: InterstitialAdDelegate {
     }
 
     func interstitialAdDidShow(_ interstitialAd: InterstitialAd) {
+        self.presentedViewController?.view.accessibilityIdentifier = CommonAccessibility.bannerView
         print("\(makeMessageDescription(interstitialAd)) did show")
     }
 

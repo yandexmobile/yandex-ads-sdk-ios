@@ -15,19 +15,18 @@ final class YandexInstreamTest: BaseTest {
         
         page.tapPrepareAd()
         page.tapPresentAd()
-            
-        let skipButton = page.skipButton
-        let numberOfAds = 5
-        
+
+        let numberOfAds = 6
+
         for index in 0..<numberOfAds {
             step("Ad \(index)") {
-                XCTAssertTrue(elementMatches(skipButton, query: Query.exists, timeout: 60), "Skip exists")
+                XCTAssertTrue(elementMatches(page.goButton, query: Query.exists, timeout: 60), "Go exists")
                 page.tapGo()
                 assertSafariOpened()
                 returnToApp()
-                XCTAssertTrue(elementMatches(skipButton, query: Query.exists, timeout: 30), "Skip exists")
+                XCTAssertTrue(elementMatches(page.skipButton, query: Query.exists, timeout: 30), "Skip exists")
                 page.tapSkip()
-                XCTAssertTrue(elementMatches(skipButton, query: Query.notExists, timeout: 30), "Skip not exists")
+                XCTAssertTrue(elementMatches(page.skipButton, query: Query.notExists), "Skip not exists")
             }
         }
     }
