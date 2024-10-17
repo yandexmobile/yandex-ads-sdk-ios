@@ -46,7 +46,6 @@ class AdFoxInterstitialViewController: UIViewController {
     @IBAction func presentInterstitial() {
         interstitialAd?.show(from: self)
         showButton.isEnabled = false
-        presentedViewController?.view.accessibilityIdentifier = CommonAccessibility.bannerView
     }
     private func makeMessageDescription(_ interstitial: InterstitialAd) -> String {
         "Interstitial Ad with Unit ID: \(String(describing: interstitial.adInfo?.adUnitId))"
@@ -59,6 +58,7 @@ extension AdFoxInterstitialViewController: InterstitialAdLoaderDelegate {
     func interstitialAdLoader(_ adLoader: InterstitialAdLoader, didLoad interstitialAd: InterstitialAd) {
         print("\(makeMessageDescription(interstitialAd)) loaded")
         self.interstitialAd = interstitialAd
+        interstitialAd.delegate = self
         self.showButton.isEnabled = true
         stateLabel.text = StateUtils.loaded()
     }
@@ -79,6 +79,7 @@ extension AdFoxInterstitialViewController: InterstitialAdDelegate {
     }
 
     func interstitialAdDidShow(_ interstitialAd: InterstitialAd) {
+        presentedViewController?.view.accessibilityIdentifier = CommonAccessibility.bannerView
         print("\(makeMessageDescription(interstitialAd)) did show")
     }
 

@@ -139,6 +139,7 @@ final class NativeCustomAdView: YMANativeAdView {
         addSubview(stack)
 
         stack.addArrangedSubview(headerStack)
+        stack.addArrangedSubview(warning)
         stack.addArrangedSubview(body)
         stack.addArrangedSubview(media)
         stack.addArrangedSubview(bottomStack)

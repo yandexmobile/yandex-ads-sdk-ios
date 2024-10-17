@@ -28,7 +28,7 @@ final class YandexFullscreenTest: BaseTest {
     
     func tapAd() {
         step("Tap ad") {
-            fullscreenPage.adView.buttons.allElementsBoundByIndex.max { $0.frame.maxY < $1.frame.maxY }!.tap()
+            fullscreenPage.adView.buttons.allElementsBoundByIndex.max { $0.frame.maxX < $1.frame.maxX }!.tap()
         }
     }
 }

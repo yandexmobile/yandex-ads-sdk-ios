@@ -19,7 +19,7 @@ struct YandexInstreamPage: PageObject {
 
     var skipButton: XCUIElement {
         app
-            .descendants(matching: .button)
+            .descendants(matching: .staticText)
             .matching(Query.contains(.label, "Skip").predicate)
             .firstMatch
     }

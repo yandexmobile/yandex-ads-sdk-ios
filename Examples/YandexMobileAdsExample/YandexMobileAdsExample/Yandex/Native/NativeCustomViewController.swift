@@ -29,6 +29,18 @@ final class NativeCustomViewController: UIViewController {
         return button
     }()
     
+    private lazy var setCustomControlsButton: UIButton = {
+        let button = UIButton(
+            configuration: .tinted(),
+            primaryAction: UIAction(title: "Set custom controls") { [weak self] _ in
+                self?.setCustomControls()
+            }
+        )
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Set custom controls", for: .normal)
+        return button
+    }()
+    
     private lazy var stateLabel: UILabel = {
         let label = UILabel()
         label.accessibilityIdentifier = CommonAccessibility.stateLabel
@@ -42,6 +54,18 @@ final class NativeCustomViewController: UIViewController {
         adLoader.delegate = self
         return adLoader
     }()
+    
+    private lazy var videoProgressControl: NativeVideoProgressControlView = {
+        let progressControl = NativeVideoProgressControlView()
+        progressControl.translatesAutoresizingMaskIntoConstraints = false
+        return progressControl
+    }()
+    
+    private lazy var videoMuteControl: NativeVideoMuteControlView = {
+        let muteControl = NativeVideoMuteControlView()
+        muteControl.translatesAutoresizingMaskIntoConstraints = false
+        return muteControl
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,8 +77,8 @@ final class NativeCustomViewController: UIViewController {
     // MARK: - Ad
 
     private func loadNativeAd() {
-        // Replace demo-native-app-yandex with actual Ad Unit ID
-        let requestConfiguration = NativeAdRequestConfiguration(adUnitID: "demo-native-app-yandex")
+        // Replace demo-native-video-yandex with actual Ad Unit ID
+        let requestConfiguration = NativeAdRequestConfiguration(adUnitID: "demo-native-video-yandex")
         adLoader.loadAd(with: requestConfiguration)
         stateLabel.text = nil
     }
@@ -80,6 +104,7 @@ final class NativeCustomViewController: UIViewController {
     private func addSubviews() {
         view.addSubview(adView)
         view.addSubview(loadButton)
+        view.addSubview(setCustomControlsButton)
         view.addSubview(stateLabel)
     }
 
@@ -88,6 +113,9 @@ final class NativeCustomViewController: UIViewController {
         NSLayoutConstraint.activate([
             loadButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             loadButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            setCustomControlsButton.topAnchor.constraint(equalTo: loadButton.bottomAnchor, constant: 10),
+            setCustomControlsButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 
             adView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor, constant: 10),
             adView.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor, constant: -10),
@@ -96,6 +124,35 @@ final class NativeCustomViewController: UIViewController {
             stateLabel.topAnchor.constraint(equalTo: loadButton.bottomAnchor, constant: 10),
             stateLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
             stateLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+        ])
+    }
+    
+    private func setCustomControls() {
+        guard let mediaView = adView.mediaView else {
+            return
+        }
+        let playbackControls = NativeVideoPlaybackControls(
+            progressControl: videoProgressControl,
+            muteControl: videoMuteControl
+        )
+        playbackControls.setupVideoPlaybackControls(to: mediaView)
+        addPlaybackControlView(mediaView: mediaView)
+    }
+    
+    private func addPlaybackControlView(mediaView: UIView) {
+        mediaView.addSubview(videoMuteControl)
+        mediaView.addSubview(videoProgressControl)
+        
+        mediaView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            videoProgressControl.leadingAnchor.constraint(equalTo: mediaView.leadingAnchor),
+            videoProgressControl.trailingAnchor.constraint(equalTo: mediaView.trailingAnchor),
+            videoProgressControl.bottomAnchor.constraint(equalTo: mediaView.bottomAnchor),
+            videoProgressControl.heightAnchor.constraint(equalToConstant: 6),
+            
+            videoMuteControl.leadingAnchor.constraint(equalTo: mediaView.leadingAnchor),
+            videoMuteControl.topAnchor.constraint(equalTo: mediaView.topAnchor),
         ])
     }
 }

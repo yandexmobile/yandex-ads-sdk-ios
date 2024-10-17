@@ -19,8 +19,8 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/appmetrica/appmetrica-sdk-ios", "5.0.0"..<"6.0.0"),
-        .package(url: "https://github.com/divkit/divkit-ios-facade", exact: "4.4.0")
+        .package(url: "https://github.com/appmetrica/appmetrica-sdk-ios", "5.8.0"..<"6.0.0"),
+        .package(url: "https://github.com/divkit/divkit-ios-facade", exact: "4.5.0")
     ],
     targets: [
         .target(
@@ -29,6 +29,7 @@ let package = Package(
                 .target(name: "YandexMobileAds"),
                 .product(name: "AppMetricaCore", package: "appmetrica-sdk-ios"),
                 .product(name: "AppMetricaCrashes", package: "appmetrica-sdk-ios"),
+                .product(name: "AppMetricaLibraryAdapter", package: "appmetrica-sdk-ios"),
                 .product(name: "DivKitBinaryCompatibilityFacade", package: "divkit-ios-facade")
             ],
             resources: [
@@ -63,13 +64,13 @@ let package = Package(
         ),
         .binaryTarget(
             name: "YandexMobileAds",
-            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAds/7.5.1/spm/4a56589f-a349-4b97-8ad9-b55ca53d701a.zip",
-            checksum: "fed3e215b5195b23c5efe51c9365e6d991134de46477cf56b99f9f73f8cf9ae5"
+            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAds/7.6.0/spm/94936ff2-9ad6-4625-a249-cb7899781a78.zip",
+            checksum: "4a62584148b65a1fd610b44883a84e1cc3fd8bcc3f6d3276c8ff5833865388d9"
         ),
         .binaryTarget(
             name: "YandexMobileAdsInstream",
-            url: "https://ads-mobile-sdk.s3.yandex.net/YandexMobileAdsInstream/0.38.0/spm/853482e9-2c6c-4ead-bd74-a7de3fef28c6.zip",
-            checksum: "21771a99edd363885ee4b7f02a2746c2bc717f6bba2118f69fcfd6117bb3bb45"
+            url: "https://ads-mobile-sdk.s3.yandex.net/YandexMobileAdsInstream/0.39.0/spm/b73716b7-7c4e-40ea-8599-596dc374233a.zip",
+            checksum: "213ac6a7cb7cdf3839296f6251aa9d53e8a114505eb05c040010180dd0ef874e"
         )
     ]
 )

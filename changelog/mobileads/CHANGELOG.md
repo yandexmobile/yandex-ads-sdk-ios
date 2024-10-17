@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 7.6.0
+
+### Added
+
+- Added AppMetricaLibraryAdapter
+
+### Updated
+
+- Updated minimum supported `AppMetricaCore` version to `5.8.1`
+- Updated minimum supported `AppMetricaCrashes` version to `5.8.1`
+- Updated minimum supported `AppMetricaLibraryAdapter` version to `5.8.1`
+- Updated minimum supported `DivKitBinaryCompatibilityFacade` version to `4.5.0`
+- Updated minimum supported `appmetrica-sdk-ios` version to `5.8.0`
+
+### Deprecated
+
+- Deprecated `BidderTokenLoader()`. Use `BidderTokenLoader(mediationNetworkName:)` instead.
+
 ## Version 7.5.1
 
 ### Fixed

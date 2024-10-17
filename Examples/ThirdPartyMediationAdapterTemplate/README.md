@@ -38,6 +38,8 @@ This way you will get a separate adapter class for each of the ad formats. If yo
 
 * `Interstitial`, `Rewarded`, `AppOpen` formats provide loader classes. A loader object can be [created](./ThirdPartyMediationAdapterTemplate/AdapterTemplate/YandexAdapters.swift#L165) once and can be reused. This speeds up loading and can be helpful to implement preloading logic, if your network supports it.
 
+* `Native` format includes both the required and optional [assets](https://yandex.ru/support2/mobile-ads/en/dev/ios/components). The way to provide custom assets for binding strongly depends on the API of your ads SDK. The [template]((./ThirdPartyMediationAdapterTemplate/AdapterTemplate/YandexAdapters.swift#L503)) shows how these assets are passed to adapter during the ad request by providing a map of `string identifier` to `asset view identifier` on the publisher side.
+
 ### 4. Test integration
 
 It is recommended to use test ads to check your adapter. These special demo ad unit identifiers guarantee successful ad response for each request:
@@ -46,6 +48,7 @@ It is recommended to use test ads to check your adapter. These special demo ad u
 * Banner format: `demo-banner-yandex`
 * Interstitial format: `demo-interstitial-yandex`
 * Rewarded format: `demo-rewarded-yandex`
+* Native format: `demo-native-content-yandex`, `demo-native-app-yandex`, `demo-native-video-yandex`
 
 ## Additional info
 
@@ -77,7 +80,7 @@ See also: [GDPR](https://ads.yandex.com/helpcenter/en/dev/ios/gdpr).
 As shown in the [template](./ThirdPartyMediationAdapterTemplate/AdapterTemplate/YandexAdapters.swift#L42), the bidder token can be obtained as follows:
 
 ```swift
-let bidderTokenLoader = BidderTokenLoader()
+let bidderTokenLoader = BidderTokenLoader(mediationNetworkName: "MEDIATION_NETWORK_NAME")
 bidderTokenLoader.loadBidderToken(requestConfiguration: requestConfiguraton) { token in
     completion(token)
  }
