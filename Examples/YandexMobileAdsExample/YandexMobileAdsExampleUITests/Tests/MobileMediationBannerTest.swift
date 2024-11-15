@@ -24,9 +24,9 @@ final class MobileMediationBannerTest: BaseTest {
         try test(adapter: .inMobi)
     }
     
-//    func testMintegralBanner() throws {
-//        try test(adapter: .mintegral)
-//    }
+    func testMintegralBanner() throws {
+        try test(adapter: .mintegral)
+    }
     
     func testMyTargetBanner() throws {
         try test(adapter: .myTarget)

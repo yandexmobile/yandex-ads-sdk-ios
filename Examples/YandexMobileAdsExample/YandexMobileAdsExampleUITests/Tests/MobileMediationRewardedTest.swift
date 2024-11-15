@@ -32,9 +32,9 @@ final class MobileMediationRewardedTest: BaseTest {
         try test(adapter: .ironSource)
     }
     
-//    func testMintegralRewarded() throws {
-//        try test(adapter: .mintegral)
-//     }
+    func testMintegralRewarded() throws {
+        try test(adapter: .mintegral)
+     }
     
     func testMyTargetRewarded() throws {
         try test(adapter: .myTarget)
