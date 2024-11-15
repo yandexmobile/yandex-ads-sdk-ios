@@ -32,9 +32,9 @@ final class MobileMediationInterstitialTest: BaseTest {
         try test(adapter: .ironSource)
     }
     
-//    func testMintegralInterstitial() throws {
-//        try test(adapter: .mintegral)
-//    }
+    func testMintegralInterstitial() throws {
+        try test(adapter: .mintegral)
+    }
     
     func testMyTargetInterstitial() throws {
         try test(adapter: .myTarget)

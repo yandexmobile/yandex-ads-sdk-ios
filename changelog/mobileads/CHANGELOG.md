@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 7.7.0
+
+### Updated
+
+- Updated minimum supported `AppMetricaCore` version to `5.8.2`
+- Updated minimum supported `AppMetricaCrashes` version to `5.8.2`
+- Updated minimum supported `AppMetricaLibraryAdapter` version to `5.8.2`
+
 ## Version 7.6.1
 
 ### Added

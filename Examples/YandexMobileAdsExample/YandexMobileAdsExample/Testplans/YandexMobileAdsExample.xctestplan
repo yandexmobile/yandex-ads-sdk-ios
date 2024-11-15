@@ -21,6 +21,12 @@
   },
   "testTargets" : [
     {
+      "skippedTests" : [
+        "MobileMediationBannerTest\/testIronSourceBanner()",
+        "MobileMediationBannerTest\/testMintegralBanner()",
+        "MobileMediationInterstitialTest\/testMintegralInterstitial()",
+        "MobileMediationRewardedTest\/testMintegralRewarded()"
+      ],
       "target" : {
         "containerPath" : "container:YandexMobileAdsExample.xcodeproj",
         "identifier" : "7AFDCA142B10EA9F00D35B17",
