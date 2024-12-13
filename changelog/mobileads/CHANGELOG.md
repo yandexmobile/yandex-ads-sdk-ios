@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 7.8.0
+
+### Added
+
+- Added support of COPPA
+
 ## Version 7.7.0
 
 ### Updated
