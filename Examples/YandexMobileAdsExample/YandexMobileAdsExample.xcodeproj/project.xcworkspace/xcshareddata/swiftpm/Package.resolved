@@ -1,0 +1,50 @@
+{
+  "pins" : [
+    {
+      "identity" : "appmetrica-sdk-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/appmetrica/appmetrica-sdk-ios",
+      "state" : {
+        "revision" : "14cf3e47be3b4d04a2ee450b12537ff7905cf7e1",
+        "version" : "5.8.2"
+      }
+    },
+    {
+      "identity" : "divkit-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/divkit/divkit-ios",
+      "state" : {
+        "revision" : "66ceafe10220848d21294d1a32c75a8ca1054b16",
+        "version" : "30.16.0"
+      }
+    },
+    {
+      "identity" : "divkit-ios-facade",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/divkit/divkit-ios-facade",
+      "state" : {
+        "revision" : "1c0f0503f609b45666e8845211f65f5cfc1af611",
+        "version" : "4.5.0"
+      }
+    },
+    {
+      "identity" : "kscrash",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kstenerud/KSCrash",
+      "state" : {
+        "revision" : "4b108d1b3bbd87e71353990e0af944d0a001803a",
+        "version" : "2.0.0-rc.6"
+      }
+    },
+    {
+      "identity" : "vgsl",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/yandex/vgsl.git",
+      "state" : {
+        "revision" : "90d8f14d2b3848c1df62af5e72f73043b8baa814",
+        "version" : "6.5.0"
+      }
+    }
+  ],
+  "version" : 2
+}

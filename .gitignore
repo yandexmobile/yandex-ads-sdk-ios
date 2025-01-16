@@ -16,9 +16,7 @@ buildScript
 intermediates
 External/
 Pods/
-Podfile\.lock
 tmp
 XcodeBuild/
 **/scratches/**
-Package\.resolved
 .swiftpm

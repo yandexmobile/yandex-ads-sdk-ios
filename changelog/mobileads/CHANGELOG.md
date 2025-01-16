@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 7.9.0
+
+### Updated
+
+- Xcode version that SDK is built with updated from 15.4 to 16.1
+
 ## Version 7.8.0
 
 ### Added

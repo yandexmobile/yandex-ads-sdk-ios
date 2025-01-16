@@ -1,0 +1,68 @@
+{
+  "pins" : [
+    {
+      "identity" : "appmetrica-sdk-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/appmetrica/appmetrica-sdk-ios",
+      "state" : {
+        "revision" : "32783c93cc9015868f72295dc10129182c0dbbc3",
+        "version" : "5.8.1"
+      }
+    },
+    {
+      "identity" : "divkit-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/divkit/divkit-ios.git",
+      "state" : {
+        "revision" : "3389d29bf85157c456c47925c865ac4b949de48b",
+        "version" : "30.21.0"
+      }
+    },
+    {
+      "identity" : "divkit-ios-facade",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/divkit/divkit-ios-facade",
+      "state" : {
+        "revision" : "1c0f0503f609b45666e8845211f65f5cfc1af611",
+        "version" : "4.5.0"
+      }
+    },
+    {
+      "identity" : "kscrash",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kstenerud/KSCrash",
+      "state" : {
+        "revision" : "353a7ea8f32e34b9008dd7aa6dc0b6466b7daf37",
+        "version" : "2.0.0-rc.3"
+      }
+    },
+    {
+      "identity" : "swift-cmark",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-cmark.git",
+      "state" : {
+        "revision" : "3ccff77b2dc5b96b77db3da0d68d28068593fa53",
+        "version" : "0.5.0"
+      }
+    },
+    {
+      "identity" : "swift-markdown",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-markdown.git",
+      "state" : {
+        "revision" : "8f79cb175981458a0a27e76cb42fee8e17b1a993",
+        "version" : "0.5.0"
+      }
+    },
+    {
+      "identity" : "vgsl",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/yandex/vgsl.git",
+      "state" : {
+        "revision" : "3f0fe9899cd58b7fa8591d2bcb60442865ae5b19",
+        "version" : "6.7.0"
+      }
+    }
+  ],
+  "version" : 2
+}

@@ -1,15 +1,7 @@
-source 'https://github.com/CocoaPods/Specs.git'
+source 'https://cdn.cocoapods.org/'
 platform :ios, :deployment_target => '13.0'
 
 target 'ThirdPartyMediationAdapterTemplate' do
   # Pods that are necessary for successful integration with Yandex
   pod 'YandexMobileAds'
-end
-
-post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    target.build_configurations.each do |config|
-      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
-    end
-  end
 end
