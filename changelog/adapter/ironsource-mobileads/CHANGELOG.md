@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 7.9.0.0
+
+### Updated
+
+- Updated minimum supported `YandexMobileAds` version to `7.9.0`
+
+### Deprecated
+
+- This library is no longer supported. Please, use official adapter implementation https://github.com/ironsource-mobile/iOS-adapters/tree/master/yandex-adapter.
+
 ## Version 7.8.0.0
 
 ### Updated
