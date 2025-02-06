@@ -53,9 +53,6 @@
 		149931842722BD94005D2E87 /* AdFoxNativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149931832722BD94005D2E87 /* AdFoxNativeViewController.swift */; };
 		149931882722C423005D2E87 /* AdFoxBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149931872722C423005D2E87 /* AdFoxBannerViewController.swift */; };
 		1499318B2722CD44005D2E87 /* AdFoxInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1499318A2722CD44005D2E87 /* AdFoxInterstitialViewController.swift */; };
-		46C354A0282560FE00832C7C /* IronSourceRewardedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C3549D282560FE00832C7C /* IronSourceRewardedViewController.swift */; };
-		46C354A1282560FE00832C7C /* IronSourceInterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C3549E282560FE00832C7C /* IronSourceInterstitialViewController.swift */; };
-		46C354A2282560FE00832C7C /* IronSourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C3549F282560FE00832C7C /* IronSourceManager.swift */; };
 		4A8FA13B2BFB558700A3DB07 /* NativeBulkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8FA13A2BFB558700A3DB07 /* NativeBulkViewController.swift */; };
 		4A8FA13C2BFB559000A3DB07 /* NativeBulkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8FA13A2BFB558700A3DB07 /* NativeBulkViewController.swift */; };
 		4A8FA13F2BFC9AF800A3DB07 /* NativeBulkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8FA13E2BFC9AF800A3DB07 /* NativeBulkTableViewCell.swift */; };
@@ -114,7 +111,6 @@
 		64F70DFD2B0B64D300A31CE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1467E358271EA91500DF104A /* Main.storyboard */; };
 		761E541C2CB9572F00CEEF49 /* NativeVideoProgressControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761E541B2CB9572F00CEEF49 /* NativeVideoProgressControlView.swift */; };
 		761E541E2CB9581900CEEF49 /* NativeVideoMuteControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761E541D2CB9581900CEEF49 /* NativeVideoMuteControlView.swift */; };
-		76DEC6852B0E18B10014B6B4 /* IronSourceBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DEC6842B0E18B10014B6B4 /* IronSourceBannerViewController.swift */; };
 		76F361F72CBD224800CC6E89 /* NativeVideoProgressControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761E541B2CB9572F00CEEF49 /* NativeVideoProgressControlView.swift */; };
 		76F361F82CBD224F00CC6E89 /* NativeVideoMuteControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761E541D2CB9581900CEEF49 /* NativeVideoMuteControlView.swift */; };
 		7A527BBD2B1E36480002B416 /* CommonAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A851DDA2B1E2D8100D03655 /* CommonAccessibility.swift */; };
@@ -253,9 +249,6 @@
 		149931872722C423005D2E87 /* AdFoxBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdFoxBannerViewController.swift; sourceTree = "<group>"; };
 		1499318A2722CD44005D2E87 /* AdFoxInterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdFoxInterstitialViewController.swift; sourceTree = "<group>"; };
 		2717011E70379EE6150C4BDD /* Pods-YandexMobileAdsExample.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsExample.adhoc.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample.adhoc.xcconfig"; sourceTree = "<group>"; };
-		46C3549D282560FE00832C7C /* IronSourceRewardedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IronSourceRewardedViewController.swift; sourceTree = "<group>"; };
-		46C3549E282560FE00832C7C /* IronSourceInterstitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IronSourceInterstitialViewController.swift; sourceTree = "<group>"; };
-		46C3549F282560FE00832C7C /* IronSourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IronSourceManager.swift; sourceTree = "<group>"; };
 		4A8FA13A2BFB558700A3DB07 /* NativeBulkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeBulkViewController.swift; sourceTree = "<group>"; };
 		4A8FA13E2BFC9AF800A3DB07 /* NativeBulkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeBulkTableViewCell.swift; sourceTree = "<group>"; };
 		5BF35ACE34CE63F32697C83A /* libPods-YandexMobileAdsExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YandexMobileAdsExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -264,7 +257,6 @@
 		64F70E052B0B652600A31CE8 /* sample-public */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "sample-public"; path = ../..; sourceTree = "<group>"; };
 		761E541B2CB9572F00CEEF49 /* NativeVideoProgressControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeVideoProgressControlView.swift; sourceTree = "<group>"; };
 		761E541D2CB9581900CEEF49 /* NativeVideoMuteControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeVideoMuteControlView.swift; sourceTree = "<group>"; };
-		76DEC6842B0E18B10014B6B4 /* IronSourceBannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IronSourceBannerViewController.swift; sourceTree = "<group>"; };
 		7A851DDA2B1E2D8100D03655 /* CommonAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonAccessibility.swift; sourceTree = "<group>"; };
 		7A851DDD2B1E2DBB00D03655 /* BaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTest.swift; sourceTree = "<group>"; };
 		7A851DDF2B1E2DD500D03655 /* PageObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageObject.swift; sourceTree = "<group>"; };
@@ -381,7 +373,6 @@
 			isa = PBXGroup;
 			children = (
 				14033F772720274500A24D5E /* AdMob */,
-				46C3549C282560FE00832C7C /* IronSource */,
 			);
 			path = "Third-PartyMediation";
 			sourceTree = "<group>";
@@ -636,17 +627,6 @@
 				0D118F6F2C3FBF0200E02305 /* AdFoxSliderViewController.swift */,
 			);
 			path = Adfox;
-			sourceTree = "<group>";
-		};
-		46C3549C282560FE00832C7C /* IronSource */ = {
-			isa = PBXGroup;
-			children = (
-				46C3549D282560FE00832C7C /* IronSourceRewardedViewController.swift */,
-				46C3549E282560FE00832C7C /* IronSourceInterstitialViewController.swift */,
-				76DEC6842B0E18B10014B6B4 /* IronSourceBannerViewController.swift */,
-				46C3549F282560FE00832C7C /* IronSourceManager.swift */,
-			);
-			path = IronSource;
 			sourceTree = "<group>";
 		};
 		4A8FA13D2BFC9AD300A3DB07 /* Bulk */ = {
@@ -976,7 +956,6 @@
 				14033FC12720457800A24D5E /* InrollsPlaybackController.swift in Sources */,
 				DE6D740C2A740E080024DA8F /* InstreamInrollsViewController.swift in Sources */,
 				DEC81AE42A53C945008FE935 /* NavigationScreenDataSource.swift in Sources */,
-				46C354A0282560FE00832C7C /* IronSourceRewardedViewController.swift in Sources */,
 				F7613F2E2A9E3BF90024A580 /* AppOpenAdControllerDelegate.swift in Sources */,
 				14033FB72720457800A24D5E /* VideoAVPlayer.swift in Sources */,
 				14033F8927202CA800A24D5E /* AdMobRewardedViewController.swift in Sources */,
@@ -994,7 +973,6 @@
 				7AE29ECF2B3DBE63004A3420 /* GDPRAccessibility.swift in Sources */,
 				DE0C2CBE2A65760900A84D00 /* NativeTemplateViewController.swift in Sources */,
 				761E541E2CB9581900CEEF49 /* NativeVideoMuteControlView.swift in Sources */,
-				76DEC6852B0E18B10014B6B4 /* IronSourceBannerViewController.swift in Sources */,
 				7A527BC92B1E36490002B416 /* RootAccessibility.swift in Sources */,
 				14033FBD2720457800A24D5E /* ViewVisibilityValidator.swift in Sources */,
 				DEC81AE62A54D5A3008FE935 /* StickyBannerViewController.swift in Sources */,
@@ -1011,7 +989,6 @@
 				F7D8B4D32A97B41F00E7A40D /* AppOpenAdViewController.swift in Sources */,
 				DEC81AE22A53C840008FE935 /* NativeViewController.swift in Sources */,
 				4A8FA13F2BFC9AF800A3DB07 /* NativeBulkTableViewCell.swift in Sources */,
-				46C354A2282560FE00832C7C /* IronSourceManager.swift in Sources */,
 				DE6D740A2A740DF30024DA8F /* InstreamSingleViewController.swift in Sources */,
 				14033FBA2720457800A24D5E /* PlayerView.swift in Sources */,
 				149931882722C423005D2E87 /* AdFoxBannerViewController.swift in Sources */,
@@ -1033,7 +1010,6 @@
 				14033FBB2720457800A24D5E /* VideoAVPlayerDelegate.swift in Sources */,
 				149931842722BD94005D2E87 /* AdFoxNativeViewController.swift in Sources */,
 				14033F7A272028E100A24D5E /* AdMobBannerViewController.swift in Sources */,
-				46C354A1282560FE00832C7C /* IronSourceInterstitialViewController.swift in Sources */,
 				1474FC212721A4E500276688 /* GDPRDDialogViewController.swift in Sources */,
 				14033FBE2720457800A24D5E /* InstreamAdBinderToastDelegate.swift in Sources */,
 				7AF4B0B42B2774B2004974FD /* YandexInstreamListAccessibility.swift in Sources */,
@@ -1220,7 +1196,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 7.9.0;
+				CURRENT_PROJECT_VERSION = 7.10.0;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1239,7 +1215,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 7.9.0;
+				MARKETING_VERSION = 7.10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1283,7 +1259,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 7.9.0;
+				CURRENT_PROJECT_VERSION = 7.10.0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1296,7 +1272,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 7.9.0;
+				MARKETING_VERSION = 7.10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1394,7 +1370,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 7.9.0;
+				CURRENT_PROJECT_VERSION = 7.10.0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1407,7 +1383,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 7.9.0;
+				MARKETING_VERSION = 7.10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
