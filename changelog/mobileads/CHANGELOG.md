@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 7.10.1
+
+### Fixed
+
+- Bug with the signing certificate
+
 ## Version 7.10.0
 
 ### Added
