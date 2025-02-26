@@ -32,9 +32,7 @@ EULA is available at [EULA website][LICENSE]
 
 3. Ensure that your target is linked binary with `YandexMobileAdsPackge` (`Your target -> Build Phases -> Link Binary With Libraries`)
 
-4. Add `MobileAdsBundle.bundle` from `YandexMobileAds` (`Package Dependencies -> YandexMobileAdsPackage -> Referenced Binaries -> YandexMobileAds`) to `Copy Bundle Resource phase` (`Your target -> Build Phases -> Copy Bundle Resource`)
-
-5. Build and run.
+4. Build and run.
 
 [DOCUMENTATION]: https://tech.yandex.ru/mobile-ads/
 [LICENSE]: https://yandex.com/legal/mobileads_sdk_agreement/
