@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/divkit/divkit-ios.git",
       "state" : {
-        "revision" : "5e7bef5c9214a3e48486838ce3f91c3444c3b49a",
-        "version" : "30.32.0"
+        "revision" : "c016dc541dcaedffddf5dbee472c70bf119e38c1",
+        "version" : "31.5.1"
       }
     },
     {
@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/divkit/divkit-ios-facade",
       "state" : {
-        "revision" : "1c0f0503f609b45666e8845211f65f5cfc1af611",
-        "version" : "4.5.0"
+        "revision" : "d3306a06561eb29afe230bbf4f01bbd866b0a78d",
+        "version" : "4.6.0"
       }
     },
     {
@@ -59,8 +59,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/yandex/vgsl.git",
       "state" : {
-        "revision" : "72b44f7b013f00e3789052f93ced786efbfd8ecc",
-        "version" : "6.16.2"
+        "revision" : "bea58060702294e15023725d7c267a99851149c1",
+        "version" : "6.24.4"
       }
     }
   ],
