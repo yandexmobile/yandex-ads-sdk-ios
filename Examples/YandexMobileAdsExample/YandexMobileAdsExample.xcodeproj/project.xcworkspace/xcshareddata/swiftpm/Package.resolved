@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/divkit/divkit-ios",
       "state" : {
-        "revision" : "66ceafe10220848d21294d1a32c75a8ca1054b16",
-        "version" : "30.16.0"
+        "revision" : "c016dc541dcaedffddf5dbee472c70bf119e38c1",
+        "version" : "31.5.1"
       }
     },
     {
@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/divkit/divkit-ios-facade",
       "state" : {
-        "revision" : "1c0f0503f609b45666e8845211f65f5cfc1af611",
-        "version" : "4.5.0"
+        "revision" : "d3306a06561eb29afe230bbf4f01bbd866b0a78d",
+        "version" : "4.6.0"
       }
     },
     {
@@ -37,12 +37,30 @@
       }
     },
     {
+      "identity" : "swift-cmark",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-cmark.git",
+      "state" : {
+        "revision" : "3ccff77b2dc5b96b77db3da0d68d28068593fa53",
+        "version" : "0.5.0"
+      }
+    },
+    {
+      "identity" : "swift-markdown",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-markdown.git",
+      "state" : {
+        "revision" : "8f79cb175981458a0a27e76cb42fee8e17b1a993",
+        "version" : "0.5.0"
+      }
+    },
+    {
       "identity" : "vgsl",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/yandex/vgsl.git",
       "state" : {
-        "revision" : "90d8f14d2b3848c1df62af5e72f73043b8baa814",
-        "version" : "6.5.0"
+        "revision" : "bea58060702294e15023725d7c267a99851149c1",
+        "version" : "6.24.4"
       }
     }
   ],
