@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/divkit/divkit-ios-facade",
       "state" : {
-        "revision" : "d3306a06561eb29afe230bbf4f01bbd866b0a78d",
-        "version" : "4.6.0"
+        "revision" : "947cc79c0f0fb8a3393ac33b5e420c635a6e1d94",
+        "version" : "4.6.1"
       }
     },
     {
