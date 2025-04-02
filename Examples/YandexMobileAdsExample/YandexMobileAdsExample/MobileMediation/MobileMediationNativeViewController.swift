@@ -14,6 +14,7 @@ private let yandexAdUnitID = "demo-native-content-yandex"
 private let vungleAdUnitID = "demo-native-vungle"
 
 class MobileMediationNativeViewController: UIViewController {
+#if COCOAPODS
     private let adUnitIDs = [
         (adapter: "AdMob", adUnitID: adMobAdUnitID),
         (adapter: "Mintegral", adUnitID: mintegralAdUnitID),
@@ -21,6 +22,15 @@ class MobileMediationNativeViewController: UIViewController {
         (adapter: "Vungle", adUnitID: vungleAdUnitID),
         (adapter: "Yandex", adUnitID: yandexAdUnitID)
     ]
+#else
+    private let adUnitIDs = [
+        (adapter: "AdMob", adUnitID: adMobAdUnitID),
+        (adapter: "Mintegral", adUnitID: mintegralAdUnitID),
+        (adapter: "MyTarget", adUnitID: myTargetAdUnitID),
+        (adapter: "Vungle", adUnitID: vungleAdUnitID),
+        (adapter: "Yandex", adUnitID: yandexAdUnitID)
+    ]
+#endif
 
     @IBOutlet private var pickerView: UIPickerView!
     @IBOutlet private var scrollView: UIScrollView!

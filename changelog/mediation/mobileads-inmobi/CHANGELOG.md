@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 10.7.8.8
+
+### Updated
+
+- Updated minimum supported `YandexMobileAds` version to `7.12.0`
+
 ## Version 10.7.8.7
 
 ### Updated

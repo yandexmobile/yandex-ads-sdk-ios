@@ -12,7 +12,6 @@ private let adMobAdUnitID = "demo-banner-admob"
 private let mintegralAdUnitID = "demo-banner-mintegral"
 private let myTargetAdUnitID = "demo-banner-mytarget"
 private let chartboostAdUnitID = "demo-banner-chartboost"
-private let adColonyAdUnitID = "demo-banner-adcolony"
 private let bigoAdsAdUnitID = "demo-banner-bigoads"
 private let inMobiAdsAdUnitID = "demo-banner-inmobi"
 private let ironSourceAdUnitID = "demo-banner-ironsource"
@@ -22,8 +21,8 @@ private let yandexAdUnitID = "demo-banner-yandex"
 
 class MobileMediationBannerViewController: UIViewController {
     
+#if COCOAPODS
     private let adUnitIDs = [
-        (adapter: "AdColony", adUnitID: adColonyAdUnitID),
         (adapter: "BigoAds", adUnitID: bigoAdsAdUnitID),
         (adapter: "Chartboost", adUnitID: chartboostAdUnitID),
         (adapter: "AdMob", adUnitID: adMobAdUnitID),
@@ -35,7 +34,16 @@ class MobileMediationBannerViewController: UIViewController {
         (adapter: "Vungle", adUnitID: vungleAdUnitID),
         (adapter: "Yandex", adUnitID: yandexAdUnitID)
     ]
-
+#else
+    private let adUnitIDs = [
+        (adapter: "AdMob", adUnitID: adMobAdUnitID),
+        (adapter: "Mintegral", adUnitID: mintegralAdUnitID),
+        (adapter: "MyTarget", adUnitID: myTargetAdUnitID),
+        (adapter: "Vungle", adUnitID: vungleAdUnitID),
+        (adapter: "Yandex", adUnitID: yandexAdUnitID)
+    ]
+#endif
+    
     @IBOutlet private var pickerView: UIPickerView!
     @IBOutlet private var stateLabel: UILabel!
     @IBOutlet private var loadButton: UIButton!

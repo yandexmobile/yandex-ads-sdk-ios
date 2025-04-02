@@ -3,11 +3,7 @@ import XCTest
 final class MobileMediationInterstitialTest: BaseTest {
     let mobileMediationPage = MobileMediationPage()
     let adPage = MobileMediationAdPage()
-    
-    func testAdColonyInterstitial() throws {
-        try test(adapter: .adColony)
-    }
-    
+        
     func testAppLovinInterstitial() throws {
         try test(adapter: .appLovin)
     }
