@@ -15,7 +15,6 @@ private let mintegralAdUnitID = "demo-interstitial-mintegral"
 private let myTargetAdUnitID = "demo-interstitial-mytarget"
 private let unityAdsAdUnitID = "demo-interstitial-unityads"
 private let chartboostAdUnitID = "demo-interstitial-chartboost"
-private let adColonyAdUnitID = "demo-interstitial-adcolony"
 private let bigoAdsAdUnitID = "demo-interstitial-bigoads"
 private let inMobiAdUnitID = "demo-interstitial-inmobi"
 private let startAppAdUnitID = "demo-interstitial-startapp"
@@ -23,8 +22,8 @@ private let vungleAdUnitID = "demo-interstitial-vungle"
 private let yandexAdUnitID = "demo-interstitial-yandex"
 
 class MobileMediationInterstitialViewController: UIViewController {
+#if COCOAPODS
     private let adUnitIDs = [
-        (adapter: "AdColony", adUnitID: adColonyAdUnitID),
         (adapter: "AppLovin", adUnitID: appLovinAdUnitID),
         (adapter: "BigoAds", adUnitID: bigoAdsAdUnitID),
         (adapter: "Chartboost", adUnitID: chartboostAdUnitID),
@@ -38,6 +37,17 @@ class MobileMediationInterstitialViewController: UIViewController {
         (adapter: "Vungle", adUnitID: vungleAdUnitID),
         (adapter: "Yandex", adUnitID: yandexAdUnitID)
     ]
+#else
+    private let adUnitIDs = [
+        (adapter: "AppLovin", adUnitID: appLovinAdUnitID),
+        (adapter: "AdMob", adUnitID: adMobAdUnitID),
+        (adapter: "Mintegral", adUnitID: mintegralAdUnitID),
+        (adapter: "MyTarget", adUnitID: myTargetAdUnitID),
+        (adapter: "Vungle", adUnitID: vungleAdUnitID),
+        (adapter: "Yandex", adUnitID: yandexAdUnitID)
+    ]
+#endif
+    
     private let interstitialAdLoader = InterstitialAdLoader()
     
     @IBOutlet private var showButton: UIButton!

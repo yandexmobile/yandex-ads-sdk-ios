@@ -3,11 +3,7 @@ import XCTest
 final class MobileMediationBannerTest: BaseTest {
     let mobileMediationPage = MobileMediationPage()
     let adPage = MobileMediationAdPage()
-        
-    func testAdColonyBanner() throws {
-        try test(adapter: .adColony)
-    }
-    
+            
     func testBigoAdsBanner() throws {
         try test(adapter: .bigoAds)
     }

@@ -27,6 +27,7 @@ final class YandexAdsExampleViewController: UITableViewController {
 #else
     private let items: [Item] = [
         yandex,
+        mobileMediation,
         gdpr,
         adFox,
     ]

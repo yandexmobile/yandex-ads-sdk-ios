@@ -15,7 +15,6 @@ private let mintegralAdUnitID = "demo-rewarded-mintegral"
 private let myTargetAdUnitID = "demo-rewarded-mytarget"
 private let unityAdsAdUnitID = "demo-rewarded-unityads"
 private let chartboostAdUnitID = "demo-rewarded-chartboost"
-private let adColonyAdUnitID = "demo-rewarded-adcolony"
 private let bigoAdsAdUnitID = "demo-rewarded-bigoads"
 private let inMobiAdUnitID = "demo-rewarded-inmobi"
 private let startAppAdUnitID = "demo-rewarded-startapp"
@@ -23,8 +22,8 @@ private let vungleAdUnitID = "demo-rewarded-vungle"
 private let yandexAdUnitID = "demo-rewarded-yandex"
 
 class MobileMediationRewardedViewController: UIViewController {
+#if COCOAPODS
     private let adUnitIDs = [
-        (adapter: "AdColony", adUnitID: adColonyAdUnitID),
         (adapter: "AppLovin", adUnitID: appLovinAdUnitID),
         (adapter: "BigoAds", adUnitID: bigoAdsAdUnitID),
         (adapter: "Chartboost", adUnitID: chartboostAdUnitID),
@@ -38,6 +37,16 @@ class MobileMediationRewardedViewController: UIViewController {
         (adapter: "Vungle", adUnitID: vungleAdUnitID),
         (adapter: "Yandex", adUnitID: yandexAdUnitID)
     ]
+#else
+    private let adUnitIDs = [
+        (adapter: "AppLovin", adUnitID: appLovinAdUnitID),
+        (adapter: "AdMob", adUnitID: adMobAdUnitID),
+        (adapter: "Mintegral", adUnitID: mintegralAdUnitID),
+        (adapter: "MyTarget", adUnitID: myTargetAdUnitID),
+        (adapter: "Vungle", adUnitID: vungleAdUnitID),
+        (adapter: "Yandex", adUnitID: yandexAdUnitID)
+    ]
+#endif
     private let rewardedAdLoader = RewardedAdLoader()
 
     @IBOutlet private var showButton: UIButton!

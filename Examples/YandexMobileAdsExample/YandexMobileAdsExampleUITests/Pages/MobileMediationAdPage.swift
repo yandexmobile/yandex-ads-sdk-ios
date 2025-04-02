@@ -1,7 +1,6 @@
 import XCTest
 
 enum Adapter: String {
-    case adColony = "AdColony"
     case appLovin = "AppLovin"
     case bigoAds = "BigoAds"
     case chartboost = "Chartboost"

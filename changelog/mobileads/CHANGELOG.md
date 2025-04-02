@@ -2,11 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
-## Version 7.11.1
+## Version 7.12.0
 
-### Updated
+### Added
 
-- Updated minimum supported `DivKitBinaryCompatibilityFacade` version to `4.6.1`
+- A new `targetInfo` field has been added to the `BidderTokenRequestConfiguration`. This field can be used to transmit the following information about the user: age, gender, location, search query and keywords from the page.
 
 ## Version 7.11.0
 
