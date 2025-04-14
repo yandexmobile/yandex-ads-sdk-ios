@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 7.12.1
+
+### Fixed
+
+- For SPM resources now placed directly in target bundle instead of nested bundle
+
 ## Version 7.12.0
 
 ### Added

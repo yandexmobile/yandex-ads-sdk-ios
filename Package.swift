@@ -69,7 +69,7 @@ let package = Package(
                 .product(name: "DivKitBinaryCompatibilityFacade", package: "divkit-ios-facade")
             ],
             resources: [
-                .copy("Resources/MobileAdsBundle.bundle")
+                .process("Resources")
             ],
             linkerSettings: [
                 .linkedFramework("AVFoundation"),
@@ -140,8 +140,8 @@ let package = Package(
         ),
         .binaryTarget(
             name: "YandexMobileAds",
-            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAds/7.12.0/spm/39956972-b84f-4404-81bd-77a9c76aacda.zip",
-            checksum: "0917a96e50e4007ae380e6353464f9cb1f3242ac9f34f08d2d849e430eea7a3d"
+            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAds/7.12.1/spm/a4c06a64-2d04-484d-8a10-88b0d1e1346b.zip",
+            checksum: "bcfabdfab8713f87280988f63ce7c3d6659e9b77bc1ce3666f5c18eeaef758a7"
         ),
         .binaryTarget(
             name: "YandexMobileAdsInstream",

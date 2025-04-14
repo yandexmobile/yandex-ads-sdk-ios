@@ -302,7 +302,6 @@
 		7AF4B0BD2B27900D004974FD /* YandexInstreamAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexInstreamAccessibility.swift; sourceTree = "<group>"; };
 		7AF4B0C82B279ACD004974FD /* YandexMobileAdsExample.xctestplan */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = YandexMobileAdsExample.xctestplan; sourceTree = "<group>"; };
 		7AFDCA152B10EA9F00D35B17 /* YandexMobileAdsExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YandexMobileAdsExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		97F364BBAF15D6D1EA9FD28C /* Pods-YandexMobileAdsExample.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsExample.appstore.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample.appstore.xcconfig"; sourceTree = "<group>"; };
 		B394AC8527A868DB00D92CD9 /* AdPlayerErrorConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdPlayerErrorConverter.swift; sourceTree = "<group>"; };
 		CE978AC213A53C86F85746DE /* Pods-YandexMobileAdsExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsExample.release.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample.release.xcconfig"; sourceTree = "<group>"; };
 		D6FD2A514A048E9A76CB4623 /* Pods-YandexMobileAdsExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsExample.debug.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -323,6 +322,7 @@
 		F7613F2B2A9E384F0024A580 /* AppOpenAdController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOpenAdController.swift; sourceTree = "<group>"; };
 		F7613F2D2A9E3BF90024A580 /* AppOpenAdControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOpenAdControllerDelegate.swift; sourceTree = "<group>"; };
 		F7D8B4D22A97B41F00E7A40D /* AppOpenAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOpenAdViewController.swift; sourceTree = "<group>"; };
+		F94FC74B147BDCD5B3E2F70E /* Pods-YandexMobileAdsExample.appstore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsExample.appstore.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample.appstore.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -667,7 +667,7 @@
 				D6FD2A514A048E9A76CB4623 /* Pods-YandexMobileAdsExample.debug.xcconfig */,
 				CE978AC213A53C86F85746DE /* Pods-YandexMobileAdsExample.release.xcconfig */,
 				2717011E70379EE6150C4BDD /* Pods-YandexMobileAdsExample.adhoc.xcconfig */,
-				97F364BBAF15D6D1EA9FD28C /* Pods-YandexMobileAdsExample.appstore.xcconfig */,
+				F94FC74B147BDCD5B3E2F70E /* Pods-YandexMobileAdsExample.appstore.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1209,7 +1209,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 7.12.0;
+				CURRENT_PROJECT_VERSION = 7.12.1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1228,7 +1228,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 7.12.0;
+				MARKETING_VERSION = 7.12.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1272,7 +1272,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 7.12.0;
+				CURRENT_PROJECT_VERSION = 7.12.1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1285,7 +1285,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 7.12.0;
+				MARKETING_VERSION = 7.12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1385,7 +1385,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 7.12.0;
+				CURRENT_PROJECT_VERSION = 7.12.1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1398,7 +1398,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 7.12.0;
+				MARKETING_VERSION = 7.12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1410,7 +1410,7 @@
 		};
 		39E32C8F2D8875CA00FE1EEF /* AppStore */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 97F364BBAF15D6D1EA9FD28C /* Pods-YandexMobileAdsExample.appstore.xcconfig */;
+			baseConfigurationReference = F94FC74B147BDCD5B3E2F70E /* Pods-YandexMobileAdsExample.appstore.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1511,7 +1511,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 7.12.0;
+				CURRENT_PROJECT_VERSION = 7.12.1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1524,7 +1524,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 7.12.0;
+				MARKETING_VERSION = 7.12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

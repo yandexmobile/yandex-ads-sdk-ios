@@ -1,0 +1,26 @@
+{
+  "images" : [
+    {
+      "filename" : "ads_instream_go_control.pdf",
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "ads_instream_go_control_ru.pdf",
+      "idiom" : "universal",
+      "locale" : "ru"
+    },
+    {
+      "filename" : "ads_instream_go_control_tr.pdf",
+      "idiom" : "universal",
+      "locale" : "tr"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "localizable" : true,
+    "preserves-vector-representation" : true
+  }
+}
