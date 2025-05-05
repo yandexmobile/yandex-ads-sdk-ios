@@ -30,6 +30,7 @@
                         <segue destination="sOI-RN-BqL" kind="show" identifier="show-gdpr" id="lrg-eu-3LJ"/>
                         <segue destination="B80-2V-uCM" kind="show" identifier="show-mobile-mediation" id="pu1-zg-bfK"/>
                         <segue destination="Bia-LU-u97" kind="show" identifier="show-adfox" id="u4v-dm-Nr9"/>
+                        <segue destination="a6g-4X-vRB" kind="push" identifier="show-cmp" id="CAM-th-SEH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="35B-8j-Njb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1331,6 +1332,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CUl-rU-1xo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6718.840579710145" y="4372.7678571428569"/>
+        </scene>
+        <!--CMP-->
+        <scene sceneID="4kT-Rq-hoQ">
+            <objects>
+                <viewController title="CMP" id="a6g-4X-vRB" customClass="CMPViewController" customModule="YandexMobileAdsExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VHf-7s-p39">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Od0-JI-BEM">
+                                <rect key="frame" x="20" y="122" width="199" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Request Consent Form"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0g-7U-vQ1">
+                                <rect key="frame" x="20" y="177" width="189" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Reset Consent Status"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ctE-K9-hKv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="q0g-7U-vQ1" firstAttribute="leading" secondItem="ctE-K9-hKv" secondAttribute="leading" constant="20" id="0UV-XA-du4"/>
+                            <constraint firstItem="Od0-JI-BEM" firstAttribute="top" secondItem="ctE-K9-hKv" secondAttribute="top" constant="30" id="F73-O5-qty"/>
+                            <constraint firstItem="q0g-7U-vQ1" firstAttribute="top" secondItem="Od0-JI-BEM" secondAttribute="bottom" constant="20" id="K3C-hF-nVw"/>
+                            <constraint firstItem="ctE-K9-hKv" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="q0g-7U-vQ1" secondAttribute="trailing" symbolic="YES" id="W6b-37-Xcj"/>
+                            <constraint firstItem="Od0-JI-BEM" firstAttribute="leading" secondItem="ctE-K9-hKv" secondAttribute="leading" constant="20" id="lhv-3P-AfF"/>
+                            <constraint firstItem="ctE-K9-hKv" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Od0-JI-BEM" secondAttribute="trailing" symbolic="YES" id="ycm-f5-ag1"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <navigationItem key="navigationItem" title="CMP" largeTitleDisplayMode="never" id="2ov-Pt-hea"/>
+                    <connections>
+                        <outlet property="requestButton" destination="Od0-JI-BEM" id="CuP-Dr-WIg"/>
+                        <outlet property="resetButton" destination="q0g-7U-vQ1" id="8QA-fh-HRN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yhw-3G-bIU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3329" y="-376"/>
         </scene>
     </scenes>
     <resources>

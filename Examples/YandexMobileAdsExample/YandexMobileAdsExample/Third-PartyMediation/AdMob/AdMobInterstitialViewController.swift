@@ -8,7 +8,7 @@
 import GoogleMobileAds
 
 class AdMobInterstitialViewController: UIViewController {
-    var interstitial: GADInterstitialAd?
+    var interstitial: GoogleMobileAds.InterstitialAd?
     @IBOutlet var showButton: UIButton!
     @IBOutlet var loadButton: UIButton!
 
@@ -19,7 +19,7 @@ class AdMobInterstitialViewController: UIViewController {
 
     func initializeAdMob() {
         loadButton.isUserInteractionEnabled = false
-        GADMobileAds.sharedInstance().start { [weak self] _ in
+        GoogleMobileAds.MobileAds.shared.start { [weak self] _ in
             DispatchQueue.main.async {
                 self?.loadButton.isUserInteractionEnabled = true
             }
@@ -30,8 +30,10 @@ class AdMobInterstitialViewController: UIViewController {
         showButton.isEnabled = false
 
         // Replace ca-app-pub-4651572829019143/3054278095 with Ad Unit ID generated at https://apps.admob.com".
-        GADInterstitialAd.load(withAdUnitID: "ca-app-pub-4651572829019143/3054278095",
-                               request: GADRequest()) { [self] ad, error in
+        GoogleMobileAds.InterstitialAd.load(
+            with: "ca-app-pub-4651572829019143/3054278095",
+            request: GoogleMobileAds.Request()
+        ) { [self] ad, error in
             if let error = error {
                 print("Did fail to receive ad with error: \(error.localizedDescription)")
             } else {
@@ -44,13 +46,13 @@ class AdMobInterstitialViewController: UIViewController {
     }
 
     @IBAction func showAd(_: UIButton) {
-        interstitial?.present(fromRootViewController: self)
+        interstitial?.present(from: self)
         showButton.isEnabled = false
     }
 }
 
-extension AdMobInterstitialViewController: GADFullScreenContentDelegate {
-    func ad(_: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+extension AdMobInterstitialViewController: GoogleMobileAds.FullScreenContentDelegate {
+    func ad(_: GoogleMobileAds.FullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
         print("Did fail to present ad with error: \(error.localizedDescription)")
     }
 }

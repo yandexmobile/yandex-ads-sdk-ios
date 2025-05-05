@@ -5,4 +5,5 @@ target 'YandexMobileAdsExample' do
   pod 'YandexMobileAdsAdMobAdapters'
   pod 'YandexMobileAdsMediation'
   pod 'YandexMobileAdsInstream'
+  pod 'YandexMobileAdsConsentManagement'
 end

@@ -8,7 +8,7 @@
 import GoogleMobileAds
 
 class AdMobRewardedViewController: UIViewController {
-    var rewardedAd: GADRewardedAd?
+    var rewardedAd: GoogleMobileAds.RewardedAd?
     @IBOutlet var showButton: UIButton!
     @IBOutlet var loadButton: UIButton!
 
@@ -19,7 +19,7 @@ class AdMobRewardedViewController: UIViewController {
 
     func initializeAdMob() {
         loadButton.isUserInteractionEnabled = false
-        GADMobileAds.sharedInstance().start { [weak self] _ in
+        GoogleMobileAds.MobileAds.shared.start { [weak self] _ in
             DispatchQueue.main.async {
                 self?.loadButton.isUserInteractionEnabled = true
             }
@@ -30,8 +30,10 @@ class AdMobRewardedViewController: UIViewController {
         showButton.isEnabled = false
 
         // Replace ca-app-pub-4651572829019143/6476005590 with Ad Unit ID generated at https://apps.admob.com".
-        GADRewardedAd.load(withAdUnitID: "ca-app-pub-4651572829019143/6476005590",
-                           request: GADRequest()) { [self] ad, error in
+        GoogleMobileAds.RewardedAd.load(
+            with: "ca-app-pub-4651572829019143/6476005590",
+            request: GoogleMobileAds.Request()
+        ) { [self] ad, error in
             if let error = error {
                 print("Did fail to receive ad with error: \(error.localizedDescription)")
             } else {
@@ -44,7 +46,7 @@ class AdMobRewardedViewController: UIViewController {
     }
 
     @IBAction func showAd(_: UIButton) {
-        rewardedAd?.present(fromRootViewController: self) { [weak self] in
+        rewardedAd?.present(from: self) { [weak self] in
             self?.showReward()
         }
     }
@@ -64,8 +66,8 @@ class AdMobRewardedViewController: UIViewController {
     }
 }
 
-extension AdMobRewardedViewController: GADFullScreenContentDelegate {
-    func ad(_: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+extension AdMobRewardedViewController: GoogleMobileAds.FullScreenContentDelegate {
+    func ad(_: GoogleMobileAds.FullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
         print("Ad failed to present with error: \(error.localizedDescription)")
     }
 }

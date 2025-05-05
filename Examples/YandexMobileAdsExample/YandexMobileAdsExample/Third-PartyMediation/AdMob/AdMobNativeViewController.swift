@@ -8,7 +8,7 @@
 import GoogleMobileAds
 
 class AdMobNativeViewController: UIViewController {
-    private var adLoader: GADAdLoader?
+    private var adLoader: GoogleMobileAds.AdLoader?
     private var adView: AdMobNativeAdView?
     @IBOutlet var loadButton: UIButton!
 
@@ -21,7 +21,7 @@ class AdMobNativeViewController: UIViewController {
 
     func initializeAdMob() {
         loadButton.isUserInteractionEnabled = false
-        GADMobileAds.sharedInstance().start { [weak self] _ in
+        GoogleMobileAds.MobileAds.shared.start { [weak self] _ in
             DispatchQueue.main.async {
                 self?.loadButton.isUserInteractionEnabled = true
             }
@@ -29,7 +29,7 @@ class AdMobNativeViewController: UIViewController {
     }
 
     @IBAction func loadAd(_: UIButton) {
-        adLoader?.load(GADRequest())
+        adLoader?.load(GoogleMobileAds.Request())
     }
 
     private func createAdView() {
@@ -56,16 +56,18 @@ class AdMobNativeViewController: UIViewController {
 
     private func createLoader() {
         // Replace ca-app-pub-4651572829019143/9595635718 with Ad Unit ID generated at https://apps.admob.com".
-        adLoader = GADAdLoader(adUnitID: "ca-app-pub-4651572829019143/9595635718",
-                               rootViewController: self,
-                               adTypes: [.native],
-                               options: nil)
+        adLoader = GoogleMobileAds.AdLoader(
+            adUnitID: "ca-app-pub-4651572829019143/9595635718",
+            rootViewController: self,
+            adTypes: [.native],
+            options: nil
+        )
         adLoader?.delegate = self
     }
 }
 
-extension AdMobNativeViewController: GADNativeAdLoaderDelegate {
-    func adLoader(_: GADAdLoader, didReceive nativeAd: GADNativeAd) {
+extension AdMobNativeViewController: GoogleMobileAds.NativeAdLoaderDelegate {
+    func adLoader(_: GoogleMobileAds.AdLoader, didReceive nativeAd: GoogleMobileAds.NativeAd) {
         guard let adView = adView else { return }
 
         nativeAd.delegate = self
@@ -74,19 +76,19 @@ extension AdMobNativeViewController: GADNativeAdLoaderDelegate {
         adView.isHidden = false
     }
 
-    func adLoader(_: GADAdLoader, didFailToReceiveAdWithError error: Error) {
+    func adLoader(_: GoogleMobileAds.AdLoader, didFailToReceiveAdWithError error: Error) {
         print("Ad loader did fail to receive ad with error: \(error.localizedDescription)")
     }
 }
 
-// MARK: - GADNativeAdDelegate implementation
+// MARK: - GoogleMobileAds.NativeAdDelegate implementation
 
-extension AdMobNativeViewController: GADNativeAdDelegate {
-    func nativeAdDidRecordClick(_: GADNativeAd) {
+extension AdMobNativeViewController: GoogleMobileAds.NativeAdDelegate {
+    func nativeAdDidRecordClick(_: GoogleMobileAds.NativeAd) {
         print("\(#function) called")
     }
 
-    func nativeAdDidRecordImpression(_: GADNativeAd) {
+    func nativeAdDidRecordImpression(_: GoogleMobileAds.NativeAd) {
         print("\(#function) called")
     }
 }

@@ -9,7 +9,7 @@ import GoogleMobileAds
 import YandexMobileAdsAdMobAdapters
 import YandexMobileAds
 
-class AdMobNativeAdView: GADNativeAdView {
+class AdMobNativeAdView: GoogleMobileAds.NativeAdView {
     @IBOutlet weak var warningLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var reviewCountLabel: UILabel!
