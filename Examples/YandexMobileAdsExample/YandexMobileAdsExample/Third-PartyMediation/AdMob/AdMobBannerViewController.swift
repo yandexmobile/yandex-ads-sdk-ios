@@ -8,14 +8,14 @@
 import GoogleMobileAds
 
 class AdMobBannerViewController: UIViewController {
-    private var bannerView: GADBannerView!
+    private var bannerView: GoogleMobileAds.BannerView!
     @IBOutlet var loadButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeAdMob()
         // Replace ca-app-pub-4651572829019143/7264255923 with Ad Unit ID generated at https://apps.admob.com".
-        bannerView = GADBannerView(adSize: GADAdSizeBanner)
+        bannerView = GoogleMobileAds.BannerView(adSize: GoogleMobileAds.AdSizeBanner)
         bannerView.adUnitID = "ca-app-pub-4651572829019143/7264255923"
         bannerView.delegate = self
         bannerView.rootViewController = self
@@ -24,14 +24,14 @@ class AdMobBannerViewController: UIViewController {
 
     func initializeAdMob() {
         loadButton.isUserInteractionEnabled = false
-        GADMobileAds.sharedInstance().start { [weak self] _ in
+        GoogleMobileAds.MobileAds.shared.start { [weak self] _ in
             DispatchQueue.main.async {
                 self?.loadButton.isUserInteractionEnabled = true
             }
         }
     }
 
-    func addBannerView(banner: GADBannerView) {
+    func addBannerView(banner: GoogleMobileAds.BannerView) {
         banner.removeFromSuperview()
         view.addSubview(banner)
 
@@ -44,17 +44,17 @@ class AdMobBannerViewController: UIViewController {
     }
 
     @IBAction func loadAd(_: UIButton) {
-        bannerView.load(GADRequest())
+        bannerView.load(GoogleMobileAds.Request())
     }
 }
 
-extension AdMobBannerViewController: GADBannerViewDelegate {
-    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+extension AdMobBannerViewController: GoogleMobileAds.BannerViewDelegate {
+    func bannerViewDidReceiveAd(_ bannerView: GoogleMobileAds.BannerView) {
         addBannerView(banner: bannerView)
         print("Ad view did receive ad")
     }
 
-    func bannerView(_: GADBannerView, didFailToReceiveAdWithError error: Error) {
+    func bannerView(_: GoogleMobileAds.BannerView, didFailToReceiveAdWithError error: Error) {
         print("Ad view did fail to receive ad with error: \(error)")
     }
 }

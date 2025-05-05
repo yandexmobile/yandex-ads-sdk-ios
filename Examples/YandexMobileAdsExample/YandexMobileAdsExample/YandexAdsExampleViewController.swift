@@ -12,6 +12,7 @@ private let mobileMediation = ("Mobile mediation", "show-mobile-mediation", Root
 private let thirdPartyMediation = ("Third-Party mediation", "show-third-party-mediation", RootAccessibility.thirdPartyMediation)
 private let gdpr = ("GDPR", "show-gdpr", RootAccessibility.gdpr)
 private let adFox = ("AdFox", "show-adfox", RootAccessibility.adFox)
+private let consentManagement = ("Consent Management Platform", "show-cmp", RootAccessibility.cmp)
 
 final class YandexAdsExampleViewController: UITableViewController {
     private let cellIdentifier = "cell"
@@ -23,6 +24,7 @@ final class YandexAdsExampleViewController: UITableViewController {
         thirdPartyMediation,
         gdpr,
         adFox,
+        consentManagement
     ]
 #else
     private let items: [Item] = [

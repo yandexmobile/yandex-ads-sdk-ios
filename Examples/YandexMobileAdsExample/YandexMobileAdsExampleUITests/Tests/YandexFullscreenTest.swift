@@ -10,7 +10,9 @@ final class YandexFullscreenTest: BaseTest {
         try assertAdLoaded(stateLabel: fullscreenPage.stateLabel)
         fullscreenPage.tapPresentAd()
         fullscreenPage.assertAdDisplayed()
-        tapAd()
+        step("Tap ad") {
+            fullscreenPage.adView.staticTexts["Установить"].tap()
+        }
         assertSafariOpened()
     }    
         
@@ -22,14 +24,9 @@ final class YandexFullscreenTest: BaseTest {
         try assertAdLoaded(stateLabel: fullscreenPage.stateLabel)
         fullscreenPage.tapPresentAd()
         fullscreenPage.assertAdDisplayed()
-        tapAd()
+        step("Tap ad") {
+            fullscreenPage.adView.staticTexts["Подробнее ➔"].tap()
+        }
         assertSafariOpened()
     }
-    
-    func tapAd() {
-        step("Tap ad") {
-            fullscreenPage.adView.buttons.allElementsBoundByIndex.max { $0.frame.maxX < $1.frame.maxX }!.tap()
-        }
-    }
 }
-
