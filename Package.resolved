@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/appmetrica/appmetrica-sdk-ios",
       "state" : {
-        "revision" : "a23678a2e783b126c247b53b3e3b44f09a3d39c1",
-        "version" : "5.9.0"
+        "revision" : "c8cefdc11a7715e3752b6b63d5d7c7b5d5b200f0",
+        "version" : "5.10.0"
       }
     },
     {
@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/divkit/divkit-ios.git",
       "state" : {
-        "revision" : "c016dc541dcaedffddf5dbee472c70bf119e38c1",
-        "version" : "31.5.1"
+        "revision" : "f5c4fbd7af34fbcf79197abcc14010e45b45036d",
+        "version" : "31.14.0"
       }
     },
     {
@@ -50,8 +50,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Mintegral-official/MintegralAdSDK-Swift-Package",
       "state" : {
-        "revision" : "ac4b4f39db1d926a1730dfca42fe38082e11b6e6",
-        "version" : "7.7.7"
+        "revision" : "0c53932c257bbbca01d6a457136c1d0c2edb11ff",
+        "version" : "7.7.8"
       }
     },
     {
@@ -75,7 +75,7 @@
     {
       "identity" : "swift-cmark",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-cmark.git",
+      "location" : "https://github.com/swiftlang/swift-cmark.git",
       "state" : {
         "revision" : "b022b08312decdc46585e0b3440d97f6f22ef703",
         "version" : "0.6.0"
@@ -86,8 +86,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-markdown.git",
       "state" : {
-        "revision" : "8f79cb175981458a0a27e76cb42fee8e17b1a993",
-        "version" : "0.5.0"
+        "revision" : "ea79e83c8744d2b50b0dc2d5bbd1e857e1253bf9",
+        "version" : "0.6.0"
       }
     },
     {
@@ -113,8 +113,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/yandex/vgsl.git",
       "state" : {
-        "revision" : "bea58060702294e15023725d7c267a99851149c1",
-        "version" : "6.24.4"
+        "revision" : "a2ffbfdb48f0e678e504f152bca4afca06a426c5",
+        "version" : "7.1.0"
       }
     },
     {
