@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 7.13.0
+
+### Added
+
+- Added dependency `AppMetricaAdSupport` with version `5.10.0`
+
+### Updated
+
+- Updated minimum supported `AppMetricaCore` version to `5.10.0`
+- Updated minimum supported `AppMetricaCrashes` version to `5.10.0`
+- Updated minimum supported `AppMetricaLibraryAdapter` version to `5.10.0`
+
 ## Version 7.12.3
 
 ### Added
