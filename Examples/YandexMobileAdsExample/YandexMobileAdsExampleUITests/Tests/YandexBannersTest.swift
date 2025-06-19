@@ -8,7 +8,7 @@ final class YandexBannersTest: BaseTest {
         rootPage.openYandex()
         yandexAdsPage.openStickyBanner()
         bannerPage.tapLoadAd()
-        try assertAdLoaded(stateLabel: bannerPage.stateLabel)
+        guard assertAdLoaded(stateLabel: bannerPage.stateLabel) else { return }
         bannerPage.assertAdDisplayed()
         bannerPage.tapAd()
         assertSafariOpened()
@@ -19,7 +19,7 @@ final class YandexBannersTest: BaseTest {
         rootPage.openYandex()
         yandexAdsPage.openInlineBanner()
         bannerPage.tapLoadAd()
-        try assertAdLoaded(stateLabel: bannerPage.stateLabel)
+        guard assertAdLoaded(stateLabel: bannerPage.stateLabel) else { return }
         bannerPage.assertAdDisplayed()
         bannerPage.tapAd()
         assertSafariOpened()

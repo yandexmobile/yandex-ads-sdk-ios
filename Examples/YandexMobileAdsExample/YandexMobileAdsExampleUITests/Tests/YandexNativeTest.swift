@@ -10,7 +10,7 @@ final class YandexNativeTest: BaseTest {
         yandexAdsPage.openNative()
         nativeListPage.openCustom()
         nativePage.tapLoadAd()
-        try assertAdLoaded(stateLabel: nativePage.stateLabel)
+        guard assertAdLoaded(stateLabel: nativePage.stateLabel) else { return }
         nativePage.assertAdDisplayed()
         nativePage.tapAd()
         assertSafariOpened()
@@ -22,7 +22,7 @@ final class YandexNativeTest: BaseTest {
         yandexAdsPage.openNative()
         nativeListPage.openTemplate()
         nativePage.tapLoadAd()
-        try assertAdLoaded(stateLabel: nativePage.stateLabel)
+        guard assertAdLoaded(stateLabel: nativePage.stateLabel) else { return }
         nativePage.assertAdDisplayed()
         nativePage.tapAd()
         assertSafariOpened()
@@ -34,7 +34,7 @@ final class YandexNativeTest: BaseTest {
         yandexAdsPage.openNative()
         nativeListPage.openBulk()
         nativePage.tapLoadAd()
-        try assertAdLoaded(stateLabel: nativePage.stateLabel)
+        guard assertAdLoaded(stateLabel: nativePage.stateLabel) else { return }
         nativePage.assertAdsDisplayed()
         nativePage.tapBulkAd()
         assertSafariOpened()

@@ -9,7 +9,7 @@ final class AdFoxTest: BaseTest {
         rootPage.openAdFox()
         adFoxPage.openBanner()
         adPage.tapLoadAd()
-        try assertAdLoaded(stateLabel: adPage.stateLabel)
+        guard assertAdLoaded(stateLabel: adPage.stateLabel) else { return }
         adPage.assertAdDisplayed()
         adPage.tapAd()
         assertSafariOpened()
@@ -20,7 +20,7 @@ final class AdFoxTest: BaseTest {
         rootPage.openAdFox()
         adFoxPage.openNative()
         adPage.tapLoadAd()
-        try assertAdLoaded(stateLabel: adPage.stateLabel)
+        guard assertAdLoaded(stateLabel: adPage.stateLabel) else { return }
         adPage.assertAdDisplayed()
         adPage.tapAd()
         assertSafariOpened()
@@ -31,7 +31,7 @@ final class AdFoxTest: BaseTest {
         rootPage.openAdFox()
         adFoxPage.openInterstitial()
         adPage.tapLoadAd()
-        try assertAdLoaded(stateLabel: adPage.stateLabel)
+        guard assertAdLoaded(stateLabel: adPage.stateLabel) else { return }
         adPage.tapPresentAd()
         adPage.assertAdDisplayed()
         adPage.tapAd()

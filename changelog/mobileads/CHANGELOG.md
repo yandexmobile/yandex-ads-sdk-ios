@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 7.14.0
+
+### Updated
+
+- Updated minimum supported `DivKitBinaryCompatibilityFacade` version to `5.0.0`
+
+### Deprecated
+
+- Deprecated `VideoControllerDelegate`. This protocol will be removed in future versions.
+- Deprecated `VideoController`. This class will be removed in future versions.
+- Depreated `AdView.videoController`. This property will be removed in future versions.
+
 ## Version 7.13.0
 
 ### Added

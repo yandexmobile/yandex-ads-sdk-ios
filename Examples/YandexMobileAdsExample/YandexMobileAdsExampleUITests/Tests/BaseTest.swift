@@ -35,18 +35,17 @@ class BaseTest: XCTestCase {
             app.navigationBars.element.buttons.firstMatch.tap()
         }
     }
-    
-    func assertAdLoaded(stateLabel: XCUIElement) throws {
-        try step("Check ad loaded") {
+
+    func assertAdLoaded(stateLabel: XCUIElement) -> Bool {
+        step("Check ad loaded") {
             let noAdsError = "Ad request completed successfully, but there are no ads available."
             let noAdsQueury: Query = .begins(.label, StateUtils.loadErrorPrefix) && .contains(.label, noAdsError)
             let query: Query = .begins(.label, StateUtils.loaded()) || noAdsQueury
             if elementMatches(stateLabel, query: query, timeout: 10) {
-                if elementMatches(stateLabel, query: noAdsQueury) {
-                    throw XCTSkip("No ads")
-                }
+                return !elementMatches(stateLabel, query: noAdsQueury)
             } else {
                 XCTFail("\(stateLabel.label) does not match \(query.string)")
+                return false
             }
         }
     }

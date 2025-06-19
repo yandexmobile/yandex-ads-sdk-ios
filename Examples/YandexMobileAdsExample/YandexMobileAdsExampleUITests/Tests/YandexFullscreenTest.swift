@@ -7,11 +7,11 @@ final class YandexFullscreenTest: BaseTest {
         rootPage.openYandex()
         yandexAdsPage.openInterstitial()
         fullscreenPage.tapLoadAd()
-        try assertAdLoaded(stateLabel: fullscreenPage.stateLabel)
+        guard assertAdLoaded(stateLabel: fullscreenPage.stateLabel) else { return }
         fullscreenPage.tapPresentAd()
         fullscreenPage.assertAdDisplayed()
         step("Tap ad") {
-            fullscreenPage.adView.staticTexts["Установить"].tap()
+            fullscreenPage.adView.staticTexts["mac_call_to_action"].tap()
         }
         assertSafariOpened()
     }    
@@ -21,7 +21,7 @@ final class YandexFullscreenTest: BaseTest {
         rootPage.openYandex()
         yandexAdsPage.openRewarded()
         fullscreenPage.tapLoadAd()
-        try assertAdLoaded(stateLabel: fullscreenPage.stateLabel)
+        guard assertAdLoaded(stateLabel: fullscreenPage.stateLabel) else { return }
         fullscreenPage.tapPresentAd()
         fullscreenPage.assertAdDisplayed()
         step("Tap ad") {

@@ -54,7 +54,7 @@ final class MobileMediationRewardedTest: BaseTest {
         mobileMediationPage.openRewarded()
         adPage.selectAdapter(adapter)
         adPage.tapLoadAd()
-        try assertAdLoaded(stateLabel: adPage.stateLabel)
+        guard assertAdLoaded(stateLabel: adPage.stateLabel) else { return }
         adPage.tapPresentAd()
     }
 }

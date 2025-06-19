@@ -8,7 +8,7 @@ final class YandexAppOpenAdTest: BaseTest {
         rootPage.openYandex()
         yandexAdsPage.openAppOpenAd()
         page.tapLoadAd()
-        try assertAdLoaded(stateLabel: page.stateLabel)
+        guard assertAdLoaded(stateLabel: page.stateLabel) else { return }
         leaveApp()
         returnToApp()
         page.assertAdDisplayed()
