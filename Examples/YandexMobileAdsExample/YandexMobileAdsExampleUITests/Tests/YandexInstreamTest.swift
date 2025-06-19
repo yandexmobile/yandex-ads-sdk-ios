@@ -11,8 +11,8 @@ final class YandexInstreamTest: BaseTest {
         list.openSingleInstream()
         
         page.tapLoadAd()
-        try assertAdLoaded(stateLabel: page.stateLabel)
-        
+        guard assertAdLoaded(stateLabel: page.stateLabel) else { return }
+
         page.tapPrepareAd()
         page.tapPresentAd()
 
@@ -38,7 +38,7 @@ final class YandexInstreamTest: BaseTest {
         list.openInroll()
         
         page.tapLoadAd()
-        try assertAdLoaded(stateLabel: page.stateLabel)
+        guard assertAdLoaded(stateLabel: page.stateLabel) else { return }
         
         page.tapStartPlayback()
         page.tapPlayInroll()
