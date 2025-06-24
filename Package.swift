@@ -141,43 +141,43 @@ let package = Package(
         ),
         .binaryTarget(
             name: "YandexMobileAds",
-            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAds/7.14.1/spm/90eba297-5151-4423-9e4e-36814d6f3910.zip",
-            checksum: "efa9f7b3885615d843f6ab5720c70b12cbf35bf2766df8c6de6cc7160ac1d92c"
+            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAds/7.14.2/spm/2f6af0c0-3b3e-4f26-aa10-ddf525273c10.zip",
+            checksum: "a81009142a5e7129fc461215847044d052a35c404a8488d01691e0d0d848ec91"
         ),
         .binaryTarget(
             name: "YandexMobileAdsInstream",
-            url: "https://ads-mobile-sdk.s3.yandex.net/YandexMobileAdsInstream/0.54.0/spm/eba50e4c-b848-4fea-87f5-56a685d04e65.zip",
-            checksum: "ffd1a8ac1c476aa8247546fdd2199a611d9ae791f90afc849f34c87297b43f84"
+            url: "https://ads-mobile-sdk.s3.yandex.net/YandexMobileAdsInstream/0.54.1/spm/4075bc43-cb2c-4451-a6c5-6663132459b3.zip",
+            checksum: "399681b31ad1b9b45864743e8c5104b7397e7a9df0be2b1c4be548f2751526b4"
         ),
         .binaryTarget(
             name: "GoogleYandexMobileAdsAdapters",
-            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/GoogleYandexMobileAdsAdapters/12.2.0.3/spm/aa2c7779-8d17-4de1-a25b-f6549db24f1e.zip",
-            checksum: "6a7c85cf7b4179340b852afa7b204f0c08e1aad90124054ae88eb0241cf6c519"
+            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/GoogleYandexMobileAdsAdapters/12.2.0.4/spm/65449c78-1ecc-48dd-ae84-51e94ae81eb9.zip",
+            checksum: "ac95bd5e02eb2f8ec81241a097bd5e244bb7f21e86ab0f7a2cd50df6811b5381"
         ),
         .binaryTarget(
             name: "VungleYandexMobileAdsAdapters",
-            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/VungleYandexMobileAdsAdapters/7.4.2.9/spm/5a7d2b2e-8435-45da-9e3d-08e685032557.zip",
-            checksum: "ecd19c474ffcaf5af68296d6b6813bcf9c3df1a3509f0690eb0fe7eca7dff4ee"
+            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/VungleYandexMobileAdsAdapters/7.4.2.10/spm/0ef6ce04-59e1-4f75-8e1e-422ecb9ea7c1.zip",
+            checksum: "9572a61a3d37d306a71eeb53f85b12c2dffae71b07933722ff100dd96661525c"
         ),
         .binaryTarget(
             name: "AppLovinYandexMobileAdsAdapters",
-            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/AppLovinYandexMobileAdsAdapters/13.1.0.3/spm/f5fa3c70-8e27-433d-8880-c1ab1707cc2f.zip",
-            checksum: "0d5dc2132739a2f4528be95748026f71440f06c51cf480f92e5c85c22a794aa2"
+            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/AppLovinYandexMobileAdsAdapters/13.1.0.4/spm/c0a13c8f-0908-4701-ac70-b52ffb25092c.zip",
+            checksum: "217b0567f5e4a93a4771c810796aa7fcd284235e27f07ff2493a851160f09de3"
         ),
         .binaryTarget(
             name: "MyTargetYandexMobileAdsAdapters",
-            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/MyTargetYandexMobileAdsAdapters/5.28.0.3/spm/3faf9a89-67a6-49f8-864b-2a4030da5f4e.zip",
-            checksum: "99be7252b5497531c4be9b9f1e2438cdb21b4fe4cf78fef071d533e10aa76a93"
+            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/MyTargetYandexMobileAdsAdapters/5.28.0.4/spm/8d9febce-9b7e-459f-8f83-f61dda373775.zip",
+            checksum: "ef0a8921b6840ff168b23aa6ea633f650b90da33c8abebecff458725e57d3ec3"
         ),
         .binaryTarget(
             name: "MintegralYandexMobileAdsAdapters",
-            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/MintegralYandexMobileAdsAdapters/7.7.7.3/spm/b4daad17-7a3f-4e74-a4e9-845884e74f55.zip",
-            checksum: "833c4feb0638d6c161daccd6a7d4c851e1bfc34ee1bf719a0ceb3b98a7a5f0e7"
+            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/MintegralYandexMobileAdsAdapters/7.7.7.4/spm/8cd832d1-0b91-416f-af8e-aeb9e28f6b56.zip",
+            checksum: "e53080576f7e1f5b430928e787335adbbada11e17de55078d8054a9dfa1d0823"
         ),
         .binaryTarget(
             name: "YandexMobileAdsMediation",
-            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAdsMediation/7.14.1/spm/a9a68e46-20c7-4eaa-974a-15a2e4e0ab3e.zip",
-            checksum: "4ca3c348f76caeb5b8f4c1c1534eb026a6157dec587fc1ce06efecad83f7ad63"
+            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAdsMediation/7.14.2/spm/289a76d1-03a5-465c-b81d-5b756c72bb26.zip",
+            checksum: "39eec27e68cde283669413c45a3dea1162402e572f55d862b4b8c16aad69a7e6"
         )
     ]
 )
