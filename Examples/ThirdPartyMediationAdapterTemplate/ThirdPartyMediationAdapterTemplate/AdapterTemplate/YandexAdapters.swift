@@ -61,6 +61,10 @@ class YandexBaseAdapter: NSObject, MediationBidding, MediationInitialization {
             MobileAds.setUserConsent(userConsent)
         }
 
+        if let ageRestrictedUser = parameters.ageRestrictedUser {
+            MobileAds.setAgeRestrictedUser(ageRestrictedUser)
+        }
+
         if let locationTracking = parameters.locationTracking {
             MobileAds.setLocationTrackingEnabled(locationTracking)
         }

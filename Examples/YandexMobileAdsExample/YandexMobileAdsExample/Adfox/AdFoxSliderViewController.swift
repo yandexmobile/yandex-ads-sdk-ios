@@ -1,5 +1,5 @@
 /*
- * Version for iOS © 2015–2021 YANDEX
+ * Version for iOS © 2015–2025 YANDEX
  *
  * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
@@ -27,12 +27,8 @@ class AdFoxSliderViewController: UIViewController {
         let view = NativeSliderView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.isHidden = true
-        view.autoscrollInterval = 5
-        view.isAutoscrollEnabled = true
         return view
     }()
-
-    private var ad: NativeAd?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,7 +72,6 @@ class AdFoxSliderViewController: UIViewController {
 
 extension AdFoxSliderViewController: NativeAdLoaderDelegate {
     func nativeAdLoader(_ loader: NativeAdLoader, didLoad ad: NativeAd) {
-        self.ad = ad
         sliderAdView.isHidden = false
         do {
             try sliderAdView.bind(with: ad)

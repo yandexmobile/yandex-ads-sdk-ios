@@ -1,5 +1,5 @@
 /*
- * Version for iOS © 2015–2021 YANDEX
+ * Version for iOS © 2015–2025 YANDEX
  *
  * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
@@ -54,8 +54,6 @@ class MobileMediationInterstitialViewController: UIViewController {
     @IBOutlet private var pickerView: UIPickerView!
     @IBOutlet private var stateLabel: UILabel!
     @IBOutlet private var loadButton: UIButton!
-
-    private var adView: AdView?
     
     override func viewDidLoad() {
         super.viewDidLoad()

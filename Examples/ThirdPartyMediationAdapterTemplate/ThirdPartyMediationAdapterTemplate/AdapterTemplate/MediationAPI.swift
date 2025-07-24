@@ -26,6 +26,7 @@ struct AdData {
 ///   - adapterSdkVersion: Version of you ad network sdk.
 ///   - adapterNetworkName: Yor ad network name.
 ///   - userConsent: User consent  parameter.  False - by default.
+///   - ageRestrictedUser: Is age restricted user. False - by default.
 ///   - locationTracking: Used for collecting location data if the user allowed the app to track the location. True - by default.
 ///   - isTesting: Used for extended YandexSDK logging. Extended logging is disabled - by default.
 struct AdapterParameters {
@@ -34,6 +35,7 @@ struct AdapterParameters {
     let adapterSdkVersion: String
     let adapterNetworkName: String
     let userConsent: Bool?
+    let ageRestrictedUser: Bool?
     let locationTracking: Bool?
     let isTesting: Bool?
 }

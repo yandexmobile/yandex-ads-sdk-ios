@@ -1,5 +1,5 @@
 /*
- * Version for iOS © 2015–2021 YANDEX
+ * Version for iOS © 2015–2025 YANDEX
  *
  * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
@@ -27,8 +27,8 @@ class AdFoxInterstitialViewController: UIViewController {
     @IBAction func loadInterstitial() {
         self.showButton.isEnabled = false
 
-        // Replace demo R-M-243655-9 with actual Ad Unit ID
-        let requestConfiguration = MutableAdRequestConfiguration(adUnitID: "R-M-243655-9")
+        // Replace demo demo-interstitial-adfox-image with actual Ad Unit ID
+        let requestConfiguration = MutableAdRequestConfiguration(adUnitID: "demo-interstitial-adfox-image")
 
         var parameters = Dictionary<String, String>()
         parameters["adf_ownerid"] = "270901"

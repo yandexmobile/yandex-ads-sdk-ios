@@ -1,5 +1,5 @@
 /*
- * Version for iOS © 2015–2023 YANDEX
+ * Version for iOS © 2015–2025 YANDEX
  *
  * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
@@ -19,7 +19,9 @@ final class NativeBulkViewController: UIViewController {
             NativeBulkTableViewCell.self,
             forCellReuseIdentifier: NativeBulkTableViewCell.reuseIdentifier
         )
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.dataSource = self
+        tableView.delegate = self
         return tableView
     }()
 
@@ -70,7 +72,7 @@ final class NativeBulkViewController: UIViewController {
 
     private func setupUI() {
         view.backgroundColor = .white
-        title = "Native Custom Ad"
+        title = "Native Bulk Ad"
     }
 
     private func addSubviews() {
@@ -126,7 +128,11 @@ extension NativeBulkViewController: NativeAdDelegate {
     }
 }
 
-extension NativeBulkViewController: UITableViewDataSource {
+extension NativeBulkViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ads.count
     }

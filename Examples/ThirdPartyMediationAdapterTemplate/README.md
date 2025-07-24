@@ -13,7 +13,7 @@ The code template found in this folder can be used to create an adapter for embe
 
 ### 1. App requirements
 
-* Use Xcode 15 or later.
+* Use Xcode 16.2 or later.
 * Use iOS 13 or higher.
 
 ### 2. Yandex Mobile Ads SDK dependency

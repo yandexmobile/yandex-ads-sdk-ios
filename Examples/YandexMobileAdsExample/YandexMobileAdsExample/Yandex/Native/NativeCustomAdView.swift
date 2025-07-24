@@ -1,3 +1,10 @@
+/*
+ * Version for iOS © 2015–2025 YANDEX
+ *
+ * You may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
+ */
+
 import UIKit
 import YandexMobileAds
 
@@ -34,6 +41,8 @@ final class NativeCustomAdView: YMANativeAdView {
     private let feedback: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        button.setContentCompressionResistancePriority(.required, for: .horizontal)
         return button
     }()
 
@@ -53,6 +62,8 @@ final class NativeCustomAdView: YMANativeAdView {
     private let iconImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        imageView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         return imageView
     }()
 
@@ -85,9 +96,9 @@ final class NativeCustomAdView: YMANativeAdView {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
-        stack.distribution = .equalSpacing
         stack.alignment = .fill
         stack.spacing = Constants.bigMargin
+        stack.distribution = .fill
         return stack
     }()
 
@@ -96,6 +107,7 @@ final class NativeCustomAdView: YMANativeAdView {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
         stack.spacing = Constants.smallMargin
+        stack.setContentHuggingPriority(.defaultLow, for: .horizontal)
         return stack
     }()
 
@@ -166,15 +178,19 @@ final class NativeCustomAdView: YMANativeAdView {
             stack.rightAnchor.constraint(equalTo: rightAnchor),
             stack.bottomAnchor.constraint(equalTo: bottomAnchor),
 
-            media.widthAnchor.constraint(greaterThanOrEqualToConstant: 320),
-            media.heightAnchor.constraint(lessThanOrEqualToConstant: 300),
+            headerStack.heightAnchor.constraint(equalToConstant: 70),
 
+            media.heightAnchor.constraint(equalTo: media.widthAnchor, multiplier: 9.0/16.0),
             iconImage.widthAnchor.constraint(equalToConstant: 70),
-            iconImage.heightAnchor.constraint(equalTo: iconImage.widthAnchor),
 
             rating.widthAnchor.constraint(equalToConstant: 100),
             rating.heightAnchor.constraint(equalToConstant: 20),
         ])
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        iconImage.isHidden = iconImage.image == nil
     }
 
     private func bindAssets() {

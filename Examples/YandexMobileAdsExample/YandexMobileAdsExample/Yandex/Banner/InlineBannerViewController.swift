@@ -1,5 +1,5 @@
 /*
- * Version for iOS © 2015–2023 YANDEX
+ * Version for iOS © 2015–2025 YANDEX
  *
  * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
@@ -62,11 +62,11 @@ final class InlineBannerViewController: UIViewController {
 
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            adView.topAnchor.constraint(equalTo: loadButton.bottomAnchor, constant: 100),
+            adView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             adView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 
             loadButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
-            loadButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loadButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
             stateLabel.topAnchor.constraint(equalTo: loadButton.bottomAnchor, constant: 10),
             stateLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
             stateLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
