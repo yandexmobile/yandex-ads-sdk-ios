@@ -1,5 +1,5 @@
 /*
- * Version for iOS © 2015–2021 YANDEX
+ * Version for iOS © 2015–2025 YANDEX
  *
  * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
@@ -41,13 +41,13 @@ class NativeSliderView: YMANativeAdView {
         return pageControll
     }()
     
-    public var autoscrollInterval: TimeInterval = 2 {
+    private var autoscrollInterval: TimeInterval = 2 {
         didSet {
             startTimer()
         }
     }
 
-    public var isAutoscrollEnabled: Bool = true {
+    private var isAutoscrollEnabled: Bool = true {
         didSet {
             startTimer()
         }
@@ -244,4 +244,3 @@ extension NativeSliderView: UIScrollViewDelegate {
 }
 
 private let sliderViewItemWidth: CGFloat = 320.0
-private let sliderViewItemHeight: CGFloat = 400

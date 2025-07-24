@@ -1,5 +1,5 @@
 /*
- * Version for iOS © 2015–2023 YANDEX
+ * Version for iOS © 2015–2025 YANDEX
  *
  * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
@@ -36,14 +36,12 @@ final class NativeBulkTableViewCell: UITableViewCell {
         ])
     }
     
-    public func bindNativeAd(_ ad: NativeAd) {
+    func bindNativeAd(_ ad: NativeAd) {
         ad.delegate = self
         do {
             try ad.bind(with: adView)
             adView.isHidden = false
             adView.callToActionButton?.accessibilityIdentifier = "call"
-            setNeedsLayout()
-            layoutIfNeeded()
         } catch {
             print("Binding error: \(error)")
         }

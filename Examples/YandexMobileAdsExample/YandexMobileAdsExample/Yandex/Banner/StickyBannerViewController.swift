@@ -1,5 +1,5 @@
 /*
- * Version for iOS © 2015–2023 YANDEX
+ * Version for iOS © 2015–2025 YANDEX
  *
  * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
@@ -9,13 +9,14 @@ import YandexMobileAds
 
 final class StickyBannerViewController: UIViewController {
     private lazy var adView: AdView = {
-        let width = view.safeAreaLayoutGuide.layoutFrame.width
+        let width = view.safeAreaLayoutGuide.layoutFrame.width - 32 - view.safeAreaInsets.left - view.safeAreaInsets.right
         let adSize = BannerAdSize.stickySize(withContainerWidth: width)
         
         // Replace demo demo-banner-yandex with actual Ad Unit ID
         let adView = AdView(adUnitID: "demo-banner-yandex", adSize: adSize)
         adView.accessibilityIdentifier = CommonAccessibility.bannerView
         adView.delegate = self
+        adView.translatesAutoresizingMaskIntoConstraints = false
         return adView
     }()
 
@@ -23,6 +24,7 @@ final class StickyBannerViewController: UIViewController {
         let button = UIButton(
             configuration: .tinted(),
             primaryAction: UIAction(title: "Load ad") { [weak self] _ in
+                self?.addAdView()
                 self?.adView.loadAd()
             }
         )
@@ -55,9 +57,13 @@ final class StickyBannerViewController: UIViewController {
     }
 
     private func addSubviews() {
-        adView.displayAtBottom(in: view)
         view.addSubview(loadButton)
         view.addSubview(stateLabel)
+    }
+
+    private func addAdView() {
+        guard adView.superview == nil else { return }
+        adView.displayAtBottom(in: view)
     }
 
     private func setupConstraints() {

@@ -1,5 +1,5 @@
 /*
- * Version for iOS © 2015–2021 YANDEX
+ * Version for iOS © 2015–2025 YANDEX
  *
  * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
@@ -16,9 +16,9 @@ class AdFoxBannerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let adSize = BannerAdSize.inlineSize(withWidth: 320, maxHeight: 100)
-        // Replace demo R-M-243655-8 with actual Ad Unit ID
-        self.adView = AdView(adUnitID: "R-M-243655-8", adSize: adSize)
+        let adSize = BannerAdSize.inlineSize(withWidth: 300, maxHeight: 300)
+        // Replace demo demo-banner-adfox-image with actual Ad Unit ID
+        self.adView = AdView(adUnitID: "demo-banner-adfox-image", adSize: adSize)
         self.adView.delegate = self
         adView.accessibilityIdentifier = CommonAccessibility.bannerView
         loadButton.accessibilityIdentifier = CommonAccessibility.loadButton

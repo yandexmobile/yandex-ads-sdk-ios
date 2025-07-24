@@ -1,5 +1,5 @@
 /*
- * Version for iOS © 2015–2021 YANDEX
+ * Version for iOS © 2015–2025 YANDEX
  *
  * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
@@ -38,8 +38,8 @@ class AdFoxNativeViewController: UIViewController {
         parameters["adf_pfc"] = "bskug"
         parameters["adf_pfb"] = "fkjas"
         parameters["adf_pt"] = "b"
-        // Replace demo R-M-243655-10 with actual Ad Unit ID
-        let requestConfiguration = MutableNativeAdRequestConfiguration(adUnitID: "R-M-243655-10")
+        // Replace demo demo-native-adfox with actual Ad Unit ID
+        let requestConfiguration = MutableNativeAdRequestConfiguration(adUnitID: "demo-native-adfox")
         requestConfiguration.parameters = parameters
         adLoader.loadAd(with: requestConfiguration)
     }

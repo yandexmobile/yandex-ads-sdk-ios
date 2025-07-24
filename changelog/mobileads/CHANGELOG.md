@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 7.15.0
+
+### Updated
+
+- The requirement for the DivKitBinaryCompatibilityFacade dependency has changed from exact to optimistic.
+- Xcode version that SDK is built with updated from 16.2 to 16.4
+
+### Deprecated
+
+- `NativeAdDelegate.viewControllerForPresentingModalView` will be removed in future versions.
+
 ## Version 7.14.1
 
 ### Updated

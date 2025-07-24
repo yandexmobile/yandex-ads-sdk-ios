@@ -1,5 +1,5 @@
 /*
- * Version for iOS © 2015–2023 YANDEX
+ * Version for iOS © 2015–2025 YANDEX
  *
  * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
@@ -103,7 +103,6 @@ final class InstreamSingleViewController: UIViewController {
         return label
     }()
 
-    private var ad: InstreamAd?
     private var adBinder: InstreamAdBinder?
 
     override func viewDidLoad() {
@@ -172,7 +171,6 @@ final class InstreamSingleViewController: UIViewController {
 extension InstreamSingleViewController: InstreamAdLoaderDelegate {
     func instreamAdLoader(_ instreamAdLoader: InstreamAdLoader, didLoad ad: InstreamAd) {
         print(#function)
-        self.ad = ad
         adBinder = InstreamAdBinder(ad: ad, adPlayer: adPlayer, videoPlayer: contentPlayer)
         adBinder?.delegate = self
         stateLabel.text = StateUtils.loaded()
