@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 7.15.1
+
+### Updated
+
+- Updated minimum supported `DivKitBinaryCompatibilityFacade` version to `5.0.2`
+
 ## Version 7.15.0
 
 ### Updated
