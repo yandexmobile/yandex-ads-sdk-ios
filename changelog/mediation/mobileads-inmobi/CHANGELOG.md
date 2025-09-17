@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 10.8.6.0
+
+### Updated
+
+- Updated minimum supported `InMobiSDK` version to `10.8.6`
+- Updated minimum supported `YandexMobileAds` version to `7.16.0`
+
 ## Version 10.7.8.13
 
 ### Updated

@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/AppLovin/AppLovin-MAX-Swift-Package",
       "state" : {
-        "revision" : "ed8cb1fddca69b5ea52b379deb7e57ccb8d901de",
-        "version" : "13.1.0"
+        "revision" : "c184b428415a05dcad488c6834e0bd02fe1d8f3e",
+        "version" : "13.3.1"
       }
     },
     {
@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/appmetrica/appmetrica-sdk-ios",
       "state" : {
-        "revision" : "e61ae9c4f331ae346fc12bad014e32259f239675",
-        "version" : "5.11.1"
+        "revision" : "4d34ce36bc1fb1fb3a251255aedde3b1dc52e188",
+        "version" : "5.12.1"
       }
     },
     {
@@ -32,8 +32,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/divkit/divkit-ios-facade",
       "state" : {
-        "revision" : "19ec2415773aa000cdf89041f362a9e5a111439c",
-        "version" : "5.0.2"
+        "revision" : "46e703dfb80bab350932b84b38afa65c6075ee40",
+        "version" : "5.1.2"
       }
     },
     {
@@ -41,8 +41,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/kstenerud/KSCrash",
       "state" : {
-        "revision" : "b87a3ef5b0b84e2a34a546b9836813756cd362a9",
-        "version" : "2.0.0"
+        "revision" : "c0177658fc771ae833b6d3b8f5f3f5a14d59ec03",
+        "version" : "2.1.2"
       }
     },
     {
@@ -50,8 +50,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Mintegral-official/MintegralAdSDK-Swift-Package",
       "state" : {
-        "revision" : "ac4b4f39db1d926a1730dfca42fe38082e11b6e6",
-        "version" : "7.7.7"
+        "revision" : "b483374ae72193a547f97055132ac9d0a3a5cb7f",
+        "version" : "7.7.9"
       }
     },
     {

@@ -15,7 +15,7 @@ class AdPlayer: NSObject {
 
     private var playerView: PlayerView?
     private var player: VideoAVPlayer?
-    private var playerProvider: VideoPlayerProvider<AdPlayer>?
+    private weak var playerProvider: VideoPlayerProvider<AdPlayer>?
     private var videoAd: VideoAd?
 
     init(playerProvider: VideoPlayerProvider<AdPlayer>) {
