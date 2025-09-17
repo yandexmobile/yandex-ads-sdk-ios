@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 9.9.2.0
+
+### Updated
+
+- Updated minimum supported `ChartboostSDK` version to `9.9.2`
+- Updated minimum supported `YandexMobileAds` version to `7.16.0`
+
 ## Version 9.8.1.4
 
 ### Updated

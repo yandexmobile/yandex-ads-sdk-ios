@@ -114,6 +114,8 @@ final class InstreamSingleViewController: UIViewController {
 
     deinit {
         adBinder?.unbind()
+        adBinder?.invalidateAdPlayer()
+        adBinder?.invalidateVideoPlayer()
     }
 
     // MARK: - Ad

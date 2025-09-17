@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 7.16.0
+
+### Updated
+
+- Removed system frameworks from `linkerSettings` in Package.swift
+- Updated minimum supported `DivKitBinaryCompatibilityFacade` version to `5.1.1`
+- `-ObjC` linker flag is no longer needed for YandexMobileAds target in SPM. Though it is still needed if you use mediation
+
 ## Version 7.15.1
 
 ### Updated
