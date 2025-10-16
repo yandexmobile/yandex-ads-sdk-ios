@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 7.16.2
+
+### Deprecated
+
+- `AdInfo.data` property is deprecated. Use `adAttributes` property of ad class instead.
+- `AdView.adInfo` property is deprecated. Use `AdView.adAttributes` instead.
+
 ## Version 7.16.1
 
 ### Updated
