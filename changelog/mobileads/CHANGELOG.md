@@ -2,12 +2,33 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 7.17.0
+
+### Added
+
+- Added `Creative` class with Creative ID and Campaign ID support
+- Added `adInfo` property to `AdView`
+- Added `creativeID` and `campaignID` properties to `NativeAd`
+- Added `creatives` property to `AdInfo`
+
+### Updated
+
+- Updated minimum supported `AppMetricaAdSupport` version to `5.14.0`
+- Updated minimum supported `AppMetricaCore` version to `5.14.0`
+- Updated minimum supported `AppMetricaLibraryAdapter` version to `5.14.0`
+- Updated minimum supported `DivKitBinaryCompatibilityFacade` version to `5.2.1`
+
+### Deprecated
+
+- `BidderTokenRequestConfiguration(adType:)` is deprecated. Use factory methods instead: `banner(size:)`, `interstitial()`, `rewarded()`, `native()` or `appOpenAd()`.
+- Remove AppMetricaCrashes dependency.
+
 ## Version 7.16.2
 
 ### Deprecated
 
 - `AdInfo.data` property is deprecated. Use `adAttributes` property of ad class instead.
-- `AdView.adInfo` property is deprecated. Use `AdView.adAttributes` instead.
+- `AdView.info` property is deprecated. Use `AdView.adAttributes` instead.
 
 ## Version 7.16.1
 

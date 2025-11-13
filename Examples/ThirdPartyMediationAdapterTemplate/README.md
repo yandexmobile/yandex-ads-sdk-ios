@@ -89,8 +89,17 @@ bidderTokenLoader.loadBidderToken(requestConfiguration: requestConfiguraton) { t
 You need to load a bidder token for each new ad request. Token request can be created as follows (also shown in [template](./ThirdPartyMediationAdapterTemplate/AdapterTemplate/YandexAdapters.swift#L27)):
 
 ```swift
-let requestConfiguraton = BidderTokenRequestConfiguration(adType: adType)
-if adType == .banner {
-    requestConfiguraton.bannerAdSize = bannerAdSize
+let requestConfiguraton: BidderTokenRequestConfiguration
+switch parameters.adFormat {
+case .banner(let size):
+    requestConfiguraton = BidderTokenRequestConfiguration.banner(size: BannerAdSize.fixedSize(withWidth: size.width, height: size.height))
+case .interstitial:
+    requestConfiguraton = BidderTokenRequestConfiguration.interstitial()
+case .rewarded:
+    requestConfiguraton = BidderTokenRequestConfiguration.rewarded()
+case .appOpen:
+    requestConfiguraton = BidderTokenRequestConfiguration.appOpenAd()
+case .native:
+    requestConfiguraton = BidderTokenRequestConfiguration.native()
 }
 ```
