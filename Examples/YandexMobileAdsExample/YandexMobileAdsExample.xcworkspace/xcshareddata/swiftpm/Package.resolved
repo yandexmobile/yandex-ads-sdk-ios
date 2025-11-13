@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/AppLovin/AppLovin-MAX-Swift-Package",
       "state" : {
-        "revision" : "ed8cb1fddca69b5ea52b379deb7e57ccb8d901de",
-        "version" : "13.1.0"
+        "revision" : "c184b428415a05dcad488c6834e0bd02fe1d8f3e",
+        "version" : "13.3.1"
       }
     },
     {
@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/appmetrica/appmetrica-sdk-ios",
       "state" : {
-        "revision" : "e61ae9c4f331ae346fc12bad014e32259f239675",
-        "version" : "5.11.1"
+        "revision" : "15bb831222410723e10b48feeb0df9b2ea500358",
+        "version" : "5.13.0"
       }
     },
     {
@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/divkit/divkit-ios.git",
       "state" : {
-        "revision" : "64777f8717d8066cc50a2fc8fa4ecc49544a1700",
-        "version" : "32.11.0"
+        "revision" : "c65a12dd72653ee7d67890e6689587845af6e307",
+        "version" : "32.23.0"
       }
     },
     {
@@ -32,8 +32,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/divkit/divkit-ios-facade",
       "state" : {
-        "revision" : "19ec2415773aa000cdf89041f362a9e5a111439c",
-        "version" : "5.0.2"
+        "revision" : "de417ba98f50f66f6ad837f26058d16a216d3620",
+        "version" : "5.2.0"
       }
     },
     {
@@ -41,8 +41,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/kstenerud/KSCrash",
       "state" : {
-        "revision" : "b87a3ef5b0b84e2a34a546b9836813756cd362a9",
-        "version" : "2.0.0"
+        "revision" : "c0177658fc771ae833b6d3b8f5f3f5a14d59ec03",
+        "version" : "2.1.2"
       }
     },
     {
@@ -50,8 +50,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Mintegral-official/MintegralAdSDK-Swift-Package",
       "state" : {
-        "revision" : "ac4b4f39db1d926a1730dfca42fe38082e11b6e6",
-        "version" : "7.7.7"
+        "revision" : "b483374ae72193a547f97055132ac9d0a3a5cb7f",
+        "version" : "7.7.9"
       }
     },
     {
@@ -75,10 +75,10 @@
     {
       "identity" : "swift-cmark",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-cmark.git",
+      "location" : "https://github.com/swiftlang/swift-cmark.git",
       "state" : {
-        "revision" : "3ccff77b2dc5b96b77db3da0d68d28068593fa53",
-        "version" : "0.5.0"
+        "revision" : "b97d09472e847a416629f026eceae0e2afcfad65",
+        "version" : "0.7.0"
       }
     },
     {
@@ -86,8 +86,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-markdown.git",
       "state" : {
-        "revision" : "8f79cb175981458a0a27e76cb42fee8e17b1a993",
-        "version" : "0.5.0"
+        "revision" : "ea79e83c8744d2b50b0dc2d5bbd1e857e1253bf9",
+        "version" : "0.6.0"
       }
     },
     {
@@ -113,8 +113,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/yandex/vgsl.git",
       "state" : {
-        "revision" : "c7ef18d2cb15342c868751c893692b6f6f96e2c1",
-        "version" : "7.6.0"
+        "revision" : "4bd61df942574536ebb6ab75462acf984d0c11e7",
+        "version" : "7.12.0"
       }
     },
     {

@@ -27,16 +27,15 @@ class YandexBaseAdapter: NSObject, MediationBidding, MediationInitialization {
         let requestConfiguraton: BidderTokenRequestConfiguration
         switch parameters.adFormat {
         case .banner(let size):
-            requestConfiguraton = BidderTokenRequestConfiguration(adType: .banner)
-            requestConfiguraton.bannerAdSize = BannerAdSize.fixedSize(withWidth: size.width, height: size.height)
+            requestConfiguraton = BidderTokenRequestConfiguration.banner(size: BannerAdSize.fixedSize(withWidth: size.width, height: size.height))
         case .interstitial:
-            requestConfiguraton = BidderTokenRequestConfiguration(adType: .interstitial)
+            requestConfiguraton = BidderTokenRequestConfiguration.interstitial()
         case .rewarded:
-            requestConfiguraton = BidderTokenRequestConfiguration(adType: .rewarded)
+            requestConfiguraton = BidderTokenRequestConfiguration.rewarded()
         case .appOpen:
-            requestConfiguraton = BidderTokenRequestConfiguration(adType: .appOpenAd)
+            requestConfiguraton = BidderTokenRequestConfiguration.appOpenAd()
         case .native:
-            requestConfiguraton = BidderTokenRequestConfiguration(adType: .native)
+            requestConfiguraton = BidderTokenRequestConfiguration.native()
         }
 
         requestConfiguraton.parameters = Self.makeConfigurationParameters(parameters)
