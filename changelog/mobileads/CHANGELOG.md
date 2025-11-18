@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 7.17.1
+
+### Added
+
+- Added improvements and fixes
+
 ## Version 7.17.0
 
 ### Added
@@ -20,8 +26,8 @@ All notable changes to this project will be documented in this file.
 
 ### Deprecated
 
-- `BidderTokenRequestConfiguration(adType:)` is deprecated. Use factory methods instead: `banner(size:)`, `interstitial()`, `rewarded()`, `native()` or `appOpenAd()`.
 - Remove AppMetricaCrashes dependency.
+- `BidderTokenRequestConfiguration(adType:)` is deprecated. Use factory methods instead: `banner(size:)`, `interstitial()`, `rewarded()`, `native()` or `appOpenAd()`.
 
 ## Version 7.16.2
 
