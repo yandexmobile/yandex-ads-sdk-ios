@@ -45,7 +45,6 @@ class GDPRDialogViewController: UIViewController {
     }
 
     private func setUserConsent(_ consent: Bool) {
-        //Make sure you store user consent value
         gdprManager?.userConsent = consent
     }
 

@@ -11,4 +11,5 @@ enum YandexInstreamAccessibility {
     static let playInrollButton = "play_inroll_button"
     static let pauseInrollButton = "pause_inroll_button"
     static let resumeInrollButton = "resume_inroll_button"
+    static let presentButton = "present_button"
 }

@@ -9,14 +9,10 @@ import XCTest
 
 class BaseTest: XCTestCase {
     let app = XCUIApplication()
-    
-    let rootPage = RootPage()
-    let yandexAdsPage = YandexAdsPage()
-    
-    func launchApp() {
-        step("Launch app") {
-            app.launch()
-        }
+        
+    func launchApp(extraArgs: [String] = []) {
+        app.launchArguments = [LaunchArgument.uitests, LaunchArgument.cmpDisable] + extraArgs
+        app.launch()
     }
     
     func assertSafariOpened() {
@@ -24,7 +20,13 @@ class BaseTest: XCTestCase {
             XCTAssertTrue(XCUIApplication.safari.wait(for: .runningForeground, timeout: 10))
         }
     }
-    
+
+    func assertStoreControllerOpened() {
+        step("Check store controller opened") {
+            XCTAssertTrue(app.storeController.waitForExistence(timeout: 10))
+        }
+    }
+
     func leaveApp() {
         step("Leave app") {
             XCUIDevice.shared.press(.home)
@@ -36,48 +38,16 @@ class BaseTest: XCTestCase {
             app.activate()
         }
     }
-    
-    func goBack() {
-        step("Go to previous screen") {
-            app.navigationBars.element.buttons.firstMatch.tap()
-        }
-    }
-
-    func assertAdLoaded(stateLabel: XCUIElement) -> Bool {
-        step("Check ad loaded") {
-            let noAdsError = "Ad request completed successfully, but there are no ads available."
-            let noAdsQueury: Query = .begins(.label, StateUtils.loadErrorPrefix) && .contains(.label, noAdsError)
-            let query: Query = .begins(.label, StateUtils.loaded()) || noAdsQueury
-            if elementMatches(stateLabel, query: query, timeout: 10) {
-                return !elementMatches(stateLabel, query: noAdsQueury)
-            } else {
-                XCTFail("\(stateLabel.label) does not match \(query.string)")
-                return false
-            }
-        }
-    }
-        
-    func elementMatches(_ element: XCUIElement, query: Query, timeout: TimeInterval) -> Bool {
-        let predictate = query.predicate
-        let expectation = expectation(for: predictate, evaluatedWith: element)
-        let waiter = XCTWaiter()
-        let result = waiter.wait(for: [expectation], timeout: timeout)
-        switch result {
-        case .completed:
-            return true
-        default:
-            return false
-        }
-    }
-    
-    func elementMatches(_ element: XCUIElement, query: Query) -> Bool {
-        let predictate = query.predicate
-        return predictate.evaluate(with: element)
-    }
 }
 
 extension XCUIApplication {
     static let safari = XCUIApplication(bundleIdentifier: "com.apple.mobilesafari")
+
+    var storeController: XCUIElement {
+        descendants(matching: .other)
+            .matching(identifier: "mac_store")
+            .firstMatch
+    }
 }
 
 @discardableResult

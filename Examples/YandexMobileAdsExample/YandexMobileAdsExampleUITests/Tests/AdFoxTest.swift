@@ -8,40 +8,35 @@
 import XCTest
 
 final class AdFoxTest: BaseTest {
-    let adFoxPage = AdFoxPage()
-    let adPage = AdFoxAdPage()
-    
-    func testBanner() throws {
-        launchApp()
-        rootPage.openAdFox()
-        adFoxPage.openBanner()
-        adPage.tapLoadAd()
-        guard assertAdLoaded(stateLabel: adPage.stateLabel) else { return }
-        adPage.assertAdDisplayed()
-        adPage.tapAd()
-        assertSafariOpened()
+    private let adsPage = UnifiedAdsPage()
+
+    func testAdFoxBannerSticky() {
+        launchApp(extraArgs: [LaunchArgument.gdprSuppressOnLaunch])
+        adsPage.selectFormat(TestConstants.Format.bannerSticky)
+        adsPage.selectSource(TestConstants.Source.adFox)
+        adsPage.tapLoad()
+        guard adsPage.assertLoadedOrNoFill(timeout: 10) else { return }
+        adsPage.waitInlineAdVisible(timeout: 10)
+        adsPage.tapInlineAdAndOpenSafari()
     }
-    
-    func testNative() throws {
-        launchApp()
-        rootPage.openAdFox()
-        adFoxPage.openNative()
-        adPage.tapLoadAd()
-        guard assertAdLoaded(stateLabel: adPage.stateLabel) else { return }
-        adPage.assertAdDisplayed()
-        adPage.tapAd()
-        assertSafariOpened()
+
+    func testAdFoxNativeTemplate() {
+        launchApp(extraArgs: [LaunchArgument.gdprSuppressOnLaunch])
+        adsPage.selectFormat(TestConstants.Format.nativeTemplate)
+        adsPage.selectSource(TestConstants.Source.adFox)
+        adsPage.tapLoad()
+        guard adsPage.assertLoadedOrNoFill(timeout: 10) else { return }
+        adsPage.waitInlineAdVisible(timeout: 10)
+        adsPage.tapInlineAdAndOpenSafari()
     }
-    
-    func testInterstitial() throws {
-        launchApp()
-        rootPage.openAdFox()
-        adFoxPage.openInterstitial()
-        adPage.tapLoadAd()
-        guard assertAdLoaded(stateLabel: adPage.stateLabel) else { return }
-        adPage.tapPresentAd()
-        adPage.assertAdDisplayed()
-        adPage.tapAd()
-        assertSafariOpened()
+
+    func testAdFoxInterstitial() {
+        launchApp(extraArgs: [LaunchArgument.gdprSuppressOnLaunch])
+        adsPage.selectFormat(TestConstants.Format.interstitial)
+        adsPage.selectSource(TestConstants.Source.adFox)
+        adsPage.tapLoad()
+        guard adsPage.assertLoadedOrNoFill(timeout: 15) else { return }
+        adsPage.waitPresentEnabled(timeout: 10)
+        adsPage.tapPresent()
     }
 }

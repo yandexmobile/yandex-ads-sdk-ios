@@ -1,51 +1,34 @@
 import XCTest
 
 final class YandexInstreamTest: BaseTest {
-    let page = YandexInstreamPage()
-    let list = YandexInstreamListPage()
-    
-    func testSingleInstream() throws {
-        launchApp()
-        rootPage.openYandex()
-        yandexAdsPage.openInstream()
-        list.openSingleInstream()
-        
-        page.tapLoadAd()
-        guard assertAdLoaded(stateLabel: page.stateLabel) else { return }
+    private let adsPage = UnifiedAdsPage()
+    private let instream = UnifiedInstreamPage()
 
-        page.tapPrepareAd()
-        page.tapPresentAd()
-
-        let numberOfAds = 6
-
-        for index in 0..<numberOfAds {
-            step("Ad \(index)") {
-                XCTAssertTrue(elementMatches(page.goButton, query: Query.exists, timeout: 60), "Go exists")
-                page.tapGo()
-                assertSafariOpened()
-                returnToApp()
-                XCTAssertTrue(elementMatches(page.skipButton, query: Query.exists, timeout: 30), "Skip exists")
-                page.tapSkip()
-                XCTAssertTrue(elementMatches(page.skipButton, query: Query.notExists), "Skip not exists")
-            }
-        }
+    func testInstreamSingle() {
+        launchApp(extraArgs: [LaunchArgument.gdprSuppressOnLaunch])
+        adsPage.selectFormat(TestConstants.Format.instreamSingle)
+        adsPage.selectSource(TestConstants.Source.yandex)
+        adsPage.tapLoad()
+        guard adsPage.assertLoadedOrNoFill(timeout: 10) else { return }
+        instream.waitForPrepare()
+        instream.tapPrepare()
+        instream.waitForPresent()
+        instream.tapPresent()
     }
-    
-    func testInroll() throws {
-        launchApp()
-        rootPage.openYandex()
-        yandexAdsPage.openInstream()
-        list.openInroll()
-        
-        page.tapLoadAd()
-        guard assertAdLoaded(stateLabel: page.stateLabel) else { return }
-        
-        page.tapStartPlayback()
-        page.tapPlayInroll()
-        XCTAssertTrue(elementMatches(page.goButton, query: .exists, timeout: 5), "Video appeared")
-        page.tapPauseInroll()
-        XCTAssertFalse(elementMatches(page.skipButton, query: .exists, timeout: 10), "Video paused")
-        page.tapResumeInroll()
-        XCTAssertTrue(elementMatches(page.skipButton, query: .notExists, timeout: 10), "Video resumed")
+
+    func testInrolls() {
+        launchApp(extraArgs: [LaunchArgument.gdprSuppressOnLaunch])
+        adsPage.selectFormat(TestConstants.Format.instreamInroll)
+        adsPage.selectSource(TestConstants.Source.yandex)
+        adsPage.tapLoad()
+        guard adsPage.assertLoadedOrNoFill(timeout: 10) else { return }
+        instream.waitForStartPlayback()
+        instream.tapStartPlayback()
+        instream.waitForPlayInroll()
+        instream.tapPlayInroll()
+        instream.waitForPauseInroll()
+        instream.tapPauseInroll()
+        instream.waitForResumeInroll()
+        instream.tapResumeInroll()
     }
 }

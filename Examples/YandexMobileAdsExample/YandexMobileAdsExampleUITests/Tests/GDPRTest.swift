@@ -8,42 +8,32 @@
 import XCTest
 
 final class GDPRTest: BaseTest {
-    let examplePage = GDPRExamplePage()
-    let settingsPage = GDPRSettingsPage()
-    let dialogPage = GDPRDialogPage()
-    
-    func testDecline() {
-        launchApp()
-        rootPage.openGDPR()
-        examplePage.tapSettings()
-        settingsPage.tapReset()
-        goBack()
-        examplePage.tapLoadAd()
-        dialogPage.tapAccept()
-        examplePage.tapSettings()
-        XCTAssertTrue(settingsPage.consentSwitch.switchValue, "Switch should be on")
+    private let adsPage = UnifiedAdsPage()
+    private let dialog = GDPRDialogPage()
+
+    override func setUp() {
+        super.setUp()
+        continueAfterFailure = false
     }
-    
+
     func testAccept() {
-        launchApp()
-        rootPage.openGDPR()
-        examplePage.tapSettings()
-        settingsPage.tapReset()
-        goBack()
-        examplePage.tapLoadAd()
-        dialogPage.tapDecline()
-        examplePage.tapSettings()
-        XCTAssertFalse(settingsPage.consentSwitch.switchValue, "Switch should be off")
+        launchApp(extraArgs: [LaunchArgument.gdprResetOnLaunch])
+        dialog.waitAppeared()
+        dialog.tapAccept()
+        adsPage.assertLogContains("GDPR: consent = true", timeout: 5)
     }
-    
-    func testAbout() {
-        launchApp()
-        rootPage.openGDPR()
-        examplePage.tapSettings()
-        settingsPage.tapReset()
-        goBack()
-        examplePage.tapLoadAd()
-        dialogPage.tapAbout()
+
+    func testDecline() {
+        launchApp(extraArgs: [LaunchArgument.gdprResetOnLaunch])
+        dialog.waitAppeared()
+        dialog.tapDecline()
+        adsPage.assertLogContains("GDPR: consent = false", timeout: 5)
+    }
+
+    func testAboutOpensSafari() {
+        launchApp(extraArgs: [LaunchArgument.gdprResetOnLaunch])
+        dialog.waitAppeared()
+        dialog.tapAbout()
         assertSafariOpened()
     }
 }

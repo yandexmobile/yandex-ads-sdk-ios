@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 7.18.0
+
+### Added
+
+- Added dependency `AppMetricaIDSync` with version `5.14.0`
+- Added SliderAd API
+
+### Deprecated
+
+- Deprecated `bindAd(toSliderView:)` in `NativeAd`. Use `SliderAd.bind(with:)` instead
+
 ## Version 7.17.1
 
 ### Added

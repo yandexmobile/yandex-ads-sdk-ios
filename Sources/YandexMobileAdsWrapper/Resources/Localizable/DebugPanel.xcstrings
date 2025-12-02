@@ -426,6 +426,23 @@
         }
       }
     },
+    "Mediation Type" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Type"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тип"
+          }
+        }
+      }
+    },
     "Missing Integration" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -626,23 +643,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "TCF Consent"
-          }
-        }
-      }
-    },
-    "Type" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Type"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Тип"
           }
         }
       }
