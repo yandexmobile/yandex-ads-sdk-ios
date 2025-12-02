@@ -1,42 +1,50 @@
 import XCTest
 
 final class YandexNativeTest: BaseTest {
-    let nativePage = YandexNativeAdPage()
-    let nativeListPage = YandexNativePage()
-    
-    func testNativeCustom() throws {
-        launchApp()
-        rootPage.openYandex()
-        yandexAdsPage.openNative()
-        nativeListPage.openCustom()
-        nativePage.tapLoadAd()
-        guard assertAdLoaded(stateLabel: nativePage.stateLabel) else { return }
-        nativePage.assertAdDisplayed()
-        nativePage.tapAd()
+    let adsPage = UnifiedAdsPage()
+
+    func testYandexNativeTemplate() {
+        runNativeInline(formatTitle: TestConstants.Format.nativeTemplate)
+    }
+
+    func testYandexNativeCustom() {
+        runNativeInline(formatTitle: TestConstants.Format.nativeCustom)
+    }
+
+    func testYandexNativeBulk() {
+        runNativeBulk()
+    }
+
+    private func runNativeInline(formatTitle: String) {
+        launchApp(extraArgs: [LaunchArgument.gdprSuppressOnLaunch])
+        adsPage.selectFormat(formatTitle)
+        adsPage.selectSource(TestConstants.Source.yandex)
+        adsPage.tapLoad()
+        guard adsPage.assertLoadedOrNoFill(timeout: 15) else { return }
+        adsPage.waitInlineAdVisible(timeout: 10)
+        step("Tap inline native ad") {
+            let inline = XCUIApplication().otherElements[CommonAccessibility.bannerView]
+            XCTAssertTrue(inline.waitForExistence(timeout: 3), "Inline native view not found")
+            inline.tap()
+        }
         assertSafariOpened()
     }
-    
-    func testNativeTemplate() throws {
-        launchApp()
-        rootPage.openYandex()
-        yandexAdsPage.openNative()
-        nativeListPage.openTemplate()
-        nativePage.tapLoadAd()
-        guard assertAdLoaded(stateLabel: nativePage.stateLabel) else { return }
-        nativePage.assertAdDisplayed()
-        nativePage.tapAd()
-        assertSafariOpened()
-    }
-    
-    func testNativeBulkTemplate() throws {
-        launchApp()
-        rootPage.openYandex()
-        yandexAdsPage.openNative()
-        nativeListPage.openBulk()
-        nativePage.tapLoadAd()
-        guard assertAdLoaded(stateLabel: nativePage.stateLabel) else { return }
-        nativePage.assertAdsDisplayed()
-        nativePage.tapBulkAd()
+
+    private func runNativeBulk() {
+        launchApp(extraArgs: [LaunchArgument.gdprSuppressOnLaunch])
+        adsPage.selectFormat(TestConstants.Format.nativeBulk)
+        adsPage.selectSource(TestConstants.Source.yandex)
+        adsPage.tapLoad()
+        guard adsPage.assertLoadedOrNoFill(timeout: 15) else { return }
+        adsPage.waitInlineAdVisible(timeout: 10)
+        step("Tap first bulk native ad") {
+            let app = XCUIApplication()
+            let table = app.tables[CommonAccessibility.bulkTable]
+            XCTAssertTrue(table.waitForExistence(timeout: 5), "Bulk table not found")
+            let firstCell = table.cells.firstMatch
+            XCTAssertTrue(firstCell.waitForExistence(timeout: 3), "No bulk cells")
+            firstCell.tap()
+        }
         assertSafariOpened()
     }
 }

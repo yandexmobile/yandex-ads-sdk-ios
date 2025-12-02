@@ -8,35 +8,19 @@
 import XCTest
 
 struct GDPRDialogPage: PageObject {
-    var acceptButton: XCUIElement { element(id: GDPRAccessibility.acceptButton, type: .button) }
-    var declineButton: XCUIElement { element(id: GDPRAccessibility.declineButton, type: .button) }
-    var aboutButton: XCUIElement { element(id: GDPRAccessibility.aboutButton, type: .button) }
-    
-    func tapAbout() {
-        step("Tap about") {
-            aboutButton.tap()
-        }
-    }
-    
-    func tapAccept() {
-        step("Tap accept") {
-            acceptButton.tap()
-        }
-    }
-    
-    func tapDecline() {
-        step("Tap decline") {
-            declineButton.tap()
-        }
-    }
-}
+    private let app = XCUIApplication()
+    var acceptButton: XCUIElement { app.buttons[GDPRAccessibility.acceptButton] }
+    var declineButton: XCUIElement { app.buttons[GDPRAccessibility.declineButton] }
+    var aboutButton: XCUIElement { app.buttons[GDPRAccessibility.aboutButton] }
 
-extension XCUIElement {
-    var switchValue: Bool {
-        stringValue == "1"
+    func waitAppeared(timeout: TimeInterval = 5) {
+        XCTAssertTrue(acceptButton.waitForExistence(timeout: timeout) ||
+                      declineButton.waitForExistence(timeout: timeout) ||
+                      aboutButton.waitForExistence(timeout: timeout),
+                      "GDPR dialog didn't appear")
     }
     
-    private var stringValue: String? {
-        value as? String
-    }
+    func tapAccept() { acceptButton.tap() }
+    func tapDecline() { declineButton.tap() }
+    func tapAbout() { aboutButton.tap() }
 }

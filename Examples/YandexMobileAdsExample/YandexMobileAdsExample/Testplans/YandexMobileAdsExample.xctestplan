@@ -25,7 +25,10 @@
         "MobileMediationBannerTest\/testIronSourceBanner()",
         "MobileMediationBannerTest\/testMintegralBanner()",
         "MobileMediationInterstitialTest\/testMintegralInterstitial()",
-        "MobileMediationRewardedTest\/testMintegralRewarded()"
+        "MobileMediationRewardedTest\/testMintegralRewarded()",
+        "YandexInstreamTest",
+        "YandexInstreamTest\/testInroll()",
+        "YandexInstreamTest\/testSingleInstream()"
       ],
       "target" : {
         "containerPath" : "container:YandexMobileAdsExample.xcodeproj",

@@ -11,4 +11,7 @@ enum CommonAccessibility {
     static let stateLabel = "state_label"
     static let bannerView = "banner_view"
     static let bannerCellView = "banner_cell_view_"
+    static let bulkTable = "bulk_table"
+    static let logsTextView = "logs_text_view"
+    static let gearButton = "gdpr_settings_button"
 }

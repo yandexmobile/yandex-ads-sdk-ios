@@ -5,6 +5,7 @@
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
  */
 
+import UIKit
 import YandexMobileAds
 
 @UIApplicationMain
@@ -16,11 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         MobileAds.initializeSDK()
+        
+        let rootVC = UnifiedAdViewController()
+        let navController = UINavigationController(rootViewController: rootVC)
+        navController.navigationBar.prefersLargeTitles = false
+        rootVC.navigationItem.largeTitleDisplayMode = .never
+
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.rootViewController = navController
+        window.makeKeyAndVisible()
+        self.window = window
+
         return true
     }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        AppOpenAdController.shared.showAdIfAvailable(from: window)
-    }
 }
-

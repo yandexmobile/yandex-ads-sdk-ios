@@ -6,15 +6,14 @@
  */
 
 enum StateUtils {
-    static func loaded() -> String {
-        "Loaded"
-    }
-    
-    static func prepared() -> String {
-        "Prepared"
-    }
-    
+    static let loaded = "Loaded"
+    static let prepared = "Prepared"
+    static let shown = "Shown"
+    static let dismissed = "Dismissed"
+    static let clicked = "Clicked"
+    static let impression = "Impression"
     static let loadErrorPrefix = "Load error"
+    static let showErrorPrefix = "Show error"
     
     static func loadError(_ error: String) -> String {
         "\(loadErrorPrefix): \(error)"
@@ -22,5 +21,13 @@ enum StateUtils {
     
     static func loadError(_ error: Error) -> String {
         loadError("\(error)")
+    }
+    
+    static func showError(_ error: String) -> String {
+        "\(showErrorPrefix): \(error)"
+    }
+    
+    static func showError(_ error: Error) -> String {
+        showError("\(error)")
     }
 }
