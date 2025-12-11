@@ -2,12 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 7.18.1
+
+### Added
+
+- Added improvements and fixes
+
 ## Version 7.18.0
 
 ### Added
 
-- Added dependency `AppMetricaIDSync` with version `5.14.0`
 - Added SliderAd API
+- Added dependency `AppMetricaIDSync` with version `5.14.0`
 
 ### Deprecated
 
