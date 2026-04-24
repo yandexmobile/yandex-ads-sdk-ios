@@ -3,5 +3,5 @@ platform :ios, :deployment_target => '13.0'
 
 target 'ThirdPartyMediationAdapterTemplate' do
   # Pods that are necessary for successful integration with Yandex
-  pod 'YandexMobileAds', '~> 8.0.0-beta.2'
+  pod 'YandexMobileAds'
 end

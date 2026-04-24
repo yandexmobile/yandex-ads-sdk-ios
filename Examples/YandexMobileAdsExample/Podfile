@@ -2,8 +2,8 @@ source 'https://cdn.cocoapods.org/'
 platform :ios, :deployment_target => '13.0'
 
 target 'YandexMobileAdsExample' do
-  pod 'YandexMobileAdsAdMobAdapters', '~> 8.0.0.0-beta.2'
-  pod 'YandexMobileAdsMediation', '~> 8.0.0-beta.2'
+  pod 'YandexMobileAdsAdMobAdapters'
+  pod 'YandexMobileAdsMediation'
   pod 'YandexMobileAdsInstream'
   pod 'YandexMobileAdsConsentManagement'
 end
