@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 ## Version 8.0.0
 
 [Full migration guideline](https://ads.yandex.com/helpcenter/en/dev/ios/release/8-0-0-migration)
-[AI migration guideline](https://ads.yandex.com/helpcenter/ru/dev/ios/release/8-0-0-migration#ai)
+[AI migration guideline](https://ads.yandex.com/helpcenter/en/dev/ios/release/8-0-0-migration#ai)
 
 ### Added
 
