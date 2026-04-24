@@ -1,17 +1,18 @@
+import UIKit
 import YandexMobileAds
 
 final class AdFoxSliderAdapter: NSObject, UnifiedAdProtocol {
     var inlineView: UIView? { sliderView }
     var onEvent: ((UnifiedAdEvent) -> Void)?
     
-    private let adUnitId: String
+    private let adUnitID: String
     var adFoxParameters: [String: String] = [
         "adf_ownerid": "270901",
         "adf_p1": "ddfla",
         "adf_p2": "fksh"
     ]
-    private let adLoader = NativeAdLoader()
-    private var currentAd: NativeAd?
+    private let adLoader = SliderAdLoader()
+    private var currentAd: SliderAd?
     
     private let sliderView: NativeSliderView = {
         let view = NativeSliderView(frame: .zero)
@@ -20,26 +21,44 @@ final class AdFoxSliderAdapter: NSObject, UnifiedAdProtocol {
         return view
     }()
     
-    init(adUnitId: String) {
-        self.adUnitId = adUnitId
+    init(adUnitID: String) {
+        self.adUnitID = adUnitID
         super.init()
-        adLoader.delegate = self
     }
     
     deinit {
-        adLoader.delegate = nil
-        currentAd?.delegate = nil
+        Task { @MainActor [currentAd] in
+            currentAd?.delegate = nil
+        }
     }
     
     func load() {
         currentAd?.delegate = nil
         currentAd = nil
         sliderView.isHidden = true
-        let config = MutableNativeAdRequestConfiguration(adUnitID: adUnitId)
-        config.parameters = adFoxParameters
-        
-        debugPrint("AdFox Slider: start loading (unit=\(adUnitId), params=\(adFoxParameters))")
-        adLoader.loadAd(with: config)
+        let request = AdRequest(adUnitID: adUnitID, parameters: adFoxParameters)
+
+        debugPrint("AdFox Slider: start loading (unit=\(adUnitID), params=\(adFoxParameters))")
+        adLoader.loadAd(with: request) { [weak self] in
+            guard let self else { return }
+            switch $0 {
+            case .success(let ad):
+                currentAd = ad
+                ad.delegate = self
+                do {
+                    try sliderView.bind(with: ad)
+                    sliderView.isHidden = false
+                    debugPrint("AdFox Slider: loaded successfully (unit=\(adUnitID))")
+                    onEvent?(.loaded)
+                } catch {
+                    debugPrint("AdFox Slider: bind failed (unit=\(adUnitID)) error=\(error)")
+                    onEvent?(.failedToLoad(error))
+                }
+            case .failure(let error):
+                debugPrint("AdFox Slider: failedToLoad (unit=\(adUnitID)) error=\(error)")
+                onEvent?(.failedToLoad(error))
+            }
+        }
     }
     
     func tearDown() {
@@ -47,58 +66,20 @@ final class AdFoxSliderAdapter: NSObject, UnifiedAdProtocol {
         currentAd = nil
         sliderView.isHidden = true
         sliderView.removeFromSuperview()
-        debugPrint("AdFox Slider: tearDown (unit=\(adUnitId))")
+        debugPrint("AdFox Slider: tearDown (unit=\(adUnitID))")
     }
 }
 
-// MARK: - NativeAdLoaderDelegate
+// MARK: - SliderAdDelegate
 
-extension AdFoxSliderAdapter: NativeAdLoaderDelegate {
-    func nativeAdLoader(_ loader: NativeAdLoader, didLoad ad: NativeAd) {
-        currentAd = ad
-        ad.delegate = self
-        do {
-            try sliderView.bind(with: ad)
-            sliderView.isHidden = false
-            debugPrint("AdFox Slider: loaded successfully (unit=\(adUnitId))")
-            onEvent?(.loaded)
-        } catch {
-            debugPrint("AdFox Slider: bind failed (unit=\(adUnitId)) error=\(error)")
-            onEvent?(.failedToLoad(error))
-        }
-    }
-    
-    func nativeAdLoader(_ loader: NativeAdLoader, didFailLoadingWithError error: Error) {
-        debugPrint("AdFox Slider: failedToLoad (unit=\(adUnitId)) error=\(error)")
-        onEvent?(.failedToLoad(error))
-    }
-}
-
-// MARK: - NativeAdDelegate
-
-extension AdFoxSliderAdapter: NativeAdDelegate {
-    func nativeAdWillLeaveApplication(_ ad: NativeAd) {
-        debugPrint("AdFox Slider: clicked (unit=\(adUnitId))")
+extension AdFoxSliderAdapter: SliderAdDelegate {
+    func sliderAdDidClick(_ ad: SliderAd) {
+        debugPrint("AdFox Slider: clicked (unit=\(adUnitID))")
         onEvent?(.clicked)
     }
-    
-    func nativeAd(_ ad: NativeAd, willPresentScreen viewController: UIViewController?) {
-        debugPrint("AdFox Slider: will present screen (unit=\(adUnitId))")
-        onEvent?(.shown)
-    }
-    
-    func nativeAd(_ ad: NativeAd, didDismissScreen viewController: UIViewController?) {
-        debugPrint("AdFox Slider: did dismiss screen (unit=\(adUnitId))")
-        onEvent?(.dismissed)
-    }
-    
-    func nativeAd(_ ad: NativeAd, didTrackImpressionWith impressionData: ImpressionData?) {
-        debugPrint("AdFox Slider: impression tracked (unit=\(adUnitId))")
+
+    func sliderAd(_ ad: SliderAd, didTrackImpression impressionData: ImpressionData?) {
+        debugPrint("AdFox Slider: impression tracked (unit=\(adUnitID))")
         onEvent?(.impression)
-    }
-    
-    func close(_ ad: NativeAd) {
-        debugPrint("AdFox Slider: closed (unit=\(adUnitId))")
-        sliderView.isHidden = true
     }
 }

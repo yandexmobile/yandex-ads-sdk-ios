@@ -1,4 +1,3 @@
-#if COCOAPODS
 import GoogleMobileAds
 
 enum AdMobStarter {
@@ -20,4 +19,3 @@ enum AdMobStarter {
         }
     }
 }
-#endif

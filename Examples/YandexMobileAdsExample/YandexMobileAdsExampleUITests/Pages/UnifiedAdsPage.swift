@@ -1,8 +1,6 @@
 import XCTest
 
 struct UnifiedAdsPage: PageObject {
-    private let app = XCUIApplication()
-    
     var loadButton: XCUIElement {
         app.buttons[CommonAccessibility.loadButton]
     }
@@ -96,17 +94,13 @@ struct UnifiedAdsPage: PageObject {
         step("Tap inline ad and expect Safari") {
             XCTAssertTrue(inlineBanner.waitForExistence(timeout: 10), "Inline ad not visible")
             inlineBanner.tap()
-            XCTAssertTrue(XCUIApplication.safari.wait(for: .runningForeground, timeout: 10), "Safari did not open")
+            XCTAssertTrue(XCUIApplication.safari.wait(for: .runningForeground, timeout: 30), "Safari did not open")
         }
     }
-    
-    func expandLogsIfNeeded() {
-        step("Expand logs if needed") {
-            if !logsText.exists {
-                XCTAssertTrue(logsToggle.waitForExistence(timeout: 5), "Logs toggle not found")
-                logsToggle.tap()
-                XCTAssertTrue(logsText.waitForExistence(timeout: 5), "Logs text view still not found after expand")
-            }
+
+    func expandLogs() {
+        step("Expand logs") {
+            logsToggle.tap()
         }
     }
     
@@ -114,7 +108,13 @@ struct UnifiedAdsPage: PageObject {
     
     func waitPresentEnabled(timeout: TimeInterval = 10) {
         step("Wait Present enabled") {
-            XCTAssertTrue(presentButton.waitUntilEnabled(timeout: timeout), "Present button didn't become enabled")
+            XCTAssertTrue(
+                presentButton.matches(
+                    query: .equals(.enabled, "true", false),
+                    timeout: timeout
+                ),
+                "Present button didn't become enabled"
+            )
         }
     }
     
@@ -149,43 +149,45 @@ struct UnifiedAdsPage: PageObject {
     
     func assertLogContains(_ token: String, timeout: TimeInterval = 5) {
         step("Assert logs contain '\(token)'") {
-            expandLogsIfNeeded()
-            let predicate = NSPredicate(format: "value CONTAINS %@", token)
-            let exp = XCTNSPredicateExpectation(predicate: predicate, object: logsText)
-            let result = XCTWaiter.wait(for: [exp], timeout: timeout)
-            XCTAssertEqual(result, .completed, "Log doesn't contain '\(token)'")
+            expandLogs()
+            let result = logsText.matches(query: Query.contains(.value, token), timeout: timeout)
+            XCTAssertTrue(result, "Log doesn't contain '\(token)'")
         }
     }
-    
-    @discardableResult
+
     func assertLoadedOrNoFill(timeout: TimeInterval = 10) -> Bool {
-        step("Assert ad is either Loaded or No-Fill") {
-            expandLogsIfNeeded()
+         step("Check ad loaded") {
+             expandLogs()
+             let noAdsError = "Ad request completed successfully, but there are no ads available"
+             let noAdsQueury: Query = .begins(.value, StateUtils.loadErrorPrefix) && .contains(.value, noAdsError)
+             let query: Query = .contains(.value, StateUtils.loaded) || noAdsQueury
+             if logsText.matches(query: query, timeout: timeout) {
+                 return !logsText.matches(query: noAdsQueury)
+             } else {
+                 XCTFail("\(logsText.label) does not match \(query.string)")
+                 return false
+             }
+         }
+     }
+}
 
-            let tokenLoaded = StateUtils.loaded
-            let tokenNoFill = "Ad request completed successfully, but there are no ads available"
-
-            let deadline = Date().addingTimeInterval(timeout)
-            var last = ""
-
-            while Date() < deadline {
-                last = (logsText.value as? String) ?? logsText.label
-
-                if last.contains(tokenNoFill) {
-                    XCTSkip("No fill — пропускаем дальнейшие шаги показа.")
-                    return false
-                }
-
-                if last.contains(tokenLoaded) {
-                    return true
-                }
-
-                RunLoop.current.run(until: Date().addingTimeInterval(0.2))
-            }
-
-            XCTFail("Ни Loaded, ни No-Fill за \(timeout)s. Последний лог: \(last)")
+extension XCUIElement {
+    func matches(query: Query, timeout: TimeInterval) -> Bool {
+        let predictate = query.predicate
+        let expectation = XCTNSPredicateExpectation(predicate: predictate, object: self)
+        let waiter = XCTWaiter()
+        let result = waiter.wait(for: [expectation], timeout: timeout)
+        switch result {
+        case .completed:
+            return true
+        default:
             return false
         }
+    }
+
+    func matches(query: Query) -> Bool {
+        let predictate = query.predicate
+        return predictate.evaluate(with: self)
     }
 }
 
@@ -193,89 +195,26 @@ struct UnifiedAdsPage: PageObject {
 
 private extension UnifiedAdsPage {
     func openMenu(on button: XCUIElement) {
-        XCTAssertTrue(button.waitForExistence(timeout: 5), "Menu button not found")
         button.tap()
-        if !anyMenuItemExistsWithin(1.0) {
-            button.coordinate(withNormalizedOffset: .init(dx: 0.5, dy: 0.5)).tap()
-        }
-        XCTAssertTrue(anyMenuItemExistsWithin(3.0), "Menu didn't appear")
     }
     
     func tapMenuItem(titled title: String) {
-        if tapFirstHittable(app.buttons[title]) { return }
-        if tapFirstHittable(app.cells[title]) { return }
-        if tapAncestorOfStaticText(with: title) { return }
-        if tapFirstHittable(app.menuItems[title]) { return }
-        XCTFail("Menu item '\(title)' not found or not tappable")
-    }
-    
-    func tapFirstHittable(_ element: XCUIElement) -> Bool {
-        if element.waitForExistence(timeout: 2), element.isHittable {
-            element.tap()
-            return true
+        let element = app.buttons[title]
+        if !element.isHittable {
+            app.collectionViews.firstMatch.swipeUp()
         }
-        return false
-    }
-    
-    func tapAncestorOfStaticText(with title: String) -> Bool {
-        let label = app.staticTexts[title]
-        guard label.waitForExistence(timeout: 2) else { return false }
-        if let tappableAncestor = label.firstTappableAncestor(in: [ .button, .cell ]) {
-            tappableAncestor.tap()
-            return true
-        }
-        if label.isHittable {
-            label.tap()
-            return true
-        }
-        return false
-    }
-    
-    func anyMenuItemExistsWithin(_ timeout: TimeInterval) -> Bool {
-        let deadline = Date().addingTimeInterval(timeout)
-        while Date() < deadline {
-            if app.buttons.element(boundBy: 0).exists && app.buttons.element(boundBy: 0).isHittable { return true }
-            if app.cells.element(boundBy: 0).exists && app.cells.element(boundBy: 0).isHittable { return true }
-            if app.menuItems.element(boundBy: 0).exists && app.menuItems.element(boundBy: 0).isHittable { return true }
-            RunLoop.current.run(until: Date().addingTimeInterval(0.1))
-        }
-        return false
-    }
-}
-
-private extension XCUIElement {
-    func waitUntilEnabled(timeout: TimeInterval) -> Bool {
-        let predicate = NSPredicate(format: "isEnabled == true")
-        let exp = XCTNSPredicateExpectation(predicate: predicate, object: self)
-        return XCTWaiter.wait(for: [exp], timeout: timeout) == .completed
-    }
-    
-    func firstTappableAncestor(in types: [XCUIElement.ElementType]) -> XCUIElement? {
-        var el: XCUIElement? = self
-        while let current = el {
-            if types.contains(current.elementType), current.isHittable { return current }
-            el = current.parent
-        }
-        return nil
-    }
-    
-    var parent: XCUIElement? {
-        guard exists else { return nil }
-        let frame = self.frame
-        let candidates = XCUIApplication().descendants(matching: .any)
-            .matching(NSPredicate(format: "frame CONTAINS %@", NSValue(cgRect: frame)))
-        return candidates.element(boundBy: 1).exists ? candidates.element(boundBy: 1) : nil
+        element.tap()
     }
 }
 
 extension UnifiedAdsPage {
-    var gearButton: XCUIElement { XCUIApplication().buttons["gdpr_settings_button"] }
-    
+    var gearButton: XCUIElement { app.buttons["gdpr_settings_button"] }
+
     func resetGDPRViaActionSheet() {
         step("Open gear and tap 'Reset GDPR'") {
             XCTAssertTrue(gearButton.waitForExistence(timeout: 5), "Gear button not found")
             gearButton.tap()
-            let reset = XCUIApplication().buttons["Reset GDPR"]
+            let reset = app.buttons["Reset GDPR"]
             XCTAssertTrue(reset.waitForExistence(timeout: 3), "Reset GDPR action not found")
             reset.tap()
         }

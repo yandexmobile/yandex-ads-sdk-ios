@@ -33,6 +33,18 @@ final class RewardedTest: BaseTest {
         runRewardedTest(source: TestConstants.Source.myTarget)
     }
 
+    func testPangleRewarded() {
+        runRewardedTest(source: TestConstants.Source.pangle)
+    }
+
+    func testGoogleRewarded() {
+        runRewardedTest(source: TestConstants.Source.google)
+    }
+
+    func testVungleRewarded()  {
+        runRewardedTest(source: TestConstants.Source.vungle)
+    }
+
     func testStartAppRewarded() {
         runRewardedTest(source: TestConstants.Source.startApp)
     }
@@ -52,7 +64,6 @@ final class RewardedTest: BaseTest {
         adsPage.waitPresentEnabled(timeout: 10)
         adsPage.tapPresent()
         step("Tap rewarded ad") {
-            let app = XCUIApplication()
             XCTAssertTrue(app.waitForExistence(timeout: 5), "App not ready for fullscreen ad tap")
             sleep(2)
             let center = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.55))

@@ -1,5 +1,5 @@
 /*
- * Version for iOS © 2015–2025 YANDEX
+ * Version for iOS © 2015–2026 YANDEX
  *
  * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
@@ -9,7 +9,7 @@
 import UIKit
 import YandexMobileAds
 
-class NativeSliderView: YMANativeAdView {
+class NativeSliderView: YandexMobileAds.NativeAdView {
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -60,12 +60,11 @@ class NativeSliderView: YMANativeAdView {
         super.init(frame: .zero)
         setup()
     }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        setup()
-    }
 
+    required init?(coder: NSCoder) {
+        fatalError("Please use this class from code.")
+    }
+    
     private func setup() {
         setupLayout()
         setupActions()
@@ -124,19 +123,19 @@ class NativeSliderView: YMANativeAdView {
         ])
     }
 
-    func bind(with ad: NativeAd) throws {
-        stackView.arrangedSubviews.forEach { 
+    func bind(with ad: SliderAd) throws {
+        stackView.arrangedSubviews.forEach {
             stackView.removeArrangedSubview($0)
             $0.removeFromSuperview()
         }
 
         do {
-            try ad.bindAd(toSliderView: self)
+            try ad.bind(with: self)
         } catch {
             print(error)
         }
 
-        let ads = ad.ads.isEmpty ? [ad] : ad.ads
+        let ads = ad.ads
         setupPageControll(pages: ads.count)
         for (index, innerAd) in ads.enumerated() {
             let adView = viewForAd(innerAd)
@@ -213,7 +212,7 @@ class NativeSliderView: YMANativeAdView {
         scrollView.setContentOffset(CGPoint(x: offset, y: scrollView.contentOffset.y), animated: true)
     }
 
-    private func viewForAd(_ ad: NativeAd) -> YMANativeAdView {
+    private func viewForAd(_ ad: NativeAd) -> YandexMobileAds.NativeAdView {
         let view = NativeAdView.nib!
         view.frame = CGRect(x: 0.0, y: 0.0, width: sliderViewItemWidth, height: view.frame.size.height)
 
@@ -225,9 +224,9 @@ class NativeSliderView: YMANativeAdView {
 }
 
 extension NativeSliderView: NativeAdDelegate {
-    func nativeAd(_ ad: any NativeAd, didTrackImpressionWith impressionData: (any ImpressionData)?) {
-        
-    }
+    func nativeAdDidClick(_ ad: NativeAd) {}
+
+    func nativeAd(_ ad: NativeAd, didTrackImpression impressionData: ImpressionData?) {}
 }
 
 extension NativeSliderView: UIScrollViewDelegate {

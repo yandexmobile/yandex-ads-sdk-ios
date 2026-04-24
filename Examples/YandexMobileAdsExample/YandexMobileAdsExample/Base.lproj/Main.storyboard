@@ -9,23 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="EQ6-gl-CEV">
-            <objects>
-                <navigationController id="2tw-3f-JPV" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yDu-BY-Sv8">
-                        <rect key="frame" x="0.0" y="96" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VjR-Gk-YPq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1525" y="1"/>
-        </scene>
         <!--Ads-->
         <scene sceneID="6GE-be-1Dw">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bOw-Hb-dIv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController title="Ads" id="m3P-nH-N6u" customClass="UnifiedAdViewController" customModule="YandexMobileAdsExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0OA-w9-4PI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -34,6 +20,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bOw-Hb-dIv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="109" y="1"/>
         </scene>
@@ -61,7 +48,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Fy-Dt-MEd">
-                                <rect key="frame" x="19" y="840" width="62" height="36"/>
+                                <rect key="frame" x="19" y="772" width="62" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Accept"/>
                                 <connections>
@@ -69,7 +56,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RH3-zs-hFt">
-                                <rect key="frame" x="331" y="840" width="66" height="36"/>
+                                <rect key="frame" x="331" y="772" width="66" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Decline">
                                     <color key="titleColor" red="1" green="0.2156862745" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -78,28 +65,28 @@
                                     <action selector="decline:" destination="aeB-Yv-sTW" eventType="touchUpInside" id="hwU-m6-2qs"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is sample of GDPR dialog" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sQ-ND-RBb">
-                                <rect key="frame" x="93" y="35" width="228" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GDPR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sQ-ND-RBb">
+                                <rect key="frame" x="184" y="116" width="46" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="b4U-oE-Wom"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="1sQ-ND-RBb" firstAttribute="top" secondItem="oX6-qw-D2P" secondAttribute="top" constant="35" id="8pk-dK-Bpp"/>
+                            <constraint firstItem="1sQ-ND-RBb" firstAttribute="top" secondItem="b4U-oE-Wom" secondAttribute="top" constant="20" id="8pk-dK-Bpp"/>
                             <constraint firstItem="ok0-gw-zKR" firstAttribute="top" secondItem="vTi-mh-kgk" secondAttribute="bottom" constant="30" id="C4u-dS-tdR"/>
                             <constraint firstItem="ok0-gw-zKR" firstAttribute="centerX" secondItem="oX6-qw-D2P" secondAttribute="centerX" id="Fz6-e5-F9I"/>
-                            <constraint firstAttribute="bottom" secondItem="RH3-zs-hFt" secondAttribute="bottom" constant="20" id="G7z-X9-nn4"/>
+                            <constraint firstItem="b4U-oE-Wom" firstAttribute="bottom" secondItem="RH3-zs-hFt" secondAttribute="bottom" constant="20" id="G7z-X9-nn4"/>
                             <constraint firstItem="vTi-mh-kgk" firstAttribute="centerY" secondItem="oX6-qw-D2P" secondAttribute="centerY" id="Ogx-Iv-aRH"/>
-                            <constraint firstItem="7Fy-Dt-MEd" firstAttribute="leading" secondItem="oX6-qw-D2P" secondAttribute="leading" constant="19" id="S9c-Zj-wCe"/>
+                            <constraint firstItem="7Fy-Dt-MEd" firstAttribute="leading" secondItem="b4U-oE-Wom" secondAttribute="leading" constant="19" id="S9c-Zj-wCe"/>
                             <constraint firstItem="1sQ-ND-RBb" firstAttribute="centerX" secondItem="oX6-qw-D2P" secondAttribute="centerX" id="anc-cC-VCD"/>
                             <constraint firstItem="RH3-zs-hFt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7Fy-Dt-MEd" secondAttribute="trailing" constant="50" id="eEi-4q-HDp"/>
-                            <constraint firstAttribute="bottom" secondItem="7Fy-Dt-MEd" secondAttribute="bottom" constant="20" id="i1z-2Q-bLy"/>
+                            <constraint firstItem="b4U-oE-Wom" firstAttribute="bottom" secondItem="7Fy-Dt-MEd" secondAttribute="bottom" constant="20" id="i1z-2Q-bLy"/>
                             <constraint firstAttribute="trailing" secondItem="vTi-mh-kgk" secondAttribute="trailing" constant="30" id="og1-gG-jKJ"/>
                             <constraint firstItem="vTi-mh-kgk" firstAttribute="leading" secondItem="oX6-qw-D2P" secondAttribute="leading" constant="30" id="uF5-2Z-utl"/>
-                            <constraint firstAttribute="trailing" secondItem="RH3-zs-hFt" secondAttribute="trailing" constant="17" id="yvo-zL-lE2"/>
+                            <constraint firstItem="b4U-oE-Wom" firstAttribute="trailing" secondItem="RH3-zs-hFt" secondAttribute="trailing" constant="17" id="yvo-zL-lE2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yLy-lh-x1E"/>
@@ -112,56 +99,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A71-dK-faT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="970" y="1"/>
-        </scene>
-        <!--Settings View Controller-->
-        <scene sceneID="Tnm-oY-7lw">
-            <objects>
-                <viewController storyboardIdentifier="SettingsViewController" id="5TJ-O1-mHN" customClass="SettingsViewController" customModule="YandexMobileAdsExample" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="GlY-Mx-CrU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Consent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhn-NT-No4">
-                                <rect key="frame" x="68" y="196" width="105" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vnI-0q-zWh">
-                                <rect key="frame" x="265" y="191" width="51" height="31"/>
-                                <connections>
-                                    <action selector="userConsentDidChange:" destination="5TJ-O1-mHN" eventType="valueChanged" id="iIt-ss-Xwx"/>
-                                </connections>
-                            </switch>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jeK-lD-dWe">
-                                <rect key="frame" x="101" y="277" width="212" height="18"/>
-                                <inset key="contentEdgeInsets" minX="40" minY="0.0" maxX="40" maxY="0.0"/>
-                                <state key="normal" title="Reset user consent"/>
-                                <connections>
-                                    <action selector="resetUserConsent:" destination="5TJ-O1-mHN" eventType="touchUpInside" id="BDX-IA-FuK"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="7tv-vK-Wvx"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="vnI-0q-zWh" secondAttribute="trailing" constant="100" id="1KD-SO-l4B"/>
-                            <constraint firstItem="rhn-NT-No4" firstAttribute="leading" secondItem="GlY-Mx-CrU" secondAttribute="leading" constant="68" id="bAE-xL-Irp"/>
-                            <constraint firstItem="rhn-NT-No4" firstAttribute="top" secondItem="GlY-Mx-CrU" secondAttribute="topMargin" constant="100" id="c5q-59-8oO"/>
-                            <constraint firstItem="jeK-lD-dWe" firstAttribute="centerX" secondItem="GlY-Mx-CrU" secondAttribute="centerX" id="eYE-Ox-MnX"/>
-                            <constraint firstItem="jeK-lD-dWe" firstAttribute="top" secondItem="rhn-NT-No4" secondAttribute="bottom" constant="60" id="sb0-So-uYi"/>
-                            <constraint firstItem="vnI-0q-zWh" firstAttribute="centerY" secondItem="rhn-NT-No4" secondAttribute="centerY" id="x5f-C9-P4X"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="7FX-TX-2yZ"/>
-                    <connections>
-                        <outlet property="resetButton" destination="jeK-lD-dWe" id="nS3-ug-MsU"/>
-                        <outlet property="userConsentSwitch" destination="vnI-0q-zWh" id="EYf-71-cV4"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nrq-EX-CAP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="970" y="710"/>
         </scene>
     </scenes>
     <resources>

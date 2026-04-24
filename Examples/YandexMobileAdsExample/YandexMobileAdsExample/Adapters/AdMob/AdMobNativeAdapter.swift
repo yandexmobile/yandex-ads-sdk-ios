@@ -1,11 +1,10 @@
-#if COCOAPODS
 import GoogleMobileAds
 
 final class AdMobNativeAdapter: NSObject, UnifiedAdProtocol {
     var inlineView: UIView? { containerView }
     var onEvent: ((UnifiedAdEvent) -> Void)?
     
-    private let adUnitId: String
+    private let adUnitID: String
     private weak var hostViewController: UIViewController?
     private var adLoader: GoogleMobileAds.AdLoader?
     private var currentNativeAd: GoogleMobileAds.NativeAd?
@@ -18,8 +17,8 @@ final class AdMobNativeAdapter: NSObject, UnifiedAdProtocol {
         return view
     }()
     
-    init(adUnitId: String, hostViewController: UIViewController) {
-        self.adUnitId = adUnitId
+    init(adUnitID: String, hostViewController: UIViewController) {
+        self.adUnitID = adUnitID
         self.hostViewController = hostViewController
         super.init()
         setupAdView()
@@ -55,14 +54,14 @@ final class AdMobNativeAdapter: NSObject, UnifiedAdProtocol {
             self.tearDown(keepView: true)
             
             self.adLoader = GoogleMobileAds.AdLoader(
-                adUnitID: self.adUnitId,
+                adUnitID: self.adUnitID,
                 rootViewController: rootVC,
                 adTypes: [.native],
                 options: nil
             )
             self.adLoader?.delegate = self
             
-            print("AdMob Native: start loading (\(self.adUnitId))")
+            print("AdMob Native: start loading (\(self.adUnitID))")
             self.adLoader?.load(GoogleMobileAds.Request())
         }
     }
@@ -120,31 +119,30 @@ extension AdMobNativeAdapter: GoogleMobileAds.AdLoaderDelegate, GoogleMobileAds.
 
 extension AdMobNativeAdapter: GoogleMobileAds.NativeAdDelegate {
     func nativeAdDidRecordImpression(_ nativeAd: GoogleMobileAds.NativeAd) {
-        debugPrint("AdMob Native: impression recorded (unit=\(adUnitId))")
+        debugPrint("AdMob Native: impression recorded (unit=\(adUnitID))")
         onEvent?(.impression)
     }
     
     func nativeAdDidRecordClick(_ nativeAd: GoogleMobileAds.NativeAd) {
-        debugPrint("AdMob Native: clicked (unit=\(adUnitId))")
+        debugPrint("AdMob Native: clicked (unit=\(adUnitID))")
         onEvent?(.clicked)
     }
     
     func nativeAdWillPresentScreen(_ nativeAd: GoogleMobileAds.NativeAd) {
-        debugPrint("AdMob Native: will present screen (unit=\(adUnitId))")
+        debugPrint("AdMob Native: will present screen (unit=\(adUnitID))")
         onEvent?(.shown)
     }
     
     func nativeAdWillDismissScreen(_ nativeAd: GoogleMobileAds.NativeAd) {
-        debugPrint("AdMob Native: will dismiss screen (unit=\(adUnitId))")
+        debugPrint("AdMob Native: will dismiss screen (unit=\(adUnitID))")
     }
     
     func nativeAdDidDismissScreen(_ nativeAd: GoogleMobileAds.NativeAd) {
-        debugPrint("AdMob Native: did dismiss screen (unit=\(adUnitId))")
+        debugPrint("AdMob Native: did dismiss screen (unit=\(adUnitID))")
         onEvent?(.dismissed)
     }
     
     func nativeAdWillLeaveApplication(_ nativeAd: GoogleMobileAds.NativeAd) {
-        debugPrint("AdMob Native: will leave application (unit=\(adUnitId))")
+        debugPrint("AdMob Native: will leave application (unit=\(adUnitID))")
     }
 }
-#endif

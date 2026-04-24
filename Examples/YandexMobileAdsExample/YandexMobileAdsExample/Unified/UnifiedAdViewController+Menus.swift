@@ -1,3 +1,4 @@
+import UIKit
 import YandexMobileAds
 
 extension UnifiedAdViewController {
@@ -9,7 +10,7 @@ extension UnifiedAdViewController {
         case .rewarded:
             return Array(FactoryIDs.rewarded.keys)
         case .appOpen:
-            return [.yandex]
+            return Array(FactoryIDs.appOpen.keys)
         case .bannerInline:
             return [.yandex]
         case .bannerSticky:
@@ -17,7 +18,7 @@ extension UnifiedAdViewController {
         case .nativeBulk:
             return [.yandex]
         case .nativeTemplate:
-            return Array(FactoryIDs.nativeTemplate.keys)
+            return [.adfox, .admobReverseAdapter]
         case .nativeCustom:
             return [.yandex]
         case .instreamSingle, .instreamInrolls:
@@ -26,6 +27,8 @@ extension UnifiedAdViewController {
             return Array(FactoryIDs.banner.keys)
         case .carousel:
             return [.adfox]
+        case .feedAd:
+            return [.yandex]
         }
     }
     
@@ -42,10 +45,16 @@ extension UnifiedAdViewController {
                     sourceRow.setDisplayedValue(first.title)
                 }
                 sourceRow.setMenu(buildSourceMenu())
+                updateSourceRowVisibility()
                 swapAdapter(source: currentSource, format: format)
             }
         }
         return UIMenu(title: "", options: .singleSelection, children: actions)
+    }
+    
+    func updateSourceRowVisibility() {
+        let sources = supportedSources(for: currentFormat)
+        sourceRow.isHidden = sources.count <= 1
     }
     
     func buildSourceMenu() -> UIMenu {

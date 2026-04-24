@@ -31,6 +31,18 @@ final class InterstitialTest: BaseTest {
         runFullscreenTest(source: TestConstants.Source.myTarget)
     }
 
+    func testPangleInterstitial() {
+        runFullscreenTest(source: TestConstants.Source.pangle)
+    }
+
+    func testGoogleInterstitial() {
+        runFullscreenTest(source: TestConstants.Source.google)
+    }
+
+    func testVungleInterstitial() throws {
+        runFullscreenTest(source: TestConstants.Source.vungle)
+    }
+
     func testStartAppInterstitial() {
         runFullscreenTest(source: TestConstants.Source.startApp)
     }
@@ -50,7 +62,6 @@ final class InterstitialTest: BaseTest {
         adsPage.waitPresentEnabled(timeout: 10)
         adsPage.tapPresent()
         step("Tap fullscreen ad") {
-            let app = XCUIApplication()
             XCTAssertTrue(app.waitForExistence(timeout: 5), "App not ready for fullscreen ad tap")
             sleep(10)
             app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()

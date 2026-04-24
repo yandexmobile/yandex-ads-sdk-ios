@@ -1,16 +1,15 @@
-#if COCOAPODS
 import GoogleMobileAds
 
 final class AdMobRewardedAdapter: NSObject, UnifiedAdProtocol, PresentableAdProtocol {
     var inlineView: UIView? { nil }
     var onEvent: ((UnifiedAdEvent) -> Void)?
 
-    private let adUnitId: String
+    private let adUnitID: String
     private weak var hostViewController: UIViewController?
     private var rewardedAd: GoogleMobileAds.RewardedAd?
 
-    init(adUnitId: String, hostViewController: UIViewController) {
-        self.adUnitId = adUnitId
+    init(adUnitID: String, hostViewController: UIViewController) {
+        self.adUnitID = adUnitID
         self.hostViewController = hostViewController
         super.init()
     }
@@ -19,10 +18,10 @@ final class AdMobRewardedAdapter: NSObject, UnifiedAdProtocol, PresentableAdProt
         AdMobStarter.startIfNeeded { [weak self] in
             guard let self else { return }
             self.rewardedAd = nil
-            print("AdMob Rewarded: start loading (\(self.adUnitId))")
+            print("AdMob Rewarded: start loading (\(self.adUnitID))")
 
             let request = GoogleMobileAds.Request()
-            GoogleMobileAds.RewardedAd.load(with: self.adUnitId, request: request) { [weak self] ad, error in
+            GoogleMobileAds.RewardedAd.load(with: self.adUnitID, request: request) { [weak self] ad, error in
                 guard let self else { return }
 
                 if let error = error {
@@ -96,4 +95,3 @@ extension AdMobRewardedAdapter: GoogleMobileAds.FullScreenContentDelegate {
         onEvent?(.clicked)
     }
 }
-#endif

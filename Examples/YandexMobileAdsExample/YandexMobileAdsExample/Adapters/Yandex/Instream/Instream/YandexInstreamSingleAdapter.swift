@@ -1,6 +1,7 @@
 import UIKit
 import YandexMobileAdsInstream
 
+@MainActor
 final class YandexInstreamSingleAdapter: NSObject, UnifiedAdProtocol {
     
     var onEvent: ((UnifiedAdEvent) -> Void)?
@@ -77,15 +78,37 @@ final class YandexInstreamSingleAdapter: NSObject, UnifiedAdProtocol {
     init(pageID: String) {
         self.pageID = pageID
         super.init()
-        loader.delegate = self
         buildUI()
     }
     
     func load() {
         let config = InstreamAdRequestConfiguration(pageID: pageID)
-        loader.loadInstreamAd(configuration: config)
+        loader.loadInstreamAd(configuration: config) { [weak self] result in
+            switch result {
+            case .success(let ad):
+                self?.handleAdLoaded(ad)
+            case .failure(let info):
+                self?.handleAdLoadingFailed(info)
+            }
+        }
         printLog("load started, pageID=\(pageID)")
         setButtonsEnabled(false)
+    }
+    
+    private func handleAdLoaded(_ ad: InstreamAd) {
+        let binder = InstreamAdBinder(ad: ad, adPlayer: adPlayer, videoPlayer: contentPlayer)
+        binder.delegate = self
+        adBinder = binder
+        setButtonsEnabled(true)
+        onEvent?(.loaded)
+        printLog("ad loaded successfully")
+    }
+    
+    private func handleAdLoadingFailed(_ info: InstreamAdLoadingFailureInfo) {
+        let err = NSError(domain: "Instream", code: 0, userInfo: [NSLocalizedDescriptionKey: info.reason])
+        onEvent?(.failedToLoad(err))
+        setButtonsEnabled(false)
+        printLog("failed to load ad. reason=\(info.reason)")
     }
     
     func tearDown() {
@@ -143,26 +166,6 @@ final class YandexInstreamSingleAdapter: NSObject, UnifiedAdProtocol {
     
     private func printLog(_ message: String) {
         print("InstreamSingleAdapter: \(message)")
-    }
-}
-
-// MARK: - InstreamAdLoaderDelegate
-
-extension YandexInstreamSingleAdapter: InstreamAdLoaderDelegate {
-    func instreamAdLoader(_ instreamAdLoader: InstreamAdLoader, didLoad ad: InstreamAd) {
-        let binder = InstreamAdBinder(ad: ad, adPlayer: adPlayer, videoPlayer: contentPlayer)
-        binder.delegate = self
-        adBinder = binder
-        setButtonsEnabled(true)
-        onEvent?(.loaded)
-        printLog("ad loaded successfully")
-    }
-    
-    func instreamAdLoader(_ instreamAdLoader: InstreamAdLoader, didFailToLoad reason: String) {
-        let err = NSError(domain: "Instream", code: 0, userInfo: [NSLocalizedDescriptionKey: reason])
-        onEvent?(.failedToLoad(err))
-        setButtonsEnabled(false)
-        printLog("failed to load ad. reason=\(reason)")
     }
 }
 

@@ -1,10 +1,11 @@
 /*
- * Version for iOS © 2015–2025 YANDEX
+ * Version for iOS © 2015–2026 YANDEX
  *
  * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
  */
 
+import UIKit
 import YandexMobileAds
 
 class StarRatingView: UIView {
@@ -64,13 +65,14 @@ class StarRatingView: UIView {
 }
 
 extension StarRatingView: Rating {
-    func setRating(_ rating: NSNumber?) {
-        _rating = rating as? Int
-        updateStarViews()
-    }
-
-    func rating() -> NSNumber? {
-        guard let rating = _rating else { return nil }
-        return NSNumber(value: rating)
+    var rating: NSNumber? {
+        get {
+            guard let rating = _rating else { return nil }
+            return NSNumber(value: rating)
+        }
+        set{
+            _rating = newValue as? Int
+            updateStarViews()
+        }
     }
 }

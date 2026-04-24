@@ -13,4 +13,5 @@ enum UnifiedFormat: String, CaseIterable {
     case nativeBulk = "Native (Bulk)"
     case instreamSingle = "Instream (Single)"
     case instreamInrolls = "Instream (Inroll)"
+    case feedAd = "Feed Ad"
 }

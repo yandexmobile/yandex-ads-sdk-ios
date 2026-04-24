@@ -12,7 +12,6 @@ final class YandexFullscreenTest: BaseTest {
         adsPage.waitPresentEnabled(timeout: 10)
         adsPage.tapPresent()
         step("Tap call-to-action button") {
-            let app = XCUIApplication()
             sleep(2)
             let callToActionButton = app.staticTexts["mac_call_to_action"]
             XCTAssertTrue(callToActionButton.waitForExistence(timeout: 5), "Call-to-action button not found")
@@ -29,8 +28,7 @@ final class YandexFullscreenTest: BaseTest {
         guard adsPage.assertLoadedOrNoFill(timeout: 10) else { return }
         adsPage.waitPresentEnabled(timeout: 10)
         adsPage.tapPresent()
-        step("Tap link button") {
-            let app = XCUIApplication()
+        step("Tap link button") {        
             sleep(2)
             let moreInfoButton = app.staticTexts["eda.yandex.ru"]
             XCTAssertTrue(moreInfoButton.waitForExistence(timeout: 5), "link button not found")

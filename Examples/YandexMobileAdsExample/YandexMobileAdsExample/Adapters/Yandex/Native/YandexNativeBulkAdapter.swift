@@ -7,7 +7,7 @@ protocol NativeBulkProviding: UnifiedAdProtocol {
 }
 
 final class YandexNativeBulkAdapter: NSObject, NativeBulkProviding {
-    private let adUnitId: String
+    private let adUnitID: String
     private let loader = NativeBulkAdLoader()
     private(set) var ads: [NativeAd] = []
     
@@ -15,30 +15,26 @@ final class YandexNativeBulkAdapter: NSObject, NativeBulkProviding {
     var onEvent: ((UnifiedAdEvent) -> Void)?
     var onAdsChange: (([NativeAd]) -> Void)?
     
-    init(adUnitId: String) {
-        self.adUnitId = adUnitId
+    init(adUnitID: String) {
+        self.adUnitID = adUnitID
         super.init()
-        loader.delegate = self
     }
     
     func load() {
-        let config = NativeAdRequestConfiguration(adUnitID: adUnitId)
-        loader.loadAds(with: config, adsCount: 3)
+        let request = AdRequest(adUnitID: adUnitID)
+        loader.loadAds(with: request, adsCount: 3) {
+            switch $0 {
+            case .success(let ads):
+                self.ads = ads
+                self.onAdsChange?(ads)
+                self.onEvent?(.loaded)
+            case .failure(let error):
+                self.onEvent?(.failedToLoad(error))
+            }
+        }
     }
     
     func tearDown() {
         ads.removeAll()
-    }
-}
-
-extension YandexNativeBulkAdapter: NativeBulkAdLoaderDelegate {
-    func nativeBulkAdLoader(_ loader: NativeBulkAdLoader, didLoad ads: [NativeAd]) {
-        self.ads = ads
-        self.onAdsChange?(ads)
-        self.onEvent?(.loaded)
-    }
-    
-    func nativeBulkAdLoader(_ loader: NativeBulkAdLoader, didFailLoadingWithError error: Error) {
-        self.onEvent?(.failedToLoad(error))
     }
 }

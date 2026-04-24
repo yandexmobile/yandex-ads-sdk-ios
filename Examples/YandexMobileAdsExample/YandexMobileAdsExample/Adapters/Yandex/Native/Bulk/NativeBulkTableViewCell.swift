@@ -1,10 +1,11 @@
 /*
- * Version for iOS © 2015–2025 YANDEX
+ * Version for iOS © 2015–2026 YANDEX
  *
  * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
  */
 
+import UIKit
 import YandexMobileAds
 
 final class NativeBulkTableViewCell: UITableViewCell {
@@ -48,30 +49,14 @@ final class NativeBulkTableViewCell: UITableViewCell {
     }
 }
 
-// MARK: - YMANativeAdDelegate
+// MARK: - NativeAdDelegate
 
 extension NativeBulkTableViewCell: NativeAdDelegate {
     func nativeAdDidClick(_ ad: NativeAd) {
         print(#function)
     }
 
-    func nativeAdWillLeaveApplication(_ ad: NativeAd) {
-        print(#function)
-    }
-
-    func nativeAd(_ ad: NativeAd, willPresentScreen viewController: UIViewController?) {
-        print(#function)
-    }
-
-    func nativeAd(_ ad: NativeAd, didTrackImpressionWith impressionData: ImpressionData?) {
-        print(#function)
-    }
-
-    func nativeAd(_ ad: NativeAd, didDismissScreen viewController: UIViewController?) {
-        print(#function)
-    }
-
-    func close(_ ad: NativeAd) {
+    func nativeAd(_ ad: NativeAd, didTrackImpression impressionData: ImpressionData?) {
         print(#function)
     }
 }

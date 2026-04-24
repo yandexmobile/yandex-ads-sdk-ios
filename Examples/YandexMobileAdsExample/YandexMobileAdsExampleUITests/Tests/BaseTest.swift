@@ -1,5 +1,5 @@
 /*
- * Version for iOS © 2015–2025 YANDEX
+ * Version for iOS © 2015–2026 YANDEX
  *
  * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
@@ -17,7 +17,7 @@ class BaseTest: XCTestCase {
     
     func assertSafariOpened() {
         step("Check safari app opened") {
-            XCTAssertTrue(XCUIApplication.safari.wait(for: .runningForeground, timeout: 10))
+            XCTAssertTrue(XCUIApplication.safari.wait(for: .runningForeground, timeout: 30))
         }
     }
 
@@ -64,13 +64,15 @@ enum Query {
     enum Operand {
         case label
         case exists
-        
+        case value
+        case enabled
+
         var string: String {
             switch self {
-            case .label:
-                return "label"
-            case .exists:
-                return "exists"
+            case .label: "label"
+            case .exists: "exists"
+            case .value: "value"
+            case .enabled: "isEnabled"
             }
         }
     }

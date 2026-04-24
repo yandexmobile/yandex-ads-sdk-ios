@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/AppLovin/AppLovin-MAX-Swift-Package",
       "state" : {
-        "revision" : "c184b428415a05dcad488c6834e0bd02fe1d8f3e",
-        "version" : "13.3.1"
+        "revision" : "b5acf713209298059bb2f09b22d84d523454bc7b",
+        "version" : "13.5.1"
       }
     },
     {
@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/appmetrica/appmetrica-sdk-ios",
       "state" : {
-        "revision" : "0ef47447ea9de9ce4bd78e10d3c6da6219446cb2",
-        "version" : "5.14.0"
+        "revision" : "28e94b1f812db4304dc34d8fb4844016d7d25303",
+        "version" : "6.0.0"
       }
     },
     {
@@ -32,8 +32,17 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/divkit/divkit-ios-facade",
       "state" : {
-        "revision" : "dfc09c522095ff3d1fe7e6048021e0f5b7877a32",
-        "version" : "5.2.1"
+        "revision" : "14765531578bd575b6b99ac0d068e6d1378a8520",
+        "version" : "5.3.0"
+      }
+    },
+    {
+      "identity" : "dtexchangesdk-ios-spm",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/inner-active/DTExchangeSDK-iOS-SPM",
+      "state" : {
+        "revision" : "d083f3975b571255de1dd59df42e8cc472509d4c",
+        "version" : "8.4.5"
       }
     },
     {
@@ -50,8 +59,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Mintegral-official/MintegralAdSDK-Swift-Package",
       "state" : {
-        "revision" : "b483374ae72193a547f97055132ac9d0a3a5cb7f",
-        "version" : "7.7.9"
+        "revision" : "e5006ad67c06b2d0d55f830acf752682ac6fdab1",
+        "version" : "8.0.8"
       }
     },
     {
@@ -59,8 +68,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/myTargetSDK/mytarget-ios-spm",
       "state" : {
-        "revision" : "296915bb6b30a253325d6328431700666f96603b",
-        "version" : "5.28.0"
+        "revision" : "1519f943cfdbfa85519242d150d6648cb2433586",
+        "version" : "5.36.2"
       }
     },
     {
@@ -68,8 +77,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/myTrackerSDK/mytracker-ios-spm.git",
       "state" : {
-        "revision" : "6cfceb59bb6bbadacdd562ab295b3f7890f46f3d",
-        "version" : "3.2.1"
+        "revision" : "78dffe3f49d657c972ee94b52dfd568086c0aa75",
+        "version" : "3.3.0"
       }
     },
     {
@@ -95,8 +104,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/googleads/swift-package-manager-google-mobile-ads",
       "state" : {
-        "revision" : "ab4c3ec7546c7566fe49918fc9461df44e015537",
-        "version" : "12.2.0"
+        "revision" : "1239c23464503053c17d37ee5daa70de3455e9c8",
+        "version" : "12.14.0"
       }
     },
     {
@@ -104,8 +113,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/googleads/swift-package-manager-google-user-messaging-platform.git",
       "state" : {
-        "revision" : "708a282840c2171ee63bd93b87afa49fe507d70e",
-        "version" : "2.7.0"
+        "revision" : "13b248eaa73b7826f0efb1bcf455e251d65ecb1b",
+        "version" : "3.1.0"
       }
     },
     {
@@ -122,8 +131,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Vungle/VungleAdsSDK-SwiftPackageManager",
       "state" : {
-        "revision" : "bdec2a7c83c9ee65c07c7ca9037b6ee72f69edd1",
-        "version" : "7.4.5"
+        "revision" : "5bdb14202de471d7b66fddb6dcdc8b569a67d65d",
+        "version" : "7.7.0"
       }
     }
   ],

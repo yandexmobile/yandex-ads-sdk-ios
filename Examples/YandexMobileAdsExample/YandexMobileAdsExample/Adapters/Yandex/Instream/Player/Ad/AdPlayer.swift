@@ -1,5 +1,5 @@
 /*
- * Version for iOS © 2015–2025 YANDEX
+ * Version for iOS © 2015–2026 YANDEX
  *
  * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
@@ -8,6 +8,7 @@
 import UIKit
 import YandexMobileAdsInstream
 
+@MainActor
 class AdPlayer: NSObject {
     weak var delegate: InstreamAdPlayerDelegate?
     var invalidateCallback: (() -> ())?
@@ -45,6 +46,7 @@ extension AdPlayer: InstreamAdPlayer {
         return player?.position ?? 0
     }
 
+    @MainActor
     func prepareAd(with videoAd: VideoAd) {
         let mediaFile = videoAd.mediaFile
         guard let mediaFileUrl = URL(string: mediaFile.url) else {
@@ -85,6 +87,7 @@ extension AdPlayer: InstreamAdPlayer {
         player?.setVolume(level)
     }
 
+    @MainActor
     private final func didFailVideoAd(_ videoAd: VideoAd, withReason reason: InstreamAdPlayerErrorReason) {
         delegate?.instreamAdPlayer(self, didFailVideoAd: videoAd, withError: errorConverter.convert(reason))
     }

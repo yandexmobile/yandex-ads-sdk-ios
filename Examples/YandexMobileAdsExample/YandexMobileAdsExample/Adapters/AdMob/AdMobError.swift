@@ -1,4 +1,3 @@
-#if COCOAPODS
 import Foundation
 
 enum AdMobError: Error {
@@ -6,4 +5,3 @@ enum AdMobError: Error {
     case adNotReady(adType: String)
     case templateNotFound(adType: String)
 }
-#endif

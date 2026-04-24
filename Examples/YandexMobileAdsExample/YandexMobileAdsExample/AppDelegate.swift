@@ -1,5 +1,5 @@
 /*
- * Version for iOS © 2015–2025 YANDEX
+ * Version for iOS © 2015–2026 YANDEX
  *
  * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
@@ -16,8 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        MobileAds.initializeSDK()
-        
+        YandexAds.initializeSDK(completionHandler: nil)
+
         let rootVC = UnifiedAdViewController()
         let navController = UINavigationController(rootViewController: rootVC)
         navController.navigationBar.prefersLargeTitles = false

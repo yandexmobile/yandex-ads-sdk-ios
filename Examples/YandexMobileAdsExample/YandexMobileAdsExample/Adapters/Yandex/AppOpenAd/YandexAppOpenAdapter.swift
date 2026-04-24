@@ -5,7 +5,7 @@ final class YandexAppOpenAdapter: NSObject, UnifiedAdProtocol, PresentableAdProt
     var onEvent: ((UnifiedAdEvent) -> Void)?
     var inlineView: UIView? { nil }
     
-    private let adUnitId: String
+    private let adUnitID: String
     private let loader = AppOpenAdLoader()
     private weak var presentingVC: UIViewController?
     private var hasBeenInBackground = false
@@ -14,10 +14,9 @@ final class YandexAppOpenAdapter: NSObject, UnifiedAdProtocol, PresentableAdProt
         didSet { appOpenAd?.delegate = self }
     }
     
-    init(adUnitId: String) {
-        self.adUnitId = adUnitId
+    init(adUnitID: String) {
+        self.adUnitID = adUnitID
         super.init()
-        loader.delegate = self
         setupNotifications()
     }
 
@@ -25,8 +24,20 @@ final class YandexAppOpenAdapter: NSObject, UnifiedAdProtocol, PresentableAdProt
         hasBeenInBackground = false
         isPresentingAd = false
         appOpenAd = nil
-        let config = AdRequestConfiguration(adUnitID: adUnitId)
-        loader.loadAd(with: config)
+        let request = AdRequest(adUnitID: adUnitID)
+        loader.loadAd(with: request) { [weak self] in
+            guard let self else { return }
+            switch $0 {
+            case .success(let appOpenAd):
+                self.appOpenAd = appOpenAd
+                print("AppOpen(\(adUnitID)) did load")
+                onEvent?(.loaded)
+            case .failure(let error):
+                self.appOpenAd = nil
+                print("AppOpen load failed id=\(String(describing: adUnitID)) err=\(error)")
+                onEvent?(.failedToLoad(error))
+            }
+        }
     }
 
     func tearDown() {
@@ -79,52 +90,36 @@ final class YandexAppOpenAdapter: NSObject, UnifiedAdProtocol, PresentableAdProt
     }
 }
 
-// MARK: - AppOpenAdLoaderDelegate
-
-extension YandexAppOpenAdapter: AppOpenAdLoaderDelegate {
-    func appOpenAdLoader(_ adLoader: AppOpenAdLoader, didLoad appOpenAd: AppOpenAd) {
-        self.appOpenAd = appOpenAd
-        print("AppOpen(\(adUnitId)) did load")
-        onEvent?(.loaded)
-    }
-
-    func appOpenAdLoader(_ adLoader: AppOpenAdLoader, didFailToLoadWithError error: AdRequestError) {
-        self.appOpenAd = nil
-        print("AppOpen load failed id=\(String(describing: error.adUnitId)) err=\(error.error)")
-        onEvent?(.failedToLoad(error.error))
-    }
-}
-
 // MARK: - AppOpenAdDelegate
 
 extension YandexAppOpenAdapter: AppOpenAdDelegate {
     func appOpenAdDidShow(_ appOpenAd: AppOpenAd) {
         presentingVC?.presentedViewController?.view.accessibilityIdentifier = CommonAccessibility.bannerView
-        print("AppOpen(\(adUnitId)) did show")
+        print("AppOpen(\(adUnitID)) did show")
         onEvent?(.shown)
     }
 
     func appOpenAdDidDismiss(_ appOpenAd: AppOpenAd) {
-        print("AppOpen(\(adUnitId)) did dismiss")
+        print("AppOpen(\(adUnitID)) did dismiss")
         self.appOpenAd = nil
         isPresentingAd = false
         onEvent?(.dismissed)
     }
 
-    func appOpenAd(_ appOpenAd: AppOpenAd, didFailToShowWithError error: Error) {
-        print("AppOpen(\(adUnitId)) failed to show: \(error)")
+    func appOpenAd(_ appOpenAd: AppOpenAd, didFailToShow error: Error) {
+        print("AppOpen(\(adUnitID)) failed to show: \(error)")
         self.appOpenAd = nil
         isPresentingAd = false
         onEvent?(.failedToShow(error))
     }
 
     func appOpenAdDidClick(_ appOpenAd: AppOpenAd) {
-        print("AppOpen(\(adUnitId)) did click")
+        print("AppOpen(\(adUnitID)) did click")
         onEvent?(.clicked)
     }
 
-    func appOpenAd(_ appOpenAd: AppOpenAd, didTrackImpressionWith impressionData: ImpressionData?) {
-        print("AppOpen(\(adUnitId)) did track impression")
+    func appOpenAd(_ appOpenAd: AppOpenAd, didTrackImpression impressionData: ImpressionData?) {
+        print("AppOpen(\(adUnitID)) did track impression")
         onEvent?(.impression)
     }
 }

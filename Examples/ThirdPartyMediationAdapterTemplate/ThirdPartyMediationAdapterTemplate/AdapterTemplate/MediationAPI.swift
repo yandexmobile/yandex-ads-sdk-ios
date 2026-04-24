@@ -10,11 +10,11 @@ import UIKit
 /// This is a mock of the object that represents the scope of parameters  for successful ad request.
 /// You can pass these parameters as required by your network API, but it must be passed.
 /// - Parameters:
-///   - adUinitId: Is an unique identifier in the R-M-XXXXXX-Y format,
+///   - adUnitId: Is an unique identifier in the R-M-XXXXXX-Y format,
 ///which is assigned in the Partner interface.
 ///   - bidId: Used if ad network supported in-app bidding integration with Yandex.
 struct AdData {
-    let adUinitId: String
+    let adUnitId: String
     let bidId: String?
 }
 
@@ -51,8 +51,8 @@ enum MediationAdFormat {
 
 /// List of adUnits for checking inegration with Yandex.
 enum DemoAdUnit: String {
-    case demoBannerAdUinitId = "demo-banner-yandex"
-    case demoInterstititalAdUinitId = "demo-interstitital-yandex"
+    case demoBannerAdUnitId = "demo-banner-yandex"
+    case demoInterstititalAdUnitId = "demo-interstitital-yandex"
     case demoRewardedAdUnitId = "demo-rewarded-yandex"
     case demoAppOpenAdUnitId = "demo-appopenad-yandex"
     case demoNativeAdUnitId = "demo-native-content-yandex"
@@ -105,20 +105,12 @@ protocol MediationBannerDelegate: AnyObject {
 
     /// Notifies when an impression was tracked.
     func didTrackImpression()
-
-    /// Notifies that the app will become inactive now because the user clicked on the banner ad.
-    func adViewWillLeaveApplication()
-
-    /// Notifies that the user has clicked on the banner and the in-app browser will open now.
-    func adViewWillPresentScreen()
-
-    /// Notifies that the user has closed the embedded browser.
-    func adViewWillDismissScreen()
 }
 
 //MARK: - Interstitial API
 
 /// This protocol describes methods for interstitial ads.
+@MainActor
 protocol MediationInterstitial {
     ///Loads interstitial
     /// - Parameters:
@@ -170,6 +162,7 @@ protocol MediationInterstitialDelegate: AnyObject {
 //MARK: - Rewarded API
 
 /// This protocol describes methods for rewarded ads.
+@MainActor
 protocol MediationRewarded {
     ///Loads rewarded
     /// - Parameters:
@@ -224,6 +217,7 @@ protocol MediationRewardedDelegate: AnyObject {
 //MARK: - AppOpen API
 
 /// This protocol describes methods for appOpen ads.
+@MainActor
 protocol MediationAppOpen {
     ///Loads appOpenAd
     /// - Parameters:
@@ -275,6 +269,7 @@ protocol MediationAppOpenDelegate: AnyObject {
 //MARK: - Native API
 
 /// This protocol describes methods for native ads.
+@MainActor
 protocol MediationNative {
     /// Loads nativeAd
     /// - Parameters:
@@ -300,12 +295,6 @@ protocol MediationNativeDelegate: AnyObject {
     
     /// Notifies that the native ad is failed to bind.
     func nativeDidFailToBind(with error: Error)
-
-    /// Notifies that the ad will show the modal `UIViewController` in response to the user interacting with the banner.
-    func nativeWillPresentScreen()
-
-    /// Notifies that the ad finished showing the modal `UIViewController` in response to the user interacting with the banner.
-    func nativeDidDismissScreen()
 
     /// Called after native the rewarded ad.
     func nativeDidDismiss()
@@ -364,6 +353,7 @@ protocol MediationNativeAd {
     var warning: String? { get set }
     
     /// Method for properly binding views in native ad format.
+    @MainActor
     func trackViews(adNetworkView: MediationNativeAdView)
 }
 

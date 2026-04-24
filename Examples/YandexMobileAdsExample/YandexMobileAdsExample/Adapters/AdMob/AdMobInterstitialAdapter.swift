@@ -1,15 +1,14 @@
-#if COCOAPODS
 import GoogleMobileAds
 
 final class AdMobInterstitialAdapter: NSObject, UnifiedAdProtocol, PresentableAdProtocol {
     var inlineView: UIView? { nil }
     var onEvent: ((UnifiedAdEvent) -> Void)?
-    private let adUnitId: String
+    private let adUnitID: String
     private weak var hostViewController: UIViewController?
     private var interstitial: GoogleMobileAds.InterstitialAd?
     
-    init(adUnitId: String, hostViewController: UIViewController) {
-        self.adUnitId = adUnitId
+    init(adUnitID: String, hostViewController: UIViewController) {
+        self.adUnitID = adUnitID
         self.hostViewController = hostViewController
         super.init()
     }
@@ -18,11 +17,11 @@ final class AdMobInterstitialAdapter: NSObject, UnifiedAdProtocol, PresentableAd
         AdMobStarter.startIfNeeded { [weak self] in
             guard let self else { return }
             self.interstitial = nil
-            print("AdMob Interstitial: start loading (\(self.adUnitId))")
+            print("AdMob Interstitial: start loading (\(self.adUnitID))")
             
             let request = GoogleMobileAds.Request()
             GoogleMobileAds.InterstitialAd.load(
-                with: self.adUnitId,
+                with: self.adUnitID,
                 request: request
             ) { [weak self] ad, error in
                 guard let self else { return }
@@ -93,4 +92,3 @@ extension AdMobInterstitialAdapter: GoogleMobileAds.FullScreenContentDelegate {
         onEvent?(.clicked)
     }
 }
-#endif

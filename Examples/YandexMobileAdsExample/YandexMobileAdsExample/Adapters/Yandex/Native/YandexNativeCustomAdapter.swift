@@ -1,4 +1,5 @@
-import YandexMobileAds
+import UIKit
+@preconcurrency import YandexMobileAds
 
 protocol CustomControlsCapable: AnyObject {
     var canApplyCustomControls: Bool { get }
@@ -11,7 +12,7 @@ final class YandexNativeCustomAdapter: NSObject, UnifiedAdProtocol {
     
     // MARK: - Private
     
-    private let adUnitId: String
+    private let adUnitID: String
     private let adLoader = NativeAdLoader()
     private var nativeAd: NativeAd?
     private var didApplyCustomControls = false
@@ -27,15 +28,35 @@ final class YandexNativeCustomAdapter: NSObject, UnifiedAdProtocol {
     
     // MARK: - Init
     
-    init(adUnitId: String) {
-        self.adUnitId = adUnitId
+    init(adUnitID: String) {
+        self.adUnitID = adUnitID
         super.init()
-        adLoader.delegate = self
     }
     
     func load() {
-        let request = NativeAdRequestConfiguration(adUnitID: adUnitId)
-        adLoader.loadAd(with: request)
+        let request = AdRequest(adUnitID: adUnitID)
+        adLoader.loadAd(with: request) { [weak self] in
+            guard let self else { return }
+            switch $0 {
+            case .success(let ad):
+                print("NativeCustom(\(adUnitID)) did load")
+                nativeAd = ad
+                ad.delegate = self
+                do {
+                    try ad.bind(with: adView)
+                    adView.isHidden = false
+                    adView.callToActionButton?.accessibilityIdentifier = "call"
+                    onEvent?(.loaded)
+
+                } catch {
+                    print("NativeCustom(\(adUnitID)) bind error: \(error)")
+                    onEvent?(.failedToLoad(error))
+                }
+            case .failure(let error):
+                print("NativeCustom(\(adUnitID)) failed to load: \(error)")
+                onEvent?(.failedToLoad(error))
+            }
+        }
     }
     
     func tearDown() {
@@ -49,7 +70,7 @@ final class YandexNativeCustomAdapter: NSObject, UnifiedAdProtocol {
     
     // MARK: - Helpers
     
-    private func attachCustomControls(to mediaView: YMANativeMediaView) {
+    private func attachCustomControls(to mediaView: YandexMobileAds.NativeMediaView) {
         guard !didApplyCustomControls else { return }
         
         let playback = NativeVideoPlaybackControls(
@@ -81,60 +102,17 @@ final class YandexNativeCustomAdapter: NSObject, UnifiedAdProtocol {
     }
 }
 
-// MARK: - NativeAdLoaderDelegate
-
-extension YandexNativeCustomAdapter: NativeAdLoaderDelegate {
-    func nativeAdLoader(_ loader: NativeAdLoader, didLoad ad: NativeAd) {
-        print("NativeCustom(\(adUnitId)) did load")
-        nativeAd = ad
-        ad.delegate = self
-        do {
-            try ad.bind(with: adView)
-            adView.isHidden = false
-            adView.callToActionButton?.accessibilityIdentifier = "call"
-            onEvent?(.loaded)
-
-        } catch {
-            print("NativeCustom(\(adUnitId)) bind error: \(error)")
-            onEvent?(.failedToLoad(error))
-        }
-    }
-    
-    func nativeAdLoader(_ loader: NativeAdLoader, didFailLoadingWithError error: Error) {
-        print("NativeCustom(\(adUnitId)) failed to load: \(error)")
-        onEvent?(.failedToLoad(error))
-    }
-}
-
 // MARK: - NativeAdDelegate
 
 extension YandexNativeCustomAdapter: NativeAdDelegate {
     func nativeAdDidClick(_ ad: NativeAd) {
-        print("NativeCustom(\(adUnitId)) did click")
+        print("NativeCustom(\(adUnitID)) did click")
         onEvent?(.clicked)
     }
     
-    func nativeAdWillLeaveApplication(_ ad: NativeAd) {
-        print("NativeCustom(\(adUnitId)) will leave application")
-    }
-    
-    func nativeAd(_ ad: NativeAd, willPresentScreen viewController: UIViewController?) {
-        print("NativeCustom(\(adUnitId)) will present screen")
-        onEvent?(.shown)
-    }
-    
-    func nativeAd(_ ad: NativeAd, didTrackImpressionWith impressionData: ImpressionData?) {
-        print("NativeCustom(\(adUnitId)) did track impression")
+    func nativeAd(_ ad: NativeAd, didTrackImpression impressionData: ImpressionData?) {
+        print("NativeCustom(\(adUnitID)) did track impression")
         onEvent?(.impression)
-    }
-    
-    func nativeAd(_ ad: NativeAd, didDismissScreen viewController: UIViewController?) {
-        print("NativeCustom(\(adUnitId)) did dismiss screen")
-        onEvent?(.dismissed)
-    }
-    
-    func close(_ ad: NativeAd) {
-        print("NativeCustom(\(adUnitId)) close called")
     }
 }
 

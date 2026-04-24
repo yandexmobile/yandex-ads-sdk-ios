@@ -1,4 +1,5 @@
 import UIKit
+import SwiftUI
 import YandexMobileAds
 import Foundation
 
@@ -11,6 +12,7 @@ final class UnifiedAdViewController: UIViewController, UITableViewDelegate {
     var currentInlineConstraints: [NSLayoutConstraint] = []
     var bulkAds: [NativeAd] = []
     var bulkTableConstraints: [NSLayoutConstraint] = []
+    var feedAdCollectionViewConstraints: [NSLayoutConstraint] = []
     var loadFullWidthConstraints: [NSLayoutConstraint] = []
     var loadHalfConstraints: [NSLayoutConstraint] = []
     var presentHalfConstraints: [NSLayoutConstraint] = []
@@ -68,6 +70,25 @@ final class UnifiedAdViewController: UIViewController, UITableViewDelegate {
         return button
     }()
     
+    lazy var swiftUIButton: UIButton = {
+        var config = UIButton.Configuration.tinted()
+        config.title = "SwiftUI Examples"
+        config.image = UIImage(systemName: "chevron.right.square")
+        config.imagePlacement = .trailing
+        config.imagePadding = 6
+        config.baseBackgroundColor = .systemIndigo
+        config.baseForegroundColor = .systemIndigo
+        config.cornerStyle = .large
+
+        let button = UIButton(configuration: config, primaryAction: UIAction { [weak self] _ in
+            self?.openSwiftUIExamples()
+        })
+        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        button.accessibilityIdentifier = CommonAccessibility.swiftUIExamplesButton
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+
     lazy var presentButton: UIButton = {
         var config = UIButton.Configuration.filled()
         config.title = "Present Ad"
@@ -136,7 +157,17 @@ final class UnifiedAdViewController: UIViewController, UITableViewDelegate {
                            forCellReuseIdentifier: NativeBulkTableViewCell.reuseIdentifier)
         return tableView
     }()
-    
+
+    lazy var feedAdCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.backgroundColor = .systemBackground
+        cv.isHidden = true
+        return cv
+    }()
+
     private lazy var gearButton: UIBarButtonItem = {
         let item = UIBarButtonItem(
             image: UIImage(systemName: "gear"),
@@ -198,7 +229,7 @@ final class UnifiedAdViewController: UIViewController, UITableViewDelegate {
     }
     
     private func addSubviews() {
-        [headerStack, loadButton, presentButton, placeholderView, bulkTableView].forEach { view.addSubview($0) }
+        [headerStack, swiftUIButton, loadButton, presentButton, placeholderView, bulkTableView].forEach { view.addSubview($0) }
     }
     
     private func addConstraints() {
@@ -223,7 +254,11 @@ final class UnifiedAdViewController: UIViewController, UITableViewDelegate {
         NSLayoutConstraint.activate([
             headerStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Layout.side),
             headerStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Layout.side),
-            headerStack.bottomAnchor.constraint(equalTo: loadButton.topAnchor, constant: -Layout.buttonsBottom),
+            headerStack.bottomAnchor.constraint(equalTo: swiftUIButton.topAnchor, constant: -Layout.buttonsBottom),
+
+            swiftUIButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Layout.side),
+            swiftUIButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Layout.side),
+            swiftUIButton.bottomAnchor.constraint(equalTo: loadButton.topAnchor, constant: -12),
             
             bulkTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             bulkTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -238,6 +273,7 @@ final class UnifiedAdViewController: UIViewController, UITableViewDelegate {
     func setupInitialState() {
         sourceRow.setDisplayedValue(currentSource.title)
         formatRow.setDisplayedValue(currentFormat.rawValue)
+        updateSourceRowVisibility()
         updatePlaceholder(state: .idle, visible: true, animated: false)
     }
     
@@ -254,7 +290,7 @@ final class UnifiedAdViewController: UIViewController, UITableViewDelegate {
         hasLoadedCurrentAd = false
         updatePresentAvailability()
         
-        if !(adapter is NativeBulkProviding) {
+        if !(adapter is NativeBulkProviding) && !(adapter is FeedAdProviding) {
             updatePlaceholder(state: .loading, visible: true, animated: true)
         }
         adapter.load()
@@ -267,6 +303,28 @@ final class UnifiedAdViewController: UIViewController, UITableViewDelegate {
             custom.applyCustomControls()
             logsView.appendLogLine("Custom controls applied")
         }
+    }
+
+    @objc private func openSwiftUIExamples() {
+        let menuView = SwiftUIMenuView { [weak self] adType in
+            guard let self else { return }
+            let vc: UIViewController
+            switch adType {
+            case .appOpenAd:
+                vc = UIHostingController(rootView: AppOpenContentView())
+            case .banner:
+                vc = UIHostingController(rootView: BannerContentView())
+            case .interstitial:
+                vc = UIHostingController(rootView: InterstitialContentView())
+            case .rewarded:
+                vc = UIHostingController(rootView: RewardedContentView())
+            }
+            vc.navigationItem.largeTitleDisplayMode = .never
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        let hostingVC = UIHostingController(rootView: menuView)
+        hostingVC.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(hostingVC, animated: true)
     }
     
     // MARK: - Helpers
@@ -290,7 +348,6 @@ final class UnifiedAdViewController: UIViewController, UITableViewDelegate {
         }
         
         if isPresentable {
-            guard let adapter = self.adapter else { return }
             presentButton.isHidden = false
             var config = presentButton.configuration ?? .filled()
             config.title = "Present Ad"
@@ -349,20 +406,17 @@ final class UnifiedAdViewController: UIViewController, UITableViewDelegate {
         #if DEBUG
         if cmpDisabledForUITests { return }
         #endif
-        MobileAds.consentManagementPlatform.setConsentFormPresentation(enabled: true)
-        MobileAds.consentManagementPlatform.setDebugParameters(.init(geography: .eea))
+        YandexAds.consentManagementPlatform.setConsentFormPresentation(enabled: true)
+        YandexAds.consentManagementPlatform.setDebugParameters(.init(geography: .eea))
     }
     
     @objc
     private func openGDPRSettings() {
         let alert = UIAlertController(title: "Privacy", message: nil, preferredStyle: .actionSheet)
-        
-        #if COCOAPODS
         alert.addAction(UIAlertAction(title: "Reset CMP", style: .default, handler: { _ in
-            MobileAds.consentManagementPlatform.resetConsentStatus()
+            YandexAds.consentManagementPlatform.resetConsentStatus()
             self.logsView.appendLogLine("CMP: status reset")
         }))
-        #endif
         
         alert.addAction(UIAlertAction(title: "Reset GDPR", style: .default, handler: { _ in
             self.gdprManager.showDialog = true
@@ -408,7 +462,7 @@ extension UnifiedAdViewController: GDPRDialogDelegate {
         guard !cmpRequestInProgress else { return }
         cmpRequestInProgress = true
         
-        MobileAds.consentManagementPlatform.presentConsentFormIfRequired { [weak self] result in
+        YandexAds.consentManagementPlatform.presentConsentFormIfRequired { [weak self] result in
             guard let self else { return }
             self.cmpRequestInProgress = false
             

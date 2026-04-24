@@ -1,5 +1,5 @@
 /*
- * Version for iOS © 2015–2025 YANDEX
+ * Version for iOS © 2015–2026 YANDEX
  *
  * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
@@ -14,4 +14,5 @@ enum CommonAccessibility {
     static let bulkTable = "bulk_table"
     static let logsTextView = "logs_text_view"
     static let gearButton = "gdpr_settings_button"
+    static let swiftUIExamplesButton = "swiftui_examples_button"
 }

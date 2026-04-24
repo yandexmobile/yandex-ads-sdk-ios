@@ -31,14 +31,14 @@ See [also](https://yandex.ru/support2/mobile-ads/en/dev/ios/quick-start#app).
 Copy [YandexAdapters](./ThirdPartyMediationAdapterTemplate/AdapterTemplate/YandexAdapters.swift) file content and change stub API to your actual API.
 This way you will get a separate adapter class for each of the ad formats. If your API requires a single class for all formats, you can merge classes.
 
-* Mediation parameters must be set for each request as shown in the [template](./ThirdPartyMediationAdapterTemplate/AdapterTemplate/YandexAdapters.swift#L82):
-  * `"adapter_network_name"` represents your ad network name in lowercase.
-  * `"adapter_version"` represents Yandex adapter version. Construct this version by adding one more number to the Yandex SDK version. For example, `6.3.0.0` if the Yandex SDK version is `6.3.0`. If you need to update an adapter without changing the Yandex SDK version, increment the fourth number like `6.3.0.1`.
-  * `"adapter_network_sdk_version"` represents your ad network SDK version.
+* Mediation adapter identity must be set for each request as shown in the [template](./ThirdPartyMediationAdapterTemplate/AdapterTemplate/YandexAdapters.swift#L23):
+  * `adapterNetworkName` represents your ad network name in lowercase.
+  * `adapterVersion` represents Yandex adapter version. Construct this version by adding one more number to the Yandex SDK version. For example, `6.3.0.0` if the Yandex SDK version is `6.3.0`. If you need to update an adapter without changing the Yandex SDK version, increment the fourth number like `6.3.0.1`.
+  * `"adapterNetworkVersion"` represents your ad network SDK version.
 
-* `Interstitial`, `Rewarded`, `AppOpen` formats provide loader classes. A loader object can be [created](./ThirdPartyMediationAdapterTemplate/AdapterTemplate/YandexAdapters.swift#L165) once and can be reused. This speeds up loading and can be helpful to implement preloading logic, if your network supports it.
+* `Interstitial`, `Rewarded`, `AppOpen` formats provide loader classes. A loader object can be [created](./ThirdPartyMediationAdapterTemplate/AdapterTemplate/YandexAdapters.swift#L162) once and can be reused. This speeds up loading and can be helpful to implement preloading logic, if your network supports it.
 
-* `Native` format includes both the required and optional [assets](https://yandex.ru/support2/mobile-ads/en/dev/ios/components). The way to provide custom assets for binding strongly depends on the API of your ads SDK. The [template]((./ThirdPartyMediationAdapterTemplate/AdapterTemplate/YandexAdapters.swift#L503)) shows how these assets are passed to adapter during the ad request by providing a map of `string identifier` to `asset view identifier` on the publisher side.
+* `Native` format includes both the required and optional [assets](https://yandex.ru/support2/mobile-ads/en/dev/ios/components). The way to provide custom assets for binding strongly depends on the API of your ads SDK. The [template]((./ThirdPartyMediationAdapterTemplate/AdapterTemplate/YandexAdapters.swift#L502)) shows how these assets are passed to adapter during the ad request by providing a map of `string identifier` to `asset view identifier` on the publisher side.
 
 ### 4. Test integration
 
@@ -59,7 +59,13 @@ Successfully initializing the Yandex Mobile Ads SDK is an important condition fo
 Manual initialization of the SDK can be used like this (this method is safety and can be reinvoked if SDK already initialized):
 
 ```swift
-MobileAds.initializeSDK()
+let adapterIdentity = AdapterIdentity(
+    adapterNetworkName: "MEDIATION_NETWORK_NAME",
+    adapterVersion: "YANDEX_ADAPTER_VERSION",
+    adapterNetworkVersion: "MEDIATION_NETWORK_SDK_VERSION"
+)
+YandexAds.setAdapterIdentity(adapterIdentity)
+YandexAds.initializeSDK()
 ```
 
 ### Privacy policies
@@ -67,8 +73,9 @@ MobileAds.initializeSDK()
 Privacy policies can be configured like this:
 
 ```swift
-MobileAds.setLocationTrackingEnabled(locationTracking)
-MobileAds.setUserConsent(userConsent)
+YandexAds.privacy.setLocationTracking(locationTracking)
+YandexAds.privacy.setUserConsent(userConsent)
+YandexAds.privacy.setAgeRestricted(ageRestrictedUser)
 ```
 
 > You should configure policies every time when it changed.
@@ -77,29 +84,29 @@ See also: [GDPR](https://ads.yandex.com/helpcenter/en/dev/ios/gdpr).
 
 ### S2S bidding integration
 
-As shown in the [template](./ThirdPartyMediationAdapterTemplate/AdapterTemplate/YandexAdapters.swift#L42), the bidder token can be obtained as follows:
+As shown in the [template](./ThirdPartyMediationAdapterTemplate/AdapterTemplate/YandexAdapters.swift#L33), the bidder token can be obtained as follows:
 
 ```swift
-let bidderTokenLoader = BidderTokenLoader(mediationNetworkName: "MEDIATION_NETWORK_NAME")
-bidderTokenLoader.loadBidderToken(requestConfiguration: requestConfiguraton) { token in
+let bidderTokenLoader = BidderTokenLoader()
+bidderTokenLoader.loadBidderToken(request: request) { token in
     completion(token)
  }
 ```
 
-You need to load a bidder token for each new ad request. Token request can be created as follows (also shown in [template](./ThirdPartyMediationAdapterTemplate/AdapterTemplate/YandexAdapters.swift#L27)):
+You need to load a bidder token for each new ad request. Token request can be created as follows (also shown in [template](./ThirdPartyMediationAdapterTemplate/AdapterTemplate/YandexAdapters.swift#L36)):
 
 ```swift
-let requestConfiguraton: BidderTokenRequestConfiguration
+let request: BidderTokenRequest
 switch parameters.adFormat {
 case .banner(let size):
-    requestConfiguraton = BidderTokenRequestConfiguration.banner(size: BannerAdSize.fixedSize(withWidth: size.width, height: size.height))
+    request = BidderTokenRequest.banner(size: BannerAdSize.fixedSize(withWidth: size.width, height: size.height))
 case .interstitial:
-    requestConfiguraton = BidderTokenRequestConfiguration.interstitial()
+    request = BidderTokenRequest.interstitial()
 case .rewarded:
-    requestConfiguraton = BidderTokenRequestConfiguration.rewarded()
+    request = BidderTokenRequest.rewarded()
 case .appOpen:
-    requestConfiguraton = BidderTokenRequestConfiguration.appOpenAd()
+    request = BidderTokenRequest.appOpenAd()
 case .native:
-    requestConfiguraton = BidderTokenRequestConfiguration.native()
+    request = BidderTokenRequest.native()
 }
 ```

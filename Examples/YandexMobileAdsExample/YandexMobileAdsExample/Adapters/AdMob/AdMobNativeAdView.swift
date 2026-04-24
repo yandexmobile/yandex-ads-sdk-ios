@@ -1,10 +1,9 @@
 /*
- * Version for iOS © 2015–2025 YANDEX
+ * Version for iOS © 2015–2026 YANDEX
  *
  * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
  */
-#if COCOAPODS
 import GoogleMobileAds
 import YandexMobileAdsAdMobAdapters
 import YandexMobileAds
@@ -46,10 +45,10 @@ class AdMobNativeAdView: GoogleMobileAds.NativeAdView {
         (storeView as? UILabel)?.text = nativeAd?.store
         storeView?.isHidden = nativeAd?.store == nil
 
-        ageLabel.isHidden = nativeAd?.extraAssets?[kYMAAdMobNativeAdAgeExtraAsset] == nil
-        faviconImageView.isHidden = nativeAd?.extraAssets?[kYMAAdMobNativeAdFaviconExtraAsset] == nil
-        reviewCountLabel.isHidden = nativeAd?.extraAssets?[kYMAAdMobNativeAdReviewCountExtraAsset] == nil
-        warningLabel.isHidden = nativeAd?.extraAssets?[kYMAAdMobNativeAdWarningExtraAsset] == nil
+        ageLabel.isHidden = nativeAd?.extraAssets?[YandexAdMobNativeAdExtraAssets.age] == nil
+        faviconImageView.isHidden = nativeAd?.extraAssets?[YandexAdMobNativeAdExtraAssets.favicon] == nil
+        reviewCountLabel.isHidden = nativeAd?.extraAssets?[YandexAdMobNativeAdExtraAssets.reviewCount] == nil
+        warningLabel.isHidden = nativeAd?.extraAssets?[YandexAdMobNativeAdExtraAssets.warning] == nil
     }
 
     private func setAspectRatio() {
@@ -71,6 +70,14 @@ class AdMobNativeAdView: GoogleMobileAds.NativeAdView {
 }
 
 extension AdMobNativeAdView: YandexAdMobCustomEventNativeAdView {
+    func nativeImageView() -> UIImageView? {
+        return nil
+    }
+    
+    func nativeFeedbackButton() -> UIButton? {
+        return nil
+    }
+    
     func nativeAgeLabel() -> UILabel? {
         return ageLabel
     }
@@ -91,4 +98,3 @@ extension AdMobNativeAdView: YandexAdMobCustomEventNativeAdView {
         return warningLabel
     }
 }
-#endif

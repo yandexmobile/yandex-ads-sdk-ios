@@ -1,5 +1,5 @@
 /*
- * Version for iOS © 2015–2025 YANDEX
+ * Version for iOS © 2015–2026 YANDEX
  *
  * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
@@ -8,7 +8,7 @@
 import UIKit
 import YandexMobileAds
 
-final class NativeCustomAdView: YMANativeAdView {
+final class NativeCustomAdView: YandexMobileAds.NativeAdView {
     private enum Constants {
         static let smallMargin: CGFloat = 4
         static let bigMargin: CGFloat = 8
@@ -53,8 +53,8 @@ final class NativeCustomAdView: YMANativeAdView {
         return button
     }()
 
-    private let media: YMANativeMediaView = {
-        let mediaView = YMANativeMediaView()
+    private let media: YandexMobileAds.NativeMediaView = {
+        let mediaView = YandexMobileAds.NativeMediaView()
         mediaView.translatesAutoresizingMaskIntoConstraints = false
         return mediaView
     }()
@@ -146,7 +146,7 @@ final class NativeCustomAdView: YMANativeAdView {
     required init?(coder: NSCoder) {
         fatalError("Please use this class from code.")
     }
-
+    
     private func addSubviews() {
         addSubview(stack)
 

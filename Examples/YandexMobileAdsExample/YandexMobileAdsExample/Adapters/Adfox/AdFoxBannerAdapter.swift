@@ -1,14 +1,15 @@
+import UIKit
 import YandexMobileAds
 
 final class AdFoxBannerAdapter: NSObject, UnifiedAdProtocol {
     var inlineView: UIView? { containerView }
     var onEvent: ((UnifiedAdEvent) -> Void)?
     
-    private let adUnitId: String
+    private let adUnitID: String
     private let adWidth: CGFloat
     private let maxHeight: CGFloat
     
-    private var adView: AdView?
+    private var bannerAdView: BannerAdView?
     private var didLoad = false
     
     private var adFoxParameters: [String: String] = [
@@ -27,8 +28,8 @@ final class AdFoxBannerAdapter: NSObject, UnifiedAdProtocol {
         return view
     }()
     
-    init(adUnitId: String, adWidth: CGFloat, maxHeight: CGFloat) {
-        self.adUnitId = adUnitId
+    init(adUnitID: String, adWidth: CGFloat, maxHeight: CGFloat) {
+        self.adUnitID = adUnitID
         self.adWidth = adWidth
         self.maxHeight = maxHeight
         super.init()
@@ -36,11 +37,11 @@ final class AdFoxBannerAdapter: NSObject, UnifiedAdProtocol {
     
     func load() {
         tearDown()
-        let size = BannerAdSize.inlineSize(withWidth: adWidth, maxHeight: maxHeight)
-        let view = AdView(adUnitID: adUnitId, adSize: size)
+        let size = BannerAdSize.inline(width: adWidth, maxHeight: maxHeight)
+        let view = BannerAdView(adSize: size)
         view.delegate = self
         view.translatesAutoresizingMaskIntoConstraints = false
-        adView = view
+        bannerAdView = view
         containerView.addSubview(view)
         NSLayoutConstraint.activate([
             view.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
@@ -49,48 +50,39 @@ final class AdFoxBannerAdapter: NSObject, UnifiedAdProtocol {
             view.bottomAnchor.constraint(lessThanOrEqualTo: containerView.bottomAnchor)
         ])
         
-        let request = MutableAdRequest()
-        request.parameters = adFoxParameters
+        let request = AdRequest(adUnitID: adUnitID, parameters: adFoxParameters)
         didLoad = false
-        print("AdFox Banner: start loading (unit=\(adUnitId), width=\(adWidth), maxH=\(maxHeight))")
+        print("AdFox Banner: start loading (unit=\(adUnitID), width=\(adWidth), maxH=\(maxHeight))")
         view.loadAd(with: request)
     }
     
     func tearDown() {
         didLoad = false
-        adView?.delegate = nil
-        adView?.removeFromSuperview()
-        adView = nil
+        bannerAdView?.delegate = nil
+        bannerAdView?.removeFromSuperview()
+        bannerAdView = nil
     }
 }
 
 // MARK: - AdViewDelegate
 
-extension AdFoxBannerAdapter: AdViewDelegate {
-    func adViewDidLoad(_ adView: AdView) {
+extension AdFoxBannerAdapter: BannerAdViewDelegate {
+    func bannerAdViewDidLoad(_ bannerAdView: BannerAdView) {
         didLoad = true
         print("AdFox Banner: loaded")
         onEvent?(.loaded)
     }
     
-    func adViewDidFailLoading(_ adView: AdView, error: Error) {
+    func bannerAdViewDidFailLoading(_ bannerAdView: BannerAdView, error: Error) {
         print("AdFox Banner: failed \(error)")
         onEvent?(.failedToLoad(error))
     }
     
-    func adViewWillLeaveApplication(_ adView: AdView) {
-        onEvent?(.clicked)
-    }
-    
-    func adView(_ adView: AdView, willPresentScreen viewController: UIViewController?) {
-        onEvent?(.shown)
-    }
-    
-    func adView(_ adView: AdView, didDismissScreen viewController: UIViewController?) {
-        onEvent?(.dismissed)
-    }
-    
-    func adView(_ adView: AdView, didTrackImpression impressionData: ImpressionData?) {
+    func bannerAdView(_ bannerAdView: BannerAdView, didTrackImpression impressionData: ImpressionData?) {
         onEvent?(.impression)
+    }
+
+    func bannerAdViewDidClick(_ bannerAdView: BannerAdView) {
+        onEvent?(.clicked)
     }
 }

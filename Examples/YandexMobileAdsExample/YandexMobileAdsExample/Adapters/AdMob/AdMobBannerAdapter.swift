@@ -1,10 +1,9 @@
-#if COCOAPODS
 import GoogleMobileAds
 
 final class AdMobBannerAdapter: NSObject, UnifiedAdProtocol {
     var inlineView: UIView? { containerView }
     var onEvent: ((UnifiedAdEvent) -> Void)?
-    private let adUnitId: String
+    private let adUnitID: String
     private weak var hostViewController: UIViewController?
     private var bannerView: GoogleMobileAds.BannerView?
     private var didReceiveAd = false
@@ -17,8 +16,8 @@ final class AdMobBannerAdapter: NSObject, UnifiedAdProtocol {
         return view
     }()
     
-    init(adUnitId: String, hostViewController: UIViewController) {
-        self.adUnitId = adUnitId
+    init(adUnitID: String, hostViewController: UIViewController) {
+        self.adUnitID = adUnitID
         self.hostViewController = hostViewController
         super.init()
     }
@@ -40,11 +39,11 @@ final class AdMobBannerAdapter: NSObject, UnifiedAdProtocol {
             
             let banner = GoogleMobileAds.BannerView(adSize: GoogleMobileAds.AdSizeBanner)
             banner.translatesAutoresizingMaskIntoConstraints = false
-            banner.adUnitID = self.adUnitId
+            banner.adUnitID = self.adUnitID
             banner.rootViewController = rootVC
             banner.delegate = self
             self.bannerView = banner
-            print("AdMob Banner: load start (\(self.adUnitId))")
+            print("AdMob Banner: load start (\(self.adUnitID))")
             banner.load(GoogleMobileAds.Request())
         }
     }
@@ -74,41 +73,40 @@ extension AdMobBannerAdapter: GoogleMobileAds.BannerViewDelegate {
             bannerView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor)
         ])
         
-        debugPrint("AdMob Banner: didReceiveAd (unit=\(adUnitId), size=\(size.width)x\(size.height))")
+        debugPrint("AdMob Banner: didReceiveAd (unit=\(adUnitID), size=\(size.width)x\(size.height))")
         onEvent?(.loaded)
     }
     
     func bannerView(_ bannerView: GoogleMobileAds.BannerView, didFailToReceiveAdWithError error: Error) {
-        debugPrint("AdMob Banner: didFailToReceiveAd (unit=\(adUnitId)) error=\(error.localizedDescription)")
+        debugPrint("AdMob Banner: didFailToReceiveAd (unit=\(adUnitID)) error=\(error.localizedDescription)")
         onEvent?(.failedToLoad(error))
     }
     
     func bannerViewDidRecordImpression(_ bannerView: GoogleMobileAds.BannerView) {
-        debugPrint("AdMob Banner: impression recorded (unit=\(adUnitId))")
+        debugPrint("AdMob Banner: impression recorded (unit=\(adUnitID))")
         onEvent?(.impression)
     }
     
     func bannerViewDidRecordClick(_ bannerView: GoogleMobileAds.BannerView) {
-        debugPrint("AdMob Banner: click recorded (unit=\(adUnitId))")
+        debugPrint("AdMob Banner: click recorded (unit=\(adUnitID))")
         onEvent?(.clicked)
     }
     
     func bannerViewWillPresentScreen(_ bannerView: GoogleMobileAds.BannerView) {
-        debugPrint("AdMob Banner: will present screen (unit=\(adUnitId))")
+        debugPrint("AdMob Banner: will present screen (unit=\(adUnitID))")
         onEvent?(.shown)
     }
     
     func bannerViewWillDismissScreen(_ bannerView: GoogleMobileAds.BannerView) {
-        debugPrint("AdMob Banner: will dismiss screen (unit=\(adUnitId))")
+        debugPrint("AdMob Banner: will dismiss screen (unit=\(adUnitID))")
     }
     
     func bannerViewDidDismissScreen(_ bannerView: GoogleMobileAds.BannerView) {
-        debugPrint("AdMob Banner: did dismiss screen (unit=\(adUnitId))")
+        debugPrint("AdMob Banner: did dismiss screen (unit=\(adUnitID))")
         onEvent?(.dismissed)
     }
     
     func bannerViewWillLeaveApplication(_ bannerView: GoogleMobileAds.BannerView) {
-        debugPrint("AdMob Banner: will leave application (unit=\(adUnitId))")
+        debugPrint("AdMob Banner: will leave application (unit=\(adUnitID))")
     }
 }
-#endif

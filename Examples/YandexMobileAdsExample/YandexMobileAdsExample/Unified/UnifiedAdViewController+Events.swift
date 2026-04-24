@@ -46,7 +46,10 @@ extension UnifiedAdViewController {
                     } else {
                         self.setPlaceholder(visible: false, animated: true)
                     }
-                    
+
+                case .feedAd:
+                    break // placeholder is hidden in onUpdate when content is ready
+
                 default:
                     self.setPlaceholder(visible: false, animated: true)
                 }

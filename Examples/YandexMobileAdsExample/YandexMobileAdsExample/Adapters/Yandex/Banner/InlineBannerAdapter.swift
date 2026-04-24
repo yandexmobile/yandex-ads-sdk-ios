@@ -1,67 +1,59 @@
+import UIKit
 import YandexMobileAds
 
 final class YandexInlineBannerAdapter: NSObject, UnifiedAdProtocol {
-    var inlineView: UIView? { adView }
+    var inlineView: UIView? { bannerAdView }
     var onEvent: ((UnifiedAdEvent) -> Void)?
     
     // MARK: - Private
     
-    private let adUnitId: String
-    private let adView: AdView
+    private let adUnitID: String
+    private let bannerAdView: BannerAdView
     
     // MARK: - Init
-    init(adUnitId: String, width: CGFloat = 320, height: CGFloat = 320) {
-        self.adUnitId = adUnitId
-        let size = BannerAdSize.inlineSize(withWidth: width, maxHeight: height)
-        self.adView = AdView(adUnitID: adUnitId, adSize: size)
+    init(adUnitID: String, width: CGFloat = 320, height: CGFloat = 320) {
+        self.adUnitID = adUnitID
+        let size = BannerAdSize.inline(width: width, maxHeight: height)
+        self.bannerAdView = BannerAdView(adSize: size)
         super.init()
-        adView.delegate = self
-        adView.translatesAutoresizingMaskIntoConstraints = false
-        adView.accessibilityIdentifier = CommonAccessibility.bannerView
+        bannerAdView.delegate = self
+        bannerAdView.translatesAutoresizingMaskIntoConstraints = false
+        bannerAdView.accessibilityIdentifier = CommonAccessibility.bannerView
     }
     
     // MARK: - Methods
     
     func load() {
-        adView.loadAd()
+        let request = AdRequest(adUnitID: adUnitID)
+        bannerAdView.loadAd(with: request)
     }
     
     func tearDown() {
-        adView.delegate = nil
-        adView.removeFromSuperview()
+        bannerAdView.delegate = nil
+        bannerAdView.removeFromSuperview()
     }
 }
 
-// MARK: - AdViewDelegate
-extension YandexInlineBannerAdapter: AdViewDelegate {
-    func adViewDidLoad(_ adView: AdView) {
+// MARK: - BannerAdViewDelegate
+extension YandexInlineBannerAdapter: BannerAdViewDelegate {
+    func bannerAdViewDidLoad(_ bannerAdView: BannerAdView) {
         onEvent?(.loaded)
-        print("Inline(\(adUnitId)) loaded")
+        print("Inline(\(adUnitID)) loaded")
     }
     
-    func adViewDidFailLoading(_ adView: AdView, error: Error) {
+    func bannerAdViewDidFailLoading(_ bannerAdView: BannerAdView, error: Error) {
         onEvent?(.failedToLoad(error))
         let text = StateUtils.loadError(error)
-        print("Inline(\(adUnitId)) \(text)")
+        print("Inline(\(adUnitID)) \(text)")
     }
     
-    func adViewDidClick(_ adView: AdView) {
+    func bannerAdViewDidClick(_ bannerAdView: BannerAdView) {
         onEvent?(.clicked)
-        print("Inline(\(adUnitId)) did click")
+        print("Inline(\(adUnitID)) did click")
     }
     
-    func adView(_ adView: AdView, didTrackImpression impressionData: ImpressionData?) {
+    func bannerAdView(_ bannerAdView: BannerAdView, didTrackImpression impressionData: ImpressionData?) {
         onEvent?(.impression)
-        print("Inline(\(adUnitId)) did track impression")
-    }
-    
-    func adView(_ adView: AdView, willPresentScreen viewController: UIViewController?) {
-        onEvent?(.shown)
-        print("Inline(\(adUnitId)) will present screen")
-    }
-    
-    func adView(_ adView: AdView, didDismissScreen viewController: UIViewController?) {
-        onEvent?(.dismissed)
-        print("Inline(\(adUnitId)) did dismiss screen")
+        print("Inline(\(adUnitID)) did track impression")
     }
 }

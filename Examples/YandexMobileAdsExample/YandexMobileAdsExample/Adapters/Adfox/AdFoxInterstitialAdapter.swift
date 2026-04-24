@@ -1,10 +1,11 @@
+import UIKit
 import YandexMobileAds
 
 final class AdFoxInterstitialAdapter: NSObject, UnifiedAdProtocol, PresentableAdProtocol {
     var inlineView: UIView? { nil }
     var onEvent: ((UnifiedAdEvent) -> Void)?
     
-    private let adUnitId: String
+    private let adUnitID: String
     private var adFoxParameters: [String: String] = [
         "adf_ownerid": "270901",
         "adf_p1": "caboi",
@@ -16,24 +17,33 @@ final class AdFoxInterstitialAdapter: NSObject, UnifiedAdProtocol, PresentableAd
     private let interstitialAdLoader = InterstitialAdLoader()
     private var interstitialAd: InterstitialAd?
     
-    init(adUnitId: String) {
-        self.adUnitId = adUnitId
+    init(adUnitID: String) {
+        self.adUnitID = adUnitID
         super.init()
     }
     
     func load() {
         tearDown()
-        let config = MutableAdRequestConfiguration(adUnitID: adUnitId)
-        config.parameters = adFoxParameters
-        
-        interstitialAdLoader.delegate = self
-        interstitialAdLoader.loadAd(with: config)
+        let request = AdRequest(adUnitID: adUnitID, parameters: adFoxParameters)
+
+        interstitialAdLoader.loadAd(with: request) { [weak self] in
+            guard let self else { return }
+            switch $0 {
+            case .success(let interstitialAd):
+                print("Interstitial Ad with Unit ID: \(adUnitID) loaded")
+                self.interstitialAd = interstitialAd
+                interstitialAd.delegate = self
+                onEvent?(.loaded)
+            case .failure(let error):
+                print("Loading failed for Ad with Unit ID: \(String(describing: adUnitID)). Error: \(String(describing: error))")
+                onEvent?(.failedToLoad(error))
+            }
+        }
     }
     
     func tearDown() {
         interstitialAd?.delegate = nil
         interstitialAd = nil
-        interstitialAdLoader.delegate = nil
     }
     
     func present(from viewController: UIViewController) {
@@ -41,34 +51,16 @@ final class AdFoxInterstitialAdapter: NSObject, UnifiedAdProtocol, PresentableAd
     }
 }
 
-// MARK: - InterstitialAdLoaderDelegate
-
-extension AdFoxInterstitialAdapter: InterstitialAdLoaderDelegate {
-    func interstitialAdLoader(_ adLoader: InterstitialAdLoader, didLoad interstitialAd: InterstitialAd) {
-        print("Interstitial Ad with Unit ID: \(adUnitId) loaded")
-        self.interstitialAd = interstitialAd
-        interstitialAd.delegate = self
-        onEvent?(.loaded)
-    }
-    
-    func interstitialAdLoader(_ adLoader: InterstitialAdLoader, didFailToLoadWithError error: AdRequestError) {
-        let id = error.adUnitId
-        let error  = error.error
-        print("Loading failed for Ad with Unit ID: \(String(describing: id)). Error: \(String(describing: error))")
-        onEvent?(.failedToLoad(error))
-    }
-}
-
 // MARK: - InterstitialAdDelegate
 
 extension AdFoxInterstitialAdapter: InterstitialAdDelegate {
-    func interstitialAd(_ interstitialAd: InterstitialAd, didFailToShowWithError error: Error) {
-        print("Interstitial Ad with Unit ID: \(adUnitId) failed to show. Error: \(error)")
+    func interstitialAd(_ interstitialAd: InterstitialAd, didFailToShow error: Error) {
+        print("Interstitial Ad with Unit ID: \(adUnitID) failed to show. Error: \(error)")
         onEvent?(.failedToShow(error))
     }
     
     func interstitialAdDidShow(_ interstitialAd: InterstitialAd) {
-        print("Interstitial Ad with Unit ID: \(adUnitId) did show")
+        print("Interstitial Ad with Unit ID: \(adUnitID) did show")
         if let topVC = UIApplication.shared
             .connectedScenes
             .compactMap({ $0 as? UIWindowScene })
@@ -83,18 +75,18 @@ extension AdFoxInterstitialAdapter: InterstitialAdDelegate {
     }
     
     func interstitialAdDidDismiss(_ interstitialAd: InterstitialAd) {
-        print("Interstitial Ad with Unit ID: \(adUnitId) did dismiss")
+        print("Interstitial Ad with Unit ID: \(adUnitID) did dismiss")
         onEvent?(.dismissed)
         self.interstitialAd = nil
     }
     
     func interstitialAdDidClick(_ interstitialAd: InterstitialAd) {
-        print("Interstitial Ad with Unit ID: \(adUnitId) did click")
+        print("Interstitial Ad with Unit ID: \(adUnitID) did click")
         onEvent?(.clicked)
     }
     
-    func interstitialAd(_ interstitialAd: InterstitialAd, didTrackImpressionWith impressionData: ImpressionData?) {
-        print("Interstitial Ad with Unit ID: \(adUnitId) did track impression")
+    func interstitialAd(_ interstitialAd: InterstitialAd, didTrackImpression impressionData: ImpressionData?) {
+        print("Interstitial Ad with Unit ID: \(adUnitID) did track impression")
         onEvent?(.impression)
     }
 }

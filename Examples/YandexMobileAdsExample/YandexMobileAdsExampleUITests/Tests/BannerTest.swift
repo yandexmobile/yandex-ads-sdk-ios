@@ -1,5 +1,5 @@
 /*
- * Version for iOS © 2015–2025 YANDEX
+ * Version for iOS © 2015–2026 YANDEX
  *
  * You may not use this file except in compliance with the License.
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
@@ -36,6 +36,30 @@ final class BannerTest: BaseTest {
 
     func testMyTargetBanner() {
         runBannerTest(source: TestConstants.Source.myTarget)
+    }
+
+    func testGoogleBanner() {
+        runBannerTest(source: TestConstants.Source.google)
+    }
+
+    func testPangleBanner() {
+        runBannerTest(source: TestConstants.Source.pangle)
+    }
+
+    func testPangleMrecBanner() {
+        runBannerTest(source: TestConstants.Source.pangleMrec)
+    }
+    
+    func testAppLovinBanner() throws {
+        runBannerTest(source: TestConstants.Source.appLovin)
+    }
+    
+    func testUnityAdsBanner() throws {
+        runBannerTest(source: TestConstants.Source.unityAds)
+    }
+    
+    func testVungleBanner() throws {
+        runBannerTest(source: TestConstants.Source.vungle)
     }
 
     func testYandexBanner() {

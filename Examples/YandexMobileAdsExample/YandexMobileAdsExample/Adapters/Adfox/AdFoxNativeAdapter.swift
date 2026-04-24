@@ -1,10 +1,12 @@
+import UIKit
 import YandexMobileAds
 
+@MainActor
 final class AdFoxNativeAdapter: NSObject, UnifiedAdProtocol {
     var inlineView: UIView? { adView }
     var onEvent: ((UnifiedAdEvent) -> Void)?
     
-    private let adUnitId: String
+    private let adUnitID: String
     private var adFoxParameters: [String: String] = [
         "adf_ownerid": "270901",
         "adf_p1": "caboj",
@@ -18,11 +20,10 @@ final class AdFoxNativeAdapter: NSObject, UnifiedAdProtocol {
     private var nativeAd: NativeAd?
     private let adView: NativeAdView
     
-    init(adUnitId: String) {
-        self.adUnitId = adUnitId
+    init(adUnitID: String) {
+        self.adUnitID = adUnitID
         self.adView = NativeAdView.nib ?? NativeAdView()
         super.init()
-        adLoader.delegate = self
         adView.isHidden = true
     }
     
@@ -30,11 +31,31 @@ final class AdFoxNativeAdapter: NSObject, UnifiedAdProtocol {
         nativeAd?.delegate = nil
         nativeAd = nil
         adView.isHidden = true
-        let config = MutableNativeAdRequestConfiguration(adUnitID: adUnitId)
-        config.parameters = adFoxParameters
-        
-        debugPrint("AdFox Native: start loading (unit=\(adUnitId), params=\(adFoxParameters))")
-        adLoader.loadAd(with: config)
+        let request = AdRequest(adUnitID: adUnitID, parameters: adFoxParameters)
+
+        debugPrint("AdFox Native: start loading (unit=\(adUnitID), params=\(adFoxParameters))")
+        adLoader.loadAd(with: request) { [weak self] in
+            guard let self else { return }
+            switch $0 {
+            case .success(let ad):
+                nativeAd = ad
+                ad.delegate = self
+                do {
+                    try ad.bind(with: adView)
+                    adView.configureAssetViews()
+                    adView.isHidden = false
+                    adView.accessibilityIdentifier = CommonAccessibility.bannerView
+                    debugPrint("AdFox Native: loaded successfully (unit=\(adUnitID))")
+                    onEvent?(.loaded)
+                } catch {
+                    debugPrint("AdFox Native: bind failed (unit=\(adUnitID)) error=\(error)")
+                    onEvent?(.failedToLoad(error))
+                }
+            case .failure(let error):
+                debugPrint("AdFox Native: failedToLoad (unit=\(adUnitID)) error=\(error)")
+                onEvent?(.failedToLoad(error))
+            }
+        }
     }
     
     func tearDown() {
@@ -42,60 +63,20 @@ final class AdFoxNativeAdapter: NSObject, UnifiedAdProtocol {
         nativeAd = nil
         adView.isHidden = true
         adView.removeFromSuperview()
-        debugPrint("AdFox Native: tearDown (unit=\(adUnitId))")
-    }
-}
-
-// MARK: - NativeAdLoaderDelegate
-
-extension AdFoxNativeAdapter: NativeAdLoaderDelegate {
-    func nativeAdLoader(_ loader: NativeAdLoader, didLoad ad: NativeAd) {
-        nativeAd = ad
-        ad.delegate = self
-        do {
-            try ad.bind(with: adView)
-            adView.configureAssetViews()
-            adView.isHidden = false
-            adView.accessibilityIdentifier = CommonAccessibility.bannerView
-            debugPrint("AdFox Native: loaded successfully (unit=\(adUnitId))")
-            onEvent?(.loaded)
-        } catch {
-            debugPrint("AdFox Native: bind failed (unit=\(adUnitId)) error=\(error)")
-            onEvent?(.failedToLoad(error))
-        }
-    }
-    
-    func nativeAdLoader(_ loader: NativeAdLoader, didFailLoadingWithError error: Error) {
-        debugPrint("AdFox Native: failedToLoad (unit=\(adUnitId)) error=\(error)")
-        onEvent?(.failedToLoad(error))
+        debugPrint("AdFox Native: tearDown (unit=\(adUnitID))")
     }
 }
 
 // MARK: - NativeAdDelegate
 
 extension AdFoxNativeAdapter: NativeAdDelegate {
-    func nativeAdWillLeaveApplication(_ ad: NativeAd) {
-        debugPrint("AdFox Native: clicked (unit=\(adUnitId))")
+    func nativeAdDidClick(_ ad: NativeAd) {
+        debugPrint("AdFox Native: clicked (unit=\(adUnitID))")
         onEvent?(.clicked)
     }
     
-    func nativeAd(_ ad: NativeAd, willPresentScreen viewController: UIViewController?) {
-        debugPrint("AdFox Native: will present screen (unit=\(adUnitId))")
-        onEvent?(.shown)
-    }
-    
-    func nativeAd(_ ad: NativeAd, didDismissScreen viewController: UIViewController?) {
-        debugPrint("AdFox Native: did dismiss screen (unit=\(adUnitId))")
-        onEvent?(.dismissed)
-    }
-    
-    func nativeAd(_ ad: NativeAd, didTrackImpressionWith impressionData: ImpressionData?) {
-        debugPrint("AdFox Native: impression tracked (unit=\(adUnitId))")
+    func nativeAd(_ ad: NativeAd, didTrackImpression impressionData: ImpressionData?) {
+        debugPrint("AdFox Native: impression tracked (unit=\(adUnitID))")
         onEvent?(.impression)
-    }
-    
-    func close(_ ad: NativeAd) {
-        debugPrint("AdFox Native: closed (unit=\(adUnitId))")
-        adView.isHidden = true
     }
 }

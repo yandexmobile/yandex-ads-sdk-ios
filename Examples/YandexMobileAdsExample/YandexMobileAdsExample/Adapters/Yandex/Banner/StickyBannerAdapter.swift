@@ -1,3 +1,4 @@
+import UIKit
 import YandexMobileAds
 
 final class YandexStickyBannerAdapter: NSObject, UnifiedAdProtocol, AttachableAdProtocol {
@@ -6,25 +7,26 @@ final class YandexStickyBannerAdapter: NSObject, UnifiedAdProtocol, AttachableAd
     
     // MARK: - Private
     
-    private let adUnitId: String
+    private let adUnitID: String
     private weak var hostVC: UIViewController?
-    private var adView: AdView?
+    private var bannerAdView: BannerAdView?
 
     // MARK: - Init
     
-    init(adUnitId: String) {
-        self.adUnitId = adUnitId
+    init(adUnitID: String) {
+        self.adUnitID = adUnitID
         super.init()
     }
 
     func load() {
-        adView?.loadAd()
+        let request = AdRequest(adUnitID: adUnitID)
+        bannerAdView?.loadAd(with: request)
     }
 
     func tearDown() {
-        adView?.delegate = nil
-        adView?.removeFromSuperview()
-        adView = nil
+        bannerAdView?.delegate = nil
+        bannerAdView?.removeFromSuperview()
+        bannerAdView = nil
         hostVC = nil
     }
 
@@ -36,52 +38,38 @@ final class YandexStickyBannerAdapter: NSObject, UnifiedAdProtocol, AttachableAd
         viewController.view.layoutIfNeeded()
         let width = viewController.view.safeAreaLayoutGuide.layoutFrame.width
 
-        let size = BannerAdSize.stickySize(withContainerWidth: width)
-        let ad = AdView(adUnitID: adUnitId, adSize: size)
+        let size = BannerAdSize.sticky(containerWidth: width)
+        let ad = BannerAdView(adSize: size)
         ad.translatesAutoresizingMaskIntoConstraints = false
         ad.delegate = self
         ad.accessibilityIdentifier = CommonAccessibility.bannerView
 
-        adView = ad
+        bannerAdView = ad
         ad.displayAtTop(in: viewController.view)
     }
 }
 
-// MARK: - AdViewDelegate
+// MARK: - BannerAdViewDelegate
 
-extension YandexStickyBannerAdapter: AdViewDelegate {
-    func adViewDidLoad(_ adView: AdView) {
+extension YandexStickyBannerAdapter: BannerAdViewDelegate {
+    func bannerAdViewDidLoad(_ bannerAdView: BannerAdView) {
         onEvent?(.loaded)
-        print("Sticky(\(adUnitId)) loaded")
+        print("Sticky(\(adUnitID)) loaded")
     }
 
-    func adViewDidFailLoading(_ adView: AdView, error: Error) {
+    func bannerAdViewDidFailLoading(_ bannerAdView: BannerAdView, error: Error) {
         onEvent?(.failedToLoad(error))
         let text = StateUtils.loadError(error)
-        print("Sticky(\(adUnitId)) \(text)")
+        print("Sticky(\(adUnitID)) \(text)")
     }
 
-    func adViewDidClick(_ adView: AdView) {
+    func bannerAdViewDidClick(_ bannerAdView: BannerAdView) {
         onEvent?(.clicked)
-        print("Sticky(\(adUnitId)) did click")
+        print("Sticky(\(adUnitID)) did click")
     }
 
-    func adView(_ adView: AdView, didTrackImpression impressionData: ImpressionData?) {
+    func bannerAdView(_ bannerAdView: BannerAdView, didTrackImpression impressionData: ImpressionData?) {
         onEvent?(.impression)
-        print("Sticky(\(adUnitId)) did track impression")
-    }
-
-    func adView(_ adView: AdView, willPresentScreen viewController: UIViewController?) {
-        onEvent?(.shown)
-        print("Sticky(\(adUnitId)) will present screen")
-    }
-
-    func adView(_ adView: AdView, didDismissScreen viewController: UIViewController?) {
-        onEvent?(.dismissed)
-        print("Sticky(\(adUnitId)) did dismiss screen")
-    }
-
-    func adViewWillLeaveApplication(_ adView: AdView) {
-        print("Sticky(\(adUnitId)) will leave application")
+        print("Sticky(\(adUnitID)) did track impression")
     }
 }

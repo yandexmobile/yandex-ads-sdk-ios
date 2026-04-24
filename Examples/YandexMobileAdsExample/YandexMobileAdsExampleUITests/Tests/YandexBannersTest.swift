@@ -24,7 +24,6 @@ final class YandexBannersTest: BaseTest {
     func testYandexBannerInline() {
         launchApp(extraArgs: [LaunchArgument.gdprSuppressOnLaunch])
         adsPage.selectFormat(TestConstants.Format.bannerInline)
-        adsPage.selectSource(TestConstants.Source.yandex)
         adsPage.tapLoad()
         guard adsPage.assertLoadedOrNoFill(timeout: 10) else { return }
         adsPage.waitInlineAdVisible(timeout: 10)
