@@ -37,7 +37,10 @@ EULA is available at [EULA website][LICENSE]
 [DOCUMENTATION]: https://tech.yandex.ru/mobile-ads/
 [LICENSE]: https://yandex.com/legal/mobileads_sdk_agreement/
 [CocoaPods]: http://cocoapods.org/
+[SKAdNetwork]: https://ads.yandex.com/helpcenter/en/dev/ios/skadnetwork
 
 ## SKAdNetwork
 
-File with a list of SKAdNetwork [identifiers](./SKAdNetworkIds.xml)
+[YandexMobileAdsExample](Examples/YandexMobileAdsExample) uses script built into build phase to update list of SKAdNetwork identifiers when performing a Product Archive.
+
+For instructions, see [Yandex SKAdNetwork documentation][SKAdNetwork].
