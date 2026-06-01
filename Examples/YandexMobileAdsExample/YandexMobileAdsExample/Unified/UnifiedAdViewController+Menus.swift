@@ -18,7 +18,7 @@ extension UnifiedAdViewController {
         case .nativeBulk:
             return [.yandex]
         case .nativeTemplate:
-            return [.adfox, .admobReverseAdapter]
+            return [.yandex, .adfox, .admobReverseAdapter]
         case .nativeCustom:
             return [.yandex]
         case .instreamSingle, .instreamInrolls:

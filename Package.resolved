@@ -14,26 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/appmetrica/appmetrica-sdk-ios",
       "state" : {
-        "revision" : "28e94b1f812db4304dc34d8fb4844016d7d25303",
-        "version" : "6.0.0"
-      }
-    },
-    {
-      "identity" : "divkit-ios",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/divkit/divkit-ios.git",
-      "state" : {
-        "revision" : "99017d2524ade0fb916c8d16aa8f52374659b886",
-        "version" : "32.26.0"
-      }
-    },
-    {
-      "identity" : "divkit-ios-facade",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/divkit/divkit-ios-facade",
-      "state" : {
-        "revision" : "14765531578bd575b6b99ac0d068e6d1378a8520",
-        "version" : "5.3.0"
+        "revision" : "a00b57ca0ceadd8a838b1d78584999308fcbded0",
+        "version" : "6.3.0"
       }
     },
     {
@@ -50,8 +32,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/kstenerud/KSCrash",
       "state" : {
-        "revision" : "c0177658fc771ae833b6d3b8f5f3f5a14d59ec03",
-        "version" : "2.1.2"
+        "revision" : "95a8895d75f3c22aa9ad9f2a15d2fbd97b0a55e2",
+        "version" : "2.5.1"
       }
     },
     {
@@ -82,30 +64,12 @@
       }
     },
     {
-      "identity" : "swift-cmark",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/swiftlang/swift-cmark.git",
-      "state" : {
-        "revision" : "b022b08312decdc46585e0b3440d97f6f22ef703",
-        "version" : "0.6.0"
-      }
-    },
-    {
-      "identity" : "swift-markdown",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-markdown.git",
-      "state" : {
-        "revision" : "ea79e83c8744d2b50b0dc2d5bbd1e857e1253bf9",
-        "version" : "0.6.0"
-      }
-    },
-    {
       "identity" : "swift-package-manager-google-mobile-ads",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/googleads/swift-package-manager-google-mobile-ads",
       "state" : {
-        "revision" : "1239c23464503053c17d37ee5daa70de3455e9c8",
-        "version" : "12.14.0"
+        "revision" : "e2b1c31cdf11cb4b57b4e70ae4c313d4e48c444a",
+        "version" : "13.3.0"
       }
     },
     {
@@ -115,15 +79,6 @@
       "state" : {
         "revision" : "13b248eaa73b7826f0efb1bcf455e251d65ecb1b",
         "version" : "3.1.0"
-      }
-    },
-    {
-      "identity" : "vgsl",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/yandex/vgsl.git",
-      "state" : {
-        "revision" : "5b5e4c23e6c8e809cc4bf61faaa32d85a8c36cfd",
-        "version" : "7.12.3"
       }
     },
     {

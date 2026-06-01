@@ -7,7 +7,7 @@ extension UnifiedAdViewController {
         currentFormat = format
         swapAdapter(source: currentSource, format: format)
     }
-
+    
     func swapAdapter(source: AdSource, format: UnifiedFormat) {
         if let inline = currentInlineView {
             NSLayoutConstraint.deactivate(currentInlineConstraints)
@@ -15,7 +15,7 @@ extension UnifiedAdViewController {
             currentInlineConstraints.removeAll()
             currentInlineView = nil
         }
-
+        
         if adapter is NativeBulkProviding {
             bulkAds.removeAll()
             bulkTableView.reloadData()
@@ -39,16 +39,16 @@ extension UnifiedAdViewController {
         adapter?.tearDown()
         hasLoadedCurrentAd = false
         logsView.clearLogs()
-
+        
         updatePlaceholder(state: .idle, visible: true, animated: false)
         adapter = UnifiedAdFactory.makeAdapter(source: source, format: format, hostViewController: self)
-
+        
         if let appOpenAdapter = adapter as? YandexAppOpenAdapter {
             appOpenAdapter.setPresentingViewController(self)
         }
-
+        
         wireEvents()
-
+        
         if let bulk = adapter as? NativeBulkProviding {
             if bulkTableView.superview == nil {
                 view.addSubview(bulkTableView)
@@ -60,14 +60,14 @@ extension UnifiedAdViewController {
                 ]
                 NSLayoutConstraint.activate(bulkTableConstraints)
             }
-
+            
             bulkAds.removeAll()
             bulkTableView.reloadData()
             bulkTableView.isHidden = true
-
+            
             updatePlaceholder(state: .idle, visible: true, animated: false)
             view.bringSubviewToFront(placeholderView)
-
+            
             bulk.onAdsChange = { [weak self] ads in
                 guard let self else { return }
                 DispatchQueue.main.async {
@@ -120,7 +120,7 @@ extension UnifiedAdViewController {
                 setPlaceholder(visible: true, animated: false)
             }
         }
-
+        
         (adapter as? AttachableAdProtocol)?.attachIfNeeded(to: self)
         updatePresentAvailability()
         configureLayoutForAdType()

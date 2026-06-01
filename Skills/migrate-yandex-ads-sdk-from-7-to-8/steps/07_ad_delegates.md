@@ -17,7 +17,7 @@ This applies to:
 ### AppOpenAdDelegate (5 methods)
 
 ```swift
-func appOpenAd(_ appOpenAd: AppOpenAd, didFailToShow error: Error)
+func appOpenAd(_ appOpenAd: AppOpenAd, didFailToShow error: any Error)
 func appOpenAdDidShow(_ appOpenAd: AppOpenAd)
 func appOpenAdDidDismiss(_ appOpenAd: AppOpenAd)
 func appOpenAdDidClick(_ appOpenAd: AppOpenAd)
@@ -27,7 +27,7 @@ func appOpenAd(_ appOpenAd: AppOpenAd, didTrackImpression impressionData: Impres
 ### InterstitialAdDelegate (5 methods)
 
 ```swift
-func interstitialAd(_ interstitialAd: InterstitialAd, didFailToShow error: Error)
+func interstitialAd(_ interstitialAd: InterstitialAd, didFailToShow error: any Error)
 func interstitialAdDidShow(_ interstitialAd: InterstitialAd)
 func interstitialAdDidDismiss(_ interstitialAd: InterstitialAd)
 func interstitialAdDidClick(_ interstitialAd: InterstitialAd)
@@ -38,7 +38,7 @@ func interstitialAd(_ interstitialAd: InterstitialAd, didTrackImpression impress
 
 ```swift
 func rewardedAd(_ rewardedAd: RewardedAd, didReward reward: Reward)
-func rewardedAd(_ rewardedAd: RewardedAd, didFailToShow error: Error)
+func rewardedAd(_ rewardedAd: RewardedAd, didFailToShow error: any Error)
 func rewardedAdDidShow(_ rewardedAd: RewardedAd)
 func rewardedAdDidDismiss(_ rewardedAd: RewardedAd)
 func rewardedAdDidClick(_ rewardedAd: RewardedAd)
@@ -48,22 +48,22 @@ func rewardedAd(_ rewardedAd: RewardedAd, didTrackImpression impressionData: Imp
 ### NativeAdDelegate (2 methods)
 
 ```swift
-func nativeAdDidClick(_ ad: NativeAd)
-func nativeAd(_ ad: NativeAd, didTrackImpression impressionData: ImpressionData?)
+func nativeAdDidClick(_ ad: any NativeAd)
+func nativeAd(_ ad: any NativeAd, didTrackImpression impressionData: ImpressionData?)
 ```
 
 ### SliderAdDelegate (2 methods)
 
 ```swift
-func sliderAdDidClick(_ ad: SliderAd)
-func sliderAd(_ ad: SliderAd, didTrackImpression impressionData: ImpressionData?)
+func sliderAdDidClick(_ ad: any SliderAd)
+func sliderAd(_ ad: any SliderAd, didTrackImpression impressionData: ImpressionData?)
 ```
 
 ### BannerAdViewDelegate (4 methods)
 
 ```swift
 func bannerAdViewDidLoad(_ bannerAdView: BannerAdView)
-func bannerAdViewDidFailLoading(_ bannerAdView: BannerAdView, error: Error)
+func bannerAdViewDidFailLoading(_ bannerAdView: BannerAdView, error: any Error)
 func bannerAdViewDidClick(_ bannerAdView: BannerAdView)
 func bannerAdView(_ bannerAdView: BannerAdView, didTrackImpression impressionData: ImpressionData?)
 ```

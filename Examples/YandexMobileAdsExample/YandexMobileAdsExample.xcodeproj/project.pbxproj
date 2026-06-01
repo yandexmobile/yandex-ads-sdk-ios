@@ -37,9 +37,12 @@
 		147B0BCF27200D14005F4062 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147B0BCB27200D12005F4062 /* StarRatingView.swift */; };
 		147B0BD027200D14005F4062 /* NativeAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 147B0BCC27200D13005F4062 /* NativeAdView.xib */; };
 		147B0BD127200D14005F4062 /* NativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147B0BCD27200D14005F4062 /* NativeAdView.swift */; };
+		1BD598FDEF9B45F9BBD9534C /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80919F3DB61E4A4E8EECC7DC /* RootTabView.swift */; };
+		1F1CECE2A41842A6844C9622 /* PlayableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD755660A6843578D6EF526 /* PlayableItem.swift */; };
 		23DDDFBDB7DE2684D4629157 /* AppOpenAdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4F4F024807347182056159 /* AppOpenAdViewModel.swift */; };
 		2CD72B27C74043053A06E7B8 /* AppOpenAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40C1BEB9A5E27B16FC70C02 /* AppOpenAdView.swift */; };
 		368498FC4D150C08DEC200EC /* InterstitialAdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18464C9E798CF6E8FC41FB92 /* InterstitialAdViewModel.swift */; };
+		44FE521F5F4549D89F58C856 /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE85AD41D8824E8C94D6F25F /* QRScannerView.swift */; };
 		4654DB85EDED754873387A7A /* InterstitialAdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18464C9E798CF6E8FC41FB92 /* InterstitialAdViewModel.swift */; };
 		4749E38B65DD3CFF5C589C07 /* InterstitialAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FD697289FB1C461C5F31AA /* InterstitialAdView.swift */; };
 		492E63582ED5EB6F00A0A752 /* AdMobError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492E63572ED5EB6F00A0A752 /* AdMobError.swift */; };
@@ -71,8 +74,6 @@
 		49BF09F32EB4E1DC00D6E714 /* YandexNativeBulkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BF09F12EB4E1DC00D6E714 /* YandexNativeBulkAdapter.swift */; };
 		49BF09F52EB542EB00D6E714 /* YandexInstreamSingleAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BF09F42EB542EB00D6E714 /* YandexInstreamSingleAdapter.swift */; };
 		49BF09F62EB542EB00D6E714 /* YandexInstreamSingleAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BF09F42EB542EB00D6E714 /* YandexInstreamSingleAdapter.swift */; };
-		FEEDAD003A2B3C4D5E6F7A8B /* YandexFeedAdAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDAD002A2B3C4D5E6F7A8B /* YandexFeedAdAdapter.swift */; };
-		FEEDAD004A2B3C4D5E6F7A8B /* YandexFeedAdAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDAD002A2B3C4D5E6F7A8B /* YandexFeedAdAdapter.swift */; };
 		49BF09FF2EB563EE00D6E714 /* UnifiedAdEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BF09FE2EB563EE00D6E714 /* UnifiedAdEvent.swift */; };
 		49BF0A002EB563EE00D6E714 /* UnifiedAdEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BF09FE2EB563EE00D6E714 /* UnifiedAdEvent.swift */; };
 		49BF0A082EB5645600D6E714 /* UnifiedAdFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BF0A072EB5645600D6E714 /* UnifiedAdFactory.swift */; };
@@ -113,8 +114,10 @@
 		49C499132ED3C8DA001C653A /* LaunchArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C499102ED3C8DA001C653A /* LaunchArgument.swift */; };
 		4A8FA13F2BFC9AF800A3DB07 /* NativeBulkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8FA13E2BFC9AF800A3DB07 /* NativeBulkTableViewCell.swift */; };
 		4A8FA1402BFC9AF800A3DB07 /* NativeBulkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8FA13E2BFC9AF800A3DB07 /* NativeBulkTableViewCell.swift */; };
+		52A305C6A56E4C04B455A2F4 /* SwiftUIExamplesTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533E4193434C4C2FB4DE0FA6 /* SwiftUIExamplesTab.swift */; };
 		56A3FF27718E67EED8174DC6 /* AdPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669A05343A5C434E60EB05A6 /* AdPlaceholderView.swift */; };
 		5B91D3D34D3A9FB7C5FD1D6E /* AppOpenAdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4F4F024807347182056159 /* AppOpenAdViewModel.swift */; };
+		60679E603EA0413F8CAFF05A /* NativeAdBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730DB5EE15314024932FD9FB /* NativeAdBannerView.swift */; };
 		64F70DBA2B0B64D300A31CE8 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F982720457800A24D5E /* LinkedList.swift */; };
 		64F70DBC2B0B64D300A31CE8 /* GDPRUserConsentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1474FC182721A4E500276688 /* GDPRUserConsentManager.swift */; };
 		64F70DBD2B0B64D300A31CE8 /* LRUCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14033F972720457800A24D5E /* LRUCache.swift */; };
@@ -189,31 +192,50 @@
 		7AF4B0BF2B279167004974FD /* YandexInstreamAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF4B0BD2B27900D004974FD /* YandexInstreamAccessibility.swift */; };
 		7AF4B0C02B279168004974FD /* YandexInstreamAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF4B0BD2B27900D004974FD /* YandexInstreamAccessibility.swift */; };
 		7AF4B0C92B279ACD004974FD /* YandexMobileAdsExample.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 7AF4B0C82B279ACD004974FD /* YandexMobileAdsExample.xctestplan */; };
+		7B021096865542EE98B5FD9A /* PlayableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD755660A6843578D6EF526 /* PlayableItem.swift */; };
 		7DB42FB59980BA5BC6950C9F /* RewardedAdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9143AD86B83163AFFA4C8B4 /* RewardedAdViewModel.swift */; };
+		7EE2C532740D4CCFB2E4585F /* PlayablePreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D53B7D0A9974710981ADB5E /* PlayablePreviewViewModel.swift */; };
+		8A193E9FE47E49FCA4655E9E /* QRCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17501EF27FF54F95901CA6C4 /* QRCameraView.swift */; };
 		8BB644E9742355613BB5B264 /* SwiftUIMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FF08B39D8D78AB657C0DFB /* SwiftUIMenuView.swift */; };
 		993C01BAD0BA9AC6095BC0A3 /* RewardedAdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9143AD86B83163AFFA4C8B4 /* RewardedAdViewModel.swift */; };
+		99EA2136D2AB45C7AFB5BA77 /* PlayablePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE7FA4472404EF88D58DC72 /* PlayablePreviewView.swift */; };
+		9C459DC3F5B14C26807FE9DE /* SwiftUIExamplesTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533E4193434C4C2FB4DE0FA6 /* SwiftUIExamplesTab.swift */; };
+		9E5B879D3DBC40878B727BFB /* QRScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4EE2555B944273A28BA0C1 /* QRScannerViewModel.swift */; };
 		9FDD9C34865EA561A94AAB80 /* RewardedAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B28FDBDC4CC1B1DC747D9 /* RewardedAdView.swift */; };
+		A2A3AE92DCEE47989AE1F6AF /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80919F3DB61E4A4E8EECC7DC /* RootTabView.swift */; };
+		A3CA222D274843E3B493F597 /* PlayablePreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D53B7D0A9974710981ADB5E /* PlayablePreviewViewModel.swift */; };
 		A4BD92AA1C8A443D897BDE14 /* BannerAdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6426245F2F73E03CB3CC8CF7 /* BannerAdViewModel.swift */; };
 		A69C061BA98FC6A0220CC835 /* RewardedAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1B28FDBDC4CC1B1DC747D9 /* RewardedAdView.swift */; };
+		A92A7972F7F4426B9CE49C4B /* QRScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4EE2555B944273A28BA0C1 /* QRScannerViewModel.swift */; };
 		AA11223344556677889911AA /* SwiftUIMenuPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA11223344556677889900AA /* SwiftUIMenuPage.swift */; };
 		B394AC8627A868DB00D92CD9 /* AdPlayerErrorConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B394AC8527A868DB00D92CD9 /* AdPlayerErrorConverter.swift */; };
 		B3A00273CEB8933107913938 /* AdLogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254FD26BF0727F46721D7D27 /* AdLogsView.swift */; };
 		BB11223344556677889911BB /* SwiftUIBannerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB11223344556677889900BB /* SwiftUIBannerPage.swift */; };
+		BE96402174554CDD9078DB61 /* QRScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE85AD41D8824E8C94D6F25F /* QRScannerView.swift */; };
 		C2790DB16FB19522FA18D37D /* SwiftUIMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FF08B39D8D78AB657C0DFB /* SwiftUIMenuView.swift */; };
 		CC11223344556677889911CC /* SwiftUIFullscreenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC11223344556677889900CC /* SwiftUIFullscreenPage.swift */; };
+		CD0B751BA18642B0A936A1E2 /* QRCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17501EF27FF54F95901CA6C4 /* QRCameraView.swift */; };
+		D6B43D35926E40F6AD7D9736 /* YandexNativeTemplateAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22045E9E60943E5B6FF946A /* YandexNativeTemplateAdapter.swift */; };
 		DD11223344556677889911DD /* SwiftUIAppOpenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD11223344556677889900DD /* SwiftUIAppOpenPage.swift */; };
 		DE0C2CC22A671FF500A84D00 /* NativeCustomAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0C2CC12A671FF500A84D00 /* NativeCustomAdView.swift */; };
 		DEC81ADC2A53B9E7008FE935 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC81ADB2A53B9E7008FE935 /* String+Extensions.swift */; };
 		DEC81AE02A53C28D008FE935 /* NavigationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC81ADF2A53C28D008FE935 /* NavigationTableViewController.swift */; };
 		DEC81AE42A53C945008FE935 /* NavigationScreenDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC81AE32A53C945008FE935 /* NavigationScreenDataSource.swift */; };
 		E2AD11A80F83BB98EB4E9CF4 /* AdLogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254FD26BF0727F46721D7D27 /* AdLogsView.swift */; };
+		E74B22FE96784AB4B1D614C3 /* UIKitExamplesTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF33BD53D33644D291DF4A22 /* UIKitExamplesTab.swift */; };
+		E9A9DCA2CBCD42ECBBA5C034 /* NativeAdBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730DB5EE15314024932FD9FB /* NativeAdBannerView.swift */; };
+		ED77E6EE3D1B4EAA95CFF771 /* PlayablePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE7FA4472404EF88D58DC72 /* PlayablePreviewView.swift */; };
 		EE11223344556677889911EE /* YandexSUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE11223344556677889900EE /* YandexSUITest.swift */; };
 		EE276D2EB2338B4E11A3B1A2 /* AppOpenAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40C1BEB9A5E27B16FC70C02 /* AppOpenAdView.swift */; };
+		EE8257431BFD4A329F2688DA /* YandexNativeTemplateAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22045E9E60943E5B6FF946A /* YandexNativeTemplateAdapter.swift */; };
 		F30217C42F2CFDD60078CC56 /* YandexAdBreaksAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30217C32F2CFDD60078CC56 /* YandexAdBreaksAdapter.swift */; };
 		F30217C52F2CFDD60078CC56 /* YandexAdBreaksAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30217C32F2CFDD60078CC56 /* YandexAdBreaksAdapter.swift */; };
 		F3F1D4422EF96DA8006C4BFA /* AdBreaksPlaybackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1D4412EF96DA8006C4BFA /* AdBreaksPlaybackController.swift */; };
 		F3F1D4432EF96DA8006C4BFA /* AdBreaksPlaybackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1D4412EF96DA8006C4BFA /* AdBreaksPlaybackController.swift */; };
+		F84171C73DF64A978F238766 /* UIKitExamplesTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF33BD53D33644D291DF4A22 /* UIKitExamplesTab.swift */; };
 		FC146369788A2DD61C372C1A /* BannerAdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6426245F2F73E03CB3CC8CF7 /* BannerAdViewModel.swift */; };
+		FEEDAD003A2B3C4D5E6F7A8B /* YandexFeedAdAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDAD002A2B3C4D5E6F7A8B /* YandexFeedAdAdapter.swift */; };
+		FEEDAD004A2B3C4D5E6F7A8B /* YandexFeedAdAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEDAD002A2B3C4D5E6F7A8B /* YandexFeedAdAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -255,9 +277,12 @@
 		147B0BCB27200D12005F4062 /* StarRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
 		147B0BCC27200D13005F4062 /* NativeAdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NativeAdView.xib; sourceTree = "<group>"; };
 		147B0BCD27200D14005F4062 /* NativeAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeAdView.swift; sourceTree = "<group>"; };
+		17501EF27FF54F95901CA6C4 /* QRCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCameraView.swift; sourceTree = "<group>"; };
 		18464C9E798CF6E8FC41FB92 /* InterstitialAdViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InterstitialAdViewModel.swift; sourceTree = "<group>"; };
+		1A4EE2555B944273A28BA0C1 /* QRScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewModel.swift; sourceTree = "<group>"; };
 		24ED0D63516E91FC812EA828 /* Pods-YandexMobileAdsExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsExample.debug.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample.debug.xcconfig"; sourceTree = "<group>"; };
 		254FD26BF0727F46721D7D27 /* AdLogsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdLogsView.swift; sourceTree = "<group>"; };
+		2AD755660A6843578D6EF526 /* PlayableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayableItem.swift; sourceTree = "<group>"; };
 		492E63572ED5EB6F00A0A752 /* AdMobError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobError.swift; sourceTree = "<group>"; };
 		492E63592ED5EF6300A0A752 /* AttachableAdProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachableAdProtocol.swift; sourceTree = "<group>"; };
 		492E635C2ED5EF8A00A0A752 /* PresentableAdProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableAdProtocol.swift; sourceTree = "<group>"; };
@@ -273,7 +298,6 @@
 		49BF09E82EB3B42400D6E714 /* YandexAppOpenAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexAppOpenAdapter.swift; sourceTree = "<group>"; };
 		49BF09EE2EB4D80E00D6E714 /* YandexNativeCustomAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexNativeCustomAdapter.swift; sourceTree = "<group>"; };
 		49BF09F12EB4E1DC00D6E714 /* YandexNativeBulkAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexNativeBulkAdapter.swift; sourceTree = "<group>"; };
-		FEEDAD002A2B3C4D5E6F7A8B /* YandexFeedAdAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexFeedAdAdapter.swift; sourceTree = "<group>"; };
 		49BF09F42EB542EB00D6E714 /* YandexInstreamSingleAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexInstreamSingleAdapter.swift; sourceTree = "<group>"; };
 		49BF09FE2EB563EE00D6E714 /* UnifiedAdEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnifiedAdEvent.swift; sourceTree = "<group>"; };
 		49BF0A072EB5645600D6E714 /* UnifiedAdFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnifiedAdFactory.swift; sourceTree = "<group>"; };
@@ -296,10 +320,12 @@
 		49BF0A462EB94AD900D6E714 /* UnifiedAdsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnifiedAdsPage.swift; sourceTree = "<group>"; };
 		49C499102ED3C8DA001C653A /* LaunchArgument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchArgument.swift; sourceTree = "<group>"; };
 		4A8FA13E2BFC9AF800A3DB07 /* NativeBulkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeBulkTableViewCell.swift; sourceTree = "<group>"; };
+		533E4193434C4C2FB4DE0FA6 /* SwiftUIExamplesTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIExamplesTab.swift; sourceTree = "<group>"; };
 		6426245F2F73E03CB3CC8CF7 /* BannerAdViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BannerAdViewModel.swift; sourceTree = "<group>"; };
 		64F70E022B0B64D300A31CE8 /* YandexMobileAdsExampleSPM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YandexMobileAdsExampleSPM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F70E052B0B652600A31CE8 /* sample-public */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "sample-public"; path = ../..; sourceTree = "<group>"; };
 		669A05343A5C434E60EB05A6 /* AdPlaceholderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdPlaceholderView.swift; sourceTree = "<group>"; };
+		730DB5EE15314024932FD9FB /* NativeAdBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeAdBannerView.swift; sourceTree = "<group>"; };
 		761E541B2CB9572F00CEEF49 /* NativeVideoProgressControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeVideoProgressControlView.swift; sourceTree = "<group>"; };
 		761E541D2CB9581900CEEF49 /* NativeVideoMuteControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeVideoMuteControlView.swift; sourceTree = "<group>"; };
 		7A4F4F024807347182056159 /* AppOpenAdViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppOpenAdViewModel.swift; sourceTree = "<group>"; };
@@ -324,15 +350,21 @@
 		7AF4B0BD2B27900D004974FD /* YandexInstreamAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexInstreamAccessibility.swift; sourceTree = "<group>"; };
 		7AF4B0C82B279ACD004974FD /* YandexMobileAdsExample.xctestplan */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = YandexMobileAdsExample.xctestplan; sourceTree = "<group>"; };
 		7AFDCA152B10EA9F00D35B17 /* YandexMobileAdsExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YandexMobileAdsExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		80919F3DB61E4A4E8EECC7DC /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
 		891689168C7C9C7AC71066B6 /* Pods-YandexMobileAdsExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexMobileAdsExample.release.xcconfig"; path = "Target Support Files/Pods-YandexMobileAdsExample/Pods-YandexMobileAdsExample.release.xcconfig"; sourceTree = "<group>"; };
+		8D53B7D0A9974710981ADB5E /* PlayablePreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayablePreviewViewModel.swift; sourceTree = "<group>"; };
 		9A1B28FDBDC4CC1B1DC747D9 /* RewardedAdView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RewardedAdView.swift; sourceTree = "<group>"; };
+		9BE7FA4472404EF88D58DC72 /* PlayablePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayablePreviewView.swift; sourceTree = "<group>"; };
 		A3FF08B39D8D78AB657C0DFB /* SwiftUIMenuView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SwiftUIMenuView.swift; sourceTree = "<group>"; };
 		A6FD697289FB1C461C5F31AA /* InterstitialAdView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InterstitialAdView.swift; sourceTree = "<group>"; };
 		AA11223344556677889900AA /* SwiftUIMenuPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIMenuPage.swift; sourceTree = "<group>"; };
+		AE85AD41D8824E8C94D6F25F /* QRScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerView.swift; sourceTree = "<group>"; };
+		B22045E9E60943E5B6FF946A /* YandexNativeTemplateAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexNativeTemplateAdapter.swift; sourceTree = "<group>"; };
 		B394AC8527A868DB00D92CD9 /* AdPlayerErrorConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdPlayerErrorConverter.swift; sourceTree = "<group>"; };
 		BB11223344556677889900BB /* SwiftUIBannerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIBannerPage.swift; sourceTree = "<group>"; };
 		BE730E547D44E42B4BD83331 /* SwiftUIAdState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SwiftUIAdState.swift; sourceTree = "<group>"; };
 		CC11223344556677889900CC /* SwiftUIFullscreenPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIFullscreenPage.swift; sourceTree = "<group>"; };
+		CF33BD53D33644D291DF4A22 /* UIKitExamplesTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExamplesTab.swift; sourceTree = "<group>"; };
 		D40C1BEB9A5E27B16FC70C02 /* AppOpenAdView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppOpenAdView.swift; sourceTree = "<group>"; };
 		D9143AD86B83163AFFA4C8B4 /* RewardedAdViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RewardedAdViewModel.swift; sourceTree = "<group>"; };
 		DD11223344556677889900DD /* SwiftUIAppOpenPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIAppOpenPage.swift; sourceTree = "<group>"; };
@@ -344,6 +376,7 @@
 		F30217C32F2CFDD60078CC56 /* YandexAdBreaksAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexAdBreaksAdapter.swift; sourceTree = "<group>"; };
 		F3F1D4412EF96DA8006C4BFA /* AdBreaksPlaybackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdBreaksPlaybackController.swift; sourceTree = "<group>"; };
 		FA4EA4F9B5FCCA11E7460DFD /* BannerAdView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BannerAdView.swift; sourceTree = "<group>"; };
+		FEEDAD002A2B3C4D5E6F7A8B /* YandexFeedAdAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexFeedAdAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -393,6 +426,7 @@
 		14033F6127201D9E00A24D5E /* Native */ = {
 			isa = PBXGroup;
 			children = (
+				730DB5EE15314024932FD9FB /* NativeAdBannerView.swift */,
 				147B0BCB27200D12005F4062 /* StarRatingView.swift */,
 				147B0BCD27200D14005F4062 /* NativeAdView.swift */,
 				147B0BCC27200D13005F4062 /* NativeAdView.xib */,
@@ -551,14 +585,6 @@
 			path = GDPR;
 			sourceTree = "<group>";
 		};
-		FEEDAD001A2B3C4D5E6F7A8B /* FeedAd */ = {
-			isa = PBXGroup;
-			children = (
-				FEEDAD002A2B3C4D5E6F7A8B /* YandexFeedAdAdapter.swift */,
-			);
-			path = FeedAd;
-			sourceTree = "<group>";
-		};
 		147B0BC6271FFBF7005F4062 /* Yandex */ = {
 			isa = PBXGroup;
 			children = (
@@ -589,6 +615,7 @@
 				761E541D2CB9581900CEEF49 /* NativeVideoMuteControlView.swift */,
 				DE0C2CC12A671FF500A84D00 /* NativeCustomAdView.swift */,
 				49BF09EE2EB4D80E00D6E714 /* YandexNativeCustomAdapter.swift */,
+				B22045E9E60943E5B6FF946A /* YandexNativeTemplateAdapter.swift */,
 				49BF09F12EB4E1DC00D6E714 /* YandexNativeBulkAdapter.swift */,
 			);
 			path = Native;
@@ -782,6 +809,19 @@
 			path = YandexMobileAdsExampleUITests;
 			sourceTree = "<group>";
 		};
+		8E81EE45CC5545CC8EFE0F6E /* PlayablePreview */ = {
+			isa = PBXGroup;
+			children = (
+				2AD755660A6843578D6EF526 /* PlayableItem.swift */,
+				8D53B7D0A9974710981ADB5E /* PlayablePreviewViewModel.swift */,
+				9BE7FA4472404EF88D58DC72 /* PlayablePreviewView.swift */,
+				AE85AD41D8824E8C94D6F25F /* QRScannerView.swift */,
+				1A4EE2555B944273A28BA0C1 /* QRScannerViewModel.swift */,
+				17501EF27FF54F95901CA6C4 /* QRCameraView.swift */,
+			);
+			path = PlayablePreview;
+			sourceTree = "<group>";
+		};
 		8E87D47A2F71DEED00A65BFD /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -790,7 +830,11 @@
 				8E87D47C2F71DF1D00A65BFD /* Banner */,
 				8E87D47B2F71DF0800A65BFD /* AppOpenAd */,
 				D8693C629EF3AAE8F72C817F /* Common */,
+				8E81EE45CC5545CC8EFE0F6E /* PlayablePreview */,
 				A3FF08B39D8D78AB657C0DFB /* SwiftUIMenuView.swift */,
+				80919F3DB61E4A4E8EECC7DC /* RootTabView.swift */,
+				CF33BD53D33644D291DF4A22 /* UIKitExamplesTab.swift */,
+				533E4193434C4C2FB4DE0FA6 /* SwiftUIExamplesTab.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -838,7 +882,6 @@
 				254FD26BF0727F46721D7D27 /* AdLogsView.swift */,
 				669A05343A5C434E60EB05A6 /* AdPlaceholderView.swift */,
 			);
-			name = Common;
 			path = Common;
 			sourceTree = "<group>";
 		};
@@ -848,6 +891,14 @@
 				49BF09E82EB3B42400D6E714 /* YandexAppOpenAdapter.swift */,
 			);
 			path = AppOpenAd;
+			sourceTree = "<group>";
+		};
+		FEEDAD001A2B3C4D5E6F7A8B /* FeedAd */ = {
+			isa = PBXGroup;
+			children = (
+				FEEDAD002A2B3C4D5E6F7A8B /* YandexFeedAdAdapter.swift */,
+			);
+			path = FeedAd;
 			sourceTree = "<group>";
 		};
 		FF11223344556677889900FF /* SwiftUI */ = {
@@ -1122,14 +1173,15 @@
 				DEC81AE02A53C28D008FE935 /* NavigationTableViewController.swift in Sources */,
 				492E635E2ED5EF8A00A0A752 /* PresentableAdProtocol.swift in Sources */,
 				49BF09EF2EB4D80E00D6E714 /* YandexNativeCustomAdapter.swift in Sources */,
+				EE8257431BFD4A329F2688DA /* YandexNativeTemplateAdapter.swift in Sources */,
 				49BF09F52EB542EB00D6E714 /* YandexInstreamSingleAdapter.swift in Sources */,
-				FEEDAD003A2B3C4D5E6F7A8B /* YandexFeedAdAdapter.swift in Sources */,
 				49BF0A002EB563EE00D6E714 /* UnifiedAdEvent.swift in Sources */,
 				49C499112ED3C8DA001C653A /* LaunchArgument.swift in Sources */,
 				14033FB62720457800A24D5E /* VideoPlayerProvider.swift in Sources */,
 				7A527BC72B1E36490002B416 /* CommonAccessibility.swift in Sources */,
 				49BF0A0E2EB7F66700D6E714 /* AdMobBannerAdapter.swift in Sources */,
 				49BF09F22EB4E1DC00D6E714 /* YandexNativeBulkAdapter.swift in Sources */,
+				FEEDAD003A2B3C4D5E6F7A8B /* YandexFeedAdAdapter.swift in Sources */,
 				49BF0A142EB7FFFB00D6E714 /* AdMobRewardedAdapter.swift in Sources */,
 				4A8FA13F2BFC9AF800A3DB07 /* NativeBulkTableViewCell.swift in Sources */,
 				49BF09DD2EB39D4800D6E714 /* StickyBannerAdapter.swift in Sources */,
@@ -1153,6 +1205,7 @@
 				49BF0A162EB8097400D6E714 /* AdMobNativeAdapter.swift in Sources */,
 				F30217C52F2CFDD60078CC56 /* YandexAdBreaksAdapter.swift in Sources */,
 				14033FBE2720457800A24D5E /* InstreamAdBinderToastDelegate.swift in Sources */,
+				60679E603EA0413F8CAFF05A /* NativeAdBannerView.swift in Sources */,
 				DE0C2CC22A671FF500A84D00 /* NativeCustomAdView.swift in Sources */,
 				147B0BCF27200D14005F4062 /* StarRatingView.swift in Sources */,
 				7A527BC82B1E36490002B416 /* StateUtils.swift in Sources */,
@@ -1170,6 +1223,15 @@
 				4749E38B65DD3CFF5C589C07 /* InterstitialAdView.swift in Sources */,
 				7DB42FB59980BA5BC6950C9F /* RewardedAdViewModel.swift in Sources */,
 				A69C061BA98FC6A0220CC835 /* RewardedAdView.swift in Sources */,
+				1BD598FDEF9B45F9BBD9534C /* RootTabView.swift in Sources */,
+				F84171C73DF64A978F238766 /* UIKitExamplesTab.swift in Sources */,
+				52A305C6A56E4C04B455A2F4 /* SwiftUIExamplesTab.swift in Sources */,
+				99EA2136D2AB45C7AFB5BA77 /* PlayablePreviewView.swift in Sources */,
+				1F1CECE2A41842A6844C9622 /* PlayableItem.swift in Sources */,
+				A3CA222D274843E3B493F597 /* PlayablePreviewViewModel.swift in Sources */,
+				9E5B879D3DBC40878B727BFB /* QRScannerViewModel.swift in Sources */,
+				8A193E9FE47E49FCA4655E9E /* QRCameraView.swift in Sources */,
+				BE96402174554CDD9078DB61 /* QRScannerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1192,6 +1254,7 @@
 				64F70DCA2B0B64D300A31CE8 /* ReusablePlayer.swift in Sources */,
 				49C499122ED3C8DA001C653A /* LaunchArgument.swift in Sources */,
 				49BF09F02EB4D80E00D6E714 /* YandexNativeCustomAdapter.swift in Sources */,
+				D6B43D35926E40F6AD7D9736 /* YandexNativeTemplateAdapter.swift in Sources */,
 				7A527BC32B1E36480002B416 /* StateUtils.swift in Sources */,
 				7A2EC6312F1FC5F6006FA3F3 /* AdMobBannerAdapter.swift in Sources */,
 				7A2EC6322F1FC5F6006FA3F3 /* AdMobStarter.swift in Sources */,
@@ -1201,6 +1264,7 @@
 				64F70DD22B0B64D300A31CE8 /* ViewVisibilityValidator.swift in Sources */,
 				64F70DD42B0B64D300A31CE8 /* InstreamContent.swift in Sources */,
 				49BF09F32EB4E1DC00D6E714 /* YandexNativeBulkAdapter.swift in Sources */,
+				FEEDAD004A2B3C4D5E6F7A8B /* YandexFeedAdAdapter.swift in Sources */,
 				49BF0A0B2EB5647800D6E714 /* UnifiedFormat.swift in Sources */,
 				49BF0A1C2EB80FD600D6E714 /* AdFoxInterstitialAdapter.swift in Sources */,
 				76F361F72CBD224800CC6E89 /* NativeVideoProgressControlView.swift in Sources */,
@@ -1214,7 +1278,6 @@
 				49BF0A092EB5645600D6E714 /* UnifiedAdFactory.swift in Sources */,
 				49BF0A3A2EB8E85600D6E714 /* UnifiedAdViewController+Events.swift in Sources */,
 				49BF09F62EB542EB00D6E714 /* YandexInstreamSingleAdapter.swift in Sources */,
-				FEEDAD004A2B3C4D5E6F7A8B /* YandexFeedAdAdapter.swift in Sources */,
 				64F70DDE2B0B64D300A31CE8 /* PlayerView.swift in Sources */,
 				49BF0A182EB80BC500D6E714 /* AdFoxBannerAdapter.swift in Sources */,
 				49BF0A352EB8E80F00D6E714 /* UnifiedAdViewController+Menus.swift in Sources */,
@@ -1236,6 +1299,7 @@
 				64F70DEC2B0B64D300A31CE8 /* VideoAVPlayerDelegate.swift in Sources */,
 				64F70DF02B0B64D300A31CE8 /* GDPRDDialogViewController.swift in Sources */,
 				64F70DF12B0B64D300A31CE8 /* InstreamAdBinderToastDelegate.swift in Sources */,
+				E9A9DCA2CBCD42ECBBA5C034 /* NativeAdBannerView.swift in Sources */,
 				64F70DF22B0B64D300A31CE8 /* NativeCustomAdView.swift in Sources */,
 				49BF09E12EB3A4C100D6E714 /* LogsView.swift in Sources */,
 				49BF09E72EB3B0AC00D6E714 /* RewardedAdapter.swift in Sources */,
@@ -1259,6 +1323,15 @@
 				B3A00273CEB8933107913938 /* AdLogsView.swift in Sources */,
 				02484F33853CF3BB117549C1 /* AdPlaceholderView.swift in Sources */,
 				C2790DB16FB19522FA18D37D /* SwiftUIMenuView.swift in Sources */,
+				A2A3AE92DCEE47989AE1F6AF /* RootTabView.swift in Sources */,
+				E74B22FE96784AB4B1D614C3 /* UIKitExamplesTab.swift in Sources */,
+				9C459DC3F5B14C26807FE9DE /* SwiftUIExamplesTab.swift in Sources */,
+				ED77E6EE3D1B4EAA95CFF771 /* PlayablePreviewView.swift in Sources */,
+				7B021096865542EE98B5FD9A /* PlayableItem.swift in Sources */,
+				7EE2C532740D4CCFB2E4585F /* PlayablePreviewViewModel.swift in Sources */,
+				A92A7972F7F4426B9CE49C4B /* QRScannerViewModel.swift in Sources */,
+				CD0B751BA18642B0A936A1E2 /* QRCameraView.swift in Sources */,
+				44FE521F5F4549D89F58C856 /* QRScannerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1359,7 +1432,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 8.0.0;
+				CURRENT_PROJECT_VERSION = 8.1.0;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1378,7 +1451,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 8.0.0;
+				MARKETING_VERSION = 8.1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1422,7 +1495,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 8.0.0;
+				CURRENT_PROJECT_VERSION = 8.1.0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1435,7 +1508,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				MARKETING_VERSION = 8.0.0;
+				MARKETING_VERSION = 8.1.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

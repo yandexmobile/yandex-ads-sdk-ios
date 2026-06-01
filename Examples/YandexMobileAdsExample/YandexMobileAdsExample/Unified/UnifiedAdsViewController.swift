@@ -1,5 +1,4 @@
 import UIKit
-import SwiftUI
 import YandexMobileAds
 import Foundation
 
@@ -70,25 +69,6 @@ final class UnifiedAdViewController: UIViewController, UITableViewDelegate {
         return button
     }()
     
-    lazy var swiftUIButton: UIButton = {
-        var config = UIButton.Configuration.tinted()
-        config.title = "SwiftUI Examples"
-        config.image = UIImage(systemName: "chevron.right.square")
-        config.imagePlacement = .trailing
-        config.imagePadding = 6
-        config.baseBackgroundColor = .systemIndigo
-        config.baseForegroundColor = .systemIndigo
-        config.cornerStyle = .large
-
-        let button = UIButton(configuration: config, primaryAction: UIAction { [weak self] _ in
-            self?.openSwiftUIExamples()
-        })
-        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        button.accessibilityIdentifier = CommonAccessibility.swiftUIExamplesButton
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-
     lazy var presentButton: UIButton = {
         var config = UIButton.Configuration.filled()
         config.title = "Present Ad"
@@ -229,7 +209,7 @@ final class UnifiedAdViewController: UIViewController, UITableViewDelegate {
     }
     
     private func addSubviews() {
-        [headerStack, swiftUIButton, loadButton, presentButton, placeholderView, bulkTableView].forEach { view.addSubview($0) }
+        [headerStack, loadButton, presentButton, placeholderView, bulkTableView].forEach { view.addSubview($0) }
     }
     
     private func addConstraints() {
@@ -254,12 +234,8 @@ final class UnifiedAdViewController: UIViewController, UITableViewDelegate {
         NSLayoutConstraint.activate([
             headerStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Layout.side),
             headerStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Layout.side),
-            headerStack.bottomAnchor.constraint(equalTo: swiftUIButton.topAnchor, constant: -Layout.buttonsBottom),
+            headerStack.bottomAnchor.constraint(equalTo: loadButton.topAnchor, constant: -Layout.buttonsBottom),
 
-            swiftUIButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Layout.side),
-            swiftUIButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Layout.side),
-            swiftUIButton.bottomAnchor.constraint(equalTo: loadButton.topAnchor, constant: -12),
-            
             bulkTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             bulkTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             bulkTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -305,28 +281,6 @@ final class UnifiedAdViewController: UIViewController, UITableViewDelegate {
         }
     }
 
-    @objc private func openSwiftUIExamples() {
-        let menuView = SwiftUIMenuView { [weak self] adType in
-            guard let self else { return }
-            let vc: UIViewController
-            switch adType {
-            case .appOpenAd:
-                vc = UIHostingController(rootView: AppOpenContentView())
-            case .banner:
-                vc = UIHostingController(rootView: BannerContentView())
-            case .interstitial:
-                vc = UIHostingController(rootView: InterstitialContentView())
-            case .rewarded:
-                vc = UIHostingController(rootView: RewardedContentView())
-            }
-            vc.navigationItem.largeTitleDisplayMode = .never
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-        let hostingVC = UIHostingController(rootView: menuView)
-        hostingVC.navigationItem.largeTitleDisplayMode = .never
-        navigationController?.pushViewController(hostingVC, animated: true)
-    }
-    
     // MARK: - Helpers
     
     func presentRewardAlert(_ reward: Reward) {

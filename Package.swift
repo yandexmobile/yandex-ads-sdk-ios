@@ -14,6 +14,10 @@ let package = Package(
             targets: ["YandexMobileAdsWrapper"]
         ),
         .library(
+            name: "YandexMobileAdsNativeOnly",
+            targets: ["YandexMobileAdsNativeOnlyWrapper"]
+        ),
+        .library(
             name: "YandexMobileAdsInstream",
             targets: ["YandexMobileAdsInstreamWrapper"]
         ),
@@ -63,9 +67,8 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/appmetrica/appmetrica-sdk-ios", .upToNextMinor(from: "6.0.0")),
-        .package(url: "https://github.com/divkit/divkit-ios-facade", .upToNextMinor(from: "5.3.0")),
-        .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads", .upToNextMinor(from: "12.14.0")),
+        .package(url: "https://github.com/appmetrica/appmetrica-sdk-ios", .upToNextMinor(from: "6.3.0")),
+        .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads", .upToNextMinor(from: "13.3.0")),
         .package(url: "https://github.com/Vungle/VungleAdsSDK-SwiftPackageManager", .upToNextMinor(from: "7.7.0")),
         .package(url: "https://github.com/AppLovin/AppLovin-MAX-Swift-Package", .upToNextMinor(from: "13.5.1")),
         .package(url: "https://github.com/myTargetSDK/mytarget-ios-spm", .upToNextMinor(from: "5.36.2")),
@@ -82,7 +85,19 @@ let package = Package(
                 .product(name: "AppMetricaLibraryAdapter", package: "appmetrica-sdk-ios"),
                 .product(name: "AppMetricaAdSupport", package: "appmetrica-sdk-ios"),
                 .product(name: "AppMetricaIDSync", package: "appmetrica-sdk-ios"),
-                .product(name: "DivKitBinaryCompatibilityFacade", package: "divkit-ios-facade")
+            ],
+            resources: [
+                .process("Resources")
+            ]
+        ),
+        .target(
+            name: "YandexMobileAdsNativeOnlyWrapper",
+            dependencies: [
+                .target(name: "YandexMobileAdsNativeOnly"),
+                .product(name: "AppMetricaCore", package: "appmetrica-sdk-ios"),
+                .product(name: "AppMetricaLibraryAdapter", package: "appmetrica-sdk-ios"),
+                .product(name: "AppMetricaAdSupport", package: "appmetrica-sdk-ios"),
+                .product(name: "AppMetricaIDSync", package: "appmetrica-sdk-ios"),
             ],
             resources: [
                 .process("Resources")
@@ -161,58 +176,63 @@ let package = Package(
         ),
         .binaryTarget(
             name: "YandexMobileAds",
-            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAds/8.0.0/spm/4db9e6d3-88e5-41cc-8e8d-fde2c442ef3b.zip",
-            checksum: "217d43975aeed75df75ff006c721971a4feaf665cab4690e39e44c615f2ac1b7"
+            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAds/8.1.0/spm/ca020bc8-a791-449d-a228-e726ba619562.zip",
+            checksum: "796f41ce5f415e1e4281fe9d902ec4e3ea4f083013a910b5f7435733ac2decbc"
+        ),
+        .binaryTarget(
+            name: "YandexMobileAdsNativeOnly",
+            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAdsNativeOnly/8.1.0/spm/60e5fc05-aeaa-4db9-a354-214bdc8fa961.zip",
+            checksum: "3eb3740e21ee89e468695d255de0ebc46d2bff4f8f91ef5ae6afc7231d443e29"
         ),
         .binaryTarget(
             name: "YandexMobileAdsInstream",
-            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAdsInstream/0.70.0/spm/d4272285-3f5a-4f30-af9b-002857cfbee5.zip",
-            checksum: "154671aa183554cd571d404de0986a611146a84520bab7e8a2a73541d29a721a"
+            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAdsInstream/0.71.0/spm/55de11a5-5381-4e68-b640-915d68229bf1.zip",
+            checksum: "70eae839dcf55ad56d40dfc7a9eda56e5d853f92b6f5f544901022ace665b7b8"
         ),
         .binaryTarget(
             name: "YandexMobileAdsConsentManagement",
-            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAdsConsentManagement/1.14.0/spm/a1db19a7-aed5-446a-ab27-bd59664b0da3.zip",
-            checksum: "ab62f7cb3faf059bf75aae8a4e571983963d1f735f95b6be0e0ca96bb9ec7ad7"
+            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAdsConsentManagement/1.15.0/spm/326b48a2-0b81-4dfd-996a-712249978543.zip",
+            checksum: "8d77445ee7b559f7ef374a47bb8aacfa741e943e3cdbd95a6ae74bcda00560bf"
         ),
         .binaryTarget(
             name: "YandexMobileAdsAdMobAdapters",
-            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAdsAdMobAdapters/8.0.0.0/spm/c35985ba-96e6-4edc-9087-a7c5540f54c6.zip",
-            checksum: "be2f9f56109e3eb8d8916ef32af34e511e6fc163ecbd1f106494ab5393071b0f"
+            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAdsAdMobAdapters/8.1.0.0/spm/f11b7a2a-4f58-48c0-ae3d-277a9642f62f.zip",
+            checksum: "61ff5dbb942b61036e3de4cd651d2f5295e9b75162c7aa311ba83954e5c3c223"
         ),
         .binaryTarget(
             name: "GoogleYandexMobileAdsAdapters",
-            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/GoogleYandexMobileAdsAdapters/12.14.0.0/spm/5ce37a6b-432c-40d4-a1a4-c140627c6d46.zip",
-            checksum: "82d66afd729ca91e340898e16c21ec86eccf57bd99dc3f7f6b0baa9c63c8f126"
+            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/GoogleYandexMobileAdsAdapters/13.3.0.0/spm/a1e4dacd-ed9b-4684-939b-e5ebd6d7ef1b.zip",
+            checksum: "84edba5887f7ac695e75fc85df8ba967edfa8d4f985e7f16d944919e26f2bcac"
         ),
         .binaryTarget(
             name: "VungleYandexMobileAdsAdapters",
-            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/VungleYandexMobileAdsAdapters/7.7.0.0/spm/a007f021-a945-40c8-a9c3-70e6ef0274c2.zip",
-            checksum: "9f1ac52ad4bf96c39bc23528007f96be81d11abfece7a57c63f1d3e6f32cc57a"
+            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/VungleYandexMobileAdsAdapters/7.7.0.1/spm/760ec3ae-59b9-415d-af26-f0c62acd3073.zip",
+            checksum: "87ddedc720e549f65d1da1d23e9d89e0eb623cd8d44af69c1ec706d94a33e18b"
         ),
         .binaryTarget(
             name: "AppLovinYandexMobileAdsAdapters",
-            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/AppLovinYandexMobileAdsAdapters/13.5.1.0/spm/d8940d1d-6abf-4198-953f-06d7d387c88c.zip",
-            checksum: "9de021462166244093bccbda8c4f3029a009b8c9d4d1fd17a9cf45afa76478b5"
+            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/AppLovinYandexMobileAdsAdapters/13.5.1.1/spm/54ff81f0-0fcc-46cd-8269-90270793d7a4.zip",
+            checksum: "1ab9310bc1a20fb24e6991c239ede26aa7edf5b742de9c2ad2af6c6e38ce52ec"
         ),
         .binaryTarget(
             name: "MyTargetYandexMobileAdsAdapters",
-            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/MyTargetYandexMobileAdsAdapters/5.36.2.0/spm/17610a6f-570a-4990-ae7b-d10c70319a06.zip",
-            checksum: "13f1eba3a574c4b4d6e29a1c43936223bf762ad1d0da0d8afbf1f06231f1cca6"
+            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/MyTargetYandexMobileAdsAdapters/5.36.2.1/spm/37c8eba0-32aa-4972-9649-403ea1a2a468.zip",
+            checksum: "1d57d5333a5bbedb694cf572bd5815b3ebdcb3c5f475e985f41d53cedfc0947a"
         ),
         .binaryTarget(
             name: "MintegralYandexMobileAdsAdapters",
-            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/MintegralYandexMobileAdsAdapters/8.0.7.0/spm/7e440a44-8ff8-4447-8b62-d936b4c1c43f.zip",
-            checksum: "61b06a52e239090cc874587ac7c9c5311925b9e3ba4e53e36559f250b2b250a7"
+            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/MintegralYandexMobileAdsAdapters/8.0.7.1/spm/3294e0a1-db8a-495e-a305-405f368217da.zip",
+            checksum: "7d9acbf828338e4cf8e6535ac2fc39f9b817a4fe673712aa675f6cec791fcc16"
         ),
         .binaryTarget(
             name: "DigitalTurbineYandexMobileAdsAdapters",
-            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/DigitalTurbineYandexMobileAdsAdapters/8.4.4.0/spm/4aafdb52-6345-4875-beea-06c71802c454.zip",
-            checksum: "e836a285cdf7f8ba57119a7cd6376c38014c2a4d1f00753f79e387f3498b4369"
+            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/DigitalTurbineYandexMobileAdsAdapters/8.4.4.1/spm/a9aaa120-b879-469d-9530-20a80bbcf38a.zip",
+            checksum: "8bfa3426056260afb4bbdbfedfe14516414b4cdcc38983ab821ccda46c21bf73"
         ),
         .binaryTarget(
             name: "YandexMobileAdsMediation",
-            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAdsMediation/8.0.0/spm/1494c197-6bf2-487a-995d-c60aa3072a28.zip",
-            checksum: "76d5da96c15cfda8e72463bbd0250213b603971d3346a5060b1db9f23fc104dd"
+            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAdsMediation/8.1.0/spm/884da07d-dc49-45c4-9c34-b0d4de8b6c5a.zip",
+            checksum: "d8fa2b1028b869d80f004592089c749625384974457a783d5f243a9998640faa"
         )
     ]
 )

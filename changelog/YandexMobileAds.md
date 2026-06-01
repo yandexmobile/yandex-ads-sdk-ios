@@ -2,10 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 8.1.0
+
+### Updated
+
+- Updated minimum supported AppMetricaAdSupport, AppMetricaCore, AppMetricaIDSync, AppMetricaLibraryAdapter version to 6.3.0.
+
 ## Version 8.0.0
 
 [Full migration guideline](https://ads.yandex.com/helpcenter/en/dev/ios/release/8-0-0-migration)
-[AI migration guideline](https://ads.yandex.com/helpcenter/en/dev/ios/release/8-0-0-migration#ai)
 
 ### Added
 
@@ -44,12 +49,13 @@ All notable changes to this project will be documented in this file.
 - Class `VideoController` was removed.
 - Constant `kYMAAdsErrorDomain` was removed.
 - Constant `kYMANativeAdErrorDomain` was removed. instead.
-- Constants from `YMAVersion` were removed. Use `YandexAds.version.stringValue` instead.
+- Constants from `YMAVersion` were removed. Use `MobileAds.sdkVersion` instead.
 - Function `AdViewDelegate.close(_:)` was removed.
 - Function `BannerAdSize.fixedSize(withWidth:height:)` was renamed to `BannerAdSize.fixed(width:height:)`.
 - Function `BannerAdSize.inlineSize(withWidth:maxHeight:)` was renamed to `BannerAdSize.inline(width:maxHeight:)`.
 - Function `BannerAdSize.stickySize(withContainerWidth:)` was renamed to `BannerAdSize.sticky(containerWidth:)`.
-- Function `YandexAds.audioSessionManager` is computed property now.
+- Function `MobileAds.audioSessionManager` is computed property now.
+- Function `MobileAds.sdkVersion` was removed. Use `MobileAds.version.stringValue` instead.
 - Function `NativeAd.bind(toSliderView:)` was removed. Use `SliderAd.bind(with:)` instead.
 - Function `NativeAdDelegate.close(_:)` was removed.
 - Function `NativeAdDelegate.nativeAd(_:didTrackImpressionWith:)` was renamed to `NativeAdDelegate.nativeAd(_:didTrackImpression:)`.
@@ -178,12 +184,13 @@ All notable changes to this project will be documented in this file.
 - Class `VideoController` was removed.
 - Constant `kYMAAdsErrorDomain` was removed.
 - Constant `kYMANativeAdErrorDomain` was removed. instead.
-- Constants from `YMAVersion` were removed. Use `YandexAds.version.stringValue` instead.
+- Constants from `YMAVersion` were removed. Use `MobileAds.sdkVersion` instead.
 - Function `AdViewDelegate.close(_:)` was removed.
 - Function `BannerAdSize.fixedSize(withWidth:height:)` was renamed to `BannerAdSize.fixed(width:height:)`.
 - Function `BannerAdSize.inlineSize(withWidth:maxHeight:)` was renamed to `BannerAdSize.inline(width:maxHeight:)`.
 - Function `BannerAdSize.stickySize(withContainerWidth:)` was renamed to `BannerAdSize.sticky(containerWidth:)`.
-- Function `YandexAds.audioSessionManager` is computed property now.
+- Function `MobileAds.audioSessionManager` is computed property now.
+- Function `MobileAds.sdkVersion` was removed. Use `MobileAds.version.stringValue` instead.
 - Function `NativeAd.bind(toSliderView:)` was removed. Use `SliderAd.bind(with:)` instead.
 - Function `NativeAdDelegate.close(_:)` was removed.
 - Function `NativeAdDelegate.nativeAd(_:didTrackImpressionWith:)` was renamed to `NativeAdDelegate.nativeAd(_:didTrackImpression:)`.

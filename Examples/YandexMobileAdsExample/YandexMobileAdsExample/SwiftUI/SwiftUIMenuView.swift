@@ -17,26 +17,21 @@ enum SwiftUIAdType: String, CaseIterable, Identifiable {
 }
 
 struct SwiftUIMenuView: View {
-    var onSelect: (SwiftUIAdType) -> Void
-
     var body: some View {
         List(SwiftUIAdType.allCases) { adType in
-            Button {
-                onSelect(adType)
-            } label: {
-                HStack {
-                    Text(adType.rawValue)
-                        .foregroundStyle(.primary)
-                    Spacer()
-                    Image(systemName: "chevron.right")
-                        .font(.system(size: 14, weight: .semibold))
-                        .foregroundStyle(.tertiary)
-                }
-                .contentShape(Rectangle())
-            }
-            .buttonStyle(.plain)
+            NavigationLink(adType.rawValue, destination: destination(for: adType))
         }
         .navigationTitle("SwiftUI Examples")
         .navigationBarTitleDisplayMode(.inline)
+    }
+
+    @ViewBuilder
+    private func destination(for adType: SwiftUIAdType) -> some View {
+        switch adType {
+        case .appOpenAd: AppOpenContentView()
+        case .banner: BannerContentView()
+        case .interstitial: InterstitialContentView()
+        case .rewarded: RewardedContentView()
+        }
     }
 }
