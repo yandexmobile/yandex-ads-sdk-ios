@@ -5,6 +5,7 @@
  * You may obtain a copy of the License at https://yandex.com/legal/mobileads_sdk_agreement/
  */
 
+import SwiftUI
 import UIKit
 import YandexMobileAds
 
@@ -16,15 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        YandexAds.initializeSDK(completionHandler: nil)
-
-        let rootVC = UnifiedAdViewController()
-        let navController = UINavigationController(rootViewController: rootVC)
-        navController.navigationBar.prefersLargeTitles = false
-        rootVC.navigationItem.largeTitleDisplayMode = .never
+        Task {
+            await YandexAds.initializeSDK()
+        }
 
         let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = navController
+        window.rootViewController = UIHostingController(rootView: RootTabView())
         window.makeKeyAndVisible()
         self.window = window
 

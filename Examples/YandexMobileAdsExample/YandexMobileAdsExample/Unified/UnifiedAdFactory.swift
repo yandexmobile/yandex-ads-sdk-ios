@@ -177,10 +177,13 @@ enum UnifiedAdFactory {
 
         case .nativeTemplate:
             let id = requireID(FactoryIDs.nativeTemplate, source, format: format)
-            return if case .adfox = source {
-                AdFoxNativeAdapter(adUnitID: id)
-            } else {
-                AdMobNativeAdapter(adUnitID: id, hostViewController: hostViewController)
+            switch source {
+            case .yandex:
+                return YandexNativeTemplateAdapter(adUnitID: id)
+            case .adfox:
+                return AdFoxNativeAdapter(adUnitID: id)
+            default:
+                return AdMobNativeAdapter(adUnitID: id, hostViewController: hostViewController)
             }
 
         case .nativeCustom:

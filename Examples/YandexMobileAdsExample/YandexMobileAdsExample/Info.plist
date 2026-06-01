@@ -26,6 +26,8 @@
 	<true/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>For scanning QR codes with playable creative identifiers</string>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>
@@ -935,6 +937,10 @@
 		<dict>
 			<key>SKAdNetworkIdentifier</key>
 			<string>xga6mpmplv.skadnetwork</string>
+		</dict>
+		<dict>
+			<key>SKAdNetworkIdentifier</key>
+			<string>53nm4hsx3w.skadnetwork</string>
 		</dict>
 	</array>
 	<key>UIApplicationSupportsIndirectInputEvents</key>

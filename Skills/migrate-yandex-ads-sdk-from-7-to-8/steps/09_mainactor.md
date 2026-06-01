@@ -43,7 +43,7 @@ class MyViewController: UIViewController, InterstitialAdDelegate {
 ```swift
 class MyViewController: UIViewController, InterstitialAdDelegate {
     @MainActor
-    func interstitialAd(_ interstitialAd: InterstitialAd, didFailToShow error: Error) {
+    func interstitialAd(_ interstitialAd: InterstitialAd, didFailToShow error: any Error) {
         // ...
     }
 

@@ -3,10 +3,10 @@ import XCTest
 struct SwiftUIMenuPage: PageObject {
 
     func tapSwiftUIExamples() {
-        step("Tap SwiftUI Examples button") {
-            let button = app.buttons[CommonAccessibility.swiftUIExamplesButton]
-            XCTAssertTrue(button.waitForExistence(timeout: 5), "SwiftUI Examples button not found")
-            button.tap()
+        step("Tap SwiftUI tab") {
+            let tab = app.tabBars.buttons["SwiftUI"]
+            XCTAssertTrue(tab.waitForExistence(timeout: 5), "SwiftUI tab not found")
+            tab.tap()
         }
     }
 

@@ -14,5 +14,4 @@ enum CommonAccessibility {
     static let bulkTable = "bulk_table"
     static let logsTextView = "logs_text_view"
     static let gearButton = "gdpr_settings_button"
-    static let swiftUIExamplesButton = "swiftui_examples_button"
 }

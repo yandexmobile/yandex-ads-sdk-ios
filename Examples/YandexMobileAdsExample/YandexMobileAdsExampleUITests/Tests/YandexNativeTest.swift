@@ -6,14 +6,21 @@ final class YandexNativeTest: BaseTest {
     func testYandexNativeCustom() {
         runNativeСustom(formatTitle: TestConstants.Format.nativeCustom)
     }
-    
+
+    func testYandexNativeTemplate() {
+        runNativeСustom(formatTitle: TestConstants.Format.nativeTemplate, source: TestConstants.Source.yandex)
+    }
+
     func testYandexNativeBulk() {
         runNativeBulk()
     }
     
-    private func runNativeСustom(formatTitle: String) {
+    private func runNativeСustom(formatTitle: String, source: String? = nil) {
         launchApp(extraArgs: [LaunchArgument.gdprSuppressOnLaunch])
         adsPage.selectFormat(formatTitle)
+        if let source {
+            adsPage.selectSource(source)
+        }
         adsPage.tapLoad()
         guard adsPage.assertLoadedOrNoFill(timeout: 15) else { return }
         adsPage.waitInlineAdVisible(timeout: 10)
