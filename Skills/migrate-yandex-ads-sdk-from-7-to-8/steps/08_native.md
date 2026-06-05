@@ -122,15 +122,30 @@ try ad.bind(with: sliderView)
 
 ## 8.6 Removed APIs
 
-| Removed                                                        | Notes                                         |
-|----------------------------------------------------------------|-----------------------------------------------|
-| `VideoController` / `VideoDelegate`                            | Removed entirely. Remove all references.      |
-| `NativeTemplateAppearance` / `MutableNativeTemplateAppearance` | Removed. Use custom `NativeAdView` rendering. |
-| `NativeBannerView`                                             | Removed. Use custom `NativeAdView` rendering. |
-| `NativeVideoPlaybackProgressControl.reset`                     | Removed (no replacement).                     |
-| All `*Appearance` / `*Offset` / `*SizeConstraint` classes      | Removed with native templates.                |
+| Removed                                                        | Notes                                                                  |
+|----------------------------------------------------------------|------------------------------------------------------------------------|
+| `VideoController` / `VideoDelegate`                            | Removed entirely. Remove all references.                               |
+| `NativeTemplateAppearance` / `MutableNativeTemplateAppearance` | Removed. Use `NativeAdBannerView` from the sample (see below).         |
+| `NativeBannerView`                                             | Removed. Replace with `NativeAdBannerView` from the sample (see below).|
+| `NativeVideoPlaybackProgressControl.reset`                     | Removed (no replacement).                                              |
+| All `*Appearance` / `*Offset` / `*SizeConstraint` classes      | Removed with native templates.                                         |
 
-If the project uses native templates, notify the user that they must implement custom native ad rendering using `NativeAdView`.
+### Migrating from NativeBannerView / native templates
+
+`NativeBannerView` is removed. The direct replacement is `NativeAdBannerView` — copy `NativeAdBannerView.swift` from the [public sample](https://github.com/yandexmobile/yandex-ads-sdk-ios/blob/master/Examples/YandexMobileAdsExample/YandexMobileAdsExample/Common/Native/NativeAdBannerView.swift) into the project.
+
+```swift
+// SDK 7
+let bannerView = NativeBannerView()
+bannerView.applyTheme(NativeTemplateAppearance())
+nativeAd.bind(with: bannerView)
+
+// SDK 8
+let adView = NativeAdBannerView()
+try nativeAd.bind(with: adView)
+```
+
+`NativeAdBannerView` connects its subviews to `NativeAdView` outlet properties (`titleLabel`, `bodyLabel`, `iconImageView`, `mediaView`, `callToActionButton`, `warningLabel`, etc.) in `bindAssets()`.
 
 ## 8.7 Ad Object Property Changes
 
