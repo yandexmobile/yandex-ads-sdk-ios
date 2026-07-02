@@ -81,7 +81,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Пользователь с возрастными ограничениями"
+            "value" : "Age Restricted User"
           }
         }
       }
