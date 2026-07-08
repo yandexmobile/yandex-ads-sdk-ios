@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 8.2.1
+
+### Updated
+
+- Removed `@MainActor` from `ConsentManagementPlatform`, `YandexAds.consentManagementPlatform` and `YandexAds.enableVisibilityErrorIndicator(for:)`.
+- Changed `ConsentManagementPlatform.presentConsentFormIfRequired(completion:)` completion to `(ConsentManagementPresentationResult) -> Void`; `ConsentManagementPresentationResult` now provides a `.failure(Error)` case.
+- `BidderTokenLoader` completion handler is no longer `@MainActor`-isolated.
+
+## Version 8.2.0
+
+### Description
+
+### Added
+
+- Added dependency `AppMetricaCrashes` with minimum supported version `6.4.0`
+
+### Updated
+
+- Update `AppMetrica` version to 6.4.0.
+
 ## Version 8.1.0
 
 ### Updated
