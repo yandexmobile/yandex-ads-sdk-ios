@@ -74,23 +74,23 @@ let package = Package(
         ),
         .binaryTarget(
             name: "YandexMobileAds",
-            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAds/8.2.0/spm/b62496b6-3366-40c3-91c4-cdff215af6ee.zip",
-            checksum: "be0ede70ecfb7a4a9d35232ddd332966ff049501350fa4af3903342c4651b94d"
+            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAds/8.2.1/spm/afb1e4b1-37c3-48ca-8951-6724629e2c23.zip",
+            checksum: "588d956b5ac9b3906194a62fc444974f58c790a5947e12969075f9927f3175be"
         ),
         .binaryTarget(
             name: "YandexMobileAdsNativeOnly",
-            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAdsNativeOnly/8.2.0/spm/5586f787-3709-46f3-abe6-71037aa08ce6.zip",
-            checksum: "2a444f8d21d07d17f74d3255bf8086f3b4421d1401d12ecd20d0661b8b46ccc9"
+            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAdsNativeOnly/8.2.1/spm/1d4c767b-1edf-4019-ad43-b3854cbdbbb6.zip",
+            checksum: "ecc6531f14237fa4ef8b7a0a0b3ba9f7cbed736ddd02ac20aa02e5fef95c7bf3"
         ),
         .binaryTarget(
             name: "YandexMobileAdsInstream",
-            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAdsInstream/0.72.0/spm/dfc3631a-50eb-485c-b851-9d94ba651212.zip",
-            checksum: "8e1ebe0969c55669915181dec13bf14ccce0185b7ba57a9ec4b6654a96e91943"
+            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAdsInstream/0.73.0/spm/1b3a05fa-9504-493c-a65f-94949bbb49a1.zip",
+            checksum: "69689c547ec0d81d2e3fa49efd7d7687e5ae611a66d1a449cdf75296c2b1ee35"
         ),
         .binaryTarget(
             name: "YandexMobileAdsConsentManagement",
-            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAdsConsentManagement/1.16.0/spm/8ef2a1d8-eb05-482f-a3a9-2903c209d4df.zip",
-            checksum: "5cd5c22ade644f048be45bc1ead8bb98d44e7c2b9c588b7bb8d0b1974937c082"
+            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAdsConsentManagement/1.16.1/spm/bb663875-1219-47bd-be04-3a8084d3ca0c.zip",
+            checksum: "5d61b6ebd41e7296ea955c18283bf986c6f35f0c06ff8e5e080629b146ae51c2"
         )
     ]
 )
