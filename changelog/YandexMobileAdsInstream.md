@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 0.73.0
+
+### Updated
+
+- Updated minimum supported `YandexMobileAds` version to `8.2.1`
+
+## Version 0.72.0
+
+### Updated
+
+- Updated minimum supported `YandexMobileAds` version to `8.2.0`
+
 ## Version 0.71.0
 
 ### Updated
@@ -25,6 +37,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 - Added `InstreamAdLoader.loadInstreamAd(configuration:)` and `InstreamAdLoader.loadInroll(configuration:)` async methods.
+- Added `InstreamAdLoadingFailureInfo` class for passing InStream ad loading failure information. The `reason` property contains the error description.
 
 ### Updated
 
@@ -40,9 +53,19 @@ All notable changes to this project will be documented in this file.
 
 ## Version 0.65.0
 
+### Added
+
+- Added `InstreamAdBreak` protocol for controlling In-Roll and Pause-Roll ad break playback. Provides `prepare(with:)`, `play(with:)`, `pause()`, `resume()`, `invalidate()` methods and `adBreakData` property.
+- Added `AdBreakData` protocol describing an ad break: `type`, `position`, `adsCount`, `requestData` properties.
+
 ### Updated
 
 - Updated minimum supported `YandexMobileAds` version to `7.18.4`
+
+### Breaking changes
+
+- Removed `Inroll`, `InrollQueue` protocols and `InrollQueueProvider` class. Use `InstreamAd.adBreaks` filtered by `InstreamAdBreakType.inroll` to get `InstreamAdBreak` instances.
+- Removed `Pauseroll`, `PauserollQueue` protocols and `PauserollQueueProvider` class. Use `InstreamAd.adBreaks` filtered by `InstreamAdBreakType.pauseroll` to get `InstreamAdBreak` instances.
 
 ## Version 0.64.0
 
@@ -51,6 +74,11 @@ All notable changes to this project will be documented in this file.
 - Updated minimum supported `YandexMobileAds` version to `7.18.3`
 
 ## Version 0.63.0
+
+### Added
+
+- Added `InstreamAdBreakRequestData` class with `pageID` and `impID` properties.
+- Added `requestData` property to `InstreamAdBreak` protocol.
 
 ### Updated
 
