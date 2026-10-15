@@ -122,13 +122,13 @@ let package = Package(
         ),
         .binaryTarget(
             name: "YandexMobileAds",
-            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAds/7.18.6/spm/cbe9228b-18de-40cc-a183-6dd2a0e927ff.zip",
-            checksum: "215c74a8593e838b2f601e2260f1ebd823a47a4e338f152a474dfcf7dfec9750"
+            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAds/7.18.7/spm/942389e6-ee7e-4c99-ad7f-30c3a65c5a24.zip",
+            checksum: "42f6f05b5bf4ac14632cd288cae4eff228795cfde719aced0b8cbd6444e6fb4c"
         ),
         .binaryTarget(
             name: "YandexMobileAdsInstream",
-            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAdsInstream/0.66.1/spm/ed459271-9428-4149-b9da-3b76a183b4bc.zip",
-            checksum: "b31b755513fa3f908f73fcedb91c5fb773794989748c7619902a2bbdb7c0ab68"
+            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAdsInstream/0.66.2/spm/bf938c9c-1168-4b8f-8b3f-02de5d326f8b.zip",
+            checksum: "4e7692c67189c7091dde1d9fa80703efd4d8e0b9cd59354e2b56930781e30cb6"
         ),
         .binaryTarget(
             name: "GoogleYandexMobileAdsAdapters",
@@ -157,8 +157,8 @@ let package = Package(
         ),
         .binaryTarget(
             name: "YandexMobileAdsMediation",
-            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAdsMediation/7.18.6/spm/bd44867e-0413-44ef-a651-8d1e625f66d8.zip",
-            checksum: "bbfe5d557d35c6ca22d2e81ead893ed1de0e249dfa9af54287354a8cea990ba7"
+            url: "https://ads-mobile-sdk.s3.yandex.net/Yandex/YandexMobileAdsMediation/7.18.7/spm/145239d8-7bad-4f26-8b71-78d8bf835ce1.zip",
+            checksum: "d61e636f2cd729fee75b7e9e30abb8d070df844fb16fb88939fb9436b1c872b5"
         )
     ]
 )
