@@ -1,6 +1,57 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "About ad network forcing" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About ad network forcing"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "О форсировании рекламной сети"
+          }
+        }
+      }
+    },
+    "Ad network forcing" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ad network forcing"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Форсирование рекламной сети"
+          }
+        }
+      }
+    },
+    "Ad network forcing help" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select the source for subsequent ad requests throughout the app, except in-stream. Already loaded ads are not affected. If the source has no ads, no other source is used.\n\nThe setting is reset after the app restarts."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выберите источник для последующих запросов рекламы во всём приложении, кроме in-stream. Уже загруженная реклама не меняется. Если у источника нет рекламы, другой источник не используется. Настройка сбрасывается после перезапуска приложения."
+          }
+        }
+      }
+    },
     "Ad Unit ID" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -35,23 +86,24 @@
         }
       }
     },
-    "Cancel" : {
+    "All ad requests will be sent via %@ network." : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cancel"
+            "value" : "Subsequent ad requests will use %@. In-stream and already loaded ads are not affected."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Отмена"
+            "value" : "Последующие запросы рекламы будут использовать %@. In-stream и уже загруженная реклама не затрагиваются."
           }
         }
       }
     },
+
     "Configure Ad Request" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -239,6 +291,23 @@
         }
       }
     },
+    "Cancel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отмена"
+          }
+        }
+      }
+    },
     "Completed Integration" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -307,6 +376,40 @@
         }
       }
     },
+    "Direct Sales" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Direct Sales"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Прямые продажи"
+          }
+        }
+      }
+    },
+    "Disable ad network forcing" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disable ad network forcing"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отключить форсирование рекламной сети"
+          }
+        }
+      }
+    },
     "Features" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -320,6 +423,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Функции"
+          }
+        }
+      }
+    },
+    "Forced ad network" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forced ad network"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Форсируемая рекламная сеть"
           }
         }
       }
@@ -596,6 +716,23 @@
         }
       }
     },
+    "None" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "None"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не выбрано"
+          }
+        }
+      }
+    },
     "Not integrated" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -626,6 +763,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Page ID"
+          }
+        }
+      }
+    },
+    "Please note" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please note"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Обратите внимание"
           }
         }
       }
@@ -694,6 +848,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Версия SDK"
+          }
+        }
+      }
+    },
+    "Select ad network" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select ad network"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выберите рекламную сеть"
           }
         }
       }
